@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
-/**
- * @author: David
- * @author:
- */
+
 namespace RealSense
 {
     class Program
