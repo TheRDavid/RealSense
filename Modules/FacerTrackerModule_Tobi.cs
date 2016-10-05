@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+/**
+ * @author: Tobi
+ * @author:
+ */
 namespace RealSense
 {
     class FaceTrackerModule_Tobi : RSModule

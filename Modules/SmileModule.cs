@@ -4,6 +4,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
+/**
+ * @author: Tanja
+ * @author:
+ */ 
 namespace RealSense
 {
     /* Shows how much you are smiling */
