@@ -11,7 +11,7 @@ namespace RealSense
 {
     class FaceTrackerModule_Tobi : RSModule
     {
-        // Stuff for Facesrxdtd detection
+        // Stuff for asdfasdfdetection
         private PXCMFaceModule module;
         private PXCMFaceData data;
 
