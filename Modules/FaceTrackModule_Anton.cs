@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 /**
  * @author: Anton
- * @author:
+ * @author: just trying something 
  */
 namespace RealSense
 {
