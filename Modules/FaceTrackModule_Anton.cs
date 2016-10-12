@@ -6,6 +6,7 @@ using System.Drawing;
 /**
  * @author: Anton
  * @author: Ne try if it works due to Visual Studio 
+ *  you can delete it if you want to, just trying something - cheers buddy 
  */
 namespace RealSense
 {
