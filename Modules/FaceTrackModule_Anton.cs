@@ -22,10 +22,11 @@ namespace RealSense
         private PXCMFaceConfiguration fg;
 
         // Initialise all the things
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            senseManager = sManager;
-            module = senseManager.QueryFace();
+            senseManager = cv.SenseManager;
+            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            Console.WriteLine("FaceTracker_Anton: " + module.GetHashCode());
             fg = module.CreateActiveConfiguration();
             fg.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);
             fg.detection.isEnabled = true;
@@ -45,7 +46,6 @@ namespace RealSense
             data.Update();
             // Get the number of tracked faces
             Int32 nfaces = data.QueryNumberOfDetectedFaces();
-            Console.WriteLine("Number of faces : " + nfaces);
 
             data.Dispose();
 

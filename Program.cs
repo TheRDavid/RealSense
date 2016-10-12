@@ -16,7 +16,7 @@ namespace RealSense
     {
         static void Main(string[] args)
         {
-            // Create modules beforehand
+            // Create modules be forehand blub
             List<RSModule> modules = new List<RSModule>();
               modules.Add(new FaceTrackerModule());
               modules.Add(new HandTrackerModule());
@@ -24,7 +24,6 @@ namespace RealSense
              modules.Add(new FaceTrackModule_Anton());
             modules.Add(new FaceTrackerModule_Tobi());
             Application.Run(new CameraView(640, 480, 30, modules)); // Start View
-          //  Application.Run(new CameraView(640, 480, 30));
         }
 
     }
