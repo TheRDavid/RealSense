@@ -16,7 +16,7 @@ namespace RealSense
     {
         static void Main(string[] args)
         {
-            // Create modules be forehand blubasdasd 
+            // Create modules be forehand blubasdasd
             List<RSModule> modules = new List<RSModule>();
             modules.Add(new FaceTrackerModule());
             modules.Add(new HandTrackerModule());
