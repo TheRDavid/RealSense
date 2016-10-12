@@ -25,11 +25,13 @@ namespace RealSense
         private bool smiling;
         private PXCMFaceData.ExpressionsData.FaceExpressionResult score;
 
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            this.senseManager = sManager;
-            hand = senseManager.QueryHand();
-            face = senseManager.QueryFace();
+            senseManager = cv.SenseManager;
+            hand = (PXCMHandModule) cv.CreatePXCMModule(PXCMHandData.CUID);
+            face = (PXCMFaceModule) cv.CreatePXCMModule(PXCMFaceData.CUID);
+            Console.WriteLine("FaceTracker_Tanja: " + face.GetHashCode());
+            Console.WriteLine("HandeTracker_Tanja: " + hand.GetHashCode());
             handConfig = hand.CreateActiveConfiguration();
             handConfig.EnableGesture("wave");
             handConfig.EnableAllAlerts();
@@ -42,7 +44,6 @@ namespace RealSense
             expc.Enable();
             expc.EnableAllExpressions();
             faceConfic.ApplyChanges();
-            Console.WriteLine("init smile done");
         }
 
         public override void Work(Graphics g)
