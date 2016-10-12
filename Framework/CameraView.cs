@@ -14,7 +14,7 @@ namespace RealSense
 {
     class CameraView : Form
     {
-        // all the things 
+        // all the things  
         private PXCMSession session;
         private PXCMSenseManager senseManager;
         private PXCMSession.ImplVersion iv;
