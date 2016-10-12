@@ -24,11 +24,12 @@ namespace RealSense
         private Pen pen = new Pen(Color.DarkKhaki, 2);
 
         // Initialise all the things
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            senseManager = sManager;
+            senseManager = cv.SenseManager;
             senseManager.EnableHand();
-            module = senseManager.QueryHand();
+            module = (PXCMHandModule)cv.CreatePXCMModule(PXCMHandData.CUID);
+            Console.WriteLine("HandeTracker_David: " + module.GetHashCode());
             PXCMHandConfiguration config = module.CreateActiveConfiguration();
             config.SetTrackingMode(PXCMHandData.TrackingModeType.TRACKING_MODE_FULL_HAND);
             config.ApplyChanges();
