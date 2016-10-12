@@ -25,11 +25,12 @@ namespace RealSense
         private bool smiling;
         private PXCMFaceData.ExpressionsData.FaceExpressionResult score;
 
-        public override void Init(CameraView cv)
+        public override void Init(PXCMSenseManager sManager) 
         {
-            senseManager = cv.SenseManager;
-            hand = (PXCMHandModule) cv.CreatePXCMModule(PXCMHandData.CUID);
-            face = (PXCMFaceModule) cv.CreatePXCMModule(PXCMFaceData.CUID);
+            // Manual
+            senseManager = sManager;
+            hand = sManager.QueryHand();
+            face = sManager.QueryFace();
             Console.WriteLine("FaceTracker_Tanja: " + face.GetHashCode());
             Console.WriteLine("HandeTracker_Tanja: " + hand.GetHashCode());
             handConfig = hand.CreateActiveConfiguration();
