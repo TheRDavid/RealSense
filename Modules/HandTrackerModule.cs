@@ -24,11 +24,11 @@ namespace RealSense
         private Pen pen = new Pen(Color.DarkKhaki, 2);
 
         // Initialise all the things
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            senseManager = sManager;
+            senseManager = cv.SenseManager;
             senseManager.EnableHand();
-            module = sManager.QueryHand();
+            module = (PXCMHandModule)cv.CreatePXCMModule(PXCMHandData.CUID);
             Console.WriteLine("HandeTracker_David: " + module.GetHashCode());
             PXCMHandConfiguration config = module.CreateActiveConfiguration();
             config.SetTrackingMode(PXCMHandData.TrackingModeType.TRACKING_MODE_FULL_HAND);
@@ -41,7 +41,7 @@ namespace RealSense
             data = module.CreateOutput();
             data.Update();
             PXCMHandData.IHand hands = null;
-            data.QueryHandData(PXCMHandData.AccessOrderType.ACCESS_ORDER_BY_ID,0, out hands);
+            data.QueryHandData(PXCMHandData.AccessOrderType.ACCESS_ORDER_BY_ID, 0, out hands);
             if (hands == null) return;
             PXCMRectI32 rect = hands.QueryBoundingBoxImage();
             Rectangle rectangle = new Rectangle(rect.x, rect.y, rect.w, rect.h); // Convert to Rectangle

@@ -25,10 +25,10 @@ namespace RealSense
 
 
         // Initialise all the things
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            senseManager = sManager;
-            module = sManager.QueryFace();
+            senseManager = cv.SenseManager;
+            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
             Console.WriteLine("FaceTracker_Anton: " + module.GetHashCode());
             fg = module.CreateActiveConfiguration();
             fg.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);

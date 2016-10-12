@@ -14,7 +14,7 @@ namespace RealSense
 {
     class CameraView : Form
     {
-        // all the things 
+        // all the things
         private PXCMSession session;
         private PXCMSenseManager senseManager;
         private PXCMSession.ImplVersion iv;
@@ -29,6 +29,20 @@ namespace RealSense
         private bool storeImages = false;
         private Thread updaterThread;
         private List<RSModule> modules = new List<RSModule>();
+        private Dictionary<Int32, PXCMBase> PXCMModules = new Dictionary<int, PXCMBase>();
+        //its me david , lets work 
+        public PXCMBase CreatePXCMModule(int cuid)
+        {
+            if (!PXCMModules.ContainsKey(cuid))
+            {
+                senseManager.EnableModule(cuid, new PXCMSession.ImplDesc());
+                PXCMBase b = senseManager.QueryInstance(cuid);
+                Console.WriteLine("ADDING: " + b.ToString());
+                PXCMModules.Add(cuid, b);
+            }
+            Console.WriteLine("RETURNING: " + PXCMModules[cuid]);
+            return PXCMModules[cuid];
+        }
 
         public PXCMSession Session
         {
@@ -61,11 +75,11 @@ namespace RealSense
             // Enable Face detection
             senseManager.EnableFace();
             modules = mods;
+            senseManager.Init();
             modules.ForEach(delegate (RSModule rsm)
             {
-                rsm.Init(senseManager);
+                rsm.Init(this);
             });
-            senseManager.Init();
 
             session = PXCMSession.CreateInstance();
 
@@ -80,7 +94,6 @@ namespace RealSense
             String versionString = "v" + iv.major + "." + iv.minor;
             Console.WriteLine(versionString);
             Text = versionString;
-
 
             pb = new PictureBox();
             // Set size
@@ -98,25 +111,22 @@ namespace RealSense
 
         /**
           * Exit Application
-        */ 
+        */
         private void Quit(object sender, FormClosedEventArgs e)
         {
             updaterThread.Abort();
-            Console.WriteLine("Cleaning");
             session.Dispose();
             senseManager.Dispose();
-            Console.WriteLine("Closing");
             Application.Exit();
         }
 
         /**
          * Update the View
-         */ 
+         */
         private void update()
         {
             while (senseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
-                // Console.WriteLine("Update");
                 // <magic>
                 PXCMCapture.Sample sample = senseManager.QueryFaceSample();
 
@@ -130,7 +140,7 @@ namespace RealSense
                 });
                 // </magic>
                 // save to hard drive (careful!) - will be stored in project folder/bin/debug
-                if (storeImages) colorBitmap.Save("cap"+capNum++ +".png");
+                if (storeImages) colorBitmap.Save("cap" + capNum++ + ".png");
                 // update PictureBox
                 pb.Image = colorBitmap;
                 senseManager.ReleaseFrame();

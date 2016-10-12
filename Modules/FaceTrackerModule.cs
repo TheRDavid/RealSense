@@ -12,10 +12,10 @@ namespace RealSense
     /**
      * Instance of an abstract RealSenseModule (see RSModule.cs)
      * Draws a Rectangle around every Face it finds
-     */ 
+     */
     class FaceTrackerModule : RSModule
     {
-        
+
         // Stuff for Face detection
         private PXCMFaceModule module;
         private PXCMFaceData data;
@@ -24,10 +24,10 @@ namespace RealSense
         private Pen pen = new Pen(Color.BlueViolet, 2);
 
         // Initialise all the things
-        public override void Init(PXCMSenseManager sManager)
+        public override void Init(CameraView cv)
         {
-            senseManager = sManager;
-            module = sManager.QueryFace();
+            senseManager = cv.SenseManager;
+            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
             Console.WriteLine("FaceTracker_David: " + module.GetHashCode());
             PXCMFaceConfiguration config = module.CreateActiveConfiguration();
             config.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);
@@ -43,8 +43,8 @@ namespace RealSense
                 data = module.CreateOutput();
                 data.Update(); // props to Tanja
                 PXCMFaceData.Face[] faces = data.QueryFaces(); // get all the faces
-              
-              //  Console.WriteLine(faces.Length + " ugly face(s)");
+
+                //  Console.WriteLine(faces.Length + " ugly face(s)");
 
                 foreach (PXCMFaceData.Face face in faces) // Loop through all the faces
                 {

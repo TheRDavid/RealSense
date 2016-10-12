@@ -11,7 +11,7 @@ namespace RealSense
 {
     /**
      * Abstract Module
-     */ 
+     */
     abstract class RSModule
     {
         // Reference to globally used SenseManager
@@ -26,11 +26,11 @@ namespace RealSense
         }
 
         // Initialise 'n stuff
-        public abstract void Init(PXCMSenseManager sManager);
+        public abstract void Init(CameraView cv);
 
         // Update every frame (do calculations, manipulate output Image)
         public abstract void Work(Graphics g);
-       
+
 
     }
 
