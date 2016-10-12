@@ -24,10 +24,10 @@ namespace RealSense
         private Pen pen = new Pen(Color.BlueViolet, 2);
 
         // Initialise all the things
-        public override void Init(CameraView cv)
+        public override void Init(PXCMSenseManager sManager)
         {
-            senseManager = cv.SenseManager;
-            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            senseManager = sManager;
+            module = sManager.QueryFace();
             Console.WriteLine("FaceTracker_David: " + module.GetHashCode());
             PXCMFaceConfiguration config = module.CreateActiveConfiguration();
             config.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);

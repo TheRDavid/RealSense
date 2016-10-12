@@ -19,11 +19,11 @@ namespace RealSense
         // Pen which defines the appereance of the rect
         private Pen pen = new Pen(Color.Blue);
 
-        public override void Init(CameraView cv)
+        public override void Init(PXCMSenseManager sManager)
         {
-            senseManager = cv.SenseManager;
+            senseManager = sManager;
             // Get a face instance here (or inside the AcquireFrame/ReleaseFrame loop) for configuration
-            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            module = sManager.QueryFace();
             // face is a PXCMFaceModule instance
             fg = module.CreateActiveConfiguration();
 
