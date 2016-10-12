@@ -7,9 +7,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 
-/**
- * @author: David
- */ 
 namespace RealSense
 {
     class Program

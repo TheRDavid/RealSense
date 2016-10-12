@@ -22,6 +22,8 @@ namespace RealSense
         private PXCMFaceData data;
         private PXCMFaceConfiguration fg;
 
+
+
         // Initialise all the things
         public override void Init(CameraView cv)
         {
