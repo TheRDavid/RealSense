@@ -23,7 +23,7 @@ namespace RealSense
         {
             senseManager = cv.SenseManager;
             // Get a face instance here (or inside the AcquireFrame/ReleaseFrame loop) for configuration
-            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            module = (PXCMFaceModule)cv.CreatePXCMBase(senseManager.QueryFace());
             // face is a PXCMFaceModule instance
             fg = module.CreateActiveConfiguration();
 
@@ -45,7 +45,7 @@ namespace RealSense
             // Get the number of tracked faces
             Int32 nfaces = data.QueryNumberOfDetectedFaces();
 
-            Console.WriteLine("Number of faces : " + nfaces);
+            //Console.WriteLine("Number of faces : " + nfaces);
             for (Int32 i = 0; i < nfaces; i++)
             {
 

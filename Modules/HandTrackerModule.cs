@@ -27,8 +27,7 @@ namespace RealSense
         public override void Init(CameraView cv)
         {
             senseManager = cv.SenseManager;
-            senseManager.EnableHand();
-            module = (PXCMHandModule)cv.CreatePXCMModule(PXCMHandData.CUID);
+            module = (PXCMHandModule)cv.CreatePXCMBase(senseManager.QueryHand());
             Console.WriteLine("HandeTracker_David: " + module.GetHashCode());
             PXCMHandConfiguration config = module.CreateActiveConfiguration();
             config.SetTrackingMode(PXCMHandData.TrackingModeType.TRACKING_MODE_FULL_HAND);

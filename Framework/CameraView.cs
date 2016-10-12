@@ -29,19 +29,23 @@ namespace RealSense
         private bool storeImages = false;
         private Thread updaterThread;
         private List<RSModule> modules = new List<RSModule>();
-        private Dictionary<Int32, PXCMBase> PXCMModules = new Dictionary<int, PXCMBase>();
-        //its me david , lets work 
-        public PXCMBase CreatePXCMModule(int cuid)
+        private List<PXCMBase> PXCMModules = new List<PXCMBase>();
+       
+        /**
+         * Either adds the given PXCMBase to the PXCMModules-List (if such a type is not already contained)
+         * OR returns an already existing instance of that type (if already contained)
+         * This way, all FaceTrackers will use the same PXCMFaceModule, same for HandTrackers and so on (see hashcode)
+         */ 
+        public PXCMBase CreatePXCMBase(PXCMBase b)
         {
-            if (!PXCMModules.ContainsKey(cuid))
+            PXCMBase ret = b;
+            PXCMModules.ForEach(delegate (PXCMBase bas)
             {
-                senseManager.EnableModule(cuid, new PXCMSession.ImplDesc());
-                PXCMBase b = senseManager.QueryInstance(cuid);
-                Console.WriteLine("ADDING: " + b.ToString());
-                PXCMModules.Add(cuid, b);
-            }
-            Console.WriteLine("RETURNING: " + PXCMModules[cuid]);
-            return PXCMModules[cuid];
+                if (b.GetType().Equals(bas.GetType()))
+                 ret = bas; 
+            });
+            if(ret == b) PXCMModules.Add(ret);
+            return ret;
         }
 
         public PXCMSession Session
@@ -74,6 +78,7 @@ namespace RealSense
             senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framterate);
             // Enable Face detection
             senseManager.EnableFace();
+            senseManager.EnableHand();
             modules = mods;
             senseManager.Init();
             modules.ForEach(delegate (RSModule rsm)

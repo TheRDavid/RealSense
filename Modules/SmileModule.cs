@@ -28,8 +28,8 @@ namespace RealSense
         public override void Init(CameraView cv)
         {
             senseManager = cv.SenseManager;
-            hand = (PXCMHandModule)cv.CreatePXCMModule(PXCMHandData.CUID);
-            face = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            hand = (PXCMHandModule)cv.CreatePXCMBase(senseManager.QueryHand());
+            face = (PXCMFaceModule)cv.CreatePXCMBase(senseManager.QueryFace());
             Console.WriteLine("FaceTracker_Tanja: " + face.GetHashCode());
             Console.WriteLine("HandeTracker_Tanja: " + hand.GetHashCode());
             handConfig = hand.CreateActiveConfiguration();
@@ -85,7 +85,7 @@ namespace RealSense
                         }
                         else smiling = false;
 
-                        Console.WriteLine(i + ": " + score.intensity);
+                      //  Console.WriteLine(i + ": " + score.intensity);
                     }
                 }
                 faceData.Dispose();

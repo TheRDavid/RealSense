@@ -28,7 +28,7 @@ namespace RealSense
         public override void Init(CameraView cv)
         {
             senseManager = cv.SenseManager;
-            module = (PXCMFaceModule)cv.CreatePXCMModule(PXCMFaceData.CUID);
+            module = (PXCMFaceModule)cv.CreatePXCMBase(senseManager.QueryFace());
             Console.WriteLine("FaceTracker_Anton: " + module.GetHashCode());
             fg = module.CreateActiveConfiguration();
             fg.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);
