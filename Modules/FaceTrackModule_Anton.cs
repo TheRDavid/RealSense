@@ -19,7 +19,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             // Get the number of tracked faces
-            Int32 nfaces = model.FaceData.QueryNumberOfDetectedFaces();
+            Int32 nfaces = model.FaceData.QueryNumberOfDetectedFaces(); 
         }
     }
 }
