@@ -55,7 +55,7 @@
   <ItemGroup>
     <Reference Include="libpxcclr.cs, Version=10.0.26.396, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Intel\RSSDK\bin\x64\libpxcclr.cs.dll</HintPath>
+      <HintPath>D:\Program Files (x86)\Intel\RSSDK\bin\x64\libpxcclr.cs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -72,6 +72,7 @@
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Framework\Class1.cs" />
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />

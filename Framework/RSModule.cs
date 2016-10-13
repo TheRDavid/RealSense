@@ -3,37 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-/**
- * @author: David
- * @author:
- */
+
 namespace RealSense
 {
     /**
      * Abstract Module
      */
-    abstract class RSModule
+    public abstract class RSModule
     {
-        // Reference to globally used SenseManager
-        protected PXCMSenseManager senseManager;
+        protected static Model model;
 
-        /**
-         * Miscarriage
-         */
-        public void doThings()
+        public static void Init(Model m)
         {
-            Console.WriteLine("Blub");
+            model = m;
         }
-
-        // Initialise 'n stuff
-        public abstract void Init(CameraView cv);
-
         // Update every frame (do calculations, manipulate output Image)
         public abstract void Work(Graphics g);
-
-
     }
-
-
-
 }
