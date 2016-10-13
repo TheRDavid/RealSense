@@ -72,7 +72,7 @@
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Framework\Class1.cs" />
+    <Compile Include="Framework\Model.cs" />
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />
