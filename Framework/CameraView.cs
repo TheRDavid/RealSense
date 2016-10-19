@@ -107,6 +107,7 @@ namespace RealSense
                 model.FaceData.Dispose(); // DONE!
                 model.HandData.Dispose();
                 model.Edata = null;
+                sample.color.ReleaseAccess(colorData);
             }
         }
 

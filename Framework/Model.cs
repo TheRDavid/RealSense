@@ -74,6 +74,7 @@ namespace RealSense
         public PXCMSenseManager SenseManager
         {
             get { return senseManager; }
+            set { senseManager = value; }
         }
 
         public int Width
