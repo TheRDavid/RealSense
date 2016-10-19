@@ -133,10 +133,10 @@ namespace RealSense
             while (senseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
                 // <magic>
-                PXCMCapture.Sample sample = senseManager.QueryFaceSample();
 
+                PXCMCapture.Sample sample = senseManager.QuerySample();
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
-
+/*
                 colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                 Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
                 modules.ForEach(delegate (RSModule mod)
@@ -145,9 +145,9 @@ namespace RealSense
                 });
                 // </magic>
                 // save to hard drive (careful!) - will be stored in project folder/bin/debug
-                if (storeImages) colorBitmap.Save("cap" + capNum++ + ".png");
+               // if (storeImages) colorBitmap.Save("cap" + capNum++ + ".png");
                 // update PictureBox
-                pb.Image = colorBitmap;
+                pb.Image = colorBitmap;*/
                 senseManager.ReleaseFrame();
             }
         }
