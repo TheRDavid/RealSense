@@ -17,6 +17,7 @@ namespace RealSense
         {
             model = m;
         }
+
         // Update every frame (do calculations, manipulate output Image)
         public abstract void Work(Graphics g);
     }

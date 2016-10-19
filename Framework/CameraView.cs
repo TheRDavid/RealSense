@@ -79,11 +79,13 @@ namespace RealSense
          */
         private void update()
         {
+            PXCMCapture.Sample sample;
+
             while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
                 // <magic>
-                PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
 
+                sample = model.SenseManager.QueryFaceSample();
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
 
                 model.FaceData = model.Face.CreateOutput();
@@ -106,6 +108,7 @@ namespace RealSense
                 model.SenseManager.ReleaseFrame();
                 model.FaceData.Dispose(); // DONE!
                 model.HandData.Dispose();
+                //sample.ReleaseImages();
                 model.Edata = null;
             }
         }
