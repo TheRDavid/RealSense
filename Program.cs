@@ -18,7 +18,8 @@ namespace RealSense
             RSModule.Init(model);
             // Create modules beforehand
             //model.AddModule(new LandmarkGroupModuleDavid());
-            model.AddModule(new LandmarkTypeModuleDavid());
+            model.AddModule(new FaceTrackerModule(null));
+            model.AddModule(new AU_LipsPressedModule());
 
             Application.Run(new CameraView(model));
         }
