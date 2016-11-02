@@ -11,7 +11,7 @@ using System.Threading;
  */
 namespace RealSense
 {
-    class CameraView : Form
+    public class CameraView : Form
     {
         // all the things 
         private PXCMSession session;
@@ -32,7 +32,7 @@ namespace RealSense
         public CameraView(Model model)
         {
             this.model = model;
-
+            model.View = this;
             session = PXCMSession.CreateInstance();
 
             if (session == null) // Something went wrong, session could not be initialised
@@ -52,7 +52,7 @@ namespace RealSense
             // Set size
             pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
             // init UI
-            this.Bounds = new Rectangle(0, 0, model.Width, model.Height);
+            this.Bounds = new Rectangle(0, 0, model.Width, model.Height+150);
             this.Controls.Add(pb);
             FormClosed += new FormClosedEventHandler(Quit);
             this.Show();
@@ -72,6 +72,21 @@ namespace RealSense
             model.SenseManager.Dispose();
             Console.WriteLine("Closing");
             Application.Exit();
+        }
+
+        public void AddComponent(Control c)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    AddComponent(c);
+                });
+            }
+            else
+            {
+                this.Controls.Add(c);
+            }
         }
 
         /**
@@ -113,4 +128,3 @@ namespace RealSense
 
     }
 }
-

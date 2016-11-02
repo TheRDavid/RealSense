@@ -24,6 +24,8 @@ namespace RealSense
         private int height;
         private int framerate;
 
+        private CameraView view;
+
         public Model()
         {
             width = 640;
@@ -119,6 +121,12 @@ namespace RealSense
         {
             get { return handData; }
             set { handData = value; }
+        }
+
+        public CameraView View
+        {
+            get { return view; }
+            set { view = value; }
         }
     }
 }
