@@ -33,6 +33,8 @@ namespace RealSense
 
                     g.DrawEllipse(pen, points[j].image.x, points[j].image.y, 2, 2);
                 }
+
+
             }
         }
     }

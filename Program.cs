@@ -10,17 +10,16 @@ namespace RealSense
 {
     class Program
     {
+
         [STAThread]
         static void Main(string[] args)
         {
             Model model = new Model();
             RSModule.Init(model);
             // Create modules beforehand
-            model.AddModule(new FaceTrackerModule());
-            model.AddModule(new HandTrackerModule());
-            model.AddModule(new SmileModule());
-            model.AddModule(new FaceTrackerModule_Tobi());
-            model.AddModule(new FaceTrackModule_Anton());
+            //model.AddModule(new LandmarkGroupModuleDavid());
+            model.AddModule(new FaceTrackerModule(null));
+            model.AddModule(new AU_LipsPressedModule());
 
             Application.Run(new CameraView(model));
         }
