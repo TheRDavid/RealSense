@@ -20,7 +20,8 @@ namespace RealSense
             //model.AddModule(new LandmarkGroupModuleDavid());
             model.AddModule(new FaceTrackerModule(null));
             //model.AddModule(new AU_LipsPressedModule_David());
-            model.AddModule(new AU_EyelidTightModul_Anton());
+            //model.AddModule(new AU_EyelidTightModul_Anton());
+            model.AddModule(new AU_LipsThicknessModul_Tobi());
 
             Application.Run(new CameraView(model));
         }
