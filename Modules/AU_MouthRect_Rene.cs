@@ -8,6 +8,8 @@ namespace RealSense.Modules
 {
     /**
      * This class detects whether the mouth forms an rectangle or not 
+     * 
+     * @author: René
      */
     class AU_MouthRect_Rene : RSModule
     {
@@ -21,7 +23,7 @@ namespace RealSense.Modules
         public override void Work(Graphics g)
         {
             initLandmarks();
-            findRect();
+            findRect(g);
         }
 
         /**
@@ -48,14 +50,14 @@ namespace RealSense.Modules
         /*
          * Checks whether the mouth is an rectangle
          */
-        private void findRect()
+        private void findRect(Graphics g)
         {
 
             //Das macht geometrisch alles keinen sinn :|
 
-            if (true //mathematisches Wirrwar)
+            if (true)//mathematisches Wirrwar
             {
-                g.DrawString("Rectangle", font, stringBrush, new PointF(20, 20));
+                g.DrawString("Rectangle", font, stringBrush, new PointF(20, 80));
             }
 
         }
@@ -68,3 +70,4 @@ namespace RealSense.Modules
 
 
     }
+}
