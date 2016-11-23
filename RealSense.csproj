@@ -76,6 +76,7 @@
     <Compile Include="Framework\Model.cs" />
     <Compile Include="Modules\AU_EyelidTightModul_Anton.cs" />
     <Compile Include="Modules\AU_LipsPressedModule_David.cs" />
+    <Compile Include="Modules\AU_MouthRect_Rene.cs" />
     <Compile Include="Modules\AU_ScowledBrows_Tanja.cs" />
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
@@ -105,6 +106,11 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\CameraView.resx">
+      <DependentUpon>CameraView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

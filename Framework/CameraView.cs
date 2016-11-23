@@ -130,5 +130,22 @@ namespace RealSense
             }
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CameraView
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "CameraView";
+            this.Load += new System.EventHandler(this.CameraView_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void CameraView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

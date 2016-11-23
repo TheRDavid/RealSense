@@ -21,8 +21,8 @@ namespace RealSense
             model.AddModule(new FaceTrackerModule(null));
             //model.AddModule(new AU_LipsPressedModule_David());
             //model.AddModule(new AU_EyelidTightModul_Anton());
-            //model.AddModule(new AU_LipsThicknessModul_Tobi());
-            model.AddModule(new AU_ScowledBrows_Tanja());
+            model.AddModule(new AU_LipsThicknessModul_Tobi());
+        //   model.AddModule(new Modules.AU_MouthRect_Rene()); //Warum muss ich Modules.modulname schreiben?
 
             Application.Run(new CameraView(model));
         }
