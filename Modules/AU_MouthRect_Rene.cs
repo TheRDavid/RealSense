@@ -13,25 +13,20 @@ namespace RealSense.Modules
     {
         private float[] lmArray = new float[12];
 
+        private Font font = new Font("Arial", 18);
+        private SolidBrush stringBrush = new SolidBrush(Color.Red);
+
+
+
         public override void Work(Graphics g)
         {
             initLandmarks();
             findRect();
         }
 
-
-        /*
-         * Checks whether the mouth is an rectangle
-         */
-        private void findRect()
-        {
-            //Das macht geometrisch alles keinen sinn :|
-        }
-
-
         /**
-         * Initiates mouthLandmarks by 
-         */
+  * Initiates mouthLandmarks by 
+  */
         public void initLandmarks()
         {
             if (model.FaceAktuell == null) return;
@@ -49,5 +44,27 @@ namespace RealSense.Modules
                 }
 
         }
+
+        /*
+         * Checks whether the mouth is an rectangle
+         */
+        private void findRect()
+        {
+
+            //Das macht geometrisch alles keinen sinn :|
+
+            if (true //mathematisches Wirrwar)
+            {
+                g.DrawString("Rectangle", font, stringBrush, new PointF(20, 20));
+            }
+
+        }
+
+
+
+
+
+
+
+
     }
-}
