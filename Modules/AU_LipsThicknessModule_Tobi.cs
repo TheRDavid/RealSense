@@ -72,7 +72,7 @@ namespace RealSense
 
                 if (distanceUp < .0225f && distanceDown < .0225f)
                 {
-                    g.DrawString("Lips are thin", font, stringBrush, new PointF(20, 20));
+                    g.DrawString("Lips are thin", font, stringBrush, new PointF(20, 110));
                 }
             }
         }

@@ -32,7 +32,7 @@ namespace RealSense
                     g.DrawString((model.normalFaceBetween(0,7) - model.between(0,7)) + " " + (model.normalFaceBetween(0, 29) - model.between(0, 29)), font, stringBrush, new PointF(20, 60));
                     if (model.normalFaceBetween(0,7) - model.between(0,7) >= 0.0007 && model.normalFaceBetween(0, 29) - model.between(0, 29) >= 0.001)
                     {
-                        g.DrawString("scrowled Brows", font, stringBrush, new PointF(20, 20));
+                        g.DrawString("scrowled Brows", font, stringBrush, new PointF(20, 50));
                     }
                 }
             }catch (NullReferenceException e)

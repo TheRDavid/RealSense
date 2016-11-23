@@ -43,7 +43,7 @@ namespace RealSense
 
             if (distance < .003f)
             {
-                g.DrawString("Lips pressed", font, stringBrush, new PointF(20, 20));
+                g.DrawString("Lips pressed", font, stringBrush, new PointF(20, 130));
             }
         }
     }

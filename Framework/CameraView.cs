@@ -110,9 +110,6 @@ namespace RealSense
                     model.Lp = model.FaceAktuell.QueryLandmarks();
                 }
 
-                model.HandData = model.Hand.CreateOutput();
-                model.HandData.Update();
-
                 colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                 Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
 
@@ -124,7 +121,6 @@ namespace RealSense
                 pb.Image = colorBitmap;
                 model.SenseManager.ReleaseFrame();
                 model.FaceData.Dispose(); // DONE!
-                model.HandData.Dispose();
                 model.Edata = null;
                 sample.color.ReleaseAccess(colorData);
             }

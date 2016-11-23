@@ -16,8 +16,6 @@ namespace RealSense
         private PXCMFaceConfiguration faceConfig;
         public PXCMFaceData.Face faceAktuell;
         private PXCMFaceData.ExpressionsData edata;
-        private PXCMHandModule hand;
-        private PXCMHandData handData;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] normalFace;
 
@@ -50,18 +48,7 @@ namespace RealSense
             expc.EnableAllExpressions();
             faceConfig.ApplyChanges();
             faceConfig.Update();
-
-            //faceData = face.CreateOutput();
-            //faceData.Update();
-
-            hand = senseManager.QueryHand();
-            PXCMHandConfiguration config = hand.CreateActiveConfiguration();
-            config.SetTrackingMode(PXCMHandData.TrackingModeType.TRACKING_MODE_FULL_HAND);
-            config.ApplyChanges();
-            config.Update();
-            //handData = hand.CreateOutput();
-            //handData.Update();
-
+            
             modules = new List<RSModule>();
         }
 
@@ -179,18 +166,7 @@ namespace RealSense
             get { return edata; }
             set { edata = value; }
         }
-
-        public PXCMHandModule Hand
-        {
-            get { return hand; }
-        }
-
-        public PXCMHandData HandData
-        {
-            get { return handData; }
-            set { handData = value; }
-        }
-
+     
         public CameraView View
         {
             get { return view; }
