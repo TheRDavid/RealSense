@@ -21,7 +21,8 @@ namespace RealSense
             model.AddModule(new FaceTrackerModule(null));
             //model.AddModule(new AU_LipsPressedModule_David());
             //model.AddModule(new AU_EyelidTightModul_Anton());
-            model.AddModule(new AU_LipsThicknessModul_Tobi());
+            //model.AddModule(new AU_LipsThicknessModul_Tobi());
+            model.AddModule(new AU_ScowledBrows_Tanja());
 
             Application.Run(new CameraView(model));
         }

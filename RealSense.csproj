@@ -76,6 +76,7 @@
     <Compile Include="Framework\Model.cs" />
     <Compile Include="Modules\AU_EyelidTightModul_Anton.cs" />
     <Compile Include="Modules\AU_LipsPressedModule_David.cs" />
+    <Compile Include="Modules\AU_ScowledBrows_Tanja.cs" />
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />

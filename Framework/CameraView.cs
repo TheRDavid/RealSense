@@ -102,9 +102,13 @@ namespace RealSense
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
 
                 model.FaceData = model.Face.CreateOutput();
-                model.FaceData.Update(); // props to Tanja
+                model.FaceData.Update(); 
                 model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
-                if (model.FaceAktuell != null) { model.Edata = model.FaceAktuell.QueryExpressions(); }
+                if (model.FaceAktuell != null)
+                {
+                    model.Edata = model.FaceAktuell.QueryExpressions();
+                    model.Lp = model.FaceAktuell.QueryLandmarks();
+                }
 
                 model.HandData = model.Hand.CreateOutput();
                 model.HandData.Update();
