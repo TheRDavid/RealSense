@@ -10,7 +10,7 @@ namespace RealSense
     {
         private Font font = new Font("Arial", 18);
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
-        private int time = 20;
+        private int time = 40;
         private bool init = true;
 
         public override void Work(Graphics g)

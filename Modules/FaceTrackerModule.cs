@@ -11,7 +11,6 @@ namespace RealSense
 {
     class FaceTrackerModule : RSModule
     {
-
         // Pen which defines the appereance of the rect
         private Pen pen = new Pen(Color.Blue);
         private Font font = new Font("Arial", 9);

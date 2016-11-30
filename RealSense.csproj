@@ -81,7 +81,7 @@
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />
-    <Compile Include="Modules\HandTrackerModule.cs" />
+    <Compile Include="Modules\Gauge_Module_David.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\RSModule.cs" />
