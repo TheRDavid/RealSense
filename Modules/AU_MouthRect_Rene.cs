@@ -13,17 +13,24 @@ namespace RealSense
      */
     class AU_MouthRect_Rene : RSModule
     {
-        private float[] lmArray = new float[12];
+        private float[,] lmArray = new float[4, 2];
 
         private Font font = new Font("Arial", 18);
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
 
+        //differences
+        float urDr, ulDl, ulUr, dlDr;
 
 
         public override void Work(Graphics g)
         {
             initLandmarks();
-            findRect(g);
+            findRect();
+
+            if (findRect())//mathematisches Wirrwar
+            {
+                g.DrawString("Rectangle", font, stringBrush, new PointF(20, 80));
+            }
         }
 
         /**
@@ -36,29 +43,60 @@ namespace RealSense
             PXCMFaceData.LandmarkPoint point;
 
             if (lp != null)
-                for (int i = 35; i < 11; i++)
-                {
-                    int idx = 0;
-                    lp.QueryPoint(i, out point);
-                    lmArray[idx] = point.world.y;
-                    idx++;
+            {
+                //ul
+                lp.QueryPoint(33, out point);
+                lmArray[0, 0] = point.world.x;
+                lp.QueryPoint(33, out point);
+                lmArray[0, 1] = point.world.y;
 
-                }
+                //ur
+                lp.QueryPoint(39, out point);
+                lmArray[1, 0] = point.world.y;
+                lp.QueryPoint(39, out point);
+                lmArray[1, 1] = point.world.x;
+
+                //dl
+                lp.QueryPoint(44, out point);
+                lmArray[2, 0] = point.world.y;
+                lp.QueryPoint(44, out point);
+                lmArray[2, 1] = point.world.x;
+
+                //dr
+                lp.QueryPoint(40, out point);
+                lmArray[3, 0] = point.world.y;
+                lp.QueryPoint(40, out point);
+                lmArray[3, 1] = point.world.x;
+
+
+            }
+
+            //x-differences
+            urDr = lmArray[1, 0] - lmArray[3, 0];
+            ulDl = lmArray[0, 0] - lmArray[2, 0];
+
+            //y-differences
+            ulUr = lmArray[0, 1] - lmArray[1, 1];
+            dlDr = lmArray[2, 1] - lmArray[3, 1];
+
 
         }
 
         /*
          * Checks whether the mouth is an rectangle
          */
-        private void findRect(Graphics g)
+        private bool findRect()
         {
 
-            //Das macht geometrisch alles keinen sinn :|
+            //rect request without values yet
+            if (urDr <= 0 || urDr >= -0)
+                if (ulDl <= 0 || ulDl >= -0)
+                    if (ulUr <= 0 || ulUr >= -0)
+                        if (dlDr <= 0 || dlDr >= -0)
+                            return true;
 
-            if (true)//mathematisches Wirrwar
-            {
-                g.DrawString("Rectangle", font, stringBrush, new PointF(20, 80));
-            }
+
+            return false;
 
         }
 
