@@ -65,6 +65,7 @@ namespace RealSense
                         finalFace[i].world.z /= numFaces-1;
                     }
                     printFace("Final Face: ", finalFace);
+                    model.NormalFace = finalFace;
                     index = 0;
                     finalFace = new PXCMFaceData.LandmarkPoint[80];
                     for (int i = 0; i < finalFace.Length; i++)
