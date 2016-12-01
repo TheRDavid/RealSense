@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Drawing;
 
 namespace RealSense
 {
-    class AU_ScowledBrows_Tanja : RSModule
+    /* Shows how much you are smiling */
+    class AU_LipsPressedModuleDavid: RSModule
     {
         private Font font = new Font("Arial", 18);
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
-        private float browLeft;
-        private float browRight;
+        private float[] lipUpY = new float[3], lipLowY = new float[3];
         public override void Work(Graphics g)
         {
             if (model.FaceAktuell == null) return;

@@ -53,13 +53,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libpxcclr.cs, Version=10.0.26.396, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Program Files (x86)\Intel\RSSDK\bin\x64\libpxcclr.cs.dll</HintPath>
+    <Reference Include="libpxcclr.cs">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Intel\RSSDK\bin\x64\libpxcclr.cs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,16 +69,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\Gauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\AU_LipsThicknessModule_Tobi.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Model.cs" />
     <Compile Include="Modules\AU_EyelidTightModul_Anton.cs" />
     <Compile Include="Modules\AU_LipsPressedModule_David.cs" />
+    <Compile Include="Modules\AU_MouthRect_Rene.cs" />
+    <Compile Include="Modules\AU_ScowledBrows_Tanja.cs" />
     <Compile Include="Modules\FacerTrackerModule_Tobi.cs" />
     <Compile Include="Modules\FaceTrackModule_Anton.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />
-    <Compile Include="Modules\HandTrackerModule.cs" />
+    <Compile Include="Modules\Gauge_Module_David.cs" />
+    <Compile Include="Modules\LandmarkGroupModuleDavid.cs" />
+    <Compile Include="Modules\LandmarkTypeModuleDavid.cs" />
+    <Compile Include="Modules\SurveillanceModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\RSModule.cs" />
@@ -103,6 +112,11 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Framework\CameraView.resx">
+      <DependentUpon>CameraView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

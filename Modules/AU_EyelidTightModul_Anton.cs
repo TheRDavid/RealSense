@@ -84,7 +84,7 @@ namespace RealSense
 
             if (distanceRight < .01f && distanceLeft < .01f)
             {
-                //g.DrawString("Lids are tight togehter", font, stringBrush, new PointF(20, 20));
+                g.DrawString("Lids are tight togehter", font, stringBrush, new PointF(20, 20));
             }
 
 

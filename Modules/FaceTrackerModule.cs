@@ -14,7 +14,7 @@ namespace RealSense
 
         // Pen which defines the appereance of the rect
         private Pen pen = new Pen(Color.Blue);
-        private Font font = new Font("Arial", 6);
+        private Font font = new Font("Arial", 9);
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
         private int[] idx = null;
 
@@ -28,10 +28,10 @@ namespace RealSense
             if (model.FaceAktuell != null)
             {
                 // get the landmark data
-                PXCMFaceData.LandmarksData ldata = model.FaceAktuell.QueryLandmarks();
+
+                if (model.Lp == null) return;
                 PXCMFaceData.LandmarkPoint[] points;
-                
-                ldata.QueryPoints(out points);
+                model.Lp.QueryPoints(out points);
 
                 if(idx == null)
 
@@ -45,7 +45,7 @@ namespace RealSense
                     g.DrawString("" + j, font, stringBrush, new PointF(p.X, p.Y));
 
 
-                    g.DrawEllipse(pen, points[j].image.x, points[j].image.y, 2, 2);
+                    g.DrawEllipse(pen, points[j].image.x, points[j].image.y, 4, 4);
                 }
 
                 else
@@ -58,7 +58,7 @@ namespace RealSense
                     g.DrawString("" + i, font, stringBrush, new PointF(p.X, p.Y));
 
 
-                    g.DrawEllipse(pen, points[i].image.x, points[i].image.y, 2, 2);
+                    g.DrawEllipse(pen, points[i].image.x, points[i].image.y, 4, 4);
                 }
 
             }
