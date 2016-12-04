@@ -108,6 +108,17 @@ namespace RealSense
                 {
                     model.Edata = model.FaceAktuell.QueryExpressions();
                     model.Lp = model.FaceAktuell.QueryLandmarks();
+                    if (model.NullFace == null)
+                    {
+                        if (model.Lp != null)
+                        {
+                            PXCMFaceData.LandmarkPoint[] aPoints;
+                            model.Lp.QueryPoints(out aPoints);
+                            model.NullFace = aPoints;
+                            //nullFace = true;
+                            //Console.WriteLine("aPoints: "+aPoints[0].world.x+" nullFace: "+model.NullFace[0].world.x);
+                        }
+                    }
                 }
 
                 colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
@@ -115,7 +126,15 @@ namespace RealSense
 
                 model.Modules.ForEach(delegate (RSModule mod)
                 {
-                    mod.Work(bitmapGraphics);
+                    try
+                    {
+                        mod.Work(bitmapGraphics);
+                    }
+                    catch (Exception ex) when (ex is NullReferenceException || ex is AccessViolationException)
+                    {
+                        bitmapGraphics.DrawString("No Face", new Font("Arial", 18), new SolidBrush(Color.Red), new PointF(20, 20));
+                        return;
+                    }
                 });
                 // update PictureBox
                 pb.Image = colorBitmap;

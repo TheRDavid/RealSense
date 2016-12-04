@@ -8,38 +8,20 @@ namespace RealSense
 {
     class AU_ScowledBrows_Tanja : RSModule
     {
-        private Font font = new Font("Arial", 18);
-        private SolidBrush stringBrush = new SolidBrush(Color.Red);
-        private int time = 40;
-        private bool init = true;
+        private Font arialFont = new Font("Arial", 18);
+        private Brush redBrush = new SolidBrush(Color.Red);
 
         public override void Work(Graphics g)
         {
-            try
+            //g.DrawString(model.difference(0,29).ToString(), font, stringBrush, new PointF(20, 60));
+
+            double augenbrauenAbstand = model.Difference(0, 5);
+            double augenBraueNaseAbstand = model.Difference(0, 29);
+
+            if (augenbrauenAbstand < 99 && augenBraueNaseAbstand < 90)
             {
-                if (time > 0)
-                {
-                    time--;
-                    g.DrawString(time.ToString(), font, stringBrush, new PointF(20, 20));
-                }
-                else if (init)
-                {
-                    //model.calibrateFace();
-                    //init = false;
-                }
-                else
-                {
-                    g.DrawString((model.normalFaceBetween(0,7) - model.between(0,7)) + " " + (model.normalFaceBetween(0, 29) - model.between(0, 29)), font, stringBrush, new PointF(20, 60));
-                    if (model.normalFaceBetween(0,7) - model.between(0,7) >= 0.0007 && model.normalFaceBetween(0, 29) - model.between(0, 29) >= 0.001)
-                    {
-                        g.DrawString("scrowled Brows", font, stringBrush, new PointF(20, 50));
-                    }
-                }
-            }catch (NullReferenceException e)
-            {
-                g.DrawString("No Face", font, stringBrush, new PointF(20, 20));
-                return;
-            }
+                g.DrawString("scrowled Brows", arialFont, redBrush, new PointF(20, 30));
+            }                
         }
     }
 }
