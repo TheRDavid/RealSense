@@ -23,11 +23,17 @@ namespace RealSense
         private float[] lidUpLeftY = new float[3];
         private float[] lidLowLeftY = new float[3];
 
+        private float[] distance = new float[2];
+        
+        private float result;
+       
+
         public override void Work(Graphics g)
         {
             if (model.FaceAktuell == null) return;
             PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
             PXCMFaceData.LandmarkPoint point;
+
 
             if(lp != null)
             { 
@@ -78,8 +84,26 @@ namespace RealSense
 
             if (distanceRight < .01f && distanceLeft < .01f)
             {
-                g.DrawString("Lids are tight togehter", font, stringBrush, new PointF(20, 150));
+                g.DrawString("Lids are tight togehter", font, stringBrush, new PointF(20, 20));
             }
+
+
+                lp.QueryPoint(0, out point);
+                distance[0] = point.world.x;
+                lp.QueryPoint(5, out point);
+                distance[1] = point.world.x;
+
+
+                result = distance[1] - distance[0];
+                result *= 1000;
+                int test = (Int32)result;
+               
+
+
+                g.DrawString("distance "+ test, font, stringBrush, new PointF(20, 20));
+
+
+
             }
         }
     }

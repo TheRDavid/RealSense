@@ -25,6 +25,7 @@ namespace RealSense
         // running number to save all the images to the hard drive (careful with that ;) )
         private Thread updaterThread;
         private Model model;
+        public int save = 0;
 
         /**
          * Initialise View and start updater Thread
@@ -57,6 +58,7 @@ namespace RealSense
             FormClosed += new FormClosedEventHandler(Quit);
             this.Show();
             // Start Updater Thread
+            Console.WriteLine("Starting Thread"); 
             updaterThread = new Thread(this.update);
             updaterThread.Start();
         }
@@ -78,7 +80,7 @@ namespace RealSense
         {
             if (this.InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate
+                this.Invoke((MethodInvoker) delegate
                 {
                     AddComponent(c);
                 });
@@ -88,17 +90,16 @@ namespace RealSense
                 this.Controls.Add(c);
             }
         }
-
         /**
          * Update the View
          */
         private void update()
         {
+            Console.Write(model.SenseManager.AcquireFrame(true));
             while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
                 // <magic>
                 PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
-
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
 
                 model.FaceData = model.Face.CreateOutput();
@@ -123,9 +124,15 @@ namespace RealSense
 
                 colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                 Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
-
                 model.Modules.ForEach(delegate (RSModule mod)
                 {
+                    if (mod is SurveillanceModule)
+                    {
+                        SurveillanceModule sm = (SurveillanceModule)mod;
+                        if (sm.first == null) sm.first = colorBitmap;
+                        sm.second = colorBitmap;
+                    }
+                    mod.Work(bitmapGraphics);
                     try
                     {
                         mod.Work(bitmapGraphics);
