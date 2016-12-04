@@ -148,6 +148,7 @@ namespace RealSense
                 model.FaceData.Dispose(); // DONE!
                 model.Edata = null;
                 sample.color.ReleaseAccess(colorData);
+                ResetEmotions();
             }
         }
 
@@ -167,6 +168,11 @@ namespace RealSense
         private void CameraView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ResetEmotions()
+        {
+            model.Anger = new int[3];
         }
     }
 }

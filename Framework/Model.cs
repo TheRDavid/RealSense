@@ -173,7 +173,7 @@ namespace RealSense
         public int[] Anger
         {
             get { return anger; }
-            //set { anger = value; }
+            set { anger = value; }
         }
 
         public CameraView View
