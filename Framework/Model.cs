@@ -18,6 +18,7 @@ namespace RealSense
         private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
+        private int[] anger = new int[2];
 
         private List<RSModule> modules;
         private int width;
@@ -48,7 +49,7 @@ namespace RealSense
             expc.EnableAllExpressions();
             faceConfig.ApplyChanges();
             faceConfig.Update();
-            
+
             modules = new List<RSModule>();
         }
 
@@ -168,7 +169,13 @@ namespace RealSense
             get { return edata; }
             set { edata = value; }
         }
-     
+
+        public int[] Anger
+        {
+            get { return anger; }
+            //set { anger = value; }
+        }
+
         public CameraView View
         {
             get { return view; }

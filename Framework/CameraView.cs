@@ -132,7 +132,6 @@ namespace RealSense
                         if (sm.first == null) sm.first = colorBitmap;
                         sm.second = colorBitmap;
                     }
-                    mod.Work(bitmapGraphics);
                     try
                     {
                         mod.Work(bitmapGraphics);
