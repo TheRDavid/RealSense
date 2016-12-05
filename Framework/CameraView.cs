@@ -176,7 +176,7 @@ namespace RealSense
 
         private void ResetEmotions()
         {
-            model.Anger = new int[3];
+            model.Anger = 0;
         }
     }
 }
