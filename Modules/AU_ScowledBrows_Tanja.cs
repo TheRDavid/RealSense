@@ -21,6 +21,7 @@ namespace RealSense
             if (augenbrauenAbstand < 99 && augenBraueNaseAbstand < 90)
             {
                 g.DrawString("scrowled Brows", arialFont, redBrush, new PointF(20, 30));
+                model.Anger += 50;
             }                
         }
     }
