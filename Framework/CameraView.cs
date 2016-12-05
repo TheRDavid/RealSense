@@ -95,9 +95,12 @@ namespace RealSense
          */
         private void update()
         {
-            Console.Write(model.SenseManager.AcquireFrame(true));
+            Console.WriteLine("Update");
+            //Console.Write(model.SenseManager.AcquireFrame(true));
+            while (true)
             while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
+                Console.WriteLine("While schleife");
                 // <magic>
                 PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
@@ -150,6 +153,7 @@ namespace RealSense
                 sample.color.ReleaseAccess(colorData);
                 ResetEmotions();
             }
+            Console.WriteLine("While schleife ende");
         }
 
         private void InitializeComponent()

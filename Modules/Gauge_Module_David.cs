@@ -66,6 +66,7 @@ namespace RealSense
                     }
                     printFace("Final Face: ", finalFace);
                     model.NullFace = finalFace;
+                 
                     index = 0;
                     finalFace = new PXCMFaceData.LandmarkPoint[80];
                     for (int i = 0; i < finalFace.Length; i++)
