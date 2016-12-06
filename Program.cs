@@ -23,8 +23,9 @@ namespace RealSense
             //model.AddModule(new ReadEmotionsTest_Tanja());
             /* 
              model.AddModule(new AU_LipsPressedModule_David());
-             
+             */
              model.AddModule(new AU_LipsThicknessModul_Tobi());
+            /*
              model.AddModule(new AU_MouthRect_Rene()); //Warum muss ich Modules.modulname schreiben?
              */
             model.AddModule(new Gauge_Module_David());
