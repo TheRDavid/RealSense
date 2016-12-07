@@ -118,8 +118,8 @@ namespace RealSense
                     if (mod is SurveillanceModule)
                     {
                         SurveillanceModule sm = (SurveillanceModule)mod;
-                        if (sm.first == null) sm.first = colorBitmap;
-                        sm.second = colorBitmap;
+                        if (sm.first == null) sm.first = (Bitmap)colorBitmap.Clone();
+                        sm.second = (Bitmap)colorBitmap.Clone();
                     }
                     mod.Work(bitmapGraphics);
                 });

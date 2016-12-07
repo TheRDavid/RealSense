@@ -24,9 +24,9 @@ namespace RealSense
              model.AddModule(new AU_MouthRect_Rene()); //Warum muss ich Modules.modulname schreiben?
              */
             // model.AddModule(new Gauge_Module_David());
-            SurveillanceModule sm = new SurveillanceModule();
-            sm.i();
-            model.AddModule(sm);
+            //SurveillanceModule sm = new SurveillanceModule();
+           // sm.i();
+           // model.AddModule(sm);
             Application.Run(new CameraView(model));
         }
 
