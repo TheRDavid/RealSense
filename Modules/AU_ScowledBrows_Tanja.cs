@@ -20,7 +20,7 @@ namespace RealSense
 
             if (augenbrauenAbstand < 99 && augenBraueNaseAbstand < 90)
             {
-                model.Anger += 50;
+                model.Emotions[Model.ANGER] += 50;
             }                
         }
     }

@@ -40,7 +40,7 @@ namespace RealSense
 
             if (leftEyeLid < 99 && rightEyeLid < 99)
             {
-                g.DrawString("lids are tight togeter", font, stringBrush, new PointF(20, 24));
+                model.Emotions[Model.ANGER] += 20;
             }
 
 

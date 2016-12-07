@@ -6,14 +6,18 @@ namespace RealSense
 {
     class ReadEmotionsTest_Tanja : RSModule
     {
-        private int anger;
+        private Font font = new Font("Arial", 18);
+        private SolidBrush stringBrush = new SolidBrush(Color.Red);
 
         public override void Work(Graphics g)
         {
-            if (anger >= 50)
+            model.Emotions[Model.ANGER] += 50;
+            for (int i = 0; i < model.eNames.Length; i++)
             {
-                Console.WriteLine("anger: " + anger);
+                int e = model.Emotions[i];
+                g.DrawString(model.eNames[i] + ": " + (e <= 100 ? e : 100), font, stringBrush, new PointF(20, 50 + i * 50));
             }
+            
         }
     }
 }

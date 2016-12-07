@@ -21,11 +21,6 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            if (model.FaceAktuell == null) return;
-
-
-
-
             /* PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
              PXCMFaceData.LandmarkPoint point;
 
@@ -94,15 +89,10 @@ namespace RealSense
             distance /=6;
            
             if (distance< 91)
-                 {
-                     g.DrawString("Lips are thin", font, stringBrush, new PointF(20, 110));
-                 }
-
-
-
-
-
-
+            {
+                //g.DrawString("Lips are thin", font, stringBrush, new PointF(20, 110));
+                model.Emotions[Model.ANGER] += 20;
+            }
         }
     }
 }

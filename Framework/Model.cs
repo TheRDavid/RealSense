@@ -18,7 +18,9 @@ namespace RealSense
         private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
-        private int anger = 0;
+        public const int ANGER = 0, FEAR = 1, SADNESS = 2;
+        private int[] emotions = new int[7];
+        public String[] eNames = {"Anger", "Fear", "Sadness"};
 
         private List<RSModule> modules;
         private int width;
@@ -170,16 +172,16 @@ namespace RealSense
             set { edata = value; }
         }
 
-        public int Anger
-        {
-            get { return anger; }
-            set { anger = value; }
-        }
-
         public CameraView View
         {
             get { return view; }
             set { view = value; }
+        }
+
+        public int[] Emotions
+        {
+            get { return emotions; }
+            set { emotions = value; }
         }
     }
 }
