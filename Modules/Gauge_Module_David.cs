@@ -9,7 +9,7 @@ namespace RealSense
 {
     public class Gauge_Module_David : RSModule
     {
-        private const int numFaces = 30;
+        private const int numFaces = 10;
         private bool calibrate = false;
         private bool guInit = false;
         private PXCMFaceData.LandmarkPoint[][] cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
@@ -39,7 +39,7 @@ namespace RealSense
                     // get the landmark data
 
                     if (model.Lp == null) return;
-                    Console.WriteLine("Calibrate #" + index);
+                    //Console.WriteLine("Calibrate #" + index);
                     model.Lp.QueryPoints(out cFaces[index++]);
                 }
                 if (!calibrate)
@@ -55,7 +55,7 @@ namespace RealSense
                             finalFace[landMarkNr].world.x += cFaces[faceNr][landMarkNr].world.x;
                             finalFace[landMarkNr].world.y += cFaces[faceNr][landMarkNr].world.y;
                             finalFace[landMarkNr].world.z += cFaces[faceNr][landMarkNr].world.z;
-                            //Console.WriteLine("F" + faceNr + "L" + landMarkNr + "-" + cFaces[faceNr][landMarkNr].world.x + "," + cFaces[faceNr][landMarkNr].world.y+"," + cFaces[faceNr][landMarkNr].world.z);
+                            Console.WriteLine("F" + faceNr + "L" + landMarkNr + "-" + cFaces[faceNr][landMarkNr].world.x + "," + cFaces[faceNr][landMarkNr].world.y+"," + cFaces[faceNr][landMarkNr].world.z);
                         }
                     }
                     for(int i = 0; i < finalFace.Length; i++)
@@ -65,7 +65,8 @@ namespace RealSense
                         finalFace[i].world.z /= numFaces-1;
                     }
                     printFace("Final Face: ", finalFace);
-                    model.NormalFace = finalFace;
+                    model.NullFace = finalFace;
+                 
                     index = 0;
                     finalFace = new PXCMFaceData.LandmarkPoint[80];
                     for (int i = 0; i < finalFace.Length; i++)

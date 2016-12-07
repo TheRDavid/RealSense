@@ -14,10 +14,13 @@ namespace RealSense
         private PXCMFaceModule face;
         private PXCMFaceData faceData;
         private PXCMFaceConfiguration faceConfig;
-        public PXCMFaceData.Face faceAktuell;
+        public  PXCMFaceData.Face faceAktuell;
         private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
-        private PXCMFaceData.LandmarkPoint[] normalFace;
+        private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
+        public const int ANGER = 0, FEAR = 1, SADNESS = 2;
+        private int[] emotions = new int[7];
+        public String[] eNames = {"Anger", "Fear", "Sadness"};
 
         private List<RSModule> modules;
         private int width;
@@ -48,7 +51,7 @@ namespace RealSense
             expc.EnableAllExpressions();
             faceConfig.ApplyChanges();
             faceConfig.Update();
-            
+
             modules = new List<RSModule>();
         }
 
@@ -57,59 +60,61 @@ namespace RealSense
             modules.Add(m);
         }
 
-        /**
-        public void calibrateFace()
+        public double Difference(int i01, int i02)
         {
-            //normalFace Werte belegen
-            if (lp != null)
-            {
-                lp.QueryPoints(out normalFace);
-            }
-            Console.WriteLine("Error");
-            throw new NullReferenceException();
-        }*/
+            return 100/NullFaceBetween(i01, i02) * Between(i01, i02);
+        }
 
-        public double normalFaceBetween(int i01, int i02)
+        public double NullFaceBetween(int i01, int i02)
         {
-            if (normalFace[0] != null)
+            if (nullFace[i01].world.x != 0)
             {
-                double a = Math.Abs(normalFace[i01].world.y - normalFace[i01].world.y);
-                double b = Math.Abs(normalFace[i02].world.x - normalFace[i02].world.x);
-                return Math.Sqrt(a * a + b * b);
+                double a = Math.Abs(nullFace[i02].world.y - nullFace[i01].world.y);
+                double b = Math.Abs(nullFace[i02].world.x - nullFace[i01].world.x);
+                double c = Math.Abs(nullFace[i02].world.z - nullFace[i01].world.z);
+                return Math.Sqrt(a * a + b * b + c * c);
             }
             throw new NullReferenceException();
         }
 
-        public double between(int i01, int i02)
+        public double Between(int i01, int i02)
         {
             PXCMFaceData.LandmarkPoint point01 = null;
             PXCMFaceData.LandmarkPoint point02 = null;
+
             if (lp != null)
             {
-                lp.QueryPoint(i01, out point01);
+                lp.QueryPoint(i01, out point01); //AccessViolationException ...
                 lp.QueryPoint(i02, out point02);
 
-                double a = Math.Abs(point01.world.y - point02.world.y);
-                double b = Math.Abs(point01.world.x - point02.world.x);
-                return Math.Sqrt(a * a + b * b);
+                double a = Math.Abs(point02.world.y - point01.world.y);
+                double b = Math.Abs(point02.world.x - point01.world.x);
+                double c = Math.Abs(point02.world.z - point01.world.z);
+                return Math.Sqrt(a * a + b * b + c * c);
             }
             throw new NullReferenceException();
-        }
 
-        /**
-       public void QueryPoint(int i, out double x, out double y)  
-       {
-           PXCMFaceData.LandmarkPoint point = null;
-           if (lp != null)
-           {
-               //Console.WriteLine(i);
-               lp.QueryPoint(i, out point);
-               x = point.world.x;
-               y = point.world.y;
-               return;
-           }
-           throw new NullReferenceException();           
-       }*/
+            /**
+             * Exception error = new Exception();
+            try
+            {
+                if (lp != null)
+                {
+                    lp.QueryPoint(i01, out point01);
+                    lp.QueryPoint(i02, out point02);
+
+                    double a = Math.Abs(point02.world.y - point01.world.y);
+                    double b = Math.Abs(point02.world.x - point01.world.x);
+                    double c = Math.Abs(point02.world.z - point01.world.z);
+                    return Math.Sqrt(a * a + b * b + c * c);
+                }
+            }catch (Exception e)
+            {
+                error = e;
+            }
+            throw error;
+    */
+        }
 
         public List<RSModule> Modules
         {
@@ -143,10 +148,10 @@ namespace RealSense
             set { lp = value; }
         }
 
-        public PXCMFaceData.LandmarkPoint[] NormalFace
+        public PXCMFaceData.LandmarkPoint[] NullFace
         {
-            get { return normalFace; }
-            set { normalFace = value; }
+            get { return nullFace; }
+            set { nullFace = value; }
         }
 
         public PXCMFaceData FaceData
@@ -166,11 +171,18 @@ namespace RealSense
             get { return edata; }
             set { edata = value; }
         }
-     
+
         public CameraView View
         {
             get { return view; }
             set { view = value; }
         }
+
+        public int[] Emotions
+        {
+            get { return emotions; }
+            set { emotions = value; }
+        }
     }
 }
+ 

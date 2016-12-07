@@ -87,6 +87,7 @@
     <Compile Include="Modules\Gauge_Module_David.cs" />
     <Compile Include="Modules\LandmarkGroupModuleDavid.cs" />
     <Compile Include="Modules\LandmarkTypeModuleDavid.cs" />
+    <Compile Include="Modules\ReadEmotionsTest_Tanja.cs" />
     <Compile Include="Modules\SurveillanceModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

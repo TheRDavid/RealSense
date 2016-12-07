@@ -95,9 +95,12 @@ namespace RealSense
          */
         private void update()
         {
-            Console.Write(model.SenseManager.AcquireFrame(true));
+            Console.WriteLine("Update");
+            //Console.Write(model.SenseManager.AcquireFrame(true));
+            while (true)
             while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
             {
+                Console.WriteLine("While schleife");
                 // <magic>
                 PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
                 sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
@@ -109,6 +112,17 @@ namespace RealSense
                 {
                     model.Edata = model.FaceAktuell.QueryExpressions();
                     model.Lp = model.FaceAktuell.QueryLandmarks();
+                    if (model.NullFace == null)
+                    {
+                        if (model.Lp != null)
+                        {
+                            PXCMFaceData.LandmarkPoint[] aPoints;
+                            model.Lp.QueryPoints(out aPoints);
+                            model.NullFace = aPoints;
+                            //nullFace = true;
+                            //Console.WriteLine("aPoints: "+aPoints[0].world.x+" nullFace: "+model.NullFace[0].world.x);
+                        }
+                    }
                 }
 
                 colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
@@ -121,7 +135,15 @@ namespace RealSense
                         if (sm.first == null) sm.first = (Bitmap)colorBitmap.Clone();
                         sm.second = (Bitmap)colorBitmap.Clone();
                     }
-                    mod.Work(bitmapGraphics);
+                    try
+                    {
+                        mod.Work(bitmapGraphics);
+                    }
+                    catch (Exception ex) when (ex is NullReferenceException || ex is AccessViolationException)
+                    {
+                        bitmapGraphics.DrawString("No Face", new Font("Arial", 18), new SolidBrush(Color.Red), new PointF(20, 20));
+                        return;
+                    }
                 });
                 // update PictureBox
                 pb.Image = colorBitmap;
@@ -129,7 +151,9 @@ namespace RealSense
                 model.FaceData.Dispose(); // DONE!
                 model.Edata = null;
                 sample.color.ReleaseAccess(colorData);
+                ResetEmotions();
             }
+            Console.WriteLine("While schleife ende");
         }
 
         private void InitializeComponent()
@@ -148,6 +172,11 @@ namespace RealSense
         private void CameraView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ResetEmotions()
+        {
+            model.Emotions = new int[7];
         }
     }
 }
