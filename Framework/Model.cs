@@ -90,7 +90,7 @@ namespace RealSense
          */ 
         public double NullFaceBetween(int i01, int i02)
         {
-            if (nullFace[i01].world.x != 0) // -------->wofür die abfrage ?  wäre es nicht sinnvoller auf null zu prüfen ? 
+            if (nullFace[i01].world.x != 0) // -------->wofür die abfrage ?  wäre es nicht sinnvoller auf null zu prüfen ?  Tanja said the nullface is never null, so that was the reason why she used 0 instead of null
             {
                 double a = Math.Abs(nullFace[i02].world.y - nullFace[i01].world.y);
                 double b = Math.Abs(nullFace[i02].world.x - nullFace[i01].world.x);
