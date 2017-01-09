@@ -7,6 +7,13 @@ using System.Text;
 
 namespace RealSense
 {
+
+    /**
+     * This class was buld just to surveillance the cleaning person in our Office. Because they swiped of our notes at the whiteboard
+     * GOTTCHA! 
+     * 
+     * @author David Rosenbusch 
+     */ 
     class SurveillanceModule : RSModule
     {
         bool ignore = true;

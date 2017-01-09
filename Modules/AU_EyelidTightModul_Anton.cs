@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-/**
- * This class is the Autounfall eyelid class.
- */
+
 
 namespace RealSense
 {
+    /**
+     * This class is the (AU)Autounfall eyelid class.
+     * Which checks the distance between the upper and lower eyelid.
+     *  
+     * 
+     * @author Anton Blumenstein
+     */
+
     class AU_EyelidTightModul_Anton : RSModule
     {
         //hey david, i actually write comments. because i'm a genius! 
-
-
         private Font font = new Font("Arial", 18);
         private SolidBrush stringBrush = new SolidBrush(Color.ForestGreen);
 
@@ -28,7 +32,11 @@ namespace RealSense
         
         private float result;
        
-
+        /** 
+         * @Override 
+         * calculates the position of the eyelids if they are pressed closer together.
+         * So far it does not work properly, still work in proces. It only calculates the tightness between one lp for each eye
+         */ 
         public override void Work(Graphics g)
         {
 
@@ -43,6 +51,7 @@ namespace RealSense
                 model.Emotions[Model.ANGER] += 20;
             }
 
+            // --------------------------------------it`s the old code, still there because so far i just check one point--------------------------------------------------
 
             /* if (model.FaceAktuell == null) return;
              PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
@@ -118,7 +127,7 @@ namespace RealSense
 
 
 
-             }*/
+             }---------------------------------------------------------------------------------------------------*/
         }
     }
 }

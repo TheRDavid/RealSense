@@ -8,6 +8,11 @@ using System.Threading;
 
 namespace RealSense
 {
+    /**
+     * this ist the main class. It start the model and adds all modules to our Model. 
+     * 
+     * @author Tanja Witke, David Rosenbusch
+     */ 
     class Program
     {
 

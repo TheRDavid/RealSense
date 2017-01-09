@@ -6,7 +6,11 @@ using System.Drawing;
 
 namespace RealSense
 {
-
+    /**
+     * Stores all of our data. It is based at the MVC Pattern
+     * 
+     * @author Tanja Witke
+     */ 
     public class Model
     {
         // Reference to globally used SenseManager
@@ -20,7 +24,7 @@ namespace RealSense
         private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
         public const int ANGER = 0, FEAR = 1, SADNESS = 2;
         private int[] emotions = new int[7];
-        public String[] eNames = {"Anger", "Fear", "Sadness"};
+        public String[] eNames = {"Anger", "Fear", "Sadness"};  // there are actually seven
 
         private List<RSModule> modules;
         private int width;
@@ -29,6 +33,12 @@ namespace RealSense
 
         private CameraView view;
 
+
+        /**
+         * Constructor of the model 
+         * It does all the important stuff to use our camera.  Its so FANCY ! 
+         * Like enabling all important tracker(Hand, Face), the stream and builds up the configuration.
+         */
         public Model()
         {
             width = 640;
@@ -55,28 +65,44 @@ namespace RealSense
             modules = new List<RSModule>();
         }
 
+        /**
+         * adds a new modul to the List
+         * @param RSModul m which is the new module
+         */
         public void AddModule(RSModule m)
         {
             modules.Add(m);
         }
 
+
+        /**
+         * calculates the percentage of the difference between two points
+         * @param i01,i02  which are the current points to calculate the difference
+         */
         public double Difference(int i01, int i02)
         {
-            return 100/NullFaceBetween(i01, i02) * Between(i01, i02);
+            return 100 / NullFaceBetween(i01, i02) * Between(i01, i02); // calculates the percent (rule of three)
         }
 
+        /**
+         * calculates the the differenc of the points from the ABSOLUTENullFace
+         * @param i01,i02  which are the current points to calculate the difference 
+         */ 
         public double NullFaceBetween(int i01, int i02)
         {
-            if (nullFace[i01].world.x != 0)
+            if (nullFace[i01].world.x != 0) // -------->wofür die abfrage ?  wäre es nicht sinnvoller auf null zu prüfen ? 
             {
                 double a = Math.Abs(nullFace[i02].world.y - nullFace[i01].world.y);
                 double b = Math.Abs(nullFace[i02].world.x - nullFace[i01].world.x);
                 double c = Math.Abs(nullFace[i02].world.z - nullFace[i01].world.z);
-                return Math.Sqrt(a * a + b * b + c * c);
+                return Math.Sqrt(a * a + b * b + c * c);  //vector analysis of the length (Schütt ahu!) 
             }
             throw new NullReferenceException();
         }
-
+        /**
+         * calculates the difference between the two points of the current frame
+         * @param i01,i02  which are the current points to calculate the difference 
+         */
         public double Between(int i01, int i02)
         {
             PXCMFaceData.LandmarkPoint point01 = null;
@@ -94,8 +120,8 @@ namespace RealSense
             }
             throw new NullReferenceException();
 
-            /**
-             * Exception error = new Exception();
+            /*
+              Exception error = new Exception();
             try
             {
                 if (lp != null)
@@ -113,71 +139,109 @@ namespace RealSense
                 error = e;
             }
             throw error;
-    */
+              */
         }
 
+        /**
+         *  getter of the modules
+         */ 
         public List<RSModule> Modules
         {
             get { return modules; }
         }
-
+        
         public PXCMSenseManager SenseManager
         {
             get { return senseManager; }
             set { senseManager = value; }
         }
-
+        /**
+         *  getter and setter of the width
+         */
         public int Width
         {
             get { return width; }
         }
 
+        /**
+         *  getter and setter of the height
+         */
         public int Height
         {
             get { return height; }
         }
 
+
+        /**
+         *  getter and setter of the face
+         */
         public PXCMFaceModule Face
         {
             get { return face; }
         }
 
+        /**
+         *  getter and setter of the landmarkpoints
+         */
         public PXCMFaceData.LandmarksData Lp
         {
             get { return lp; }
             set { lp = value; }
         }
 
+
+        /**
+         *  getter and setter of the ABSOLUTE NullFace
+         */
         public PXCMFaceData.LandmarkPoint[] NullFace
         {
             get { return nullFace; }
             set { nullFace = value; }
         }
 
+
+        /**
+         *  getter and setter of the faceData
+         */
         public PXCMFaceData FaceData
         {
             get { return faceData; }
             set { faceData = value; }
         }
 
+        /**
+         *  getter and setter of the FaceCurrent
+         *  
+         *  FaceAktuell should be changed to FaceCurrent, where is it initialised 
+         */
         public PXCMFaceData.Face FaceAktuell
         {
             get { return faceAktuell; }
             set { faceAktuell = value; }
         }
 
+        /**
+         *  getter and setter of the expressionData Edata
+         */
         public PXCMFaceData.ExpressionsData Edata
         {
             get { return edata; }
             set { edata = value; }
         }
 
+
+        /**
+         *  getter and setter of the View
+         */
         public CameraView View
         {
             get { return view; }
             set { view = value; }
         }
 
+        /**
+         *  getter and setter of the array from the emotions 
+         */
         public int[] Emotions
         {
             get { return emotions; }

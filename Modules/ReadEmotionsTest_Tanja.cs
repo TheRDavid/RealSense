@@ -4,6 +4,12 @@ using System;
 
 namespace RealSense
 {
+    /**
+     * This class was so far just for our Presentation. 
+     * it shows the basic concept of how we want to do it. 
+     * 
+     * @author Tanja Witke
+     */ 
     class ReadEmotionsTest_Tanja : RSModule
     {
         private Font font = new Font("Arial", 18);
