@@ -54,12 +54,12 @@ namespace RealSense
             // Set size
             pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
             // init UI
-            this.Bounds = new Rectangle(0, 0, model.Width, model.Height+150);
+            this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 150);
             this.Controls.Add(pb);
             FormClosed += new FormClosedEventHandler(Quit);
             this.Show();
             // Start Updater Thread
-            Console.WriteLine("Starting Thread"); 
+            Console.WriteLine("Starting Thread");
             updaterThread = new Thread(this.update);
             updaterThread.Start();
         }
@@ -81,10 +81,10 @@ namespace RealSense
         {
             if (this.InvokeRequired)
             {
-                this.Invoke((MethodInvoker) delegate
-                {
-                    AddComponent(c);
-                });
+                this.Invoke((MethodInvoker)delegate
+               {
+                   AddComponent(c);
+               });
             }
             else
             {
@@ -99,62 +99,62 @@ namespace RealSense
             Console.WriteLine("Update");
             //Console.Write(model.SenseManager.AcquireFrame(true));
             while (true)
-            while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
-            {
-                Console.WriteLine("While schleife");
-                // <magic>
-                PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
-                sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
-
-                model.FaceData = model.Face.CreateOutput();
-                model.FaceData.Update(); 
-                model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
-                if (model.FaceAktuell != null)
+                while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
                 {
-                    model.Edata = model.FaceAktuell.QueryExpressions();
-                    model.Lp = model.FaceAktuell.QueryLandmarks();
-                    if (model.NullFace == null)
+                    // welcher trottel .... Console.WriteLine("While schleife");
+                    // <magic>
+                    PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
+                    sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
+
+                    model.FaceData = model.Face.CreateOutput();
+                    model.FaceData.Update();
+                    model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
+                    if (model.FaceAktuell != null)
                     {
-                        if (model.Lp != null)
+                        model.Edata = model.FaceAktuell.QueryExpressions();
+                        model.Lp = model.FaceAktuell.QueryLandmarks();
+                        if (model.NullFace == null)
                         {
-                            PXCMFaceData.LandmarkPoint[] aPoints;
-                            model.Lp.QueryPoints(out aPoints);
-                            model.NullFace = aPoints;
-                            //nullFace = true;
-                            //Console.WriteLine("aPoints: "+aPoints[0].world.x+" nullFace: "+model.NullFace[0].world.x);
+                            if (model.Lp != null)
+                            {
+                                PXCMFaceData.LandmarkPoint[] aPoints;
+                                model.Lp.QueryPoints(out aPoints);
+                                model.NullFace = aPoints;
+                                //nullFace = true;
+                                //Console.WriteLine("aPoints: "+aPoints[0].world.x+" nullFace: "+model.NullFace[0].world.x);
+                            }
                         }
                     }
-                }
 
-                colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
-                Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
-                model.Modules.ForEach(delegate (RSModule mod)
-                {
-                    if (mod is SurveillanceModule)
+                    colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
+                    Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
+                    model.Modules.ForEach(delegate (RSModule mod)
                     {
-                        SurveillanceModule sm = (SurveillanceModule)mod;
-                        if (sm.first == null) sm.first = (Bitmap)colorBitmap.Clone();
-                        sm.second = (Bitmap)colorBitmap.Clone();
-                    }
-                    try
-                    {
-                        mod.Work(bitmapGraphics);
-                    }
-                    catch (Exception ex) when (ex is NullReferenceException || ex is AccessViolationException)
-                    {
-                        bitmapGraphics.DrawString("No Face", new Font("Arial", 18), new SolidBrush(Color.Red), new PointF(20, 20));
-                        return;
-                    }
-                });
-                // update PictureBox
-                pb.Image = colorBitmap;
-                model.SenseManager.ReleaseFrame();
-                model.FaceData.Dispose(); // DONE!
-                model.Edata = null;
-                sample.color.ReleaseAccess(colorData);
-                ResetEmotions();
-            }
-            Console.WriteLine("While schleife ende");
+                        if (mod is SurveillanceModule)
+                        {
+                            SurveillanceModule sm = (SurveillanceModule)mod;
+                            if (sm.first == null) sm.first = (Bitmap)colorBitmap.Clone();
+                            sm.second = (Bitmap)colorBitmap.Clone();
+                        }
+                        try
+                        {
+                            mod.Work(bitmapGraphics);
+                        }
+                        catch (Exception ex) when (ex is NullReferenceException || ex is AccessViolationException)
+                        {
+                            bitmapGraphics.DrawString("No Face", new Font("Arial", 18), new SolidBrush(Color.Red), new PointF(20, 20));
+                            return;
+                        }
+                    });
+                    // update PictureBox
+                    pb.Image = colorBitmap;
+                    model.SenseManager.ReleaseFrame();
+                    model.FaceData.Dispose(); // DONE!
+                    model.Edata = null;
+                    sample.color.ReleaseAccess(colorData);
+                    ResetEmotions();
+                }
+            //Console.WriteLine("While schleife ende");
         }
 
         private void InitializeComponent()

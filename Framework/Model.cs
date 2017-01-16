@@ -22,6 +22,7 @@ namespace RealSense
         private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
+        private PXCMFaceData.LandmarkPoint[] currentFace = null;
         public const int ANGER = 0, FEAR = 1, SADNESS = 2;
         private int[] emotions = new int[7];
         public String[] eNames = {"Anger", "Fear", "Sadness"};  // there are actually seven
@@ -33,11 +34,12 @@ namespace RealSense
 
         private CameraView view;
 
-
+         
         /**
          * Constructor of the model 
          * It does all the important stuff to use our camera.  Its so FANCY ! 
          * Like enabling all important tracker(Hand, Face), the stream and builds up the configuration.
+         * blib blub
          */
         public Model()
         {
@@ -186,9 +188,15 @@ namespace RealSense
         public PXCMFaceData.LandmarksData Lp
         {
             get { return lp; }
-            set { lp = value; }
+            set { lp = value;
+                lp.QueryPoints(out currentFace);
+            }
         }
 
+        public PXCMFaceData.LandmarkPoint[] currentFacePoints
+        {
+            get { return currentFace; }
+        }
 
         /**
          *  getter and setter of the ABSOLUTE NullFace
