@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.Diagnostics;
 /**
  * You´re supposed to make some comments! Otherwise I´m going to kill you! :) 
  * 
@@ -96,10 +97,14 @@ namespace RealSense
          */
         private void update()
         {
+            int i = 0;
             Console.WriteLine("Update");
             //Console.Write(model.SenseManager.AcquireFrame(true));
+            Stopwatch stopwatch = new Stopwatch();
             while (true)
-                while (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Got an image?
+            {
+                stopwatch.Start();
+                if (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Dauert manchmal voll lange ...
                 {
                     // welcher trottel .... Console.WriteLine("While schleife");
                     // <magic>
@@ -120,32 +125,17 @@ namespace RealSense
                                 PXCMFaceData.LandmarkPoint[] aPoints;
                                 model.Lp.QueryPoints(out aPoints);
                                 model.NullFace = aPoints;
-                                //nullFace = true;
-                                //Console.WriteLine("aPoints: "+aPoints[0].world.x+" nullFace: "+model.NullFace[0].world.x);
                             }
                         }
                     }
 
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                     Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
-                    model.Modules.ForEach(delegate (RSModule mod)
-                    {
-                        if (mod is SurveillanceModule)
-                        {
-                            SurveillanceModule sm = (SurveillanceModule)mod;
-                            if (sm.first == null) sm.first = (Bitmap)colorBitmap.Clone();
-                            sm.second = (Bitmap)colorBitmap.Clone();
-                        }
-                        try
+                    if (model.CurrentFace != null)
+                        model.Modules.ForEach(delegate (RSModule mod)
                         {
                             mod.Work(bitmapGraphics);
-                        }
-                        catch (Exception ex) when (ex is NullReferenceException || ex is AccessViolationException)
-                        {
-                            bitmapGraphics.DrawString("No Face", new Font("Arial", 18), new SolidBrush(Color.Red), new PointF(20, 20));
-                            return;
-                        }
-                    });
+                        });
                     // update PictureBox
                     pb.Image = colorBitmap;
                     model.SenseManager.ReleaseFrame();
@@ -154,7 +144,12 @@ namespace RealSense
                     sample.color.ReleaseAccess(colorData);
                     ResetEmotions();
                 }
-            //Console.WriteLine("While schleife ende");
+                long time = stopwatch.ElapsedMilliseconds;
+                stopwatch.Stop();
+                Console.WriteLine(i++ + ": " + time + "ms");
+                stopwatch.Reset();
+                //Console.WriteLine("While schleife ende");
+            }
         }
 
         private void InitializeComponent()

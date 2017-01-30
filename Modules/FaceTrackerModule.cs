@@ -29,8 +29,7 @@ namespace RealSense
                 // get the landmark data
 
                 if (model.Lp == null) return;
-                PXCMFaceData.LandmarkPoint[] points;
-                model.Lp.QueryPoints(out points);
+                PXCMFaceData.LandmarkPoint[] points = model.CurrentFace;
 
                 if(idx == null)
 

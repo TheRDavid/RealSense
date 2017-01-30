@@ -61,7 +61,7 @@ namespace RealSense
 
                             if (model.Lp == null) return;
                             Console.WriteLine("Calibrate #" + index);
-                            cFaces[index++] = model.currentFacePoints;
+                            cFaces[index++] = model.CurrentFace;
                         }
                     if (!calibrate)
                     {

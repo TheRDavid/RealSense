@@ -10,7 +10,7 @@ namespace RealSense
      * Stores all of our data. It is based at the MVC Pattern
      * 
      * @author Tanja Witke
-     */ 
+     */
     public class Model
     {
         // Reference to globally used SenseManager
@@ -18,14 +18,14 @@ namespace RealSense
         private PXCMFaceModule face;
         private PXCMFaceData faceData;
         private PXCMFaceConfiguration faceConfig;
-        public  PXCMFaceData.Face faceAktuell;
+        public PXCMFaceData.Face faceAktuell;
         private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
-        private PXCMFaceData.LandmarkPoint[] nullFace=null; //thx David
-        private PXCMFaceData.LandmarkPoint[] currentFace = null;
+        private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
+        private PXCMFaceData.LandmarkPoint[] currentFace;
         public const int ANGER = 0, FEAR = 1, SADNESS = 2;
         private int[] emotions = new int[7];
-        public String[] eNames = {"Anger", "Fear", "Sadness"};  // there are actually seven
+        public String[] eNames = { "Anger", "Fear", "Sadness" };  // there are actually seven
 
         private List<RSModule> modules;
         private int width;
@@ -34,7 +34,7 @@ namespace RealSense
 
         private CameraView view;
 
-         
+
         /**
          * Constructor of the model 
          * It does all the important stuff to use our camera.  Its so FANCY ! 
@@ -89,7 +89,7 @@ namespace RealSense
         /**
          * calculates the the differenc of the points from the ABSOLUTENullFace
          * @param i01,i02  which are the current points to calculate the difference 
-         */ 
+         */
         public double NullFaceBetween(int i01, int i02)
         {
             if (nullFace[i01].world.x != 0) // -------->wofür die abfrage ?  wäre es nicht sinnvoller auf null zu prüfen ?  Tanja said the nullface is never null, so that was the reason why she used 0 instead of null
@@ -112,8 +112,11 @@ namespace RealSense
 
             if (lp != null)
             {
-                lp.QueryPoint(i01, out point01); //AccessViolationException ...
-                lp.QueryPoint(i02, out point02);
+                point01 = currentFace[i01];
+                point02 = currentFace[i02];
+
+                //lp.QueryPoint(i01, out point01); //AccessViolationException ...
+                //lp.QueryPoint(i02, out point02);
 
                 double a = Math.Abs(point02.world.y - point01.world.y);
                 double b = Math.Abs(point02.world.x - point01.world.x);
@@ -146,12 +149,12 @@ namespace RealSense
 
         /**
          *  getter of the modules
-         */ 
+         */
         public List<RSModule> Modules
         {
             get { return modules; }
         }
-        
+
         public PXCMSenseManager SenseManager
         {
             get { return senseManager; }
@@ -188,12 +191,21 @@ namespace RealSense
         public PXCMFaceData.LandmarksData Lp
         {
             get { return lp; }
-            set { lp = value;
-                lp.QueryPoints(out currentFace);
+            set
+            {
+                if (value != null)
+                {
+                    lp = value;
+                    lp.QueryPoints(out currentFace);
+                }
+                else
+                {
+                    Console.WriteLine("No Face while calculating");
+                }
             }
         }
 
-        public PXCMFaceData.LandmarkPoint[] currentFacePoints
+        public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
         }
@@ -257,4 +269,3 @@ namespace RealSense
         }
     }
 }
- 
