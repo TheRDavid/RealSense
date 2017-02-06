@@ -16,7 +16,7 @@ namespace RealSense
      * @author Anton Blumenstein
      */
 
-    class AU_EyelidTightModul_Anton : RSModule
+    class AU_EyelidTightModul : RSModule
     {
         //hey david, i actually write comments. because i'm a genius! 
         private Font font = new Font("Arial", 18);

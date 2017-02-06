@@ -9,7 +9,7 @@ using System.Drawing;
  */
 namespace RealSense
 {
-    class LandmarkGroupModuleDavid : RSModule
+    class LandmarkGroupModule : RSModule
     {
 
         // Pen which defines the appereance of the rect

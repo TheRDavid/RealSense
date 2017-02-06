@@ -12,7 +12,7 @@ namespace RealSense
      *  
      * @author Tanja Witke
      */
-    class AU_ScowledBrows_Tanja : RSModule
+    class AU_ScowledBrows : RSModule
     {
         private Font arialFont = new Font("Arial", 18);
         private Brush redBrush = new SolidBrush(Color.Red);

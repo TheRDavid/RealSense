@@ -27,7 +27,7 @@ namespace RealSense
         // running number to save all the images to the hard drive (careful with that ;) )
         private Thread updaterThread;
         private Model model;
-        public int save = 0;
+        public int save = 0, debug_y = 0;
 
         /**
          * Initialise View and start updater Thread
@@ -106,6 +106,7 @@ namespace RealSense
                 stopwatch.Start();
                 if (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Dauert manchmal voll lange ...
                 {
+                    debug_y = 0;
                     // welcher trottel .... Console.WriteLine("While schleife");
                     // <magic>
                     PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
@@ -163,6 +164,12 @@ namespace RealSense
             this.Load += new System.EventHandler(this.CameraView_Load);
             this.ResumeLayout(false);
 
+        }
+
+        public int Debug_Y
+        {
+            get { return debug_y; }
+            set { debug_y = value; }
         }
 
         private void CameraView_Load(object sender, EventArgs e)

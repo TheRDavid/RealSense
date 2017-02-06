@@ -23,12 +23,9 @@ namespace RealSense
             RSModule.Init(model);
             // Create modules beforehand
             model.AddModule(new FaceTrackerModule(null));
-            model.AddModule(new AU_ScowledBrows_Tanja());
-            model.AddModule(new ReadEmotionsTest_Tanja());
-            model.AddModule(new AU_LipsThicknessModul_Tobi());
-            model.AddModule(new AU_MouthRect_Rene()); 
-            model.AddModule(new Gauge_Module_David());
-            model.AddModule(new AU_EyelidTightModul_Anton());
+            model.AddModule(new TEMPLATE_AU_LipsThicknessModul()); 
+            model.AddModule(new TEMPLATE_AU_LipsThicknessModul());
+            model.AddModule(new Gauge_Module());
             Application.Run(new CameraView(model));
         }
 

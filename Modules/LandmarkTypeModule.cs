@@ -10,7 +10,7 @@ using System.Windows.Forms;
  */
 namespace RealSense
 {
-    class LandmarkTypeModuleDavid : RSModule
+    class LandmarkTypeModule : RSModule
     {
 
         // Pen which defines the appereance of the rect

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
-    public class Gauge_Module_David : RSModule
+    public class Gauge_Module : RSModule
     {
         private const int numFaces = 44;
         private bool calibrate = false;
@@ -22,7 +22,7 @@ namespace RealSense
 
         /**
          * Inits the GUI
-         */ 
+         */
         private void guiInit()
         {
             guInit = true;
@@ -39,6 +39,7 @@ namespace RealSense
 
             Thread updaterThread = new Thread(this.update);
             updaterThread.Start();
+            debug = true;
         }
 
         /**
@@ -90,6 +91,7 @@ namespace RealSense
                         for (int i = 0; i < finalFace.Length; i++)
                             finalFace[i] = new PXCMFaceData.LandmarkPoint();
                         cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
+
                     }
                 }
             }
@@ -99,6 +101,11 @@ namespace RealSense
         {
             if (!guInit) guiInit();
             frameUpdate = true;
+            if(debug && calibrate)
+            {
+                model.View.Debug_Y += 20;
+                g.DrawString("Calibrating", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+            }
         }
 
         // for debugging only

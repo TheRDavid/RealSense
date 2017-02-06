@@ -6,9 +6,11 @@ using System.Text;
 
 namespace RealSense
 {
-    /* Shows how much you are smiling */
+
     class AU_LipsPressedModule : RSModule
     {
+        // hey david, i actually love comments, but there are not here ! sucker :D 
+        // >>there<< are not here... ... ... got to fucking rehab already
         private Font font = new Font("Arial", 18);
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
         private float[] lipUpY = new float[3], lipLowY = new float[3];
@@ -42,7 +44,7 @@ namespace RealSense
 
             if (distance < .003f)
             {
-                g.DrawString("Lips pressed", font, stringBrush, new PointF(20, 20));
+                g.DrawString("Lips pressed", font, stringBrush, new PointF(20, 130));
             }
         }
     }

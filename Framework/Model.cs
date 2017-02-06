@@ -34,6 +34,9 @@ namespace RealSense
 
         private CameraView view;
 
+        private Font defaultFont = new Font("Arial", 18);
+        private SolidBrush defaultStringBrush = new SolidBrush(Color.Blue);
+
 
         /**
          * Constructor of the model 
@@ -80,6 +83,7 @@ namespace RealSense
         /**
          * calculates the percentage of the difference between two points
          * @param i01,i02  which are the current points to calculate the difference
+         * @returns double between 0 and 100
          */
         public double Difference(int i01, int i02)
         {
@@ -187,6 +191,8 @@ namespace RealSense
 
         /**
          *  getter and setter of the landmarkpoints
+         *  
+         *  WARNING do not touch outside the camera thread ->  so talk to currentFace
          */
         public PXCMFaceData.LandmarksData Lp
         {
@@ -196,7 +202,7 @@ namespace RealSense
                 if (value != null)
                 {
                     lp = value;
-                    lp.QueryPoints(out currentFace);
+                    lp.QueryPoints(out currentFace); // update the current face for save landmarkpoint usage
                 }
                 else
                 {
@@ -266,6 +272,18 @@ namespace RealSense
         {
             get { return emotions; }
             set { emotions = value; }
+        }
+
+        public Font DefaultFont
+        {
+            get { return defaultFont; }
+            set { defaultFont = value; }
+        }
+
+        public SolidBrush DefaultStringBrush
+        {
+            get { return defaultStringBrush; }
+            set { defaultStringBrush = value; }
         }
     }
 }
