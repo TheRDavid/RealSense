@@ -23,10 +23,8 @@ namespace RealSense
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
         private PXCMFaceData.LandmarkPoint[] currentFace;
-        public const int ANGER = 0, FEAR = 1, SADNESS = 2;
-        private int[] emotions = new int[7];
-        public String[] eNames = { "Anger", "Fear", "Sadness" };  // there are actually seven
-
+        private Dictionary<String, double> grades = new Dictionary<String, double>();
+        private Dictionary<String, double> emotions = new Dictionary<String, double>();
         private List<RSModule> modules;
         private int width;
         private int height;
@@ -46,6 +44,13 @@ namespace RealSense
          */
         public Model()
         {
+            emotions["Anger"] = 0;
+            emotions["Fear"] = 0;
+            emotions["Disgust"] = 0;
+            emotions["Surprise"] = 0;
+            emotions["Happieness"] = 0;
+            emotions["Sadness"] = 0;
+            emotions["Contempt"] = 0;
             width = 640;
             height = 480;
             framerate = 30;
@@ -68,6 +73,19 @@ namespace RealSense
             faceConfig.Update();
 
             modules = new List<RSModule>();
+        }
+
+        /**
+         * Guess what happens here...
+         */ 
+        public void CalculateEmotions()
+        {
+            //... some hogwarts stuff thats what dumbledore said (hufflepuff ftw)
+        }
+
+        public double EmotionValue(String emotionName)
+        {
+            return emotions[emotionName];
         }
 
         /**
@@ -284,6 +302,11 @@ namespace RealSense
         {
             get { return defaultStringBrush; }
             set { defaultStringBrush = value; }
+        }
+
+        public void setAU_Value(String name, double value)
+        {
+            grades[name] = value;
         }
     }
 }
