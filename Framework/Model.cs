@@ -80,7 +80,7 @@ namespace RealSense
          */ 
         public void CalculateEmotions()
         {
-            //... some hogwarts stuff thats what dumbledore said (hufflepuff ftw)
+            //... some hogwarts stuff thats what dumbledore said (slytherin ftw) 
         }
 
         public double EmotionValue(String emotionName)
