@@ -143,7 +143,7 @@ namespace RealSense
                     model.FaceData.Dispose(); // DONE!
                     model.Edata = null;
                     sample.color.ReleaseAccess(colorData);
-                    ResetEmotions();
+                    
                 }
                 long time = stopwatch.ElapsedMilliseconds;
                 stopwatch.Stop();
@@ -177,9 +177,6 @@ namespace RealSense
 
         }
 
-        private void ResetEmotions()
-        {
-            model.Emotions = new int[7];
-        }
+ 
     }
 }

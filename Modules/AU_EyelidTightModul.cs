@@ -48,7 +48,7 @@ namespace RealSense
 
             if (leftEyeLid < 99 && rightEyeLid < 99)
             {
-                model.Emotions[Model.ANGER] += 20;
+               // model.Emotions[Model.ANGER] += 20;
             }
 
             // --------------------------------------it`s the old code, still there because so far i just check one point--------------------------------------------------

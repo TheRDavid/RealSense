@@ -23,7 +23,8 @@ namespace RealSense
             RSModule.Init(model);
             // Create modules beforehand
             model.AddModule(new FaceTrackerModule(null));
-            model.AddModule(new AU_TEMPLATE()); 
+            //model.AddModule(new AU_TEMPLATE()); 
+            model.AddModule(new AU_InnerBrowRaised());
             model.AddModule(new Gauge_Module());
             Application.Run(new CameraView(model));
         }

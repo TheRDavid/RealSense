@@ -23,7 +23,7 @@ namespace RealSense
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
         private PXCMFaceData.LandmarkPoint[] currentFace;
-        private Dictionary<String, double> grades = new Dictionary<String, double>();
+        private Dictionary<String, double> AU_Values = new Dictionary<String, double>();
         private Dictionary<String, double> emotions = new Dictionary<String, double>();
         private List<RSModule> modules;
         private int width;
@@ -229,6 +229,7 @@ namespace RealSense
             }
         }
 
+        //
         public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
@@ -286,7 +287,7 @@ namespace RealSense
         /**
          *  getter and setter of the array from the emotions 
          */
-        public int[] Emotions
+        public Dictionary<String, double> Emotions
         {
             get { return emotions; }
             set { emotions = value; }
@@ -306,7 +307,14 @@ namespace RealSense
 
         public void setAU_Value(String name, double value)
         {
-            grades[name] = value;
+            AU_Values[name] = value;
         }
+
+
+        // should be in here, but so far is not defined 
+         /* private void ResetEmotions()
+        {
+           
+        }*/
     }
 }
