@@ -51,13 +51,6 @@ namespace RealSense
             // > 100 = positiv
             distance -= 100;
 
-            /**
-             * Several types of action units
-             * 1: [   0 - 100] -> action unit is either activated (>0) or not (==0)
-             * 2: [-100 - 100] -> action unit is always activated, either positively (>=0) or negatively (>0)
-             * Values can go above 100 and below -100, 100 is just a value to orient to
-             **/
-
             model.setAU_Value(typeof(AU_InnerBrowRaised).ToString(), distance);
 
             if (debug)

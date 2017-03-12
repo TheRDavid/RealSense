@@ -99,7 +99,7 @@ namespace RealSense
 
 
         /**
-         * calculates the percentage of the difference between two points
+         * calculates the percentage of the difference of distance between two points
          * @param i01,i02  which are the current points to calculate the difference
          * @returns double between 0 and 100
          */
@@ -119,7 +119,7 @@ namespace RealSense
                 double a = Math.Abs(nullFace[i02].world.y - nullFace[i01].world.y);
                 double b = Math.Abs(nullFace[i02].world.x - nullFace[i01].world.x);
                 double c = Math.Abs(nullFace[i02].world.z - nullFace[i01].world.z);
-                return Math.Sqrt(a * a + b * b + c * c);  //vector analysis of the length (Schütt ahu!) 
+                return Math.Sqrt(a * a + b * b + c * c);  //vector analysis of the length (Schuett ahu!) 
             }
             throw new NullReferenceException();
         }

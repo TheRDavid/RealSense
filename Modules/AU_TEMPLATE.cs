@@ -7,55 +7,47 @@ using System.Text;
 
 namespace RealSense
 {
-    /* Lip tightened */
+    /**
+     * Short description
+     * @author me 
+     * @HogwartsHouse Hufflepuff
+     */ 
     class AU_TEMPLATE : RSModule
     {
 
-        // Variables for logic
-
-        private double[] lipUp = new double[6];
-        private double[] lipLow = new double[6];
+        // variables for logic
+        
         private double distance;
 
-        // Variables for debugging
+        // variables for debugging
 
-        // Default values
+        private string debug_message = "message: ";
+
+        /**
+         * Sets default-values
+         */ 
         public AU_TEMPLATE()
         {
             debug = true;
         }
 
+        /**
+         * Detailed description
+         */ 
         public override void Work(Graphics g)
         {
-            /* Calculations */
-            lipUp[0] = model.Difference(35, 46);
-            lipUp[1] = model.Difference(36, 47);
-            lipUp[2] = model.Difference(37, 48);
+            /* calculations */
 
-            lipLow[0] = model.Difference(52, 43);
-            lipLow[1] = model.Difference(51, 42);
-            lipLow[2] = model.Difference(50, 41);
+            distance = 42;
 
-            distance = lipUp[0] + lipUp[1] + lipUp[2] + lipLow[0] + lipLow[1] + lipLow[2];
-            distance /= 6;
-            // 100 = 0
-            // < 100 = negativ
-            // > 100 = positiv
-            distance -= 100;
-
-            /**
-             * Several types of action units
-             * 1: [   0 - 100] -> action unit is either activated (>0) or not (==0)
-             * 2: [-100 - 100] -> action unit is always activated, either positively (>=0) or negatively (>0)
-             * Values can go above 100 and below -100, 100 is just a value to orient to
-             **/
-
+            /* Update value in Model */
             model.setAU_Value(typeof(AU_TEMPLATE).ToString(), distance);
 
+            /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20;
-                g.DrawString("LipsThickness: " + distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                model.View.Debug_Y += 20; // new row
+                g.DrawString(debug_message + distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
             }
         }
     }

@@ -21,11 +21,13 @@ namespace RealSense
         {
             Model model = new Model();
             RSModule.Init(model);
-            // Create modules beforehand
-            model.AddModule(new FaceTrackerModule(null));
-            //model.AddModule(new AU_TEMPLATE()); 
+            // Add ActionUnits
             model.AddModule(new AU_InnerBrowRaised());
+            model.AddModule(new AU_EyelidTight());
+
+            // Default Modules
             model.AddModule(new Gauge_Module());
+            model.AddModule(new FaceTrackerModule(null));
             Application.Run(new CameraView(model));
         }
 
