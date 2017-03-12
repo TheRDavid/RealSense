@@ -33,6 +33,7 @@ namespace RealSense
 
         /**
          * Detailed description
+         * see Images/xyz for a visual description
          */ 
         public override void Work(Graphics g)
         {

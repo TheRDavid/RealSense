@@ -13,6 +13,8 @@ namespace RealSense
      */
     public class Model
     {
+        public enum AXIS { X, Y, Z, };
+
         // Reference to globally used SenseManager
         private PXCMSenseManager senseManager;
         private PXCMFaceModule face;
@@ -77,7 +79,7 @@ namespace RealSense
 
         /**
          * Guess what happens here...
-         */ 
+         */
         public void CalculateEmotions()
         {
             //... some hogwarts stuff thats what dumbledore said (slytherin ftw) 
@@ -97,6 +99,52 @@ namespace RealSense
             modules.Add(m);
         }
 
+        /**
+         * Returns the total difference of axis-specific distance between two points
+         * @param i01,i02 which are the current points to calculate the difference
+         * @param axis which is the specific axis to work with
+         * @param absolute defines wether or not the absolute difference should be returned or not
+         */
+        public double DifferenceByAxis(int i01, int i02, AXIS axis, bool absolute)
+        {
+            return NullFaceBetweenByAxis(i01, i02, axis, absolute) - BetweenByAxis(i01, i02, axis, absolute);
+        }
+
+        /**
+         * Calculates the axis-specific difference of the points from the ABSOLUTENullFace
+         * @param i01,i02  which are the current points to calculate the difference
+         * @param axis which is the specific axis to work with
+         * @param absolute defines wether or not the absolute difference should be returned or not
+         */
+        public double NullFaceBetweenByAxis(int i01, int i02, AXIS axis, bool absolute)
+        {
+            double result = 0;
+            switch (axis)
+            {
+                case AXIS.X: result = nullFace[i02].world.x - nullFace[i01].world.x; break;
+                case AXIS.Y: result = nullFace[i02].world.y - nullFace[i01].world.y; break;
+                case AXIS.Z: result = nullFace[i02].world.z - nullFace[i01].world.z; break;
+            }
+            return absolute ? Math.Abs(result) : result;
+        }
+
+        /**
+         * Calculates the axis-specific difference of the points from the ABSOLUTENullFace
+         * @param i01,i02  which are the current points to calculate the difference
+         * @param axis which is the specific axis to work with
+         * @param absolute defines wether or not the absolute difference should be returned or not
+         */
+        public double BetweenByAxis(int i01, int i02, AXIS axis, bool absolute)
+        {
+            double result = 0;
+            switch (axis)
+            {
+                case AXIS.X: result = currentFace[i02].world.x - currentFace[i01].world.x; break;
+                case AXIS.Y: result = currentFace[i02].world.y - currentFace[i01].world.y; break;
+                case AXIS.Z: result = currentFace[i02].world.z - currentFace[i01].world.z; break;
+            }
+            return absolute ? Math.Abs(result) : result;
+        }
 
         /**
          * calculates the percentage of the difference of distance between two points
@@ -109,7 +157,7 @@ namespace RealSense
         }
 
         /**
-         * calculates the the differenc of the points from the ABSOLUTENullFace
+         * calculates the differenc of the points from the ABSOLUTENullFace
          * @param i01,i02  which are the current points to calculate the difference 
          */
         public double NullFaceBetween(int i01, int i02)
@@ -312,9 +360,9 @@ namespace RealSense
 
 
         // should be in here, but so far is not defined 
-         /* private void ResetEmotions()
-        {
-           
-        }*/
+        /* private void ResetEmotions()
+       {
+
+       }*/
     }
 }
