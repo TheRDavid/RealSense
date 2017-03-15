@@ -156,6 +156,19 @@ namespace RealSense
             return 100 / NullFaceBetween(i01, i02) * Between(i01, i02); // calculates the percent (rule of three)
         }
 
+
+        public double DifferenceNullCurrent(int i01, AXIS axis)
+        {
+            double result = 0;
+            switch(axis)
+            {
+                case AXIS.Y: result = nullFace[i01].world.y - currentFace[i01].world.y; break;
+                case AXIS.X: result = nullFace[i01].world.x - currentFace[i01].world.x; break;
+                case AXIS.Z: result = nullFace[i01].world.z - currentFace[i01].world.z; break;
+            }
+            return result;
+        }
+
         /**
          * calculates the differenc of the points from the ABSOLUTENullFace
          * @param i01,i02  which are the current points to calculate the difference 

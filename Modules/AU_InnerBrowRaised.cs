@@ -19,9 +19,9 @@ namespace RealSense
 
         private double[] innerBrow = new double[2];
         private double[] checkOuterBrow = new Double[2];
-        private double NullFace_y;
-        private double NullFace_x;
         private double distance;
+        private double leftEyeBrow;
+        private double rightEyeBrow;
 
         // Variables for debugging
 
@@ -34,15 +34,33 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* Calculations */
-            innerBrow[0] = model.Difference(0, 26);  //hinschreiben welche zeilöe das ist
-            innerBrow[1] = model.Difference(5, 26);
+            // calculates difference between nose and eybrow 
+            innerBrow[0] = model.Difference(0, 26);  //left eyebrow
+            innerBrow[1] = model.Difference(5, 26);  //right eyebrow 
 
-            //beide punkte holen und y abfragen 
-            //(abstand beim nullface erst berechnen, wenn aktueller dann groß davon abweicht ist nur das eine oben) -> sollte im kontruktor passieren 
-            NullFace_y = model.NullFace[4].world.y;
-            NullFace_x = model.NullFace[9].world.y;
 
-            Console.WriteLine(NullFace_x + "," + NullFace_y);
+            leftEyeBrow = model.DifferenceNullCurrent(9, Model.AXIS.Y);
+            rightEyeBrow =  model.DifferenceNullCurrent(4, Model.AXIS.Y);
+            Console.WriteLine(leftEyeBrow + " , " + rightEyeBrow);
+
+
+            // because it is never just zero i cant do it like that. 
+            // so i need to find a better way
+            if(leftEyeBrow < 0 && rightEyeBrow < 0 )
+            {
+                Console.WriteLine("eyebrows up");
+            }else if(leftEyeBrow >0 && rightEyeBrow >0)
+            {
+                Console.WriteLine("eyebrows down");
+            }else
+            {
+                Console.WriteLine("eyebrows hoold");
+                //ónly here it is supposed to say if the inner brow is raised or lowered 
+
+            }
+
+            
+
 
             distance = innerBrow[0] + innerBrow[1];
             distance /= 2;
