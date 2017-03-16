@@ -8,7 +8,7 @@ using System.Text;
 namespace RealSense
 {
     /*
-     * this works just perfect! 
+     *Measuresif innerBrow is raised or lowered (each eye)
      *@author Anton 
      *@date 20.02.2017
      *@HogwartsHouse Slytherin  
@@ -19,7 +19,8 @@ namespace RealSense
 
         private double[] innerBrow = new double[2];
         private double[] checkOuterBrow = new Double[2];
-        private double distance;
+        private double leftDistance;
+        private double rightDistance;
         private double leftEyeBrow;
         private double rightEyeBrow;
 
@@ -34,47 +35,47 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* Calculations */
+
             // calculates difference between nose and eybrow 
             innerBrow[0] = model.Difference(0, 26);  //left eyebrow
             innerBrow[1] = model.Difference(5, 26);  //right eyebrow 
 
-
+            // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
             leftEyeBrow = model.DifferenceNullCurrent(9, Model.AXIS.Y);
-            rightEyeBrow =  model.DifferenceNullCurrent(4, Model.AXIS.Y);
+            rightEyeBrow = model.DifferenceNullCurrent(4, Model.AXIS.Y);
             Console.WriteLine(leftEyeBrow + " , " + rightEyeBrow);
 
-
-            // because it is never just zero i cant do it like that. 
-            // so i need to find a better way
-            if(leftEyeBrow < 0 && rightEyeBrow < 0 )
+            if (leftEyeBrow < -0.004 && rightEyeBrow < -0.004)
             {
                 Console.WriteLine("eyebrows up");
-            }else if(leftEyeBrow >0 && rightEyeBrow >0)
+            }
+            else if (leftEyeBrow > 0.003 && rightEyeBrow > 0.003)
             {
                 Console.WriteLine("eyebrows down");
-            }else
+            }
+            else
             {
                 Console.WriteLine("eyebrows hoold");
-                //ónly here it is supposed to say if the inner brow is raised or lowered 
+                // 100 = 0
+                // < 100 = negativ
+                // > 100 = positiv
+                // supoosed to calculate - 100 to get to 0 
+                leftDistance = innerBrow[0];
+                rightDistance = innerBrow[1];
 
             }
 
-            
+
+            // Update value in Model 
+            model.setAU_Value(typeof(AU_InnerBrowRaised).ToString() + "_left", leftDistance);
+            model.setAU_Value(typeof(AU_InnerBrowRaised).ToString() + "_right", rightDistance);
 
 
-            distance = innerBrow[0] + innerBrow[1];
-            distance /= 2;
-            // 100 = 0
-            // < 100 = negativ
-            // > 100 = positiv
-            distance -= 100;
-
-            model.setAU_Value(typeof(AU_InnerBrowRaised).ToString(), distance);
-
+            // print debug-values 
             if (debug)
             {
                 model.View.Debug_Y += 20;
-                g.DrawString("Innerbrow: " + distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                g.DrawString("Innerbrow: " + "(" + leftDistance + ", " + rightDistance + ")", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
             }
         }
     }
