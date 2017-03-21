@@ -22,8 +22,11 @@ namespace RealSense
             Model model = new Model();
             RSModule.Init(model);
             // Add ActionUnits
-            model.AddModule(new AU_NoseWrinkled());
-            model.AddModule(new AU_BrowLowered());
+            //model.AddModule(new AU_NoseWrinkled());
+            //model.AddModule(new AU_BrowLowered());
+            model.AddModule(new AU_LipStretched());
+            model.AddModule(new AU_LowerLipLowered());
+            model.AddModule(new AU_UpperLipRaised());
 
             // Default Modules
             model.AddModule(new Gauge_Module());

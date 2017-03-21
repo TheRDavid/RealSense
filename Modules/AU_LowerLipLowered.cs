@@ -17,7 +17,7 @@ namespace RealSense
 
         // variables for logic
 
-        private double[] lowerLip_Distance=new double[4];
+        private double[] lowerLip_Distance=new double[5];
         private double distance;
 
         // variables for debugging
@@ -42,12 +42,12 @@ namespace RealSense
 
             // calculates the difference between the Nullface and the currentface -> to check if the whole LowerLip is lowered
             lowerLip_Distance[0] = model.DifferenceNullCurrent(44, Model.AXIS.Y);
-            lowerLip_Distance[0] = model.DifferenceNullCurrent(43, Model.AXIS.Y);
-            lowerLip_Distance[0] = model.DifferenceNullCurrent(42, Model.AXIS.Y);
-            lowerLip_Distance[0] = model.DifferenceNullCurrent(41, Model.AXIS.Y);
-            lowerLip_Distance[0] = model.DifferenceNullCurrent(40, Model.AXIS.Y);
+            lowerLip_Distance[1] = model.DifferenceNullCurrent(43, Model.AXIS.Y);
+            lowerLip_Distance[2] = model.DifferenceNullCurrent(42, Model.AXIS.Y);
+            lowerLip_Distance[3] = model.DifferenceNullCurrent(41, Model.AXIS.Y);
+            lowerLip_Distance[4] = model.DifferenceNullCurrent(40, Model.AXIS.Y);
             distance = (lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5;
-
+            distance *= 100;
             /* Update value in Model */
             model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), distance);
 

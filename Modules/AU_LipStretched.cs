@@ -40,7 +40,7 @@ namespace RealSense
             /* calculations */
 
             lips_corner_distance = model.Difference(33, 39);
-
+            lips_corner_distance /= 100;
             /* Update value in Model */
             model.setAU_Value(typeof(AU_LipStretched).ToString(), lips_corner_distance);
 
