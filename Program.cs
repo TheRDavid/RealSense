@@ -27,7 +27,8 @@ namespace RealSense
             //model.AddModule(new AU_LipStretched());
             //model.AddModule(new AU_LowerLipLowered());
             //model.AddModule(new AU_UpperLipRaised());
-            model.AddModule(new AU_LipCorner());
+            model.AddModule(new AU_JawDrop());
+            model.AddModule(new AU_LipsTightened());
 
             // Default Modules
             model.AddModule(new Gauge_Module());

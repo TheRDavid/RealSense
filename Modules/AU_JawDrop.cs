@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace RealSense.Modules
+namespace RealSense
 {
 
     /*
@@ -40,7 +40,7 @@ namespace RealSense.Modules
             if (debug)
             {
                 model.View.Debug_Y += 20; // new row
-                g.DrawString("jaw dropped" + jawDistance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                g.DrawString("jaw dropped: " + jawDistance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
             }
         }
     }
