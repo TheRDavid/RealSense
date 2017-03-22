@@ -85,6 +85,7 @@
     <Compile Include="Framework\Model.cs" />
     <Compile Include="Modules\AU_EyelidTight.cs" />
     <Compile Include="Modules\AU_UpperLipRaised.cs" />
+    <Compile Include="Modules\AU_LipCorner.cs" />
     <Compile Include="Modules\FaceTrackerModule.cs" />
     <Compile Include="Modules\Gauge_Module.cs" />
     <Compile Include="Modules\LandmarkGroupModule.cs" />

@@ -24,9 +24,10 @@ namespace RealSense
             // Add ActionUnits
             //model.AddModule(new AU_NoseWrinkled());
             //model.AddModule(new AU_BrowLowered());
-            model.AddModule(new AU_LipStretched());
-            model.AddModule(new AU_LowerLipLowered());
-            model.AddModule(new AU_UpperLipRaised());
+            //model.AddModule(new AU_LipStretched());
+            //model.AddModule(new AU_LowerLipLowered());
+            //model.AddModule(new AU_UpperLipRaised());
+            model.AddModule(new AU_LipCorner());
 
             // Default Modules
             model.AddModule(new Gauge_Module());
