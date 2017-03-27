@@ -41,19 +41,25 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* calculations */
-            left_diff = model.DifferenceByAxis(30, 29, Model.AXIS.Y, false);
-            right_diff = model.DifferenceByAxis(32, 29, Model.AXIS.Y, false);
-            middle_diff = model.DifferenceByAxis(32, 31, Model.AXIS.Y, false);
+
+            left_diff = model.Difference(30, Model.NOSE_FIX) - 100;
+            right_diff = model.Difference(32, Model.NOSE_FIX) - 100;
+            // what the fuck are you doing ? 
+            middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
+
+
+
+            int d_l = Convert.ToInt32(left_diff);
+            int d_r = Convert.ToInt32(right_diff);
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_left", left_diff);
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_right", right_diff);
+            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_right", d_r);
 
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString(debug_message + "(" + left_diff + ", " + right_diff + ")", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = debug_message + "(" + d_l + ", " + d_r + ")";
             }
         }
     }

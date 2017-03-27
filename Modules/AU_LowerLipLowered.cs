@@ -41,21 +41,21 @@ namespace RealSense
             /* calculations */
 
             // calculates the difference between the Nullface and the currentface -> to check if the whole LowerLip is lowered
-            lowerLip_Distance[0] = model.DifferenceNullCurrent(44, Model.AXIS.Y);
-            lowerLip_Distance[1] = model.DifferenceNullCurrent(43, Model.AXIS.Y);
-            lowerLip_Distance[2] = model.DifferenceNullCurrent(42, Model.AXIS.Y);
-            lowerLip_Distance[3] = model.DifferenceNullCurrent(41, Model.AXIS.Y);
-            lowerLip_Distance[4] = model.DifferenceNullCurrent(40, Model.AXIS.Y);
-            distance = (lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5;
-            distance *= 100;
+            lowerLip_Distance[0] = model.Difference(44, Model.NOSE_FIX);
+            lowerLip_Distance[1] = model.Difference(43, Model.NOSE_FIX);
+            lowerLip_Distance[2] = model.Difference(42, Model.NOSE_FIX);
+            lowerLip_Distance[3] = model.Difference(41, Model.NOSE_FIX);
+            lowerLip_Distance[4] = model.Difference(40, Model.NOSE_FIX);
+            distance = ((lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5);
+            distance -= 100;
+            int d = Convert.ToInt32(distance); 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), distance);
+            model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), d);
 
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString(debug_message + distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = debug_message + d;
             }
         }
     }

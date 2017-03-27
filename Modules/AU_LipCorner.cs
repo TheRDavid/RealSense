@@ -36,12 +36,15 @@ namespace RealSense
             /* Calculations */
 
             // calculates difference between nose and LipCorner 
-            LipCorner[0] = model.Difference(33, 26);  //left LipCorner
-            LipCorner[1] = model.Difference(39, 26);  //right LipCorner
+            LipCorner[0] = -((model.Difference(33, 26)) - 100);  //left LipCorner
+            LipCorner[1] = -((model.Difference(39, 26)) - 100);  //right LipCorner
+
+            int d_l = Convert.ToInt32(LipCorner[0]);
+            int d_r = Convert.ToInt32(LipCorner[1]);
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", LipCorner[0]);
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", LipCorner[1]);
+            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", d_r);
 
             if (LipCorner[0] < 98 && LipCorner[0] >95 && LipCorner[1] < 98 && LipCorner[1] >95)
             {
@@ -65,8 +68,7 @@ namespace RealSense
             // print debug-values 
             if (debug)
             {
-                model.View.Debug_Y += 20;
-                g.DrawString("LipCorner: " + "(" + LipCorner[0] + ", " + LipCorner[1] + ")", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = "LipCorner: "  + d_l + ", " + d_r ;
             }
         }
     }

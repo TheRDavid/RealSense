@@ -29,16 +29,17 @@ namespace RealSense
         {
             /* calculations */
 
-            chin = model.DifferenceNullCurrent(61, Model.AXIS.Y);
-            
+            //chin = model.DifferenceNullCurrent(61, Model.AXIS.Y);
+            chin = (model.Difference(61, 26)) - 100;
+            int d = Convert.ToInt32(chin);
+
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_JawDrop).ToString(), chin);
+            model.setAU_Value(typeof(AU_JawDrop).ToString(), d);
 
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString("jaw dropped: " + chin, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = "jaw dropped: " + d;
             }
         }
     }

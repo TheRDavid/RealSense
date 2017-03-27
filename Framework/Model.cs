@@ -36,7 +36,8 @@ namespace RealSense
         private CameraView view;
 
         private Font defaultFont = new Font("Arial", 18);
-        private SolidBrush defaultStringBrush = new SolidBrush(Color.Blue);
+        private SolidBrush defaultStringBrush = new SolidBrush(Color.White);
+        private SolidBrush bgStringBrush = new SolidBrush(Color.FromArgb(200,0,0,0));
 
 
         /**
@@ -365,6 +366,11 @@ namespace RealSense
         {
             get { return defaultStringBrush; }
             set { defaultStringBrush = value; }
+        }
+
+        public SolidBrush DefaultBGBrush
+        {
+            get { return bgStringBrush;  }
         }
 
         public void setAU_Value(String name, double value)

@@ -56,21 +56,23 @@ namespace RealSense
             leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3)*1;
             rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3)* 1;
 
+            int d_l = Convert.ToInt32(leftDistance);
+            int d_r = Convert.ToInt32(rightDistance);
 
-           // Console.WriteLine(leftDistance + " , " + rightDistance);
 
-         
+            // Console.WriteLine(leftDistance + " , " + rightDistance);
+
+
             //here it gives back zero 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", leftDistance);
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", rightDistance);
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", d_r);
 
 
             // print debug-values 
             if (debug)
             {
-                model.View.Debug_Y += 20;
-                g.DrawString("Eyebrow: " + "(" + leftDistance + ", " + rightDistance + ")", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = "BrowShift: " + "(" + d_l + ", " + d_r + ")";
             }
         }
     }

@@ -14,6 +14,7 @@ namespace RealSense
     public abstract class RSModule
     {
         protected static Model model;
+        public String output = "";
         protected bool debug = false;
 
         /**

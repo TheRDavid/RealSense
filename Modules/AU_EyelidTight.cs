@@ -50,18 +50,21 @@ namespace RealSense
             rightEye_middleDistance_diff = model.Difference(20, 24);
             rightEye_rightDistance_diff = model.Difference(21, 23);
 
-            left_diff = (leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3;
-            right_diff = (rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3;
+            left_diff = ((leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3) - 100;
+            right_diff = ((rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3) - 100;
+
+
+            int d_l = Convert.ToInt32(left_diff);
+            int d_r = Convert.ToInt32(right_diff);
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_left", left_diff);
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_right", right_diff);
+            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_right", d_r); ;
 
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString(debug_message + "("+left_diff+", "+right_diff+")", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = debug_message + "("+d_l+", "+d_r+")";
             }
         }
     }

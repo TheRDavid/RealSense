@@ -28,6 +28,8 @@ namespace RealSense
         private Thread updaterThread;
         private Model model;
         public int save = 0, debug_y = 0;
+        private Button enableOutput = new Button();
+        private bool outputEnabled = true;
 
         /**
          * Initialise View and start updater Thread
@@ -58,6 +60,16 @@ namespace RealSense
             this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 150);
             this.Controls.Add(pb);
             FormClosed += new FormClosedEventHandler(Quit);
+
+            enableOutput.Bounds = new Rectangle(20, 560, 500, 30);
+            enableOutput.Text = "Output";
+            enableOutput.Click +=
+                new System.EventHandler(delegate
+                {
+                    outputEnabled = !outputEnabled;
+                });
+            AddComponent(enableOutput);
+
             this.Show();
             // Start Updater Thread
            // Console.WriteLine("Starting Thread");
@@ -132,10 +144,17 @@ namespace RealSense
 
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                     Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
+                    if(outputEnabled)
+                        bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, 1280, 720));
                     if (model.CurrentFace != null)
                         model.Modules.ForEach(delegate (RSModule mod)
                         {
                             mod.Work(bitmapGraphics);
+                            if (outputEnabled && mod.output != "")
+                            {
+                                bitmapGraphics.DrawString(mod.output, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                                Debug_Y += 25; // new row
+                            }
                         });
                     // update PictureBox
                     pb.Image = colorBitmap;

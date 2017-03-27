@@ -18,6 +18,8 @@ namespace RealSense
         double topDownDistance;
         double upperLip;
         double bottomLip;
+
+        bool b = false;
         public AU_LipsTightened()
         {
             debug = true;
@@ -25,19 +27,25 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            upperLip = model.DifferenceNullCurrent(36, Model.AXIS.Y);
+           upperLip = model.DifferenceNullCurrent(36, Model.AXIS.Y);
             bottomLip = model.DifferenceNullCurrent(50, Model.AXIS.Y);
 
-            topDownDistance = (upperLip + bottomLip) / 2;
+            upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
+            bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
-            model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", topDownDistance);
+           topDownDistance = (upperLip + bottomLip) / 2;
+            int d = Convert.ToInt32(topDownDistance);
+
+            model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", d);
 
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString("lips tightened" + topDownDistance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+              
+                output = "Lips tightened: " + d;
+                
             }
         }
+
 
 
     }

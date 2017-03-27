@@ -39,16 +39,17 @@ namespace RealSense
         {
             /* calculations */
 
-            lips_corner_distance = model.Difference(33, 39);
-            lips_corner_distance /= 100;
+            lips_corner_distance =(model.Difference(33, 39) - 100);
+            int d = Convert.ToInt32(lips_corner_distance);
+            //lips_corner_distance /= 100;
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LipStretched).ToString(), lips_corner_distance);
+            model.setAU_Value(typeof(AU_LipStretched).ToString(), d);
 
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString(debug_message + lips_corner_distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = debug_message + d;
+
             }
         }
     }

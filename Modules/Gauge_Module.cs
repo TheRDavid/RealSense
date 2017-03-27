@@ -101,11 +101,10 @@ namespace RealSense
         {
             if (!guInit) guiInit();
             frameUpdate = true;
-            if(debug && calibrate)
+            if (debug && calibrate)
             {
-                model.View.Debug_Y += 20;
-                g.DrawString("Calibrating", model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
-            }
+                output = "Calibrating";
+            } else if (!calibrate) output = "";
         }
 
         // for debugging only

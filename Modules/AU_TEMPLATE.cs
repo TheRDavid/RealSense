@@ -47,8 +47,7 @@ namespace RealSense
             /* print debug-values */
             if (debug)
             {
-                model.View.Debug_Y += 20; // new row
-                g.DrawString(debug_message + distance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                output = debug_message + distance;
             }
         }
     }
