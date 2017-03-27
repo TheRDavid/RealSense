@@ -40,14 +40,14 @@ namespace RealSense
 
             if (session == null) // Something went wrong, session could not be initialised
             {
-                Console.WriteLine("Fuck!");
+                //Console.WriteLine("Fuck!");
                 Application.Exit();
                 return;
             }
 
             iv = session.QueryVersion();
             String versionString = "v" + iv.major + "." + iv.minor;
-            Console.WriteLine(versionString);
+            //Console.WriteLine(versionString);
             Text = versionString;
 
 
@@ -60,7 +60,7 @@ namespace RealSense
             FormClosed += new FormClosedEventHandler(Quit);
             this.Show();
             // Start Updater Thread
-            Console.WriteLine("Starting Thread");
+           // Console.WriteLine("Starting Thread");
             updaterThread = new Thread(this.update);
             updaterThread.Start();
         }
@@ -71,10 +71,10 @@ namespace RealSense
         private void Quit(object sender, FormClosedEventArgs e)
         {
             updaterThread.Abort();
-            Console.WriteLine("Cleaning");
+           // Console.WriteLine("Cleaning");
             session.Dispose();
             model.SenseManager.Dispose();
-            Console.WriteLine("Closing");
+          //  Console.WriteLine("Closing");
             Application.Exit();
         }
 
@@ -98,7 +98,7 @@ namespace RealSense
         private void update()
         {
             int i = 0;
-            Console.WriteLine("Update");
+          //  Console.WriteLine("Update");
             //Console.Write(model.SenseManager.AcquireFrame(true));
             Stopwatch stopwatch = new Stopwatch();
             while (true)
@@ -147,7 +147,7 @@ namespace RealSense
                 }
                 long time = stopwatch.ElapsedMilliseconds;
                 stopwatch.Stop();
-                Console.WriteLine(i++ + ": " + time + "ms");
+             //   Console.WriteLine(i++ + ": " + time + "ms");
                 stopwatch.Reset();
                 //Console.WriteLine("While schleife ende");
             }

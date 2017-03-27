@@ -11,15 +11,15 @@ namespace RealSense
     *Measures if jaw is dropped
     *@author René 
     *@date 21.03.2017
-    *@HogwartsHouse Slytherin  
+    *@HogwartsHouse Slytherin
     */
     class AU_JawDrop : RSModule
-
+        // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
 
     {
-        double jawDistance;
+ 
         double chin;
-        double referenceLM;
+      
 
         public AU_JawDrop()
         {
@@ -30,17 +30,15 @@ namespace RealSense
             /* calculations */
 
             chin = model.DifferenceNullCurrent(61, Model.AXIS.Y);
-            referenceLM = model.DifferenceNullCurrent(26, Model.AXIS.Y);
-
-            jawDistance = (chin + referenceLM) / 2;
+            
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_TEMPLATE).ToString(), jawDistance);
+            model.setAU_Value(typeof(AU_JawDrop).ToString(), chin);
 
             /* print debug-values */
             if (debug)
             {
                 model.View.Debug_Y += 20; // new row
-                g.DrawString("jaw dropped: " + jawDistance, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
+                g.DrawString("jaw dropped: " + chin, model.DefaultFont, model.DefaultStringBrush, new Point(0, model.View.Debug_Y));
             }
         }
     }

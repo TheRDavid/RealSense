@@ -8,12 +8,12 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *Measures if Brow is raised or lowered (each eye)  
+     *Measures if Brow is raised or lowered (each eye)  - Action Unit Number 4 
      *@author Anton 
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
      */
-    class AU_BrowLowered : RSModule
+    class AU_BrowShift : RSModule
     {
         // Variables for logic
 
@@ -26,7 +26,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public AU_BrowLowered()
+        public AU_BrowShift()
         {
             debug = true;
         }
@@ -44,18 +44,26 @@ namespace RealSense
             rightEyeBrow_m = model.DifferenceNullCurrent(7, Model.AXIS.Y);
             rightEyeBrow_l = model.DifferenceNullCurrent(5, Model.AXIS.Y);
 
+            leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
+            leftEyeBrow_m = model.Difference(2, Model.NOSE_FIX) - 100;
+            leftEyeBrow_l = model.Difference(4, Model.NOSE_FIX) - 100;
 
-            leftDistance = (leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3;
-            rightDistance = (rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3;
+            rightEyeBrow_r = model.Difference(9, Model.NOSE_FIX) - 100;
+            rightEyeBrow_m = model.Difference(7, Model.NOSE_FIX) - 100;
+            rightEyeBrow_l = model.Difference(5, Model.NOSE_FIX) - 100;
 
 
-            Console.WriteLine(leftDistance + " , " + rightDistance);
+            leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3)*1;
+            rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3)* 1;
+
+
+           // Console.WriteLine(leftDistance + " , " + rightDistance);
 
          
             //here it gives back zero 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_InnerBrowRaised).ToString() + "_left", leftDistance);
-            model.setAU_Value(typeof(AU_InnerBrowRaised).ToString() + "_right", rightDistance);
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", leftDistance);
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", rightDistance);
 
 
             // print debug-values 

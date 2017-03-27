@@ -61,7 +61,7 @@ namespace RealSense
                             // get the landmark data
 
                             if (model.Lp == null) return;
-                            Console.WriteLine("Calibrate #" + index);
+                          //  Console.WriteLine("Calibrate #" + index);
                             cFaces[index++] = model.CurrentFace;
                         }
                     if (!calibrate)
@@ -111,11 +111,11 @@ namespace RealSense
         // for debugging only
         private void printFace(string v, PXCMFaceData.LandmarkPoint[] face)
         {
-            Console.WriteLine(v);
+          //  Console.WriteLine(v);
             for (int i = 0; i < face.Length; i++)
             {
                 PXCMFaceData.LandmarkPoint p = face[i];
-                Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
+             //   Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
             }
         }
     }

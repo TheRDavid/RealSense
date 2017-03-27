@@ -45,20 +45,20 @@ namespace RealSense
 
             if (LipCorner[0] < 98 && LipCorner[0] >95 && LipCorner[1] < 98 && LipCorner[1] >95)
             {
-                Console.WriteLine("Normal Lächeln");
+               // Console.WriteLine("Normal Laecheln");
             } else if (LipCorner[0] < 95 && LipCorner[1] < 95)
             {
-                Console.WriteLine("Voll Lächeln");
+               // Console.WriteLine("Voll Laecheln");
             } else if (LipCorner[0] < 98 && LipCorner[1] > 97|| LipCorner[1] < 98 && LipCorner[0] > 97)
             {
-                Console.WriteLine("Halb Lächeln");
+            //    Console.WriteLine("Halb Laecheln");
             } else if (LipCorner[0] > 103 && LipCorner[0] < 109 && LipCorner[1] > 103 && LipCorner[1] < 109)
             {
-                Console.WriteLine("Normal Trauer");
+              //  Console.WriteLine("Normal Trauer");
             }
             else if (LipCorner[0] > 108 && LipCorner[1] > 108)
             {
-                Console.WriteLine("Voll Trauer");
+               // Console.WriteLine("Voll Trauer");
             }
 
 

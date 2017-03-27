@@ -51,7 +51,7 @@ namespace RealSense
                 PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
                 if (lp == null)
                 {
-                    Console.WriteLine("LandmarksData null, goddamnit!!");
+                    //Console.WriteLine("LandmarksData null, goddamnit!!");
                     g.DrawString("LandmarksData null, goddamnit!!", font, stringBrush, stringRect);
                     return;
                 }

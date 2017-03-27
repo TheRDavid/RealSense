@@ -14,6 +14,7 @@ namespace RealSense
     public class Model
     {
         public enum AXIS { X, Y, Z, };
+        public static int NOSE_FIX = 26;
 
         // Reference to globally used SenseManager
         private PXCMSenseManager senseManager;
@@ -162,9 +163,9 @@ namespace RealSense
             double result = 0;
             switch(axis)
             {
-                case AXIS.Y: result = nullFace[i01].world.y - currentFace[i01].world.y; break;
-                case AXIS.X: result = nullFace[i01].world.x - currentFace[i01].world.x; break;
-                case AXIS.Z: result = nullFace[i01].world.z - currentFace[i01].world.z; break;
+                case AXIS.X: result = (nullFace[NOSE_FIX].world.x - nullFace[i01].world.x) - (currentFace[NOSE_FIX].world.x - currentFace[i01].world.x); break;
+                case AXIS.Y: result = (nullFace[NOSE_FIX].world.y - nullFace[i01].world.y) - (currentFace[NOSE_FIX].world.y - currentFace[i01].world.y); break;
+                case AXIS.Z: result = (nullFace[NOSE_FIX].world.z - nullFace[i01].world.z) - (currentFace[NOSE_FIX].world.z - currentFace[i01].world.z); break;
             }
             return result;
         }
@@ -285,7 +286,7 @@ namespace RealSense
                 }
                 else
                 {
-                    Console.WriteLine("No Face while calculating");
+                   // Console.WriteLine("No Face while calculating");
                 }
             }
         }
