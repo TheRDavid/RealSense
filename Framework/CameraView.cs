@@ -109,13 +109,11 @@ namespace RealSense
          */
         private void update()
         {
-            int i = 0;
           //  Console.WriteLine("Update");
             //Console.Write(model.SenseManager.AcquireFrame(true));
             Stopwatch stopwatch = new Stopwatch();
             while (true)
             {
-                stopwatch.Start();
                 if (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Dauert manchmal voll lange ...
                 {
                     debug_y = 0;
@@ -129,7 +127,6 @@ namespace RealSense
                     model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
                     if (model.FaceAktuell != null)
                     {
-                        model.Edata = model.FaceAktuell.QueryExpressions();
                         model.Lp = model.FaceAktuell.QueryLandmarks();
                         if (model.NullFace == null)
                         {
@@ -160,15 +157,9 @@ namespace RealSense
                     pb.Image = colorBitmap;
                     model.SenseManager.ReleaseFrame();
                     model.FaceData.Dispose(); // DONE!
-                    model.Edata = null;
                     sample.color.ReleaseAccess(colorData);
-                    
+
                 }
-                long time = stopwatch.ElapsedMilliseconds;
-                stopwatch.Stop();
-             //   Console.WriteLine(i++ + ": " + time + "ms");
-                stopwatch.Reset();
-                //Console.WriteLine("While schleife ende");
             }
         }
 

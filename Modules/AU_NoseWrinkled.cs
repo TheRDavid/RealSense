@@ -19,6 +19,7 @@ namespace RealSense
         // variables for logic
 
         private double left_diff, right_diff, middle_diff;
+        private double dist;
 
         // variables for debugging
 
@@ -47,19 +48,18 @@ namespace RealSense
             // what the fuck are you doing ? 
             middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
 
+            dist = (left_diff + right_diff + middle_diff) / 3;
 
-
-            int d_l = Convert.ToInt32(left_diff);
-            int d_r = Convert.ToInt32(right_diff);
+            int d = -Convert.ToInt32(dist);
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() + "_right", d_r);
+            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() , d);
+      
 
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + "(" + d_l + ", " + d_r + ")";
+                output = debug_message + "(" + d + ")";
             }
         }
     }

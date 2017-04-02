@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace RealSense.Modules
+namespace RealSense
 {
     class FaceRect : RSModule
     {

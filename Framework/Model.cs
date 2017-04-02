@@ -22,7 +22,6 @@ namespace RealSense
         private PXCMFaceData faceData;
         private PXCMFaceConfiguration faceConfig;
         public PXCMFaceData.Face faceAktuell;
-        private PXCMFaceData.ExpressionsData edata;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
         private PXCMFaceData.LandmarkPoint[] currentFace;
@@ -62,17 +61,12 @@ namespace RealSense
             senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
             // Enable Face detection
             senseManager.EnableFace();
-            senseManager.EnableHand();
             senseManager.Init();
 
             face = senseManager.QueryFace();
             faceConfig = face.CreateActiveConfiguration();
             faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);
             faceConfig.detection.isEnabled = true;
-            faceConfig.QueryExpressions();
-            PXCMFaceConfiguration.ExpressionsConfiguration expc = faceConfig.QueryExpressions();
-            expc.Enable();
-            expc.EnableAllExpressions();
             faceConfig.ApplyChanges();
             faceConfig.Update();
 
@@ -326,15 +320,6 @@ namespace RealSense
         {
             get { return faceAktuell; }
             set { faceAktuell = value; }
-        }
-
-        /**
-         *  getter and setter of the expressionData Edata
-         */
-        public PXCMFaceData.ExpressionsData Edata
-        {
-            get { return edata; }
-            set { edata = value; }
         }
 
 
