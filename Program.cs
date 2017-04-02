@@ -24,8 +24,7 @@ namespace RealSense
             // Add ActionUnits
 
             model.AddModule(new AU_BrowShift());
-            model.AddModule(new Modules.FaceRect());
-            model.AddModule(new AU_CheeckRaised());
+           // model.AddModule(new Modules.FaceRect());
             model.AddModule(new AU_EyelidTight());
             model.AddModule(new AU_JawDrop());
             model.AddModule(new AU_LipCorner());
@@ -33,8 +32,6 @@ namespace RealSense
             model.AddModule(new AU_LipStretched());
             model.AddModule(new AU_LowerLipLowered());
             model.AddModule(new AU_NoseWrinkled());
-            model.AddModule(new AU_UpperLipRaised());
-
             // Default Modules
             model.AddModule(new Gauge_Module());
             model.AddModule(new FaceTrackerModule(null));

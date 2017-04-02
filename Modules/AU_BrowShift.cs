@@ -8,7 +8,7 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *Measures if Brow is raised or lowered (each eye)  - Action Unit Number 4 
+     *Measures if complete brow is raised or lowered (each eye)  - Action Unit Number 4 
      *@author Anton 
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
@@ -36,13 +36,6 @@ namespace RealSense
             /* Calculations */
 
             // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
-            leftEyeBrow_r = model.DifferenceNullCurrent(0, Model.AXIS.Y);
-            leftEyeBrow_m = model.DifferenceNullCurrent(2, Model.AXIS.Y);
-            leftEyeBrow_l = model.DifferenceNullCurrent(4, Model.AXIS.Y);
-
-            rightEyeBrow_r = model.DifferenceNullCurrent(9, Model.AXIS.Y);
-            rightEyeBrow_m = model.DifferenceNullCurrent(7, Model.AXIS.Y);
-            rightEyeBrow_l = model.DifferenceNullCurrent(5, Model.AXIS.Y);
 
             leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
             leftEyeBrow_m = model.Difference(2, Model.NOSE_FIX) - 100;

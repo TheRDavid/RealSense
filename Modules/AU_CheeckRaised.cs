@@ -19,6 +19,7 @@ namespace RealSense
         // variables for logic
 
         private double left_diff, right_diff;
+        private int beenPositive = 0;
 
         // variables for debugging
 
@@ -42,12 +43,20 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* calculations */
-            left_diff = (model.Difference(55, Model.NOSE_FIX)) - 100 ;
-            right_diff = (model.Difference(67, Model.NOSE_FIX)) - 100;
+            //left_diff = (model.Difference(55, Model.NOSE_FIX) + model.Difference(54, Model.NOSE_FIX) + model.Difference(56, Model.NOSE_FIX)) / 3 - 100;
+            //right_diff = (model.Difference(66, Model.NOSE_FIX) + model.Difference(67, Model.NOSE_FIX) + model.Difference(68, Model.NOSE_FIX)) / 3 - 100;
+
+            left_diff = model.Difference(55, Model.NOSE_FIX) - 100;
+            right_diff = model.Difference(67, Model.NOSE_FIX) - 100;
+
+            int val = Convert.ToInt16(left_diff + right_diff) / 2;
+
+            if (left_diff > 0 && right_diff > 0) beenPositive++;
+            else beenPositive = 0;
 
 
-            int d_l = Convert.ToInt32(left_diff);
-            int d_r = Convert.ToInt32(right_diff);
+            int d_l = Convert.ToInt32(left_diff * 100) / 100;
+            int d_r = Convert.ToInt32(right_diff * 100) / 100;
 
             /* Update value in Model */
             model.setAU_Value(typeof(AU_CheeckRaised).ToString() + "_left", d_l);
@@ -56,7 +65,7 @@ namespace RealSense
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + "(" + d_l + ", " + d_r + ")";
+                output = debug_message + "(" + d_l + ", " + d_r + ") -> " + (beenPositive > 8 ? "raised -> " : "lowered -> ") + beenPositive+" , "+val;
             }
         }
     }
