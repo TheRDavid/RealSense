@@ -36,7 +36,8 @@ namespace RealSense
 
         private Font defaultFont = new Font("Arial", 18);
         private SolidBrush defaultStringBrush = new SolidBrush(Color.White);
-        private SolidBrush bgStringBrush = new SolidBrush(Color.FromArgb(200,0,0,0));
+        private SolidBrush bgStringBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0));
+        private SolidBrush opaqueStringBrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
 
 
         /**
@@ -54,8 +55,8 @@ namespace RealSense
             emotions["Happieness"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
-            width = 640;
-            height = 480;
+            width = 1920;
+            height = 1080;
             framerate = 30;
             senseManager = PXCMSenseManager.CreateInstance();
             senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
@@ -65,7 +66,7 @@ namespace RealSense
 
             face = senseManager.QueryFace();
             faceConfig = face.CreateActiveConfiguration();
-            faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR);
+            faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR_PLUS_DEPTH);
             faceConfig.detection.isEnabled = true;
             faceConfig.ApplyChanges();
             faceConfig.Update();
@@ -355,7 +356,12 @@ namespace RealSense
 
         public SolidBrush DefaultBGBrush
         {
-            get { return bgStringBrush;  }
+            get { return bgStringBrush; }
+        }
+
+        public SolidBrush OpaqueBGBrush
+        {
+            get { return opaqueStringBrush; }
         }
 
         public void setAU_Value(String name, double value)

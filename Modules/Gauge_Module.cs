@@ -26,7 +26,7 @@ namespace RealSense
         private void guiInit()
         {
             guInit = true;
-            calibrateButton.Bounds = new Rectangle(20, 530, 500, 30);
+            calibrateButton.Bounds = new Rectangle(20, 1140, 500, 30);
             calibrateButton.Text = "Calibrate";
             calibrateButton.Click +=
                 new System.EventHandler(delegate

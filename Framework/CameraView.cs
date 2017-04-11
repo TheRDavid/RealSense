@@ -29,7 +29,8 @@ namespace RealSense
         private Model model;
         public int save = 0, debug_y = 0;
         private Button enableOutput = new Button();
-        private bool outputEnabled = true;
+        private Button enableImage = new Button();
+        private bool outputEnabled = true, imageEnabled = true;
 
         /**
          * Initialise View and start updater Thread
@@ -57,11 +58,11 @@ namespace RealSense
             // Set size
             pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
             // init UI
-            this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 150);
+            this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 180);
             this.Controls.Add(pb);
             FormClosed += new FormClosedEventHandler(Quit);
 
-            enableOutput.Bounds = new Rectangle(20, 560, 500, 30);
+            enableOutput.Bounds = new Rectangle(20, 1080, 500, 30);
             enableOutput.Text = "Output";
             enableOutput.Click +=
                 new System.EventHandler(delegate
@@ -69,6 +70,15 @@ namespace RealSense
                     outputEnabled = !outputEnabled;
                 });
             AddComponent(enableOutput);
+
+            enableImage.Bounds = new Rectangle(20, 1110, 500, 30);
+            enableImage.Text = "NoImg";
+            enableImage.Click +=
+                new System.EventHandler(delegate
+                {
+                    imageEnabled = !imageEnabled;
+                });
+            AddComponent(enableImage);
 
             this.Show();
             // Start Updater Thread
@@ -142,7 +152,9 @@ namespace RealSense
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                     Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
                     if(outputEnabled)
-                        bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, 1280, 720));
+                        bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+                    if(!imageEnabled)
+                        bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
                     if (model.CurrentFace != null)
                         model.Modules.ForEach(delegate (RSModule mod)
                         {
