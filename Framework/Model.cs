@@ -70,6 +70,7 @@ namespace RealSense
             faceConfig.detection.isEnabled = true;
             faceConfig.ApplyChanges();
             faceConfig.Update();
+       
 
             modules = new List<RSModule>();
         }
@@ -205,26 +206,6 @@ namespace RealSense
             }
             throw new NullReferenceException();
 
-            /*
-              Exception error = new Exception();
-            try
-            {
-                if (lp != null)
-                {
-                    lp.QueryPoint(i01, out point01);
-                    lp.QueryPoint(i02, out point02);
-
-                    double a = Math.Abs(point02.world.y - point01.world.y);
-                    double b = Math.Abs(point02.world.x - point01.world.x);
-                    double c = Math.Abs(point02.world.z - point01.world.z);
-                    return Math.Sqrt(a * a + b * b + c * c);
-                }
-            }catch (Exception e)
-            {
-                error = e;
-            }
-            throw error;
-              */
         }
 
         /**

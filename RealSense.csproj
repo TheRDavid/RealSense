@@ -73,6 +73,7 @@
     <Compile Include="Modules\AU_FaceRect.cs" />
     <Compile Include="Modules\AU_InnerBrowShift.cs" />
     <Compile Include="Modules\AU_JawDrop.cs" />
+    <Compile Include="Modules\AU_LipCornerV2.cs" />
     <Compile Include="Modules\AU_LipsTightened.cs" />
     <Compile Include="Modules\AU_LipStretched.cs" />
     <Compile Include="Modules\AU_LowerLipLowered.cs" />

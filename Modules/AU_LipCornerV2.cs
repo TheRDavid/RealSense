@@ -8,14 +8,14 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *@author Marlon
+     *@author David
      * 
      * Problem besteht noch bei weit offenen Mund, keine Unterscheidung mehr zwischen Runter und Hoch why is that german ? 
 
      * Lip Corner down does not work so far, landmarkpoints at the lip corner are not tracked when they go down,
      * no further sdk settings found, maybe recognize patterns via opencv?
      */
-    class AU_LipCorner : RSModule
+    class AU_LipCornerV2 : RSModule
     {
         // Variables for logic
 
@@ -28,7 +28,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public AU_LipCorner()
+        public AU_LipCornerV2()
         {
             debug = true;
         }
@@ -44,33 +44,21 @@ namespace RealSense
             int d_l = Convert.ToInt32(LipCorner[0]);
             int d_r = Convert.ToInt32(LipCorner[1]);
 
+            double line = model.DifferenceByAxis(33, 44, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 40, Model.AXIS.Y, false);
+            line *= 1000;
+
             // Update value in Model 
             model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", d_l);
             model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", d_r);
-
-            if (LipCorner[0] < 98 && LipCorner[0] >95 && LipCorner[1] < 98 && LipCorner[1] >95)
-            {
-               // Console.WriteLine("Normal Laecheln");
-            } else if (LipCorner[0] < 95 && LipCorner[1] < 95)
-            {
-               // Console.WriteLine("Voll Laecheln");
-            } else if (LipCorner[0] < 98 && LipCorner[1] > 97|| LipCorner[1] < 98 && LipCorner[0] > 97)
-            {
-            //    Console.WriteLine("Halb Laecheln");
-            } else if (LipCorner[0] > 103 && LipCorner[0] < 109 && LipCorner[1] > 103 && LipCorner[1] < 109)
-            {
-              //  Console.WriteLine("Normal Trauer");
-            }
-            else if (LipCorner[0] > 108 && LipCorner[1] > 108)
-            {
-               // Console.WriteLine("Voll Trauer");
-            }
-
+            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_line", d_r);
 
             // print debug-values 
             if (debug)
             {
-                output = "LipCorner: "  + d_l + ", " + d_r ;
+                output = "LipCornerV2: "  + d_l + ", " + d_r +", " +(int)line;
             }
         }
     }

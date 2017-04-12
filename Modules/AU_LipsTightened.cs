@@ -27,9 +27,6 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-           upperLip = model.DifferenceNullCurrent(36, Model.AXIS.Y);
-            bottomLip = model.DifferenceNullCurrent(50, Model.AXIS.Y);
-
             upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
             bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 

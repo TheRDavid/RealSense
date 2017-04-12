@@ -29,7 +29,7 @@ namespace RealSense
             // model.AddModule(new AU_FaceRect()); not needed
             model.AddModule(new AU_InnerBrowShift());
             model.AddModule(new AU_JawDrop());
-            model.AddModule(new AU_LipCorner());
+            model.AddModule(new AU_LipCornerV2());
             model.AddModule(new AU_LipsTightened());
             model.AddModule(new AU_LipStretched());
             model.AddModule(new AU_LowerLipLowered());
