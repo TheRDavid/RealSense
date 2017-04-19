@@ -23,11 +23,16 @@ namespace RealSense
         public override void Work(Graphics g)
         {
 
-            left_dist = model.Difference(0, Model.NOSE_FIX);
-            right_dist = model.Difference(5, Model.NOSE_FIX);
+            left_dist = model.Difference(0,4);
+            left_dist += model.Difference(1, 4);
+            left_dist += model.Difference(70, 4);
 
-            int d_l = Convert.ToInt32(left_dist)-100;
-            int d_r = Convert.ToInt32(right_dist)-100;
+            right_dist = model.Difference(6, 9);
+            right_dist += model.Difference(73, 9);
+            right_dist += model.Difference(5, 9);
+
+            int d_l = Convert.ToInt32(left_dist*1000) / 3000 - 100;
+            int d_r = Convert.ToInt32(right_dist*1000) / 3000 - 100;
 
             model.setAU_Value(typeof(AU_InnerBrowShift).ToString() + "_left", d_l);
             model.setAU_Value(typeof(AU_InnerBrowShift).ToString() + "_right", d_r);

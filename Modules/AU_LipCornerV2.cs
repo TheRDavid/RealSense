@@ -51,9 +51,9 @@ namespace RealSense
             line *= 1000;
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", d_r);
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_line", d_r);
+            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_right", d_r);
+            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_line", d_r);
 
             // print debug-values 
             if (debug)

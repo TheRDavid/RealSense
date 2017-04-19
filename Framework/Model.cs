@@ -350,6 +350,11 @@ namespace RealSense
             AU_Values[name] = value;
         }
 
+        public double getAU_Value(String name)
+        {
+            return AU_Values[name];
+        }
+
 
         // should be in here, but so far is not defined 
         /* private void ResetEmotions()

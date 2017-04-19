@@ -31,7 +31,7 @@ namespace RealSense
             bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
            topDownDistance = (upperLip + bottomLip) / 2;
-            int d = Convert.ToInt32(topDownDistance);
+            int d = Convert.ToInt32(topDownDistance * 1000) / 1000;
 
             model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", d);
 
