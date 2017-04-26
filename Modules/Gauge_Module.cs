@@ -16,6 +16,8 @@ namespace RealSense
         private bool guInit = false;
         private PXCMFaceData.LandmarkPoint[][] cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
         private PXCMFaceData.LandmarkPoint[] finalFace = new PXCMFaceData.LandmarkPoint[80];
+        private PXCMFaceData.PoseEulerAngles[] cAngles = new PXCMFaceData.PoseEulerAngles[numFaces];
+        private PXCMFaceData.PoseEulerAngles finalAngle = new PXCMFaceData.PoseEulerAngles();
         private int index = 0;
         private Button calibrateButton = new Button();
         public bool frameUpdate = true;
@@ -32,6 +34,7 @@ namespace RealSense
                 new System.EventHandler(delegate
                 {
                     calibrate = true;
+                    model.View.ResetModules = true;
                 });
             model.View.AddComponent(calibrateButton);
             for (int i = 0; i < finalFace.Length; i++)
@@ -60,8 +63,8 @@ namespace RealSense
                             frameUpdate = false;
                             // get the landmark data
 
+                            cAngles[index] = model.CurrentPose;
                             if (model.Lp == null) return;
-                          //  Console.WriteLine("Calibrate #" + index);
                             cFaces[index++] = model.CurrentFace;
                         }
                     if (!calibrate)
@@ -77,13 +80,27 @@ namespace RealSense
                                 //Console.WriteLine("F" + faceNr + "L" + landMarkNr + "-" + cFaces[faceNr][landMarkNr].world.x + "," + cFaces[faceNr][landMarkNr].world.y + "," + cFaces[faceNr][landMarkNr].world.z);
                             }
                         }
-                        // Get the elapsed time as a TimeSpan value.
+
                         for (int i = 0; i < finalFace.Length; i++)
                         {
                             finalFace[i].world.x /= numFaces - 1;
                             finalFace[i].world.y /= numFaces - 1;
                             finalFace[i].world.z /= numFaces - 1;
                         }
+
+                        foreach(PXCMFaceData.PoseEulerAngles a in cAngles)
+                        {
+                            finalAngle.pitch += a.pitch;
+                            finalAngle.roll += a.roll;
+                            finalAngle.yaw += a.yaw;
+                        }
+
+                        finalAngle.pitch /= numFaces;
+                        finalAngle.roll /= numFaces;
+                        finalAngle.yaw /= numFaces;
+
+                        model.NullPose = finalAngle;
+
                         model.NullFace = finalFace;
 
                         index = 0;
@@ -104,17 +121,18 @@ namespace RealSense
             if (debug && calibrate)
             {
                 output = "Calibrating";
-            } else if (!calibrate) output = "";
+            }
+            else if (!calibrate) output = "";
         }
 
         // for debugging only
         private void printFace(string v, PXCMFaceData.LandmarkPoint[] face)
         {
-          //  Console.WriteLine(v);
+            //  Console.WriteLine(v);
             for (int i = 0; i < face.Length; i++)
             {
                 PXCMFaceData.LandmarkPoint p = face[i];
-             //   Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
+                //   Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
             }
         }
     }

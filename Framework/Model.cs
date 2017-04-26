@@ -25,12 +25,15 @@ namespace RealSense
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
         private PXCMFaceData.LandmarkPoint[] currentFace;
+        private PXCMFaceData.PoseEulerAngles nullPose = new PXCMFaceData.PoseEulerAngles();
+        public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();
         private Dictionary<String, double> AU_Values = new Dictionary<String, double>();
         private Dictionary<String, double> emotions = new Dictionary<String, double>();
         private List<RSModule> modules;
         private int width;
         private int height;
         private int framerate;
+        private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
 
         private CameraView view;
 
@@ -68,6 +71,7 @@ namespace RealSense
             faceConfig = face.CreateActiveConfiguration();
             faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR_PLUS_DEPTH);
             faceConfig.detection.isEnabled = true;
+            faceConfig.pose.isEnabled = true;
             faceConfig.ApplyChanges();
             faceConfig.Update();
        
@@ -249,7 +253,7 @@ namespace RealSense
         /**
          *  getter and setter of the landmarkpoints
          *  
-         *  WARNING do not touch outside the camera thread ->  so talk to currentFace
+         *  WARNING do not touch outside the camera thread ->  so use currentFace
          */
         public PXCMFaceData.LandmarksData Lp
         {
@@ -314,6 +318,30 @@ namespace RealSense
             set { view = value; }
         }
 
+        public double CurrentPoseDiff
+        {
+            get { return currentPoseDiff; }
+            set { currentPoseDiff = value; }
+        }
+
+        public double CurrentRollDiff
+        {
+            get { return rollDiff; }
+            set { rollDiff = value; }
+        }
+
+        public double CurrentPitchDiff
+        {
+            get { return pitchDiff; }
+            set { pitchDiff = value; }
+        }
+
+        public double CurrentYawDiff
+        {
+            get { return yawDiff; }
+            set { yawDiff = value; }
+        }
+
         /**
          *  getter and setter of the array from the emotions 
          */
@@ -333,6 +361,18 @@ namespace RealSense
         {
             get { return defaultStringBrush; }
             set { defaultStringBrush = value; }
+        }
+
+        public PXCMFaceData.PoseEulerAngles NullPose
+        {
+            get { return nullPose; }
+            set { nullPose = value; }
+        }
+
+        public PXCMFaceData.PoseEulerAngles CurrentPose
+        {
+            get { return currentPose; }
+            set { currentPose = value; }
         }
 
         public SolidBrush DefaultBGBrush

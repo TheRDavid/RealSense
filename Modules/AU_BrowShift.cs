@@ -28,8 +28,9 @@ namespace RealSense
         // Default values
         public AU_BrowShift()
         {
-            MIN = -7;
-            MAX = 12;
+            DEF_MIN = -7;
+            DEF_MAX = 12;
+            reset();
             MIN_TOL = -2;
             MAX_TOL = 1;
             debug = true;
@@ -56,32 +57,33 @@ namespace RealSense
             leftDistance = leftDistance < MAX_TOL && leftDistance > MIN_TOL ? 0 : leftDistance;
             rightDistance = rightDistance < MAX_TOL && rightDistance > MIN_TOL ? 0 : rightDistance;
 
-            double d_l, d_r;
-            if (leftDistance >= 0)
-                d_l = leftDistance * 100 / MAX;
-            else
-                d_l = leftDistance * 100 / MIN;
+            dynamicMinMax(new double[]{leftDistance, rightDistance});     
 
-            if (rightDistance >= 0)
-                d_r = rightDistance * 100 / MAX;
-            else
-                d_r = rightDistance * 100 / MIN;
-
-
-            // Console.WriteLine(leftDistance + " , " + rightDistance);
-
-
-            // here it returns zero 
-            // Update value in Model 
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", d_r);
+            double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
+            
+            
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
 
 
             // print debug-values 
             if (debug)
             {
-                output = "BrowShift: " + "(" + d_l + ", " + d_r + ")";
+                output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")("+ (int)MIN +", "+ (int)MAX +")";
             }
         }
+
+        /*
+        protected override void dynamicMinMax()                                                                     T
+        {
+            double temp = leftDistance > rightDistance ? rightDistance : leftDistance;
+            Console.WriteLine(temp);
+
+            MIN = MIN < temp ? MIN : temp;
+            temp = leftDistance > rightDistance ? leftDistance : rightDistance;
+            MAX = MAX < temp ? temp : MAX;
+        }
+        */
+
     }
 }

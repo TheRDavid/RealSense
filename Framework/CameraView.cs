@@ -30,7 +30,7 @@ namespace RealSense
         public int save = 0, debug_y = 0;
         private Button enableOutput = new Button();
         private Button enableImage = new Button();
-        private bool outputEnabled = true, imageEnabled = true;
+        private bool outputEnabled = true, imageEnabled = true, resetModules = false;
 
         /**
          * Initialise View and start updater Thread
@@ -43,14 +43,12 @@ namespace RealSense
 
             if (session == null) // Something went wrong, session could not be initialised
             {
-                //Console.WriteLine("Fuck!");
                 Application.Exit();
                 return;
             }
 
             iv = session.QueryVersion();
             String versionString = "v" + iv.major + "." + iv.minor;
-            //Console.WriteLine(versionString);
             Text = versionString;
 
 
@@ -64,6 +62,11 @@ namespace RealSense
 
             enableOutput.Bounds = new Rectangle(20, 1080, 500, 30);
             enableOutput.Text = "Output";
+            enableOutput.Click +=
+                new System.EventHandler(delegate
+                {
+                    outputEnabled = !outputEnabled;
+                });
             AddComponent(enableOutput);
 
             enableImage.Bounds = new Rectangle(20, 1110, 500, 30);
@@ -77,7 +80,6 @@ namespace RealSense
 
             this.Show();
             // Start Updater Thread
-           // Console.WriteLine("Starting Thread");
             updaterThread = new Thread(this.update);
             updaterThread.Start();
         }
@@ -88,10 +90,8 @@ namespace RealSense
         private void Quit(object sender, FormClosedEventArgs e)
         {
             updaterThread.Abort();
-           // Console.WriteLine("Cleaning");
             session.Dispose();
             model.SenseManager.Dispose();
-          //  Console.WriteLine("Closing");
             Application.Exit();
         }
 
@@ -114,15 +114,13 @@ namespace RealSense
          */
         private void update()
         {
-          //  Console.WriteLine("Update");
-            //Console.Write(model.SenseManager.AcquireFrame(true));
+            PXCMFaceData.PoseEulerAngles angles = new PXCMFaceData.PoseEulerAngles();
             Stopwatch stopwatch = new Stopwatch();
             while (true)
             {
                 if (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Dauert manchmal voll lange ...
                 {
                     debug_y = 0;
-                    // welcher trottel .... Console.WriteLine("While schleife");
                     // <magic>
                     PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
                     sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
@@ -132,6 +130,10 @@ namespace RealSense
                     model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
                     if (model.FaceAktuell != null)
                     {
+                        PXCMFaceData.PoseData pose = model.FaceAktuell.QueryPose();
+                        pose.QueryPoseAngles(out model.currentPose);
+                        if(pose != null)
+                            pose.QueryPoseAngles(out angles);
                         model.Lp = model.FaceAktuell.QueryLandmarks();
                         if (model.NullFace == null)
                         {
@@ -142,15 +144,26 @@ namespace RealSense
                                 model.NullFace = aPoints;
                             }
                         }
+                        
+
                     }
 
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                     Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
-                    if(outputEnabled)
+                    if (outputEnabled)
                         bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
-                    if(!imageEnabled)
+                    if (!imageEnabled)
                         bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+                    if (resetModules)
+                    {
+                        model.Modules.ForEach(delegate (RSModule mod)
+                        {
+                            mod.reset();
+                        });
+                        resetModules = false;
+                    }
                     if (model.CurrentFace != null)
+                    {
                         model.Modules.ForEach(delegate (RSModule mod)
                         {
                             mod.Work(bitmapGraphics);
@@ -160,6 +173,27 @@ namespace RealSense
                                 Debug_Y += 25; // new row
                             }
                         });
+                    }
+
+                    double pitchDiff = Math.Abs(angles.pitch - model.NullPose.pitch);
+                    double rollDiff = Math.Abs(angles.roll - model.NullPose.roll);
+                    double yawDiff = Math.Abs(angles.yaw - model.NullPose.yaw);
+
+                    model.CurrentPoseDiff = pitchDiff + rollDiff + yawDiff;
+                    model.CurrentRollDiff = rollDiff;
+                    model.CurrentPitchDiff = pitchDiff;
+                    model.CurrentYawDiff = yawDiff;
+
+                    bitmapGraphics.DrawString("poll: " + pitchDiff + ", roll: " + rollDiff + ", yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    Debug_Y += 25;
+                    bitmapGraphics.DrawString("all: " + (int)(pitchDiff + rollDiff + yawDiff), model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    Debug_Y += 25;
+                    bitmapGraphics.DrawString("pitch: " + pitchDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    Debug_Y += 25;
+                    bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    Debug_Y += 25;
+                    bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+
                     // update PictureBox
                     pb.Image = colorBitmap;
                     model.SenseManager.ReleaseFrame();
@@ -189,11 +223,16 @@ namespace RealSense
             set { debug_y = value; }
         }
 
+        public Boolean ResetModules
+        {
+            set { resetModules = value; }
+        }
+
         private void CameraView_Load(object sender, EventArgs e)
         {
 
         }
 
- 
+
     }
 }
