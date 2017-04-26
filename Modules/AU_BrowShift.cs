@@ -17,7 +17,7 @@ namespace RealSense
     {
         // Variables for logic
 
-       
+
         private double leftDistance;
         private double rightDistance;
         private double leftEyeBrow_r, leftEyeBrow_m, leftEyeBrow_l;
@@ -28,6 +28,10 @@ namespace RealSense
         // Default values
         public AU_BrowShift()
         {
+            MIN = -7;
+            MAX = 12;
+            MIN_TOL = -2;
+            MAX_TOL = 1;
             debug = true;
         }
 
@@ -46,17 +50,28 @@ namespace RealSense
             rightEyeBrow_l = model.Difference(5, Model.NOSE_FIX) - 100;
 
 
-            leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3)*1;
-            rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3)* 1;
+            leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3) * 1;
+            rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3) * 1;
 
-            int d_l = Convert.ToInt32(leftDistance);
-            int d_r = Convert.ToInt32(rightDistance);
+            leftDistance = leftDistance < MAX_TOL && leftDistance > MIN_TOL ? 0 : leftDistance;
+            rightDistance = rightDistance < MAX_TOL && rightDistance > MIN_TOL ? 0 : rightDistance;
+
+            double d_l, d_r;
+            if (leftDistance >= 0)
+                d_l = leftDistance * 100 / MAX;
+            else
+                d_l = leftDistance * 100 / MIN;
+
+            if (rightDistance >= 0)
+                d_r = rightDistance * 100 / MAX;
+            else
+                d_r = rightDistance * 100 / MIN;
 
 
             // Console.WriteLine(leftDistance + " , " + rightDistance);
 
 
-            //here it gives back zero 
+            // here it returns zero 
             // Update value in Model 
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", d_l);
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", d_r);

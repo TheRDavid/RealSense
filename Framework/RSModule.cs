@@ -13,6 +13,7 @@ namespace RealSense
      */
     public abstract class RSModule
     {
+        protected int MIN, MAX, MIN_TOL, MAX_TOL;
         protected static Model model;
         public String output = "";
         protected bool debug = false;

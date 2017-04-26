@@ -73,12 +73,11 @@
     <Compile Include="Modules\AU_FaceRect.cs" />
     <Compile Include="Modules\AU_InnerBrowShift.cs" />
     <Compile Include="Modules\AU_JawDrop.cs" />
-    <Compile Include="Modules\AU_LipCornerV2.cs" />
+    <Compile Include="Modules\AU_LipLine.cs" />
     <Compile Include="Modules\AU_LipsTightened.cs" />
     <Compile Include="Modules\AU_LipStretched.cs" />
     <Compile Include="Modules\AU_LowerLipLowered.cs" />
     <Compile Include="Modules\AU_NoseWrinkled.cs" />
-    <Compile Include="Modules\AU_CheeckRaised.cs" />
     <Compile Include="Modules\AU_TEMPLATE.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>

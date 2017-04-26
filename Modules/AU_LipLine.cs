@@ -15,7 +15,7 @@ namespace RealSense
      * Lip Corner down does not work so far, landmarkpoints at the lip corner are not tracked when they go down,
      * no further sdk settings found, maybe recognize patterns via opencv?
      */
-    class AU_LipCornerV2 : RSModule
+    class AU_LipLine : RSModule
     {
         // Variables for logic
 
@@ -28,7 +28,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public AU_LipCornerV2()
+        public AU_LipLine()
         {
             debug = true;
         }
@@ -37,13 +37,6 @@ namespace RealSense
         {
             /* Calculations */
 
-            // calculates difference between nose and LipCorner 
-            LipCorner[0] = -((model.Difference(33, 26)) - 100);  //left LipCorner
-            LipCorner[1] = -((model.Difference(39, 26)) - 100);  //right LipCorner
-
-            int d_l = Convert.ToInt32(LipCorner[0]);
-            int d_r = Convert.ToInt32(LipCorner[1]);
-
             double line = model.DifferenceByAxis(33, 44, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
@@ -51,14 +44,12 @@ namespace RealSense
             line *= 1000;
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_right", d_r);
-            model.setAU_Value(typeof(AU_LipCornerV2).ToString() + "_line", d_r);
+            model.setAU_Value(typeof(AU_LipLine).ToString() + "_line", line);
 
             // print debug-values 
             if (debug)
             {
-                output = "LipCornerV2: "  + d_l + ", " + d_r +", " +(int)line;
+                output = "LipLine: " + (int)line;
             }
         }
     }

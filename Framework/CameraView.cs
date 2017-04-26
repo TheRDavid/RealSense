@@ -64,29 +64,6 @@ namespace RealSense
 
             enableOutput.Bounds = new Rectangle(20, 1080, 500, 30);
             enableOutput.Text = "Output";
-            enableOutput.Click +=
-                new System.EventHandler(delegate
-                {
-                    System.Windows.Forms.Clipboard.SetText("" + 
-                        model.getAU_Value(typeof(AU_BrowShift).ToString() + "_left") + ", "+
-                        model.getAU_Value(typeof(AU_BrowShift).ToString() + "_right") + ", " +
-
-                        model.getAU_Value(typeof(AU_InnerBrowShift).ToString() + "_left") + ", " +
-                        model.getAU_Value(typeof(AU_InnerBrowShift).ToString() + "_right") + ", " +
-
-                        model.getAU_Value(typeof(AU_LipCornerV2).ToString() + "_left") + ", " +
-                        model.getAU_Value(typeof(AU_LipCornerV2).ToString() + "_right") + ", " +
-                        model.getAU_Value(typeof(AU_LipCornerV2).ToString() + "_line") + ", " +
-
-                        model.getAU_Value(typeof(AU_LipCorner).ToString() + "_left") + ", " +
-                        model.getAU_Value(typeof(AU_LipCorner).ToString() + "_right") + ", " +
-
-                        model.getAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip")
-                         );
-
-                    
-                    outputEnabled = !outputEnabled;
-                });
             AddComponent(enableOutput);
 
             enableImage.Bounds = new Rectangle(20, 1110, 500, 30);
