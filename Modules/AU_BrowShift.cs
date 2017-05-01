@@ -34,6 +34,8 @@ namespace RealSense
             MIN_TOL = -2;
             MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = 300;
+            XTREME_MIN = -200;
         }
 
         public override void Work(Graphics g)
@@ -57,19 +59,37 @@ namespace RealSense
             leftDistance = leftDistance < MAX_TOL && leftDistance > MIN_TOL ? 0 : leftDistance;
             rightDistance = rightDistance < MAX_TOL && rightDistance > MIN_TOL ? 0 : rightDistance;
 
-            dynamicMinMax(new double[]{leftDistance, rightDistance});     
+            leftDistance = filterExtremeValues(leftDistance);
+            rightDistance = filterExtremeValues(rightDistance);
+
+            dynamicMinMax(new double[] { leftDistance, rightDistance });
 
             double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
-            
-            
+
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
 
+            Console.WriteLine("EyeDiff: " + Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y));
+            if (MAX >= 30 || MIN <= -30)
+            {
+                Console.WriteLine("Pose: " + model.CurrentPoseDiff);
+                Console.WriteLine("MIN: " + MIN + ", MAX: " + MAX);
+                model.View.colorBitmap.Save("C:\\Users\\prouser\\Pictures\\Saved Pictures\\err.png");
+                for (int i = 0; i < 10; i++)
+                    Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                         + model.CurrentFace[i].world.y + ", "
+                         + model.CurrentFace[i].world.z);
+                for (int i = 70; i < 76; i++)
+                    Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                         + model.CurrentFace[i].world.y + ", "
+                         + model.CurrentFace[i].world.z);
+                Environment.Exit(0);
+            }
 
             // print debug-values 
             if (debug)
             {
-                output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")("+ (int)MIN +", "+ (int)MAX +")";
+                output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
             }
         }
 

@@ -89,7 +89,9 @@ namespace RealSense
 
         public double EmotionValue(String emotionName)
         {
-            return emotions[emotionName];
+            if (emotions.ContainsKey(emotionName))
+                return emotions[emotionName];
+            else return -1;
         }
 
         /**

@@ -21,7 +21,7 @@ namespace RealSense
         // Used to store Image Data and convert to bitmap
         private PXCMImage.ImageData colorData;
         // the bitmap that we put into the pictureBox
-        private Bitmap colorBitmap;
+        public Bitmap colorBitmap;
         // the PictureBox that we put into the window (this class)
         private PictureBox pb;
         // running number to save all the images to the hard drive (careful with that ;) )
@@ -132,7 +132,7 @@ namespace RealSense
                     {
                         PXCMFaceData.PoseData pose = model.FaceAktuell.QueryPose();
                         pose.QueryPoseAngles(out model.currentPose);
-                        if(pose != null)
+                        if (pose != null)
                             pose.QueryPoseAngles(out angles);
                         model.Lp = model.FaceAktuell.QueryLandmarks();
                         if (model.NullFace == null)
@@ -144,7 +144,7 @@ namespace RealSense
                                 model.NullFace = aPoints;
                             }
                         }
-                        
+
 
                     }
 
@@ -193,7 +193,7 @@ namespace RealSense
                     bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
                     Debug_Y += 25;
                     bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-
+                    
                     // update PictureBox
                     pb.Image = colorBitmap;
                     model.SenseManager.ReleaseFrame();
@@ -203,7 +203,6 @@ namespace RealSense
                 }
             }
         }
-
         private void InitializeComponent()
         {
             this.SuspendLayout();

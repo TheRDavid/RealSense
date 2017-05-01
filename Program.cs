@@ -23,12 +23,13 @@ namespace RealSense
             RSModule.Init(model);
             // Add ActionUnits
 
-         //   model.AddModule(new AU_BrowShift());
-           // model.AddModule(new AU_CheeckRaised()); not working properly
-         //   model.AddModule(new AU_EyelidTight());
+            //   model.AddModule(new AU_BrowShift());
+            // model.AddModule(new AU_CheeckRaised()); not working properly
+            //   model.AddModule(new AU_EyelidTight());
             // model.AddModule(new AU_FaceRect()); not needed
-         //   model.AddModule(new AU_InnerBrowShift());
-         //   model.AddModule(new AU_JawDrop());
+            //   model.AddModule(new AU_InnerBrowShift());
+            //   model.AddModule(new AU_JawDrop());
+            model.AddModule(new FaceTrackerModule(null));
             model.AddModule(new AU_BrowShift());
          //   model.AddModule(new AU_LipCorner());
           //  model.AddModule(new AU_LipsTightened());
@@ -39,7 +40,6 @@ namespace RealSense
 
             // Default Modules
             model.AddModule(new Gauge_Module());
-            model.AddModule(new FaceTrackerModule(null));
             Application.Run(new CameraView(model));
         }
 
