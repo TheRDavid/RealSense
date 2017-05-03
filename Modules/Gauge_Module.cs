@@ -102,6 +102,7 @@ namespace RealSense
                         model.NullPose = finalAngle;
 
                         model.NullFace = finalFace;
+                        Model.calibrated = true;
 
                         index = 0;
                         finalFace = new PXCMFaceData.LandmarkPoint[80];

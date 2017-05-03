@@ -114,7 +114,6 @@ namespace RealSense
          */
         private void update()
         {
-            PXCMFaceData.PoseEulerAngles angles = new PXCMFaceData.PoseEulerAngles();
             Stopwatch stopwatch = new Stopwatch();
             while (true)
             {
@@ -131,9 +130,8 @@ namespace RealSense
                     if (model.FaceAktuell != null)
                     {
                         PXCMFaceData.PoseData pose = model.FaceAktuell.QueryPose();
-                        pose.QueryPoseAngles(out model.currentPose);
                         if (pose != null)
-                            pose.QueryPoseAngles(out angles);
+                            pose.QueryPoseAngles(out model.currentPose);
                         model.Lp = model.FaceAktuell.QueryLandmarks();
                         if (model.NullFace == null)
                         {
@@ -175,9 +173,9 @@ namespace RealSense
                         });
                     }
 
-                    double pitchDiff = Math.Abs(angles.pitch - model.NullPose.pitch);
-                    double rollDiff = Math.Abs(angles.roll - model.NullPose.roll);
-                    double yawDiff = Math.Abs(angles.yaw - model.NullPose.yaw);
+                    double pitchDiff = Math.Abs(model.currentPose.pitch - model.NullPose.pitch);
+                    double rollDiff = Math.Abs(model.currentPose.roll - model.NullPose.roll);
+                    double yawDiff = Math.Abs(model.currentPose.yaw - model.NullPose.yaw);
 
                     model.CurrentPoseDiff = pitchDiff + rollDiff + yawDiff;
                     model.CurrentRollDiff = rollDiff;
