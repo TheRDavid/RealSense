@@ -12,7 +12,7 @@ namespace RealSense
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
      */
-    class AU_LipStretched : RSModule
+    class ME_LipStretched : RSModule
     {
 
         // variables for logic
@@ -22,7 +22,7 @@ namespace RealSense
         /**
          * Sets default-valuesC:\Users\Tanja\Source\Repos\RealSense\Modules\AU_LipStretched.cs
          */
-        public AU_LipStretched()
+        public ME_LipStretched()
         {
           
             //correct values
@@ -55,7 +55,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { lips_corner_distance });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LipStretched).ToString(), diffs[0]);
+            model.setAU_Value(typeof(ME_LipStretched).ToString(), diffs[0]);
 
             /* print debug-values */
             if (debug)

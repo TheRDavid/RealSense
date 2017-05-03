@@ -69,26 +69,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\AU_BrowShift.cs" />
-    <Compile Include="Modules\AU_FaceRect.cs" />
-    <Compile Include="Modules\AU_InnerBrowShift.cs" />
-    <Compile Include="Modules\AU_JawDrop.cs" />
-    <Compile Include="Modules\AU_LipLine.cs" />
-    <Compile Include="Modules\AU_LipsTightened.cs" />
-    <Compile Include="Modules\AU_LipStretched.cs" />
-    <Compile Include="Modules\AU_LowerLipLowered.cs" />
-    <Compile Include="Modules\AU_NoseWrinkled.cs" />
+    <Compile Include="Emotions\EM_Anger.cs" />
+    <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
+    <Compile Include="Various\FaceRect.cs" />
+    <Compile Include="Various\ME_InnerBrowShift.cs" />
+    <Compile Include="Micro_Expressions\ME_JawDrop.cs" />
+    <Compile Include="Micro_Expressions\ME_LipLine.cs" />
+    <Compile Include="Micro_Expressions\ME_LipsTightened.cs" />
+    <Compile Include="Micro_Expressions\ME_LipStretched.cs" />
+    <Compile Include="Micro_Expressions\ME_LowerLipLowered.cs" />
+    <Compile Include="Micro_Expressions\ME_NoseWrinkled.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Model.cs" />
-    <Compile Include="Modules\AU_EyelidTight.cs" />
-    <Compile Include="Modules\AU_UpperLipRaised.cs" />
-    <Compile Include="Modules\AU_LipCorner.cs" />
-    <Compile Include="Modules\FaceTrackerModule.cs" />
-    <Compile Include="Modules\Gauge_Module.cs" />
-    <Compile Include="Modules\LandmarkGroupModule.cs" />
-    <Compile Include="Modules\LandmarkTypeModule.cs" />
+    <Compile Include="Micro_Expressions\ME_EyelidTight.cs" />
+    <Compile Include="Micro_Expressions\ME_UpperLipRaised.cs" />
+    <Compile Include="Micro_Expressions\ME_LipCorner.cs" />
+    <Compile Include="Various\FaceTrackerModule.cs" />
+    <Compile Include="Various\Gauge_Module.cs" />
+    <Compile Include="Various\LandmarkGroupModule.cs" />
+    <Compile Include="Various\LandmarkTypeModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Framework\RSModule.cs" />
@@ -118,6 +119,7 @@
       <DependentUpon>CameraView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(Platform)" == "x86" ( copy /y "$(RSSDK_DIR)\bin\win32\libpxccpp2c.dll" "$(TargetDir)" ) else ( copy /y "$(RSSDK_DIR)\bin\x64\libpxccpp2c.dll" "$(TargetDir)" )</PostBuildEvent>

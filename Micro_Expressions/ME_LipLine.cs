@@ -15,10 +15,10 @@ namespace RealSense
      * Lip Corner down does not work so far, landmarkpoints at the lip corner are not tracked when they go down,
      * no further sdk settings found, maybe recognize patterns via opencv?
      */
-    class AU_LipLine : RSModule
+    class ME_LipLine : RSModule
     {
         // Default values
-        public AU_LipLine()
+        public ME_LipLine()
         {
             debug = true;
 
@@ -44,7 +44,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { line });
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipLine).ToString() + "_line", diffs[0]);
+            model.setAU_Value(typeof(ME_LipLine).ToString() + "_line", diffs[0]);
 
             // print debug-values 
             if (debug)

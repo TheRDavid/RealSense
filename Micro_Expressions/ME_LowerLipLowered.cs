@@ -12,7 +12,7 @@ namespace RealSense
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
      */
-    class AU_LowerLipLowered : RSModule
+    class ME_LowerLipLowered : RSModule
     {
 
         // variables for logic
@@ -23,7 +23,7 @@ namespace RealSense
         /**
          * Sets default-values
          */
-        public AU_LowerLipLowered()
+        public ME_LowerLipLowered()
         {
       
 
@@ -64,7 +64,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { distance });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), diffs[0]);
+            model.setAU_Value(typeof(ME_LowerLipLowered).ToString(), diffs[0]);
 
             /* print debug-values */
             if (debug)
