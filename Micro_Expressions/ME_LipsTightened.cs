@@ -22,7 +22,15 @@ namespace RealSense
         bool b = false;
         public ME_LipsTightened()
         {
+            //values correct
+            DEF_MIN = 0;
+            DEF_MAX = -3;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = -16.5;
+            XTREME_MIN = 0;
         }
 
         public override void Work(Graphics g)
