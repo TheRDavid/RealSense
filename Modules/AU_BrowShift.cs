@@ -18,8 +18,8 @@ namespace RealSense
         // Variables for logic
 
 
-        private double leftDistance;
-        private double rightDistance;
+        private double[] leftDistances = new double[numFramesBeforeAccept];
+        private double[] rightDistances = new double[numFramesBeforeAccept];
         private double leftEyeBrow_r, leftEyeBrow_m, leftEyeBrow_l;
         private double rightEyeBrow_r, rightEyeBrow_m, rightEyeBrow_l;
 
@@ -34,8 +34,8 @@ namespace RealSense
             MIN_TOL = -2;
             MAX_TOL = 1;
             debug = true;
-            XTREME_MAX = 300;
-            XTREME_MIN = -200;
+            XTREME_MAX = 33;
+            XTREME_MIN = -24;
         }
 
         public override void Work(Graphics g)
@@ -52,45 +52,61 @@ namespace RealSense
             rightEyeBrow_m = model.Difference(7, Model.NOSE_FIX) - 100;
             rightEyeBrow_l = model.Difference(5, Model.NOSE_FIX) - 100;
 
-            leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3) * 1;
-            rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3) * 1;
+            double ld = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3) * 1;
+            double rd = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3) * 1;
 
-            leftDistance = leftDistance < MAX_TOL && leftDistance > MIN_TOL ? 0 : leftDistance;
-            rightDistance = rightDistance < MAX_TOL && rightDistance > MIN_TOL ? 0 : rightDistance;
-
-            leftDistance = filterExtremeValues(leftDistance);
-            rightDistance = filterExtremeValues(rightDistance);
-
-            dynamicMinMax(new double[] { leftDistance, rightDistance });
-
-            double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
-
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
-
-            double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
-            eyeDiff = model.DifferenceByAxis(14, 22, Model.AXIS.Y, true);
-            Console.WriteLine("EyeDiff: " + eyeDiff);
-            if (Model.calibrated && (MAX >= 30 || MIN <= -30))
+            if (framesGathered < numFramesBeforeAccept)
             {
-                Console.WriteLine("Pose: " + model.CurrentPoseDiff);
-                Console.WriteLine("MIN: " + MIN + ", MAX: " + MAX);
-                model.View.colorBitmap.Save("C:\\Users\\prouser\\Pictures\\Saved Pictures\\err.png");
-                for (int i = 0; i < 10; i++)
-                    Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                         + model.CurrentFace[i].world.y + ", "
-                         + model.CurrentFace[i].world.z);
-                for (int i = 70; i < 76; i++)
-                    Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                         + model.CurrentFace[i].world.y + ", "
-                         + model.CurrentFace[i].world.z);
-                Environment.Exit(0);
+                leftDistances[framesGathered] = ld;
+                rightDistances[framesGathered++] = rd;
             }
-
-            // print debug-values 
-            if (debug)
+            else
             {
-                output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    leftDistances[i] = leftDistances[i] < MAX_TOL && leftDistances[i] > MIN_TOL ? 0 : leftDistances[i];
+                    rightDistances[i] = rightDistances[i] < MAX_TOL && rightDistances[i] > MIN_TOL ? 0 : rightDistances[i];
+                }
+                for (int j = 0; j < leftDistances.Length; j++)
+                {
+                    Console.WriteLine("LD: " + leftDistances[j] + ", RD: " + rightDistances[j]);
+                }
+                double leftDistance = filteredAvg(leftDistances);
+                double rightDistance = filteredAvg(rightDistances);
+
+                dynamicMinMax(new double[] { leftDistance, rightDistance });
+
+                double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
+
+                model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
+                model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
+
+                double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
+                eyeDiff = Math.Abs(model.DifferenceByAxis(14, 22, Model.AXIS.Y, true) * 1000);
+                Console.WriteLine("Eye Diff: " + eyeDiff + "\t" + (eyeDiff > 15 ? "ungerade" : "gerade"));
+                //Console.WriteLine("EyeDiff: " + eyeDiff + (eyeDiff > 0.01 ? "ungerade" : "gerade"));
+                if (Model.calibrated && (MAX >= XTREME_MAX || MIN <= XTREME_MIN))
+                {
+                    Console.WriteLine("Pose: " + model.CurrentPoseDiff);
+                    Console.WriteLine("MIN: " + MIN + ", MAX: " + MAX);
+                    model.View.colorBitmap.Save("C:\\Users\\prouser\\Pictures\\Saved Pictures\\err.png");
+                    for (int i = 0; i < 10; i++)
+                        Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                             + model.CurrentFace[i].world.y + ", "
+                             + model.CurrentFace[i].world.z);
+                    for (int i = 70; i < 76; i++)
+                        Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                             + model.CurrentFace[i].world.y + ", "
+                             + model.CurrentFace[i].world.z);
+                    Environment.Exit(0);
+                }
+
+                // print debug-values 
+                if (debug)
+                {
+                    output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                }
+                framesGathered = 0;
             }
         }
 

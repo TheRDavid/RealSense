@@ -18,6 +18,8 @@ namespace RealSense
         protected static Model model;
         public String output = "";
         protected bool debug = false;
+        protected static int numFramesBeforeAccept = 15;
+        protected int framesGathered = 0;
 
         /**
         * initialise the model
@@ -53,7 +55,7 @@ namespace RealSense
 
         /**
          * called in dynamicMinMax
-         */ 
+         */
         protected double filterExtremeValues(double value)
         {
             if (value > XTREME_MAX) value = XTREME_MAX;
@@ -62,26 +64,45 @@ namespace RealSense
             return value;
         }
 
-        protected void dynamicMinMax(double[] dist)                  
+        /**
+         * called in dynamicMinMax
+         */
+        protected double filteredAvg(double[] values)
+        {
+            double average = 0, numAverages = 0;
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] > XTREME_MAX) average += XTREME_MAX;
+                else if (values[i] < XTREME_MIN) average += XTREME_MIN;
+                else average += values[i];
+                numAverages++;
+            }
+
+            average /= numAverages;
+
+            return average;
+        }
+
+        protected void dynamicMinMax(double[] dist)
         {
             if (model.CurrentPoseDiff > 10) return; // haha kindof important ;)
-        /*    Console.WriteLine("Left: " + model.EmotionValue(typeof(AU_BrowShift).ToString() + "_left"));
-            Console.WriteLine("Right: " + model.EmotionValue(typeof(AU_BrowShift).ToString() + "_right"));
-            Console.WriteLine("\n\n\n\n###################################\nAllDiff: " + model.CurrentPoseDiff);
-            Console.Write("\tRollDiff: " + model.CurrentRollDiff);
-            Console.Write("\tYawDiff: " + model.CurrentYawDiff);
-            Console.Write("\tPitchDiff: " + model.CurrentPitchDiff);
-            Console.Write("\nPitch + Yaw: " + (model.CurrentYawDiff + model.CurrentPitchDiff));
-            Console.Write("\tRoll + Yaw: " + (model.CurrentYawDiff + model.CurrentRollDiff));
-            Console.Write("\tRoll + Pitch: " + (model.CurrentPitchDiff + model.CurrentRollDiff));
-            for (int i = 0; i < 10; i++)
-                Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                     + model.CurrentFace[i].world.y + ", "
-                     + model.CurrentFace[i].world.z);
-            for (int i = 70; i < 76; i++)
-                Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                     + model.CurrentFace[i].world.y + ", "
-                     + model.CurrentFace[i].world.z);*/
+                                                    /*    Console.WriteLine("Left: " + model.EmotionValue(typeof(AU_BrowShift).ToString() + "_left"));
+                                                        Console.WriteLine("Right: " + model.EmotionValue(typeof(AU_BrowShift).ToString() + "_right"));
+                                                        Console.WriteLine("\n\n\n\n###################################\nAllDiff: " + model.CurrentPoseDiff);
+                                                        Console.Write("\tRollDiff: " + model.CurrentRollDiff);
+                                                        Console.Write("\tYawDiff: " + model.CurrentYawDiff);
+                                                        Console.Write("\tPitchDiff: " + model.CurrentPitchDiff);
+                                                        Console.Write("\nPitch + Yaw: " + (model.CurrentYawDiff + model.CurrentPitchDiff));
+                                                        Console.Write("\tRoll + Yaw: " + (model.CurrentYawDiff + model.CurrentRollDiff));
+                                                        Console.Write("\tRoll + Pitch: " + (model.CurrentPitchDiff + model.CurrentRollDiff));
+                                                        for (int i = 0; i < 10; i++)
+                                                            Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                                                                 + model.CurrentFace[i].world.y + ", "
+                                                                 + model.CurrentFace[i].world.z);
+                                                        for (int i = 70; i < 76; i++)
+                                                            Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
+                                                                 + model.CurrentFace[i].world.y + ", "
+                                                                 + model.CurrentFace[i].world.z);*/
             double temp = dist.Min();
             MIN = MIN < temp ? MIN : temp;
             temp = dist.Max();

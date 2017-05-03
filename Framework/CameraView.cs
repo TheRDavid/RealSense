@@ -160,7 +160,7 @@ namespace RealSense
                         });
                         resetModules = false;
                     }
-                    if (model.CurrentFace != null)
+                    if (model.FaceData.QueryNumberOfDetectedFaces() > 0 && model.CurrentFace != null)
                     {
                         model.Modules.ForEach(delegate (RSModule mod)
                         {
@@ -191,7 +191,7 @@ namespace RealSense
                     bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
                     Debug_Y += 25;
                     bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                    
+
                     // update PictureBox
                     pb.Image = colorBitmap;
                     model.SenseManager.ReleaseFrame();

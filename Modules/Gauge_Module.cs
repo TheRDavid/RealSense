@@ -46,7 +46,7 @@ namespace RealSense
         }
 
         /**
-         * when a new frame is shot AND still calibrating (button was pressed), adds a new face to the average.
+         * when a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg.
          * After having numFaces faces, calculate...
          * Runs outside the Camera Thread
          */

@@ -27,7 +27,7 @@ namespace RealSense
         // Default values
         public AU_LipCorner()
         {
-            DEF_MIN = null;
+            DEF_MIN = 0;
             DEF_MAX = 5;
             reset();
             MIN_TOL = -1;
