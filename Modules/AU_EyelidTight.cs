@@ -61,18 +61,26 @@ namespace RealSense
             left_diff = ((leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3) - 100;
             right_diff = ((rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3) - 100;
 
+            left_diff = left_diff < MAX_TOL && left_diff > MIN_TOL ? 0 : left_diff;
+            right_diff = right_diff < MAX_TOL && right_diff > MIN_TOL ? 0 : right_diff;
 
-            int d_l = Convert.ToInt32(left_diff);
-            int d_r = Convert.ToInt32(right_diff);
+            left_diff = filterExtremeValues(left_diff);
+            right_diff = filterExtremeValues(right_diff);
+
+            dynamicMinMax(new double[] { left_diff, right_diff });
+
+            double[] diffs = convertValues(new double[] { left_diff, right_diff});
+
+            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", );
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_right", d_r); ;
+            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_left", diffs[0]);
+            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_right", diffs[1]); ;
 
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + "("+d_l+", "+d_r+")";
+                output = debug_message + "("+ diffs[0] + ", "+ diffs[1] + ")";
             }
         }
     }
