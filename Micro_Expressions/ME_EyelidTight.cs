@@ -71,8 +71,6 @@ namespace RealSense
 
             double[] diffs = convertValues(new double[] { left_diff, right_diff});
 
-            model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", );
-
             /* Update value in Model */
             model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
             model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
