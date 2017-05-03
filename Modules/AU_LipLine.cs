@@ -31,6 +31,8 @@ namespace RealSense
         public AU_LipLine()
         {
             debug = true;
+
+
         }
 
         public override void Work(Graphics g)

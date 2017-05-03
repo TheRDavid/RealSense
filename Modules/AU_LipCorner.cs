@@ -30,7 +30,14 @@ namespace RealSense
         // Default values
         public AU_LipCorner()
         {
+            DEF_MIN = null;
+            DEF_MAX = 5;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 0.5;
             debug = true;
+            XTREME_MAX = 45;
+            XTREME_MIN = -36;
         }
 
         public override void Work(Graphics g)

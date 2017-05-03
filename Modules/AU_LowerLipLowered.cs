@@ -29,7 +29,17 @@ namespace RealSense
          */
         public AU_LowerLipLowered()
         {
+      
+
+
+            DEF_MIN = null;
+            DEF_MAX = 4;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = 8;
+            XTREME_MIN = -6;
         }
 
         /**
@@ -48,9 +58,15 @@ namespace RealSense
             lowerLip_Distance[4] = model.Difference(40, Model.NOSE_FIX);
             distance = ((lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5);
             distance -= 100;
-            int d = Convert.ToInt32(distance); 
+
+            distance = filterExtremeValues(distance);
+
+            dynamicMinMax(new double[] { distance });
+
+            double[] diffs = convertValues(new double[] { distance });
+
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), d);
+            model.setAU_Value(typeof(AU_LowerLipLowered).ToString(), diffs);
 
             /* print debug-values */
             if (debug)

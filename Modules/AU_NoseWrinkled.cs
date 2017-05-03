@@ -28,7 +28,16 @@ namespace RealSense
         // Default values
         public AU_NoseWrinkled()
         {
+
+            //correct values
+            DEF_MIN = null;
+            DEF_MAX = 8;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = 50;
+            XTREME_MIN = -null;
         }
 
         /** 

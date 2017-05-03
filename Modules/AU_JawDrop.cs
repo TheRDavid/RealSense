@@ -23,7 +23,14 @@ namespace RealSense
 
         public AU_JawDrop()
         {
+            DEF_MIN = null;
+            DEF_MAX = 20;
+            reset();
+            MIN_TOL = -1.5;
+            MAX_TOL = 1.5;
             debug = true;
+            XTREME_MAX = 62;
+            XTREME_MIN = null 
         }
         public override void Work(Graphics g)
         {
