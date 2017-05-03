@@ -30,7 +30,7 @@ namespace RealSense
             MAX_TOL = 1.5;
             debug = true;
             XTREME_MAX = 62;
-            XTREME_MIN = null 
+            XTREME_MIN = 0; 
         }
         public override void Work(Graphics g)
         {
