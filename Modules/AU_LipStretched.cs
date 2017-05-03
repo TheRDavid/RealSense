@@ -19,12 +19,8 @@ namespace RealSense
 
         private double lips_corner_distance;
 
-        // variables for debugging
-
-        private string debug_message = "LipStreched: ";
-
         /**
-         * Sets default-values
+         * Sets default-valuesC:\Users\Tanja\Source\Repos\RealSense\Modules\AU_LipStretched.cs
          */
         public AU_LipStretched()
         {
@@ -40,15 +36,22 @@ namespace RealSense
             /* calculations */
 
             lips_corner_distance =(model.Difference(33, 39) - 100);
-            int d = Convert.ToInt32(lips_corner_distance);
-            //lips_corner_distance /= 100;
+
+            lips_corner_distance = lips_corner_distance < MAX_TOL && lips_corner_distance > MIN_TOL ? 0 : lips_corner_distance;
+
+            lips_corner_distance = filterExtremeValues(lips_corner_distance);
+
+            dynamicMinMax(new double[] { lips_corner_distance });
+
+            double[] diffs = convertValues(new double[] { lips_corner_distance });
+
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_LipStretched).ToString(), d);
+            model.setAU_Value(typeof(AU_LipStretched).ToString(), diffs[0]);
 
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + d;
+                output = "LipStreched: " + diffs[0];
 
             }
         }

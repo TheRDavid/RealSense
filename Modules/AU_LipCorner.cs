@@ -20,10 +20,7 @@ namespace RealSense
         // Variables for logic
 
         private double[] LipCorner = new double[2];
-        private double leftDistance;
-        private double rightDistance;
-        private double leftLipCorner;
-        private double rightLipCorner;
+
 
         // Variables for debugging
 
@@ -41,19 +38,24 @@ namespace RealSense
             LipCorner[0] = -((model.Difference(33, 26)) - 100);  //left LipCorner
             LipCorner[1] = -((model.Difference(39, 26)) - 100);  //right LipCorner
 
-            int d_l = Convert.ToInt32(LipCorner[0]);
-            int d_r = Convert.ToInt32(LipCorner[1]);
+            LipCorner[0] = LipCorner[0] < MAX_TOL && LipCorner[0] > MIN_TOL ? 0 : LipCorner[0];
+            LipCorner[1] = LipCorner[1] < MAX_TOL && LipCorner[1] > MIN_TOL ? 0 : LipCorner[1];
+
+            LipCorner[0] = filterExtremeValues(LipCorner[0]);
+            LipCorner[1] = filterExtremeValues(LipCorner[1]);
+
+            dynamicMinMax(LipCorner);
+
+            double[] diffs = convertValues(LipCorner);        
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", d_r);
-
-
+            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_left", diffs[0]);
+            model.setAU_Value(typeof(AU_LipCorner).ToString() + "_right", diffs[1]);
 
             // print debug-values 
             if (debug)
             {
-                output = "LipCorner: "  + d_l + ", " + d_r ;
+                output = "LipCorner: "  + diffs[0] + ", " + diffs[1];
             }
         }
     }
