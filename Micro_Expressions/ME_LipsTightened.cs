@@ -13,16 +13,24 @@ namespace RealSense
    *@date 21.03.2017
    *@HogwartsHouse Slytherin  
    */
-    class AU_LipsTightened : RSModule
+    class ME_LipsTightened : RSModule
     {
         double topDownDistance;
         double upperLip;
         double bottomLip;
 
         bool b = false;
-        public AU_LipsTightened()
+        public ME_LipsTightened()
         {
+            //values correct
+            DEF_MIN = 0;
+            DEF_MAX = -3;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = -16.5;
+            XTREME_MIN = 0;
         }
 
         public override void Work(Graphics g)
@@ -41,7 +49,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { topDownDistance });
 
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", diffs[0]);
+            model.setAU_Value(typeof(ME_LipsTightened).ToString() + "_upperBottomLip", diffs[0]);
 
             if (debug)
             {

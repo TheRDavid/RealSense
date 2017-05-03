@@ -13,7 +13,7 @@ namespace RealSense
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
      */
-    class AU_NoseWrinkled : RSModule
+    class ME_NoseWrinkled : RSModule
     {
 
         // variables for logic
@@ -22,7 +22,7 @@ namespace RealSense
         private double distance;
 
         // Default values
-        public AU_NoseWrinkled()
+        public ME_NoseWrinkled()
         {
 
             //correct values
@@ -64,7 +64,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { distance });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() , diffs[0]);
+            model.setAU_Value(typeof(ME_NoseWrinkled).ToString() , diffs[0]);
       
 
             /* print debug-values */

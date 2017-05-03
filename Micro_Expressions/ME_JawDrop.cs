@@ -13,7 +13,7 @@ namespace RealSense
     *@date 21.03.2017
     *@HogwartsHouse Slytherin
     */
-    class AU_JawDrop : RSModule
+    class ME_JawDrop : RSModule
         // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
 
     {
@@ -21,7 +21,7 @@ namespace RealSense
         double chin_dist;
       
 
-        public AU_JawDrop()
+        public ME_JawDrop()
         {
             DEF_MIN = 0;
             DEF_MAX = 20;
@@ -48,7 +48,7 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { chin_dist });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_JawDrop).ToString(), diffs[0]);
+            model.setAU_Value(typeof(ME_JawDrop).ToString(), diffs[0]);
 
             /* print debug-values */
             if (debug)

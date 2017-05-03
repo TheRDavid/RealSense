@@ -13,7 +13,7 @@ namespace RealSense
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
      */ 
-    class AU_EyelidTight : RSModule
+    class ME_EyelidTight : RSModule
     {
 
         // variables for logic
@@ -27,7 +27,7 @@ namespace RealSense
         private string debug_message = "EyelidTight: ";
 
         // Default values
-        public AU_EyelidTight()
+        public ME_EyelidTight()
         {
             //values correct
             DEF_MIN = -34;
@@ -72,8 +72,8 @@ namespace RealSense
             double[] diffs = convertValues(new double[] { left_diff, right_diff});
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_left", diffs[0]);
-            model.setAU_Value(typeof(AU_EyelidTight).ToString() + "_right", diffs[1]); ;
+            model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
+            model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
 
             /* print debug-values */
             if (debug)

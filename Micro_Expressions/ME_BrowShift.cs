@@ -13,7 +13,7 @@ namespace RealSense
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
      */
-    class AU_BrowShift : RSModule
+    class ME_BrowShift : RSModule
     {
         // Variables for logic
 
@@ -26,7 +26,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public AU_BrowShift()
+        public ME_BrowShift()
         {
             DEF_MIN = -7;
             DEF_MAX = 12;
@@ -78,8 +78,8 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
+            model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
+            model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
 
                 double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
                 eyeDiff = Math.Abs(model.DifferenceByAxis(14, 22, Model.AXIS.Y, true) * 1000);

@@ -12,11 +12,11 @@ namespace RealSense
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
      */
-    class AU_InnerBrowShift : RSModule
+    class ME_InnerBrowShift : RSModule
     {
         private double left_dist = 0, right_dist = 0;
 
-        public AU_InnerBrowShift()
+        public ME_InnerBrowShift()
         {
             debug = true;
         }
@@ -34,8 +34,8 @@ namespace RealSense
             int d_l = Convert.ToInt32(left_dist*1000) / 3000 - 100;
             int d_r = Convert.ToInt32(right_dist*1000) / 3000 - 100;
 
-            model.setAU_Value(typeof(AU_InnerBrowShift).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(AU_InnerBrowShift).ToString() + "_right", d_r);
+            model.setAU_Value(typeof(ME_InnerBrowShift).ToString() + "_left", d_l);
+            model.setAU_Value(typeof(ME_InnerBrowShift).ToString() + "_right", d_r);
 
             // print debug-values 
             if (debug)
