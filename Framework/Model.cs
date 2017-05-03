@@ -15,6 +15,7 @@ namespace RealSense
     {
         public enum AXIS { X, Y, Z, };
         public static int NOSE_FIX = 26;
+        public static bool calibrated = false;
 
         // Reference to globally used SenseManager
         private PXCMSenseManager senseManager;
@@ -23,7 +24,7 @@ namespace RealSense
         private PXCMFaceConfiguration faceConfig;
         public PXCMFaceData.Face faceAktuell;
         private PXCMFaceData.LandmarksData lp;
-        private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David
+        private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David :*
         private PXCMFaceData.LandmarkPoint[] currentFace;
         private PXCMFaceData.PoseEulerAngles nullPose = new PXCMFaceData.PoseEulerAngles();
         public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();

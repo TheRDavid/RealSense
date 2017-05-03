@@ -68,8 +68,10 @@ namespace RealSense
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_left", diffs[0]);
             model.setAU_Value(typeof(AU_BrowShift).ToString() + "_right", diffs[1]);
 
-            Console.WriteLine("EyeDiff: " + Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y));
-            if (MAX >= 30 || MIN <= -30)
+            double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
+            eyeDiff = model.DifferenceByAxis(14, 22, Model.AXIS.Y, true);
+            Console.WriteLine("EyeDiff: " + eyeDiff);
+            if (Model.calibrated && (MAX >= 30 || MIN <= -30))
             {
                 Console.WriteLine("Pose: " + model.CurrentPoseDiff);
                 Console.WriteLine("MIN: " + MIN + ", MAX: " + MAX);

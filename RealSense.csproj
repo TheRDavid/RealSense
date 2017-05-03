@@ -78,7 +78,6 @@
     <Compile Include="Modules\AU_LipStretched.cs" />
     <Compile Include="Modules\AU_LowerLipLowered.cs" />
     <Compile Include="Modules\AU_NoseWrinkled.cs" />
-    <Compile Include="Modules\AU_TEMPLATE.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>

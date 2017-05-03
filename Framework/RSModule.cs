@@ -51,6 +51,9 @@ namespace RealSense
             return ret;
         }
 
+        /**
+         * called in dynamicMinMax
+         */ 
         protected double filterExtremeValues(double value)
         {
             if (value > XTREME_MAX) value = XTREME_MAX;
@@ -59,7 +62,7 @@ namespace RealSense
             return value;
         }
 
-        protected void dynamicMinMax(double[] dist)                    //Tanja
+        protected void dynamicMinMax(double[] dist)                  
         {
             if (model.CurrentPoseDiff > 10) return; // haha kindof important ;)
         /*    Console.WriteLine("Left: " + model.EmotionValue(typeof(AU_BrowShift).ToString() + "_left"));
@@ -84,7 +87,6 @@ namespace RealSense
             temp = dist.Max();
             //   Console.WriteLine("\n" + MIN + ", " + MAX);
             MAX = MAX < temp ? temp : MAX;
-
         }
 
         public void reset()
