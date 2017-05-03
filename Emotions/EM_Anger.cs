@@ -49,7 +49,7 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            //Anger 4+5+7+23 --> Brow Lowerer, Upper Lid Raiser, Lid Tightener, Lip Tightener
+            //Anger 4+5+7+23 --> BrowShift, EyelidTight, LipsTightened
 
             //percentage Anger
             int p_brow = 40;
