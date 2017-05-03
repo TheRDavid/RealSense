@@ -26,14 +26,14 @@ namespace RealSense
         {
 
             //correct values
-            DEF_MIN = null;
+            DEF_MIN = 0;
             DEF_MAX = 8;
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
             XTREME_MAX = 50;
-            XTREME_MIN = -null;
+            XTREME_MIN = 0;
         }
 
         /** 
