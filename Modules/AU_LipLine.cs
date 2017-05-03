@@ -17,20 +17,12 @@ namespace RealSense
      */
     class AU_LipLine : RSModule
     {
-        // Variables for logic
-
-        private double[] LipCorner = new double[2];
-        private double leftDistance;
-        private double rightDistance;
-        private double leftLipCorner;
-        private double rightLipCorner;
-
-        // Variables for debugging
-
         // Default values
         public AU_LipLine()
         {
             debug = true;
+
+
         }
 
         public override void Work(Graphics g)
@@ -43,13 +35,21 @@ namespace RealSense
             line += model.DifferenceByAxis(39, 40, Model.AXIS.Y, false);
             line *= 1000;
 
+            line = line < MAX_TOL && line > MIN_TOL ? 0 : line;
+
+            line = filterExtremeValues(line);
+
+            dynamicMinMax(new double[] { line });
+
+            double[] diffs = convertValues(new double[] { line });
+
             // Update value in Model 
-            model.setAU_Value(typeof(AU_LipLine).ToString() + "_line", line);
+            model.setAU_Value(typeof(AU_LipLine).ToString() + "_line", diffs[0]);
 
             // print debug-values 
             if (debug)
             {
-                output = "LipLine: " + (int)line;
+                output = "LipLine: " + (int)diffs[0];
             }
         }
     }

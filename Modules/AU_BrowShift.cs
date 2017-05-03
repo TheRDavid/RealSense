@@ -52,7 +52,6 @@ namespace RealSense
             rightEyeBrow_m = model.Difference(7, Model.NOSE_FIX) - 100;
             rightEyeBrow_l = model.Difference(5, Model.NOSE_FIX) - 100;
 
-
             leftDistance = ((leftEyeBrow_r + leftEyeBrow_m + leftEyeBrow_l) / 3) * 1;
             rightDistance = ((rightEyeBrow_r + rightEyeBrow_m + rightEyeBrow_l) / 3) * 1;
 

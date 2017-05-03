@@ -19,16 +19,21 @@ namespace RealSense
         // variables for logic
 
         private double left_diff, right_diff, middle_diff;
-        private double dist;
-
-        // variables for debugging
-
-        private string debug_message = "NoseWrinkled: ";
+        private double distance;
 
         // Default values
         public AU_NoseWrinkled()
         {
+
+            //correct values
+            DEF_MIN = null;
+            DEF_MAX = 8;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 1;
             debug = true;
+            XTREME_MAX = 50;
+            XTREME_MIN = -null;
         }
 
         /** 
@@ -48,18 +53,24 @@ namespace RealSense
             // what the fuck are you doing ? 
             middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
 
-            dist = (left_diff + right_diff + middle_diff) / 3;
+            distance = (left_diff + right_diff + middle_diff) / 3;
 
-            int d = -Convert.ToInt32(dist);
+            distance = distance < MAX_TOL && distance > MIN_TOL ? 0 : distance;
+
+            distance = filterExtremeValues(distance);
+
+            dynamicMinMax(new double[] { distance });
+
+            double[] diffs = convertValues(new double[] { distance });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() , d);
+            model.setAU_Value(typeof(AU_NoseWrinkled).ToString() , diffs[0]);
       
 
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + "(" + d + ")";
+                output = "NoseWrinkled: " + "(" + diffs[0] + ")";
             }
         }
     }

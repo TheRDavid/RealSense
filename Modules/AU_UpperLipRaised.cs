@@ -20,10 +20,6 @@ namespace RealSense
         private double[] upperLip_Distance = new double[5];
         private double distance;
 
-        // variables for debugging
-
-        private string debug_message = "AU_UpperLipRaised: ";
-
         /**
          * Sets default-values
          */
@@ -50,15 +46,21 @@ namespace RealSense
             distance -= 100;
             distance *= -1;
 
-            int d = Convert.ToInt32(distance);
+            distance = distance < MAX_TOL && distance > MIN_TOL ? 0 : distance;
+
+            distance = filterExtremeValues(distance);
+
+            dynamicMinMax(new double[] { distance });
+
+            double[] diffs = convertValues(new double[] { distance });
 
             /* Update value in Model */
-            model.setAU_Value(typeof(AU_UpperLipRaised).ToString(), d);
+            model.setAU_Value(typeof(AU_UpperLipRaised).ToString(), diffs[0]);
 
             /* print debug-values */
             if (debug)
             {
-                output = debug_message + d;
+                output = "AU_UpperLipRaised: " + diffs[0];
             }
         }
     }

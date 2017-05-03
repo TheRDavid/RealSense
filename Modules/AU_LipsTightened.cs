@@ -30,15 +30,23 @@ namespace RealSense
             upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
             bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
-           topDownDistance = (upperLip + bottomLip) / 2;
-            int d = Convert.ToInt32(topDownDistance * 1000) / 1000;
+            topDownDistance = (upperLip + bottomLip) / 2;
 
-            model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", d);
+            topDownDistance = topDownDistance < MAX_TOL && topDownDistance > MIN_TOL ? 0 : topDownDistance;
+
+            topDownDistance = filterExtremeValues(topDownDistance);
+
+            dynamicMinMax(new double[] { topDownDistance });
+
+            double[] diffs = convertValues(new double[] { topDownDistance });
+
+            // Update value in Model 
+            model.setAU_Value(typeof(AU_LipsTightened).ToString() + "_upperBottomLip", diffs[0]);
 
             if (debug)
             {
               
-                output = "Lips tightened: " + d;
+                output = "Lips tightened: " + diffs[0];
                 
             }
         }
