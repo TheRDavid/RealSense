@@ -51,6 +51,19 @@ namespace RealSense
         {
             //Anger 4+5+7+23 --> BrowShift, EyelidTight, LipsTightened
 
+            /**
+             * Anleitung: 
+             * 1. Welche ME werden benoetigt?
+             * 2. Prozenteinfluss der MEs festlegen
+             * 3. fuer jede ME folgende Berechnung
+             *  3.1 Werte aus dem Model holen
+             *  3.2 gegebenenfalls benoetigten Wert berechnen
+             *  3.3 bei negativen Werten mit -1 multiplizieren (aufpassen mit den Gegenwerten... diese schliessen die ME allerdings meistens aus und sind daher ok/berechtigt?)
+             *  3.4 mit Prozentanteil kombinieren (* Anteil / 100)
+             * 4. Werte addieren und ins Model schreiben
+             * 
+             * */
+
             //percentage Anger
             int p_brow = 40;
             int p_lid = 30;
