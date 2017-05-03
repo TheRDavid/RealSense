@@ -28,7 +28,7 @@ namespace RealSense
       
 
 
-            DEF_MIN = null;
+            DEF_MIN = 0;
             DEF_MAX = 4;
             reset();
             MIN_TOL = -1;
