@@ -12,15 +12,18 @@ namespace RealSense
      * Measures tightening of eyelids (each eye)
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
-     */ 
+     */
     class ME_EyelidTight : RSModule
     {
 
         // variables for logic
 
-        private double leftEye_leftDistance_diff, leftEye_middleDistance_diff, leftEye_rightDistance_diff, 
+        private double leftEye_leftDistance_diff, leftEye_middleDistance_diff, leftEye_rightDistance_diff,
             rightEye_leftDistance_diff, rightEye_middleDistance_diff, rightEye_rightDistance_diff;
         private double left_diff, right_diff;
+
+        private double[] leftDistances = new double[numFramesBeforeAccept];
+        private double[] rightDistances = new double[numFramesBeforeAccept];
 
         // variables for debugging
 
@@ -61,24 +64,38 @@ namespace RealSense
             left_diff = ((leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3) - 100;
             right_diff = ((rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3) - 100;
 
-            left_diff = left_diff < MAX_TOL && left_diff > MIN_TOL ? 0 : left_diff;
-            right_diff = right_diff < MAX_TOL && right_diff > MIN_TOL ? 0 : right_diff;
 
-            left_diff = filterExtremeValues(left_diff);
-            right_diff = filterExtremeValues(right_diff);
-
-            dynamicMinMax(new double[] { left_diff, right_diff });
-
-            double[] diffs = convertValues(new double[] { left_diff, right_diff});
-
-            /* Update value in Model */
-            model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
-            model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
-
-            /* print debug-values */
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = debug_message + "("+ diffs[0] + ", "+ diffs[1] + ")";
+                leftDistances[framesGathered] = left_diff;
+                rightDistances[framesGathered++] = right_diff;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    leftDistances[i] = leftDistances[i] < MAX_TOL && leftDistances[i] > MIN_TOL ? 0 : leftDistances[i];
+                    rightDistances[i] = rightDistances[i] < MAX_TOL && rightDistances[i] > MIN_TOL ? 0 : rightDistances[i];
+                }
+
+                double leftDistance = filteredAvg(leftDistances);
+                double rightDistance = filteredAvg(rightDistances);
+
+                dynamicMinMax(new double[] { leftDistance, rightDistance });
+
+                double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
+                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ", " + diffs[1] + ")";
+                }
+
+                framesGathered = 0;
             }
         }
     }

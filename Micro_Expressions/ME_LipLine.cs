@@ -17,12 +17,21 @@ namespace RealSense
      */
     class ME_LipLine : RSModule
     {
+
+        private string debug_message = "LipLine: ";
+        private double[] lines = new double[numFramesBeforeAccept];
         // Default values
         public ME_LipLine()
         {
             debug = true;
-
-
+            DEF_MIN = -33;
+            DEF_MAX = 90;
+            reset();
+            MIN_TOL = -3;
+            MAX_TOL = 3;
+            debug = true;
+            XTREME_MAX = 60;
+            XTREME_MIN = -22;
         }
 
         public override void Work(Graphics g)
@@ -37,19 +46,32 @@ namespace RealSense
 
             line = line < MAX_TOL && line > MIN_TOL ? 0 : line;
 
-            line = filterExtremeValues(line);
-
-            dynamicMinMax(new double[] { line });
-
-            double[] diffs = convertValues(new double[] { line });
-
-            // Update value in Model 
-            model.setAU_Value(typeof(ME_LipLine).ToString() + "_line", diffs[0]);
-
-            // print debug-values 
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = "LipLine: " + (int)diffs[0];
+                lines[framesGathered++] = line;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    lines[i] = lines[i] < MAX_TOL && lines[i] > MIN_TOL ? 0 : lines[i];
+                }
+
+                double distance = filteredAvg(lines);
+
+                dynamicMinMax(new double[] { distance });
+
+                double[] diffs = convertValues(new double[] { distance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ")";
+                }
+                framesGathered = 0;
             }
         }
     }

@@ -67,10 +67,7 @@ namespace RealSense
                     leftDistances[i] = leftDistances[i] < MAX_TOL && leftDistances[i] > MIN_TOL ? 0 : leftDistances[i];
                     rightDistances[i] = rightDistances[i] < MAX_TOL && rightDistances[i] > MIN_TOL ? 0 : rightDistances[i];
                 }
-                for (int j = 0; j < leftDistances.Length; j++)
-                {
-                    Console.WriteLine("LD: " + leftDistances[j] + ", RD: " + rightDistances[j]);
-                }
+
                 double leftDistance = filteredAvg(leftDistances);
                 double rightDistance = filteredAvg(rightDistances);
 
@@ -78,10 +75,10 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-            model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
-            model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
+                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
+                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
 
-                double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
+                /*double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
                 eyeDiff = Math.Abs(model.DifferenceByAxis(14, 22, Model.AXIS.Y, true) * 1000);
                 Console.WriteLine("Eye Diff: " + eyeDiff + "\t" + (eyeDiff > 15 ? "ungerade" : "gerade"));
                 //Console.WriteLine("EyeDiff: " + eyeDiff + (eyeDiff > 0.01 ? "ungerade" : "gerade"));
@@ -99,13 +96,14 @@ namespace RealSense
                              + model.CurrentFace[i].world.y + ", "
                              + model.CurrentFace[i].world.z);
                     Environment.Exit(0);
-                }
+                }*/
 
                 // print debug-values 
                 if (debug)
                 {
                     output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
+
                 framesGathered = 0;
             }
         }

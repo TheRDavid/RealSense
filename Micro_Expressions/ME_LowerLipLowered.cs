@@ -17,17 +17,16 @@ namespace RealSense
 
         // variables for logic
 
-        private double[] lowerLip_Distance=new double[5];
+        private double[] lowerLip_Distance = new double[5];
         private double distance;
+        private double[] distances = new double[numFramesBeforeAccept];
+        private string debug_message = "LowerLipLowered: ";
 
         /**
          * Sets default-values
          */
         public ME_LowerLipLowered()
         {
-      
-
-
             DEF_MIN = 0;
             DEF_MAX = 4;
             reset();
@@ -55,21 +54,33 @@ namespace RealSense
             distance = ((lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5);
             distance -= 100;
 
-            distance = distance < MAX_TOL && distance > MIN_TOL ? 0 : distance;
 
-            distance = filterExtremeValues(distance);
-
-            dynamicMinMax(new double[] { distance });
-
-            double[] diffs = convertValues(new double[] { distance });
-
-            /* Update value in Model */
-            model.setAU_Value(typeof(ME_LowerLipLowered).ToString(), diffs[0]);
-
-            /* print debug-values */
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = "LowerLipLowered: " + diffs[0];
+                distances[framesGathered++] = distance;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    distances[i] = distances[i] < MAX_TOL && distances[i] > MIN_TOL ? 0 : distances[i];
+                }
+
+                double distance = filteredAvg(distances);
+
+                dynamicMinMax(new double[] { distance });
+
+                double[] diffs = convertValues(new double[] { distance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_NoseWrinkled).ToString(), diffs[0]);
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ")";
+                }
+                framesGathered = 0;
             }
         }
     }

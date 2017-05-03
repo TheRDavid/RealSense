@@ -18,9 +18,11 @@ namespace RealSense
     class ME_LipCorner : RSModule
     {
         // Variables for logic
-
-        private double[] LipCorner = new double[2];
-
+        
+        private double cornerLeft = 0, cornerRight = 0;
+        private double[] cornersLeft = new double[numFramesBeforeAccept];
+        private double[] cornersRight = new double[numFramesBeforeAccept];
+        private string debug_message = "LipCorner: ";
 
         // Variables for debugging
 
@@ -42,27 +44,41 @@ namespace RealSense
             /* Calculations */
 
             // calculates difference between nose and LipCorner 
-            LipCorner[0] = -((model.Difference(33, 26)) - 100);  //left LipCorner
-            LipCorner[1] = -((model.Difference(39, 26)) - 100);  //right LipCorner
+            cornerLeft = -((model.Difference(33, 26)) - 100);  //left LipCorner
+            cornerRight = -((model.Difference(39, 26)) - 100);  //right LipCorner
 
-            LipCorner[0] = LipCorner[0] < MAX_TOL && LipCorner[0] > MIN_TOL ? 0 : LipCorner[0];
-            LipCorner[1] = LipCorner[1] < MAX_TOL && LipCorner[1] > MIN_TOL ? 0 : LipCorner[1];
 
-            LipCorner[0] = filterExtremeValues(LipCorner[0]);
-            LipCorner[1] = filterExtremeValues(LipCorner[1]);
-
-            dynamicMinMax(LipCorner);
-
-            double[] diffs = convertValues(LipCorner);        
-
-            // Update value in Model 
-            model.setAU_Value(typeof(ME_LipCorner).ToString() + "_left", diffs[0]);
-            model.setAU_Value(typeof(ME_LipCorner).ToString() + "_right", diffs[1]);
-
-            // print debug-values 
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = "LipCorner: "  + diffs[0] + ", " + diffs[1];
+                cornersLeft[framesGathered] = cornerLeft;
+                cornersRight[framesGathered++] = cornerRight;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    cornersLeft[i] = cornersLeft[i] < MAX_TOL && cornersLeft[i] > MIN_TOL ? 0 : cornersLeft[i];
+                    cornersRight[i] = cornersRight[i] < MAX_TOL && cornersRight[i] > MIN_TOL ? 0 : cornersRight[i];
+                }
+
+                double leftDistance = filteredAvg(cornersLeft);
+                double rightDistance = filteredAvg(cornersRight);
+
+                dynamicMinMax(new double[] { leftDistance, rightDistance });
+
+                double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_left", diffs[0]);
+                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_right", diffs[1]); ;
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ")";
+                }
+
+                framesGathered = 0;
             }
         }
     }

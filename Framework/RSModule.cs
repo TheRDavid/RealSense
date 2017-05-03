@@ -56,17 +56,6 @@ namespace RealSense
         /**
          * called in dynamicMinMax
          */
-        protected double filterExtremeValues(double value)
-        {
-            if (value > XTREME_MAX) value = XTREME_MAX;
-            else if (value < XTREME_MIN) value = XTREME_MIN;
-            // Console.WriteLine("XTREME: " + XTREME_MAX + ", " + XTREME_MIN + " -> " + value);
-            return value;
-        }
-
-        /**
-         * called in dynamicMinMax
-         */
         protected double filteredAvg(double[] values)
         {
             double average = 0, numAverages = 0;

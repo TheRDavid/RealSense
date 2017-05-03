@@ -18,7 +18,9 @@ namespace RealSense
         // variables for logic
 
         private double[] upperLip_Distance = new double[5];
+        private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
+        private string debug_message = "UpperLipRaised: ";
 
         /**
          * Sets default-values
@@ -36,31 +38,42 @@ namespace RealSense
         {
             /* calculations */
 
-            // calculates the difference between the Nullface and the currentface -> to check if the whole LowerLip is raised
-            upperLip_Distance[0] = model.Difference(34, Model.NOSE_FIX);
-            upperLip_Distance[1] = model.Difference(35, Model.NOSE_FIX);
-            upperLip_Distance[2] = model.Difference(36, Model.NOSE_FIX);
-            upperLip_Distance[3] = model.Difference(37, Model.NOSE_FIX);
-            upperLip_Distance[4] = model.Difference(38, Model.NOSE_FIX);
-            distance = (upperLip_Distance[0] + upperLip_Distance[1] + upperLip_Distance[2] + upperLip_Distance[3] + upperLip_Distance[4]) / 5;
-            distance -= 100;
-            distance *= -1;
-
-            distance = distance < MAX_TOL && distance > MIN_TOL ? 0 : distance;
-
-            distance = filterExtremeValues(distance);
-
-            dynamicMinMax(new double[] { distance });
-
-            double[] diffs = convertValues(new double[] { distance });
-
-            /* Update value in Model */
-            model.setAU_Value(typeof(ME_UpperLipRaised).ToString(), diffs[0]);
-
-            /* print debug-values */
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = "AU_UpperLipRaised: " + diffs[0];
+                upperLip_Distance[0] = model.Difference(34, Model.NOSE_FIX);
+                upperLip_Distance[1] = model.Difference(35, Model.NOSE_FIX);
+                upperLip_Distance[2] = model.Difference(36, Model.NOSE_FIX);
+                upperLip_Distance[3] = model.Difference(37, Model.NOSE_FIX);
+                upperLip_Distance[4] = model.Difference(38, Model.NOSE_FIX);
+
+                distance = (upperLip_Distance[0] + upperLip_Distance[1] + upperLip_Distance[2] + upperLip_Distance[3] + upperLip_Distance[4]) / 5;
+                distance -= 100;
+                distance *= -1;
+
+                distances[framesGathered++] = distance;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    distances[i] = distances[i] < MAX_TOL && distances[i] > MIN_TOL ? 0 : distances[i];
+                }
+
+                double distance = filteredAvg(distances);
+
+                dynamicMinMax(new double[] { distance });
+
+                double[] diffs = convertValues(new double[] { distance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_UpperLipRaised).ToString(), diffs[0]);
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ")";
+                }
+                framesGathered = 0;
             }
         }
     }

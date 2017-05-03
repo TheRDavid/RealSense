@@ -18,13 +18,15 @@ namespace RealSense
         // variables for logic
 
         private double lips_corner_distance;
+        double[] lips_corner_distances = new double[numFramesBeforeAccept];
+        private string debug_message = "LipStretched: ";
 
         /**
          * Sets default-valuesC:\Users\Tanja\Source\Repos\RealSense\Modules\AU_LipStretched.cs
          */
         public ME_LipStretched()
         {
-          
+
             //correct values
             DEF_MIN = -13;
             DEF_MAX = 13;
@@ -37,31 +39,41 @@ namespace RealSense
         }
 
         /**
-         *@Override 
+         * @Override 
          * Calculates the difference between the two lip corners
          */
         public override void Work(Graphics g)
         {
             /* calculations */
 
-            lips_corner_distance =(model.Difference(33, 39) - 100);
+            lips_corner_distance = (model.Difference(33, 39) - 100);
 
-            lips_corner_distance = lips_corner_distance < MAX_TOL && lips_corner_distance > MIN_TOL ? 0 : lips_corner_distance;
-
-            lips_corner_distance = filterExtremeValues(lips_corner_distance);
-
-            dynamicMinMax(new double[] { lips_corner_distance });
-
-            double[] diffs = convertValues(new double[] { lips_corner_distance });
-
-            /* Update value in Model */
-            model.setAU_Value(typeof(ME_LipStretched).ToString(), diffs[0]);
-
-            /* print debug-values */
-            if (debug)
+            if (framesGathered < numFramesBeforeAccept)
             {
-                output = "LipStreched: " + diffs[0];
+                lips_corner_distances[framesGathered++] = lips_corner_distance;
+            }
+            else
+            {
+                for (int i = 0; i < numFramesBeforeAccept; i++)
+                {
+                    lips_corner_distances[i] = lips_corner_distances[i] < MAX_TOL && lips_corner_distances[i] > MIN_TOL ? 0 : lips_corner_distances[i];
+                }
 
+                double distance = filteredAvg(lips_corner_distances);
+
+                dynamicMinMax(new double[] { distance });
+
+                double[] diffs = convertValues(new double[] { distance });
+
+                /* Update value in Model */
+                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + "(" + diffs[0] + ")";
+                }
+                framesGathered = 0;
             }
         }
     }
