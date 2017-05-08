@@ -36,6 +36,10 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 33;
             XTREME_MIN = -24;
+
+
+            model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = 0;
         }
 
         public override void Work(Graphics g)
@@ -72,8 +76,8 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
+                model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
 
                 // print debug-values 
                 if (debug)

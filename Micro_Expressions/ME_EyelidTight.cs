@@ -41,6 +41,8 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 75;
             XTREME_MIN = -78;
+            model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = 0;
         }
 
         /** 
@@ -83,13 +85,13 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
+                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = diffs[1];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ", " + diffs[1] + ")";
+                    output = "Eyelid_Tight: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

@@ -66,8 +66,8 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_right", diffs[1]); ;
+                model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1];
 
                 /* print debug-values */
                 if (debug)

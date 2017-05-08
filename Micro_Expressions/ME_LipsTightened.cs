@@ -23,13 +23,14 @@ namespace RealSense
         {
             //values correct
             DEF_MIN = -3;
-            DEF_MAX = 0;
+            DEF_MAX = 1;
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
             XTREME_MAX = 0;
             XTREME_MIN = -16.5;
+            model.AU_Values[typeof(ME_LipsTightened).ToString()] = 0;
         }
 
         public override void Work(Graphics g)
@@ -47,15 +48,18 @@ namespace RealSense
                 filterToleranceValues(topDownDistances);
 
                 double topDownDistance = filteredAvg(topDownDistances);
+                Console.WriteLine("tddist1: " + topDownDistance);
                 double[] diffs = new double[] { topDownDistance };
                 dynamicMinMax(diffs);
+                Console.WriteLine("tddist2: " + diffs[0]);
                 diffs = convertValues(diffs);
+                Console.WriteLine("tddist3: " + diffs[0]);
 
                 // Update value in Model 
-                model.setAU_Value(typeof(ME_LipsTightened).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {
-                    output = "Lips tightened: " + diffs[0];
+                    output = "LipsTightened: " + "(" + (int)diffs[0] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

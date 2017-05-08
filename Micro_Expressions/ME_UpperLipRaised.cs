@@ -28,6 +28,8 @@ namespace RealSense
         public ME_UpperLipRaised()
         {
             debug = true;
+            model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
+
         }
 
         /**
@@ -63,7 +65,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_UpperLipRaised).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
