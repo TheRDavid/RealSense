@@ -22,21 +22,17 @@ namespace RealSense
             Model model = new Model();
             RSModule.Init(model);
             // Add ActionUnits
-
-            //   model.AddModule(new AU_BrowShift());
-            // model.AddModule(new AU_CheeckRaised()); not working properly
-            //   model.AddModule(new AU_EyelidTight());
-            // model.AddModule(new AU_FaceRect()); not needed
-            //   model.AddModule(new AU_InnerBrowShift());
-            //   model.AddModule(new AU_JawDrop());
+            
             model.AddModule(new FaceTrackerModule(null));
             model.AddModule(new ME_BrowShift());
-         //   model.AddModule(new AU_LipCorner());
-          //  model.AddModule(new AU_LipsTightened());
-           // model.AddModule(new AU_LipStretched());
-           // model.AddModule(new AU_LowerLipLowered());
-          //  model.AddModule(new AU_NoseWrinkled());
-           // model.AddModule(new AU_UpperLipRaised()); wtf tobi y u do dis
+           /* model.AddModule(new ME_EyelidTight());
+            model.AddModule(new ME_JawDrop());
+            model.AddModule(new ME_LipCorner());
+            model.AddModule(new ME_LipLine());
+            model.AddModule(new ME_LipsTightened());
+            model.AddModule(new ME_LipStretched());
+            model.AddModule(new ME_LowerLipLowered());
+            model.AddModule(new ME_UpperLipRaised());*/
 
             // Default Modules
             model.AddModule(new Gauge_Module());
