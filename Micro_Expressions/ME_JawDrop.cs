@@ -46,10 +46,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    chinDistances[i] = chinDistances[i] < MAX_TOL && chinDistances[i] > MIN_TOL ? 0 : chinDistances[i];
-                }
+                filterToleranceValues(chinDistances);
 
                 double distance = filteredAvg(chinDistances);
 

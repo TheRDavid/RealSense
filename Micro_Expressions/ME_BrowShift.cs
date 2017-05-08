@@ -62,11 +62,8 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    leftDistances[i] = leftDistances[i] < MAX_TOL && leftDistances[i] > MIN_TOL ? 0 : leftDistances[i];
-                    rightDistances[i] = rightDistances[i] < MAX_TOL && rightDistances[i] > MIN_TOL ? 0 : rightDistances[i];
-                }
+                filterToleranceValues(leftDistances);
+                filterToleranceValues(rightDistances);
 
                 double leftDistance = filteredAvg(leftDistances);
                 double rightDistance = filteredAvg(rightDistances);
@@ -78,26 +75,6 @@ namespace RealSense
                 model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
                 model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
 
-                /*double eyeDiff = Math.Abs(model.CurrentFace[14].world.y - model.CurrentFace[22].world.y);
-                eyeDiff = Math.Abs(model.DifferenceByAxis(14, 22, Model.AXIS.Y, true) * 1000);
-                Console.WriteLine("Eye Diff: " + eyeDiff + "\t" + (eyeDiff > 15 ? "ungerade" : "gerade"));
-                //Console.WriteLine("EyeDiff: " + eyeDiff + (eyeDiff > 0.01 ? "ungerade" : "gerade"));
-                if (Model.calibrated && (MAX >= XTREME_MAX || MIN <= XTREME_MIN))
-                {
-                    Console.WriteLine("Pose: " + model.CurrentPoseDiff);
-                    Console.WriteLine("MIN: " + MIN + ", MAX: " + MAX);
-                    model.View.colorBitmap.Save("C:\\Users\\prouser\\Pictures\\Saved Pictures\\err.png");
-                    for (int i = 0; i < 10; i++)
-                        Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                             + model.CurrentFace[i].world.y + ", "
-                             + model.CurrentFace[i].world.z);
-                    for (int i = 70; i < 76; i++)
-                        Console.WriteLine(i + ": " + model.CurrentFace[i].world.x + ","
-                             + model.CurrentFace[i].world.y + ", "
-                             + model.CurrentFace[i].world.z);
-                    Environment.Exit(0);
-                }*/
-
                 // print debug-values 
                 if (debug)
                 {
@@ -107,18 +84,6 @@ namespace RealSense
                 framesGathered = 0;
             }
         }
-
-        /*
-        protected override void dynamicMinMax()                                                                     T
-        {
-            double temp = leftDistance > rightDistance ? rightDistance : leftDistance;
-            Console.WriteLine(temp);
-
-            MIN = MIN < temp ? MIN : temp;
-            temp = leftDistance > rightDistance ? leftDistance : rightDistance;
-            MAX = MAX < temp ? temp : MAX;
-        }
-        */
 
     }
 }

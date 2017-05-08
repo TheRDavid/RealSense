@@ -52,10 +52,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    lines[i] = lines[i] < MAX_TOL && lines[i] > MIN_TOL ? 0 : lines[i];
-                }
+                filterToleranceValues(lines);
 
                 double distance = filteredAvg(lines);
 

@@ -72,11 +72,8 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    leftDistances[i] = leftDistances[i] < MAX_TOL && leftDistances[i] > MIN_TOL ? 0 : leftDistances[i];
-                    rightDistances[i] = rightDistances[i] < MAX_TOL && rightDistances[i] > MIN_TOL ? 0 : rightDistances[i];
-                }
+                filterToleranceValues(rightDistances);
+                filterToleranceValues(leftDistances);
 
                 double leftDistance = filteredAvg(leftDistances);
                 double rightDistance = filteredAvg(rightDistances);

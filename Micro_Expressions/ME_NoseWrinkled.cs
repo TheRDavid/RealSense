@@ -60,10 +60,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    distances[i] = distances[i] < MAX_TOL && distances[i] > MIN_TOL ? 0 : distances[i];
-                }
+                filterToleranceValues(distances);
 
                 double distance = filteredAvg(distances);
 

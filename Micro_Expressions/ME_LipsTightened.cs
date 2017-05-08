@@ -44,10 +44,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < topDownDistances.Length; i++)
-                {
-                    topDownDistances[i] = topDownDistances[i] < MAX_TOL && topDownDistances[i] > MIN_TOL ? 0 : topDownDistances[i];
-                }
+                filterToleranceValues(topDownDistances);
 
                 double topDownDistance = filteredAvg(topDownDistances);
                 double[] diffs = new double[] { topDownDistance };

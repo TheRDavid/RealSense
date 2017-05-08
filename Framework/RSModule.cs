@@ -72,6 +72,14 @@ namespace RealSense
             return average;
         }
 
+        protected void filterToleranceValues(double[] values)
+        {
+            for(int i = 0; i < values.Length; i++)
+            {
+                values[i] = values[i] < MAX_TOL && values[i] > MIN_TOL ? 0 : values[i];
+            }
+        }
+
         protected void dynamicMinMax(double[] dist)
         {
             if (model.CurrentPoseDiff > 10) return; // haha kindof important ;)
