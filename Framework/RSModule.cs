@@ -76,7 +76,6 @@ namespace RealSense
         {
             for(int i = 0; i < values.Length; i++)
             {
-                Console.WriteLine("Found " + values[i]);
                 values[i] = values[i] < MAX_TOL && values[i] > MIN_TOL ? 0 : values[i];
             }
         }

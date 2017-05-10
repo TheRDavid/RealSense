@@ -30,13 +30,16 @@ namespace RealSense
         public int save = 0, debug_y = 0;
         private Button enableOutput = new Button();
         private Button enableImage = new Button();
-        private bool outputEnabled = true, imageEnabled = true, resetModules = false;
+        private bool outputEnabled, imageEnabled = true, resetModules = false;
+        private bool testMode;
 
         /**
          * Initialise View and start updater Thread
          */
-        public CameraView(Model model)
+        public CameraView(Model model, bool test)
         {
+            outputEnabled = test;
+            testMode = test;
             this.model = model;
             model.View = this;
             session = PXCMSession.CreateInstance();
@@ -53,35 +56,68 @@ namespace RealSense
 
 
             pb = new PictureBox();
-            // Set size
-            pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
-            // init UI
-            this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 180);
-            this.Controls.Add(pb);
             FormClosed += new FormClosedEventHandler(Quit);
 
-            enableOutput.Bounds = new Rectangle(20, 1080, 500, 30);
-            enableOutput.Text = "Output";
-            enableOutput.Click +=
-                new System.EventHandler(delegate
-                {
-                    outputEnabled = !outputEnabled;
-                });
-            AddComponent(enableOutput);
+            if (testMode)
+            {
+                // Set size
+                pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
+                // init UI
+                this.Bounds = new Rectangle(0, 0, model.Width, model.Height + 180);
+                this.Controls.Add(pb);
 
-            enableImage.Bounds = new Rectangle(20, 1110, 500, 30);
-            enableImage.Text = "NoImg";
-            enableImage.Click +=
-                new System.EventHandler(delegate
-                {
-                    imageEnabled = !imageEnabled;
-                });
-            AddComponent(enableImage);
+                enableOutput.Bounds = new Rectangle(20, 1080, 500, 30);
+                enableOutput.Text = "Output";
+                enableOutput.Click +=
+                    new System.EventHandler(delegate
+                    {
+                        outputEnabled = !outputEnabled;
+                    });
+                AddComponent(enableOutput);
 
+                enableImage.Bounds = new Rectangle(20, 1110, 500, 30);
+                enableImage.Text = "NoImg";
+                enableImage.Click +=
+                    new System.EventHandler(delegate
+                    {
+                        imageEnabled = !imageEnabled;
+                    });
+                AddComponent(enableImage);
+            }
+            else
+            {
+                this.Bounds = Screen.PrimaryScreen.Bounds;
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+                pb.Bounds = new Rectangle(this.Bounds.Width / 2 - model.Width / 2, this.Bounds.Height / 2 - model.Height / 2, 1920, 1080);
+                this.Controls.Add(pb);
+                this.BackColor = Color.Black;
+                KeyDown += OnKeyDown;
+            }
             this.Show();
             // Start Updater Thread
             updaterThread = new Thread(this.update);
             updaterThread.Start();
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control)
+            {
+                if (e.KeyValue == (int)Keys.C)
+                {
+                    model.Modules.ForEach(delegate (RSModule mod)
+                    {
+                        if (mod.GetType() == typeof(Gauge_Module))
+                        {
+                            Console.WriteLine("Start calibration");
+                            ((Gauge_Module)mod).calibrate = true;
+                        }
+                    });
+                    ResetModules = true;
+
+                }
+            }
         }
 
         /**
@@ -148,10 +184,7 @@ namespace RealSense
 
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
                     Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
-                    if (outputEnabled)
-                        bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
-                    if (!imageEnabled)
-                        bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+
                     if (resetModules)
                     {
                         model.Modules.ForEach(delegate (RSModule mod)
@@ -160,17 +193,27 @@ namespace RealSense
                         });
                         resetModules = false;
                     }
+
+                    if (testMode)
+                    {
+                        if (outputEnabled)
+                            bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+                        if (!imageEnabled)
+                            bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+                    }
+
+
                     if (model.FaceData.QueryNumberOfDetectedFaces() > 0 && model.CurrentFace != null)
                     {
-                            model.Modules.ForEach(delegate (RSModule mod)
+                        model.Modules.ForEach(delegate (RSModule mod)
+                        {
+                            mod.Work(bitmapGraphics);
+                            if (outputEnabled && mod.output != "")
                             {
-                                mod.Work(bitmapGraphics);
-                                if (outputEnabled && mod.output != "")
-                                {
-                                    bitmapGraphics.DrawString(mod.output, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                                    Debug_Y += 25; // new row
-                                }
-                            });
+                                bitmapGraphics.DrawString(mod.output, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                                Debug_Y += 25; // new row
+                            }
+                        });
                     }
 
                     double pitchDiff = Math.Abs(model.currentPose.pitch - model.NullPose.pitch);
