@@ -20,14 +20,7 @@ namespace RealSense
         // Default values
         public EM_Anger()
         {
-            DEF_MIN = -7;
-            DEF_MAX = 12;
-            reset();
-            MIN_TOL = -2;
-            MAX_TOL = 1;
             debug = true;
-            XTREME_MAX = 300;
-            XTREME_MIN = -200;
         }
 
         /*
@@ -69,6 +62,10 @@ namespace RealSense
             int p_lid = 30;
             int p_lip = 30;
 
+            //Lid too tight Vars
+            int lidMax = 90;
+            int newLid = -10;
+
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
@@ -79,6 +76,8 @@ namespace RealSense
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = temp_left > temp_right ? temp_left : temp_right;
+            //Lid too tight
+            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lip Value
@@ -86,6 +85,7 @@ namespace RealSense
             lipValue = lipValue * -1 * p_lip / 100;
 
             double anger = browValue + lidValue + lipValue;
+            anger = anger > 0 ? anger : 0;
             model.Emotions["Anger"] = anger;
 
             // print debug-values 
