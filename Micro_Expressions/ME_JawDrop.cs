@@ -12,6 +12,10 @@ namespace RealSense
     *@author René 
     *@date 21.03.2017
     *@HogwartsHouse Slytherin
+     * 
+     * Interpretation:      -100 = Doesn't usually happen
+     *                         0 = Normal
+     *                       100 = Dropped like it's hot
     */
     class ME_JawDrop : RSModule
     // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 

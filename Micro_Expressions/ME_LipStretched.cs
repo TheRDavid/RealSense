@@ -11,6 +11,10 @@ namespace RealSense
      * Measures whether the lips are stretched 
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:      -100 = Kissing
+     *                         0 = Relaxed
+     *                       100 = Frogface
      */
     class ME_LipStretched : RSModule
     {

@@ -12,6 +12,9 @@ namespace RealSense
      *@author Anton 
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
+     * 
+     * Interpretation:      -100 = Brows down (grumpy af)
+     *                       100 = Brows up
      */
     class ME_BrowShift : RSModule
     {

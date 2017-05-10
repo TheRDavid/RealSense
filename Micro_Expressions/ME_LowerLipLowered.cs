@@ -11,6 +11,9 @@ namespace RealSense
      * Measures whether the lower lip is lower
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:         0 = Relaxed
+     *                       100 = Lip down
      */
     class ME_LowerLipLowered : RSModule
     {
@@ -27,7 +30,7 @@ namespace RealSense
          */
         public ME_LowerLipLowered()
         {
-            DEF_MIN = 0;
+            DEF_MIN = -1;
             DEF_MAX = 4;
             reset();
             MIN_TOL = -1;

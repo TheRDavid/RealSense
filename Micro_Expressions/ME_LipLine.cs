@@ -10,10 +10,10 @@ namespace RealSense
     /*
      *@author David
      * 
-     * Problem besteht noch bei weit offenen Mund, keine Unterscheidung mehr zwischen Runter und Hoch why is that german ? 
-
-     * Lip Corner down does not work so far, landmarkpoints at the lip corner are not tracked when they go down,
-     * no further sdk settings found, maybe recognize patterns via opencv?
+     * 
+     * Interpretation:      -100 = Saaaaaad
+     *                         0 = Relaxed
+     *                       100 = Grinning
      */
     class ME_LipLine : RSModule
     {

@@ -12,6 +12,9 @@ namespace RealSense
      * Measures tightening of eyelids (each eye)
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:      -100 = Eyes squinted
+     *                       100 = Eyes wide open
      */
     class ME_EyelidTight : RSModule
     {
@@ -26,8 +29,7 @@ namespace RealSense
         private double[] rightDistances = new double[numFramesBeforeAccept];
 
         // variables for debugging
-
-        private string debug_message = "EyelidTight: ";
+        
 
         // Default values
         public ME_EyelidTight()
