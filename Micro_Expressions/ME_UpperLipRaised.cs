@@ -27,13 +27,13 @@ namespace RealSense
          */
         public ME_UpperLipRaised()
         {
-            DEF_MIN = 0;
+            DEF_MIN = -1;
             DEF_MAX = 8;
             reset();
-            MIN_TOL = 0;
+            MIN_TOL = -1;
             MAX_TOL = 2;
             XTREME_MAX = 25;
-            XTREME_MIN = 0;
+            XTREME_MIN = -1;
             debug = true;
             model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
         }

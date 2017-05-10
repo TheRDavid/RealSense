@@ -11,7 +11,11 @@ namespace RealSense
    *Measures if lips are tightened 
    *@author René 
    *@date 21.03.2017
-   *@HogwartsHouse Slytherin  
+   *@HogwartsHouse Slytherin 
+     * 
+     * Interpretation:      -100 = Tight af
+     *                         0 = normal
+     *                       100 = doesn't usually happen
    */
     class ME_LipsTightened : RSModule
     {
