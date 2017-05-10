@@ -61,21 +61,21 @@ namespace RealSense.Emotions
             int newLid = -10;
 
             //brow Value 0-100
-            double temp_left = model.getAU_Value(typeof(ME_BrowShift).ToString() + "_left");
-            double temp_right = model.getAU_Value(typeof(ME_BrowShift).ToString() + "_right");
+            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left < temp_right ? temp_left : temp_right;
             browValue = browValue * p_brow / 100;
 
             //lid Value 0 - -100 (Grenze bei lidMax)
-            temp_left = model.getAU_Value(typeof(ME_EyelidTight).ToString() + "_left");
-            temp_right = model.getAU_Value(typeof(ME_EyelidTight).ToString() + "_right");
+            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = temp_left > temp_right ? temp_left : temp_right;
             //Lid too tight
             lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lipL Value 0 - -100
-            double lipValue = model.getAU_Value(typeof(ME_LipLine).ToString());
+            double lipValue = model.AU_Values[typeof(ME_LipLine).ToString()];
             lipValue = lipValue * -1 * p_lipL / 100;
 
             double sad = browValue + lidValue + lipValue;
