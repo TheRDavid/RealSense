@@ -56,7 +56,7 @@ namespace RealSense
             emotions["Fear"] = 0;
             emotions["Disgust"] = 0;
             emotions["Surprise"] = 0;
-            emotions["Happieness"] = 0;
+            emotions["Joy"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
             width = 1920;

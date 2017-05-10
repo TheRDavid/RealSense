@@ -44,7 +44,7 @@ namespace RealSense.Emotions
         {
             //Contempt --> BrowShift, LipCorner
 
-            //percentage Anger
+            //percentage Contempt
             int p_brow = 50;
             int p_lip = 50;
 

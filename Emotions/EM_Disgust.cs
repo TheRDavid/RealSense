@@ -42,13 +42,14 @@ namespace RealSense.Emotions
 
         public override void Work(Graphics g)
         {
-            //Disgust --> BrowShift, NoseWrinkled, LipLine, LowerLipLowered
+            //Disgust --> BrowShift, NoseWrinkled, LipLine, LowerLipLowered, UpperLipRaised
 
-            //percentage Anger
+            //percentage Disgust
             int p_brow = 20;
             int p_nose = 35;
             int p_lipLine = 20;
             int p_lipLowered = 25;
+            int p_upperLip = 40;
 
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -66,10 +67,16 @@ namespace RealSense.Emotions
 
             //LowerLip 0-100
             double lipLoweredValue = model.AU_Values[typeof(ME_LowerLipLowered).ToString()];
-            lipLoweredValue = lipLoweredValue * -1 * p_lipLine / 100;
+            lipLoweredValue = lipLoweredValue * p_lipLowered / 100;
 
-            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue;
+            //upperLip 0-100
+            double upperLipValue = model.AU_Values[typeof(ME_UpperLipRaised).ToString()];
+            upperLipValue = upperLipValue * p_upperLip / 100;
+
+            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;
             disgust = disgust > 0 ? disgust : 0;
+            disgust = disgust < 100 ? disgust : 100;
+
             model.Emotions["Disgust"] = disgust;
 
             // print debug-values 
