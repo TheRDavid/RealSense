@@ -54,10 +54,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    lips_corner_distances[i] = lips_corner_distances[i] < MAX_TOL && lips_corner_distances[i] > MIN_TOL ? 0 : lips_corner_distances[i];
-                }
+                filterToleranceValues(lips_corner_distances);
 
                 double distance = filteredAvg(lips_corner_distances);
 
@@ -66,7 +63,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

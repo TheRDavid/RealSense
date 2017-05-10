@@ -55,11 +55,8 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    cornersLeft[i] = cornersLeft[i] < MAX_TOL && cornersLeft[i] > MIN_TOL ? 0 : cornersLeft[i];
-                    cornersRight[i] = cornersRight[i] < MAX_TOL && cornersRight[i] > MIN_TOL ? 0 : cornersRight[i];
-                }
+                filterToleranceValues(cornersRight);
+                filterToleranceValues(cornersLeft);
 
                 double leftDistance = filteredAvg(cornersLeft);
                 double rightDistance = filteredAvg(cornersRight);
@@ -69,8 +66,8 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_LipCorner).ToString() + "_right", diffs[1]); ;
+                model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1];
 
                 /* print debug-values */
                 if (debug)

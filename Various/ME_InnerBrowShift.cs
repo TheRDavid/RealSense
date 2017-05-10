@@ -34,8 +34,8 @@ namespace RealSense
             int d_l = Convert.ToInt32(left_dist*1000) / 3000 - 100;
             int d_r = Convert.ToInt32(right_dist*1000) / 3000 - 100;
 
-            model.setAU_Value(typeof(ME_InnerBrowShift).ToString() + "_left", d_l);
-            model.setAU_Value(typeof(ME_InnerBrowShift).ToString() + "_right", d_r);
+            model.AU_Values[typeof(ME_InnerBrowShift).ToString() + "_left"] = d_l;
+            model.AU_Values[typeof(ME_InnerBrowShift).ToString() + "_right"] = d_r;
 
             // print debug-values 
             if (debug)

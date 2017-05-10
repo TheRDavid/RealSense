@@ -52,10 +52,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    lines[i] = lines[i] < MAX_TOL && lines[i] > MIN_TOL ? 0 : lines[i];
-                }
+                filterToleranceValues(lines);
 
                 double distance = filteredAvg(lines);
 
@@ -64,7 +61,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

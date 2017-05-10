@@ -28,6 +28,8 @@ namespace RealSense
         public ME_UpperLipRaised()
         {
             debug = true;
+            model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
+
         }
 
         /**
@@ -54,10 +56,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    distances[i] = distances[i] < MAX_TOL && distances[i] > MIN_TOL ? 0 : distances[i];
-                }
+                filterToleranceValues(distances);
 
                 double distance = filteredAvg(distances);
 
@@ -66,7 +65,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_UpperLipRaised).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

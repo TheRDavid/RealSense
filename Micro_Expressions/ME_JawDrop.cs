@@ -38,7 +38,7 @@ namespace RealSense
             /* calculations */
             
             chin_dist = (model.Difference(61, 26)) - 100;
-  
+
 
             if (framesGathered < numFramesBeforeAccept)
             {
@@ -46,10 +46,7 @@ namespace RealSense
             }
             else
             {
-                for (int i = 0; i < numFramesBeforeAccept; i++)
-                {
-                    chinDistances[i] = chinDistances[i] < MAX_TOL && chinDistances[i] > MIN_TOL ? 0 : chinDistances[i];
-                }
+                filterToleranceValues(chinDistances);
 
                 double distance = filteredAvg(chinDistances);
 
@@ -58,7 +55,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_JawDrop).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
