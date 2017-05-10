@@ -53,12 +53,9 @@ namespace RealSense
                 filterToleranceValues(topDownDistances);
 
                 double topDownDistance = filteredAvg(topDownDistances);
-                Console.WriteLine("tddist1: " + topDownDistance);
                 double[] diffs = new double[] { topDownDistance };
                 dynamicMinMax(diffs);
-                Console.WriteLine("tddist2: " + diffs[0]);
                 diffs = convertValues(diffs);
-                Console.WriteLine("tddist3: " + diffs[0]);
 
                 // Update value in Model 
                 model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
