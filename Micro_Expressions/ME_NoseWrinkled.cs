@@ -34,6 +34,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 50;
             XTREME_MIN = -0; // god damnit rené
+            model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = 0;
         }
 
         /** 

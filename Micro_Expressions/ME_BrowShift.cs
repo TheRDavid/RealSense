@@ -44,11 +44,11 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            /* Calculations */
+                /* Calculations */
 
-            // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
+                // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
 
-            leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
+                leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
             leftEyeBrow_m = model.Difference(2, Model.NOSE_FIX) - 100;
             leftEyeBrow_l = model.Difference(4, Model.NOSE_FIX) - 100;
 

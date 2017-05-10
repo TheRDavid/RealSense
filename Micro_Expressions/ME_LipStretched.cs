@@ -36,6 +36,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 60;
             XTREME_MIN = -45;
+            model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
         }
 
         /**

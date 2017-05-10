@@ -32,11 +32,12 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 62;
             XTREME_MIN = 0;
+            model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
         }
         public override void Work(Graphics g)
         {
             /* calculations */
-            
+
             chin_dist = (model.Difference(61, 26)) - 100;
 
 

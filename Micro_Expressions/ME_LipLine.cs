@@ -24,14 +24,14 @@ namespace RealSense
         public ME_LipLine()
         {
             debug = true;
-            DEF_MIN = -33;
-            DEF_MAX = 90;
+            DEF_MIN = -5;
+            DEF_MAX = 40;
             reset();
-            MIN_TOL = -3;
-            MAX_TOL = 3;
-            debug = true;
-            XTREME_MAX = 60;
-            XTREME_MIN = -22;
+            MIN_TOL = -1;
+            MAX_TOL = 1;
+            XTREME_MAX = 90;
+            XTREME_MIN = -33;
+            model.AU_Values[typeof(ME_LipLine).ToString()] = 0;
         }
 
         public override void Work(Graphics g)

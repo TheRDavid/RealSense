@@ -37,6 +37,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 45;
             XTREME_MIN = -36;
+            model.AU_Values[typeof(ME_LipCorner).ToString()] = 0;
         }
 
         public override void Work(Graphics g)

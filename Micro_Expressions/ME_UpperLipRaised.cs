@@ -27,9 +27,15 @@ namespace RealSense
          */
         public ME_UpperLipRaised()
         {
+            DEF_MIN = 0;
+            DEF_MAX = 8;
+            reset();
+            MIN_TOL = 0;
+            MAX_TOL = 2;
+            XTREME_MAX = 25;
+            XTREME_MIN = 0;
             debug = true;
             model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
-
         }
 
         /**
@@ -39,6 +45,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* calculations */
+
 
             if (framesGathered < numFramesBeforeAccept)
             {

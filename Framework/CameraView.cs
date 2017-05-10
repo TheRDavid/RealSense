@@ -162,15 +162,15 @@ namespace RealSense
                     }
                     if (model.FaceData.QueryNumberOfDetectedFaces() > 0 && model.CurrentFace != null)
                     {
-                        model.Modules.ForEach(delegate (RSModule mod)
-                        {
-                            mod.Work(bitmapGraphics);
-                            if (outputEnabled && mod.output != "")
+                            model.Modules.ForEach(delegate (RSModule mod)
                             {
-                                bitmapGraphics.DrawString(mod.output, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                                Debug_Y += 25; // new row
-                            }
-                        });
+                                mod.Work(bitmapGraphics);
+                                if (outputEnabled && mod.output != "")
+                                {
+                                    bitmapGraphics.DrawString(mod.output, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                                    Debug_Y += 25; // new row
+                                }
+                            });
                     }
 
                     double pitchDiff = Math.Abs(model.currentPose.pitch - model.NullPose.pitch);
@@ -182,15 +182,15 @@ namespace RealSense
                     model.CurrentPitchDiff = pitchDiff;
                     model.CurrentYawDiff = yawDiff;
 
-                    bitmapGraphics.DrawString("poll: " + pitchDiff + ", roll: " + rollDiff + ", yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                    Debug_Y += 25;
-                    bitmapGraphics.DrawString("all: " + (int)(pitchDiff + rollDiff + yawDiff), model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                    Debug_Y += 25;
-                    bitmapGraphics.DrawString("pitch: " + pitchDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                    Debug_Y += 25;
-                    bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                    Debug_Y += 25;
-                    bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    /* bitmapGraphics.DrawString("poll: " + pitchDiff + ", roll: " + rollDiff + ", yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                     Debug_Y += 25;
+                     bitmapGraphics.DrawString("all: " + (int)(pitchDiff + rollDiff + yawDiff), model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                     Debug_Y += 25;
+                     bitmapGraphics.DrawString("pitch: " + pitchDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                     Debug_Y += 25;
+                     bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                     Debug_Y += 25;
+                     bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);*/
 
                     // update PictureBox
                     pb.Image = colorBitmap;
