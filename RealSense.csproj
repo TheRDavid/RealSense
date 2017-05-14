@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Emotions\EM_Anger.cs" />
+    <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\FaceRect.cs" />
     <Compile Include="Various\ME_InnerBrowShift.cs" />
