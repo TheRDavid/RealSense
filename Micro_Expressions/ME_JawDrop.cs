@@ -12,6 +12,10 @@ namespace RealSense
     *@author René 
     *@date 21.03.2017
     *@HogwartsHouse Slytherin
+     * 
+     * Interpretation:      -100 = Doesn't usually happen
+     *                         0 = Normal
+     *                       100 = Dropped like it's hot
     */
     class ME_JawDrop : RSModule
     // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
@@ -32,13 +36,14 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 62;
             XTREME_MIN = 0;
+            model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
         }
         public override void Work(Graphics g)
         {
             /* calculations */
-            
+
             chin_dist = (model.Difference(61, 26)) - 100;
-  
+
 
             if (framesGathered < numFramesBeforeAccept)
             {
@@ -55,7 +60,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_JawDrop).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

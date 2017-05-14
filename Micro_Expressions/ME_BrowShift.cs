@@ -12,6 +12,9 @@ namespace RealSense
      *@author Anton 
      *@date 20.03.2017
      *@HogwartsHouse Slytherin  
+     * 
+     * Interpretation:      -100 = Brows down (grumpy af)
+     *                       100 = Brows up
      */
     class ME_BrowShift : RSModule
     {
@@ -36,15 +39,19 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 33;
             XTREME_MIN = -24;
+
+
+            model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = 0;
         }
 
         public override void Work(Graphics g)
         {
-            /* Calculations */
+                /* Calculations */
 
-            // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
+                // calculates the difference between the Nullface and the currentface -> to check if the whole eyebrow is raised or lowered
 
-            leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
+                leftEyeBrow_r = model.Difference(0, Model.NOSE_FIX) - 100;
             leftEyeBrow_m = model.Difference(2, Model.NOSE_FIX) - 100;
             leftEyeBrow_l = model.Difference(4, Model.NOSE_FIX) - 100;
 
@@ -72,8 +79,8 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_BrowShift).ToString() + "_right", diffs[1]);
+                model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
 
                 // print debug-values 
                 if (debug)

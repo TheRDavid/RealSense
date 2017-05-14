@@ -11,6 +11,10 @@ namespace RealSense
      * Measures whether the lips are stretched 
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:      -100 = Kissing
+     *                         0 = Relaxed
+     *                       100 = Frogface
      */
     class ME_LipStretched : RSModule
     {
@@ -36,6 +40,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 60;
             XTREME_MIN = -45;
+            model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
         }
 
         /**
@@ -63,7 +68,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

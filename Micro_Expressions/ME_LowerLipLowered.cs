@@ -11,6 +11,9 @@ namespace RealSense
      * Measures whether the lower lip is lower
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:         0 = Relaxed
+     *                       100 = Lip down
      */
     class ME_LowerLipLowered : RSModule
     {
@@ -27,7 +30,7 @@ namespace RealSense
          */
         public ME_LowerLipLowered()
         {
-            DEF_MIN = 0;
+            DEF_MIN = -1;
             DEF_MAX = 4;
             reset();
             MIN_TOL = -1;
@@ -35,6 +38,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 8;
             XTREME_MIN = -6;
+            model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = 0;
         }
 
         /**
@@ -70,7 +74,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_NoseWrinkled).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

@@ -27,7 +27,15 @@ namespace RealSense
          */
         public ME_UpperLipRaised()
         {
+            DEF_MIN = -1;
+            DEF_MAX = 8;
+            reset();
+            MIN_TOL = -1;
+            MAX_TOL = 2;
+            XTREME_MAX = 25;
+            XTREME_MIN = -1;
             debug = true;
+            model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
         }
 
         /**
@@ -37,6 +45,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             /* calculations */
+
 
             if (framesGathered < numFramesBeforeAccept)
             {
@@ -63,7 +72,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_UpperLipRaised).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

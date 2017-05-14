@@ -69,11 +69,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emotions\EM_Contempt.cs" />
     <Compile Include="Emotions\EM_Anger.cs" />
-    <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
+    <Compile Include="Emotions\EM_Disgust.cs" />
+    <Compile Include="Emotions\EM_Fear.cs" />
+    <Compile Include="Emotions\EM_Joy.cs" />
+    <Compile Include="Emotions\EM_Sadness.cs" />
+    <Compile Include="Emotions\EM_Surprise.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\FaceRect.cs" />
-    <Compile Include="Various\ME_InnerBrowShift.cs" />
     <Compile Include="Micro_Expressions\ME_JawDrop.cs" />
     <Compile Include="Micro_Expressions\ME_LipLine.cs" />
     <Compile Include="Micro_Expressions\ME_LipsTightened.cs" />

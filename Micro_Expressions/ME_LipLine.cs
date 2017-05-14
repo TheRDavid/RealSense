@@ -10,10 +10,10 @@ namespace RealSense
     /*
      *@author David
      * 
-     * Problem besteht noch bei weit offenen Mund, keine Unterscheidung mehr zwischen Runter und Hoch why is that german ? 
-
-     * Lip Corner down does not work so far, landmarkpoints at the lip corner are not tracked when they go down,
-     * no further sdk settings found, maybe recognize patterns via opencv?
+     * 
+     * Interpretation:      -100 = Saaaaaad
+     *                         0 = Relaxed
+     *                       100 = Grinning
      */
     class ME_LipLine : RSModule
     {
@@ -24,14 +24,14 @@ namespace RealSense
         public ME_LipLine()
         {
             debug = true;
-            DEF_MIN = -33;
-            DEF_MAX = 90;
+            DEF_MIN = -5;
+            DEF_MAX = 40;
             reset();
-            MIN_TOL = -3;
-            MAX_TOL = 3;
-            debug = true;
-            XTREME_MAX = 60;
-            XTREME_MIN = -22;
+            MIN_TOL = -1;
+            MAX_TOL = 1;
+            XTREME_MAX = 90;
+            XTREME_MIN = -33;
+            model.AU_Values[typeof(ME_LipLine).ToString()] = 0;
         }
 
         public override void Work(Graphics g)
@@ -61,7 +61,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_LipLine).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

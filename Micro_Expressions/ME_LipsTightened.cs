@@ -11,7 +11,11 @@ namespace RealSense
    *Measures if lips are tightened 
    *@author René 
    *@date 21.03.2017
-   *@HogwartsHouse Slytherin  
+   *@HogwartsHouse Slytherin 
+     * 
+     * Interpretation:      -100 = Tight af
+     *                         0 = normal
+     *                       100 = doesn't usually happen
    */
     class ME_LipsTightened : RSModule
     {
@@ -23,17 +27,19 @@ namespace RealSense
         {
             //values correct
             DEF_MIN = -3;
-            DEF_MAX = 0;
+            DEF_MAX = 1;
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
             XTREME_MAX = 0;
             XTREME_MIN = -16.5;
+            model.AU_Values[typeof(ME_LipsTightened).ToString()] = 0;
         }
 
         public override void Work(Graphics g)
         {
+
             upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
             bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
@@ -52,10 +58,10 @@ namespace RealSense
                 diffs = convertValues(diffs);
 
                 // Update value in Model 
-                model.setAU_Value(typeof(ME_LipsTightened).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {
-                    output = "Lips tightened: " + diffs[0];
+                    output = "LipsTightened: " + "(" + (int)diffs[0] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

@@ -12,13 +12,15 @@ namespace RealSense
      * Measures wrinkling of nose
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
+     * Interpretation:         0 = Relaxed
+     *                      -100 = Wrinkled
      */
     class ME_NoseWrinkled : RSModule
     {
 
         // variables for logic
 
-        private double left_diff, right_diff, middle_diff;
+        private double left_diff, right_diff;
         private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
         private string debug_message = "NoseWrinkled: ";
@@ -26,14 +28,15 @@ namespace RealSense
         // Default values
         public ME_NoseWrinkled()
         {
-            DEF_MIN = 0;
+            DEF_MIN = -1;
             DEF_MAX = 8;
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
-            XTREME_MAX = 50;
-            XTREME_MIN = -0; // god damnit rené
+            XTREME_MAX = 1;
+            XTREME_MIN = -50; // god damnit rené
+            model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = 0;
         }
 
         /** 
@@ -50,9 +53,9 @@ namespace RealSense
 
             left_diff = model.Difference(30, Model.NOSE_FIX) - 100;
             right_diff = model.Difference(32, Model.NOSE_FIX) - 100;
-            middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
+            //middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
 
-            distance = (left_diff + right_diff + middle_diff) / 3;
+            distance = (left_diff + right_diff) / 2;
 
             if (framesGathered < numFramesBeforeAccept)
             {
@@ -69,12 +72,12 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_NoseWrinkled).ToString(), diffs[0]);
+                model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ")";
+                    output = debug_message + " " + distance + " -> (" + diffs[0] + ") (" + MAX + ", " + MIN + ")";
                 }
                 framesGathered = 0;
             }

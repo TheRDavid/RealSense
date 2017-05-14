@@ -12,6 +12,9 @@ namespace RealSense
      * Measures tightening of eyelids (each eye)
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
+     * 
+     * Interpretation:      -100 = Eyes squinted
+     *                       100 = Eyes wide open
      */
     class ME_EyelidTight : RSModule
     {
@@ -26,8 +29,7 @@ namespace RealSense
         private double[] rightDistances = new double[numFramesBeforeAccept];
 
         // variables for debugging
-
-        private string debug_message = "EyelidTight: ";
+        
 
         // Default values
         public ME_EyelidTight()
@@ -36,11 +38,13 @@ namespace RealSense
             DEF_MIN = -34;
             DEF_MAX = 9;
             reset();
-            MIN_TOL = -2;
-            MAX_TOL = 2.5;
+            MIN_TOL = -12;
+            MAX_TOL = 12;
             debug = true;
             XTREME_MAX = 75;
             XTREME_MIN = -78;
+            model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = 0;
         }
 
         /** 
@@ -83,13 +87,13 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
                 /* Update value in Model */
-                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_left", diffs[0]);
-                model.setAU_Value(typeof(ME_EyelidTight).ToString() + "_right", diffs[1]); ;
+                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = diffs[0];
+                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = diffs[1];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ", " + diffs[1] + ")";
+                    output = "Eyelid_Tight: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

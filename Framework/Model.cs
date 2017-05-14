@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace RealSense
 {
@@ -28,7 +29,7 @@ namespace RealSense
         private PXCMFaceData.LandmarkPoint[] currentFace;
         private PXCMFaceData.PoseEulerAngles nullPose = new PXCMFaceData.PoseEulerAngles();
         public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();
-        private Dictionary<String, double> AU_Values = new Dictionary<String, double>();
+        private Dictionary<String, double> au_Values = new Dictionary<String, double>();
         private Dictionary<String, double> emotions = new Dictionary<String, double>();
         private List<RSModule> modules;
         private int width;
@@ -56,7 +57,7 @@ namespace RealSense
             emotions["Fear"] = 0;
             emotions["Disgust"] = 0;
             emotions["Surprise"] = 0;
-            emotions["Happieness"] = 0;
+            emotions["Joy"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
             width = 1920;
@@ -388,14 +389,10 @@ namespace RealSense
             get { return opaqueStringBrush; }
         }
 
-        public void setAU_Value(String name, double value)
+        public Dictionary<String, double> AU_Values
         {
-            AU_Values[name] = value;
-        }
-
-        public double getAU_Value(String name)
-        {
-            return AU_Values[name];
+            get { return au_Values; }
+            set { au_Values = value; }
         }
 
 

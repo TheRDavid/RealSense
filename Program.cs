@@ -12,7 +12,10 @@ namespace RealSense
      * this ist the main class. It start the model and adds all modules to our Model. 
      * 
      * @author Tanja Witke, David Rosenbusch
-     */ 
+     * 
+     * Interpretation:         0 = Normal
+     *                       100 = Lip up
+     */
     class Program
     {
 
@@ -22,21 +25,22 @@ namespace RealSense
             Model model = new Model();
             RSModule.Init(model);
             // Add ActionUnits
-            
-            model.AddModule(new FaceTrackerModule(null));
-            model.AddModule(new ME_BrowShift());
-           /* model.AddModule(new ME_EyelidTight());
-            model.AddModule(new ME_JawDrop());
-            model.AddModule(new ME_LipCorner());
-            model.AddModule(new ME_LipLine());
-            model.AddModule(new ME_LipsTightened());
-            model.AddModule(new ME_LipStretched());
-            model.AddModule(new ME_LowerLipLowered());
-            model.AddModule(new ME_UpperLipRaised());*/
+
+             model.AddModule(new FaceTrackerModule(null));
+             model.AddModule(new ME_BrowShift());
+             model.AddModule(new ME_EyelidTight());
+             model.AddModule(new ME_LipsTightened());
+             model.AddModule(new ME_JawDrop());
+             model.AddModule(new ME_LipCorner());
+             model.AddModule(new ME_LipLine());
+             model.AddModule(new ME_LipStretched());
+             model.AddModule(new ME_NoseWrinkled());
+             model.AddModule(new ME_LowerLipLowered());
+             model.AddModule(new ME_UpperLipRaised());
 
             // Default Modules
             model.AddModule(new Gauge_Module());
-            Application.Run(new CameraView(model));
+            Application.Run(new CameraView(model, false));
         }
 
     }

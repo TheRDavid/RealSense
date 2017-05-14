@@ -11,8 +11,8 @@ namespace RealSense
 {
     public class Gauge_Module : RSModule
     {
-        private const int numFaces = 120;
-        private bool calibrate = false;
+        private const int numFaces = 150;
+        public bool calibrate = false;
         private bool guInit = false;
         private PXCMFaceData.LandmarkPoint[][] cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
         private PXCMFaceData.LandmarkPoint[] finalFace = new PXCMFaceData.LandmarkPoint[80];
@@ -109,6 +109,7 @@ namespace RealSense
                         for (int i = 0; i < finalFace.Length; i++)
                             finalFace[i] = new PXCMFaceData.LandmarkPoint();
                         cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
+                        Console.WriteLine("DOne Calibrating");
 
                     }
                 }
