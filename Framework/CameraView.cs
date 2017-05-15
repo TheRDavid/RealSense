@@ -150,7 +150,6 @@ namespace RealSense
          */
         private void update()
         {
-            Stopwatch stopwatch = new Stopwatch();
             while (true)
             {
                 if (model.SenseManager.AcquireFrame(true) >= pxcmStatus.PXCM_STATUS_NO_ERROR) // Dauert manchmal voll lange ...
@@ -224,7 +223,6 @@ namespace RealSense
                     model.CurrentRollDiff = rollDiff;
                     model.CurrentPitchDiff = pitchDiff;
                     model.CurrentYawDiff = yawDiff;
-
                     /* bitmapGraphics.DrawString("poll: " + pitchDiff + ", roll: " + rollDiff + ", yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
                      Debug_Y += 25;
                      bitmapGraphics.DrawString("all: " + (int)(pitchDiff + rollDiff + yawDiff), model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
@@ -235,8 +233,12 @@ namespace RealSense
                      Debug_Y += 25;
                      bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);*/
 
+                    // apply UI
+                    Bitmap uiBitmap = new Bitmap(colorBitmap.Width, colorBitmap.Height);
+
                     // update PictureBox
-                    pb.Image = colorBitmap;
+
+                    pb.Image = uiBitmap;
                     model.SenseManager.ReleaseFrame();
                     model.FaceData.Dispose(); // DONE!
                     sample.color.ReleaseAccess(colorData);

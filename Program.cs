@@ -40,7 +40,7 @@ namespace RealSense
 
             // Default Modules
             model.AddModule(new Gauge_Module());
-            Application.Run(new CameraView(model, false));
+            Application.Run(new CameraView(model, true));
         }
 
     }
