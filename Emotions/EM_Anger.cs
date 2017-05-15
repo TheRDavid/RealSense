@@ -91,7 +91,7 @@ namespace RealSense
             // print debug-values 
             if (debug)
             {
-                output = "Anger: " + anger;
+                output = "Anger: " + (int)anger;
             }
 
         }

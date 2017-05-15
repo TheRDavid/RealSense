@@ -35,7 +35,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
-            debug = true;
+            debug = false;
             XTREME_MAX = 8;
             XTREME_MIN = -6;
             model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = 0;

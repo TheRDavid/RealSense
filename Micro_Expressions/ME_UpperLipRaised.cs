@@ -34,7 +34,7 @@ namespace RealSense
             MAX_TOL = 2;
             XTREME_MAX = 25;
             XTREME_MIN = -1;
-            debug = true;
+            debug = false;
             model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
         }
 

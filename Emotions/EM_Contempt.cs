@@ -75,7 +75,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Contempt: " + contempt;
+                output = "Contempt: " + (int)contempt;
             }
 
         }

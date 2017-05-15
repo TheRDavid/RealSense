@@ -33,7 +33,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
-            debug = true;
+            debug = false;
             XTREME_MAX = 1;
             XTREME_MIN = -50; // god damnit rené
             model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = 0;

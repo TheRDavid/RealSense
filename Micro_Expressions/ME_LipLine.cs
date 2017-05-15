@@ -23,7 +23,7 @@ namespace RealSense
         // Default values
         public ME_LipLine()
         {
-            debug = true;
+            debug = false;
             DEF_MIN = -5;
             DEF_MAX = 40;
             reset();

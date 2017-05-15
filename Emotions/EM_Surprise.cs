@@ -55,7 +55,9 @@ namespace RealSense.Emotions
             browValue = browValue * p_brow / 100;
 
             //eye Value 0-100
-            double eyeValue = model.AU_Values[typeof(ME_EyelidTight).ToString()];
+            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            double eyeValue = temp_left < temp_right ? temp_left : temp_right;
             eyeValue = eyeValue * p_eye / 100;
 
             //jaw 0-100
@@ -69,7 +71,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Surprise: " + surprise;
+                output = "Surprise: " + (int)surprise;
             }
         }
     }

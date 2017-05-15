@@ -85,7 +85,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + sad;
+                output = "Sadness: " + (int)sad;
             }
 
         }
