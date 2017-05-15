@@ -65,6 +65,7 @@ namespace RealSense.Emotions
             temp_left = model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"];
             double lipValue = Math.Abs(temp_left - temp_right);
+            int test02 = (int)lipValue;
             //macht aus 0-100 (0 --> keine Differenz und 100 volle (aber nicht maximale.. (geht ja bis -100)) Differenz) ein 0-lipMax
             lipValue = 100 * lipValue / lipMax;
             lipValue = lipValue * p_lip / 100;
@@ -76,7 +77,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Contempt: " + contempt + " Wert: " + test;
+                output = "Contempt: " + contempt + " WertBrow: " + test + " WertLip: " + test02;
             }
 
         }
