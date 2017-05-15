@@ -58,9 +58,9 @@ namespace RealSense
              * */
 
             //percentage Anger
-            int p_brow = 40;
-            int p_lid = 30;
-            int p_lip = 30;
+            int p_brow = 45;
+            int p_lid = 25;
+            int p_lip = 20;
 
             //Lid too tight Vars
             int lidMax = 90;

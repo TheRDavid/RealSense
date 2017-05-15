@@ -68,7 +68,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
+                model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

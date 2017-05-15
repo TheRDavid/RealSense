@@ -23,7 +23,7 @@ namespace RealSense
         // Default values
         public ME_LipLine()
         {
-            debug = false;
+            debug = true;
             DEF_MIN = -5;
             DEF_MAX = 40;
             reset();
@@ -66,7 +66,7 @@ namespace RealSense
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ")";
+                    output = debug_message + "(" + (int)diffs[0] + ")";
                 }
                 framesGathered = 0;
             }

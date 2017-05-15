@@ -47,9 +47,9 @@ namespace RealSense.Emotions
             //Sadness --> BrowShift, LipLine, (LipStreched), EyelidTight
 
             //percentage Sadness
-            int p_brow = 40;
-            int p_lid = 20;
-            int p_lipL = 40;
+            int p_brow = 0;
+            int p_lid = 50;
+            int p_lipL = 50;
             //int p_lipS = 40;
 
             //Line: hoch lächeln (60-90) (grinsen höher)
@@ -57,7 +57,7 @@ namespace RealSense.Emotions
 
 
             //Lid too tight Vars
-            int lidMax = 50;
+            int lidMax = 100; // Lid ist sehr schnell sehr stark
             int newLid = -10;
 
             //brow Value 0-100
@@ -70,7 +70,6 @@ namespace RealSense.Emotions
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            //Lid too tight
             lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
             lidValue = lidValue * -1 * p_lid / 100;
 
@@ -85,7 +84,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + (int)sad;
+                output = "Sadness: " + (int)sad + " Lip: " + (int)lipValue + " Lid: " + (int)lidValue;
             }
 
         }

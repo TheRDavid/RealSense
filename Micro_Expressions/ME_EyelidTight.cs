@@ -40,7 +40,7 @@ namespace RealSense
             reset();
             MIN_TOL = -12;
             MAX_TOL = 12;
-            debug = false;
+            debug = true;
             XTREME_MAX = 75;
             XTREME_MIN = -78;
             model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = 0;
