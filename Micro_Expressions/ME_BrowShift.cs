@@ -36,7 +36,7 @@ namespace RealSense
             reset();
             MIN_TOL = -2;
             MAX_TOL = 1;
-            debug = false;
+            debug = true;
             XTREME_MAX = 33;
             XTREME_MIN = -24;
 
@@ -79,13 +79,16 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
-                model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
+                if (model.CurrentPoseDiff < 10)
+                {
+                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
+                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
+                }
 
                 // print debug-values 
                 if (debug)
                 {
-                    output = "BrowShift: " + "(" + (int)diffs[0] + ", " + (int)diffs[1] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "BrowShift: " + "(" + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"]  + ", " + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

@@ -37,7 +37,7 @@ namespace RealSense
             reset();
             MIN_TOL = -2;
             MAX_TOL = 0.5;
-            debug = false;
+            debug = true;
             XTREME_MAX = 60;
             XTREME_MIN = -45;
             model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
@@ -68,12 +68,13 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
+                if (model.CurrentPoseDiff < 10)
+                    model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipStretched).ToString()] + ") ("+ (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

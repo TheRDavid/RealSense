@@ -35,7 +35,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
-            debug = false;
+            debug = true;
             XTREME_MAX = 8;
             XTREME_MIN = -6;
             model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = 0;
@@ -74,12 +74,13 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
+                if (model.CurrentPoseDiff < 10)
+                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

@@ -33,7 +33,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1.5;
             MAX_TOL = 1.5;
-            debug = false;
+            debug = true;
             XTREME_MAX = 62;
             XTREME_MIN = 0;
             model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
@@ -60,12 +60,15 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
+                if (model.CurrentPoseDiff < 10)
+                {
+                    model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
+                }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + diffs[0] + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_JawDrop).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

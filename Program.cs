@@ -27,7 +27,7 @@ namespace RealSense
             RSModule.Init(model);
             // Add ActionUnits
 
-             model.AddModule(new FaceTrackerModule(null));
+            model.AddModule(new FaceTrackerModule(null));
             model.AddModule(new ME_BrowShift());
             model.AddModule(new ME_EyelidTight());
             model.AddModule(new ME_LipsTightened());
@@ -38,7 +38,7 @@ namespace RealSense
             model.AddModule(new ME_NoseWrinkled());
             model.AddModule(new ME_LowerLipLowered());
             model.AddModule(new ME_UpperLipRaised());
-           
+
             //model.AddModule(new EM_Joy());
             //model.AddModule(new EM_Anger());
             //model.AddModule(new EM_Contempt());
@@ -49,7 +49,7 @@ namespace RealSense
 
             // Default Modules
             model.AddModule(new Gauge_Module());
-            Application.Run(new CameraView(model, true));
+            Application.Run(new CameraView(model, false));
         }
 
     }

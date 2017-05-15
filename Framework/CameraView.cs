@@ -6,11 +6,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 /**
- * You´re supposed to make some comments! Otherwise I´m going to kill you! :) 
- * 
- * @author: David Rosenbusch
- */
+* You´re supposed to make some comments! Otherwise I´m going to kill you! :) 
+* 
+* @author: David Rosenbusch
+*/
 namespace RealSense
 {
     public class CameraView : Form
@@ -32,6 +33,7 @@ namespace RealSense
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
         private bool testMode;
+        Bitmap uiBitmap, windowBitmap;
 
         /**
          * Initialise View and start updater Thread
@@ -86,6 +88,7 @@ namespace RealSense
             }
             else
             {
+                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\transparent.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;
@@ -145,6 +148,8 @@ namespace RealSense
                 this.Controls.Add(c);
             }
         }
+        int xPos = 150, yPos = 150;
+        int blurWidth = 650, blurHeight = 738;
         /**
          * Update the View
          */
@@ -158,7 +163,7 @@ namespace RealSense
                     debug_y = 0;
                     // <magic>
                     PXCMCapture.Sample sample = model.SenseManager.QueryFaceSample();
-                    sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB24, out colorData);
+                    sample.color.AcquireAccess(PXCMImage.Access.ACCESS_READ, PXCMImage.PixelFormat.PIXEL_FORMAT_RGB32, out colorData);
 
                     model.FaceData = model.Face.CreateOutput();
                     model.FaceData.Update();
@@ -183,8 +188,8 @@ namespace RealSense
                     }
 
                     colorBitmap = colorData.ToBitmap(0, sample.color.info.width, sample.color.info.height);
-                    Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
 
+                    Graphics bitmapGraphics = Graphics.FromImage(colorBitmap);
                     if (resetModules)
                     {
                         model.Modules.ForEach(delegate (RSModule mod)
@@ -200,6 +205,34 @@ namespace RealSense
                             bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
                         if (!imageEnabled)
                             bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
+                        Debug_Y += 25;
+                        bitmapGraphics.DrawString("pose: " + model.CurrentPoseDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                    }
+                    else
+                    {
+
+                        uiBitmap = new Bitmap(blurWidth, blurHeight, PixelFormat.Format32bppArgb);
+
+                        using (Graphics gr = Graphics.FromImage(uiBitmap))
+                        {
+                            gr.DrawImage(colorBitmap, 0, 0);
+                        }
+
+                        BitmapData sourceData = colorBitmap.LockBits(new Rectangle(xPos - 10, yPos - 10, blurWidth + 20, blurHeight + 20), ImageLockMode.ReadOnly, colorBitmap.PixelFormat);
+                        BitmapData uiData = uiBitmap.LockBits(new Rectangle(0, 0, blurWidth, blurHeight), ImageLockMode.WriteOnly, uiBitmap.PixelFormat);
+                        FriggnAweseomeGraphix.sonic_blur(colorBitmap, uiBitmap, 0, 0, blurWidth, blurHeight, 2, 4, sourceData, uiData);
+                        uiBitmap.UnlockBits(uiData);
+                        colorBitmap.UnlockBits(sourceData);
+
+                        using (Graphics gr = Graphics.FromImage(colorBitmap))
+                        {
+                            gr.DrawImage(uiBitmap, xPos, yPos);
+                            gr.DrawImage(windowBitmap, xPos, yPos);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50, 80, 20, 33, Color.DarkGray, Color.DarkRed, "Saaaaad ", ";-(");
+                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50 + 220, 80, 20, 66, Color.DarkGray, Color.DarkRed, "Aaaangryyy!!! ", ":-(");
+                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50 + 440, 80, 20, 100, Color.DarkGray, Color.DarkRed, "Haapyy! ", ":-D");
+                        }
+
                     }
 
 
@@ -236,7 +269,8 @@ namespace RealSense
                      bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);*/
 
                     // update PictureBox
-                    pb.Image = colorBitmap;
+                    if (testMode) pb.Image = colorBitmap;
+                    else pb.Image = colorBitmap;// uiBitmap.Clone(new Rectangle(0, 0, uiBitmap.Width, uiBitmap.Height), uiBitmap.PixelFormat);
                     model.SenseManager.ReleaseFrame();
                     model.FaceData.Dispose(); // DONE!
                     sample.color.ReleaseAccess(colorData);

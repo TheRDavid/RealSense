@@ -61,13 +61,15 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
+                if (model.CurrentPoseDiff < 10)
+                    model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)diffs[0] + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipLine).ToString()] + ") (" + (int)MAX + ", " + (int)MIN + ")";
                 }
+
                 framesGathered = 0;
             }
         }

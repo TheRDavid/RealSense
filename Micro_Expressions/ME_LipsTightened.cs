@@ -31,7 +31,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
-            debug = false;
+            debug = true;
             XTREME_MAX = 0;
             XTREME_MIN = -16.5;
             model.AU_Values[typeof(ME_LipsTightened).ToString()] = 0;
@@ -58,10 +58,11 @@ namespace RealSense
                 diffs = convertValues(diffs);
 
                 // Update value in Model 
-                model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
+                if (model.CurrentPoseDiff < 10)
+                    model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {
-                    output = "LipsTightened: " + "(" + (int)diffs[0] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(ME_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

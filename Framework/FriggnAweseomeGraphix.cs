@@ -66,17 +66,17 @@ namespace RealSense
         public static unsafe void pretty_blur(Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)
         {
             int blurLength = 1 + 2 * factor;
-            int blurLengthBit = blurLength * 3;
+            int blurLengthBit = blurLength * 4;
             int blurLengthBitBy2 = blurLengthBit / 2;
             int blurLengthBy2 = blurLength / 2;
             int factorSq = blurLength * blurLength;
-            int owidthTimesSize = 3 * source.Width;
-            int twidthTimesSize = 3 * target.Width;
+            int owidthTimesSize = 4 * source.Width;
+            int twidthTimesSize = 4 * target.Width;
             int numPixels = source.Width * source.Height;
             byte* sourcePointer = (byte*)sourceData.Scan0;
             byte* targetPointer = (byte*)targetData.Scan0;
 
-            byte[] sorroundingPixels = new byte[factorSq * 3];
+            byte[] sorroundingPixels = new byte[factorSq * 4];
 
 
             for (int yy = y0; yy < y1; yy++)
@@ -84,7 +84,7 @@ namespace RealSense
                 int idxByRow = yy * owidthTimesSize;
                 for (int xx = x0; xx < x1; xx++)
                 {
-                    int oindex = pixelIndex(xx, yy, owidthTimesSize, 3);
+                    int oindex = pixelIndex(xx, yy, owidthTimesSize, 4);
                     int tindex = pixelIndex(xx - x0, yy - y0, twidthTimesSize, 3);
                     byte* mainIndex = targetPointer + tindex;
                     byte* originalIndex = sourcePointer + oindex;
@@ -94,10 +94,10 @@ namespace RealSense
                     for (int by = 0; by < blurLength; by++)
                     {
                         int yIdx = by * blurLengthBit;
-                        for (int bx = 0; bx < blurLengthBit; bx += 3)
+                        for (int bx = 0; bx < blurLengthBit; bx += 4)
                         {
                             int yIdxpbx = yIdx + bx;
-                            byte* areaIndex = sourcePointer + pixelIndex(xx - blurLengthBitBy2 + bx, yy - blurLengthBy2 + by, owidthTimesSize, 3);
+                            byte* areaIndex = sourcePointer + pixelIndex(xx - blurLengthBitBy2 + bx, yy - blurLengthBy2 + by, owidthTimesSize, 4);
 
                             sorroundingPixels[yIdxpbx] = *(areaIndex);
                             sorroundingPixels[yIdxpbx + 1] = *(areaIndex + 1);
@@ -113,7 +113,7 @@ namespace RealSense
                         for (int sx = 0; sx < blurLength; sx++)
                         {
 
-                            int yxIdx = yIdx + sx * 3;
+                            int yxIdx = yIdx + sx * 4;
                             b += (sorroundingPixels[yxIdx]);
                             g += (sorroundingPixels[yxIdx + 1]);
                             r += (sorroundingPixels[yxIdx + 2]);
