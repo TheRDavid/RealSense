@@ -6,12 +6,10 @@ using System.Text;
 
 namespace RealSense.Emotions
 {
-    class EM_Sadness : RSModule
+    class EM_Contempt : RSModule
     {
-        // Variables for logic
-
         // Default values
-        public EM_Sadness()
+        public EM_Contempt()
         {
             debug = true;
         }
@@ -44,53 +42,50 @@ namespace RealSense.Emotions
 
         public override void Work(Graphics g)
         {
-            //Sadness --> BrowShift, LipLine, (LipStreched), EyelidTight
+            //Contempt --> BrowShift, LipCorner
 
-            //percentage Sadness
-            int p_brow = 40;
-            int p_lid = 20;
-            int p_lipL = 40;
-            //int p_lipS = 40;
+            //percentage Contempt
+            int p_brow = 50;
+            int p_lip = 50;
 
-            //Line: hoch lächeln (60-90) (grinsen höher)
-            //Line bei traurig: -40/-50 Streched neutral
+            //Maxs
+            int browMax = 60;
+            int lipMax = 50;
 
-
-            //Lid too tight Vars
-            int lidMax = 50;
-            int newLid = -10;
-
-            //brow Value 0-100
+            //brow Difference (0-browMax) --> browMax entspricht 100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
-            double browValue = temp_left < temp_right ? temp_left : temp_right;
+            double browValue = Math.Abs(temp_left-temp_right);
+            //macht aus 0-100 (0 --> keine Differenz und 100 volle (aber nicht maximale.. (geht ja bis -100)) Differenz) ein 0-browMax
+            browValue = 100 * browValue / browMax; 
             browValue = browValue * p_brow / 100;
 
-            //lid Value 0 - -100 (Grenze bei lidMax)
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            //Lid too tight
-            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
-            lidValue = lidValue * -1 * p_lid / 100;
-
             //lipL Value 0 - -100
-            double lipValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipValue = lipValue * -1 * p_lipL / 100;
+            temp_left = model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"];
+            double lipValue = Math.Abs(temp_left - temp_right);
+            //macht aus 0-100 (0 --> keine Differenz und 100 volle (aber nicht maximale.. (geht ja bis -100)) Differenz) ein 0-lipMax
+            lipValue = 100 * lipValue / lipMax;
+            lipValue = lipValue * p_lip / 100;
 
-            double sad = browValue + lidValue + lipValue;
-            sad = sad > 0 ? sad : 0;
-            model.Emotions["Sadness"] = sad;
+            double contempt = browValue + lipValue;
+            contempt = contempt > 0 ? contempt : 0;
+            model.Emotions["Contempt"] = contempt;
 
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + sad;
+                output = "Contempt: " + contempt;
             }
 
         }
     }
 }
+
+
+
+
+
 
 
 

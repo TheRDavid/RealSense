@@ -6,12 +6,10 @@ using System.Text;
 
 namespace RealSense.Emotions
 {
-    class EM_Sadness : RSModule
+    class EM_Surprise : RSModule
     {
-        // Variables for logic
-
         // Default values
-        public EM_Sadness()
+        public EM_Surprise()
         {
             debug = true;
         }
@@ -26,7 +24,7 @@ namespace RealSense.Emotions
             9 = nose wrinkled -> NoseWrinkled
             12 = lip corner pulled (up) -> LipCorner
             14 = grübchen -> none
-            15 = lip corner lowered -> LipLine
+            15 = lip corner lowered -> LipCorner
             16 = lower lip lowered ->LowerLipLowered
             20 = lip stretched -> LipStretched
             23 = lip tightened -> LipsTightened
@@ -39,26 +37,16 @@ namespace RealSense.Emotions
             Überraschung (1,2,5B,26)
             Freude (6,12, 7)
             Angst (1,2,4,5,6,20,26)
-
          * */
 
         public override void Work(Graphics g)
         {
-            //Sadness --> BrowShift, LipLine, (LipStreched), EyelidTight
+            //Surprise --> BrowShift, EyelidTight, JawDrop
 
-            //percentage Sadness
-            int p_brow = 40;
-            int p_lid = 20;
-            int p_lipL = 40;
-            //int p_lipS = 40;
-
-            //Line: hoch lächeln (60-90) (grinsen höher)
-            //Line bei traurig: -40/-50 Streched neutral
-
-
-            //Lid too tight Vars
-            int lidMax = 50;
-            int newLid = -10;
+            //percentage Surprise
+            int p_brow = 30;
+            int p_eye = 35;
+            int p_jaw = 15;
 
             //brow Value 0-100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -66,32 +54,26 @@ namespace RealSense.Emotions
             double browValue = temp_left < temp_right ? temp_left : temp_right;
             browValue = browValue * p_brow / 100;
 
-            //lid Value 0 - -100 (Grenze bei lidMax)
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            //Lid too tight
-            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
-            lidValue = lidValue * -1 * p_lid / 100;
+            //eye Value 0-100
+            double eyeValue = model.AU_Values[typeof(ME_EyelidTight).ToString()];
+            eyeValue = eyeValue * p_eye / 100;
 
-            //lipL Value 0 - -100
-            double lipValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipValue = lipValue * -1 * p_lipL / 100;
+            //jaw 0-100
+            double jawValue = model.AU_Values[typeof(ME_JawDrop).ToString()];
+            jawValue = jawValue * p_jaw / 100;
 
-            double sad = browValue + lidValue + lipValue;
-            sad = sad > 0 ? sad : 0;
-            model.Emotions["Sadness"] = sad;
+            double surprise = browValue + eyeValue + jawValue;
+            surprise = surprise > 0 ? surprise : 0;
+            model.Emotions["Surprise"] = surprise;
 
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + sad;
+                output = "Surprise: " + surprise;
             }
-
         }
     }
 }
-
 
 
 
