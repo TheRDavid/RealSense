@@ -48,17 +48,10 @@ namespace RealSense.Emotions
 
             //percentage Sadness
             int p_brow = 0;
-            int p_lid = 50;
-            int p_lipL = 50;
-            //int p_lipS = 40;
-
-            //Line: hoch lächeln (60-90) (grinsen höher)
-            //Line bei traurig: -40/-50 Streched neutral
-
-
-            //Lid too tight Vars
-            int lidMax = 100; // Lid ist sehr schnell sehr stark
-            int newLid = -10;
+            //int p_lid = 50;
+            int p_lipL = 90;
+            int p_lipS = 0;
+            int p_lid = 20;
 
             //brow Value 0-100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -66,25 +59,28 @@ namespace RealSense.Emotions
             double browValue = temp_left < temp_right ? temp_left : temp_right;
             browValue = browValue * p_brow / 100;
 
-            //lid Value 0 - -100 (Grenze bei lidMax)
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
-            lidValue = lidValue * -1 * p_lid / 100;
+            //lid values
+            double lidValue = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] + model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            lidValue *= -1;
+            lidValue *= p_lid;
+            lidValue /= 100;
 
             //lipL Value 0 - -100
-            double lipValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipValue = lipValue * -1 * p_lipL / 100;
+            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            lipLValue = lipLValue * -1 * p_lipL / 100;
 
-            double sad = browValue + lidValue + lipValue;
+            //lipS Value 0 - -100
+            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
+            lipSValue = lipSValue * -1 * p_lipS / 100;
+
+            double sad = lidValue + lipLValue;
             sad = sad > 0 ? sad : 0;
             model.Emotions["Sadness"] = sad;
 
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + (int)sad + " Lip: " + (int)lipValue + " Lid: " + (int)lidValue;
+                output = "Sadness: " + (int)sad + " LipL: " + (int)lipLValue + " Lid: " + lidValue + " LipS: " + (int)lipSValue + " Brow: " + browValue;
             }
 
         }

@@ -61,7 +61,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { distance });
 
                 /* Update value in Model */
-                if (model.CurrentPoseDiff < 10)
+                if (model.CurrentPoseDiff < model.PoseMax)
                     model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */

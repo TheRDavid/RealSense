@@ -66,6 +66,8 @@ namespace RealSense
                             cAngles[index] = model.CurrentPose;
                             if (model.Lp == null) return;
                             cFaces[index++] = model.CurrentFace;
+                            Console.WriteLine(numFaces + " / " + index + " * 100");
+                            model.calibrationProgress = (double)index / (double)numFaces  * 100.0;
                         }
                     if (!calibrate)
                     {

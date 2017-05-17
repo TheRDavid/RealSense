@@ -37,12 +37,16 @@ namespace RealSense
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
 
+        public double calibrationProgress = 100;
+
         private CameraView view;
 
         private Font defaultFont = new Font("Arial", 18);
         private SolidBrush defaultStringBrush = new SolidBrush(Color.White);
         private SolidBrush bgStringBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0));
         private SolidBrush opaqueStringBrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+
+        private int maxPose = 13;
 
 
         /**
@@ -326,6 +330,12 @@ namespace RealSense
         {
             get { return currentPoseDiff; }
             set { currentPoseDiff = value; }
+        }
+
+        public int PoseMax
+        {
+            get { return maxPose; }
+            set { maxPose = value; }
         }
 
         public double CurrentRollDiff

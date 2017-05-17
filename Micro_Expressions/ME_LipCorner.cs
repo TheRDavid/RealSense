@@ -45,8 +45,8 @@ namespace RealSense
             /* Calculations */
 
             // calculates difference between nose and LipCorner 
-            cornerLeft = -((model.Difference(33, 26)) - 100);  //left LipCorner
-            cornerRight = -((model.Difference(39, 26)) - 100);  //right LipCorner
+            cornerLeft = -((model.Difference(33, 31)) - 100);  //left LipCorner
+            cornerRight = -((model.Difference(39, 31)) - 100);  //right LipCorner
 
 
             if (framesGathered < numFramesBeforeAccept)
@@ -67,7 +67,7 @@ namespace RealSense
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
                 /* Update value in Model */
-                if (model.CurrentPoseDiff < 10)
+                if (model.CurrentPoseDiff < model.PoseMax)
                 {
                     model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0];
                     model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1];

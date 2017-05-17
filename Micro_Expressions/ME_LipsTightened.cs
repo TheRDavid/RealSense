@@ -58,7 +58,7 @@ namespace RealSense
                 diffs = convertValues(diffs);
 
                 // Update value in Model 
-                if (model.CurrentPoseDiff < 10)
+                if (model.CurrentPoseDiff < model.PoseMax)
                     model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {

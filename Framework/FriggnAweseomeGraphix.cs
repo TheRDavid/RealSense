@@ -8,6 +8,7 @@ namespace RealSense
     using System;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Drawing.Drawing2D;
     using System.Drawing.Imaging;
     using System.Linq;
     using System.Text;
@@ -23,34 +24,66 @@ namespace RealSense
         static Pen ME_MonitorPen;
         static Brush MEMonitorBrush;
 
-        static Font percentageFont = new Font("Calibri Light", 34);
-        static Font majorFont = new Font("Helvetica", 42, FontStyle.Bold);
-        static Font minorFont = new Font("Helvetica", 18);
+        static Font percentageFont = new Font("Futura", 24, FontStyle.Bold);
+        public static Font majorFont = new Font("Futura", 36, FontStyle.Bold);
+        public static Font minorFont = new Font("Futura", 21, FontStyle.Regular);
+        public static Color fgColor = Color.FromArgb(255, 186, 68, 75);
+        static Color bgColor = Color.FromArgb(255, 200, 200, 200);
+        public static Color fontColor = Color.FromArgb(255, 103, 103, 104);
 
-        public static void drawMEMontior(Graphics gfx, int x, int y, int radius, int thickness, int monitorValue, Color bgColor, Color fgColor, String majorText, String minorText)
+        public class MEMonitor
         {
-            if (monitorValue < 0) monitorValue = 0;
-            if (monitorValue > 100) monitorValue = 100;
-            String text = monitorValue + "%";
+            public int x;
+            public int y;
+            public int radius;
+            public int thickness;
+            public int currentValue = 0;
+            public int targetValue = 0;
+            public String majorText;
+            public String minorText;
+            public bool showPercent = true;
+
+            public MEMonitor(String majText, String minText, int xP, int yP, int rad, int thick)
+            {
+                x = xP;
+                y = yP;
+                radius = rad;
+                thickness = thick;
+                majorText = majText;
+                minorText = minText;
+            }
+
+            public void step()
+            {
+                currentValue += (targetValue - currentValue) / 10;
+            }
+        }
+
+        public static void drawMEMontior(Graphics gfx, MEMonitor monitor)
+        {
+            gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            if (monitor.currentValue < 0) monitor.currentValue = 0;
+            if (monitor.currentValue > 100) monitor.currentValue = 100;
+            String text = monitor.currentValue + "%";
             SizeF size = gfx.MeasureString(text, percentageFont);
             MEMonitorBrush = new SolidBrush(bgColor);
             ME_MonitorPen = new Pen(MEMonitorBrush);
-            ME_MonitorPen.Width = thickness;
-            Rectangle area = new Rectangle(x, y, radius * 2, radius * 2);
+            ME_MonitorPen.Width = monitor.thickness;
+            Rectangle area = new Rectangle(monitor.x, monitor.y, monitor.radius * 2, monitor.radius * 2);
             gfx.DrawEllipse(ME_MonitorPen, area);
             ME_MonitorPen.Brush = new SolidBrush(fgColor);
-            gfx.DrawArc(ME_MonitorPen, area, -90, (int)(360.0 / 100 * monitorValue));
-            MEMonitorBrush = new SolidBrush(fgColor);
-            gfx.DrawString(text, percentageFont, MEMonitorBrush, (int)(x + radius - size.Width / 2), y + radius - size.Height / 2);
+            gfx.DrawArc(ME_MonitorPen, area, -90, (int)(360.0 / 100 * monitor.currentValue));
+            MEMonitorBrush = new SolidBrush(fontColor);
+            if(monitor.showPercent) gfx.DrawString(text, percentageFont, MEMonitorBrush, (int)(monitor.x + monitor.radius - size.Width / 2), monitor.y + monitor.radius - size.Height / 2);
             ME_MonitorPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            ME_MonitorPen.Width = thickness / 4;
-            if (monitorValue >= 100)
+            ME_MonitorPen.Width = monitor.thickness / 4;
+            if (monitor.currentValue >= 100)
                 ME_MonitorPen.Brush = new SolidBrush(fgColor);
             else ME_MonitorPen.Brush = new SolidBrush(bgColor);
-            gfx.DrawEllipse(ME_MonitorPen, new Rectangle(x + thickness, y + thickness, (radius - thickness) * 2, (radius - thickness) * 2));
-            MEMonitorBrush = new SolidBrush(Color.Gray);
-            gfx.DrawString(majorText, majorFont, MEMonitorBrush, x + radius * 2 + 40, y + radius - 50);
-            gfx.DrawString(minorText, minorFont, MEMonitorBrush, x + radius * 2 + 40 + 5, y + radius + 10);
+            gfx.DrawEllipse(ME_MonitorPen, new Rectangle(monitor.x + monitor.thickness, monitor.y + monitor.thickness, (monitor.radius - monitor.thickness) * 2, (monitor.radius - monitor.thickness) * 2));
+            MEMonitorBrush = new SolidBrush(fontColor);
+            gfx.DrawString(monitor.majorText, majorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40, monitor.y + monitor.radius - 50);
+            gfx.DrawString(monitor.minorText, minorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40 + 5, monitor.y + monitor.radius + 10);
         }
 
 
@@ -167,10 +200,9 @@ namespace RealSense
                             c0 += *(areaIndex + 2);
                         }
                     }
-                    c2 = (c2) >> shift;                                                 //  cheating a lil 'bit' (kek) to prevent divisions
-                    c0 = (c0) >> shift;
-                    c1 = (c1) >> shift;
-
+                    c2 = (c2) / 9;                                                 //  cheating a lil 'bit' (kek) to prevent divisions
+                    c0 = (c0) / 9;
+                    c1 = (c1) / 9;
                     *(mainIndex) = (byte)(c2 > 255 ? 255 : c2);                         // 1 byte - keep it below 256!
                     *(mainIndex + 1) = (byte)(c0 > 255 ? 255 : c0);
                     *(mainIndex + 2) = (byte)(c1 > 255 ? 255 : c1);
@@ -188,6 +220,19 @@ namespace RealSense
             return idxByRow + idxByCol;
         }
 
+        public static void drawFadingLine(Graphics gfx, float x0, float y0, float x1, float y1)
+        {
+
+            LinearGradientBrush brush = new LinearGradientBrush(
+               new Point((int)x0, (int)y0),
+               new Point((int)x1, (int)y1),
+               Color.FromArgb(0, 180, 0, 0),   // Opaque red
+               Color.FromArgb(255, 180, 0, 0));  // Opaque blue
+            Pen pen = new Pen(brush);
+            pen.Width = 8;
+            gfx.DrawLine(pen, x0, y0, x1, y1);
+
+        }
 
     }
 

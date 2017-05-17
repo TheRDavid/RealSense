@@ -45,8 +45,9 @@ namespace RealSense.Emotions
             //Joy --> EyelidTight, LipCorner
 
             //percentage Joy
-            int p_lid = 40;
-            int p_lip = 60;
+            int p_lid = 25;
+            int p_lipC = 40;
+            int p_lipL = 35;
 
 
             //Line: hoch lächeln (60-90) (grinsen höher)
@@ -65,13 +66,17 @@ namespace RealSense.Emotions
             lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
             lidValue = lidValue * -1 * p_lid / 100;
 
-            //lip Value 0 - 100
+            //lipC Value 0 - 100
             temp_left = model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"];
-            double lipValue = (temp_left + temp_right) / 2;
-            lipValue = lipValue * p_lip / 100;
+            double lipCValue = (temp_left + temp_right) / 2;
+            lipCValue = lipCValue * p_lipC / 100;
 
-            double joy = lidValue + lipValue;
+            //lipL Value 0 - -100
+            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            lipLValue = lipLValue * p_lipL / 100;
+
+            double joy = lidValue + lipCValue + lipLValue;
             joy = joy > 0 ? joy : 0;
             model.Emotions["Joy"] = joy;
 

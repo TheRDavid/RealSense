@@ -82,7 +82,7 @@ namespace RealSense
 
         protected void dynamicMinMax(double[] dist)
         {
-            if (model.CurrentPoseDiff > 10)
+            if (model.CurrentPoseDiff > model.PoseMax)
             { output = ""; return; }
             double temp = dist.Min();
             MIN = MIN < temp ? MIN : temp;

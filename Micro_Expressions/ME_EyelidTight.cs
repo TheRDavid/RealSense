@@ -92,7 +92,7 @@ namespace RealSense
 
                 /* Update value in Model */
 
-                if (model.CurrentPoseDiff < 10)
+                if (model.CurrentPoseDiff < model.PoseMax)
                 {
                     model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = diffs[0];
                     model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = diffs[1];

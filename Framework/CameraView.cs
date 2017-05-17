@@ -32,8 +32,28 @@ namespace RealSense
         private Button enableOutput = new Button();
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
-        private bool testMode;
+        private bool testMode, blur = true;
         Bitmap uiBitmap, windowBitmap;
+
+
+        static int xgap = (int)(75 * 5);
+        static int ygap = (int)(80 * 2.5 + 20);
+        static int yRingGap = 20;
+        static int xP = 120, yP = 160, yV = 90;
+        static int thickness = 15;
+        static int radius = 70;
+
+        private FriggnAweseomeGraphix.MEMonitor angerMonitor = new FriggnAweseomeGraphix.MEMonitor("Anger", "Wut", xP, yP + yRingGap, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor joyMonitor = new FriggnAweseomeGraphix.MEMonitor("Joy", "Freude", xP, yP + yRingGap + ygap, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor fearMonitor = new FriggnAweseomeGraphix.MEMonitor("Fear", "Furcht", xP, yP + yRingGap + ygap * 2, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor contemptMonitor = new FriggnAweseomeGraphix.MEMonitor("Contempt", "Verachtung", xP, yP + yRingGap + ygap * 3, radius, thickness);
+
+        private FriggnAweseomeGraphix.MEMonitor sadMonitor = new FriggnAweseomeGraphix.MEMonitor("Sadness", "Trauer", xP + xgap, yP + yRingGap + yV, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor disgustMonitor = new FriggnAweseomeGraphix.MEMonitor("Disgust", "Ekel", xP + xgap, yP + yRingGap + yV + ygap, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor surpriseMonitor = new FriggnAweseomeGraphix.MEMonitor("Surprise", "Überraschung", xP + xgap, yP + yRingGap + yV + ygap * 2, radius, thickness);
+        int calibRadius = 200;
+
+        private Pen linePen = new Pen(new SolidBrush(Color.Gray));
 
         /**
          * Initialise View and start updater Thread
@@ -88,7 +108,7 @@ namespace RealSense
             }
             else
             {
-                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\transparent.png"));
+                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\window.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;
@@ -115,10 +135,15 @@ namespace RealSense
                         {
                             Console.WriteLine("Start calibration");
                             ((Gauge_Module)mod).calibrate = true;
+                            subject++;
                         }
                     });
                     ResetModules = true;
 
+                }
+                else if (e.KeyValue == (int)Keys.B)
+                {
+                    blur = !blur;
                 }
             }
         }
@@ -148,8 +173,7 @@ namespace RealSense
                 this.Controls.Add(c);
             }
         }
-        int xPos = 150, yPos = 150;
-        int blurWidth = 650, blurHeight = 738;
+        int subject = 0;
         /**
          * Update the View
          */
@@ -205,32 +229,87 @@ namespace RealSense
                             bitmapGraphics.FillRectangle(model.DefaultBGBrush, new Rectangle(0, 0, model.Width, model.Height));
                         if (!imageEnabled)
                             bitmapGraphics.FillRectangle(model.OpaqueBGBrush, new Rectangle(0, 0, model.Width, model.Height));
-                        Debug_Y += 25;
+
                         bitmapGraphics.DrawString("pose: " + model.CurrentPoseDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
+                        Debug_Y += 25;
                     }
                     else
                     {
 
-                        uiBitmap = new Bitmap(blurWidth, blurHeight, PixelFormat.Format32bppArgb);
+                        // uiBitmap = new Bitmap(blurWidth, blurHeight, PixelFormat.Format32bppArgb);
 
-                        using (Graphics gr = Graphics.FromImage(uiBitmap))
-                        {
-                            gr.DrawImage(colorBitmap, 0, 0);
-                        }
+                        //  using (Graphics gr = Graphics.FromImage(uiBitmap))
+                        // {
+                        //   gr.DrawImage(colorBitmap, 0, 0);
+                        //  }
 
-                        BitmapData sourceData = colorBitmap.LockBits(new Rectangle(xPos - 10, yPos - 10, blurWidth + 20, blurHeight + 20), ImageLockMode.ReadOnly, colorBitmap.PixelFormat);
-                        BitmapData uiData = uiBitmap.LockBits(new Rectangle(0, 0, blurWidth, blurHeight), ImageLockMode.WriteOnly, uiBitmap.PixelFormat);
-                        FriggnAweseomeGraphix.sonic_blur(colorBitmap, uiBitmap, 0, 0, blurWidth, blurHeight, 2, 4, sourceData, uiData);
-                        uiBitmap.UnlockBits(uiData);
-                        colorBitmap.UnlockBits(sourceData);
+                        //   BitmapData sourceData = colorBitmap.LockBits(new Rectangle(xPos - 10, yPos - 10, blurWidth + 20, blurHeight + 20), ImageLockMode.ReadOnly, colorBitmap.PixelFormat);
+                        //BitmapData uiData = uiBitmap.LockBits(new Rectangle(0, 0, blurWidth, blurHeight), ImageLockMode.WriteOnly, uiBitmap.PixelFormat);
+                        //if (blur) FriggnAweseomeGraphix.sonic_blur(colorBitmap, uiBitmap, 0, 0, blurWidth, blurHeight, 1, 4, sourceData, uiData);
+                        //  uiBitmap.UnlockBits(uiData);
+                        //  colorBitmap.UnlockBits(sourceData);
 
                         using (Graphics gr = Graphics.FromImage(colorBitmap))
                         {
-                            gr.DrawImage(uiBitmap, xPos, yPos);
-                            gr.DrawImage(windowBitmap, xPos, yPos);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50, 80, 20, 33, Color.DarkGray, Color.DarkRed, "Saaaaad ", ";-(");
-                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50 + 220, 80, 20, 66, Color.DarkGray, Color.DarkRed, "Aaaangryyy!!! ", ":-(");
-                            FriggnAweseomeGraphix.drawMEMontior(gr, xPos + 50, yPos + 50 + 440, 80, 20, 100, Color.DarkGray, Color.DarkRed, "Haapyy! ", ":-D");
+                            angerMonitor.targetValue = (int)model.Emotions["Anger"];
+                            fearMonitor.targetValue = (int)model.Emotions["Fear"];
+                            disgustMonitor.targetValue = (int)model.Emotions["Disgust"];
+                            surpriseMonitor.targetValue = (int)model.Emotions["Surprise"];
+                            joyMonitor.targetValue = (int)model.Emotions["Joy"];
+                            sadMonitor.targetValue = (int)model.Emotions["Sadness"];
+
+                            angerMonitor.step();
+                            fearMonitor.step();
+                            disgustMonitor.step();
+                            surpriseMonitor.step();
+                            joyMonitor.step();
+                            sadMonitor.step();
+
+                            // if (false) gr.DrawImage(uiBitmap, xPos, yPos);
+                            gr.DrawImage(windowBitmap, xP - 90, yP - 150);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, angerMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, sadMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, fearMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, surpriseMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, contemptMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, disgustMonitor);
+                            FriggnAweseomeGraphix.drawMEMontior(gr, joyMonitor);
+                            bitmapGraphics.DrawString("Subject #" + subject, FriggnAweseomeGraphix.majorFont, new SolidBrush(FriggnAweseomeGraphix.fontColor), xP, yP - 75);
+                            bitmapGraphics.DrawLine(linePen, xP + 10, yP - 20, xP + 800, yP - 20);
+                            bitmapGraphics.DrawString("Pose: " + (int)model.CurrentPoseDiff, FriggnAweseomeGraphix.minorFont, new SolidBrush(FriggnAweseomeGraphix.fontColor), xP + 550, yP - 55);
+
+                            FriggnAweseomeGraphix.MEMonitor calibMonitor = new FriggnAweseomeGraphix.MEMonitor("", "", 1150, 580 - calibRadius, calibRadius, 20);
+
+                            if (model.calibrationProgress != 100)
+                            {
+                                PXCMFaceData.LandmarkPoint mPoint = model.CurrentFace[29];
+
+                                int rad = 2;
+                                calibMonitor.y = (int)mPoint.image.y - calibRadius;
+                                calibMonitor.x = (int)mPoint.image.x - calibRadius;
+                                calibMonitor.showPercent = false;
+                                calibMonitor.currentValue = (int)model.calibrationProgress;
+                                int sMark = (int)(model.calibrationProgress * 0.69);
+                                int tMark = sMark + 1;
+
+                                Console.WriteLine(sMark + " -> " + tMark);
+
+                                PXCMFaceData.LandmarkPoint sPoint = model.CurrentFace[sMark];
+                                PXCMFaceData.LandmarkPoint tPoint = model.CurrentFace[tMark];
+
+
+                                //FriggnAweseomeGraphix.drawFadingLine(gr, sPoint.image.x, sPoint.image.y, tPoint.image.x, tPoint.image.y);
+                                SolidBrush sb = new SolidBrush(FriggnAweseomeGraphix.fgColor);
+                                for (int i = 0; i < sMark - 1; i++)
+                                {
+                                    PXCMFaceData.LandmarkPoint iPoint = model.CurrentFace[i];
+                                    gr.FillEllipse(sb, new Rectangle((int)iPoint.image.x - rad, (int)iPoint.image.y - rad, rad * 2, rad * 2));
+                                }
+
+                                gr.FillEllipse(sb, new Rectangle((int)sPoint.image.x - rad, (int)sPoint.image.y - rad, rad * 4, rad * 4));
+                            }
+                            else calibMonitor.currentValue = 0;
+                            FriggnAweseomeGraphix.drawMEMontior(gr, calibMonitor);
                         }
 
                     }

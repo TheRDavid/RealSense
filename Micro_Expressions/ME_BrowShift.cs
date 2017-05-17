@@ -79,7 +79,7 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                if (model.CurrentPoseDiff < 10)
+                if (model.CurrentPoseDiff < model.PoseMax)
                 {
                     model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
                     model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
