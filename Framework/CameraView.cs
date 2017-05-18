@@ -40,7 +40,7 @@ namespace RealSense
         static int ygap = (int)(80 * 2.5 + 20);
         static int yRingGap = 20;
         static int xP = 120, yP = 160, yV = 90;
-        static int thickness = 15;
+        static int thickness = 25;
         static int radius = 70;
 
         private FriggnAweseomeGraphix.MEMonitor angerMonitor = new FriggnAweseomeGraphix.MEMonitor("Anger", "Wut", xP, yP + yRingGap, radius, thickness);
@@ -51,7 +51,7 @@ namespace RealSense
         private FriggnAweseomeGraphix.MEMonitor sadMonitor = new FriggnAweseomeGraphix.MEMonitor("Sadness", "Trauer", xP + xgap, yP + yRingGap + yV, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor disgustMonitor = new FriggnAweseomeGraphix.MEMonitor("Disgust", "Ekel", xP + xgap, yP + yRingGap + yV + ygap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor surpriseMonitor = new FriggnAweseomeGraphix.MEMonitor("Surprise", "Überraschung", xP + xgap, yP + yRingGap + yV + ygap * 2, radius, thickness);
-        int calibRadius = 200;
+        int calibRadius = 300;
 
         private Pen linePen = new Pen(new SolidBrush(Color.Gray));
 
@@ -279,14 +279,19 @@ namespace RealSense
                             bitmapGraphics.DrawString("Pose: " + (int)model.CurrentPoseDiff, FriggnAweseomeGraphix.minorFont, new SolidBrush(FriggnAweseomeGraphix.fontColor), xP + 550, yP - 55);
 
                             FriggnAweseomeGraphix.MEMonitor calibMonitor = new FriggnAweseomeGraphix.MEMonitor("", "", 1150, 580 - calibRadius, calibRadius, 20);
-
-                            if (model.calibrationProgress != 100)
+                            calibMonitor.showPercent = false;
+                            if (model.calibrationProgress != 100 && model.CurrentFace != null)
                             {
                                 PXCMFaceData.LandmarkPoint mPoint = model.CurrentFace[29];
 
                                 int rad = 2;
-                                calibMonitor.y = (int)mPoint.image.y - calibRadius;
-                                calibMonitor.x = (int)mPoint.image.x - calibRadius;
+
+                                if (mPoint.image.x > 1200)
+                                {
+                                    calibMonitor.y = (int)mPoint.image.y - calibRadius;
+                                    calibMonitor.x = (int)mPoint.image.x - calibRadius;
+                                }
+
                                 calibMonitor.showPercent = false;
                                 calibMonitor.currentValue = (int)model.calibrationProgress;
                                 int sMark = (int)(model.calibrationProgress * 0.69);
@@ -307,9 +312,9 @@ namespace RealSense
                                 }
 
                                 gr.FillEllipse(sb, new Rectangle((int)sPoint.image.x - rad, (int)sPoint.image.y - rad, rad * 4, rad * 4));
+                                FriggnAweseomeGraphix.drawMEMontior(gr, calibMonitor);
                             }
                             else calibMonitor.currentValue = 0;
-                            FriggnAweseomeGraphix.drawMEMontior(gr, calibMonitor);
                         }
 
                     }

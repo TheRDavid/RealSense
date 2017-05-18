@@ -37,7 +37,7 @@ namespace RealSense
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
 
-        public double calibrationProgress = 100;
+        public double calibrationProgress = 0;
 
         private CameraView view;
 
