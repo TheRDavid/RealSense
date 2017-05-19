@@ -38,6 +38,8 @@ namespace RealSense
             model.AddModule(new ME_NoseWrinkled());
             model.AddModule(new ME_LowerLipLowered());
             model.AddModule(new ME_UpperLipRaised());
+            model.AddModule(new ME_LowerLipRaised());
+          //  model.AddModule(new ME_BearTeeth());
 
             model.AddModule(new EM_Joy());
             model.AddModule(new EM_Anger());

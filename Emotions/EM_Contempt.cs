@@ -75,7 +75,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Contempt: " + (int)contempt + " Brow: " + browValue + " Lip: " + lipValue + " L: " + temp_left + " R: " + temp_right;
+                output = "Contempt: " + (int)contempt + " Brow: " + (int)browValue + " Lip: " + (int)lipValue + " L: " + (int)temp_left + " R: " + (int)temp_right;
             }
 
         }

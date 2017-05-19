@@ -85,6 +85,15 @@ namespace RealSense.Emotions
             lipSValue = lipSValue * -1;
             lipSValue = lipSValue < 0 ? lipSValue : 0;
 
+
+            // Falls Corners durch Disgust, auf 0 setzen
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+            if (hDiff > 0)
+            {
+                lipLineValue = 0;
+                upperLipValue = 0;
+            }
+
             double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;// + lipSValue; 
             disgust = disgust > 0 ? disgust : 0;
             disgust = disgust < 100 ? disgust : 100;
@@ -94,7 +103,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Disgust: " + (int)disgust + " Brow: " + browValue + " Nose: " + noseValue + " LipUpper: " + upperLipValue;// + " LipS: " + lipSValue;
+                output = "Disgust: " + (int)disgust + " Brow: " + (int)browValue + " Nose: " + (int)noseValue + " LipUpper: " + (int)upperLipValue;// + " LipS: " + lipSValue;
             }
 
         }

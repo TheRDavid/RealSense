@@ -58,11 +58,21 @@ namespace RealSense
              * */
 
             //percentage Anger
-            int p_brow = 45;
+            int p_brow = 55;
             int p_lid = 25;
-            int p_lip = 20;
+            int p_lip = 30;
+            int p_nose = 0;
+
+            int nw = (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
+
+            if (nw < -50)
+            {
+                p_lip = 0;
+                p_nose = 30;
+            }
 
             //Lid too tight Vars
+
             int lidMax = 90;
             int newLid = -10;
 
@@ -70,7 +80,7 @@ namespace RealSense
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left > temp_right ? temp_left : temp_right;
-            browValue = browValue * -1 * p_brow / 100; 
+            browValue = browValue * -1 * p_brow / 100;
 
             //lid Value
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
@@ -84,14 +94,17 @@ namespace RealSense
             double lipValue = model.AU_Values[typeof(ME_LipsTightened).ToString()];
             lipValue = lipValue * -1 * p_lip / 100;
 
-            double anger = browValue + lidValue + lipValue;
+            //nose Value
+            double noseValue = -nw * p_nose / 100;
+
+            double anger = browValue + lidValue + lipValue + noseValue;
             anger = anger > 0 ? anger : 0;
             model.Emotions["Anger"] = anger;
 
             // print debug-values 
             if (debug)
             {
-                output = "Anger: " + (int)anger;
+                output = "Anger: " + (int)anger + ", Brow: " + (int)browValue + ", Lid: " + (int)lidValue + ", lip: " + (int)lipValue + ", nose: " + (int)noseValue;
             }
 
         }

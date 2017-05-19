@@ -61,10 +61,18 @@ namespace RealSense.Emotions
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lip Value 0 - 100
-            temp_left = model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"];
+            temp_left = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]);
+            temp_right = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]);
+
             double lipValue = (temp_left + temp_right) / 2;
             lipValue = lipValue * p_lip / 100;
+
+
+
+            if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
+            {
+                lipValue *= 1.6;
+            }
 
             //lipL Value 0 - -100
             double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
@@ -76,15 +84,28 @@ namespace RealSense.Emotions
             double browValue = temp_left > temp_right ? temp_left : temp_right;
             browValue = browValue < 0 ? browValue : 0;
 
-            lipValue = lipValue > lipLValue ? lipValue : lipLValue;
-            double joy = lidValue + lipValue;// + browValue;
+
+            double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
+
+                // Falls Corners durch Disgust, auf 0 setzen
+                double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+
+            if (hDiff < 0)
+            {
+                lipValue = 0;
+            }
+
+            double joy = lidValue + finalLipValue;// + browValue;
             joy = joy > 0 ? joy : 0;
+
             model.Emotions["Joy"] = joy;
 
             // print debug-values 
             if (debug)
             {
-                output = "Joy: " + (int)joy + " LipCorner: " + lipValue + " LipLine: " + lipLValue + " Eye: " + lidValue; // + " Brow: " + browValue;
+                if (lipValue > lipLValue) output = "FUCK";
+                else
+                    output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue + ", hDiff: " + hDiff; // + " Brow: " + browValue;
             }
 
         }

@@ -48,11 +48,20 @@ namespace RealSense
             cornerLeft = -((model.Difference(33, 31)) - 100);  //left LipCorner
             cornerRight = -((model.Difference(39, 31)) - 100);  //right LipCorner
 
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
             if (framesGathered < numFramesBeforeAccept)
             {
-                cornersLeft[framesGathered] = cornerLeft;
-                cornersRight[framesGathered++] = cornerRight;
+                if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
+                {
+                    cornersLeft[framesGathered] = cornerLeft;
+                    cornersRight[framesGathered++] = cornerRight;
+                }
+                else
+                {
+                    cornersLeft[framesGathered] = 0;
+                    cornersRight[framesGathered++] = 0;
+                }
             }
             else
             {
@@ -72,11 +81,10 @@ namespace RealSense
                     model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
                     model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
                 }
-
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]+ ", " + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] + ") (" + (int)MIN + ", " + (int)MAX + ") -> " + hDiff;
                 }
 
                 framesGathered = 0;

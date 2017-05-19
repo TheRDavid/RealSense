@@ -42,6 +42,7 @@ namespace RealSense
             line += model.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(39, 40, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 42, Model.AXIS.Y, false);
             line *= 1000;
 
             line = line < MAX_TOL && line > MIN_TOL ? 0 : line;

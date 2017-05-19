@@ -145,6 +145,13 @@ namespace RealSense
                 {
                     blur = !blur;
                 }
+                else if (e.KeyValue == (int)Keys.R)
+                {
+                    model.Modules.ForEach(delegate (RSModule mod)
+                    {
+                        mod.reset();
+                    });
+                }
             }
         }
 

@@ -77,6 +77,8 @@
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
+    <Compile Include="Micro_Expressions\ME_BearTeeth.cs" />
+    <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\FaceRect.cs" />
     <Compile Include="Micro_Expressions\ME_JawDrop.cs" />

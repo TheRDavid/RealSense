@@ -50,6 +50,15 @@ namespace RealSense.Emotions
             int p_brow = 0;
             //int p_lid = 50;
             int p_lipL = 90;
+            int p_lipUp = 0;
+
+            int cornerPos = (int)(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] + model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]) / 2;
+
+            if (cornerPos > 10)
+            {
+                p_lipL = 70;
+                p_lipUp = 20;
+            }
             int p_lipS = 0;
             int p_lid = 20;
 
@@ -73,14 +82,18 @@ namespace RealSense.Emotions
             double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
             lipSValue = lipSValue * -1 * p_lipS / 100;
 
+
+            double lipUp = model.AU_Values[typeof(ME_LowerLipRaised).ToString()] * p_lipUp / 100;
+
             double sad = lidValue + lipLValue;
             sad = sad > 0 ? sad : 0;
             model.Emotions["Sadness"] = sad;
 
+
             // print debug-values 
             if (debug)
             {
-                output = "Sadness: " + (int)sad + " LipL: " + (int)lipLValue + " Lid: " + lidValue + " LipS: " + (int)lipSValue + " Brow: " + browValue;
+                output = "Sadness: " + (int)sad + " LipL: " + (int)lipLValue + " Lid: " + (int)lidValue + " LipS: " + (int)lipSValue + " LipUp: " + (int)lipUp + " Brow: " + (int)browValue + " CornerP: " + (int)cornerPos;
             }
 
         }
