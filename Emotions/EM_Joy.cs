@@ -70,15 +70,21 @@ namespace RealSense.Emotions
             double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
             lipLValue = lipLValue * p_lip / 100;
 
+            //brow Value
+            temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double browValue = temp_left > temp_right ? temp_left : temp_right;
+            browValue = browValue < 0 ? browValue : 0;
+
             lipValue = lipValue > lipLValue ? lipValue : lipLValue;
-            double joy = lidValue + lipValue;
+            double joy = lidValue + lipValue;// + browValue;
             joy = joy > 0 ? joy : 0;
             model.Emotions["Joy"] = joy;
 
             // print debug-values 
             if (debug)
             {
-                output = "Joy: " + (int)joy;
+                output = "Joy: " + (int)joy + " LipCorner: " + lipValue + " LipLine: " + lipLValue + " Eye: " + lidValue; // + " Brow: " + browValue;
             }
 
         }

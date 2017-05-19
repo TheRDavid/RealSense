@@ -43,13 +43,19 @@ namespace RealSense.Emotions
         public override void Work(Graphics g)
         {
             //Disgust --> BrowShift, NoseWrinkled, LipLine, LowerLipLowered, UpperLipRaised
+            //neg lipStreched
 
             //percentage Disgust
-            int p_brow = 20;
-            int p_nose = 35;
-            int p_lipLine = 20;
-            int p_lipLowered = 25;
+            int p_brow = 15;
+            int p_nose = 40;
+            int p_lipLine = 5;
+            int p_lipLowered = 0;
             int p_upperLip = 40;
+            //int p_lipStr = 
+
+            //Grenzen
+
+            int noseMax = 50;
 
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -59,7 +65,8 @@ namespace RealSense.Emotions
 
             //NoseWrinkled (0 - -100)
             double noseValue = model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
-            noseValue = noseValue * -1 * p_nose / 100;
+            //noseValue = 100 * noseValue / noseMax;
+            noseValue = noseValue * -1 * p_nose / 100;                                                             //warum neg? Muss noch im ME korrigiert werden!!! Gruss Tanja
 
             //lipLine Value 0 - -100
             double lipLineValue = model.AU_Values[typeof(ME_LipLine).ToString()];
@@ -73,7 +80,12 @@ namespace RealSense.Emotions
             double upperLipValue = model.AU_Values[typeof(ME_UpperLipRaised).ToString()];
             upperLipValue = upperLipValue * p_upperLip / 100;
 
-            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;
+            //lipS Value 0 - -100
+            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
+            lipSValue = lipSValue * -1;
+            lipSValue = lipSValue < 0 ? lipSValue : 0;
+
+            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;// + lipSValue; 
             disgust = disgust > 0 ? disgust : 0;
             disgust = disgust < 100 ? disgust : 100;
 
@@ -82,7 +94,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Disgust: " + (int)disgust;
+                output = "Disgust: " + (int)disgust + " Brow: " + browValue + " Nose: " + noseValue + " LipUpper: " + upperLipValue;// + " LipS: " + lipSValue;
             }
 
         }

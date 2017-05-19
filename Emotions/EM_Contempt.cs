@@ -45,8 +45,8 @@ namespace RealSense.Emotions
             //Contempt --> BrowShift, LipCorner
 
             //percentage Contempt
-            int p_brow = 50;
-            int p_lip = 50;
+            int p_brow = 100;
+            int p_lip = 100;
 
             //Maxs
             int browMax = 60;
@@ -56,18 +56,16 @@ namespace RealSense.Emotions
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = Math.Abs(temp_left-temp_right);
-            int test = (int)browValue;
             //macht aus 0-100 (0 --> keine Differenz und 100 volle (aber nicht maximale.. (geht ja bis -100)) Differenz) ein 0-browMax
-            browValue = 100 * browValue / browMax; 
+            //browValue = 100 * browValue / browMax; 
             browValue = browValue * p_brow / 100;
 
             //lipL Value 0 - -100
             temp_left = model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"];
             double lipValue = Math.Abs(temp_left - temp_right);
-            int test02 = (int)lipValue;
             //macht aus 0-100 (0 --> keine Differenz und 100 volle (aber nicht maximale.. (geht ja bis -100)) Differenz) ein 0-lipMax
-            lipValue = 100 * lipValue / lipMax;
+            //lipValue = 100 * lipValue / lipMax;
             lipValue = lipValue * p_lip / 100;
 
             double contempt = browValue + lipValue;
@@ -77,7 +75,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Contempt: " + (int)contempt + " WertBrow: " + test + " WertLip: " + test02;
+                output = "Contempt: " + (int)contempt + " Brow: " + browValue + " Lip: " + lipValue + " L: " + temp_left + " R: " + temp_right;
             }
 
         }

@@ -74,7 +74,7 @@ namespace RealSense
 
         protected void filterToleranceValues(double[] values)
         {
-            for(int i = 0; i < values.Length; i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 values[i] = values[i] < MAX_TOL && values[i] > MIN_TOL ? 0 : values[i];
             }
@@ -85,10 +85,10 @@ namespace RealSense
             if (model.CurrentPoseDiff > model.PoseMax)
             { output = ""; return; }
             double temp = dist.Min();
-            MIN = MIN < temp ? MIN : temp;
+            MIN = MIN < temp ? MIN : temp * 0.9;
             temp = dist.Max();
             //   Console.WriteLine("\n" + MIN + ", " + MAX);
-            MAX = MAX < temp ? temp : MAX;
+            MAX = MAX < temp ? temp * 0.9 : MAX;
         }
 
         public void reset()

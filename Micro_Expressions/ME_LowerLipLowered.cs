@@ -75,12 +75,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
+                    model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LowerLipLowered).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }
