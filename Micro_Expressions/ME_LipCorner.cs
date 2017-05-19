@@ -10,7 +10,7 @@ namespace RealSense
     /*
      *@author Marlon
      * 
-     * Interpretation:      -100 = Corners down (not reliable, use LipLine)
+     * Interpretation:      -100 = Corners down (not reliable, use LipLine) set to 0!
      *                       100 = Big stupid smile
      *                       
      */
@@ -69,8 +69,8 @@ namespace RealSense
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0];
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1];
+                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
+                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
                 }
 
                 /* print debug-values */

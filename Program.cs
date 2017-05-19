@@ -43,13 +43,13 @@ namespace RealSense
             model.AddModule(new EM_Anger());
             model.AddModule(new EM_Contempt());
             model.AddModule(new EM_Disgust());
-           model.AddModule(new EM_Fear());
+            model.AddModule(new EM_Fear());
             model.AddModule(new EM_Sadness());
             model.AddModule(new EM_Surprise());
 
             // Default Modules
             model.AddModule(new Gauge_Module());
-            Application.Run(new CameraView(model, false));
+            Application.Run(new CameraView(model, true));
         }
 
     }
