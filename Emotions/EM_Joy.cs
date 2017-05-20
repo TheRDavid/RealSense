@@ -71,7 +71,7 @@ namespace RealSense.Emotions
 
             if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
             {
-                lipValue *= 1.6;
+                lipValue *= 1.5;
             }
 
             //lipL Value 0 - -100
@@ -85,15 +85,15 @@ namespace RealSense.Emotions
             browValue = browValue < 0 ? browValue : 0;
 
 
-            double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
 
-                // Falls Corners durch Disgust, auf 0 setzen
-                double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+            // Falls Corners durch Disgust, auf 0 setzen
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
             if (hDiff < 0)
             {
                 lipValue = 0;
             }
+            double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
 
             double joy = lidValue + finalLipValue;// + browValue;
             joy = joy > 0 ? joy : 0;
@@ -103,9 +103,7 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                if (lipValue > lipLValue) output = "FUCK";
-                else
-                    output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue + ", hDiff: " + hDiff; // + " Brow: " + browValue;
+                output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue + ", hDiff: " + hDiff; // + " Brow: " + browValue;
             }
 
         }

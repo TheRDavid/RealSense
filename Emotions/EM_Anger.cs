@@ -58,17 +58,19 @@ namespace RealSense
              * */
 
             //percentage Anger
-            int p_brow = 55;
-            int p_lid = 25;
-            int p_lip = 30;
+            int p_brow = 65;
+            int p_lid = 20;
+            int p_lip = 25;
             int p_nose = 0;
 
             int nw = (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
 
-            if (nw < -50)
+            if (nw < -20)
             {
-                p_lip = 0;
                 p_nose = 30;
+                p_brow = 55;
+                p_lid = 10;
+                p_lip = 15;
             }
 
             //Lid too tight Vars
@@ -97,14 +99,40 @@ namespace RealSense
             //nose Value
             double noseValue = -nw * p_nose / 100;
 
-            double anger = browValue + lidValue + lipValue + noseValue;
+            // SUBTRACT JOYFULL LIPS
+            // Falls Corners durch Disgust, auf 0 setzen
+
+            temp_left = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]);
+            temp_right = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]);
+
+            double joyLipValue = (temp_left + temp_right) / 2;
+
+            if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
+            {
+                joyLipValue *= 1.6;
+            }
+
+            //lipL Value 0 - -100
+            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            lipLValue = lipLValue * 65 / 100;
+
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+
+            if (hDiff < 0)
+            {
+                joyLipValue = 0;
+            }
+            double joyLips = joyLipValue > lipLValue ? lipValue : lipLValue;
+            // END SUBTRACT JOYFULL LIPS
+
+            double anger = (browValue > 0 ? browValue : 0) + lidValue + lipValue + noseValue - joyLips;
             anger = anger > 0 ? anger : 0;
             model.Emotions["Anger"] = anger;
 
             // print debug-values 
             if (debug)
             {
-                output = "Anger: " + (int)anger + ", Brow: " + (int)browValue + ", Lid: " + (int)lidValue + ", lip: " + (int)lipValue + ", nose: " + (int)noseValue;
+                output = "Anger: " + (int)anger + ", Brow: " + (int)browValue + ", Lid: " + (int)lidValue + ", lip: " + (int)lipValue + ", nose: " + (int)noseValue + ", Joy-Lips: " + joyLips;
             }
 
         }

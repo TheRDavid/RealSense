@@ -49,7 +49,7 @@ namespace RealSense.Emotions
             //percentage Sadness
             int p_brow = 0;
             //int p_lid = 50;
-            int p_lipL = 90;
+            int p_lipL = 70;
             int p_lipUp = 0;
 
             int cornerPos = (int)(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] + model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]) / 2;
@@ -59,8 +59,8 @@ namespace RealSense.Emotions
                 p_lipL = 70;
                 p_lipUp = 20;
             }
-            int p_lipS = 0;
-            int p_lid = 20;
+            int p_lipS = 10;
+            int p_lid = 30;
 
             //brow Value 0-100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
