@@ -99,40 +99,20 @@ namespace RealSense
             //nose Value
             double noseValue = -nw * p_nose / 100;
 
-            // SUBTRACT JOYFULL LIPS
-            // Falls Corners durch Disgust, auf 0 setzen
+            // SUBTRACT JOY
 
-            temp_left = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]);
-            temp_right = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]);
 
-            double joyLipValue = (temp_left + temp_right) / 2;
+            
+            // END SUBTRACT JOY
 
-            if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
-            {
-                joyLipValue *= 1.6;
-            }
-
-            //lipL Value 0 - -100
-            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipLValue = lipLValue * 65 / 100;
-
-            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
-
-            if (hDiff < 0)
-            {
-                joyLipValue = 0;
-            }
-            double joyLips = joyLipValue > lipLValue ? lipValue : lipLValue;
-            // END SUBTRACT JOYFULL LIPS
-
-            double anger = (browValue > 0 ? browValue : 0) + lidValue + lipValue + noseValue - joyLips;
+            double anger = (browValue > 0 ? browValue : 0) + lidValue + lipValue + noseValue;
             anger = anger > 0 ? anger : 0;
             model.Emotions["Anger"] = anger;
 
             // print debug-values 
             if (debug)
             {
-                output = "Anger: " + (int)anger + ", Brow: " + (int)browValue + ", Lid: " + (int)lidValue + ", lip: " + (int)lipValue + ", nose: " + (int)noseValue + ", Joy-Lips: " + joyLips;
+                output = "Anger: " + (int)anger + ", Brow: " + (int)browValue + ", Lid: " + (int)lidValue + ", lip: " + (int)lipValue + ", nose: " + (int)noseValue;
             }
 
         }

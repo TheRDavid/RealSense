@@ -81,10 +81,6 @@ namespace RealSense.Emotions
             //brow Value
             temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
-            double browValue = temp_left > temp_right ? temp_left : temp_right;
-            browValue = browValue < 0 ? browValue : 0;
-
-
 
             // Falls Corners durch Disgust, auf 0 setzen
             double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
@@ -93,9 +89,17 @@ namespace RealSense.Emotions
             {
                 lipValue = 0;
             }
+
             double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
 
             double joy = lidValue + finalLipValue;// + browValue;
+
+            // subtrac brows down
+
+            double browValue = temp_left > temp_right ? temp_left : temp_right;
+            browValue = browValue * -1 * 50 / 100;
+            joy -= browValue;
+
             joy = joy > 0 ? joy : 0;
 
             model.Emotions["Joy"] = joy;

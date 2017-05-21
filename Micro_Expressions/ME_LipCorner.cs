@@ -45,14 +45,15 @@ namespace RealSense
             /* Calculations */
 
             // calculates difference between nose and LipCorner 
-            cornerLeft = -((model.Difference(33, 31)) - 100);  //left LipCorner
-            cornerRight = -((model.Difference(39, 31)) - 100);  //right LipCorner
+            cornerLeft = -((model.Difference(33, 36)) - 100);  //left LipCorner
+            cornerRight = -((model.Difference(39, 36)) - 100);  //right LipCorner
+
 
             double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
             if (framesGathered < numFramesBeforeAccept)
             {
-                if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
+                if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -60)
                 {
                     cornersLeft[framesGathered] = cornerLeft;
                     cornersRight[framesGathered++] = cornerRight;

@@ -33,15 +33,21 @@ namespace RealSense
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
         private bool testMode, blur = true;
-        Bitmap uiBitmap, windowBitmap;
+        Bitmap uiBitmap, windowBitmap, smallWindowBitmap, warningBitmap;
 
 
         static int xgap = (int)(75 * 5);
         static int ygap = (int)(80 * 2.5 + 20);
         static int yRingGap = 20;
-        static int xP = 120, yP = 160, yV = 90;
+        static int targetX = 120;
+        static int xP = -900, yP = 160, yV = 90;
         static int thickness = 25;
         static int radius = 70;
+        static int warningX = xP - 70, warningY = yP - 130;
+        static int warningWidth = 900, warningHeight = 1025;
+        static int warningSymbolX = (warningX + warningWidth) / 2 - 728 / 2, warningSymbolY = (warningY + warningHeight) / 2 - 720 / 2;
+        static int warningPopupX = 2500, warningPopupSlideX = 1420;
+        static bool uiSlide = false;
 
         private FriggnAweseomeGraphix.MEMonitor angerMonitor = new FriggnAweseomeGraphix.MEMonitor("Anger", "Wut", xP, yP + yRingGap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor joyMonitor = new FriggnAweseomeGraphix.MEMonitor("Joy", "Freude", xP, yP + yRingGap + ygap, radius, thickness);
@@ -109,6 +115,8 @@ namespace RealSense
             else
             {
                 windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\window.png"));
+                smallWindowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\small_window.png"));
+                warningBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\warning.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;
@@ -201,6 +209,7 @@ namespace RealSense
                     model.FaceAktuell = model.FaceData.QueryFaceByIndex(0);
                     if (model.FaceAktuell != null)
                     {
+                        uiSlide = true;
                         PXCMFaceData.PoseData pose = model.FaceAktuell.QueryPose();
                         if (pose != null)
                             pose.QueryPoseAngles(out model.currentPose);
@@ -258,19 +267,22 @@ namespace RealSense
 
                         using (Graphics gr = Graphics.FromImage(colorBitmap))
                         {
-                            angerMonitor.targetValue = (int)model.Emotions["Anger"];
-                            fearMonitor.targetValue = (int)model.Emotions["Fear"];
-                            disgustMonitor.targetValue = (int)model.Emotions["Disgust"];
-                            surpriseMonitor.targetValue = (int)model.Emotions["Surprise"];
-                            joyMonitor.targetValue = (int)model.Emotions["Joy"];
-                            sadMonitor.targetValue = (int)model.Emotions["Sadness"];
+                            if (model.calibrationProgress == 100)
+                            {
+                                angerMonitor.targetValue = (int)model.Emotions["Anger"];
+                                fearMonitor.targetValue = (int)model.Emotions["Fear"];
+                                disgustMonitor.targetValue = (int)model.Emotions["Disgust"];
+                                surpriseMonitor.targetValue = (int)model.Emotions["Surprise"];
+                                joyMonitor.targetValue = (int)model.Emotions["Joy"];
+                                sadMonitor.targetValue = (int)model.Emotions["Sadness"];
 
-                            angerMonitor.step();
-                            fearMonitor.step();
-                            disgustMonitor.step();
-                            surpriseMonitor.step();
-                            joyMonitor.step();
-                            sadMonitor.step();
+                                angerMonitor.step();
+                                fearMonitor.step();
+                                disgustMonitor.step();
+                                surpriseMonitor.step();
+                                joyMonitor.step();
+                                sadMonitor.step();
+                            }
 
                             // if (false) gr.DrawImage(uiBitmap, xPos, yPos);
                             gr.DrawImage(windowBitmap, xP - 90, yP - 150);
@@ -322,6 +334,16 @@ namespace RealSense
                                 FriggnAweseomeGraphix.drawMEMontior(gr, calibMonitor);
                             }
                             else calibMonitor.currentValue = 0;
+                            if (model.CurrentPoseDiff > model.PoseMax && model.calibrationProgress == 100)
+                            {
+                                warningPopupX += (warningPopupSlideX - warningPopupX) / 3;
+                                gr.FillRectangle(new SolidBrush(Color.FromArgb(100, 255, 255, 255)), new Rectangle(warningX, warningY, warningWidth, warningHeight));
+                                gr.DrawImage(smallWindowBitmap, warningPopupX, 900);
+
+
+
+                            }
+                            else warningPopupX = 2500;
                         }
 
                     }
@@ -365,7 +387,20 @@ namespace RealSense
                     model.SenseManager.ReleaseFrame();
                     model.FaceData.Dispose(); // DONE!
                     sample.color.ReleaseAccess(colorData);
+                    if (xP < targetX && uiSlide)
+                    {
+                        xP += (targetX - xP) / 8;
+                        warningX = xP - 70;
+                        warningSymbolX = (warningX + warningWidth) / 2 - 728 / 2;
+                        angerMonitor.x = xP;
+                        joyMonitor.x = xP;
+                        fearMonitor.x = xP;
+                        contemptMonitor.x = xP;
 
+                        sadMonitor.x = xP + xgap;
+                        disgustMonitor.x = xP + xgap;
+                        surpriseMonitor.x = xP + xgap;
+                    }
                 }
             }
         }
