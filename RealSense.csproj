@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Analyse\FaceRecorder.cs" />
     <Compile Include="Analyse\FaceRecording.cs" />
+    <Compile Include="Emotions\EM_Contempt02.cs" />
     <Compile Include="Emotions\EM_Contempt.cs" />
     <Compile Include="Emotions\EM_Anger.cs" />
     <Compile Include="Emotions\EM_Disgust.cs" />

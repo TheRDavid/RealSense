@@ -15,7 +15,7 @@ namespace RealSense
      */
     public class Model
     {
-        public enum AXIS { X, Y, Z, };
+        public enum AXIS { X, Y, Z};
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
