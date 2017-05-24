@@ -67,6 +67,7 @@ namespace RealSense.Emotions
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left < temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left + temp_right) / 2;
             browValue = browValue * p_brow / 100;
 
             //lid values

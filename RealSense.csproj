@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emotions\EM_Contempt02.cs" />
     <Compile Include="Emotions\EM_Contempt.cs" />
     <Compile Include="Emotions\EM_Anger.cs" />
     <Compile Include="Emotions\EM_Disgust.cs" />
@@ -77,7 +78,7 @@
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
-    <Compile Include="Micro_Expressions\ME_BearTeeth.cs" />
+    <Compile Include="Various\ME_BearTeeth.cs" />
     <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\FaceRect.cs" />

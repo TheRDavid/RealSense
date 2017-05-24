@@ -73,23 +73,18 @@ namespace RealSense
                 p_lip = 15;
             }
 
-            //Lid too tight Vars
-
-            int lidMax = 90;
-            int newLid = -10;
-
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left > temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left + temp_right) / 2;
             browValue = browValue * -1 * p_brow / 100;
 
             //lid Value
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            //Lid too tight
-            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
+            if (model.Test) lidValue = (temp_left + temp_right) / 2;
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lip Value

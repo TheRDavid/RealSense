@@ -14,7 +14,7 @@ namespace RealSense
      */
     public class Model
     {
-        public enum AXIS { X, Y, Z, };
+        public enum AXIS { X, Y, Z};
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
@@ -36,6 +36,7 @@ namespace RealSense
         private int height;
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
+        private bool test = false;
 
         public double calibrationProgress = 0;
 
@@ -64,6 +65,8 @@ namespace RealSense
             emotions["Joy"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
+            emotions["Contempt02"] = 0;
+
             width = 1920;
             height = 1080;
             framerate = 30;
@@ -403,6 +406,12 @@ namespace RealSense
         {
             get { return au_Values; }
             set { au_Values = value; }
+        }
+
+        public bool Test
+        {
+            get { return test; }
+            set { test = value; }
         }
 
 

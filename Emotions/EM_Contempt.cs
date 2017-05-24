@@ -48,10 +48,6 @@ namespace RealSense.Emotions
             int p_brow = 100;
             int p_lip = 100;
 
-            //Maxs
-            int browMax = 60;
-            int lipMax = 50;
-
             //brow Difference (0-browMax) --> browMax entspricht 100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];

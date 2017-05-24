@@ -46,20 +46,22 @@ namespace RealSense.Emotions
 
             //percentage Fear
             int p_brow = 30;
-            int p_eye = 35;
-            int p_lip = 20;
-            int p_jaw = 15;
+            int p_eye = 50;
+            int p_lip = 10;
+            int p_jaw = 40;
 
             //brow Value 0-100
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left < temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left + temp_right) / 2;
             browValue = browValue * p_brow / 100;
 
             //eye Value 0-100
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double eyeValue = temp_left < temp_right ? temp_left : temp_right;
+            if (model.Test) eyeValue = (temp_left + temp_right) / 2;
             eyeValue = eyeValue * p_eye / 100;
 
             //lipLine Value 0-100

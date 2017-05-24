@@ -48,16 +48,11 @@ namespace RealSense.Emotions
             int p_lid = 20;
             int p_lip = 80;
 
-            //Lid too tight Vars
-            int lidMax = 100;
-            int newLid = -10;
-
             //lid Value 0 - -100 (Grenze bei lidMax)
             double temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            //Lid too tight
-            lidValue = temp_left > -lidMax || temp_right > -lidMax ? lidValue : newLid;
+            if (model.Test) lidValue = (temp_left + temp_right) / 2;
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lip Value 0 - 100

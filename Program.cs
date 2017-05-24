@@ -44,6 +44,7 @@ namespace RealSense
             model.AddModule(new EM_Joy());
             model.AddModule(new EM_Anger());
             model.AddModule(new EM_Contempt());
+            model.AddModule(new EM_Contempt02());
             model.AddModule(new EM_Disgust());
             model.AddModule(new EM_Fear());
             model.AddModule(new EM_Sadness());
@@ -51,6 +52,7 @@ namespace RealSense
 
             // Default Modules
             model.AddModule(new Gauge_Module());
+            model.Test = true;
             Application.Run(new CameraView(model, false));
         }
 
