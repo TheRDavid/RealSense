@@ -12,7 +12,6 @@ namespace RealSense
     using System.Drawing.Imaging;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     public class FriggnAweseomeGraphix
     {
@@ -59,7 +58,8 @@ namespace RealSense
             }
         }
 
-        public static void drawMEMontior(Graphics gfx, MEMonitor monitor)
+        public static void drawMEMontior(Graphics gfx, MEMonitor monitor) { drawMEMontior(gfx, monitor, true); }
+        public static void drawMEMontior(Graphics gfx, MEMonitor monitor, bool drawText)
         {
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             if (monitor.currentValue < 0) monitor.currentValue = 0;
@@ -74,16 +74,19 @@ namespace RealSense
             ME_MonitorPen.Brush = new SolidBrush(Color.FromArgb(fgColor.A + 2 * monitor.currentValue, fgColor.R, fgColor.G, fgColor.B));
             gfx.DrawArc(ME_MonitorPen, area, -90, (int)(360.0 / 100 * monitor.currentValue));
             MEMonitorBrush = new SolidBrush(fontColor);
-            if(monitor.showPercent) gfx.DrawString(text, percentageFont, MEMonitorBrush, (int)(monitor.x + monitor.radius - size.Width / 2), monitor.y + monitor.radius - size.Height / 2);
+            if (monitor.showPercent && drawText) gfx.DrawString(text, percentageFont, MEMonitorBrush, (int)(monitor.x + monitor.radius - size.Width / 2), monitor.y + monitor.radius - size.Height / 2);
             ME_MonitorPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             ME_MonitorPen.Width = monitor.thickness / 4;
-           // if (monitor.currentValue >= 100)
+            // if (monitor.currentValue >= 100)
             //    ME_MonitorPen.Brush = new SolidBrush(fgColor);
-           // else ME_MonitorPen.Brush = new SolidBrush(bgColor);
-          //  gfx.DrawEllipse(ME_MonitorPen, new Rectangle(monitor.x + monitor.thickness, monitor.y + monitor.thickness, (monitor.radius - monitor.thickness) * 2, (monitor.radius - monitor.thickness) * 2));
+            // else ME_MonitorPen.Brush = new SolidBrush(bgColor);
+            //  gfx.DrawEllipse(ME_MonitorPen, new Rectangle(monitor.x + monitor.thickness, monitor.y + monitor.thickness, (monitor.radius - monitor.thickness) * 2, (monitor.radius - monitor.thickness) * 2));
             MEMonitorBrush = new SolidBrush(fontColor);
-            gfx.DrawString(monitor.majorText, majorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40, monitor.y + monitor.radius - 50);
-            gfx.DrawString(monitor.minorText, minorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40 + 5, monitor.y + monitor.radius + 10);
+            if (drawText)
+            {
+                gfx.DrawString(monitor.majorText, majorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40, monitor.y + monitor.radius - 50);
+                gfx.DrawString(monitor.minorText, minorFont, MEMonitorBrush, monitor.x + monitor.radius * 2 + 40 + 5, monitor.y + monitor.radius + 10);
+            }
         }
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RealSense
 {
@@ -14,7 +15,7 @@ namespace RealSense
      */
     public class Model
     {
-        public enum AXIS { X, Y, Z};
+        public enum AXIS { X, Y, Z, };
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
@@ -36,7 +37,6 @@ namespace RealSense
         private int height;
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
-        private bool test = false;
 
         public double calibrationProgress = 0;
 
@@ -48,6 +48,7 @@ namespace RealSense
         private SolidBrush opaqueStringBrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
 
         private int maxPose = 13;
+        private bool stream;
 
 
         /**
@@ -56,8 +57,9 @@ namespace RealSense
          * Like enabling all important tracker(Hand, Face), the stream and builds up the configuration.
          * blib blub
          */
-        public Model()
+        public Model(bool s)
         {
+            stream = s;
             emotions["Anger"] = 0;
             emotions["Fear"] = 0;
             emotions["Disgust"] = 0;
@@ -65,27 +67,29 @@ namespace RealSense
             emotions["Joy"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
-            emotions["Contempt02"] = 0;
 
-            width = 1920;
-            height = 1080;
-            framerate = 30;
-            senseManager = PXCMSenseManager.CreateInstance();
-            senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
-            // Enable Face detection
-            senseManager.EnableFace();
-            senseManager.Init();
+            if (stream)
+            {
+                width = 1920;
+                height = 1080;
+                framerate = 30;
+                senseManager = PXCMSenseManager.CreateInstance();
+                senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
+                // Enable Face detection
+                senseManager.EnableFace();
+                senseManager.Init();
 
-            face = senseManager.QueryFace();
-            faceConfig = face.CreateActiveConfiguration();
-            faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR_PLUS_DEPTH);
-            faceConfig.detection.isEnabled = true;
-            faceConfig.pose.isEnabled = true;
-            faceConfig.ApplyChanges();
-            faceConfig.Update();
-       
+                face = senseManager.QueryFace();
+                faceConfig = face.CreateActiveConfiguration();
+                faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR_PLUS_DEPTH);
+                faceConfig.detection.isEnabled = true;
+                faceConfig.pose.isEnabled = true;
+                faceConfig.ApplyChanges();
+                faceConfig.Update();
 
-            modules = new List<RSModule>();
+
+                modules = new List<RSModule>();
+            }
         }
 
         /**
@@ -206,7 +210,7 @@ namespace RealSense
             PXCMFaceData.LandmarkPoint point01 = null;
             PXCMFaceData.LandmarkPoint point02 = null;
 
-            if (lp != null)
+            if (lp != null || !stream)
             {
                 point01 = currentFace[i01];
                 point02 = currentFace[i02];
@@ -287,6 +291,7 @@ namespace RealSense
         public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
+            set { currentFace = value;  }
         }
 
         /**
@@ -406,12 +411,6 @@ namespace RealSense
         {
             get { return au_Values; }
             set { au_Values = value; }
-        }
-
-        public bool Test
-        {
-            get { return test; }
-            set { test = value; }
         }
 
 

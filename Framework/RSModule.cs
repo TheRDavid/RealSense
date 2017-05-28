@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace RealSense
 {
@@ -20,6 +21,7 @@ namespace RealSense
         protected bool debug = false;
         protected static int numFramesBeforeAccept = 20;
         protected int framesGathered = 0;
+        public int[] triggers = { };
 
         /**
         * initialise the model
@@ -27,7 +29,14 @@ namespace RealSense
         */
         public static void Init(Model m)
         {
+         //   System.Diagnostics.StackTrace t = new System.Diagnostics.StackTrace();
+         //   Console.WriteLine(t.ToString());
             model = m;
+        }
+
+        public virtual void keyTrigger(int key)
+        {
+            // Custom method when triggered (can be overriden)
         }
 
         /**
@@ -95,6 +104,12 @@ namespace RealSense
         {
             MIN = DEF_MIN;
             MAX = DEF_MAX;
+        }
+
+        public bool Debug
+        {
+            get { return debug; }
+            set { debug = value; }
         }
     }
 
