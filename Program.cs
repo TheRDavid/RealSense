@@ -26,7 +26,7 @@ namespace RealSense
             ANALYZE, RUN, TEST
         }
 
-        private static MODE mode = MODE.ANALYZE;
+        private static MODE mode = MODE.RUN;
 
         [STAThread]
         static void Main(string[] args)
@@ -66,7 +66,7 @@ namespace RealSense
                 // Default Modules
                 model.AddModule(new Gauge_Module());
                 model.AddModule(new FaceRecorder());
-                Application.Run(new CameraView(model, mode == MODE.RUN));
+                Application.Run(new CameraView(model, mode == MODE.TEST));
             }
         }
 
