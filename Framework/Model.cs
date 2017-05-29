@@ -68,6 +68,7 @@ namespace RealSense
             emotions["Joy"] = 0;
             emotions["Sadness"] = 0;
             emotions["Contempt"] = 0;
+            emotions["Contempt02"] = 0;
 
             if (stream)
             {

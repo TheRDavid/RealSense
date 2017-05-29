@@ -52,7 +52,7 @@ namespace RealSense
         private FriggnAweseomeGraphix.MEMonitor angerMonitor = new FriggnAweseomeGraphix.MEMonitor("Anger", "Wut", xP, yP + yRingGap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor joyMonitor = new FriggnAweseomeGraphix.MEMonitor("Joy", "Freude", xP, yP + yRingGap + ygap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor fearMonitor = new FriggnAweseomeGraphix.MEMonitor("Fear", "Furcht", xP, yP + yRingGap + ygap * 2, radius, thickness);
-        private FriggnAweseomeGraphix.MEMonitor contemptMonitor = new FriggnAweseomeGraphix.MEMonitor("Contempt02", "Verachtung", xP, yP + yRingGap + ygap * 3, radius, thickness);
+        private FriggnAweseomeGraphix.MEMonitor contemptMonitor = new FriggnAweseomeGraphix.MEMonitor("Contempt", "Verachtung", xP, yP + yRingGap + ygap * 3, radius, thickness);
 
         private FriggnAweseomeGraphix.MEMonitor sadMonitor = new FriggnAweseomeGraphix.MEMonitor("Sadness", "Trauer", xP + xgap, yP + yRingGap + yV, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor disgustMonitor = new FriggnAweseomeGraphix.MEMonitor("Disgust", "Ekel", xP + xgap, yP + yRingGap + yV + ygap, radius, thickness);
@@ -289,7 +289,7 @@ namespace RealSense
                                 surpriseMonitor.targetValue = (int)model.Emotions["Surprise"];
                                 joyMonitor.targetValue = (int)model.Emotions["Joy"];
                                 sadMonitor.targetValue = (int)model.Emotions["Sadness"];
-                                contemptMonitor.targetValue = (int)model.Emotions["Contempt02"];
+                                contemptMonitor.targetValue = (int)model.Emotions["Contempt"];
 
                                 angerMonitor.step();
                                 fearMonitor.step();

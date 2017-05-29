@@ -55,14 +55,14 @@ namespace RealSense
                 model.AddModule(new ME_LowerLipRaised());
                 //  model.AddModule(new ME_BearTeeth());
 
-            model.AddModule(new EM_Joy());
-            model.AddModule(new EM_Anger());
-            model.AddModule(new EM_Contempt());
-            model.AddModule(new EM_Contempt02());
-            model.AddModule(new EM_Disgust());
-            model.AddModule(new EM_Fear());
-            model.AddModule(new EM_Sadness());
-            model.AddModule(new EM_Surprise());
+                model.AddModule(new EM_Joy());
+                model.AddModule(new EM_Anger());
+                model.AddModule(new EM_Contempt());
+                model.AddModule(new EM_Contempt02());
+                model.AddModule(new EM_Disgust());
+                model.AddModule(new EM_Fear());
+                model.AddModule(new EM_Sadness());
+                model.AddModule(new EM_Surprise());
 
                 // Default Modules
                 model.AddModule(new Gauge_Module());
