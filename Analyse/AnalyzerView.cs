@@ -7,6 +7,7 @@ using System.Reflection;
 using Vlc.DotNet.Forms;
 using System.Threading;
 using System.Drawing.Text;
+using RealSense.Emotions;
 
 namespace RealSense
 {
@@ -162,7 +163,7 @@ namespace RealSense
             Model model;
             Bitmap dataImage;
 
-            private RSModule[] microExpressionModules = new RSModule[12];
+            private RSModule[] microExpressionModules = new RSModule[11];
             private RSModule[] emotionModules = new RSModule[7];
 
 
@@ -222,7 +223,6 @@ namespace RealSense
             {
                 model = new RealSense.Model(false);
                 RSModule.Init(model);
-                microExpressionModules[0] = new ME_BearTeeth();
                 microExpressionModules[1] = new ME_BrowShift();
                 microExpressionModules[2] = new ME_EyelidTight();
                 microExpressionModules[3] = new ME_JawDrop();
@@ -233,7 +233,7 @@ namespace RealSense
                 microExpressionModules[8] = new ME_LowerLipLowered();
                 microExpressionModules[9] = new ME_LowerLipRaised();
                 microExpressionModules[10] = new ME_NoseWrinkled();
-                microExpressionModules[11] = new ME_UpperLipRaised();
+                microExpressionModules[0] = new ME_UpperLipRaised();
 
                 foreach (RSModule m in microExpressionModules)
                     m.Debug = false;

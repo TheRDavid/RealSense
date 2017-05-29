@@ -57,7 +57,7 @@
   <ItemGroup>
     <Reference Include="libpxcclr.cs, Version=10.0.26.396, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Intel\RSSDK\bin\win32\libpxcclr.cs.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Intel\RSSDK\bin\win32\libpxcclr.cs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -100,7 +100,6 @@
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
-    <Compile Include="Micro_Expressions\ME_BearTeeth.cs" />
     <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\FaceRect.cs" />

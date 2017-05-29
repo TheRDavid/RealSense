@@ -37,6 +37,7 @@ namespace RealSense
         private int height;
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
+        private bool test = false;
 
         public double calibrationProgress = 0;
 

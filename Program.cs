@@ -66,7 +66,7 @@ namespace RealSense
                 // Default Modules
                 model.AddModule(new Gauge_Module());
                 model.AddModule(new FaceRecorder());
-                Application.Run(new CameraView(model, mode == MODE.TEST));
+                Application.Run(new CameraView(model, mode == MODE.RUN));
             }
         }
 
