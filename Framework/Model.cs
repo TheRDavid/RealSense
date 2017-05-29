@@ -413,6 +413,13 @@ namespace RealSense
             set { au_Values = value; }
         }
 
+        public bool Test
+        {
+            get { return test; }
+            set { test = value; }
+        }
+
+
 
         // should be in here, but so far is not defined 
         /* private void ResetEmotions()
