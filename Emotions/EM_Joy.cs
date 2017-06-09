@@ -8,6 +8,9 @@ namespace RealSense.Emotions
 {
     class EM_Joy : RSModule
     {
+        int percent = 100;
+        double[] smallerArray;
+
         // Default values
         public EM_Joy()
         {
@@ -48,52 +51,28 @@ namespace RealSense.Emotions
             int p_lid = 20;
             int p_lip = 80;
 
+            makeSmall();
+
             //lid Value 0 - -100 (Grenze bei lidMax)
             double temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
             double lidValue = (temp_left + temp_right)  / 2;
-            lidValue = lidValue * -1 * p_lid / 100;
+            lidValue = lidValue * -1 * p_lid / percent;
 
             //lip Value 0 - 100
             temp_left = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]);
             temp_right = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]);
-
-            double lipValue = (temp_left + temp_right) / 2;
-            lipValue = lipValue * p_lip / 100;
-
-
-
-            if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -50)
-            {
-                lipValue *= 1.5;
-            }
+            double lipValue = temp_left > temp_right ? temp_right : temp_left;
+            //lipValue = (temp_left + temp_right) / 2;
+            lipValue = lipValue * p_lip / percent;
 
             //lipL Value 0 - -100
             double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipLValue = lipLValue * p_lip / 100;
+            lipLValue = lipLValue * p_lip / percent;
 
-            //brow Value
-            temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            lipValue = lipValue > lipLValue ? lipValue : lipLValue;
 
-            // Falls Corners durch Disgust, auf 0 setzen
-            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
-
-            if (hDiff < 0)
-            {
-                lipValue = 0;
-            }
-
-            double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
-            finalLipValue *= model.AU_Values[typeof(ME_LipStretched).ToString()] / 80;
-
-            double joy = lidValue + finalLipValue;// + browValue;
-
-            // subtrac brows down
-
-            double browValue = temp_left > temp_right ? temp_left : temp_right;
-            browValue = browValue * -1 * 50 / 100;
-            joy -= browValue;
+            double joy = lidValue + lipValue;// + browValue;
 
             joy = joy > 0 ? joy : 0;
 
@@ -102,7 +81,43 @@ namespace RealSense.Emotions
             // print debug-values 
             if (debug)
             {
-                output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue + ", hDiff: " + hDiff; // + " Brow: " + browValue;
+                //output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue; // + " Brow: " + browValue;
+            }
+
+        }
+
+        private void makeSmall()
+        {
+            //Anger brows
+            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double browValue = (temp_left + temp_right) / 2;
+            browValue = browValue * -1 - 30;
+
+            //Disgust nose 
+            double noseValue = model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
+            noseValue = noseValue * -1;
+
+            //Sadness Lipline
+            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            lipLValue = lipLValue * -1;
+
+            //Contempt
+            //not possible yet (ME needed)
+
+            //Surprise Lid
+            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            double eyeValue = (temp_left + temp_right) / 2;
+
+            smallerArray = new double[] { browValue, lipLValue, eyeValue };
+            percent = 100 + (int)(2 * smallerArray.Max());
+            percent = percent < 100 ? 100 : percent;
+
+            if (debug)
+            {
+                //output = "Joy: " + (int)joy + " LipCorner: " + (int)lipValue + " LipLine: " + (int)lipLValue + " Eye: " + (int)lidValue; // + " Brow: " + browValue;
+                output = " Smaller: " + percent + " brow: " + (int)browValue + " Lip: " + (int)lipLValue + " Lid: " + (int)eyeValue;
             }
 
         }

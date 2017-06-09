@@ -58,8 +58,7 @@ namespace RealSense.Emotions
             //eye Value 0-100
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double eyeValue = temp_left < temp_right ? temp_left : temp_right;
-            if (model.Test) eyeValue = (temp_left + temp_right) / 2;
+            double eyeValue = (temp_left + temp_right) / 2;
             eyeValue = eyeValue * p_eye / 100;
 
             //jaw 0-100
