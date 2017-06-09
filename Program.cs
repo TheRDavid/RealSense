@@ -57,7 +57,6 @@ namespace RealSense
 
                 model.AddModule(new EM_Joy());
                 model.AddModule(new EM_Anger());
-                model.AddModule(new EM_Contempt());
                 model.AddModule(new EM_Contempt02());
                 model.AddModule(new EM_Disgust());
                 model.AddModule(new EM_Fear());
@@ -67,9 +66,9 @@ namespace RealSense
                 // Default Modules
                 model.AddModule(new Gauge_Module());
                 model.AddModule(new FaceRecorder());
-                Application.Run(new CameraView(model, mode == MODE.TEST));
+                model.AddModule(new EmotionSaver());
+                Application.Run(new MultiFormContext(new Form[] { new CameraView(model, mode == MODE.TEST), new EmotionView(model) }));
             }
         }
-
     }
 }

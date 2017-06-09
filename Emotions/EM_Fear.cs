@@ -74,7 +74,7 @@ namespace RealSense.Emotions
 
             double fear = browValue + eyeValue + lipValue + jawValue;
             fear = fear > 0 ? fear : 0;
-            model.Emotions["Fear"] = fear;
+            model.Emotions[Model.Emotion.FEAR] = fear;
 
             // print debug-values 
             if (debug)

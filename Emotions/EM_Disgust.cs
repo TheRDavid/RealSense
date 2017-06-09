@@ -99,7 +99,7 @@ namespace RealSense.Emotions
             disgust = disgust > 0 ? disgust : 0;
             disgust = disgust < 100 ? disgust : 100;
 
-            model.Emotions["Disgust"] = disgust;
+            model.Emotions[Model.Emotion.DISGUST] = disgust;
 
             // print debug-values 
             if (debug)

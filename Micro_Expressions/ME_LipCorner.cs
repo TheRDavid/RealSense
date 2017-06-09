@@ -53,16 +53,8 @@ namespace RealSense
 
             if (framesGathered < numFramesBeforeAccept)
             {
-                if (model.AU_Values[typeof(ME_LowerLipLowered).ToString()] < -60)
-                {
-                    cornersLeft[framesGathered] = cornerLeft;
-                    cornersRight[framesGathered++] = cornerRight;
-                }
-                else
-                {
-                    cornersLeft[framesGathered] = 0;
-                    cornersRight[framesGathered++] = 0;
-                }
+                cornersLeft[framesGathered] = cornerLeft;
+                cornersRight[framesGathered++] = cornerRight;
             }
             else
             {

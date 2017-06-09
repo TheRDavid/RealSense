@@ -93,16 +93,28 @@
     <Compile Include="Analyse\FaceRecorder.cs" />
     <Compile Include="Analyse\FaceRecording.cs" />
     <Compile Include="Emotions\EM_Contempt02.cs" />
-    <Compile Include="Emotions\EM_Contempt.cs" />
     <Compile Include="Emotions\EM_Anger.cs" />
     <Compile Include="Emotions\EM_Disgust.cs" />
     <Compile Include="Emotions\EM_Fear.cs" />
     <Compile Include="Emotions\EM_Joy.cs" />
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
+    <Compile Include="Framework\EmotionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Framework\EmotionView.Designer.cs">
+      <DependentUpon>EmotionView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
     <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
+    <Compile Include="Various\EmotionSaver.cs" />
+    <Compile Include="Various\MultiFormContext.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Various\FaceRect.cs" />
     <Compile Include="Micro_Expressions\ME_JawDrop.cs" />
     <Compile Include="Micro_Expressions\ME_LipLine.cs" />
@@ -122,7 +134,7 @@
     <Compile Include="Various\LandmarkGroupModule.cs" />
     <Compile Include="Various\LandmarkTypeModule.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Emotions\AssemblyInfo.cs" />
     <Compile Include="Framework\RSModule.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +165,13 @@
     <EmbeddedResource Include="Framework\CameraView.resx">
       <DependentUpon>CameraView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Framework\EmotionView.resx">
+      <DependentUpon>EmotionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
@@ -181,6 +200,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\face_landmarks_78points_zoom43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

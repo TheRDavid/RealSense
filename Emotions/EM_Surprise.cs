@@ -68,7 +68,7 @@ namespace RealSense.Emotions
 
             double surprise = browValue + eyeValue + jawValue;
             surprise = surprise > 0 ? surprise : 0;
-            model.Emotions["Surprise"] = surprise;
+            model.Emotions[Model.Emotion.SURPRISE] = surprise;
 
             // print debug-values 
             if (debug)

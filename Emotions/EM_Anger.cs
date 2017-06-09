@@ -94,15 +94,9 @@ namespace RealSense
             //nose Value
             double noseValue = -nw * p_nose / 100;
 
-            // SUBTRACT JOY
-
-
-            
-            // END SUBTRACT JOY
-
             double anger = (browValue > 0 ? browValue : 0) + lidValue + lipValue + noseValue;
             anger = anger > 0 ? anger : 0;
-            model.Emotions["Anger"] = anger;
+            model.Emotions[Model.Emotion.ANGER] = anger;
 
             // print debug-values 
             if (debug)

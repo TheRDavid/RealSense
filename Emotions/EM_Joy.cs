@@ -51,8 +51,7 @@ namespace RealSense.Emotions
             //lid Value 0 - -100 (Grenze bei lidMax)
             double temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            if (model.Test) lidValue = (temp_left + temp_right) / 2;
+            double lidValue = (temp_left + temp_right)  / 2;
             lidValue = lidValue * -1 * p_lid / 100;
 
             //lip Value 0 - 100
@@ -86,6 +85,7 @@ namespace RealSense.Emotions
             }
 
             double finalLipValue = lipValue > lipLValue ? lipValue : lipLValue;
+            finalLipValue *= model.AU_Values[typeof(ME_LipStretched).ToString()] / 80;
 
             double joy = lidValue + finalLipValue;// + browValue;
 
@@ -97,7 +97,7 @@ namespace RealSense.Emotions
 
             joy = joy > 0 ? joy : 0;
 
-            model.Emotions["Joy"] = joy;
+            model.Emotions[Model.Emotion.JOY] = joy;
 
             // print debug-values 
             if (debug)

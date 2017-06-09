@@ -25,7 +25,7 @@ namespace RealSense
         private ToolStripMenuItem disgustToolStripMenuItem;
         private FlowLayoutPanel elementPanel = new FlowLayoutPanel();
 
-        private static double videoRatio = 900.0 / 1080.0;
+        private static double videoRatio = 1420.0 / 1200.0;
         private static int VIEW_TINY = 100, VIEW_SMALL = 200, VIEW_DEFAULT = 300, VIEW_LARGE = 500;
         private ToolStripMenuItem viewSizeToolStripMenuItem;
         private ToolStripMenuItem tinyToolStripMenuItem;
@@ -41,7 +41,6 @@ namespace RealSense
         private static int currentFrame = 0;
 
         private TrackBar scrubber = new TrackBar();
-        private Button playButton = new Button();
         private Panel controlPanel = new Panel();
 
         private static Brush textBrush = new SolidBrush(Color.FromArgb(255, 88, 88, 88));
@@ -80,13 +79,11 @@ namespace RealSense
                     }
                 }
             };
-            this.playButton.Text = "Play/Pause";
-            this.playButton.Bounds = new Rectangle(30, 10, 80, 30);
-            this.controlPanel.Controls.Add(playButton);
             this.controlPanel.Controls.Add(scrubber);
+            Text = "Record Analyzer";
 
+            Bounds = Screen.PrimaryScreen.Bounds;
             arrange();
-
             this.Show();
 
             updaterThread = new Thread(loadFrame);
@@ -149,7 +146,6 @@ namespace RealSense
             {
                 ((DataSetView)c).arrange();
             }
-            Text = Size.ToString();
         }
 
         private class DataSetView : Panel
@@ -241,7 +237,6 @@ namespace RealSense
                 emotionModules[0] = new EM_Anger();
                 emotionModules[1] = new EM_Joy();
                 emotionModules[2] = new EM_Fear();
-                emotionModules[3] = new EM_Contempt();
                 emotionModules[4] = new EM_Sadness();
                 emotionModules[5] = new EM_Disgust();
                 emotionModules[6] = new EM_Surprise();
@@ -267,13 +262,13 @@ namespace RealSense
                     rsm.Work(null);
                 }
 
-                monitors[0].currentValue = (int)model.Emotions["Anger"];
-                monitors[1].currentValue = (int)model.Emotions["Joy"];
-                monitors[2].currentValue = (int)model.Emotions["Fear"];
-                monitors[3].currentValue = (int)model.Emotions["Contempt"];
-                monitors[4].currentValue = (int)model.Emotions["Sadness"];
-                monitors[5].currentValue = (int)model.Emotions["Disgust"];
-                monitors[6].currentValue = (int)model.Emotions["Surprise"];
+                monitors[0].currentValue = (int)model.Emotions[Model.Emotion.ANGER];
+                monitors[1].currentValue = (int)model.Emotions[Model.Emotion.JOY];
+                monitors[2].currentValue = (int)model.Emotions[Model.Emotion.FEAR];
+                monitors[3].currentValue = (int)model.Emotions[Model.Emotion.CONTEMPT];
+                monitors[4].currentValue = (int)model.Emotions[Model.Emotion.SADNESS];
+                monitors[5].currentValue = (int)model.Emotions[Model.Emotion.DISGUST];
+                monitors[6].currentValue = (int)model.Emotions[Model.Emotion.SURPRISE];
 
                 //Bitmap newImage = new Bitmap(Width, viewHeight);
                 Graphics g = Graphics.FromImage(dataImage);
@@ -323,35 +318,37 @@ namespace RealSense
                 dataPictureBox.Bounds = new Rectangle(0, 0, WINDOW_WIDTH - vlcControl.Width, viewHeight);
                 dataImage = new Bitmap(dataPictureBox.Width, dataPictureBox.Height);
                 // update Monitors
+                int thickness = viewHeight / 18;
                 if (viewHeight != VIEW_TINY)
                 {
-                    int radius = (viewHeight - 5 * gap - 4 * monitors[0].thickness) / 4 / 2;
+                    int radius = (viewHeight - 5 * gap - 4 * thickness) / 4 / 2;
 
+                   // Console.WriteLine("Radius = (" + viewHeight + " - 5 * " + gap + " - 4 * " + monitors[0].thickness + ") / 4 / 2 = " + radius);
                     monitors[0].x = gap;
                     monitors[0].y = gap;
 
                     monitors[1].x = gap;
-                    monitors[1].y = gap * 2 + radius * 2 + monitors[0].thickness;
+                    monitors[1].y = gap * 2 + radius * 2 + thickness;
 
                     monitors[2].x = gap;
-                    monitors[2].y = gap * 3 + 2 * radius * 2 + monitors[0].thickness * 2;
+                    monitors[2].y = gap * 3 + 2 * radius * 2 + thickness * 2;
 
                     monitors[3].x = gap;
-                    monitors[3].y = gap * 4 + 3 * radius * 2 + monitors[0].thickness * 3;
+                    monitors[3].y = gap * 4 + 3 * radius * 2 + thickness * 3;
 
-                    monitors[4].x = 2 * gap + radius * 2;
+                    monitors[4].x = 2 * gap + radius * 2 + thickness;
                     monitors[4].y = gap + radius;
 
-                    monitors[5].x = 2 * gap + radius * 2; ;
-                    monitors[5].y = gap * 2 + radius + 2 * radius + monitors[0].thickness;
+                    monitors[5].x = 2 * gap + radius * 2 + thickness; ;
+                    monitors[5].y = gap * 2 + radius + 2 * radius + thickness;
 
-                    monitors[6].x = 2 * gap + radius * 2;
-                    monitors[6].y = gap * 3 + radius + 4 * radius + monitors[0].thickness * 2;
+                    monitors[6].x = 2 * gap + radius * 2 + thickness;
+                    monitors[6].y = gap * 3 + radius + 4 * radius + thickness * 2;
 
                     for (int i = 0; i < monitors.Length; i++)
                     {
                         monitors[i].radius = radius;
-                        monitors[i].thickness = radius / 2;
+                        monitors[i].thickness = thickness;
                     }
                 }
                 else
@@ -362,7 +359,7 @@ namespace RealSense
                         monitors[i].x = gap + i * gap + i * radius * 2;
                         monitors[i].y = gap;
                         monitors[i].radius = radius;
-                        monitors[i].thickness = radius / 2;
+                        monitors[i].thickness = thickness;
                     }
                 }
             }

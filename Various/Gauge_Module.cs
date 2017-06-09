@@ -66,7 +66,7 @@ namespace RealSense
                             cAngles[index] = model.CurrentPose;
                             if (model.Lp == null) return;
                             cFaces[index++] = model.CurrentFace;
-                            Console.WriteLine(numFaces + " / " + index + " * 100");
+                         //   Console.WriteLine(numFaces + " / " + index + " * 100");
                             model.calibrationProgress = (double)index / (double)numFaces  * 100.0;
                         }
                     if (!calibrate)
@@ -111,7 +111,7 @@ namespace RealSense
                         for (int i = 0; i < finalFace.Length; i++)
                             finalFace[i] = new PXCMFaceData.LandmarkPoint();
                         cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
-                        Console.WriteLine("DOne Calibrating");
+                     //   Console.WriteLine("DOne Calibrating");
 
                     }
                 }

@@ -15,7 +15,8 @@ namespace RealSense
      */
     public class Model
     {
-        public enum AXIS { X, Y, Z};
+        public enum AXIS { X, Y, Z };
+        public enum Emotion { ANGER, CONTEMPT, DISGUST, FEAR, JOY, SADNESS, SURPRISE }
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
@@ -31,7 +32,12 @@ namespace RealSense
         private PXCMFaceData.PoseEulerAngles nullPose = new PXCMFaceData.PoseEulerAngles();
         public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();
         private Dictionary<String, double> au_Values = new Dictionary<String, double>();
-        private Dictionary<String, double> emotions = new Dictionary<String, double>();
+        private Dictionary<Emotion, double> emotions = new Dictionary<Emotion, double>();
+        private Dictionary<Emotion, Bitmap> emotionBitmaps = new Dictionary<Emotion, Bitmap>();
+        private Dictionary<Emotion, PictureBox> emotionPictureBoxes;
+        private Dictionary<Emotion, Bitmap> exampleBitmaps = new Dictionary<Emotion, Bitmap>();
+        private String examplePath = "C:/Users/prouser/Pictures/reneEmotions";
+        private Dictionary<Emotion, double> emotionMax = new Dictionary<Emotion, double>();
         private List<RSModule> modules;
         private int width;
         private int height;
@@ -61,14 +67,23 @@ namespace RealSense
         public Model(bool s)
         {
             stream = s;
-            emotions["Anger"] = 0;
-            emotions["Fear"] = 0;
-            emotions["Disgust"] = 0;
-            emotions["Surprise"] = 0;
-            emotions["Joy"] = 0;
-            emotions["Sadness"] = 0;
-            emotions["Contempt"] = 0;
-            emotions["Contempt02"] = 0;
+            emotions[Emotion.ANGER] = 0;
+            emotions[Emotion.CONTEMPT] = 0;
+            emotions[Emotion.DISGUST] = 0;
+            emotions[Emotion.FEAR] = 0;
+            emotions[Emotion.JOY] = 0;
+            emotions[Emotion.SADNESS] = 0;
+            emotions[Emotion.SURPRISE] = 0;
+
+            exampleBitmaps[Emotion.ANGER] = new Bitmap(examplePath+"/anger.png");
+            exampleBitmaps[Emotion.CONTEMPT] = new Bitmap(examplePath + "/contempt.png");
+            exampleBitmaps[Emotion.DISGUST] = new Bitmap(examplePath + "/disgust.png");
+            exampleBitmaps[Emotion.FEAR] = new Bitmap(examplePath + "/fear.png");
+            exampleBitmaps[Emotion.JOY] = new Bitmap(examplePath + "/joy.png");
+            exampleBitmaps[Emotion.SADNESS] = new Bitmap(examplePath + "/sadness.png");
+            exampleBitmaps[Emotion.SURPRISE] = new Bitmap(examplePath + "/surprise.png");
+
+            emotionBitmaps = exampleBitmaps;
 
             if (stream)
             {
@@ -102,10 +117,10 @@ namespace RealSense
             //... some hogwarts stuff thats what dumbledore said (slytherin ftw) 
         }
 
-        public double EmotionValue(String emotionName)
+        public double EmotionValue(Emotion emotion)
         {
-            if (emotions.ContainsKey(emotionName))
-                return emotions[emotionName];
+            if (emotions.ContainsKey(emotion))
+                return emotions[emotion];
             else return -1;
         }
 
@@ -179,7 +194,7 @@ namespace RealSense
         public double DifferenceNullCurrent(int i01, AXIS axis)
         {
             double result = 0;
-            switch(axis)
+            switch (axis)
             {
                 case AXIS.X: result = (nullFace[NOSE_FIX].world.x - nullFace[i01].world.x) - (currentFace[NOSE_FIX].world.x - currentFace[i01].world.x); break;
                 case AXIS.Y: result = (nullFace[NOSE_FIX].world.y - nullFace[i01].world.y) - (currentFace[NOSE_FIX].world.y - currentFace[i01].world.y); break;
@@ -284,7 +299,7 @@ namespace RealSense
                 }
                 else
                 {
-                   // Console.WriteLine("No Face while calculating");
+                    // Console.WriteLine("No Face while calculating");
                 }
             }
         }
@@ -293,7 +308,7 @@ namespace RealSense
         public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
-            set { currentFace = value;  }
+            set { currentFace = value; }
         }
 
         /**
@@ -369,7 +384,7 @@ namespace RealSense
         /**
          *  getter and setter of the array from the emotions 
          */
-        public Dictionary<String, double> Emotions
+        public Dictionary<Emotion, double> Emotions
         {
             get { return emotions; }
             set { emotions = value; }
@@ -421,6 +436,35 @@ namespace RealSense
             set { test = value; }
         }
 
+        public Bitmap ColorBitmap
+        {
+            get { return view.ColorBitmap; }
+        }
+
+        public Dictionary<Emotion, Bitmap> EmotionBitmaps
+        {
+            get { return emotionBitmaps; }
+            set { emotionBitmaps = value; }
+        }
+
+        public Dictionary<Emotion, double> EmotionMax
+        {
+            get { return emotionMax; }
+            set { emotionMax = value; }       
+        }
+
+        public Dictionary<Emotion, Bitmap> ExcampleBitmaps
+        {
+            get { return exampleBitmaps; }
+            set { exampleBitmaps = value; }
+        }
+
+        public Dictionary<Emotion, PictureBox> EmotionPictureBoxes
+        {
+            get { return emotionPictureBoxes; }
+            set { emotionPictureBoxes = value; }
+        }
+        
 
 
         // should be in here, but so far is not defined 
@@ -428,5 +472,7 @@ namespace RealSense
        {
 
        }*/
+
+
     }
 }

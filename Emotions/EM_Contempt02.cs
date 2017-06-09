@@ -94,7 +94,7 @@ namespace RealSense.Emotions
 
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.Emotions["Contempt02"] = contempt;
+                    model.Emotions[Model.Emotion.CONTEMPT] = contempt;
                 }
 
                 // print debug-values 

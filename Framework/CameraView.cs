@@ -22,7 +22,7 @@ namespace RealSense
         // Used to store Image Data and convert to bitmap
         private PXCMImage.ImageData colorData;
         // the bitmap that we put into the pictureBox
-        public Bitmap colorBitmap;
+        private Bitmap colorBitmap;
         // the PictureBox that we put into the window (this class)
         private PictureBox pb;
         // running number to save all the images to the hard drive (careful with that ;) )
@@ -143,6 +143,14 @@ namespace RealSense
                     {
                         if (mod.GetType() == typeof(Gauge_Module))
                         {
+
+                            model.Modules.ForEach(delegate (RSModule md)
+                            {
+                                if (md.GetType() == typeof(EmotionSaver))
+                                {
+                                    ((EmotionSaver)md).init();
+                                }
+                            });
                             Console.WriteLine("Start calibration");
                             ((Gauge_Module)mod).calibrate = true;
                             subject++;
@@ -162,8 +170,12 @@ namespace RealSense
                         mod.reset();
                     });
                 }
+                else if (e.KeyValue == (int)Keys.Escape)
+                {
+                    Application.Exit(); //doesn't work...
+                }
             }
-            Console.WriteLine("KeyDown");
+            // Console.WriteLine("KeyDown");
             model.Modules.ForEach(delegate (RSModule mod)
             {
                 foreach (int i in mod.triggers)
@@ -283,13 +295,13 @@ namespace RealSense
                         {
                             if (model.calibrationProgress == 100)
                             {
-                                angerMonitor.targetValue = (int)model.Emotions["Anger"];
-                                fearMonitor.targetValue = (int)model.Emotions["Fear"];
-                                disgustMonitor.targetValue = (int)model.Emotions["Disgust"];
-                                surpriseMonitor.targetValue = (int)model.Emotions["Surprise"];
-                                joyMonitor.targetValue = (int)model.Emotions["Joy"];
-                                sadMonitor.targetValue = (int)model.Emotions["Sadness"];
-                                contemptMonitor.targetValue = (int)model.Emotions["Contempt"];
+                                angerMonitor.targetValue = (int)model.Emotions[Model.Emotion.ANGER];
+                                fearMonitor.targetValue = (int)model.Emotions[Model.Emotion.FEAR];
+                                disgustMonitor.targetValue = (int)model.Emotions[Model.Emotion.DISGUST];
+                                surpriseMonitor.targetValue = (int)model.Emotions[Model.Emotion.SURPRISE];
+                                joyMonitor.targetValue = (int)model.Emotions[Model.Emotion.JOY];
+                                sadMonitor.targetValue = (int)model.Emotions[Model.Emotion.SADNESS];
+                                contemptMonitor.targetValue = (int)model.Emotions[Model.Emotion.CONTEMPT];
 
                                 angerMonitor.step();
                                 fearMonitor.step();
@@ -332,7 +344,6 @@ namespace RealSense
                                 int sMark = (int)(model.calibrationProgress * 0.69);
                                 int tMark = sMark + 1;
 
-                                Console.WriteLine(sMark + " -> " + tMark);
 
                                 PXCMFaceData.LandmarkPoint sPoint = model.CurrentFace[sMark];
                                 PXCMFaceData.LandmarkPoint tPoint = model.CurrentFace[tMark];
@@ -448,6 +459,11 @@ namespace RealSense
         private void CameraView_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public Bitmap ColorBitmap
+        {
+            get { return colorBitmap; }
         }
 
 

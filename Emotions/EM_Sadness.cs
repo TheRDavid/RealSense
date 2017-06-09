@@ -98,7 +98,7 @@ namespace RealSense.Emotions
 
             double sad = lidValue + lipLValue;
             sad = sad > 0 ? sad : 0;
-            model.Emotions["Sadness"] = sad;
+            model.Emotions[Model.Emotion.SADNESS] = sad;
 
 
             // print debug-values 
