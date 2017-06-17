@@ -16,6 +16,7 @@ namespace RealSense
     class EM_Anger : RSModule
     {
         // Variables for logic
+        int percent = 100;
 
         // Default values
         public EM_Anger()
@@ -42,7 +43,7 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            int percent = 100;
+
             //Anger 4+5+7+23 --> BrowShift, EyelidTight, LipsTightened
 
             /**
@@ -63,7 +64,7 @@ namespace RealSense
             int p_lid = 20;
             int p_lip = 25;
 
-            makeSmall();
+           // makeSmall();
 
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -97,7 +98,11 @@ namespace RealSense
         private void makeSmall()
         {
             //Anger
-               
+            int lowerLipRaised = (int)model.AU_Values[typeof(ME_LowerLipRaised).ToString()];
+            if (lowerLipRaised < -80)
+            {
+                percent = (int)(100 - lowerLipRaised * 0.5);
+            }
         }
     }
 }

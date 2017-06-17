@@ -36,7 +36,7 @@ namespace RealSense
             reset();
             MIN_TOL = -2;
             MAX_TOL = 1;
-            debug = true;
+            debug = false;
             XTREME_MAX = 33;
             XTREME_MIN = -24;
 

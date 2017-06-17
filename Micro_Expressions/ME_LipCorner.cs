@@ -33,7 +33,7 @@ namespace RealSense
             reset();
             MIN_TOL = -1;
             MAX_TOL = 0.5;
-            debug = true;
+            debug = false;
             XTREME_MAX = 45;
             XTREME_MIN = -36;
             model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = 0;

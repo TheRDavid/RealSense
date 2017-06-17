@@ -92,7 +92,7 @@ namespace RealSense.Emotions
 
             if (hDiff < 0)
             {
-                lipLValue = 0;
+                //lipLValue = 0;
             }
 
 

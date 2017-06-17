@@ -190,7 +190,6 @@ namespace RealSense
             return 100 / NullFaceBetween(i01, i02) * Between(i01, i02); // calculates the percent (rule of three)
         }
 
-
         public double DifferenceNullCurrent(int i01, AXIS axis)
         {
             double result = 0;

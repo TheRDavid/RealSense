@@ -27,10 +27,10 @@ namespace RealSense
 
         public void save()
         {
-            string serializationFile = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName+"\\Recordings", name);
+            string serializationFile = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Recordings", name);
             Stream stream = File.Open(serializationFile, FileMode.Create);
             new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter().Serialize(stream, this);
-        }   
+        }
 
         public static FaceRecording load(String n)
         {

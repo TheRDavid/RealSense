@@ -10,7 +10,7 @@ namespace RealSense
     class EmotionSaver : RSModule
     {
         int x, y, width, height;
-        int counter = 30;
+        int counter = 30, counter2 = 120;
         bool saverInit = false;
         Bitmap source, croppedImage;
 
@@ -27,6 +27,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             if (!saverInit) init();
+            if (counter2-- > 0) return;
             if (--counter ==0)
             {
                 counter = 30;

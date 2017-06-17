@@ -56,7 +56,7 @@ namespace RealSense.Emotions
             //lid Value 0 - -100 (Grenze bei lidMax)
             double temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = (temp_left + temp_right)  / 2;
+            double lidValue = (temp_left + temp_right) / 2;
             lidValue = lidValue * -1 * p_lid / percent;
 
             //lip Value 0 - 100
@@ -112,6 +112,10 @@ namespace RealSense.Emotions
 
             smallerArray = new double[] { browValue, lipLValue, eyeValue };
             percent = 100 + (int)(2 * smallerArray.Max());
+
+            int lipLowered = (int)model.AU_Values[typeof(ME_LowerLipLowered).ToString()];
+            if (lipLowered > 70)
+                percent = 100 + 2 * lipLowered;
             percent = percent < 100 ? 100 : percent;
 
             if (debug)

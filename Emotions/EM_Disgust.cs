@@ -8,6 +8,8 @@ namespace RealSense.Emotions
 {
     class EM_Disgust : RSModule
     {
+        int percent = 100;
+
         // Default values
         public EM_Disgust()
         {
@@ -53,6 +55,8 @@ namespace RealSense.Emotions
             int p_upperLip = 40;
             //int p_lipStr = 
 
+          //  makeSmall();
+
             //Grenzen
 
             int noseMax = 50;
@@ -62,7 +66,7 @@ namespace RealSense.Emotions
             double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
             double browValue = temp_left > temp_right ? temp_left : temp_right;
             if (model.Test) browValue = (temp_left + temp_right) / 2;
-            browValue = browValue * -1 * p_brow / 100;
+            browValue = browValue * -1 * p_brow / percent;
 
             //NoseWrinkled (0 - -100)
             double noseValue = model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
@@ -71,20 +75,17 @@ namespace RealSense.Emotions
 
             //lipLine Value 0 - -100
             double lipLineValue = model.AU_Values[typeof(ME_LipLine).ToString()];
-            lipLineValue = lipLineValue * -1 * p_lipLine / 100;
+            lipLineValue = lipLineValue * -1 * p_lipLine / percent;
 
             //LowerLip 0-100
             double lipLoweredValue = model.AU_Values[typeof(ME_LowerLipLowered).ToString()];
-            lipLoweredValue = lipLoweredValue * p_lipLowered / 100;
+            lipLoweredValue = lipLoweredValue * p_lipLowered / percent;
 
             //upperLip 0-100
             double upperLipValue = model.AU_Values[typeof(ME_UpperLipRaised).ToString()];
-            upperLipValue = upperLipValue * p_upperLip / 100;
+            upperLipValue = upperLipValue * p_upperLip / percent;
 
-            //lipS Value 0 - -100
-            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
-            lipSValue = lipSValue * -1;
-            lipSValue = lipSValue < 0 ? lipSValue : 0;
+
 
 
             // Falls Corners durch Disgust, auf 0 setzen
@@ -96,6 +97,8 @@ namespace RealSense.Emotions
             }
 
             double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;// + lipSValue; 
+
+
             disgust = disgust > 0 ? disgust : 0;
             disgust = disgust < 100 ? disgust : 100;
 
@@ -106,6 +109,19 @@ namespace RealSense.Emotions
             {
                 output = "Disgust: " + (int)disgust + " Brow: " + (int)browValue + " Nose: " + (int)noseValue + " LipUpper: " + (int)upperLipValue;// + " LipS: " + lipSValue;
             }
+
+        }
+
+        private void makeSmall()
+        {
+            //lipS Value 0 - -100
+            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
+            lipSValue = lipSValue * -1;
+            if (lipSValue < 60)
+            {
+                percent = (int)(100 + 1.5 * (60 - lipSValue));
+            }
+
 
         }
     }
