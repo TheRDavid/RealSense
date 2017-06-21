@@ -124,6 +124,8 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/SiteSubtitle</li>
@@ -131,6 +133,8 @@ Error message and password prompt
 <li>$:/SiteTitle</li>
 
 <li>$:/state/image-picker/system--1365487189</li>
+
+<li>$:/state/Link/--48427542/search</li>
 
 <li>$:/state/tab--1963855381</li>
 
@@ -8390,6 +8394,17 @@ Error message and password prompt
 <div created="20170523184721440" modified="20170523184721440" title="$:/DefaultTiddlers">
 <pre></pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;https://software.intel.com/en-us/intel-realsense-sdk/download&quot;,
+            &quot;type&quot;: &quot;text/plain&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -8401,6 +8416,9 @@ Error message and password prompt
 </div>
 <div created="20170523185329846" modified="20170523185331321" title="$:/state/image-picker/system--1365487189">
 <pre>hide</pre>
+</div>
+<div created="20170621151343676" modified="20170621151347272" title="$:/state/Link/--48427542/search">
+<pre></pre>
 </div>
 <div created="20170523183721228" modified="20170523183732678" title="$:/state/tab--1963855381">
 <pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
@@ -8414,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[VERLINKUNGEN AM ENDE EINFÜGEN]] [[Polished UI [WIP, Anton]]] [[Test-UI [WIP, Tobi]]] [[Test-Subjects [WIP, René]]] [[Analyzer [WIP, David]]] [[Utility-Modules [WIP, David]]] [[Emotion-Modules [WIP, Tanja]]] [[Micro-Expression-Modules [WIP, Tanja]]] [[Modules [WIP, Tobi]]] [[Application Structure [WIP, Anton]]] [[Emotion Research [WIP, Anton]]] [[Value Filtering [WIP, David]]] [[The Final Year Project [WIP, Marlon]]] [[Intel RealSense SR300 Depth-Camera [WIP, David]]] How2GitGud" title="$:/StoryList">
+<div list="[[Intel RealSense SR300 Depth-Camera [WIP, David]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8599,8 +8617,41 @@ Error message and password prompt
 git commit -m &quot;änderungsmessage&quot;&lt;br&gt;
 git push</pre>
 </div>
-<div created="20170523185311170" modified="20170619122211260" tags="" title="Intel RealSense SR300 Depth-Camera [WIP, David]">
-<pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;</pre>
+<div created="20170523185311170" modified="20170621151814293" tags="" title="Intel RealSense SR300 Depth-Camera [WIP, David]">
+<pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
+
+&lt;h3&gt;&lt;b&gt;About&lt;/b&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+The SR300 Camera can, among other things, be used to track certain landmarks in a person's face and return their (estimated) 3D-coordinates (x, y and z).
+This feature enables the developer to record changes in a person's mimic and (as in this project) interpret them as emotions. 
+&lt;/p&gt;
+
+&lt;p&gt;Due to the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering [WIP, David]]] for more information).
+&lt;/p&gt;
+
+&lt;p&gt;
+To make use of the SR300, the RealSense SDK is requiered, as is a Windows 10-PC with a USB 3.0 Port. We also advise to handle the camera with utmost care, as it turned out to be very fragile and quickly to break down in performance after a few hours of use (likely due to overheating).
+&lt;/p&gt;
+
+&lt;h3&gt;&lt;b&gt;Development&lt;/b&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+To setup a working enviroment, the camera's drivers are requiered and can be found here: https://software.intel.com/en-us/intel-realsense-sdk/download &lt;br&gt;
+Multiple languages such as Java, C#, C++ and JS are supported and will each requiere a slightly different setup. In this example, the workflow using C# is described.
+&lt;/p&gt;
+
+&lt;p&gt;
+Link to the binaries in the project.
+&lt;/p&gt;
+
+&lt;p&gt;
+Write a small app.
+&lt;/p&gt;
+
+&lt;p&gt;
+Use the Sample Browser
+&lt;/p&gt;</pre>
 </div>
 <div created="20170619105113275" modified="20170619123457898" tags="" title="Micro-Expression-Modules [WIP, Tanja]">
 <pre>- Calculations
