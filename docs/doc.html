@@ -8432,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Intel RealSense SR300 Depth-Camera [WIP, David]]]" title="$:/StoryList">
+<div list="[[Utility-Modules [WIP, David]]] [[Value Filtering [WIP, David]]] [[Analyzer [WIP, David]]] [[Intel RealSense SR300 Depth-Camera [WIP, David]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8596,8 +8596,21 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105234171" modified="20170619123254596" tags="" title="Analyzer [WIP, David]">
-<pre></pre>
+<div created="20170619105234171" modified="20170624165216388" tags="" title="Analyzer [WIP, David]">
+<pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for micro-expressions and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value Filtering [WIP, David]]], the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
+To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmarks positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
+In order to do so, we implemented a &lt;i&gt;FaceRorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
+
+&lt;br&gt;
+The Recorder-Module records a persons landmarks for 300 frames (10 seconds) and them along with the calibrated NullFace in a file.&lt;br&gt;
+That file can then be loaded inside the AnalyzerView.&lt;br&gt;
+
+The AnalyzerView can be used to load all files of a certain emotion inside a directory and display the video (using a &lt;a href=&quot;https://github.com/ZeBobo5/Vlc.DotNet&quot;&gt;.net-Interface to the VLC-API&lt;/a&gt;), along with all the emotion- and micro-expression values. With a timeline at the bottom of the UI, the user can jump to any point in time (from frame 0 to 300).
+&lt;p&gt;
+It is important to note, that the micro-expression and emotions-values themselves are not recorded and then loaded, but only the landmark-positions. This means that the algorithms for expression- and emotion recognition can be changed after recording and then be used again on the recorded data.
+&lt;br&gt;
+This way the developer can see the newest algorithms performance on multiple test-recordings at once.
+&lt;/p&gt;</pre>
 </div>
 <div created="20170619105029483" modified="20170619122520167" tags="" title="Application Structure [WIP, Anton]">
 <pre></pre>
@@ -8617,27 +8630,28 @@ Error message and password prompt
 git commit -m &quot;änderungsmessage&quot;&lt;br&gt;
 git push</pre>
 </div>
-<div created="20170523185311170" modified="20170621151814293" tags="" title="Intel RealSense SR300 Depth-Camera [WIP, David]">
+<div created="20170523185311170" modified="20170624162333341" tags="" title="Intel RealSense SR300 Depth-Camera [WIP, David]">
 <pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
 &lt;h3&gt;&lt;b&gt;About&lt;/b&gt;&lt;/h3&gt;
 
 &lt;p&gt;
-The SR300 Camera can, among other things, be used to track certain landmarks in a person's face and return their (estimated) 3D-coordinates (x, y and z).
-This feature enables the developer to record changes in a person's mimic and (as in this project) interpret them as emotions. 
+The SR300 Camera can, among other things (like hand-gesture-tracking and facial recognition), be used to track certain landmarks in a person's face and return their (estimated) 3D-coordinates (x, y and z).
+This feature enables the developer to record changes in a person's mimic and (as in this project) interpret them as emotions.
 &lt;/p&gt;
 
-&lt;p&gt;Due to the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering [WIP, David]]] for more information).
+&lt;p&gt;Due to the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering [WIP, David]]] for more information). A lot of the time during the project was spent working around the limitations of the camera.
 &lt;/p&gt;
 
 &lt;p&gt;
 To make use of the SR300, the RealSense SDK is requiered, as is a Windows 10-PC with a USB 3.0 Port. We also advise to handle the camera with utmost care, as it turned out to be very fragile and quickly to break down in performance after a few hours of use (likely due to overheating).
 &lt;/p&gt;
 
-&lt;h3&gt;&lt;b&gt;Development&lt;/b&gt;&lt;/h3&gt;
+&lt;h3&gt;&lt;b&gt;Setup&lt;/b&gt;&lt;/h3&gt;
 
 &lt;p&gt;
 To setup a working enviroment, the camera's drivers are requiered and can be found here: https://software.intel.com/en-us/intel-realsense-sdk/download &lt;br&gt;
+&lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/doc_hand_implementing_the_main_loop.html?zoom_highlightsub=PXCMSenseManager&quot;&gt;First steps&lt;/a&gt; and a (not always detailed) documentation: https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?manuals_member_functions23.html &lt;br&gt;
 Multiple languages such as Java, C#, C++ and JS are supported and will each requiere a slightly different setup. In this example, the workflow using C# is described.
 &lt;/p&gt;
 
@@ -8646,11 +8660,22 @@ Link to the binaries in the project.
 &lt;/p&gt;
 
 &lt;p&gt;
-Write a small app.
-&lt;/p&gt;
-
-&lt;p&gt;
-Use the Sample Browser
+Enable certain camera-features during the startup of your program, for instance ...
+&lt;ul&gt;
+&lt;li&gt;
+Face Detection
+&lt;/li&gt;
+&lt;li&gt;
+Face Tracking
+&lt;/li&gt;
+&lt;li&gt;
+Pose Tracking
+&lt;/li&gt;
+&lt;li&gt;
+Video-Streaming
+&lt;/li&gt;
+&lt;/ul&gt;
+... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
 <div created="20170619105113275" modified="20170619123457898" tags="" title="Micro-Expression-Modules [WIP, Tanja]">
@@ -8684,11 +8709,39 @@ This wiki of the Final Year Project of //Anton Blumenstein, David Rosenbusch, Re
 
 It documents the teamwork, goals, technical difficulties and solutions of the creation of a software to determine a humans emotions by evaluating facial micro-expressions, captured with the [[Intel RealSense SR300 Depth-Camera|Intel RealSense SR300 Depth-Camera [WIP, David]]]]].</pre>
 </div>
-<div created="20170619105203221" modified="20170619122340652" tags="" title="Utility-Modules [WIP, David]">
-<pre></pre>
+<div created="20170619105203221" modified="20170624173739263" tags="" title="Utility-Modules [WIP, David]">
+<pre>Since our applications largely consist of independent modules, there are some of those, who do neither detect micro-expressions, not emotions, but provide utility-features:
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;EmotionSaver&lt;/h3&gt;
+The Emotion-Saver module was solely used for presentation purposes to store the strongest detected emotions as images for the audience to enjoy.
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h3&gt;FaceTracker&lt;/h3&gt;
+To display each landmark on the subjects face we wrote an a little module that could be turned on and off during runtime using the UI.
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h3&gt;GaugeModule&lt;/h3&gt;
+Since every face is different and their respective expressions can directly be compared to each other, we had to find a way to normalize the values.&lt;br&gt;
+In order to do so, the GaugeModule is used to record and calculate the average of a persons neutral expression. That so-called &lt;i&gt;NullFace&lt;/i&gt; is from then on used to measure the change in the mimic.
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h3&gt;FaceRecorder&lt;/h3&gt;
+As explained [[here|Analyzer [WIP, David]]], we implemented a way to records the subjects landmark-positions for the duration of 300 frames (10 seconds) in order to analyze them later on, in order to provide a more efficient test-process.
+&lt;/li&gt;
+&lt;/ul&gt;</pre>
 </div>
-<div created="20170619104723457" modified="20170619122048538" tags="" title="Value Filtering [WIP, David]">
-<pre></pre>
+<div created="20170619104723457" modified="20170624172445953" tags="" title="Value Filtering [WIP, David]">
+<pre>As described in [[Intel RealSense SR300 Depth-Camera [WIP, David]]], the accuracy and reliability of the 3D coordinates of each landmark did not quite reach our expectations. Aside from the everpresent jittering, some landmarks turned out to be less stable and rotationally invariant then others.
+&lt;p&gt;
+Overall, we do not allow the subjects to rotate their heads by a huge amount, since that distorts the coordinates and thus the micro-expressions and detected emotions.&lt;br&gt;
+[SCREENSHOT-FACE ON HAIR OR STH]
+&lt;/p&gt;
+Whenever a far rotation is detected, the emotion-modules are on pause until the subjects brings their head back to the original pose.&lt;br&gt;
+We do also disregard micro-expression-values that fall far out of the expected boundaries, which were established during one of our many test-sessions. To prevent the emotion-values to jitter too much, we do not update their values every frame, but every 15th frame, using an average. &lt;br&gt;
+[PICUTES OF VALUE_GRAPHS FROM PRESENTATION]
+&lt;br&gt;
+With these measures, as well as the [[dynamic expression-limits|Micro-Expression-Modules [WIP, Tanja]]], we were able to reduce the error of our micro-expression-values a lot and continue with their [[interpretation as emotions|Emotion-Modules [WIP, Tanja]]].</pre>
 </div>
 <div created="20170619122841390" modified="20170619122847849" tags="" title="VERLINKUNGEN AM ENDE EINFÜGEN">
 <pre></pre>
