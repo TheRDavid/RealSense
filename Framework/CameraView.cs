@@ -116,9 +116,9 @@ namespace RealSense
             }
             else
             {
-                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\window.png"));
-                smallWindowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\small_window.png"));
-                warningBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\warning.png"));
+                windowBitmap = new Bitmap(System.IO.Directory.GetCurrentDirectory()+"\\Images\\window.png");
+                smallWindowBitmap = new Bitmap(Bitmap.FromFile("Images\\small_window.png"));
+                warningBitmap = new Bitmap(Bitmap.FromFile("Images\\warning.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;

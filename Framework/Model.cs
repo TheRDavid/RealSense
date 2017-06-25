@@ -75,16 +75,6 @@ namespace RealSense
             emotions[Emotion.SADNESS] = 0;
             emotions[Emotion.SURPRISE] = 0;
 
-            exampleBitmaps[Emotion.ANGER] = new Bitmap(examplePath+"/anger.png");
-            exampleBitmaps[Emotion.CONTEMPT] = new Bitmap(examplePath + "/contempt.png");
-            exampleBitmaps[Emotion.DISGUST] = new Bitmap(examplePath + "/disgust.png");
-            exampleBitmaps[Emotion.FEAR] = new Bitmap(examplePath + "/fear.png");
-            exampleBitmaps[Emotion.JOY] = new Bitmap(examplePath + "/joy.png");
-            exampleBitmaps[Emotion.SADNESS] = new Bitmap(examplePath + "/sadness.png");
-            exampleBitmaps[Emotion.SURPRISE] = new Bitmap(examplePath + "/surprise.png");
-
-            emotionBitmaps = exampleBitmaps;
-
             if (stream)
             {
                 width = 1920;
