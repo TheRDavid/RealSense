@@ -8432,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Polished UI [WIP, Anton]]] [[Application Structure [WIP, Anton]]] [[Emotion Research [WIP, Anton]]] [[Emotion-Modules [WIP, Tanja]]]" title="$:/StoryList">
+<div list="[[Emotion-Modules [WIP, Tanja]]] [[Micro-Expression-Modules [WIP, Tanja]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8627,9 +8627,8 @@ So we started to figure out which micro expressions we needed for our program th
 Because we had only a year of development we decided to cut the micro expressions down to a clear list. For this purpose we used the overview from wikipedia. So in total we had a number of 13 micro expressions to implement. 
 Due to our test phase we figured out that we had to change some micro expressions and we couldn't read the real emotion of a person, because our goal was to get a prototype done until the 24.06.2017 which we can present at our open day at our University. So we decided to focus our research on how a person would look when they try to make the seven basic emotions.</pre>
 </div>
-<div created="20170619105146833" modified="20170619123407870" tags="" title="Emotion-Modules [WIP, Tanja]">
-<pre>- Zusammensetzung
-- Code-Beispiel</pre>
+<div created="20170619105146833" modified="20170626154501625" tags="" title="Emotion-Modules [WIP, Tanja]">
+<pre>The Emotion-Modules compute the percentage value of each base emotion found in the model. To do that they use the percentage values given by the needed Action-Unit-Modules and define a proportion between 0 and 110 depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. A bigger number just makes it easier to reach the maximum. Some emotions also can get reduced by other AU-Modules so for example anger and joy can't be high at the same time. In the end the AU-Values get multiplied with their proportion and summed together.</pre>
 </div>
 <div created="20170619104345017" modified="20170619104638837" tags="" title="How2GitGud">
 <pre>git add . # alles neue hinzufügen&lt;br&gt;
@@ -8684,11 +8683,14 @@ Video-Streaming
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105113275" modified="20170619123457898" tags="" title="Micro-Expression-Modules [WIP, Tanja]">
-<pre>- Calculations
-- Code-Example
-- Debug
-</pre>
+<div created="20170619105113275" modified="20170626154449515" tags="" title="Micro-Expression-Modules [WIP, Tanja]">
+<pre>The Action-Unit-Modules calculate the difference between two Landmark-Points compared to the calibrated Null-Face. 
+To have percentage values for each Action-Unit saved in the model we set some Min and Max values to indicate the 100% and -100% boundary. 
+Since every face is different and some people are able to shift their brows higher or open their eyes wider than others we decided to allow these boundary values to be dynamic until a certain point.
+
+[pic]
+
+Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning the head so we decided to implement a Value-Filtering to solve that.</pre>
 </div>
 <div created="20170619105054118" modified="20170619122353488" tags="" title="Modules [WIP, Tobi]">
 <pre></pre>
