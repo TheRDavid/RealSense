@@ -8432,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Modules [WIP, Tobi]]] [[Test-UI [WIP, Tobi]]]" title="$:/StoryList">
+<div list="[[Value Filtering [WIP, David]]] [[Intel RealSense SR300 Depth-Camera [WIP, David]]] [[Analyzer [WIP, David]]] [[Utility-Modules [WIP, David]]] [[Test-UI [WIP, Tobi]]] [[Modules [WIP, Tobi]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8448,7 +8448,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/David/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8468,7 +8468,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/David/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8476,7 +8476,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;null&quot;
+            &quot;text&quot;: &quot;file://&quot;
         }
     }
 }</pre>
@@ -8793,39 +8793,42 @@ This wiki of the Final Year Project of //Anton Blumenstein, David Rosenbusch, Re
 
 It documents the teamwork, goals, technical difficulties and solutions of the creation of a software to determine a humans emotions by evaluating facial micro-expressions, captured with the [[Intel RealSense SR300 Depth-Camera|Intel RealSense SR300 Depth-Camera [WIP, David]]]]].</pre>
 </div>
-<div created="20170619105203221" modified="20170624173739263" tags="" title="Utility-Modules [WIP, David]">
+<div created="20170619105203221" modified="20170626194044060" tags="" title="Utility-Modules [WIP, David]">
 <pre>Since our applications largely consist of independent modules, there are some of those, who do neither detect micro-expressions, not emotions, but provide utility-features:
 &lt;ul&gt;
 &lt;li&gt;
-&lt;h3&gt;EmotionSaver&lt;/h3&gt;
-The Emotion-Saver module was solely used for presentation purposes to store the strongest detected emotions as images for the audience to enjoy.
+&lt;h3&gt;Emotion-Saver&lt;/h3&gt;
+The Emotion-Saver module was solely used for presentation purposes to store the strongest detected emotions as images for the audience to enjoy. It turned out to be quite entertaining for users to their most expressive moments on a big screen after the fact.
 &lt;/li&gt;
 &lt;li&gt;
-&lt;h3&gt;FaceTracker&lt;/h3&gt;
-To display each landmark on the subjects face we wrote an a little module that could be turned on and off during runtime using the UI.
+&lt;h3&gt;Face-Tracker&lt;/h3&gt;
+To display each landmark on the subjects face we wrote an a little module that could be turned on and off during runtime using the UI. It proved to be useful especially to show the landmarks inaccuracies and the little tolerance for head rotations.
 &lt;/li&gt;
 &lt;li&gt;
-&lt;h3&gt;GaugeModule&lt;/h3&gt;
-Since every face is different and their respective expressions can directly be compared to each other, we had to find a way to normalize the values.&lt;br&gt;
-In order to do so, the GaugeModule is used to record and calculate the average of a persons neutral expression. That so-called &lt;i&gt;NullFace&lt;/i&gt; is from then on used to measure the change in the mimic.
+&lt;h3&gt;Gauge-Module&lt;/h3&gt;
+Since every face is different and their respective expressions can not directly be compared to each other, we had to find a way to normalize these values.&lt;br&gt;
+In order to do so, the Gauge-Module is used to record and calculate the average of a persons neutral expression. That so-called &lt;i&gt;NullFace&lt;/i&gt; is from then on used to measure the change in the mimic.
 &lt;/li&gt;
 &lt;li&gt;
-&lt;h3&gt;FaceRecorder&lt;/h3&gt;
-As explained [[here|Analyzer [WIP, David]]], we implemented a way to records the subjects landmark-positions for the duration of 300 frames (10 seconds) in order to analyze them later on, in order to provide a more efficient test-process.
+&lt;h3&gt;Face-Recorder&lt;/h3&gt;
+As explained [[here|Analyzer [WIP, David]]], we implemented a way to record the subjects landmark-positions for the duration of 300 frames (10 seconds) in order to analyze them later on, to provide a more efficient test-process.
 &lt;/li&gt;
 &lt;/ul&gt;</pre>
 </div>
-<div created="20170619104723457" modified="20170624172445953" tags="" title="Value Filtering [WIP, David]">
+<div created="20170619104723457" modified="20170626194534902" tags="" title="Value Filtering [WIP, David]">
 <pre>As described in [[Intel RealSense SR300 Depth-Camera [WIP, David]]], the accuracy and reliability of the 3D coordinates of each landmark did not quite reach our expectations. Aside from the everpresent jittering, some landmarks turned out to be less stable and rotationally invariant then others.
 &lt;p&gt;
 Overall, we do not allow the subjects to rotate their heads by a huge amount, since that distorts the coordinates and thus the micro-expressions and detected emotions.&lt;br&gt;
 [SCREENSHOT-FACE ON HAIR OR STH]
+&lt;br&gt;
+Whenever the subjects head rotation exceeds a set mark, we stop taking the new values into consideration and a warning notification pops up until the user returns to their original pose.
+[SCREENSHOT-WARNING POPUP]
 &lt;/p&gt;
 Whenever a far rotation is detected, the emotion-modules are on pause until the subjects brings their head back to the original pose.&lt;br&gt;
 We do also disregard micro-expression-values that fall far out of the expected boundaries, which were established during one of our many test-sessions. To prevent the emotion-values to jitter too much, we do not update their values every frame, but every 15th frame, using an average. &lt;br&gt;
 [PICUTES OF VALUE_GRAPHS FROM PRESENTATION]
 &lt;br&gt;
-With these measures, as well as the [[dynamic expression-limits|Micro-Expression-Modules [WIP, Tanja]]], we were able to reduce the error of our micro-expression-values a lot and continue with their [[interpretation as emotions|Emotion-Modules [WIP, Tanja]]].</pre>
+With these measures, as well as the [[dynamic expression-limits|Micro-Expression-Modules [WIP, Tanja]]], we were able to reduce the error of our micro-expression-values by a significant amount and were able to continue with their [[interpretation as emotions|Emotion-Modules [WIP, Tanja]]].</pre>
 </div>
 <div created="20170619122841390" modified="20170619122847849" tags="" title="VERLINKUNGEN AM ENDE EINFÜGEN">
 <pre></pre>
