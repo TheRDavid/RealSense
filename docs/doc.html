@@ -8432,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Emotion-Modules [WIP, Tanja]]] [[Micro-Expression-Modules [WIP, Tanja]]]" title="$:/StoryList">
+<div list="[[Modules [WIP, Tobi]]] [[Test-UI [WIP, Tobi]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8448,7 +8448,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8468,7 +8468,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8476,7 +8476,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;null&quot;
         }
     }
 }</pre>
@@ -8692,8 +8692,25 @@ Since every face is different and some people are able to shift their brows high
 
 Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning the head so we decided to implement a Value-Filtering to solve that.</pre>
 </div>
-<div created="20170619105054118" modified="20170619122353488" tags="" title="Modules [WIP, Tobi]">
-<pre></pre>
+<div created="20170619105054118" modified="20170626165204161" tags="" title="Modules [WIP, Tobi]">
+<pre>Through our straightforward approach, we can easily add and remove additional modules. All modules inherit from the &quot;RSModul.css&quot; class. The modules are grouped into micro expressions([[Micro-Expression-Modules [WIP, Tanja]]]) and emotions([[Emotion-Modules [WIP, Tanja]]]).
+ 
+New modules have to be included in the “Program.cs” class with the following tag:
+
+ ''Example:''
+&lt;br&gt;
+
+&lt;code&gt;Model.AddModule (new ME_BrowShift ());&lt;/code&gt;
+
+!! ''Program Structure''
+The core modules are constructed as follows:
+
+!!! ''Constructor''
+All default values for the module are set in the constructor.
+
+!!! ''Work Method''
+The work method is being executed for each frame. It is ideally used for calculations and manipulation of the output stream.
+</pre>
 </div>
 <div created="20170619105344038" modified="20170626140749415" tags="" title="Polished UI [WIP, Anton]">
 <pre>For our Prototype we needed a User Interface which is easy to understand and not to confusing for the user. So we made some concepts of how it could look like. We decided to use circles in our design as a progress bar and that didn't changed. The only thing that changed was the position of the seven elements around our camer view.
@@ -8722,11 +8739,52 @@ In the last phase we needed data for our analyzing tool. Like in the last phase 
 &lt;p&gt;&lt;/p&gt;
 </pre>
 </div>
-<div created="20170619105322873" modified="20170619123236957" tags="" title="Test-UI [WIP, Tobi]">
-<pre>- Sinn
-- Wie funktionierts
-- Aufbau
-- Vor und Nachteile zur Polished UI</pre>
+<div created="20170619105322873" modified="20170626165704952" tags="" title="Test-UI [WIP, Tobi]">
+<pre>It is used to output the individual average value for each module.  The [[Polished UI [WIP, Anton]]] is suppose to be used for representational purposes. &lt;br&gt;
+
+!!''User manual''&lt;br&gt;
+In order to display the Test-UI, the first step is to switch the mode to „RUN“ in the &quot;program.css&quot; file. 
+
+&lt;code&gt;Application.Run(new CameraView(model, mode == MODE.&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;RUN&lt;/span&gt;));&lt;/code&gt;
+
+
+To manipulate the stream, you have to enter this code into the module's work method. The output must be a string:
+
+''Example:''&lt;br&gt;
+&lt;code&gt;if (debug) {
+         output = &quot;JawDrop: &quot; + &quot; (&quot; + (int)MIN + &quot;, &quot; + (int)MAX + &quot;)&quot;;
+    }&lt;/code&gt;
+   &lt;br&gt;
+The debug value must be set true in the constructor. You need the condition, so you can set the values on or off in the UI.
+
+The UI can be modified in the CameraView.cs class. 
+The testing interface values are arranged on the left side of the screen and are being displayed as long as a person is in the picture. At the bottom are 3 buttons. 
+
+The first button “Calibrate” must be pressed to initialize the null face for each person. It is only displayed as long as a person is in the picture. 
+&lt;br&gt;
+&lt;img src=&quot;img/test_UI.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
+
+The second button “NoImg” hides the video stream. 
+
+&lt;img src=&quot;img/no_img.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
+
+The third button “Output” only displays the video stream.
+
+Bild&lt;br&gt;
+
+
+
+!! ''Positive and Negative''
+
+Positive&lt;br&gt;
+- You can see the individual outputs for each module.&lt;br&gt;
+- You can disable the unnecessary variables and streams.&lt;br&gt;&lt;br&gt;
+
+Negative&lt;br&gt;
+-	Too many values can be confusing on the screen at the same time.
+
+
+</pre>
 </div>
 <div created="20170523184731393" modified="20170619122821265" tags="" title="The Final Year Project [WIP, Marlon]">
 <pre>&lt;iframe src=&quot;https://drive.google.com/file/d/0BxcQaFNyn9uHS3hucThjVjVjVVk/preview&quot; width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;/iframe&gt;
