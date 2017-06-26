@@ -162,8 +162,6 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'Polished UI [WIP, Anton]'</li>
-
 <li>Emotion Research [WIP, Anton]</li>
 
 <li>Emotion-Modules [WIP, Tanja]</li>
@@ -8434,7 +8432,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Emotion Research [WIP, Anton]]]" title="$:/StoryList">
+<div list="[[Polished UI [WIP, Anton]]] [[Application Structure [WIP, Anton]]] [[Emotion Research [WIP, Anton]]] [[Emotion-Modules [WIP, Tanja]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8450,7 +8448,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8470,7 +8468,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8478,7 +8476,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;null&quot;
+            &quot;text&quot;: &quot;file://&quot;
         }
     }
 }</pre>
@@ -8614,17 +8612,13 @@ It is important to note, that the micro-expression and emotions-values themselve
 This way the developer can see the newest algorithms performance on multiple test-recordings at once.
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105029483" modified="20170619122520167" tags="" title="Application Structure [WIP, Anton]">
-<pre></pre>
+<div created="20170619105029483" modified="20170626140723152" tags="" title="Application Structure [WIP, Anton]">
+<pre>We started to create a lot of modules to make it as easy as possible to configure our code. This is how our program works:  First of all we need the Camera view so that the camera can process during the recording. The next class we have is Program.cs which starts all our modules. There we initialise our model, added our micro expression module and after that we added the emotion module. The last part is to start the Application.     We also got some individual Modules which are described at the topic Utility-Modules(link)  As a part of our Application we got two different User Interfaces Views. The first one is a testing User Interface where we can check how all micro expressions work and the the values of them. The other View is our final Interface. Which is for the user to see his emotions.  
+
+To make our testing more efficient we added an Analyzer where we can record a lot of people to see our changes immediately at there datas.</pre>
 </div>
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
-</div>
-<div created="20170619105344038" draft.of="Polished UI [WIP, Anton]" draft.title="Polished UI [WIP, Anton]" modified="20170625134605661" tags="" title="Draft of 'Polished UI [WIP, Anton]'">
-<pre>- Look&amp;Feel
-- Clean
-- Inspiration
-- Code (wie)</pre>
 </div>
 <div created="20170619104857903" modified="20170626132031989" tags="" title="Emotion Research [WIP, Anton]">
 <pre>For our project we needed to make some researches about how you can read the emotion of somebody. For this purpose we started to read the book from Paul Ekman – &quot;Gefühle lesen, Wie Sie Emotionen erkennen und richtig interpretieren&quot;. 
@@ -8699,11 +8693,11 @@ Video-Streaming
 <div created="20170619105054118" modified="20170619122353488" tags="" title="Modules [WIP, Tobi]">
 <pre></pre>
 </div>
-<div created="20170619105344038" modified="20170619123207621" tags="" title="Polished UI [WIP, Anton]">
-<pre>- Look&amp;Feel
-- Clean
-- Inspiration
-- Code (wie)</pre>
+<div created="20170619105344038" modified="20170626140749415" tags="" title="Polished UI [WIP, Anton]">
+<pre>For our Prototype we needed a User Interface which is easy to understand and not to confusing for the user. So we made some concepts of how it could look like. We decided to use circles in our design as a progress bar and that didn't changed. The only thing that changed was the position of the seven elements around our camer view.
+ At first we put the graphics around the head of the user, but that was to much distraction. So we decided to make it look more like in the movie &quot;RoboCop&quot;(picture). All Elements where now on left side of the screen. After that it was quite hard to read it, because you still could see whats going on at the background. The conclusion for that was to make a transparent panel behind it. So that you can still guess whats behind the window but could properly read the emotions. 
+
+After that we created another progress bar for the calibration which is oriented at the position of the head from a user. During our own tests we figured out that we need some feedback for the user when he is not in his pose anymore. For that we created a little message box which says that the user should get his head into the right position again, that our program can continue reading his emotions.    We decided to use read because it has a lot contrast to its background and you can still see it when the user is focused on his own head at the screen. The font was a …., we wanted to use a simple font as possible to make it look futuristic. Another point for our look and feel was it to make it look as easy, clean and simple.</pre>
 </div>
 <div created="20170619105306897" modified="20170626091747104" tags="" title="Test-Subjects [WIP, René]" type="">
 <pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera. We tried to get a good mix of people and personalities. Like that wanted to ensure to have a representative pool of test subjects &lt;/p&gt;
