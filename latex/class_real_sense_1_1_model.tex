@@ -1,0 +1,344 @@
+\section{Real\+Sense.\+Model Class Reference}
+\label{class_real_sense_1_1_model}\index{Real\+Sense.\+Model@{Real\+Sense.\+Model}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}} 
+enum {\bfseries A\+X\+IS} \{ {\bfseries X}, 
+{\bfseries Y}, 
+{\bfseries Z}
+ \}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}} 
+enum {\bfseries Emotion} \{ \newline
+{\bfseries A\+N\+G\+ER}, 
+{\bfseries C\+O\+N\+T\+E\+M\+PT}, 
+{\bfseries D\+I\+S\+G\+U\+ST}, 
+{\bfseries F\+E\+AR}, 
+\newline
+{\bfseries J\+OY}, 
+{\bfseries S\+A\+D\+N\+E\+SS}, 
+{\bfseries S\+U\+R\+P\+R\+I\+SE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Model} (bool s)
+\item 
+void \textbf{ Calculate\+Emotions} ()
+\item 
+\mbox{\label{class_real_sense_1_1_model_a078b1ddb43e777aa73c1b3898722e4bb}} 
+double {\bfseries Emotion\+Value} (Emotion emotion)
+\item 
+void \textbf{ Add\+Module} (\textbf{ R\+S\+Module} m)
+\item 
+double \textbf{ Difference\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+\item 
+double \textbf{ Null\+Face\+Between\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+\item 
+double \textbf{ Between\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+\item 
+double \textbf{ Difference} (int i01, int i02)
+\item 
+\mbox{\label{class_real_sense_1_1_model_a69d8b360ed9c9ddaa19a0619df408e2a}} 
+double {\bfseries Difference\+Null\+Current} (int i01, A\+X\+IS axis)
+\item 
+double \textbf{ Null\+Face\+Between} (int i01, int i02)
+\item 
+double \textbf{ Between} (int i01, int i02)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ad4e469e9cf474c5f813a757be1eaf55d}} 
+P\+X\+C\+M\+Face\+Data.\+Face {\bfseries face\+Aktuell}
+\item 
+\mbox{\label{class_real_sense_1_1_model_aa6e241f22bac2dbdefdceef6e4cf0202}} 
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries current\+Pose} = new P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles()
+\item 
+\mbox{\label{class_real_sense_1_1_model_a8573a7d01db1fb8a29f5873a717373bc}} 
+double {\bfseries calibration\+Progress} = 0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a2f289c39689e5de8feeb82dcfb708170}} 
+static int {\bfseries N\+O\+S\+E\+\_\+\+F\+IX} = 26
+\item 
+\mbox{\label{class_real_sense_1_1_model_af0a605c0cc3c8739836a4e98ac06b864}} 
+static bool {\bfseries calibrated} = false
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \textbf{ R\+S\+Module} $>$ \textbf{ Modules}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a396ec458576859184ac7e39d9be13465}} 
+P\+X\+C\+M\+Sense\+Manager {\bfseries Sense\+Manager}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+int \textbf{ Width}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+int \textbf{ Height}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+P\+X\+C\+M\+Face\+Module \textbf{ Face}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+P\+X\+C\+M\+Face\+Data.\+Landmarks\+Data \textbf{ Lp}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ad90fab8a6125b55803734ebbdcf1f83d}} 
+P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] {\bfseries Current\+Face}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] \textbf{ Null\+Face}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+P\+X\+C\+M\+Face\+Data \textbf{ Face\+Data}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+P\+X\+C\+M\+Face\+Data.\+Face \textbf{ Face\+Aktuell}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\textbf{ Camera\+View} \textbf{ View}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a7a0873ddece63f5d3eb49f087771e9c6}} 
+double {\bfseries Current\+Pose\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a556c083ee213249d05c2383ffc8e46f4}} 
+int {\bfseries Pose\+Max}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a7ba288087bcec5d88a34064df08fbf20}} 
+double {\bfseries Current\+Roll\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a9701d5e1b5c733f70349f94ec7fee978}} 
+double {\bfseries Current\+Pitch\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ae5d9b51742c782f5f79c38761cfaee3c}} 
+double {\bfseries Current\+Yaw\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+Dictionary$<$ Emotion, double $>$ \textbf{ Emotions}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a1e12c6ceac3f412e6b452148b1a97bb1}} 
+Font {\bfseries Default\+Font}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_aaee076946f30b272e403d39afe033b4e}} 
+Solid\+Brush {\bfseries Default\+String\+Brush}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_af6cb31aea9e1e0fd3ef87c9380e92193}} 
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries Null\+Pose}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a5d30cb7ac89ab7528623a695056096c4}} 
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries Current\+Pose}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a05161bcafb94b553304268ab16861a84}} 
+Solid\+Brush {\bfseries Default\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a14272eb96159aac12a818e2e15c36cb0}} 
+Solid\+Brush {\bfseries Opaque\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a5a20efa42d5391f0a8156d45f676fc34}} 
+Dictionary$<$ String, double $>$ {\bfseries A\+U\+\_\+\+Values}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a89f4614b0f880fb6553ebcea3d2e6a6c}} 
+bool {\bfseries Test}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a6b3603d17577660f65fc7bbb6b097182}} 
+Bitmap {\bfseries Color\+Bitmap}\hspace{0.3cm}{\ttfamily  [get]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_a654d0ac6e4e49b884fd3e166039c7bc4}} 
+Dictionary$<$ Emotion, Bitmap $>$ {\bfseries Emotion\+Bitmaps}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ac5454f63dfead405cd1d9c229cf6790f}} 
+Dictionary$<$ Emotion, double $>$ {\bfseries Emotion\+Max}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_afbdadf185ba37319705fd55d102c0cb4}} 
+Dictionary$<$ Emotion, Bitmap $>$ {\bfseries Excample\+Bitmaps}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+\mbox{\label{class_real_sense_1_1_model_ad2c87f308e42010ca032deec5cfa5e0b}} 
+Dictionary$<$ Emotion, Picture\+Box $>$ {\bfseries Emotion\+Picture\+Boxes}\hspace{0.3cm}{\ttfamily  [get, set]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores all of our data. It is based at the M\+VC Pattern
+
+\begin{DoxyAuthor}{Author}
+Tanja Witke 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_real_sense_1_1_model_a39349d1d9b1274a9fe28614e9ce215f3}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Model@{Model}}
+\index{Model@{Model}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Model()}
+{\footnotesize\ttfamily Real\+Sense.\+Model.\+Model (\begin{DoxyParamCaption}\item[{bool}]{s }\end{DoxyParamCaption})}
+
+Constructor of the model It does all the important stuff to use our camera. Its so F\+A\+N\+CY ! Like enabling all important tracker(\+Hand, Face), the stream and builds up the configuration. blib blub 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_real_sense_1_1_model_a8b8bff51e69b2b33f5c8cfb007c424e5}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Add\+Module@{Add\+Module}}
+\index{Add\+Module@{Add\+Module}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Add\+Module()}
+{\footnotesize\ttfamily void Real\+Sense.\+Model.\+Add\+Module (\begin{DoxyParamCaption}\item[{\textbf{ R\+S\+Module}}]{m }\end{DoxyParamCaption})}
+
+adds a new modul to the List 
+\begin{DoxyParams}{Parameters}
+{\em R\+S\+Modul} & m which is the new module \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_model_a846e090817e3200e8c20af80094fdcc8}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Between@{Between}}
+\index{Between@{Between}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Between()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
+
+calculates the difference between the two points of the current frame 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_model_abaaee5d06f75b1fb9a9d8946ebf53934}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Between\+By\+Axis@{Between\+By\+Axis}}
+\index{Between\+By\+Axis@{Between\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Between\+By\+Axis()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+
+Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_model_a2eee3649f76d519c09fe44804c950e9d}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Calculate\+Emotions@{Calculate\+Emotions}}
+\index{Calculate\+Emotions@{Calculate\+Emotions}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Calculate\+Emotions()}
+{\footnotesize\ttfamily void Real\+Sense.\+Model.\+Calculate\+Emotions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Guess what happens here... \mbox{\label{class_real_sense_1_1_model_a1d827ed6fd7d689679af4a276362128b}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Difference@{Difference}}
+\index{Difference@{Difference}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Difference()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
+
+calculates the percentage of the difference of distance between two points 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double between 0 and 100 
+\end{DoxyReturn}
+\mbox{\label{class_real_sense_1_1_model_a7f212901958598b29fabcf087fc33bdb}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Difference\+By\+Axis@{Difference\+By\+Axis}}
+\index{Difference\+By\+Axis@{Difference\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Difference\+By\+Axis()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+
+Returns the total difference of axis-\/specific distance between two points 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_model_a03fd4fa56ceb5cbcebdbebb4b7a78158}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face\+Between@{Null\+Face\+Between}}
+\index{Null\+Face\+Between@{Null\+Face\+Between}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Null\+Face\+Between()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Null\+Face\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
+
+calculates the differenc of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_model_aab86ce9f3027b3fca83d11a97353154c}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}}
+\index{Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Null\+Face\+Between\+By\+Axis()}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Null\+Face\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+
+Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\label{class_real_sense_1_1_model_a30358a7ea8e1e59815e2f562a3fc6bad}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotions@{Emotions}}
+\index{Emotions@{Emotions}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Emotions}
+{\footnotesize\ttfamily Dictionary$<$Emotion, double$>$ Real\+Sense.\+Model.\+Emotions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the array from the emotions \mbox{\label{class_real_sense_1_1_model_abb8701f1030ca1e3bfd226a9ad352da5}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face@{Face}}
+\index{Face@{Face}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Face}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Module Real\+Sense.\+Model.\+Face\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the face \mbox{\label{class_real_sense_1_1_model_a3621c14d22c3709775971fed725c2781}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face\+Aktuell@{Face\+Aktuell}}
+\index{Face\+Aktuell@{Face\+Aktuell}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Face\+Aktuell}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Face Real\+Sense.\+Model.\+Face\+Aktuell\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Face\+Current
+
+Face\+Aktuell should be changed to Face\+Current, where is it initialised \mbox{\label{class_real_sense_1_1_model_a0d16c2536a9f3c346cc3d51b3227989e}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face\+Data@{Face\+Data}}
+\index{Face\+Data@{Face\+Data}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Face\+Data}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data Real\+Sense.\+Model.\+Face\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the face\+Data \mbox{\label{class_real_sense_1_1_model_abf6324c9f4acc3134909a239eff37a0a}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Height@{Height}}
+\index{Height@{Height}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Height}
+{\footnotesize\ttfamily int Real\+Sense.\+Model.\+Height\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the height \mbox{\label{class_real_sense_1_1_model_a3e349d000d00015a340954ec3be977ea}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Lp@{Lp}}
+\index{Lp@{Lp}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Lp}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmarks\+Data Real\+Sense.\+Model.\+Lp\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the landmarkpoints
+
+W\+A\+R\+N\+I\+NG do not touch outside the camera thread -\/$>$ so use current\+Face \mbox{\label{class_real_sense_1_1_model_a9664e53331481e9cc45ad6d3540c218c}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Modules@{Modules}}
+\index{Modules@{Modules}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Modules}
+{\footnotesize\ttfamily List$<$\textbf{ R\+S\+Module}$>$ Real\+Sense.\+Model.\+Modules\hspace{0.3cm}{\ttfamily [get]}}
+
+getter of the modules \mbox{\label{class_real_sense_1_1_model_af626df64a18cb2fcf4cbc06ffbadfa17}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face@{Null\+Face}}
+\index{Null\+Face@{Null\+Face}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Null\+Face}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] Real\+Sense.\+Model.\+Null\+Face\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the A\+B\+S\+O\+L\+U\+TE Null\+Face \mbox{\label{class_real_sense_1_1_model_ad06548f5b1e3b3bfeaca2635d2b24fc6}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!View@{View}}
+\index{View@{View}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{View}
+{\footnotesize\ttfamily \textbf{ Camera\+View} Real\+Sense.\+Model.\+View\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the View \mbox{\label{class_real_sense_1_1_model_a20e2b5bc79da762b436b75ddd28f63b7}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Width@{Width}}
+\index{Width@{Width}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{Width}
+{\footnotesize\ttfamily int Real\+Sense.\+Model.\+Width\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the width 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Framework/Model.\+cs\end{DoxyCompactItemize}

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RealSense
 {
-    /*
+    /**
      *Measures if complete brow is raised or lowered (each eye)  - Action Unit Number 4 
      *@author Anton 
      *@date 20.03.2017

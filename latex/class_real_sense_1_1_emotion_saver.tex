@@ -1,0 +1,62 @@
+\section{Real\+Sense.\+Emotion\+Saver Class Reference}
+\label{class_real_sense_1_1_emotion_saver}\index{Real\+Sense.\+Emotion\+Saver@{Real\+Sense.\+Emotion\+Saver}}
+Inheritance diagram for Real\+Sense.\+Emotion\+Saver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_real_sense_1_1_emotion_saver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_emotion_saver_a82c46b76df032f49665606979b1170a4}} 
+void {\bfseries init} ()
+\item 
+override void \textbf{ Work} (Graphics g)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_real_sense_1_1_emotion_saver_a168f0ff9ee4ba98187c88a2d33f537e8}} 
+\index{Real\+Sense\+::\+Emotion\+Saver@{Real\+Sense\+::\+Emotion\+Saver}!Work@{Work}}
+\index{Work@{Work}!Real\+Sense\+::\+Emotion\+Saver@{Real\+Sense\+::\+Emotion\+Saver}}
+\subsubsection{Work()}
+{\footnotesize\ttfamily override void Real\+Sense.\+Emotion\+Saver.\+Work (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update every frame (do calculations, manipulate output Image) 
+\begin{DoxyParams}{Parameters}
+{\em Graphics} & g \\
+\hline
+\end{DoxyParams}
+if (model.\+Emotions[\char`\"{}\+Contempt02\char`\"{}] $>$ contempt\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Contempt02\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/contempt.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/contempt.\+png\char`\"{});
+
+\}
+
+if (model.\+Emotions[\char`\"{}\+Disgust\char`\"{}] $>$ disgust\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Disgust\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/disgust.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/disgust.\+png\char`\"{});
+
+\}
+
+if (model.\+Emotions[\char`\"{}\+Fear\char`\"{}] $>$ fear\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Fear\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/fear.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/fear.\+png\char`\"{});
+
+\}
+
+if (model.\+Emotions[\char`\"{}\+Joy\char`\"{}] $>$ joy\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Joy\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/joy.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/joy.\+png\char`\"{});
+
+\}
+
+if (model.\+Emotions[\char`\"{}\+Sadness\char`\"{}] $>$ sadness\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Sadness\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/sadness.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/sadness.\+png\char`\"{});
+
+\}
+
+if (model.\+Emotions[\char`\"{}\+Surprise\char`\"{}] $>$ surprise\+Max) \{ anger\+Max = model.\+Emotions[\char`\"{}\+Surprise\char`\"{}]; File.\+Delete(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/surprise.\+png\char`\"{}); cropped\+Image.\+Save(\char`\"{}\+C\+:/\+Users/prouser/\+Pictures/emotions/surprise.\+png\char`\"{});
+
+\}
+
+Implements \textbf{ Real\+Sense.\+R\+S\+Module} \doxyref{}{p.}{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f81c73867}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Various/Emotion\+Saver.\+cs\end{DoxyCompactItemize}

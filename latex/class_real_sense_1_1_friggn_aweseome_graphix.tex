@@ -1,0 +1,64 @@
+\section{Real\+Sense.\+Friggn\+Aweseome\+Graphix Class Reference}
+\label{class_real_sense_1_1_friggn_aweseome_graphix}\index{Real\+Sense.\+Friggn\+Aweseome\+Graphix@{Real\+Sense.\+Friggn\+Aweseome\+Graphix}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ M\+E\+Monitor}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a9c50e2b0d08aa7fc1f45ef717a6af85a}} 
+static void {\bfseries draw\+M\+E\+Montior} (Graphics gfx, \textbf{ M\+E\+Monitor} monitor)
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a25acb9a9102fc1c49ec141ea947acbe8}} 
+static void {\bfseries draw\+M\+E\+Montior} (Graphics gfx, \textbf{ M\+E\+Monitor} monitor, bool draw\+Text)
+\item 
+static unsafe void \textbf{ pretty\+\_\+blur} (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, Bitmap\+Data source\+Data, Bitmap\+Data target\+Data)
+\item 
+static unsafe void \textbf{ sonic\+\_\+blur} (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, Bitmap\+Data source\+Data, Bitmap\+Data target\+Data)
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a8aa4c7bc30a55548f69d9a6beeba102f}} 
+static void {\bfseries draw\+Fading\+Line} (Graphics gfx, float x0, float y0, float x1, float y1)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_ad34adf2179722fa8080e9f4032bc43ce}} 
+static Font {\bfseries major\+Font} = new Font(\char`\"{}Futura\char`\"{}, 36, Font\+Style.\+Bold)
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a9d2afacf158345fcecf1b25b895806a2}} 
+static Font {\bfseries minor\+Font} = new Font(\char`\"{}Futura\char`\"{}, 21, Font\+Style.\+Regular)
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a167341ae00dc0a13928b8b26de77e277}} 
+static Color {\bfseries fg\+Color} = Color.\+From\+Argb(55, 186, 68, 75)
+\item 
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a80a40fcc2a193f1d3a2a7ba3d9d4eb2b}} 
+static Color {\bfseries font\+Color} = Color.\+From\+Argb(255, 103, 103, 104)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_aaa75438fcc2f1f738744e6fda161e82b}} 
+\index{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix@{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix}!pretty\+\_\+blur@{pretty\+\_\+blur}}
+\index{pretty\+\_\+blur@{pretty\+\_\+blur}!Real\+Sense\+::\+Friggn\+Aweseome\+Graphix@{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix}}
+\subsubsection{pretty\+\_\+blur()}
+{\footnotesize\ttfamily static unsafe void Real\+Sense.\+Friggn\+Aweseome\+Graphix.\+pretty\+\_\+blur (\begin{DoxyParamCaption}\item[{Bitmap}]{source,  }\item[{Bitmap}]{target,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{factor,  }\item[{Bitmap\+Data}]{source\+Data,  }\item[{Bitmap\+Data}]{target\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\subparagraph*{}
+
+\subsection*{Graphics}
+
+\subparagraph*{}
+
+old and slow, but pretty version \mbox{\label{class_real_sense_1_1_friggn_aweseome_graphix_a4ab59468a7284e0647b9814f6a0b2a57}} 
+\index{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix@{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix}!sonic\+\_\+blur@{sonic\+\_\+blur}}
+\index{sonic\+\_\+blur@{sonic\+\_\+blur}!Real\+Sense\+::\+Friggn\+Aweseome\+Graphix@{Real\+Sense\+::\+Friggn\+Aweseome\+Graphix}}
+\subsubsection{sonic\+\_\+blur()}
+{\footnotesize\ttfamily static unsafe void Real\+Sense.\+Friggn\+Aweseome\+Graphix.\+sonic\+\_\+blur (\begin{DoxyParamCaption}\item[{Bitmap}]{source,  }\item[{Bitmap}]{target,  }\item[{int}]{x0,  }\item[{int}]{y0,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{factor,  }\item[{int}]{channels,  }\item[{Bitmap\+Data}]{source\+Data,  }\item[{Bitmap\+Data}]{target\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Revised version, a lot faster, but sacrifices prettyness (also uuuuugly code) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Framework/Friggn\+Aweseome\+Graphix.\+cs\end{DoxyCompactItemize}

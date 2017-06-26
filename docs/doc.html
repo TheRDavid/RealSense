@@ -162,6 +162,8 @@ Error message and password prompt
 
 <li>Contents</li>
 
+<li>Draft of 'Polished UI [WIP, Anton]'</li>
+
 <li>Emotion Research [WIP, Anton]</li>
 
 <li>Emotion-Modules [WIP, Tanja]</li>
@@ -8432,7 +8434,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Utility-Modules [WIP, David]]] [[Value Filtering [WIP, David]]] [[Analyzer [WIP, David]]] [[Intel RealSense SR300 Depth-Camera [WIP, David]]]" title="$:/StoryList">
+<div list="[[Test-Subjects [WIP, René]]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8448,7 +8450,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/David/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8468,7 +8470,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/David/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8618,6 +8620,12 @@ This way the developer can see the newest algorithms performance on multiple tes
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
 </div>
+<div created="20170619105344038" draft.of="Polished UI [WIP, Anton]" draft.title="Polished UI [WIP, Anton]" modified="20170625134605661" tags="" title="Draft of 'Polished UI [WIP, Anton]'">
+<pre>- Look&amp;Feel
+- Clean
+- Inspiration
+- Code (wie)</pre>
+</div>
 <div created="20170619104857903" modified="20170619122241933" tags="" title="Emotion Research [WIP, Anton]">
 <pre></pre>
 </div>
@@ -8693,8 +8701,26 @@ Video-Streaming
 - Inspiration
 - Code (wie)</pre>
 </div>
-<div created="20170619105306897" modified="20170619122428382" tags="" title="Test-Subjects [WIP, René]">
-<pre></pre>
+<div created="20170619105306897" modified="20170626091747104" tags="" title="Test-Subjects [WIP, René]" type="">
+<pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera. We tried to get a good mix of people and personalities. Like that wanted to ensure to have a representative pool of test subjects &lt;/p&gt;
+
+&lt;h1&gt;Phase I - Micro Expression&lt;/h1&gt;
+
+&lt;p&gt;First tests served the purpose to evaluate minimum and maximum values for the micro expressions. We told every subject to move certain parts of their face (e.g. rise/lower eyebrows). Every minimum, maximum and resting deviation of each subject was documented. By this we were able to find the average of every value and use the information to enhance each micro expression individually.
+Also we figured out that there were a few MEs the camera wasn't able to detect reliably (e.g. lower lip corners). There were a few, like inner brow raised, we had to sort out, because the deviations were too huge and would have falsified emotion values a lot. For lip corners, we were able to find another way for detection.&lt;/p&gt;
+
+&lt;h1&gt;Phase II - Lip Line &lt;/h1&gt;
+
+&lt;p&gt;After figuring out a way to ensure a good identification of lip corner movement, we needed a few test subjects, who tried those out. Implementing and testing Micro Expressions was finished after that. &lt;/p&gt;
+
+&lt;h1&gt; Phase III - Emotions &lt;/h1&gt;
+
+&lt;p&gt;Testing emotion detection was the next big step. We asked our test subjects to act the seven emotions in front of the Realsense according to our Implementation. We told them which parts of their face they had to move to match a certain emotion. We realized, that making the software recognize emotions of one person perfectly on the one hand, would make it unreliant for any other subject.&lt;/p&gt;
+
+&lt;h1&gt; Phase IV - Analyzer&lt;/h1&gt;
+In the last phase we needed data for our analyzing tool. Like in the last phase we told the test subjects to act one of the seven emotions. But this time they had to hold each facial expressions for about ten seconds. Simultaneously we recorded them on video, as well as with the Analyzer. Like that we collected enough data to run emotion tests without even having a person in front of the camera.
+&lt;p&gt;&lt;/p&gt;
+</pre>
 </div>
 <div created="20170619105322873" modified="20170619123236957" tags="" title="Test-UI [WIP, Tobi]">
 <pre>- Sinn
