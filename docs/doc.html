@@ -156,37 +156,41 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
 
-<li>Analyzer [WIP, David]</li>
+<li>Analyzer</li>
 
-<li>Application Structure [WIP, Anton]</li>
+<li>Application Structure</li>
 
 <li>Contents</li>
 
-<li>Emotion Research [WIP, Anton]</li>
+<li>Draft of 'Test-UI'</li>
 
-<li>Emotion-Modules [WIP, Tanja]</li>
+<li>Draft of 'Utility-Modules'</li>
+
+<li>Draft of 'Value Filtering'</li>
+
+<li>Emotion Research</li>
+
+<li>Emotion-Modules</li>
 
 <li>How2GitGud</li>
 
-<li>Intel RealSense SR300 Depth-Camera [WIP, David]</li>
+<li>Intel RealSense SR300 Depth-Camera</li>
 
-<li>Micro-Expression-Modules [WIP, Tanja]</li>
+<li>Micro-Expression-Modules</li>
 
-<li>Modules [WIP, Tobi]</li>
+<li>Modules</li>
 
-<li>Polished UI [WIP, Anton]</li>
+<li>Polished UI</li>
 
-<li>Test-Subjects [WIP, René]</li>
+<li>Test-Subjects</li>
 
-<li>Test-UI [WIP, Tobi]</li>
+<li>Test-UI</li>
 
-<li>The Final Year Project [WIP, Marlon]</li>
+<li>The Final Year Project</li>
 
-<li>Utility-Modules [WIP, David]</li>
+<li>Utility-Modules</li>
 
-<li>Value Filtering [WIP, David]</li>
-
-<li>VERLINKUNGEN AM ENDE EINFÜGEN</li>
+<li>Value Filtering</li>
 
 </ul>
 </p>
@@ -8432,7 +8436,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Value Filtering [WIP, David]]] [[Intel RealSense SR300 Depth-Camera [WIP, David]]] [[Analyzer [WIP, David]]] [[Utility-Modules [WIP, David]]] [[Test-UI [WIP, Tobi]]] [[Modules [WIP, Tobi]]]" title="$:/StoryList">
+<div list="[[Value Filtering]] Test-UI Utility-Modules [[The Final Year Project]] Test-Subjects [[Polished UI]] Modules Micro-Expression-Modules [[Intel RealSense SR300 Depth-Camera]] Emotion-Modules [[Emotion Research]] [[Application Structure]] Analyzer" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8596,10 +8600,10 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105234171" modified="20170624165216388" tags="" title="Analyzer [WIP, David]">
-<pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for micro-expressions and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value Filtering [WIP, David]]], the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
+<div created="20170619105234171" modified="20170627182555284" tags="" title="Analyzer">
+<pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for micro-expressions and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in Value-Filtering), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
 To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmarks positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
-In order to do so, we implemented a &lt;i&gt;FaceRorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
+In order to do so, we implemented a &lt;i&gt;FaceRecorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
 
 &lt;br&gt;
 The Recorder-Module records a persons landmarks for 300 frames (10 seconds) and them along with the calibrated NullFace in a file.&lt;br&gt;
@@ -8612,30 +8616,73 @@ It is important to note, that the micro-expression and emotions-values themselve
 This way the developer can see the newest algorithms performance on multiple test-recordings at once.
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105029483" modified="20170626140723152" tags="" title="Application Structure [WIP, Anton]">
+<div created="20170619105029483" modified="20170627195014715" tags="" title="Application Structure">
 <pre>We started to create a lot of modules to make it as easy as possible to configure our code. This is how our program works:  First of all we need the Camera view so that the camera can process during the recording. The next class we have is Program.cs which starts all our modules. There we initialise our model, added our micro expression module and after that we added the emotion module. The last part is to start the Application.     We also got some individual Modules which are described at the topic Utility-Modules(link)  As a part of our Application we got two different User Interfaces Views. The first one is a testing User Interface where we can check how all micro expressions work and the the values of them. The other View is our final Interface. Which is for the user to see his emotions.  
 
-To make our testing more efficient we added an Analyzer where we can record a lot of people to see our changes immediately at there datas.</pre>
+To make our testing more efficient we added an Analyzer where we can record a lot of people to see our changes immediately at there datas.
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Nope. Stellt euch mal vor, jemand außerhalb des Projektes, ohne Vorwissen von unserer Struktur, liest das. Total konfus. Was für &quot;modules&quot;? Warum machen die das coden einfacher? Woher kommt auf einmal das Camera-View (und was ist das?).
+&lt;br&gt;
+Hier gehört ein UML-Diagram rein.
+&lt;/p&gt;</pre>
 </div>
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
 </div>
-<div created="20170619104857903" modified="20170626132031989" tags="" title="Emotion Research [WIP, Anton]">
-<pre>For our project we needed to make some researches about how you can read the emotion of somebody. For this purpose we started to read the book from Paul Ekman – &quot;Gefühle lesen, Wie Sie Emotionen erkennen und richtig interpretieren&quot;. 
-So we started to figure out which micro expressions we needed for our program that it can read the emotion successfully. For example for sadness we had a long list of micro expressions which contained:  inner brow raised, stretched lips, open mouth, lip corner pulled down and some others as well.  At this list(should we link our emotional presentation to it ? ) you can see our collection of Micro expressions you need to read a persons emotion. 
-
-Because we had only a year of development we decided to cut the micro expressions down to a clear list. For this purpose we used the overview from wikipedia. So in total we had a number of 13 micro expressions to implement. 
-Due to our test phase we figured out that we had to change some micro expressions and we couldn't read the real emotion of a person, because our goal was to get a prototype done until the 24.06.2017 which we can present at our open day at our University. So we decided to focus our research on how a person would look when they try to make the seven basic emotions.</pre>
+<div modified="20170627190319501" title="Draft of 'Test-UI'">
+<pre></pre>
 </div>
-<div created="20170619105146833" modified="20170626154501625" tags="" title="Emotion-Modules [WIP, Tanja]">
-<pre>The Emotion-Modules compute the percentage value of each base emotion found in the model. To do that they use the percentage values given by the needed Action-Unit-Modules and define a proportion between 0 and 110 depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. A bigger number just makes it easier to reach the maximum. Some emotions also can get reduced by other AU-Modules so for example anger and joy can't be high at the same time. In the end the AU-Values get multiplied with their proportion and summed together.</pre>
+<div modified="20170627190756581" title="Draft of 'Utility-Modules'">
+<pre></pre>
+</div>
+<div modified="20170627183843823" title="Draft of 'Value Filtering'">
+<pre></pre>
+</div>
+<div created="20170619104857903" modified="20170627194809243" tags="" title="Emotion Research">
+<pre>For our project we needed to make some research about how to read someone's emotion. For that purpose we started to read – &lt;i&gt;Gefühle lesen, Wie Sie Emotionen erkennen und richtig interpretieren&lt;/i&gt; by Paul Eckmann. 
+We figured out which micro-expressions we needed for our program to read the seven basic emotions successfully. For sadness for example, we had a long list of micro expressions which contained:  
+
+* inner brows raised
+* stretched lips
+* open mouth
+* lip corner pulled down
+and a few others. 
+&lt;br&gt;
+Since we only had one year of development, we decided to cut the micro expressions down to a shorter list, whch was also adjusted to the cameras' capabilities. For this purpose we used the overview from wikipedia [LINK!!!]. In the end we had a total of 13 micro expressions to implement. &lt;br&gt;
+During our [[test-phase|Test-Subjects]] we figured out that we had to adjust and bugfix some micro-expressions. We also noticed that our true goal could not be to read real emotions, but fake ones, since we did not have any actor as test-subjects at our disposal AND our software would be used for presentation purposes on an Open-door day. During this event, people would use our software and try to fake emotions to trigger a reaction. 
+&lt;br&gt;
+It was for that reason that we decided to focus our research on what a person would look like when they tried to fake the seven basic emotions (anger, joy, sadness, contempt, surprise, fear, disgust).
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Viele sprachliche Änderungen, zweiten Teil komplett überarbeitet.
+&lt;/p&gt;</pre>
+</div>
+<div created="20170619105146833" modified="20170627193821948" tags="" title="Emotion-Modules">
+<pre>The Emotion-Modules compute the percentage value of each base emotion found in the model. To do that they use the percentage values given by the needed Action-Unit-Modules and define a proportion between 0 and 110 depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. A bigger number just makes it easier to reach the maximum. Some emotions also can be reduced by other Modules, for example &lt;i&gt;anger&lt;/i&gt; and &lt;i&gt;joy&lt;/i&gt;, which can't be high at the same time. In the end the Action-Unit-Values are multiplied with their proportion and summed together.
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Zu knapp, für Außenstehende kaum verständlich, vlt. Code-Beispiel?
+&lt;/p&gt;</pre>
 </div>
 <div created="20170619104345017" modified="20170619104638837" tags="" title="How2GitGud">
 <pre>git add . # alles neue hinzufügen&lt;br&gt;
 git commit -m &quot;änderungsmessage&quot;&lt;br&gt;
 git push</pre>
 </div>
-<div created="20170523185311170" modified="20170624162333341" tags="" title="Intel RealSense SR300 Depth-Camera [WIP, David]">
+<div created="20170523185311170" modified="20170627193640340" tags="" title="Intel RealSense SR300 Depth-Camera">
 <pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
 &lt;h3&gt;&lt;b&gt;About&lt;/b&gt;&lt;/h3&gt;
@@ -8645,7 +8692,7 @@ The SR300 Camera can, among other things (like hand-gesture-tracking and facial 
 This feature enables the developer to record changes in a person's mimic and (as in this project) interpret them as emotions.
 &lt;/p&gt;
 
-&lt;p&gt;Due to the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering [WIP, David]]] for more information). A lot of the time during the project was spent working around the limitations of the camera.
+&lt;p&gt;Due to the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering]] for more information). A lot of the time during the project was spent working around the limitations of the camera.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -8681,19 +8728,35 @@ Video-Streaming
 &lt;/li&gt;
 &lt;/ul&gt;
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Unfertig, es fehlen Screenshots
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105113275" modified="20170626154449515" tags="" title="Micro-Expression-Modules [WIP, Tanja]">
+<div created="20170619105113275" modified="20170627193519882" tags="" title="Micro-Expression-Modules">
 <pre>The Action-Unit-Modules calculate the difference between two Landmark-Points compared to the calibrated Null-Face. 
 To have percentage values for each Action-Unit saved in the model we set some Min and Max values to indicate the 100% and -100% boundary. 
 Since every face is different and some people are able to shift their brows higher or open their eyes wider than others we decided to allow these boundary values to be dynamic until a certain point.
 
 [pic]
 
-Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning the head so we decided to implement a Value-Filtering to solve that.</pre>
+Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning the head so we decided to implement a Value-Filtering to solve that.
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Daaas reicht nicht.
+&lt;/p&gt;</pre>
 </div>
-<div created="20170619105054118" modified="20170626165204161" tags="" title="Modules [WIP, Tobi]">
-<pre>Through our straightforward approach, we can easily add and remove additional modules. All modules inherit from the &quot;RSModul.css&quot; class. The modules are grouped into micro expressions([[Micro-Expression-Modules [WIP, Tanja]]]) and emotions([[Emotion-Modules [WIP, Tanja]]]).
+<div created="20170619105054118" modified="20170627193444656" tags="" title="Modules">
+<pre>Through our straightforward approach, we can easily add and remove additional modules. All modules inherit from the &quot;RSModul.css&quot; class. The modules are grouped into micro expressions([[Micro-Expression-Modules ]]) and emotions([[Emotion-Modules]]).
  
 New modules have to be included in the “Program.cs” class with the following tag:
 
@@ -8710,61 +8773,114 @@ All default values for the module are set in the constructor.
 
 !!! ''Work Method''
 The work method is being executed for each frame. It is ideally used for calculations and manipulation of the output stream.
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Yep, das reicht nicht... Vererbung, Vorteile, Nachteile, Beispiel (code), ...
+&lt;/p&gt;
 </pre>
 </div>
-<div created="20170619105344038" modified="20170626140749415" tags="" title="Polished UI [WIP, Anton]">
-<pre>For our Prototype we needed a User Interface which is easy to understand and not to confusing for the user. So we made some concepts of how it could look like. We decided to use circles in our design as a progress bar and that didn't changed. The only thing that changed was the position of the seven elements around our camer view.
- At first we put the graphics around the head of the user, but that was to much distraction. So we decided to make it look more like in the movie &quot;RoboCop&quot;(picture). All Elements where now on left side of the screen. After that it was quite hard to read it, because you still could see whats going on at the background. The conclusion for that was to make a transparent panel behind it. So that you can still guess whats behind the window but could properly read the emotions. 
+<div created="20170619105344038" modified="20170627193335403" tags="" title="Polished UI">
+<pre>For our prototype we needed a User Interface which is easy to understand and not too confusing for the user. So we made some concepts of how it could look like. We decided to use circles in our design as a progress-bar early on. The only thing that took us a little longer to figure out was the position of the seven elements (one progress-bar for each emotion) around our camer view.&lt;br&gt;
 
-After that we created another progress bar for the calibration which is oriented at the position of the head from a user. During our own tests we figured out that we need some feedback for the user when he is not in his pose anymore. For that we created a little message box which says that the user should get his head into the right position again, that our program can continue reading his emotions.    We decided to use read because it has a lot contrast to its background and you can still see it when the user is focused on his own head at the screen. The font was a …., we wanted to use a simple font as possible to make it look futuristic. Another point for our look and feel was it to make it look as easy, clean and simple.</pre>
+At first we put the circles around the head of the user, but that was too distracting. So we decided to make it look more like in the movie &lt;i&gt;RoboCop&lt;/i&gt;
+&lt;br&gt;
+[SCREENSHOT FROM ROBOCOP]
+&lt;br&gt;
+next to
+&lt;br&gt;
+[SCREENSHOT OF OUR UI WITHOUT WHITE BACKGROUND]
+&lt;br&gt;. 
+All Elements where now on left side of the screen. However, the values were still quite hard to read because of the distracting background. The solution for that was to put a white, transparent panel in the background. This way the user could still see movement and vague shapes in the background, but the focus lay on the UI-Elements.
+&lt;br&gt;
+[SCREENSHOT OF OUR UI WITH WHITE BACKGROUND]
+&lt;br&gt;. 
+
+As a next step we created another progress bar for the calibration which is fixed to the subject's head-position. The purpose is to let the user know how long to hold still and when the calibration is finished.
+&lt;p /&gt;
+During our own tests we figured out that we also needed some sort of feedback for the user as to when he is not in his original pose anymore. For that reason we created a little notification-box which tells the user to get their head into the right position again, so our program can continue reading his emotions.  
+
+&lt;p&gt;We decided to use read because it has a lot contrast to its background and you can still see it when the user is focused on his own head at the screen. The font was a …., we wanted to use a simple font as possible to make it look futuristic. Another point for our look and feel was it to make it look as easy, clean and simple.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Viele sprachliche Abänderungen, es sollten mehr Bilder von der UI eingebunden werden (auch wie sie sich entwickelt hat).
+
+Den letzten Absatz noch fertigstellen...
+&lt;/p&gt;</pre>
 </div>
-<div created="20170619105306897" modified="20170626091747104" tags="" title="Test-Subjects [WIP, René]" type="">
-<pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera. We tried to get a good mix of people and personalities. Like that wanted to ensure to have a representative pool of test subjects &lt;/p&gt;
+<div created="20170619105306897" modified="20170627193239848" tags="" title="Test-Subjects" type="">
+<pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera and let us measure the landmarks' distances from each other. We tried to get a good mix of people and personalities to ensure that we'd have a diverse and representative pool of test subjects &lt;/p&gt;
 
-&lt;h1&gt;Phase I - Micro Expression&lt;/h1&gt;
+&lt;h1&gt;Phase I - Micro Expressions&lt;/h1&gt;
 
-&lt;p&gt;First tests served the purpose to evaluate minimum and maximum values for the micro expressions. We told every subject to move certain parts of their face (e.g. rise/lower eyebrows). Every minimum, maximum and resting deviation of each subject was documented. By this we were able to find the average of every value and use the information to enhance each micro expression individually.
-Also we figured out that there were a few MEs the camera wasn't able to detect reliably (e.g. lower lip corners). There were a few, like inner brow raised, we had to sort out, because the deviations were too huge and would have falsified emotion values a lot. For lip corners, we were able to find another way for detection.&lt;/p&gt;
+&lt;p&gt;The first tests served the purpose to evaluate minimum and maximum values for the micro expressions. We told every subject to move certain parts of their face (e.g. raise / lower their eyebrows). Every minimum, maximum and resting deviation of each subject was documented. This way we were able to find the average of every value and use the information to enhance each micro expression individually.&lt;br&gt;
+We also figured out that there were a few expressions the camera wasn't able to detect reliably (e.g. change in the lower lip corners). There were a few, like inner brow raised, we had to abandon, because the deviations were too huge and would have falsified emotion values a lot. For lip corners, we were able to find another way for detection.&lt;/p&gt;
 
 &lt;h1&gt;Phase II - Lip Line &lt;/h1&gt;
 
-&lt;p&gt;After figuring out a way to ensure a good identification of lip corner movement, we needed a few test subjects, who tried those out. Implementing and testing Micro Expressions was finished after that. &lt;/p&gt;
+&lt;p&gt;After figuring out a way to ensure a good identification of lip corner movement (without using the actual landmarks at the lips' corners), we needed a few test subjects to ensure the reliability of our workaround. Implementing and testing Micro Expressions was finished after that. &lt;/p&gt;
 
 &lt;h1&gt; Phase III - Emotions &lt;/h1&gt;
 
-&lt;p&gt;Testing emotion detection was the next big step. We asked our test subjects to act the seven emotions in front of the Realsense according to our Implementation. We told them which parts of their face they had to move to match a certain emotion. We realized, that making the software recognize emotions of one person perfectly on the one hand, would make it unreliant for any other subject.&lt;/p&gt;
+&lt;p&gt;Testing the emotion detection was the next big step. We asked our test subjects to act out seven emotions in front of the Realsense, according to our implementation. We told them which parts of their face they had to move to match a certain emotion. We realized, that making the software recognize emotions of one person perfectly on the one hand, would make it unreliant for any other subject.&lt;/p&gt;
 
 &lt;h1&gt; Phase IV - Analyzer&lt;/h1&gt;
-In the last phase we needed data for our analyzing tool. Like in the last phase we told the test subjects to act one of the seven emotions. But this time they had to hold each facial expressions for about ten seconds. Simultaneously we recorded them on video, as well as with the Analyzer. Like that we collected enough data to run emotion tests without even having a person in front of the camera.
+In the last phase we needed data for our [[analyzing tool|Analyzer]]. Like in the last phase, we told the test subjects to act one of the seven emotions. But this time they had to hold each facial expressions for about ten seconds. Simultaneously, we recorded them on video, as well as with the Analyzer. This way we collected enough data to run emotion tests without even having a person in front of the camera.
 &lt;p&gt;&lt;/p&gt;
-</pre>
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Kleine sprachliche Abänderungen, sonst alles gut
+&lt;/p&gt;</pre>
 </div>
-<div created="20170619105322873" modified="20170626165704952" tags="" title="Test-UI [WIP, Tobi]">
-<pre>It is used to output the individual average value for each module.  The [[Polished UI [WIP, Anton]]] is suppose to be used for representational purposes. &lt;br&gt;
+<div created="20170619105322873" modified="20170627190720791" tags="" title="Test-UI">
+<pre>The Test-UI was our first graphical interface and used to show the individual average value of each module. The [[Polished UI]] on the other hand shows less detail, but works better for presentational purposes. &lt;br&gt;
 
 !!''User manual''&lt;br&gt;
-In order to display the Test-UI, the first step is to switch the mode to „RUN“ in the &quot;program.css&quot; file. 
+In order to display the Test-UI, the first step is to switch the mode to „RUN“ in the &quot;Program.cs&quot; file. 
 
-&lt;code&gt;Application.Run(new CameraView(model, mode == MODE.&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;RUN&lt;/span&gt;));&lt;/code&gt;
+&lt;code&gt;
+private enum MODE
+{
+     ANALYZE, RUN, TEST
+}
 
+private static MODE mode = MODE.RUN;
+...
+Application.Run(new CameraView(model, mode == MODE.&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;RUN&lt;/span&gt;));
+&lt;/code&gt;
 
-To manipulate the stream, you have to enter this code into the module's work method. The output must be a string:
+To manipulate the individual module's output stream, you have to change the &lt;i&gt;output&lt;/i&gt; variable in the modules work-method. The output must be a string.
 
-''Example:''&lt;br&gt;
-&lt;code&gt;if (debug) {
-         output = &quot;JawDrop: &quot; + &quot; (&quot; + (int)MIN + &quot;, &quot; + (int)MAX + &quot;)&quot;;
-    }&lt;/code&gt;
+Example:&lt;br&gt;
+&lt;code&gt;
+if (debug) {
+   output = &quot;JawDrop: &quot; + &quot; (&quot; + (int)MIN + &quot;, &quot; + (int)MAX + &quot;)&quot;;
+}
+&lt;/code&gt;
    &lt;br&gt;
-The debug value must be set true in the constructor. You need the condition, so you can set the values on or off in the UI.
+
+The &lt;i&gt;debug&lt;/i&gt;-value determines whether or not the module's output should be displayed on screen.
 
 The UI can be modified in the CameraView.cs class. 
-The testing interface values are arranged on the left side of the screen and are being displayed as long as a person is in the picture. At the bottom are 3 buttons. 
+The testing interface values are arranged on the left side of the screen and are being displayed as long as a person is in the picture. 
+&lt;br&gt;At the bottom, there are three buttons:
 
-The first button “Calibrate” must be pressed to initialize the null face for each person. It is only displayed as long as a person is in the picture. 
+The first button, &lt;i&gt;Calibrate&lt;/i&gt;, must be pressed to activate the Gauge-Module (about which you can read more in the article about [[Utility-Modules]]) and calculate the null-face for each person. It is only displayed as long as a person is in the picture. 
 &lt;br&gt;
 &lt;img src=&quot;img/test_UI.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
-The second button “NoImg” hides the video stream. 
+The second button “NoImg” hides the video stream so the developer can focus on the movement of the landmarks. 
 
 &lt;img src=&quot;img/no_img.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
@@ -8778,60 +8894,89 @@ Bild&lt;br&gt;
 
 Positive&lt;br&gt;
 - You can see the individual outputs for each module.&lt;br&gt;
-- You can disable the unnecessary variables and streams.&lt;br&gt;&lt;br&gt;
+- You can disable the unnecessary variables and streams.&lt;br&gt;
+- You can heaviliy customize the output.&lt;br&gt;
 
 Negative&lt;br&gt;
--	Too many values can be confusing on the screen at the same time.
+-	Too many values can be confusing when displayed on the screen at the same time.
 
 
-</pre>
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Falsche Codestelle, Sprache etwas aufgehübscht.
+&lt;/p&gt;</pre>
 </div>
-<div created="20170523184731393" modified="20170619122821265" tags="" title="The Final Year Project [WIP, Marlon]">
+<div created="20170523184731393" modified="20170627191906223" tags="" title="The Final Year Project">
 <pre>&lt;iframe src=&quot;https://drive.google.com/file/d/0BxcQaFNyn9uHS3hucThjVjVjVVk/preview&quot; width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;/iframe&gt;
 
 This wiki of the Final Year Project of //Anton Blumenstein, David Rosenbusch, René Knierim, Tobi, Tanja Witke and Marlon Russ//.
 
-It documents the teamwork, goals, technical difficulties and solutions of the creation of a software to determine a humans emotions by evaluating facial micro-expressions, captured with the [[Intel RealSense SR300 Depth-Camera|Intel RealSense SR300 Depth-Camera [WIP, David]]]]].</pre>
+It documents the teamwork, goals, technical difficulties and solutions of the creation of a software to determine a humans emotions by evaluating facial micro-expressions, captured with the [[Intel RealSense SR300 Depth-Camera|Intel RealSense SR300 Depth-Camera]].
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Marlon...
+&lt;/p&gt;</pre>
 </div>
-<div created="20170619105203221" modified="20170626194044060" tags="" title="Utility-Modules [WIP, David]">
-<pre>Since our applications largely consist of independent modules, there are some of those, who do neither detect micro-expressions, not emotions, but provide utility-features:
+<div created="20170619105203221" modified="20170627190756579" tags="" title="Utility-Modules">
+<pre>Since our applications largely consist of independent modules, there are some of those, who do neither detect micro-expressions, nor emotions, but provide utility-features:
 &lt;ul&gt;
 &lt;li&gt;
 &lt;h3&gt;Emotion-Saver&lt;/h3&gt;
-The Emotion-Saver module was solely used for presentation purposes to store the strongest detected emotions as images for the audience to enjoy. It turned out to be quite entertaining for users to their most expressive moments on a big screen after the fact.
+The Emotion-Saver module was solely used for presentation purposes, to store the strongest detected emotions as images for the audience to enjoy. It turned out to be quite entertaining for users to see their most expressive moments on a big screen after the fact.
 &lt;/li&gt;
 &lt;li&gt;
 &lt;h3&gt;Face-Tracker&lt;/h3&gt;
-To display each landmark on the subjects face we wrote an a little module that could be turned on and off during runtime using the UI. It proved to be useful especially to show the landmarks inaccuracies and the little tolerance for head rotations.
+To display each landmark on the subject's, face we wrote a little module that could be turned on and off during runtime using the UI. It proved to be useful, especially to show the landmarks inaccuracies and the little tolerance for head rotations.
+&lt;br&gt;
+[SCREENSHOT OF FACE ON HAIR OR STH]
 &lt;/li&gt;
 &lt;li&gt;
 &lt;h3&gt;Gauge-Module&lt;/h3&gt;
 Since every face is different and their respective expressions can not directly be compared to each other, we had to find a way to normalize these values.&lt;br&gt;
-In order to do so, the Gauge-Module is used to record and calculate the average of a persons neutral expression. That so-called &lt;i&gt;NullFace&lt;/i&gt; is from then on used to measure the change in the mimic.
+In order to do so, the Gauge-Module is used to record and calculate the average of a persons neutral expression. That so-called &lt;i&gt;Null-Face&lt;/i&gt; is from then on used to measure the change in the mimic.
 &lt;/li&gt;
 &lt;li&gt;
 &lt;h3&gt;Face-Recorder&lt;/h3&gt;
-As explained [[here|Analyzer [WIP, David]]], we implemented a way to record the subjects landmark-positions for the duration of 300 frames (10 seconds) in order to analyze them later on, to provide a more efficient test-process.
+As explained [[here|Analyzer]], we implemented a way to record the subject's landmark-positions for the duration of 300 frames (10 seconds) in order to analyze them later on, to provide a more efficient test-process.
 &lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Hier fehlt noch ein Screenshot, wenn das Gesicht total abgefuckt am Haar hängt oder so.
+&lt;/p&gt;</pre>
 </div>
-<div created="20170619104723457" modified="20170626194534902" tags="" title="Value Filtering [WIP, David]">
-<pre>As described in [[Intel RealSense SR300 Depth-Camera [WIP, David]]], the accuracy and reliability of the 3D coordinates of each landmark did not quite reach our expectations. Aside from the everpresent jittering, some landmarks turned out to be less stable and rotationally invariant then others.
+<div created="20170619104723457" modified="20170627185211195" tags="" title="Value Filtering">
+<pre>As described in [[Intel RealSense SR300 Depth-Camera]], the accuracy and reliability of the 3D coordinates of each landmark did not quite reach our expectations. Aside from the everpresent jittering, some landmarks turned out to be a lot less stable and rotationally invariant then others.
 &lt;p&gt;
 Overall, we do not allow the subjects to rotate their heads by a huge amount, since that distorts the coordinates and thus the micro-expressions and detected emotions.&lt;br&gt;
 [SCREENSHOT-FACE ON HAIR OR STH]
 &lt;br&gt;
-Whenever the subjects head rotation exceeds a set mark, we stop taking the new values into consideration and a warning notification pops up until the user returns to their original pose.
+Whenever the subjects' head rotation exceeds a set mark, we stop taking the new values into consideration and a warning notification pops up until the user returns to their original pose. &lt;br&gt;
 [SCREENSHOT-WARNING POPUP]
 &lt;/p&gt;
-Whenever a far rotation is detected, the emotion-modules are on pause until the subjects brings their head back to the original pose.&lt;br&gt;
-We do also disregard micro-expression-values that fall far out of the expected boundaries, which were established during one of our many test-sessions. To prevent the emotion-values to jitter too much, we do not update their values every frame, but every 15th frame, using an average. &lt;br&gt;
+We do also disregard micro-expression-values that fall far out of the expected boundaries, which were established during one of our many [[test-sessions|Test-Subjects]]. To prevent the emotion-values to jitter too much, we do not update their values each frame, but every 15th frame, using an average. &lt;br&gt;
 [PICUTES OF VALUE_GRAPHS FROM PRESENTATION]
 &lt;br&gt;
-With these measures, as well as the [[dynamic expression-limits|Micro-Expression-Modules [WIP, Tanja]]], we were able to reduce the error of our micro-expression-values by a significant amount and were able to continue with their [[interpretation as emotions|Emotion-Modules [WIP, Tanja]]].</pre>
-</div>
-<div created="20170619122841390" modified="20170619122847849" tags="" title="VERLINKUNGEN AM ENDE EINFÜGEN">
-<pre></pre>
+With these measures, as well as the [[dynamic expression-limits|Micro-Expression-Modules]], we could reduce the error of our micro-expression-values by a significant amount and were able to continue with their [[interpretation as emotions|Emotion-Modules]].
+
+&lt;p&gt;
+&lt;p&gt;#######################################################&lt;/p&gt;
+&lt;i&gt;&lt;b&gt;
+Anmerkung des Klugscheißers:
+&lt;/b&gt;&lt;/i&gt;
+Hier muss ich noch ein paar Graphiken einfügen - mache ich, sobald ich in Werni bin und die Zeit habe.
+&lt;/p&gt;</pre>
 </div>
 
 </div>
