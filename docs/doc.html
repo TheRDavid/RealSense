@@ -8438,7 +8438,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Value Filtering]] Utility-Modules [[The Final Year Project]] Test-UI Test-Subjects [[Polished UI]] Modules [[Intel RealSense SR300 Depth-Camera]] Emotion-Modules [[Emotion Research]] Contents [[Application Structure]] Analyzer Action-Unit-Modules" title="$:/StoryList">
+<div list="Analyzer Action-Unit-Modules Emotion-Modules" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8454,7 +8454,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8474,7 +8474,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8602,22 +8602,14 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105113275" modified="20170628142311705" tags="" title="Action-Unit-Modules">
-<pre>The Action-Unit-Modules calculate the difference between two Landmark-Points compared to the calibrated Null-Face. 
-To have percentage values for each Action-Unit saved in the model we set some Min and Max values to indicate the 100% and -100% boundary. 
-Since every face is different and some people are able to shift their brows higher or open their eyes wider than others we decided to allow these boundary values to be dynamic until a certain point.
+<div created="20170619105113275" modified="20170628155553933" tags="" title="Action-Unit-Modules">
+<pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, saved in the model, we set some min and max values to indicate the 100% and -100% boundary. 
+Since every face is different and some people are able to shift their brows higher or open their eyes wider than others, we decided to allow these boundary values to be dynamic to a certain degree.
 
 [pic]
 
-Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning the head so we decided to implement a Value-Filtering to solve that.
-
-&lt;p&gt;
-&lt;p&gt;#######################################################&lt;/p&gt;
-&lt;i&gt;&lt;b&gt;
-Anmerkung des Klugscheißers:
-&lt;/b&gt;&lt;/i&gt;
-Daaas reicht nicht.
-&lt;/p&gt;</pre>
+Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
+</pre>
 </div>
 <div created="20170619105234171" modified="20170628141706396" tags="" title="Analyzer">
 <pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
@@ -8668,16 +8660,8 @@ It was for that reason that we decided to focus our research on what a person wo
 
 </pre>
 </div>
-<div created="20170619105146833" modified="20170628122150370" tags="" title="Emotion-Modules">
-<pre>The Emotion-Modules compute the percentage value of each base emotion found in the model. To do that they use the percentage values given by the needed Action-Unit-Modules and define a proportion between 0 and 110 depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. A bigger number just makes it easier to reach the maximum. Some emotions also can be reduced by other Modules, for example &lt;i&gt;anger&lt;/i&gt; and &lt;i&gt;joy&lt;/i&gt;, which can't be high at the same time. In the end the Action-Unit-Values are multiplied with their proportion and summed together.
-
-&lt;p&gt;
-&lt;p&gt;#######################################################&lt;/p&gt;
-&lt;i&gt;&lt;b&gt;
-Anmerkung des Klugscheißers:
-&lt;/b&gt;&lt;/i&gt;
-Zu knapp, für Außenstehende kaum verständlich, vlt. Code-Beispiel? - hier kommt noch Grafik rein zum verständis 
-&lt;/p&gt;</pre>
+<div created="20170619105146833" modified="20170628154656245" tags="" title="Emotion-Modules">
+<pre>The Emotion-Modules compute the percentage value of each emotion. In order to do that the modules use the results of each action unit module and define a proportion between 0 and 110, depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. Bigger numbers just make it easier to reach the maximum. Some emotions can also be reduced by other AU-Modules, e.g. anger and joy can't be high at the same time. In the end the Action-Unit-Values are multiplied with their proportion and are summed up.</pre>
 </div>
 <div created="20170523185311170" modified="20170628123608597" tags="" title="Intel RealSense SR300 Depth-Camera">
 <pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
