@@ -8440,7 +8440,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="Analyzer [[Intel RealSense SR300 Depth-Camera]]" title="$:/StoryList">
+<div list="Modules" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8456,7 +8456,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8476,7 +8476,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8484,7 +8484,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;null&quot;
         }
     }
 }</pre>
@@ -8727,46 +8727,178 @@ Video-Streaming
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105054118" modified="20170628142222383" tags="" title="Modules">
-<pre>- RSModule (functionality, structure, advantages, disadvantages, methods. variables) 
-- 
+<div created="20170619105054118" modified="20170705072205656" tags="" title="Modules">
+<pre>The program structure was split into different modules separating the functionality into independent and interchangeable parts. Therefore it is possible to easily expand on our idea and implement new modules, to detect other emotions.
+
+All modules inherit from the &quot;RSModul.css&quot; class. 
+
+! ''RSModul''
+
+All default values, which are required for the action units, are specified here:
+
+&lt;code&gt;protected double MIN = 0, MAX = 0, MIN_TOL, MAX_TOL, XTREME_MAX, XTREME_MIN;
+protected static double DEF_MIN, DEF_MAX;
+protected static Model model;
+public String output = &quot;&quot;;
+protected bool debug = false;
+protected static int numFramesBeforeAccept = 20;
+protected int framesGathered = 0;
+public int[] triggers = { };&lt;/code&gt;
+
+This method is used to include keyboard commands.
+
+        &lt;code&gt; public virtual void keyTrigger(int key); &lt;/code&gt;
 
 
+The work method is being executed for each frame. 
 
+       &lt;code&gt; public abstract void Work(Graphics g);&lt;/code&gt;
 
+                   
+! ''Modules''
 
-_______________
+The modules are grouped into [[action units|Action-Units-Modules]], emotions([[Emotion-Modules]]) and [[utilities|Utility-Modules]].
 
-Through our straightforward approach, we can easily add and remove additional modules. All modules inherit from the &quot;RSModul.css&quot; class. The modules are grouped into [[action units|Action-Units-Modules]], emotions([[Emotion-Modules]]) and [[utilities|Utility-Modules]].
- 
 New modules have to be included in the “Program.cs” class with the following tag:
 
  ''Example:''
 &lt;br&gt;
 
-&lt;code&gt;Model.AddModule (new ME_BrowShift ());&lt;/code&gt;
+&lt;code&gt;Model.AddModule (new ME_LipStretched  ());&lt;/code&gt;
 
-!! ''Program Structure''
-The core modules are constructed as follows:
+!! Action-Units-Modules''''
+We have programmed the following action units so far. These are our action units:
 
-!!! ''Constructor''
-All default values for the module are set in the constructor.
+* ME_BrowShift
+* ME_EyelidTight
+* ME_JawDrop
+* ME_LipCorner
+* ME_LipLine
+* ME_LipsTightened
+* ME_LipStretched
+* ME_LowerLipLowered
+* ME_LowerLipRaised
+* ME_NoseWrinkled
+* ME_UpperLipRaised
 
-!!! ''Work Method (inherited)''
-The work method is being executed for each frame. It is ideally used for calculations and manipulation of the output stream.
-
-!!!''Advantages''
-A module makes it easy to simultaneously work   
 
 
+Action Unit structure:
 
-&lt;p&gt;
-&lt;p&gt;#######################################################&lt;/p&gt;
-&lt;i&gt;&lt;b&gt;
-Anmerkung des Klugscheißers:
-&lt;/b&gt;&lt;/i&gt;
-Yep, das reicht nicht... Vererbung, Vorteile, Nachteile, Beispiel (code), ...
-&lt;/p&gt;
+The values that are being inherited from the RS-Module are initialized in the constructor.
+
+&lt;code&gt;
+        public ME_LipStretched()
+        {
+            DEF_MIN = -13;
+            DEF_MAX = 13;
+            reset();
+            MIN_TOL = -2;
+            MAX_TOL = 0.5;
+            debug = true;
+            XTREME_MAX = 60;
+            XTREME_MIN = -45;
+            model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
+        } 
+&lt;/code&gt;
+
+The work method is used for calculations and manipulation of the output stream.&lt;br&gt;
+        &lt;code&gt;public override void Work(Graphics g)
+        {
+
+            lips_corner_distance = (model.Difference(33, 39) - 100);
+
+            if (framesGathered &lt; numFramesBeforeAccept)
+            {
+                lips_corner_distances[framesGathered++] = lips_corner_distance;
+            }
+            else
+            {
+                filterToleranceValues(lips_corner_distances);
+
+                double distance = filteredAvg(lips_corner_distances);
+
+                dynamicMinMax(new double[] { distance });
+
+                double[] diffs = convertValues(new double[] { distance });
+
+                /* Update value in Model */
+                if (model.CurrentPoseDiff &lt; model.PoseMax)
+                    model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
+
+                /* print debug-values */
+                if (debug)
+                {
+                    output = debug_message + &quot;(&quot; + (int)model.AU_Values[typeof(ME_LipStretched).ToString()] + &quot;) (&quot;+ (int)MIN + &quot;, &quot; + (int)MAX + &quot;)&quot;;
+                }
+                framesGathered = 0;
+            }
+        }
+    }
+}
+
+&lt;/code&gt;
+
+!! ''Emotion-Modules''
+
+The emotions are made out of several action units. They are combined for the following emotions:
+
+*Anger (BrowShift, EyelidTight, LipsTightened)
+*Contempt (LipCorner, BrowShift)
+*Disgust (BrowShift, NoseWrinkled, LipLine, LowerLipLowered, UpperLipRaised)
+*Fear (BrowShift, EyelidTight, LipStretched, JawDrop)
+*Joy (EyelidTight, LipCorner, LipLine)
+*Sadness (BrowShift, EyelidTight, LipLine, LipStretched, LowerLipRaised)
+*Surprise (BrowShift, EyelidTight, JawDrop)
+
+    Example:   
+&lt;code&gt;
+       class EM_Surprise : RSModule
+    {
+        
+        public override void Work(Graphics g)
+        {&lt;/code&gt;&lt;br&gt;
+     
+            The following values are the weigthed percentages for the desired emotion.&lt;br&gt;
+            &lt;code&gt;int p_brow = 45;
+            int p_eye = 35;
+            int p_jaw = 40;  
+
+            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + &quot;_left&quot;];
+            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + &quot;_right&quot;];
+            double browValue = temp_left &lt; temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left+temp_right)/ 2;
+            browValue = browValue * p_brow / 100;
+
+           
+            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + &quot;_left&quot;];
+            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + &quot;_right&quot;];
+            double eyeValue = (temp_left + temp_right) / 2;
+            eyeValue = eyeValue * p_eye / 100;
+
+           
+            double jawValue = model.AU_Values[typeof(ME_JawDrop).ToString()];
+            jawValue = jawValue * p_jaw / 100;
+
+            double surprise = browValue + eyeValue + jawValue;
+            surprise = surprise &gt; 0 ? surprise : 0;
+            model.Emotions[Model.Emotion.SURPRISE] = surprise;
+ 
+            if (debug)
+            {
+                output = &quot;Surprise: &quot; + (int)surprise;
+            }
+        }
+    }&lt;/code&gt;
+
+!! ''Utility-Modules''
+
+Refer to [[Utility-Modules]]
+
+
+
+  !!!''Advantages''
+A module makes it easy to simultaneously work 
 </pre>
 </div>
 <div created="20170619105344038" modified="20170628134025035" tags="" title="Polished UI">
