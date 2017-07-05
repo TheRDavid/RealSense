@@ -8437,7 +8437,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Polished UI]] [[Emotion Research]] Action-Unit-Modules" title="$:/StoryList">
+<div list="Test-UI [[Polished UI]] Modules Action-Unit-Modules Utility-Modules Analyzer [[Intel RealSense SR300 Depth-Camera]] Emotion-Modules [[Emotion Research]] Test-Subjects Contents" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8727,7 +8727,7 @@ Video-Streaming
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105054118" modified="20170705112851354" tags="" title="Modules">
+<div created="20170619105054118" modified="20170705151917138" tags="" title="Modules">
 <pre>The program structure was split into different modules separating the functionality into independent and interchangeable parts. Therefore it is possible to easily expand on our idea and implement new modules.
 
 All modules inherit from the &quot;RSModul.cs&quot; class. 
@@ -8766,7 +8766,7 @@ The work method is being executed each frame.
                    
 ! ''Module - Types''
 
-The modules are grouped into [[action units|Action-Units-Modules]], emotions([[Emotion-Modules]]) and [[utilities|Utility-Modules]].
+The modules are grouped into [[action units|Action-Unit-Modules]], emotions([[Emotion-Modules]]) and [[utilities|Utility-Modules]].
 
 New modules have to be included in the “Program.cs” class with the following command:
 
@@ -8891,39 +8891,33 @@ The emotions are made out of several action units, which are combined for the fo
 
 Refer to [[Utility-Modules]]</pre>
 </div>
-<div created="20170619105344038" modified="20170705150745776" tags="" title="Polished UI">
+<div created="20170619105344038" modified="20170705151627005" tags="" title="Polished UI">
 <pre>For our prototype we needed a user interface which is easy to understand, since our users were expected to be guests on an open door day.  We decided to use circles as a progress-bar early on. The only thing that took a little longer was to figure out the position of the seven elements (one progress-bar for each emotion) around our camera view.&lt;br&gt;
 
 At first we position the circles around the user's head, which turned out to be too distracting.
 &lt;img src=&quot;img/2.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
-Instead we decided on a Robo Cop inspired design. &lt;i&gt;RoboCop&lt;/i&gt;
-
 &lt;br&gt;
+
+Instead we decided on a Robo Cop inspired design. &lt;i&gt;Robo-Cop&lt;/i&gt;
 &lt;img src=&quot;img/robocop.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
 next to
-
-&lt;br&gt;
 &lt;img src=&quot;img/ANton_ohnepanel.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
 All Elements were arranged on left hand side of the screen. However, the values were still quite hard to read because of the distracting background. To solve this problem we put a white, transparent panel in the back. This way the user could still see movement and vague shapes behind the UI, but still focus on the Interface.
-
-&lt;br&gt;
 &lt;img src=&quot;img/Anton_UI.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
 As a next step we created another progress bar for the calibration, which is fixed to the subject's head's position. The purpose is to let the user know how long to hold still and when the calibration is finished.
-
-&lt;br&gt;
 &lt;img src=&quot;img/Anton_Calibrate.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
 &lt;p /&gt;
 During our own tests we realized that we also needed some sort of feedback for the user as to when they were not in their original pose anymore. For that reason we created a little notification-box which tells the user to get their head into the right position again, so our program can continue reading their emotions.
-
-&lt;img src=&quot;img/Anton_readjust.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;  
+&lt;img src=&quot;img/Anton_readjust.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt; 
+&lt;br&gt; 
 
 &lt;p&gt;We decided to use red to fill the outer circle according to the current progress. This way we achieved a high contrast to the otherwise distracting background. We use //Futura Medium// because we wanted to use a font as simple as possible to make it look elegant but not distracting.Overall we desired to create a simplistic, clean and slightly futuristic UI.
 &lt;/p&gt;
