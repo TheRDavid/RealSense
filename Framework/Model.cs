@@ -17,15 +17,15 @@ namespace RealSense
     {
         public enum AXIS { X, Y, Z };
         public enum Emotion { ANGER, CONTEMPT, DISGUST, FEAR, JOY, SADNESS, SURPRISE }
+        public enum MODE { ANALYZE, RUN, TEST }
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
-        // Reference to globally used SenseManager
         private PXCMSenseManager senseManager;
         private PXCMFaceModule face;
         private PXCMFaceData faceData;
         private PXCMFaceConfiguration faceConfig;
-        public PXCMFaceData.Face faceAktuell;
+        private PXCMFaceData.Face faceCurrent;
         private PXCMFaceData.LandmarksData lp;
         private PXCMFaceData.LandmarkPoint[] nullFace = null; //thx David :*
         private PXCMFaceData.LandmarkPoint[] currentFace;
@@ -33,17 +33,12 @@ namespace RealSense
         public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();
         private Dictionary<String, double> au_Values = new Dictionary<String, double>();
         private Dictionary<Emotion, double> emotions = new Dictionary<Emotion, double>();
-        private Dictionary<Emotion, Bitmap> emotionBitmaps = new Dictionary<Emotion, Bitmap>();
-        private Dictionary<Emotion, PictureBox> emotionPictureBoxes;
-        private Dictionary<Emotion, Bitmap> exampleBitmaps = new Dictionary<Emotion, Bitmap>();
-        private String examplePath = "C:/Users/prouser/Pictures/reneEmotions";
         private Dictionary<Emotion, double> emotionMax = new Dictionary<Emotion, double>();
         private List<RSModule> modules;
         private int width;
         private int height;
         private int framerate;
         private double currentPoseDiff = 0, yawDiff = 0, rollDiff = 0, pitchDiff = 0;
-        private bool test = false;
 
         public double calibrationProgress = 0;
 
@@ -61,8 +56,7 @@ namespace RealSense
         /**
          * Constructor of the model 
          * It does all the important stuff to use our camera.  Its so FANCY ! 
-         * Like enabling all important tracker(Hand, Face), the stream and builds up the configuration.
-         * blib blub
+         * 
          */
         public Model(bool s)
         {
@@ -74,16 +68,6 @@ namespace RealSense
             emotions[Emotion.JOY] = 0;
             emotions[Emotion.SADNESS] = 0;
             emotions[Emotion.SURPRISE] = 0;
-
-            exampleBitmaps[Emotion.ANGER] = new Bitmap(examplePath+"/anger.png");
-            exampleBitmaps[Emotion.CONTEMPT] = new Bitmap(examplePath + "/contempt.png");
-            exampleBitmaps[Emotion.DISGUST] = new Bitmap(examplePath + "/disgust.png");
-            exampleBitmaps[Emotion.FEAR] = new Bitmap(examplePath + "/fear.png");
-            exampleBitmaps[Emotion.JOY] = new Bitmap(examplePath + "/joy.png");
-            exampleBitmaps[Emotion.SADNESS] = new Bitmap(examplePath + "/sadness.png");
-            exampleBitmaps[Emotion.SURPRISE] = new Bitmap(examplePath + "/surprise.png");
-
-            emotionBitmaps = exampleBitmaps;
 
             if (stream)
             {
@@ -110,13 +94,12 @@ namespace RealSense
         }
 
         /**
-         * Guess what happens here...
-         */
-        public void CalculateEmotions()
-        {
-            //... some hogwarts stuff thats what dumbledore said (slytherin ftw) 
-        }
-
+         * Returns the value of the given emotion.
+         * 
+         * @param emotion given emotion
+         * @returns the emotion value or -1 if the key doesn't exist
+         * 
+         * */
         public double EmotionValue(Emotion emotion)
         {
             if (emotions.ContainsKey(emotion))
@@ -134,116 +117,6 @@ namespace RealSense
         }
 
         /**
-         * Returns the total difference of axis-specific distance between two points
-         * @param i01,i02 which are the current points to calculate the difference
-         * @param axis which is the specific axis to work with
-         * @param absolute defines wether or not the absolute difference should be returned or not
-         */
-        public double DifferenceByAxis(int i01, int i02, AXIS axis, bool absolute)
-        {
-            return NullFaceBetweenByAxis(i01, i02, axis, absolute) - BetweenByAxis(i01, i02, axis, absolute);
-        }
-
-        /**
-         * Calculates the axis-specific difference of the points from the ABSOLUTENullFace
-         * @param i01,i02  which are the current points to calculate the difference
-         * @param axis which is the specific axis to work with
-         * @param absolute defines wether or not the absolute difference should be returned or not
-         */
-        public double NullFaceBetweenByAxis(int i01, int i02, AXIS axis, bool absolute)
-        {
-            double result = 0;
-            switch (axis)
-            {
-                case AXIS.X: result = nullFace[i02].world.x - nullFace[i01].world.x; break;
-                case AXIS.Y: result = nullFace[i02].world.y - nullFace[i01].world.y; break;
-                case AXIS.Z: result = nullFace[i02].world.z - nullFace[i01].world.z; break;
-            }
-            return absolute ? Math.Abs(result) : result;
-        }
-
-        /**
-         * Calculates the axis-specific difference of the points from the ABSOLUTENullFace
-         * @param i01,i02  which are the current points to calculate the difference
-         * @param axis which is the specific axis to work with
-         * @param absolute defines wether or not the absolute difference should be returned or not
-         */
-        public double BetweenByAxis(int i01, int i02, AXIS axis, bool absolute)
-        {
-            double result = 0;
-            switch (axis)
-            {
-                case AXIS.X: result = currentFace[i02].world.x - currentFace[i01].world.x; break;
-                case AXIS.Y: result = currentFace[i02].world.y - currentFace[i01].world.y; break;
-                case AXIS.Z: result = currentFace[i02].world.z - currentFace[i01].world.z; break;
-            }
-            return absolute ? Math.Abs(result) : result;
-        }
-
-        /**
-         * calculates the percentage of the difference of distance between two points
-         * @param i01,i02  which are the current points to calculate the difference
-         * @returns double between 0 and 100
-         */
-        public double Difference(int i01, int i02)
-        {
-            return 100 / NullFaceBetween(i01, i02) * Between(i01, i02); // calculates the percent (rule of three)
-        }
-
-        public double DifferenceNullCurrent(int i01, AXIS axis)
-        {
-            double result = 0;
-            switch (axis)
-            {
-                case AXIS.X: result = (nullFace[NOSE_FIX].world.x - nullFace[i01].world.x) - (currentFace[NOSE_FIX].world.x - currentFace[i01].world.x); break;
-                case AXIS.Y: result = (nullFace[NOSE_FIX].world.y - nullFace[i01].world.y) - (currentFace[NOSE_FIX].world.y - currentFace[i01].world.y); break;
-                case AXIS.Z: result = (nullFace[NOSE_FIX].world.z - nullFace[i01].world.z) - (currentFace[NOSE_FIX].world.z - currentFace[i01].world.z); break;
-            }
-            return result;
-        }
-
-        /**
-         * calculates the differenc of the points from the ABSOLUTENullFace
-         * @param i01,i02  which are the current points to calculate the difference 
-         */
-        public double NullFaceBetween(int i01, int i02)
-        {
-            if (nullFace[i01].world.x != 0) // -------->wofür die abfrage ?  wäre es nicht sinnvoller auf null zu prüfen ?  Tanja said the nullface is never null, so that was the reason why she used 0 instead of null
-            {
-                double a = Math.Abs(nullFace[i02].world.y - nullFace[i01].world.y);
-                double b = Math.Abs(nullFace[i02].world.x - nullFace[i01].world.x);
-                double c = Math.Abs(nullFace[i02].world.z - nullFace[i01].world.z);
-                return Math.Sqrt(a * a + b * b + c * c);  //vector analysis of the length (Schuett ahu!) 
-            }
-            throw new NullReferenceException();
-        }
-        /**
-         * calculates the difference between the two points of the current frame
-         * @param i01,i02  which are the current points to calculate the difference 
-         */
-        public double Between(int i01, int i02)
-        {
-            PXCMFaceData.LandmarkPoint point01 = null;
-            PXCMFaceData.LandmarkPoint point02 = null;
-
-            if (lp != null || !stream)
-            {
-                point01 = currentFace[i01];
-                point02 = currentFace[i02];
-
-                //lp.QueryPoint(i01, out point01); //AccessViolationException ...
-                //lp.QueryPoint(i02, out point02);
-
-                double a = Math.Abs(point02.world.y - point01.world.y);
-                double b = Math.Abs(point02.world.x - point01.world.x);
-                double c = Math.Abs(point02.world.z - point01.world.z);
-                return Math.Sqrt(a * a + b * b + c * c);
-            }
-            throw new NullReferenceException();
-
-        }
-
-        /**
          *  getter of the modules
          */
         public List<RSModule> Modules
@@ -251,13 +124,17 @@ namespace RealSense
             get { return modules; }
         }
 
+        /**
+         *  getter and setter of the senseManager
+         */
         public PXCMSenseManager SenseManager
         {
             get { return senseManager; }
             set { senseManager = value; }
         }
+
         /**
-         *  getter and setter of the width
+         *  getter of the width
          */
         public int Width
         {
@@ -265,7 +142,7 @@ namespace RealSense
         }
 
         /**
-         *  getter and setter of the height
+         *  getter of the height
          */
         public int Height
         {
@@ -274,7 +151,7 @@ namespace RealSense
 
 
         /**
-         *  getter and setter of the face
+         *  getter of the face
          */
         public PXCMFaceModule Face
         {
@@ -303,7 +180,18 @@ namespace RealSense
             }
         }
 
-        //
+        /**
+         *  getter of the stream
+         *  
+         */
+        public bool Stream
+        {
+            get { return stream; }
+        }
+
+        /**
+         *  getter and setter of the currentFace
+         */
         public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
@@ -334,11 +222,12 @@ namespace RealSense
          *  
          *  FaceAktuell should be changed to FaceCurrent, where is it initialised 
          */
-        public PXCMFaceData.Face FaceAktuell
+        public PXCMFaceData.Face FaceCurrent
         {
-            get { return faceAktuell; }
-            set { faceAktuell = value; }
+            get { return faceCurrent; }
+            set { faceCurrent = value; }
         }
+
 
 
         /**
@@ -350,30 +239,45 @@ namespace RealSense
             set { view = value; }
         }
 
+        /**
+         *  getter and setter of the currentPoseDiff
+         */
         public double CurrentPoseDiff
         {
             get { return currentPoseDiff; }
             set { currentPoseDiff = value; }
         }
 
+        /**
+         *  getter and setter of the poseMax
+         */
         public int PoseMax
         {
             get { return maxPose; }
             set { maxPose = value; }
         }
 
+        /**
+         *  getter and setter of the currentRollDiff
+         */
         public double CurrentRollDiff
         {
             get { return rollDiff; }
             set { rollDiff = value; }
         }
 
+        /**
+         *  getter and setter of the currentPitchDiff
+         */
         public double CurrentPitchDiff
         {
             get { return pitchDiff; }
             set { pitchDiff = value; }
         }
 
+        /**
+         *  getter and setter of the currentYawDiff
+         */
         public double CurrentYawDiff
         {
             get { return yawDiff; }
@@ -389,89 +293,82 @@ namespace RealSense
             set { emotions = value; }
         }
 
+        /**
+         *  getter and setter of the defaultFont
+         */
         public Font DefaultFont
         {
             get { return defaultFont; }
             set { defaultFont = value; }
         }
 
+        /**
+         *  getter and setter of the defaultStringBrush
+         */
         public SolidBrush DefaultStringBrush
         {
             get { return defaultStringBrush; }
             set { defaultStringBrush = value; }
         }
 
+        /**
+         *  getter and setter of the nullPose
+         */
         public PXCMFaceData.PoseEulerAngles NullPose
         {
             get { return nullPose; }
             set { nullPose = value; }
         }
 
+        /**
+         *  getter and setter of the currentPose
+         */
         public PXCMFaceData.PoseEulerAngles CurrentPose
         {
             get { return currentPose; }
             set { currentPose = value; }
         }
 
+        /**
+         *  getter of the defaultBGBrush
+         */
         public SolidBrush DefaultBGBrush
         {
             get { return bgStringBrush; }
         }
 
+        /**
+         *  getter of the opaqueStringBrush
+         */
         public SolidBrush OpaqueBGBrush
         {
             get { return opaqueStringBrush; }
         }
 
+        /**
+         *  getter and setter of the au_Values
+         */
         public Dictionary<String, double> AU_Values
         {
             get { return au_Values; }
             set { au_Values = value; }
         }
 
-        public bool Test
-        {
-            get { return test; }
-            set { test = value; }
-        }
-
+        /**
+         *  getter of the ColorBitmap
+         */
         public Bitmap ColorBitmap
         {
             get { return view.ColorBitmap; }
         }
 
-        public Dictionary<Emotion, Bitmap> EmotionBitmaps
-        {
-            get { return emotionBitmaps; }
-            set { emotionBitmaps = value; }
-        }
-
+        /**
+         *  getter and setter of the emotionMax
+         */
         public Dictionary<Emotion, double> EmotionMax
         {
             get { return emotionMax; }
-            set { emotionMax = value; }       
+            set { emotionMax = value; }
         }
-
-        public Dictionary<Emotion, Bitmap> ExcampleBitmaps
-        {
-            get { return exampleBitmaps; }
-            set { exampleBitmaps = value; }
-        }
-
-        public Dictionary<Emotion, PictureBox> EmotionPictureBoxes
-        {
-            get { return emotionPictureBoxes; }
-            set { emotionPictureBoxes = value; }
-        }
-        
-
-
-        // should be in here, but so far is not defined 
-        /* private void ResetEmotions()
-       {
-
-       }*/
-
-
     }
 }

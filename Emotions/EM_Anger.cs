@@ -7,11 +7,9 @@ using System.Text;
 
 namespace RealSense
 {
-    /**
-     *Measures if complete brow is raised or lowered (each eye)  - Action Unit Number 4 
-     *@author Anton 
-     *@date 20.03.2017
-     *@HogwartsHouse Slytherin  
+    /*
+     *Measures the percentage value of anger. 
+     *@author Tanja 
      */
     class EM_Anger : RSModule
     {
@@ -24,47 +22,18 @@ namespace RealSense
             debug = true;
         }
 
-        /*
-         *  1 = inner brow raised -> BrowShift
-            2 = outer brow raised -> BrowShift
-            4 = brow lowered -> BrowShift
-            5 = upper lid raised -> EyelidTight
-            6 = cheeck raised -> CheeckRaised (not working)
-            7 = lid tightened -> EyelidTight
-            9 = nose wrinkled -> NoseWrinkled
-            12 = lip corner pulled (up) -> LipCorner
-            14 = grübchen -> none
-            15 = lip corner lowered -> LipCorner
-            16 = lower lip lowered ->LowerLipLowered
-            20 = lip stretched -> LipStretched
-            23 = lip tightened -> LipsTightened
-            26 = jaw drop -> JawDrap
+        /**
+         * Computes the percentage Value of Anger in the current Frame.
+         * @param Graphics g for the view
          * */
-
         public override void Work(Graphics g)
         {
-
-            //Anger 4+5+7+23 --> BrowShift, EyelidTight, LipsTightened
-
-            /**
-             * Anleitung: 
-             * 1. Welche ME werden benoetigt?
-             * 2. Prozenteinfluss der MEs festlegen
-             * 3. fuer jede ME folgende Berechnung
-             *  3.1 Werte aus dem Model holen
-             *  3.2 gegebenenfalls benoetigten Wert berechnen
-             *  3.3 bei negativen Werten mit -1 multiplizieren (aufpassen mit den Gegenwerten... diese schliessen die ME allerdings meistens aus und sind daher ok/berechtigt?)
-             *  3.4 mit Prozentanteil kombinieren (* Anteil / 100)
-             * 4. Werte addieren und ins Model schreiben
-             * 
-             * */
-
-            //percentage Anger
+            //proportions Anger
             int p_brow = 65;
             int p_lid = 20;
             int p_lip = 25;
 
-           // makeSmall();
+            //reduce();
 
             //brow Value
             double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
@@ -75,14 +44,14 @@ namespace RealSense
             //lid Value
             temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
-            double lidValue = temp_left > temp_right ? temp_left : temp_right;
-            if (model.Test) lidValue = (temp_left + temp_right) / 2;
+            double lidValue = (temp_left + temp_right) / 2;
             lidValue = lidValue * -1 * p_lid / percent;
 
             //lip Value
             double lipValue = model.AU_Values[typeof(ME_LipsTightened).ToString()];
             lipValue = lipValue * -1 * p_lip / percent;
 
+            //sum all and save
             double anger = (browValue > 0 ? browValue : 0) + lidValue + lipValue;
             anger = anger > 0 ? anger : 0;
             model.Emotions[Model.Emotion.ANGER] = anger;
@@ -95,14 +64,21 @@ namespace RealSense
 
         }
 
-        private void makeSmall()
+        /**
+         * Reduces the value boundaries of the emotion value. 
+         * A reduced value doesn't reach the 100 anymore. This is happening if an AU_value is active that doesn't match with this emotion.
+         *  
+         * */
+        private void reduce()
         {
             //Anger
+
             int lowerLipRaised = (int)model.AU_Values[typeof(ME_LowerLipRaised).ToString()];
             if (lowerLipRaised < -80)
             {
                 percent = (int)(100 - lowerLipRaised * 0.5);
             }
+
         }
     }
 }

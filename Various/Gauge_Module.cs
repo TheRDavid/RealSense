@@ -58,7 +58,7 @@ namespace RealSense
                 {
                     calibrate = index != numFaces;
                     if (frameUpdate)
-                        if (model.FaceAktuell != null)
+                        if (model.FaceCurrent != null)
                         {
                             frameUpdate = false;
                             // get the landmark data
@@ -66,8 +66,8 @@ namespace RealSense
                             cAngles[index] = model.CurrentPose;
                             if (model.Lp == null) return;
                             cFaces[index++] = model.CurrentFace;
-                         //   Console.WriteLine(numFaces + " / " + index + " * 100");
-                            model.calibrationProgress = (double)index / (double)numFaces  * 100.0;
+                            //   Console.WriteLine(numFaces + " / " + index + " * 100");
+                            model.calibrationProgress = (double)index / (double)numFaces * 100.0;
                         }
                     if (!calibrate)
                     {
@@ -90,7 +90,7 @@ namespace RealSense
                             finalFace[i].world.z /= numFaces - 1;
                         }
 
-                        foreach(PXCMFaceData.PoseEulerAngles a in cAngles)
+                        foreach (PXCMFaceData.PoseEulerAngles a in cAngles)
                         {
                             finalAngle.pitch += a.pitch;
                             finalAngle.roll += a.roll;
@@ -111,7 +111,7 @@ namespace RealSense
                         for (int i = 0; i < finalFace.Length; i++)
                             finalFace[i] = new PXCMFaceData.LandmarkPoint();
                         cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
-                     //   Console.WriteLine("DOne Calibrating");
+                        //   Console.WriteLine("DOne Calibrating");
 
                     }
                 }

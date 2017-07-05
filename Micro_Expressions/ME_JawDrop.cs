@@ -8,24 +8,29 @@ namespace RealSense
 {
 
     /*
-    *Measures if jaw is dropped
-    *@author René 
-    *@date 21.03.2017
-    *@HogwartsHouse Slytherin
+     * Measures if jaw is dropped
+     * @author René 
+     * @date 21.03.2017
+     * @HogwartsHouse Slytherin
      * 
      * Interpretation:      -100 = Doesn't usually happen
      *                         0 = Normal
      *                       100 = Dropped like it's hot
     */
     class ME_JawDrop : RSModule
-    // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
-
     {
+        // Variables for logic
+        private double[] leftDistances = new double[numFramesBeforeAccept];
+        private double[] rightDistances = new double[numFramesBeforeAccept];
 
+        //chin vars
         double chin_dist;
         private double[] chinDistances = new double[numFramesBeforeAccept];
+
+        // variables for debugging
         private string debug_message = "JawDrop: ";
 
+        // Default values
         public ME_JawDrop()
         {
             DEF_MIN = 0;
@@ -38,37 +43,34 @@ namespace RealSense
             XTREME_MIN = 0;
             model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
         }
+
+        /** 
+         * @Override 
+         * Calculates difference of lip-distance.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-            /* calculations */
+            //Get Values from AU's
+            chin_dist = (Utilities.Difference(61, 26)) - 100;
 
-            chin_dist = (model.Difference(61, 26)) - 100;
-
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 chinDistances[framesGathered++] = chin_dist;
             }
             else
             {
-                filterToleranceValues(chinDistances);
-
-                double distance = filteredAvg(chinDistances);
-
-                dynamicMinMax(new double[] { distance });
-
-                double[] diffs = convertValues(new double[] { distance });
-
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
+                    model.AU_Values[typeof(ME_JawDrop).ToString()] = Utilities.ConvertValue(chinDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_JawDrop).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_JawDrop).ToString()] + ") (" + (int)MIN + ", " + ")";
                 }
                 framesGathered = 0;
             }

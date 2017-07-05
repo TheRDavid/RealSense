@@ -17,9 +17,7 @@ namespace RealSense
      */
     class ME_NoseWrinkled : RSModule
     {
-
         // variables for logic
-
         private double left_diff, right_diff;
         private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
@@ -29,7 +27,7 @@ namespace RealSense
         public ME_NoseWrinkled()
         {
             DEF_MIN = -1;
-            DEF_MAX = 8;
+            DEF_MAX = 8;        
             reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
@@ -46,34 +44,25 @@ namespace RealSense
          * Result of calculation constantly positive -> wrinkled (tiny values)
          * Result of calculation constantly negative -> ... go see a doctor m8
          * See Images/AU_NoseWrinkledModule.png
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
-            left_diff = model.Difference(30, Model.NOSE_FIX) - 100;
-            right_diff = model.Difference(32, Model.NOSE_FIX) - 100;
-            //middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
-
+            //Get Values from AU's
+            left_diff = Utilities.Difference(30, Model.NOSE_FIX) - 100;
+            right_diff = Utilities.Difference(32, Model.NOSE_FIX) - 100;
             distance = (left_diff + right_diff) / 2;
 
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 distances[framesGathered++] = distance;
             }
             else
             {
-                filterToleranceValues(distances);
-
-                double distance = filteredAvg(distances);
-
-                dynamicMinMax(new double[] { distance });
-
-                double[] diffs = convertValues(new double[] { distance });
-
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
+                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)

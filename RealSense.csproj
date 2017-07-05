@@ -106,6 +106,7 @@
       <DependentUpon>EmotionView.cs</DependentUpon>
     </Compile>
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
+    <Compile Include="Framework\Utilities.cs" />
     <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
     <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
     <Compile Include="Various\EmotionSaver.cs" />

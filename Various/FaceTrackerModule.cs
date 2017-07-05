@@ -24,40 +24,40 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            if (model.FaceAktuell != null)
+            if (model.FaceCurrent != null)
             {
                 // get the landmark data
 
                 if (model.Lp == null) return;
                 PXCMFaceData.LandmarkPoint[] points = model.CurrentFace;
 
-                if(idx == null)
+                if (idx == null)
 
-                //Draw points
-                for (Int32 j = 0; j < points.Length; j++)
-                {
-                    Point p = new Point();
-                    p.X = (int)points[j].image.x;
-                    p.Y = (int)points[j].image.y;
-                    
-                    g.DrawString("" + j, font, stringBrush, new PointF(p.X, p.Y));
+                    //Draw points
+                    for (Int32 j = 0; j < points.Length; j++)
+                    {
+                        Point p = new Point();
+                        p.X = (int)points[j].image.x;
+                        p.Y = (int)points[j].image.y;
+
+                        g.DrawString("" + j, font, stringBrush, new PointF(p.X, p.Y));
 
 
-                    g.DrawEllipse(pen, points[j].image.x, points[j].image.y, 4, 4);
-                }
+                        g.DrawEllipse(pen, points[j].image.x, points[j].image.y, 4, 4);
+                    }
 
                 else
-                foreach(int i in idx)
-                {
-                    Point p = new Point();
-                    p.X = (int)points[i].image.x;
-                    p.Y = (int)points[i].image.y;
+                    foreach (int i in idx)
+                    {
+                        Point p = new Point();
+                        p.X = (int)points[i].image.x;
+                        p.Y = (int)points[i].image.y;
 
-                    g.DrawString("" + i, font, stringBrush, new PointF(p.X, p.Y));
+                        g.DrawString("" + i, font, stringBrush, new PointF(p.X, p.Y));
 
 
-                    g.DrawEllipse(pen, points[i].image.x, points[i].image.y, 4, 4);
-                }
+                        g.DrawEllipse(pen, points[i].image.x, points[i].image.y, 4, 4);
+                    }
 
             }
         }

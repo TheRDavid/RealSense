@@ -45,10 +45,10 @@ namespace RealSense
         {
             if (!guInit)
                 guiInit();
-            if (model.FaceAktuell != null)
+            if (model.FaceCurrent != null)
             {
 
-                PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
+                PXCMFaceData.LandmarksData lp = model.FaceCurrent.QueryLandmarks();
                 if (lp == null)
                 {
                     //Console.WriteLine("LandmarksData null, goddamnit!!");
@@ -70,7 +70,8 @@ namespace RealSense
 
                         g.DrawEllipse(pen, lPoint.image.x - 2, lPoint.image.y - 2, 4, 4);
                     }
-                }else
+                }
+                else
                 {
                     lp.QueryPoint(lp.QueryPointIndex((PXCMFaceData.LandmarkType)crossThreadValue), out lPoint);
 
@@ -81,7 +82,7 @@ namespace RealSense
 
                     g.DrawEllipse(pen, lPoint.image.x - 2, lPoint.image.y - 2, 4, 4);
                 }
-                
+
             }
             g.DrawString(((PXCMFaceData.LandmarkType)crossThreadValue).ToString(), font, stringBrush, stringRect);
         }

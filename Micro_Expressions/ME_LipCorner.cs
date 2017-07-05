@@ -8,7 +8,8 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *@author Marlon
+     * Measures the height of the Lip-Corners.
+     * @author Marlon
      * 
      * Interpretation:      -100 = Corners down (not reliable, use LipLine) set to 0!
      *                       100 = Big stupid smile
@@ -17,13 +18,10 @@ namespace RealSense
     class ME_LipCorner : RSModule
     {
         // Variables for logic
-
         private double cornerLeft = 0, cornerRight = 0;
         private double[] cornersLeft = new double[numFramesBeforeAccept];
         private double[] cornersRight = new double[numFramesBeforeAccept];
         private string debug_message = "LipCorner: ";
-
-        // Variables for debugging
 
         // Default values
         public ME_LipCorner()
@@ -40,17 +38,21 @@ namespace RealSense
             model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = 0;
         }
 
+        /** 
+         * @Override 
+         * Calculates the height of the Lipcorners.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-            /* Calculations */
-
-            // calculates difference between nose and LipCorner 
-            cornerLeft = -((model.Difference(33, 36)) - 100);  //left LipCorner
-            cornerRight = -((model.Difference(39, 36)) - 100);  //right LipCorner
+            //Get Values from AU's
+            cornerLeft = -((Utilities.Difference(33, 36)) - 100);  //left LipCorner
+            cornerRight = -((Utilities.Difference(39, 36)) - 100);  //right LipCorner
 
 
-            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+            double hDiff = Utilities.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + Utilities.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 cornersLeft[framesGathered] = cornerLeft;
@@ -58,21 +60,11 @@ namespace RealSense
             }
             else
             {
-                filterToleranceValues(cornersRight);
-                filterToleranceValues(cornersLeft);
-
-                double leftDistance = filteredAvg(cornersLeft);
-                double rightDistance = filteredAvg(cornersRight);
-
-                dynamicMinMax(new double[] { leftDistance, rightDistance });
-
-                double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
-
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
+                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = Utilities.ConvertValue(cornersLeft, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN) * -1;
+                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = Utilities.ConvertValue(cornersRight, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN) * -1;
                 }
                 /* print debug-values */
                 if (debug)

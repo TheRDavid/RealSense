@@ -20,18 +20,13 @@ namespace RealSense
     {
 
         // variables for logic
-
         private double lips_corner_distance;
         double[] lips_corner_distances = new double[numFramesBeforeAccept];
         private string debug_message = "LipStretched: ";
 
-        /**
-         * Sets default-valuesC:\Users\Tanja\Source\Repos\RealSense\Modules\AU_LipStretched.cs
-         */
+        // Default values
         public ME_LipStretched()
         {
-
-            //correct values
             DEF_MIN = -13;
             DEF_MAX = 13;
             reset();
@@ -46,35 +41,28 @@ namespace RealSense
         /**
          * @Override 
          * Calculates the difference between the two lip corners
-         */
+         * @param Graphics g for the view
+         **/
         public override void Work(Graphics g)
         {
-            /* calculations */
+            //Get Values from AU's
+            lips_corner_distance = (Utilities.Difference(33, 39) - 100);
 
-            lips_corner_distance = (model.Difference(33, 39) - 100);
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 lips_corner_distances[framesGathered++] = lips_corner_distance;
             }
             else
             {
-                filterToleranceValues(lips_corner_distances);
-
-                double distance = filteredAvg(lips_corner_distances);
-
-                dynamicMinMax(new double[] { distance });
-
-                double[] diffs = convertValues(new double[] { distance });
-
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
+                    model.AU_Values[typeof(ME_LipStretched).ToString()] = Utilities.ConvertValue(lips_corner_distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipStretched).ToString()] + ") ("+ (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipStretched).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

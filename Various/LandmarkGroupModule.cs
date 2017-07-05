@@ -32,16 +32,16 @@ namespace RealSense
 
         public override void Work(Graphics g)
         {
-            if (model.FaceAktuell != null)
+            if (model.FaceCurrent != null)
             {
                 PXCMFaceData.LandmarkPoint[] points;
 
-                for(int i = 0; i < landmarkGroupTypes.Length; i++)
+                for (int i = 0; i < landmarkGroupTypes.Length; i++)
                 {
-                    PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
-                    if(lp == null)
+                    PXCMFaceData.LandmarksData lp = model.FaceCurrent.QueryLandmarks();
+                    if (lp == null)
                     {
-                    //    Console.WriteLine("LandmarksData null, goddamnit!!");
+                        //    Console.WriteLine("LandmarksData null, goddamnit!!");
                         g.DrawString("LandmarksData null, goddamnit!!", errorFont, errorBrush, errorRect);
                         break;
                     }
@@ -50,9 +50,9 @@ namespace RealSense
                     for (Int32 j = 0; j < points.Length; j++)
                     {
                         Point p = new Point();
-                        
-                        p.X = (int) points[j].image.x;
-                        p.Y = (int) points[j].image.y;
+
+                        p.X = (int)points[j].image.x;
+                        p.Y = (int)points[j].image.y;
 
                         g.DrawEllipse(pens[i], points[j].image.x, points[j].image.y, 3, 3);
                     }

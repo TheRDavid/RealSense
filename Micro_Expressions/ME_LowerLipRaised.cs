@@ -6,20 +6,21 @@ using System.Text;
 
 namespace RealSense
 {
+    /**
+     * Measures how much the lower lip is raised.
+     * @author: not known
+     * Interpretation:         0 = Relaxed
+     *                      -100 = Wrinkled
+     */
     class ME_LowerLipRaised : RSModule
     {
-       
-
         // variables for logic
-
         private double[] upperLip_Distance = new double[2];
         private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
         private string debug_message = "LowerLipRaised: ";
 
-        /**
-         * Sets default-values
-         */
+        // Default values
         public ME_LowerLipRaised()
         {
             DEF_MIN = -1;
@@ -35,18 +36,17 @@ namespace RealSense
 
         /**
          *@Override 
-         * Calculates the difference between the two lip corners
+         * Calculates the difference between the lower lip and the nose.
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
-                upperLip_Distance[0] = model.Difference(42, Model.NOSE_FIX);
-                upperLip_Distance[1] = model.Difference(51, Model.NOSE_FIX);
- 
+                //Get Values from AU's
+                upperLip_Distance[0] = Utilities.Difference(42, Model.NOSE_FIX);
+                upperLip_Distance[1] = Utilities.Difference(51, Model.NOSE_FIX);
 
                 distance = (upperLip_Distance[0] + upperLip_Distance[1]) / 2;
                 distance -= 100;
@@ -56,17 +56,9 @@ namespace RealSense
             }
             else
             {
-                filterToleranceValues(distances);
-
-                double distance = filteredAvg(distances);
-
-                dynamicMinMax(new double[] { distance });
-
-                double[] diffs = convertValues(new double[] { distance });
-
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LowerLipRaised).ToString()] = diffs[0];
+                    model.AU_Values[typeof(ME_LowerLipRaised).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)
@@ -76,6 +68,6 @@ namespace RealSense
                 framesGathered = 0;
             }
         }
-    
+
     }
 }
