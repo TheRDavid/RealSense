@@ -168,8 +168,6 @@ Error message and password prompt
 
 <li>Contents</li>
 
-<li>Draft of 'Intel RealSense SR300 Depth-Camera'</li>
-
 <li>Emotion Research</li>
 
 <li>Emotion-Modules</li>
@@ -8404,8 +8402,7 @@ Error message and password prompt
     &quot;tiddlers&quot;: {
         &quot;Untitled&quot;: {
             &quot;title&quot;: &quot;Untitled&quot;,
-            &quot;text&quot;: &quot;https://software.intel.com/en-us/intel-realsense-sdk/download&quot;,
-            &quot;type&quot;: &quot;text/plain&quot;
+            &quot;text&quot;: &quot;ed out that there were some action units to adjust and bugs to fix. We \nalso noticed that our true goal could not be to read real emotions, but \nfaked ones, since we did not have any actors as test-subjects at our \ndisposal. Also our software would be used for presentation purposes on \nan Open-door day. &quot;
         }
     }
 }</pre>
@@ -8440,7 +8437,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="Modules" title="$:/StoryList">
+<div list="Test-UI [[Emotion Research]] Modules [[Application Structure]] Analyzer Action-Unit-Modules" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8649,9 +8646,6 @@ Hier gehört ein UML-Diagram rein. – Das kommt noch ! :)
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
 </div>
-<div modified="20170629150152124" title="Draft of 'Intel RealSense SR300 Depth-Camera'">
-<pre></pre>
-</div>
 <div created="20170619104857903" modified="20170628144000268" tags="" title="Emotion Research">
 <pre>For our project we needed to do some research on how to read someone's emotions. As a source we used – &lt;i&gt;Gefühle lesen, Wie Sie Emotionen erkennen und richtig interpretieren&lt;/i&gt; by Paul Ekman. 
 We figured out which action units we needed for our program to succesfully read the seven basic emotions (sadness, disgust, fear, contempt, joy, anger, surprise). Sadness for example has a long list of action units which contains:  
@@ -8727,82 +8721,85 @@ Video-Streaming
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105054118" modified="20170705072205656" tags="" title="Modules">
-<pre>The program structure was split into different modules separating the functionality into independent and interchangeable parts. Therefore it is possible to easily expand on our idea and implement new modules, to detect other emotions.
+<div created="20170619105054118" modified="20170705112851354" tags="" title="Modules">
+<pre>The program structure was split into different modules separating the functionality into independent and interchangeable parts. Therefore it is possible to easily expand on our idea and implement new modules.
 
-All modules inherit from the &quot;RSModul.css&quot; class. 
+All modules inherit from the &quot;RSModul.cs&quot; class. 
 
 ! ''RSModul''
 
 All default values, which are required for the action units, are specified here:
 
-&lt;code&gt;protected double MIN = 0, MAX = 0, MIN_TOL, MAX_TOL, XTREME_MAX, XTREME_MIN;
+&lt;code&gt; 
+/* current boundaries */
+protected double MIN = 0, MAX = 0, MIN_TOL, MAX_TOL, XTREME_MAX, XTREME_MIN;
+/* default boundaries */
 protected static double DEF_MIN, DEF_MAX;
+/* model reference */
 protected static Model model;
+/* output for testUI */
 public String output = &quot;&quot;;
+/* enable/disable output */
 protected bool debug = false;
+/* number of frames to calculate an average from */
 protected static int numFramesBeforeAccept = 20;
+/* number of frames currently gathered */
 protected int framesGathered = 0;
+/* list of keytriggers */
 public int[] triggers = { };&lt;/code&gt;
 
-This method is used to include keyboard commands.
+The keyTrigger method is used to include keyboard commands for individual modules.
 
         &lt;code&gt; public virtual void keyTrigger(int key); &lt;/code&gt;
 
 
-The work method is being executed for each frame. 
+The work method is being executed each frame. 
 
        &lt;code&gt; public abstract void Work(Graphics g);&lt;/code&gt;
 
                    
-! ''Modules''
+! ''Module - Types''
 
 The modules are grouped into [[action units|Action-Units-Modules]], emotions([[Emotion-Modules]]) and [[utilities|Utility-Modules]].
 
-New modules have to be included in the “Program.cs” class with the following tag:
+New modules have to be included in the “Program.cs” class with the following command:
 
  ''Example:''
 &lt;br&gt;
 
-&lt;code&gt;Model.AddModule (new ME_LipStretched  ());&lt;/code&gt;
+&lt;code&gt;Model.AddModule (new AU_LipStretched  ());&lt;/code&gt;
 
 !! Action-Units-Modules''''
-We have programmed the following action units so far. These are our action units:
+We have programmed the following action units. These are our action units:
 
-* ME_BrowShift
-* ME_EyelidTight
-* ME_JawDrop
-* ME_LipCorner
-* ME_LipLine
-* ME_LipsTightened
-* ME_LipStretched
-* ME_LowerLipLowered
-* ME_LowerLipRaised
-* ME_NoseWrinkled
-* ME_UpperLipRaised
+* AU_BrowShift
+* AU_EyelidTight
+* AU_JawDrop
+* AU_LipCorner
+* AU_LipLine
+* AU_LipsTightened
+* AU_LipStretched
+* AU_LowerLipLowered
+* AU_LowerLipRaised
+* AU_NoseWrinkled
+* AU_UpperLipRaised
 
 
 
 Action Unit structure:
 
-The values that are being inherited from the RS-Module are initialized in the constructor.
+The inherited values from the RS-Module are initialized in the constructor.
 
 &lt;code&gt;
-        public ME_LipStretched()
+        public AU_LipStretched()
         {
-            DEF_MIN = -13;
-            DEF_MAX = 13;
+            /* initialize boundaries */
             reset();
-            MIN_TOL = -2;
-            MAX_TOL = 0.5;
             debug = true;
-            XTREME_MAX = 60;
-            XTREME_MIN = -45;
-            model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
         } 
 &lt;/code&gt;
 
-The work method is used for calculations and manipulation of the output stream.&lt;br&gt;
+The work method is used for calculations and manipulation of the output string.&lt;br&gt;
         &lt;code&gt;public override void Work(Graphics g)
         {
 
@@ -8841,43 +8838,36 @@ The work method is used for calculations and manipulation of the output stream.&
 
 !! ''Emotion-Modules''
 
-The emotions are made out of several action units. They are combined for the following emotions:
+The emotions are made out of several action units, which are combined for the following emotions:
 
-*Anger (BrowShift, EyelidTight, LipsTightened)
-*Contempt (LipCorner, BrowShift)
-*Disgust (BrowShift, NoseWrinkled, LipLine, LowerLipLowered, UpperLipRaised)
-*Fear (BrowShift, EyelidTight, LipStretched, JawDrop)
-*Joy (EyelidTight, LipCorner, LipLine)
-*Sadness (BrowShift, EyelidTight, LipLine, LipStretched, LowerLipRaised)
-*Surprise (BrowShift, EyelidTight, JawDrop)
+&lt;img src=&quot;img/Emotion.png&quot; width=&quot;500&quot; align=&quot;middle&quot;&gt;
 
     Example:   
 &lt;code&gt;
-       class EM_Surprise : RSModule
+    class EM_Surprise : RSModule
     {
         
         public override void Work(Graphics g)
-        {&lt;/code&gt;&lt;br&gt;
-     
-            The following values are the weigthed percentages for the desired emotion.&lt;br&gt;
-            &lt;code&gt;int p_brow = 45;
+        {
+            /* The following values are the weigthed percentages for the desired emotion */
+            int p_brow = 45;
             int p_eye = 35;
             int p_jaw = 40;  
 
-            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + &quot;_left&quot;];
-            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + &quot;_right&quot;];
+            double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + &quot;_left&quot;];
+            double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + &quot;_right&quot;];
             double browValue = temp_left &lt; temp_right ? temp_left : temp_right;
             if (model.Test) browValue = (temp_left+temp_right)/ 2;
             browValue = browValue * p_brow / 100;
 
            
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + &quot;_left&quot;];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + &quot;_right&quot;];
+            temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + &quot;_left&quot;];
+            temp_right = model.AU_Values[typeof(AU_EyelidTight).ToString() + &quot;_right&quot;];
             double eyeValue = (temp_left + temp_right) / 2;
             eyeValue = eyeValue * p_eye / 100;
 
            
-            double jawValue = model.AU_Values[typeof(ME_JawDrop).ToString()];
+            double jawValue = model.AU_Values[typeof(AU_JawDrop).ToString()];
             jawValue = jawValue * p_jaw / 100;
 
             double surprise = browValue + eyeValue + jawValue;
@@ -8893,18 +8883,12 @@ The emotions are made out of several action units. They are combined for the fol
 
 !! ''Utility-Modules''
 
-Refer to [[Utility-Modules]]
-
-
-
-  !!!''Advantages''
-A module makes it easy to simultaneously work 
-</pre>
+Refer to [[Utility-Modules]]</pre>
 </div>
-<div created="20170619105344038" modified="20170628134025035" tags="" title="Polished UI">
-<pre>For our prototype we needed an user interface which is easy to understand and not too confusing for the user. We made some concepts of how it could look like. We decided to use circles in our design as a progress-bar early on. The only thing that took us a little longer to figure out was the position of the seven elements (one progress-bar for each emotion) around our camera view.&lt;br&gt;
+<div created="20170619105344038" modified="20170705101618829" tags="" title="Polished UI">
+<pre>For our prototype we needed a user interface which is easy to understand, since our users were expected to be guests on an open door day.  We decided to use circles as a progress-bar early on. The only thing that took a little longer was to figure out the position of the seven elements (one progress-bar for each emotion) around our camera view.&lt;br&gt;
 
-At first we put the circles around the user's head, but that was too distracting. We decided to make it look more like in the movie &lt;i&gt;RoboCop&lt;/i&gt;
+At first we position the circles around the user's head, which turned out to be too distracting. Instead we decided on a Robo Cop inspired design. &lt;i&gt;RoboCop&lt;/i&gt;
 &lt;br&gt;
 [SCREENSHOT FROM ROBOCOP]
 &lt;br&gt;
@@ -8912,19 +8896,19 @@ next to
 &lt;br&gt;
 [SCREENSHOT OF OUR UI WITHOUT WHITE BACKGROUND]
 &lt;br&gt;. 
-All Elements were now on left side of the screen. However, the values were still quite hard to read because of the distracting background. To solve this problem we put a white, transparent panel in the background. This way the user could still see movement and vague shapes in the background, but the focus lay on the UI-Elements.
+All Elements were arranged on left hand side of the screen. However, the values were still quite hard to read because of the distracting background. To solve this problem we put a white, transparent panel in the back. This way the user could still see movement and vague shapes behind the UI, but still focus on the Interface.
 &lt;br&gt;
 [SCREENSHOT OF OUR UI WITH WHITE BACKGROUND]
 &lt;br&gt;. 
 
-As a next step we created another progress bar for the calibration which is fixed to the subject's head-position. The purpose is to let the user know how long to hold still and when the calibration is finished.
+As a next step we created another progress bar for the calibration, which is fixed to the subject's head's position. The purpose is to let the user know how long to hold still and when the calibration is finished.
 &lt;p /&gt;
-During our own tests we figured out that we also needed some sort of feedback for the user as to when they are not in their original pose anymore. For that reason we created a little notification-box which tells the user to get their head into the right position again, so our program can continue reading his emotions.  
+During our own tests we realized that we also needed some sort of feedback for the user as to when they were not in their original pose anymore. For that reason we created a little notification-box which tells the user to get their head into the right position again, so our program can continue reading their emotions.  
 
 &lt;p&gt;We decided to use red to fill the outer circle according to the current progress. This way we achieved a high contrast to the otherwise distracting background. We use //Futura Medium// because we wanted to use a font as simple as possible to make it look elegant but not distracting.Overall we desired to create a simplistic, clean and slightly futuristic UI.
 &lt;/p&gt;
 
-</pre>
+After stepping in front of the camera the UI appears on the left hand side. The calibration process can be activated by pressing &quot;CMD + c&quot;. The calibration progress is visualized with a red circle that sorounds the subject's face. After the succesfull calibration the seven circles on the white panel adjust accordingly to the emotions values. Every circle indicates the intensity of the respective emotion. As long as a person remains in their initial pose all values are calculated simultaneously. Whenever the head's rotation exceeds a set limit the calculation pause until the subjects returns to their original pose. </pre>
 </div>
 <div created="20170619105306897" modified="20170628145315589" tags="" title="Test-Subjects" type="">
 <pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera and let us measure the landmarks' distances from each other. We tried to get a good mix of people and personalities to ensure that we'd have a diverse and representative pool of test subjects &lt;/p&gt;
@@ -8947,7 +8931,7 @@ In the last phase we needed data for our [[analyzing tool|Analyzer]]. Like in th
 &lt;p&gt;&lt;/p&gt;
 </pre>
 </div>
-<div created="20170619105322873" modified="20170628134613415" tags="" title="Test-UI">
+<div created="20170619105322873" modified="20170705113403939" tags="" title="Test-UI">
 <pre>The Test-UI was our first graphical interface and used to show the individual average value of each module. The [[Polished UI]] on the other hand shows less detail, but works better for presentational purposes. &lt;br&gt;
 
 !!''User manual''&lt;br&gt;
@@ -8961,7 +8945,7 @@ private enum MODE
 
 private static MODE mode = MODE.RUN;
 ...
-Application.Run(new CameraView(model, mode == MODE.RUN));
+Application.Run(new CameraView(model, mode == MODE.TEST));
 &lt;/code&gt;
 
 To manipulate the individual module's output stream, you have to change the &lt;i&gt;output&lt;/i&gt; variable in the modules work-method. The output must be a string.
@@ -8990,7 +8974,7 @@ The second button “NoImg” hides the video stream so the developer can focus 
 
 The third button “Output” only displays the video stream.
 
-Bild&lt;br&gt;
+&lt;img src=&quot;img/Output_btn.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;&lt;br&gt;
 
 
 
