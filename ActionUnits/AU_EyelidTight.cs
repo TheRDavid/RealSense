@@ -7,15 +7,16 @@ using System.Drawing;
 
 
 namespace RealSense
-{/**
-     * Measures tightening of eyelids (each eye)
+{
+    /**
+     * Measures tightening of eyelids (each eye) and stores its' value inside the model.
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
      * 
      * Interpretation:      -100 = Eyes squinted
      *                       100 = Eyes wide open
      */
-    class ME_EyelidTight : RSModule
+    class AU_EyelidTight : RSModule
     {
 
         // variables for logic
@@ -25,8 +26,10 @@ namespace RealSense
         private double[] leftDistances = new double[numFramesBeforeAccept];
         private double[] rightDistances = new double[numFramesBeforeAccept];
 
-        // Default values
-        public ME_EyelidTight()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_EyelidTight()
         {
             //values correct
             DEF_MIN = -34;
@@ -40,14 +43,14 @@ namespace RealSense
 
             if (model.CurrentPoseDiff < 10)
             {
-                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = 0;
-                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = 0;
+                model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = 0;
+                model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = 0;
             }
         }
 
         /** 
          * @Override 
-         * Calculates difference of lid-distance for each eye.
+         * Calculates difference of lid-distance for each eye over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -74,14 +77,14 @@ namespace RealSense
             {
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = Utilities.ConvertValue(leftDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
-                    model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = Utilities.ConvertValue(rightDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = Utilities.ConvertValue(leftDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = Utilities.ConvertValue(rightDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = "Eyelid_Tight: " + "(" + (int)model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "Eyelid_Tight: " + "(" + (int)model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

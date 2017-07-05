@@ -8,16 +8,15 @@ namespace RealSense
 {
 
     /*
-     * Measures if jaw is dropped
+     * Measures if jaw is dropped and stores its' value inside the model.
      * @author René 
-     * @date 21.03.2017
      * @HogwartsHouse Slytherin
      * 
      * Interpretation:      -100 = Doesn't usually happen
      *                         0 = Normal
-     *                       100 = Dropped like it's hot
+     *                       100 = Drop it like it's hot
     */
-    class ME_JawDrop : RSModule
+    class AU_JawDrop : RSModule
     {
         // Variables for logic
         private double[] leftDistances = new double[numFramesBeforeAccept];
@@ -30,8 +29,10 @@ namespace RealSense
         // variables for debugging
         private string debug_message = "JawDrop: ";
 
-        // Default values
-        public ME_JawDrop()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_JawDrop()
         {
             DEF_MIN = 0;
             DEF_MAX = 20;
@@ -41,12 +42,12 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 62;
             XTREME_MIN = 0;
-            model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
+            model.AU_Values[typeof(AU_JawDrop).ToString()] = 0;
         }
 
         /** 
          * @Override 
-         * Calculates difference of lip-distance.
+         * Calculates difference of lip-distance over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -64,13 +65,13 @@ namespace RealSense
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_JawDrop).ToString()] = Utilities.ConvertValue(chinDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_JawDrop).ToString()] = Utilities.ConvertValue(chinDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_JawDrop).ToString()] + ") (" + (int)MIN + ", " + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_JawDrop).ToString()] + ") (" + (int)MIN + ", " + ")";
                 }
                 framesGathered = 0;
             }

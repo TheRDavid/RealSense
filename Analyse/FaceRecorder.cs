@@ -9,6 +9,11 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
+    /*
+     * Upon being triggered by a key, this module records 300 frames of landmark-data and classifies it as a set emotion.
+     * @author David 
+     * @HogwartsHouse Hufflepuff  
+     */
     class FaceRecorder : RSModule
     {
 
@@ -19,6 +24,9 @@ namespace RealSense
         private int frameIndex = 0;
         private string[] typeNames = new string[] { "anger", "joy", "fear", "contempt", "sadness", "disgust", "surprise" };
 
+        /**
+         * Initializes the keyTriggers and an empty buffer for the landmark-data.
+         */ 
         public FaceRecorder()
         {
             // anger, joy, fear, contempt, sadness, disgust, surprise, stop
@@ -27,6 +35,9 @@ namespace RealSense
             for (int i = 0; i < framesStored; i++) data[i] = new PXCMFaceData.LandmarkPoint[numLandmarkPoints];
         }
 
+        /**
+         * The current recording's type is determined by the key that is pressed to trigger the recording.
+         */ 
         public override void keyTrigger(int key)
         {
             for (int i = 0; i < typeNames.Length; i++)
@@ -47,6 +58,11 @@ namespace RealSense
             }
         }
 
+        /**
+         * @Override
+         * Shows whether or not a recording is taking place and records the current landmark-data
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
             if (recording)
@@ -68,11 +84,17 @@ namespace RealSense
             }
         }
 
+        /**
+         * Returns the current recording
+         */ 
         public bool Recording
         {
             get { return recording; }
         }
 
+        /**
+         * Sets or gets the current recording-index
+         */
         public int RecordingIndex
         {
             get { return frameIndex; }

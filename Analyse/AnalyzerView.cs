@@ -11,9 +11,19 @@ using RealSense.Emotions;
 
 namespace RealSense
 {
-    // AVERAGE OF ALL ON THE TOP ROW
+    /*
+     * Sub-programm to revisit old landmark-recordings with updated algorithms to tweak the emotion-detection.
+     * Once the UI is loaded, the user can select on of the seven emotions and load their recorded data (both video- and landmark-recordings).
+     * All of the landmark-recordings (recoding by recording, frame by frame) can then be used to automatically recalculate both the ActionUnit-
+     * and Emotiondata.
+     * This way, multiple subjects can be analyzed simultaneously and the reliability of the algorithms can be improved much faster.
+     * @author David 
+     * @HogwartsHouse Hufflepuff  
+     * 
+     */
     class AnalyzerView : Form
     {
+        // UI Components
         private MenuStrip menuStrip1;
         private ToolStripMenuItem loadToolStripMenuItem;
         private ToolStripMenuItem angARRToolStripMenuItem;
@@ -49,6 +59,9 @@ namespace RealSense
         private static int cellWidth = 790;
         private bool loading = false;
 
+        /**
+         * Sets up the UI and starts the Updater-Thread, which will update the lables and progressbars displaying the ActionUnit- and Emotion-Values
+         */ 
         public AnalyzerView()
         {
             MinimumSize = new Size(cellWidth, 300);
@@ -90,6 +103,9 @@ namespace RealSense
             updaterThread.Start();
         }
 
+        /**
+         * Update the whole UI according to the current frame's values.
+         */ 
         private void loadFrame()
         {
             while (true)
@@ -109,6 +125,9 @@ namespace RealSense
             }
         }
 
+        /**
+         * Load all files of an emotion-type and feed them into the ActionUnit and Emotion-detection algorithms.
+         */ 
         private void loadFiles(string type)
         {
             loading = true;
@@ -135,6 +154,9 @@ namespace RealSense
             loading = false;
         }
 
+        /**
+         * Dynamically arranges the UI to make best use of it's size.
+         */ 
         private void arrange()
         {
             WINDOW_WIDTH = Width;
@@ -148,6 +170,10 @@ namespace RealSense
             }
         }
 
+        /**
+         * The DataSetViews are the core-components of the Analyzer.
+         * Each DataSetView displays one recording (the video and all the landmark-data).
+         */ 
         private class DataSetView : Panel
         {
 
@@ -175,6 +201,14 @@ namespace RealSense
 
             MethodInvoker pictureUpdate;
 
+            /**
+             * 
+             * Initializes the UI and loads all the recording's data into RAM.
+             *          
+             * @param string fileBaseName since there are two file for each recording (landmark- and video-data), the timestamp will be used to identify them
+             * @param string type specifies the emotion-type
+             * @param idx assigns an index to the DataSet
+             */
             public DataSetView(string fileBaseName, string type, int idx)
             {
                 initModules();
@@ -197,9 +231,6 @@ namespace RealSense
 
                 pictureUpdate = delegate
                 {
-                    // Innerhalb dieses Blocks können Controls
-                    // und Forms angesprochen werden, neue Fenster
-                    // erzeugt werden etc....
                     dataPictureBox.Image = dataImage;
                     dataPictureBox.Refresh();
                 };
@@ -215,21 +246,25 @@ namespace RealSense
                 arrange();
             }
 
+            /**
+             * Initializes all the Emotion- and ActionUnit-Modules for the recording.
+             * Every recording requieres it's own modules since they do not share the same data (model)
+             */ 
             private void initModules()
             {
                 model = new RealSense.Model(false);
                 RSModule.Init(model);
-                microExpressionModules[1] = new ME_BrowShift();
-                microExpressionModules[2] = new ME_EyelidTight();
-                microExpressionModules[3] = new ME_JawDrop();
-                microExpressionModules[4] = new ME_LipCorner();
-                microExpressionModules[5] = new ME_LipLine();
-                microExpressionModules[6] = new ME_LipsTightened();
-                microExpressionModules[7] = new ME_LipStretched();
-                microExpressionModules[8] = new ME_LowerLipLowered();
-                microExpressionModules[9] = new ME_LowerLipRaised();
-                microExpressionModules[10] = new ME_NoseWrinkled();
-                microExpressionModules[0] = new ME_UpperLipRaised();
+                microExpressionModules[1] = new AU_BrowShift();
+                microExpressionModules[2] = new AU_EyelidTight();
+                microExpressionModules[3] = new AU_JawDrop();
+                microExpressionModules[4] = new AU_LipCorner();
+                microExpressionModules[5] = new AU_LipLine();
+                microExpressionModules[6] = new AU_LipsTightened();
+                microExpressionModules[7] = new AU_LipStretched();
+                microExpressionModules[8] = new AU_LowerLipLowered();
+                microExpressionModules[9] = new AU_LowerLipRaised();
+                microExpressionModules[10] = new AU_NoseWrinkled();
+                microExpressionModules[0] = new AU_UpperLipRaised();
 
                 foreach (RSModule m in microExpressionModules)
                     m.Debug = false;
@@ -245,6 +280,9 @@ namespace RealSense
                     m.Debug = false;
             }
 
+            /**
+             * Updates the modules and their respective data and refreshes the UI to display the current frame (the ActionUnit- and Emotion-Data).
+             */ 
             public void udpateAndVisualizeData()
             {
                 if (vlcControl.IsPlaying) vlcControl.Pause();
@@ -309,6 +347,9 @@ namespace RealSense
                 Invoke(pictureUpdate);
             }
 
+            /**
+             * Arrange the View to make proper use of it's boundaries.
+             */ 
             public void arrange()
             {
                 int y = gap + index * viewHeight;
@@ -364,6 +405,9 @@ namespace RealSense
                 }
             }
 
+            /**
+             * Load VLC library if needed (absoulte path!)
+             */ 
             public void OnVlcControlNeedLibDirectory(object sender, VlcLibDirectoryNeededEventArgs e)
             {
                 e.VlcLibDirectory = new DirectoryInfo("C:\\Users\\prouser\\Documents\\Vlc.DotNet-master\\Vlc.DotNet-master\\lib\\x86\\");
@@ -371,6 +415,9 @@ namespace RealSense
 
         }
 
+        /**
+         * Automatically generated - setting up the base UI
+         */ 
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -525,65 +572,124 @@ namespace RealSense
 
         }
 
-
+        /**
+         * Load all anger-files
+         * @param object sender
+         * @param EventArgs e
+         */ 
         private void angARRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("anger");
         }
 
+        /**
+         * Load all fear-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void fearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("fear");
         }
 
+        /**
+         * Load all contempt-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void contemptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("contempt");
         }
 
+        /**
+         * Load all surprise-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void surpriseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("surprise");
         }
-
+        
+        /**
+         * Load all joy-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void joyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("joy");
         }
 
+        /**
+         * Load all sadness-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void sadnessToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("sadness");
         }
 
+        /**
+         * Load all disgust-files
+         * @param object sender
+         * @param EventArgs e
+         */
         private void disgustToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("disgust");
         }
 
+        /**
+         * Change the size of the DataSetViews to tiny
+         * @param object sender
+         * @param EventArgs e
+         */
         private void tinyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewHeight = VIEW_TINY;
             arrange();
         }
 
+        /**
+         * Change the size of the DataSetViews to ´small
+         * @param object sender
+         * @param EventArgs e
+         */
         private void smallToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewHeight = VIEW_SMALL;
             arrange();
         }
 
+        /**
+         * Rearrange UI after the window has been resized
+         * @param object sender
+         * @param EventArgs e
+         */
         private void AnalyzerView_ResizeEnd(object sender, EventArgs e)
         {
             arrange();
         }
 
+        /**
+         * Change the size of the DataSetViews to the default size
+         * @param object sender
+         * @param EventArgs e
+         */
         private void deafultToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewHeight = VIEW_DEFAULT;
             arrange();
         }
 
+        /**
+         * Change the size of the DataSetViews to large
+         * @param object sender
+         * @param EventArgs e
+         */
         private void largeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             viewHeight = VIEW_LARGE;

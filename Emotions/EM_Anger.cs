@@ -36,19 +36,19 @@ namespace RealSense
             //reduce();
 
             //brow Value
-            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
-            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
             double browValue = (temp_left + temp_right) / 2;
             browValue = browValue * -1 * p_brow / percent;
 
             //lid Value
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"];
             double lidValue = (temp_left + temp_right) / 2;
             lidValue = lidValue * -1 * p_lid / percent;
 
             //lip Value
-            double lipValue = model.AU_Values[typeof(ME_LipsTightened).ToString()];
+            double lipValue = model.AU_Values[typeof(AU_LipsTightened).ToString()];
             lipValue = lipValue * -1 * p_lip / percent;
 
             //sum all and save
@@ -73,7 +73,7 @@ namespace RealSense
         {
             //Anger
 
-            int lowerLipRaised = (int)model.AU_Values[typeof(ME_LowerLipRaised).ToString()];
+            int lowerLipRaised = (int)model.AU_Values[typeof(AU_LowerLipRaised).ToString()];
             if (lowerLipRaised < -80)
             {
                 percent = (int)(100 - lowerLipRaised * 0.5);

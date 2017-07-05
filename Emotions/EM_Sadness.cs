@@ -34,7 +34,7 @@ namespace RealSense.Emotions
             int p_lipS = 10;
             int p_lid = 40;
 
-            int cornerPos = (int)(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] + model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]) / 2;
+            int cornerPos = (int)(model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] + model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"]) / 2;
 
             if (cornerPos > 10)
             {
@@ -44,27 +44,27 @@ namespace RealSense.Emotions
             }
 
             //brow Value 0-100
-            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
-            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
             double browValue = (temp_left + temp_right) / 2;
             browValue = browValue * p_brow / percent;
 
             //lid values
-            double lidValue = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] + model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            double lidValue = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] + model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"];
             lidValue *= -1;
             lidValue *= p_lid;
             lidValue /= 100;
 
             //lipL Value 0 - -100
-            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            double lipLValue = model.AU_Values[typeof(AU_LipLine).ToString()];
             lipLValue = lipLValue * -1 * p_lipL / percent;
 
             //lipS Value 0 - -100
-            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
+            double lipSValue = model.AU_Values[typeof(AU_LipStretched).ToString()];
             lipSValue = lipSValue * -1 * p_lipS / percent;
 
 
-            double lipUp = model.AU_Values[typeof(ME_LowerLipRaised).ToString()] * p_lipUp / 100;
+            double lipUp = model.AU_Values[typeof(AU_LowerLipRaised).ToString()] * p_lipUp / 100;
 
             // Falls Corners durch Disgust, auf 0 setzen
             double hDiff = Utilities.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + Utilities.DifferenceByAxis(39, 37, Model.AXIS.Y, false);

@@ -8,24 +8,25 @@ namespace RealSense
 {
 
     /*
-     * Measures if lips are tightened 
+     * Measures if lips are tightened and stores its' value inside the model.
      * @author René 
-     * @date 21.03.2017
      * @HogwartsHouse Slytherin 
      * 
      * Interpretation:      -100 = Tight af
      *                         0 = normal
      *                       100 = doesn't usually happen
    */
-    class ME_LipsTightened : RSModule
+    class AU_LipsTightened : RSModule
     {
         // Variables for logic
         double[] topDownDistances = new double[numFramesBeforeAccept];
         double upperLip;
         double bottomLip;
 
-        // Default values
-        public ME_LipsTightened()
+        /**
+        * Initializes the AU by setting up the default value boundaries.
+        */
+        public AU_LipsTightened()
         {
 
             DEF_MIN = -3;
@@ -36,12 +37,12 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 0;
             XTREME_MIN = -16.5;
-            model.AU_Values[typeof(ME_LipsTightened).ToString()] = 0;
+            model.AU_Values[typeof(AU_LipsTightened).ToString()] = 0;
         }
 
         /** 
          * @Override 
-         * Calculates difference of the lip and the nose.
+         * Calculates the average difference of the lip and the nose over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -61,10 +62,10 @@ namespace RealSense
             {
                 // Update value in Model 
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipsTightened).ToString()] = Utilities.ConvertValue(topDownDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LipsTightened).ToString()] = Utilities.ConvertValue(topDownDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
                 if (debug)
                 {
-                    output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(ME_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(AU_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

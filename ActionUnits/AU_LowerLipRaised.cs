@@ -7,12 +7,14 @@ using System.Text;
 namespace RealSense
 {
     /**
-     * Measures how much the lower lip is raised.
-     * @author: not known
+     * Measures how much the lower lip is raised and stores its' value inside the model.
+     * @author: He who must not be named...
+     * @HogwartsHouse Take a guess... 
+     * 
      * Interpretation:         0 = Relaxed
      *                      -100 = Wrinkled
      */
-    class ME_LowerLipRaised : RSModule
+    class AU_LowerLipRaised : RSModule
     {
         // variables for logic
         private double[] upperLip_Distance = new double[2];
@@ -20,8 +22,10 @@ namespace RealSense
         private double distance;
         private string debug_message = "LowerLipRaised: ";
 
-        // Default values
-        public ME_LowerLipRaised()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_LowerLipRaised()
         {
             DEF_MIN = -1;
             DEF_MAX = 8;
@@ -31,12 +35,12 @@ namespace RealSense
             XTREME_MAX = 25;
             XTREME_MIN = -1;
             debug = true;
-            model.AU_Values[typeof(ME_LowerLipRaised).ToString()] = 0;
+            model.AU_Values[typeof(AU_LowerLipRaised).ToString()] = 0;
         }
 
         /**
-         *@Override 
-         * Calculates the difference between the lower lip and the nose.
+         * @Override 
+         * Calculates the difference between the lower lip and the nose to measure whether or not there has been some movement over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -58,12 +62,12 @@ namespace RealSense
             {
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LowerLipRaised).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LowerLipRaised).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LowerLipRaised).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LowerLipRaised).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

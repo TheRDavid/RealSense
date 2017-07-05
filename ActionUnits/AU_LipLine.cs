@@ -8,21 +8,24 @@ using System.Text;
 namespace RealSense
 {
     /*
-     * Measures how accurate the lip-landmark-points are on one line.
+     * Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model.
      * @author David
+     * @HogwartsHouse Hufflepuff
      *
      * Interpretation:      -100 = Saaaaaad
      *                         0 = Relaxed
      *                       100 = Grinning
      */
-    class ME_LipLine : RSModule
+    class AU_LipLine : RSModule
     {
         // Variables for logic
         private string debug_message = "LipLine: ";
         private double[] lines = new double[numFramesBeforeAccept];
 
-        // Default values
-        public ME_LipLine()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_LipLine()
         {
             debug = true;
             DEF_MIN = -5;
@@ -32,12 +35,12 @@ namespace RealSense
             MAX_TOL = 1;
             XTREME_MAX = 90;
             XTREME_MIN = -33;
-            model.AU_Values[typeof(ME_LipLine).ToString()] = 0;
+            model.AU_Values[typeof(AU_LipLine).ToString()] = 0;
         }
 
         /** 
          * @Override 
-         * Calculates if all Lippoints are placed in one line.
+         * Calculates whether or not all LipPoints are placed on one line over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -61,12 +64,12 @@ namespace RealSense
             {
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipLine).ToString()] = Utilities.ConvertValue(lines, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LipLine).ToString()] = Utilities.ConvertValue(lines, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipLine).ToString()] + ") (" + (int)MAX + ", " + (int)MIN + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipLine).ToString()] + ") (" + (int)MAX + ", " + (int)MIN + ")";
                 }
 
                 framesGathered = 0;

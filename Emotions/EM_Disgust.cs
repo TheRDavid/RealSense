@@ -38,25 +38,25 @@ namespace RealSense.Emotions
             //reduce();
 
             //brow Value
-            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
-            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
             double browValue = (temp_left + temp_right) / 2;
             browValue = browValue * -1 * p_brow / percent;
 
             //NoseWrinkled (0 - -100)
-            double noseValue = model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
+            double noseValue = model.AU_Values[typeof(AU_NoseWrinkled).ToString()];
             noseValue = noseValue * -1 * p_nose / 100;
 
             //lipLine Value 0 - -100
-            double lipLineValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            double lipLineValue = model.AU_Values[typeof(AU_LipLine).ToString()];
             lipLineValue = lipLineValue * -1 * p_lipLine / percent;
 
             //LowerLip 0-100
-            double lipLoweredValue = model.AU_Values[typeof(ME_LowerLipLowered).ToString()];
+            double lipLoweredValue = model.AU_Values[typeof(AU_LowerLipLowered).ToString()];
             lipLoweredValue = lipLoweredValue * p_lipLowered / percent;
 
             //upperLip 0-100
-            double upperLipValue = model.AU_Values[typeof(ME_UpperLipRaised).ToString()];
+            double upperLipValue = model.AU_Values[typeof(AU_UpperLipRaised).ToString()];
             upperLipValue = upperLipValue * p_upperLip / percent;
 
             // Falls Corners durch Disgust, auf 0 setzen
@@ -89,7 +89,7 @@ namespace RealSense.Emotions
         private void reduce()
         {
             //lipS Value 0 - -100
-            double lipSValue = model.AU_Values[typeof(ME_LipStretched).ToString()];
+            double lipSValue = model.AU_Values[typeof(AU_LipStretched).ToString()];
             lipSValue = lipSValue * -1;
             if (lipSValue < 60)
             {

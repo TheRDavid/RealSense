@@ -9,13 +9,14 @@ using System.Drawing;
 namespace RealSense
 {
     /**
-     * Measures wrinkling of nose
+     * Measures wrinkling of the nose and stores its' value inside the model
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
+     * 
      * Interpretation:         0 = Relaxed
      *                      -100 = Wrinkled
      */
-    class ME_NoseWrinkled : RSModule
+    class AU_NoseWrinkled : RSModule
     {
         // variables for logic
         private double left_diff, right_diff;
@@ -23,8 +24,10 @@ namespace RealSense
         private double distance;
         private string debug_message = "NoseWrinkled: ";
 
-        // Default values
-        public ME_NoseWrinkled()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_NoseWrinkled()
         {
             DEF_MIN = -1;
             DEF_MAX = 8;        
@@ -34,16 +37,16 @@ namespace RealSense
             debug = false;
             XTREME_MAX = 1;
             XTREME_MIN = -50; // god damnit rené
-            model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = 0;
+            model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = 0;
         }
 
         /** 
          * @Override 
-         * Hard to describe, have a look at Images/AU_NoseWrinkledModule.png
+         * Have a look at Images/AU_NoseWrinkledModule.png to see the calculations visualized
          * Result of calculation constantly changing between positive and negative -> relaxed
          * Result of calculation constantly positive -> wrinkled (tiny values)
          * Result of calculation constantly negative -> ... go see a doctor m8
-         * See Images/AU_NoseWrinkledModule.png
+         * Calculates the wrinkling-value over a set number of frames and prints its' debug-message ti tge CameraView when debug is enabled.
          * @param Graphics g for the view
          */
         public override void Work(Graphics g)
@@ -62,12 +65,12 @@ namespace RealSense
             {
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + " -> (" + (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + " -> (" + (int)model.AU_Values[typeof(AU_NoseWrinkled).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

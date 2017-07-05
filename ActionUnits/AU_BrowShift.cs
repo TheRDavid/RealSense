@@ -8,15 +8,14 @@ using System.Text;
 namespace RealSense
 {
     /*
-     * Measures if complete brow is raised or lowered (each eye)  - Action Unit Number 4 
+     * Measures if complete brow is raised or lowered (each eye) and stores its' value inside the model.
      * @author Anton 
-     * @date 20.03.2017
      * @HogwartsHouse Slytherin  
      * 
      * Interpretation:      -100 = Brows down (grumpy af)
      *                       100 = Brows up
      */
-    class ME_BrowShift : RSModule
+    class AU_BrowShift : RSModule
     {
         // Variables for logic
         private double leftEyeBrow_r, leftEyeBrow_m, leftEyeBrow_l;
@@ -24,8 +23,10 @@ namespace RealSense
         private double[] leftDistances = new double[numFramesBeforeAccept];
         private double[] rightDistances = new double[numFramesBeforeAccept];
 
-        // Default values
-        public ME_BrowShift()
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
+        public AU_BrowShift()
         {
             DEF_MIN = -7;
             DEF_MAX = 12;
@@ -37,13 +38,13 @@ namespace RealSense
             XTREME_MIN = -24;
 
 
-            model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = 0;
-            model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = 0;
+            model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] = 0;
         }
 
         /**
          * @Override 
-         * Computes the percentage Value of BrowShift in the current Frame.
+         * Computes the percentage Value of BrowShift in the current Frame over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
          * @param Graphics g for the view
          * */
         public override void Work(Graphics g)
@@ -72,15 +73,15 @@ namespace RealSense
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
                     //set Values
-                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = Utilities.ConvertValue(leftDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
-                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = Utilities.ConvertValue(rightDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"] = Utilities.ConvertValue(leftDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] = Utilities.ConvertValue(rightDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
                 }
             }
 
             // print debug-values 
             if (debug)
             {
-                output = "BrowShift: " + "(" + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                output = "BrowShift: " + "(" + (int)model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
             }
 
             framesGathered = 0;
