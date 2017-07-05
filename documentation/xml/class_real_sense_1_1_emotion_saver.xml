@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_emotion_saver" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::EmotionSaver</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a3469514a707e4182ab6454b96f78c352" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="12" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a784cacd9415f079d30ea522ec12b6d37" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="12" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a3191d9fdd3b2bec9ff90d67cb3b6eee2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="12" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a80c9d1ad61cc2f95798fc4d93a60d659" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="12" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a0adf66d83f3abe971e3e2af26a8d1f0a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="13" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1aa52b1ba4b52ca477cecfa70a678ca807" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.EmotionSaver.counter2</definition>
+        <argsstring></argsstring>
+        <name>counter2</name>
+        <initializer>= 120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="13" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1a73c282bc0ee685aebc103c5d99d3719a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.EmotionSaver.saverInit</definition>
+        <argsstring></argsstring>
+        <name>saverInit</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="14" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1abeb125df21500e5ba4fd7999886ce6e1" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.EmotionSaver.source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="15" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_saver_1ac4659a416f608b810413bd0e6923a3c6" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.EmotionSaver.croppedImage</definition>
+        <argsstring></argsstring>
+        <name>croppedImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="15" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_saver_1a82c46b76df032f49665606979b1170a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.EmotionSaver.init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="17" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="17" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_saver_1a168f0ff9ee4ba98187c88a2d33f537e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.EmotionSaver.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update every frame (do calculations, manipulate output Image) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>if (model.Emotions[&quot;Contempt02&quot;] &gt; contemptMax) { angerMax = model.Emotions[&quot;Contempt02&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/contempt.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/contempt.png&quot;);</para><para>}</para><para>if (model.Emotions[&quot;Disgust&quot;] &gt; disgustMax) { angerMax = model.Emotions[&quot;Disgust&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/disgust.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/disgust.png&quot;);</para><para>}</para><para>if (model.Emotions[&quot;Fear&quot;] &gt; fearMax) { angerMax = model.Emotions[&quot;Fear&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/fear.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/fear.png&quot;);</para><para>}</para><para>if (model.Emotions[&quot;Joy&quot;] &gt; joyMax) { angerMax = model.Emotions[&quot;Joy&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/joy.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/joy.png&quot;);</para><para>}</para><para>if (model.Emotions[&quot;Sadness&quot;] &gt; sadnessMax) { angerMax = model.Emotions[&quot;Sadness&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/sadness.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/sadness.png&quot;);</para><para>}</para><para>if (model.Emotions[&quot;Surprise&quot;] &gt; surpriseMax) { angerMax = model.Emotions[&quot;Surprise&quot;]; File.Delete(&quot;C:/Users/prouser/Pictures/emotions/surprise.png&quot;); croppedImage.Save(&quot;C:/Users/prouser/Pictures/emotions/surprise.png&quot;);</para><para>}</para>        </inbodydescription>
+        <location file="Various/EmotionSaver.cs" line="27" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="27" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="49">
+        <label>RealSense.EmotionSaver</label>
+        <link refid="class_real_sense_1_1_emotion_saver"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="51">
+        <label>RealSense.EmotionSaver</label>
+        <link refid="class_real_sense_1_1_emotion_saver"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="53" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="53">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="Various/EmotionSaver.cs" line="11" column="1" bodyfile="Various/EmotionSaver.cs" bodystart="10" bodyend="105"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_emotion_saver_1a0adf66d83f3abe971e3e2af26a8d1f0a" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>counter</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1aa52b1ba4b52ca477cecfa70a678ca807" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>counter2</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1ac4659a416f608b810413bd0e6923a3c6" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>croppedImage</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a80c9d1ad61cc2f95798fc4d93a60d659" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>height</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a82c46b76df032f49665606979b1170a4" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::EmotionSaver</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a73c282bc0ee685aebc103c5d99d3719a" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>saverInit</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1abeb125df21500e5ba4fd7999886ce6e1" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>source</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a3191d9fdd3b2bec9ff90d67cb3b6eee2" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>width</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a168f0ff9ee4ba98187c88a2d33f537e8" prot="public" virt="virtual"><scope>RealSense::EmotionSaver</scope><name>Work</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a3469514a707e4182ab6454b96f78c352" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>x</name></member>
+      <member refid="class_real_sense_1_1_emotion_saver_1a784cacd9415f079d30ea522ec12b6d37" prot="private" virt="non-virtual"><scope>RealSense::EmotionSaver</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

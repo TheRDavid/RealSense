@@ -1,0 +1,105 @@
+.TH "RealSense.FriggnAweseomeGraphix" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.FriggnAweseomeGraphix
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMEMonitor\fP"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdrawMEMontior\fP (Graphics gfx, \fBMEMonitor\fP monitor)"
+.br
+.ti -1c
+.RI "static void \fBdrawMEMontior\fP (Graphics gfx, \fBMEMonitor\fP monitor, bool drawText)"
+.br
+.ti -1c
+.RI "static unsafe void \fBpretty_blur\fP (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)"
+.br
+.ti -1c
+.RI "static unsafe void \fBsonic_blur\fP (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, BitmapData sourceData, BitmapData targetData)"
+.br
+.ti -1c
+.RI "static void \fBdrawFadingLine\fP (Graphics gfx, float x0, float y0, float x1, float y1)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Font \fBmajorFont\fP = new Font('Futura', 36, FontStyle\&.Bold)"
+.br
+.ti -1c
+.RI "static Font \fBminorFont\fP = new Font('Futura', 21, FontStyle\&.Regular)"
+.br
+.ti -1c
+.RI "static Color \fBfgColor\fP = Color\&.FromArgb(55, 186, 68, 75)"
+.br
+.ti -1c
+.RI "static Color \fBfontColor\fP = Color\&.FromArgb(255, 103, 103, 104)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.drawFadingLine (Graphics gfx, float x0, float y0, float x1, float y1)\fC [static]\fP"
+
+.PP
+Definition at line 226 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.drawMEMontior (Graphics gfx, \fBMEMonitor\fP monitor)\fC [static]\fP"
+
+.PP
+Definition at line 61 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.drawMEMontior (Graphics gfx, \fBMEMonitor\fP monitor, bool drawText)\fC [static]\fP"
+
+.PP
+Definition at line 62 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static unsafe void RealSense\&.FriggnAweseomeGraphix\&.pretty_blur (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)\fC [static]\fP"
+
+.SS ""
+.PP
+.SH "Graphics"
+.PP
+.PP
+.SS ""
+.PP
+old and slow, but pretty version 
+.PP
+Definition at line 102 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static unsafe void RealSense\&.FriggnAweseomeGraphix\&.sonic_blur (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, BitmapData sourceData, BitmapData targetData)\fC [static]\fP"
+Revised version, a lot faster, but sacrifices prettyness (also uuuuugly code) 
+.PP
+Definition at line 169 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Color RealSense\&.FriggnAweseomeGraphix\&.fgColor = Color\&.FromArgb(55, 186, 68, 75)\fC [static]\fP"
+
+.PP
+Definition at line 29 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Color RealSense\&.FriggnAweseomeGraphix\&.fontColor = Color\&.FromArgb(255, 103, 103, 104)\fC [static]\fP"
+
+.PP
+Definition at line 31 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Font RealSense\&.FriggnAweseomeGraphix\&.majorFont = new Font('Futura', 36, FontStyle\&.Bold)\fC [static]\fP"
+
+.PP
+Definition at line 27 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Font RealSense\&.FriggnAweseomeGraphix\&.minorFont = new Font('Futura', 21, FontStyle\&.Regular)\fC [static]\fP"
+
+.PP
+Definition at line 28 of file FriggnAweseomeGraphix\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

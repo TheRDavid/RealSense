@@ -1,0 +1,371 @@
+.TH "RealSense.Model" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.Model
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAXIS\fP { \fBAXIS\&.X\fP, \fBAXIS\&.Y\fP, \fBAXIS\&.Z\fP }"
+.br
+.ti -1c
+.RI "enum \fBEmotion\fP { \fBEmotion\&.ANGER\fP, \fBEmotion\&.CONTEMPT\fP, \fBEmotion\&.DISGUST\fP, \fBEmotion\&.FEAR\fP, \fBEmotion\&.JOY\fP, \fBEmotion\&.SADNESS\fP, \fBEmotion\&.SURPRISE\fP }"
+.br
+.ti -1c
+.RI "enum \fBMODE\fP { \fBMODE\&.ANALYZE\fP, \fBMODE\&.RUN\fP, \fBMODE\&.TEST\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModel\fP (bool s)"
+.br
+.ti -1c
+.RI "double \fBEmotionValue\fP (\fBEmotion\fP emotion)"
+.br
+.ti -1c
+.RI "void \fBAddModule\fP (\fBRSModule\fP m)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "PXCMFaceData\&.PoseEulerAngles \fBcurrentPose\fP = new PXCMFaceData\&.PoseEulerAngles()"
+.br
+.ti -1c
+.RI "double \fBcalibrationProgress\fP = 0"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int \fBNOSE_FIX\fP = 26"
+.br
+.ti -1c
+.RI "static bool \fBcalibrated\fP = false"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "List< \fBRSModule\fP > \fBModules\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "PXCMSenseManager \fBSenseManager\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "int \fBWidth\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "int \fBHeight\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceModule \fBFace\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.LandmarksData \fBLp\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "bool \fBStream\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.LandmarkPoint [] \fBCurrentFace\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.LandmarkPoint [] \fBNullFace\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData \fBFaceData\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.Face \fBFaceCurrent\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "\fBCameraView\fP \fBView\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "double \fBCurrentPoseDiff\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "int \fBPoseMax\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "double \fBCurrentRollDiff\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "double \fBCurrentPitchDiff\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "double \fBCurrentYawDiff\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "Dictionary< \fBEmotion\fP, double > \fBEmotions\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "Font \fBDefaultFont\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "SolidBrush \fBDefaultStringBrush\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.PoseEulerAngles \fBNullPose\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.PoseEulerAngles \fBCurrentPose\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "SolidBrush \fBDefaultBGBrush\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "SolidBrush \fBOpaqueBGBrush\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "Dictionary< String, double > \fBAU_Values\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "Bitmap \fBColorBitmap\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "Dictionary< \fBEmotion\fP, double > \fBEmotionMax\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Stores all of our data\&. It is based at the MVC Pattern
+.PP
+\fBAuthor:\fP
+.RS 4
+Tanja Witke 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file Model\&.cs\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBRealSense\&.Model\&.AXIS\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIX \fP\fP
+.TP
+\fB\fIY \fP\fP
+.TP
+\fB\fIZ \fP\fP
+.PP
+Definition at line 18 of file Model\&.cs\&.
+.SS "enum \fBRealSense\&.Model\&.Emotion\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIANGER \fP\fP
+.TP
+\fB\fICONTEMPT \fP\fP
+.TP
+\fB\fIDISGUST \fP\fP
+.TP
+\fB\fIFEAR \fP\fP
+.TP
+\fB\fIJOY \fP\fP
+.TP
+\fB\fISADNESS \fP\fP
+.TP
+\fB\fISURPRISE \fP\fP
+.PP
+Definition at line 19 of file Model\&.cs\&.
+.SS "enum \fBRealSense\&.Model\&.MODE\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIANALYZE \fP\fP
+.TP
+\fB\fIRUN \fP\fP
+.TP
+\fB\fITEST \fP\fP
+.PP
+Definition at line 20 of file Model\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.Model\&.Model (bool s)"
+Constructor of the model It does all the important stuff to use our camera\&. Its so FANCY ! 
+.PP
+Definition at line 61 of file Model\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RealSense\&.Model\&.AddModule (\fBRSModule\fP m)"
+adds a new modul to the List 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIRSModul\fP m which is the new module 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.EmotionValue (\fBEmotion\fP emotion)"
+Returns the value of the given emotion\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIemotion\fP given emotion 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the emotion value or -1 if the key doesn't exist 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file Model\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool RealSense\&.Model\&.calibrated = false\fC [static]\fP"
+
+.PP
+Definition at line 22 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.calibrationProgress = 0"
+
+.PP
+Definition at line 43 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.currentPose = new PXCMFaceData\&.PoseEulerAngles()"
+
+.PP
+Definition at line 33 of file Model\&.cs\&.
+.SS "int RealSense\&.Model\&.NOSE_FIX = 26\fC [static]\fP"
+
+.PP
+Definition at line 21 of file Model\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "Dictionary<String, double> RealSense\&.Model\&.AU_Values\fC [get]\fP, \fC [set]\fP"
+getter and setter of the au_Values 
+.PP
+Definition at line 352 of file Model\&.cs\&.
+.SS "Bitmap RealSense\&.Model\&.ColorBitmap\fC [get]\fP"
+getter of the ColorBitmap 
+.PP
+Definition at line 361 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.Model\&.CurrentFace\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentFace 
+.PP
+Definition at line 196 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.CurrentPitchDiff\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentPitchDiff 
+.PP
+Definition at line 273 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.CurrentPose\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentPose 
+.PP
+Definition at line 327 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.CurrentPoseDiff\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentPoseDiff 
+.PP
+Definition at line 246 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.CurrentRollDiff\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentRollDiff 
+.PP
+Definition at line 264 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.CurrentYawDiff\fC [get]\fP, \fC [set]\fP"
+getter and setter of the currentYawDiff 
+.PP
+Definition at line 282 of file Model\&.cs\&.
+.SS "SolidBrush RealSense\&.Model\&.DefaultBGBrush\fC [get]\fP"
+getter of the defaultBGBrush 
+.PP
+Definition at line 336 of file Model\&.cs\&.
+.SS "Font RealSense\&.Model\&.DefaultFont\fC [get]\fP, \fC [set]\fP"
+getter and setter of the defaultFont 
+.PP
+Definition at line 300 of file Model\&.cs\&.
+.SS "SolidBrush RealSense\&.Model\&.DefaultStringBrush\fC [get]\fP, \fC [set]\fP"
+getter and setter of the defaultStringBrush 
+.PP
+Definition at line 309 of file Model\&.cs\&.
+.SS "Dictionary<\fBEmotion\fP, double> RealSense\&.Model\&.EmotionMax\fC [get]\fP, \fC [set]\fP"
+getter and setter of the emotionMax 
+.PP
+Definition at line 369 of file Model\&.cs\&.
+.SS "Dictionary<\fBEmotion\fP, double> RealSense\&.Model\&.Emotions\fC [get]\fP, \fC [set]\fP"
+getter and setter of the array from the emotions 
+.PP
+Definition at line 291 of file Model\&.cs\&.
+.SS "PXCMFaceModule RealSense\&.Model\&.Face\fC [get]\fP"
+getter of the face 
+.PP
+Definition at line 157 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.Face RealSense\&.Model\&.FaceCurrent\fC [get]\fP, \fC [set]\fP"
+getter and setter of the FaceCurrent
+.PP
+FaceAktuell should be changed to FaceCurrent, where is it initialised 
+.PP
+Definition at line 226 of file Model\&.cs\&.
+.SS "PXCMFaceData RealSense\&.Model\&.FaceData\fC [get]\fP, \fC [set]\fP"
+getter and setter of the faceData 
+.PP
+Definition at line 215 of file Model\&.cs\&.
+.SS "int RealSense\&.Model\&.Height\fC [get]\fP"
+getter of the height 
+.PP
+Definition at line 148 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.LandmarksData RealSense\&.Model\&.Lp\fC [get]\fP, \fC [set]\fP"
+getter and setter of the landmarkpoints
+.PP
+WARNING do not touch outside the camera thread -> so use currentFace 
+.PP
+Definition at line 167 of file Model\&.cs\&.
+.SS "List<\fBRSModule\fP> RealSense\&.Model\&.Modules\fC [get]\fP"
+getter of the modules 
+.PP
+Definition at line 123 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.Model\&.NullFace\fC [get]\fP, \fC [set]\fP"
+getter and setter of the ABSOLUTE NullFace 
+.PP
+Definition at line 205 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.NullPose\fC [get]\fP, \fC [set]\fP"
+getter and setter of the nullPose 
+.PP
+Definition at line 318 of file Model\&.cs\&.
+.SS "SolidBrush RealSense\&.Model\&.OpaqueBGBrush\fC [get]\fP"
+getter of the opaqueStringBrush 
+.PP
+Definition at line 344 of file Model\&.cs\&.
+.SS "int RealSense\&.Model\&.PoseMax\fC [get]\fP, \fC [set]\fP"
+getter and setter of the poseMax 
+.PP
+Definition at line 255 of file Model\&.cs\&.
+.SS "PXCMSenseManager RealSense\&.Model\&.SenseManager\fC [get]\fP, \fC [set]\fP"
+getter and setter of the senseManager 
+.PP
+Definition at line 131 of file Model\&.cs\&.
+.SS "bool RealSense\&.Model\&.Stream\fC [get]\fP"
+getter of the stream 
+.PP
+Definition at line 188 of file Model\&.cs\&.
+.SS "\fBCameraView\fP RealSense\&.Model\&.View\fC [get]\fP, \fC [set]\fP"
+getter and setter of the View 
+.PP
+Definition at line 237 of file Model\&.cs\&.
+.SS "int RealSense\&.Model\&.Width\fC [get]\fP"
+getter of the width 
+.PP
+Definition at line 140 of file Model\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

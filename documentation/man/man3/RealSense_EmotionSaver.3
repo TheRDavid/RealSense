@@ -1,0 +1,69 @@
+.TH "RealSense.EmotionSaver" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.EmotionSaver
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file EmotionSaver\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RealSense\&.EmotionSaver\&.init ()"
+
+.PP
+Definition at line 17 of file EmotionSaver\&.cs\&.
+.SS "override void RealSense\&.EmotionSaver\&.Work (Graphics g)\fC [virtual]\fP"
+Update every frame (do calculations, manipulate output Image) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g 
+.RE
+.PP
+if (model\&.Emotions['Contempt02'] > contemptMax) { angerMax = model\&.Emotions['Contempt02']; File\&.Delete('C:/Users/prouser/Pictures/emotions/contempt\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/contempt\&.png');
+.PP
+}
+.PP
+if (model\&.Emotions['Disgust'] > disgustMax) { angerMax = model\&.Emotions['Disgust']; File\&.Delete('C:/Users/prouser/Pictures/emotions/disgust\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/disgust\&.png');
+.PP
+}
+.PP
+if (model\&.Emotions['Fear'] > fearMax) { angerMax = model\&.Emotions['Fear']; File\&.Delete('C:/Users/prouser/Pictures/emotions/fear\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/fear\&.png');
+.PP
+}
+.PP
+if (model\&.Emotions['Joy'] > joyMax) { angerMax = model\&.Emotions['Joy']; File\&.Delete('C:/Users/prouser/Pictures/emotions/joy\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/joy\&.png');
+.PP
+}
+.PP
+if (model\&.Emotions['Sadness'] > sadnessMax) { angerMax = model\&.Emotions['Sadness']; File\&.Delete('C:/Users/prouser/Pictures/emotions/sadness\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/sadness\&.png');
+.PP
+}
+.PP
+if (model\&.Emotions['Surprise'] > surpriseMax) { angerMax = model\&.Emotions['Surprise']; File\&.Delete('C:/Users/prouser/Pictures/emotions/surprise\&.png'); croppedImage\&.Save('C:/Users/prouser/Pictures/emotions/surprise\&.png');
+.PP
+}
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 27 of file EmotionSaver\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

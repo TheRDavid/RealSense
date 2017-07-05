@@ -1,0 +1,860 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_analyzer_view" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::AnalyzerView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Form</basecompoundref>
+    <innerclass refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view" prot="private">RealSense::AnalyzerView::DataSetView</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a764d49bb3e49873167492a876c65baf7" prot="private" static="no" mutable="no">
+        <type>MenuStrip</type>
+        <definition>MenuStrip RealSense.AnalyzerView.menuStrip1</definition>
+        <argsstring></argsstring>
+        <name>menuStrip1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="17" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad03c7ad4b8e149a340d8f0a3ab1bb5d7" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.loadToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>loadToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="18" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1abf763a19eb07be2130c70424e1b83f48" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.angARRToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>angARRToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="19" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a4d7e7407fe64529582263d5f9649af15" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.fearToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>fearToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="20" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0260501ba4ccb2256327db71cd7a97c6" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.contemptToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>contemptToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="21" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6a6075b1ade6390be09f3ee10e076f66" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.surpriseToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>surpriseToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="22" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0070b0b90ca31e385e5680033456838f" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.joyToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>joyToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="23" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a541363bd0c194f63003bbbc87f2d24fe" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.sadnessToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>sadnessToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="24" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a67ddb213ad4f397d3505eea7f37e74e7" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.disgustToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>disgustToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="25" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a3580a17d55b32ac385a2b125deb082f6" prot="private" static="no" mutable="no">
+        <type>FlowLayoutPanel</type>
+        <definition>FlowLayoutPanel RealSense.AnalyzerView.elementPanel</definition>
+        <argsstring></argsstring>
+        <name>elementPanel</name>
+        <initializer>= new FlowLayoutPanel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="26" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ab94d78aacb382a1949e7a0aab0a4ee1d" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.viewSizeToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>viewSizeToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="30" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a424aed5253ee32838866e3426d2c600a" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.tinyToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>tinyToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="31" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a79643bcce9b65a9f20294379b418f339" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.smallToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>smallToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="32" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ae8cb574747ea93775fcda738f1ee9d2e" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.deafultToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>deafultToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="33" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad4e11f9309e54e47b1b36cdeff1a9c51" prot="private" static="no" mutable="no">
+        <type>ToolStripMenuItem</type>
+        <definition>ToolStripMenuItem RealSense.AnalyzerView.largeToolStripMenuItem</definition>
+        <argsstring></argsstring>
+        <name>largeToolStripMenuItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="34" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a446586e7de29ffd9fab1e8cc45071847" prot="private" static="no" mutable="no">
+        <type>ContextMenuStrip</type>
+        <definition>ContextMenuStrip RealSense.AnalyzerView.contextMenuStrip1</definition>
+        <argsstring></argsstring>
+        <name>contextMenuStrip1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="35" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad4c2d8c715c53d7b5f46da97c4ff4ec6" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.IContainer</type>
+        <definition>System.ComponentModel.IContainer RealSense.AnalyzerView.components</definition>
+        <argsstring></argsstring>
+        <name>components</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="36" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6989f432e059fdd97abe6c81e5bb7ece" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread RealSense.AnalyzerView.updaterThread</definition>
+        <argsstring></argsstring>
+        <name>updaterThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="40" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a7a0a8055a8edf573061672fce01da27a" prot="private" static="no" mutable="no">
+        <type>TrackBar</type>
+        <definition>TrackBar RealSense.AnalyzerView.scrubber</definition>
+        <argsstring></argsstring>
+        <name>scrubber</name>
+        <initializer>= new TrackBar()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="43" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0dcbd37814e0623bc2e4af47b3dceddd" prot="private" static="no" mutable="no">
+        <type>Panel</type>
+        <definition>Panel RealSense.AnalyzerView.controlPanel</definition>
+        <argsstring></argsstring>
+        <name>controlPanel</name>
+        <initializer>= new Panel()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="44" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0651a1db810e102a51b89a1ea93b34c9" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.AnalyzerView.loading</definition>
+        <argsstring></argsstring>
+        <name>loading</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="50" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1afd192779474899d308e370373ffafdf5" prot="private" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.AnalyzerView.videoRatio</definition>
+        <argsstring></argsstring>
+        <name>videoRatio</name>
+        <initializer>= 1420.0 / 1200.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="28" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0d3e7975d11f165e88d72dcbb949f7d1" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.VIEW_TINY</definition>
+        <argsstring></argsstring>
+        <name>VIEW_TINY</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a46839023cfadd0811d5d9f142fb56b28" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.VIEW_SMALL</definition>
+        <argsstring></argsstring>
+        <name>VIEW_SMALL</name>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1af31f8ef20e27027cd1c8696abba79803" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.VIEW_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>VIEW_DEFAULT</name>
+        <initializer>= 300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad7b3cb7601b763a0d4fd005d46779394" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.VIEW_LARGE</definition>
+        <argsstring></argsstring>
+        <name>VIEW_LARGE</name>
+        <initializer>= 500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6ae36ea77be7ce6c8fa71f9385ebf51b" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.viewHeight</definition>
+        <argsstring></argsstring>
+        <name>viewHeight</name>
+        <initializer>= VIEW_DEFAULT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="37" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1adc05bc8753f4786232e34ea7d7471c9b" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.WINDOW_WIDTH</definition>
+        <argsstring></argsstring>
+        <name>WINDOW_WIDTH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="38" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1aeb8a25980943ff42ad27b128c38b81aa" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.gap</definition>
+        <argsstring></argsstring>
+        <name>gap</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ac5f7b97b8d7fc5bdb4c8ff5aa7b19472" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.currentFrame</definition>
+        <argsstring></argsstring>
+        <name>currentFrame</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="41" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a211973ab749a887b4aba9f9a97039477" prot="private" static="yes" mutable="no">
+        <type>Brush</type>
+        <definition>Brush RealSense.AnalyzerView.textBrush</definition>
+        <argsstring></argsstring>
+        <name>textBrush</name>
+        <initializer>= new SolidBrush(Color.FromArgb(255, 88, 88, 88))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="46" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a5de119b4544fee7b6c230a9f272bbe2d" prot="private" static="yes" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.AnalyzerView.textFont</definition>
+        <argsstring></argsstring>
+        <name>textFont</name>
+        <initializer>= new Font(&quot;Arial&quot;, 11)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="47" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a972621f6c17ef1d81babc7d8bbaf96e4" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.cellWidth</definition>
+        <argsstring></argsstring>
+        <name>cellWidth</name>
+        <initializer>= 790</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="49" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1ae982969308d52738e20d686cd24b88e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.AnalyzerView.AnalyzerView</definition>
+        <argsstring>()</argsstring>
+        <name>AnalyzerView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="52" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="52" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1ab88973644a3ba1724d983843cbc48c0e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.loadFrame</definition>
+        <argsstring>()</argsstring>
+        <name>loadFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="93" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="93" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a5f0e886a3f83693e7c0cf1dc3b5cb94a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.loadFiles</definition>
+        <argsstring>(string type)</argsstring>
+        <name>loadFiles</name>
+        <param>
+          <type>string</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="112" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="112" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1af21fa8056a43d4277c1ec009a13f0414" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.arrange</definition>
+        <argsstring>()</argsstring>
+        <name>arrange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="138" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="138" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1afa50cf1544d0361b7a2643efaae00cbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="374" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="374" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a2f2d307a192b9beb3dc89c9a9758481c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.angARRToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>angARRToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="529" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="529" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a7a8bee40fcf373a497e12a5e76f0df56" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.fearToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>fearToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="534" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="534" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a348dbdd38522a2d8b66be0cc9689823c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.contemptToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>contemptToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="539" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="539" bodyend="542"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a3073403887ca4670ef5285316171c8be" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.surpriseToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>surpriseToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="544" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="544" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a92e1e4591b92af2a8e68546bdbeb0e26" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.joyToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>joyToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="549" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="549" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1ab738a61c23a11939ccb46022ad463f46" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.sadnessToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>sadnessToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="554" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="554" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1aba07ed6c699159720dd21fe59a99c05c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.disgustToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>disgustToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="559" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="559" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a5456a8670c497926a38cccbd9b6c488c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.tinyToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>tinyToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="564" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="564" bodyend="568"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a0cc2b90fa374dbac4218d191d244e89e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.smallToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>smallToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="570" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="570" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a01779faac9b4b8d3ddd217df7bd13979" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.AnalyzerView_ResizeEnd</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>AnalyzerView_ResizeEnd</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="576" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="576" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a100981fc6b852825645fde9b6cfa0903" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.deafultToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>deafultToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="581" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="581" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a2a7200dfd81773019b4f9c98e451f606" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.largeToolStripMenuItem_Click</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>largeToolStripMenuItem_Click</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="587" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="587" bodyend="591"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Form</label>
+      </node>
+      <node id="0">
+        <label>RealSense.AnalyzerView</label>
+        <link refid="class_real_sense_1_1_analyzer_view"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Form</label>
+      </node>
+      <node id="2">
+        <label>RealSense.AnalyzerView</label>
+        <link refid="class_real_sense_1_1_analyzer_view"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Analyse/AnalyzerView.cs" line="16" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="15" bodyend="592"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_analyzer_view_1ae982969308d52738e20d686cd24b88e8" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>AnalyzerView</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a01779faac9b4b8d3ddd217df7bd13979" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>AnalyzerView_ResizeEnd</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1abf763a19eb07be2130c70424e1b83f48" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>angARRToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a2f2d307a192b9beb3dc89c9a9758481c" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>angARRToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1af21fa8056a43d4277c1ec009a13f0414" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>arrange</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a972621f6c17ef1d81babc7d8bbaf96e4" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>cellWidth</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ad4c2d8c715c53d7b5f46da97c4ff4ec6" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>components</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0260501ba4ccb2256327db71cd7a97c6" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>contemptToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a348dbdd38522a2d8b66be0cc9689823c" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>contemptToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a446586e7de29ffd9fab1e8cc45071847" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>contextMenuStrip1</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0dcbd37814e0623bc2e4af47b3dceddd" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>controlPanel</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ac5f7b97b8d7fc5bdb4c8ff5aa7b19472" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>currentFrame</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ae8cb574747ea93775fcda738f1ee9d2e" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>deafultToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a100981fc6b852825645fde9b6cfa0903" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>deafultToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a67ddb213ad4f397d3505eea7f37e74e7" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>disgustToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1aba07ed6c699159720dd21fe59a99c05c" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>disgustToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a3580a17d55b32ac385a2b125deb082f6" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>elementPanel</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a4d7e7407fe64529582263d5f9649af15" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>fearToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a7a8bee40fcf373a497e12a5e76f0df56" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>fearToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1aeb8a25980943ff42ad27b128c38b81aa" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>gap</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1afa50cf1544d0361b7a2643efaae00cbe" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>InitializeComponent</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0070b0b90ca31e385e5680033456838f" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>joyToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a92e1e4591b92af2a8e68546bdbeb0e26" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>joyToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ad4e11f9309e54e47b1b36cdeff1a9c51" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>largeToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a2a7200dfd81773019b4f9c98e451f606" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>largeToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a5f0e886a3f83693e7c0cf1dc3b5cb94a" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>loadFiles</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ab88973644a3ba1724d983843cbc48c0e" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>loadFrame</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0651a1db810e102a51b89a1ea93b34c9" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>loading</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ad03c7ad4b8e149a340d8f0a3ab1bb5d7" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>loadToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a764d49bb3e49873167492a876c65baf7" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>menuStrip1</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a541363bd0c194f63003bbbc87f2d24fe" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>sadnessToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ab738a61c23a11939ccb46022ad463f46" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>sadnessToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a7a0a8055a8edf573061672fce01da27a" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>scrubber</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a79643bcce9b65a9f20294379b418f339" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>smallToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0cc2b90fa374dbac4218d191d244e89e" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>smallToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a6a6075b1ade6390be09f3ee10e076f66" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>surpriseToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a3073403887ca4670ef5285316171c8be" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>surpriseToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a211973ab749a887b4aba9f9a97039477" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>textBrush</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a5de119b4544fee7b6c230a9f272bbe2d" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>textFont</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a424aed5253ee32838866e3426d2c600a" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>tinyToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a5456a8670c497926a38cccbd9b6c488c" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>tinyToolStripMenuItem_Click</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a6989f432e059fdd97abe6c81e5bb7ece" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>updaterThread</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1afd192779474899d308e370373ffafdf5" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>videoRatio</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1af31f8ef20e27027cd1c8696abba79803" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>VIEW_DEFAULT</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ad7b3cb7601b763a0d4fd005d46779394" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>VIEW_LARGE</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a46839023cfadd0811d5d9f142fb56b28" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>VIEW_SMALL</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a0d3e7975d11f165e88d72dcbb949f7d1" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>VIEW_TINY</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1a6ae36ea77be7ce6c8fa71f9385ebf51b" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>viewHeight</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1ab94d78aacb382a1949e7a0aab0a4ee1d" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>viewSizeToolStripMenuItem</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1adc05bc8753f4786232e34ea7d7471c9b" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>WINDOW_WIDTH</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_program" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::Program</compoundname>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_real_sense_1_1_program_1a97e800ae984c31beba30191978af34c4" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RealSense.Program.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Program.cs" line="23" column="1" bodyfile="Program.cs" bodystart="23" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>this ist the main class. It starts the model and adds all modules to our <ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref>.</para><para><simplesect kind="author"><para>Tanja Witke, David Rosenbusch </para></simplesect>
+</para>    </detaileddescription>
+    <location file="Program.cs" line="21" column="1" bodyfile="Program.cs" bodystart="20" bodyend="60"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_program_1a97e800ae984c31beba30191978af34c4" prot="private" virt="non-virtual"><scope>RealSense::Program</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

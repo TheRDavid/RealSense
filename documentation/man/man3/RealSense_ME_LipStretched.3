@@ -1,0 +1,58 @@
+.TH "RealSense.ME_LipStretched" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.ME_LipStretched
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBME_LipStretched\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Measures whether the lips are stretched 
+.PP
+\fBAuthor:\fP
+.RS 4
+Tobias Schramm  Hufflepuff
+.RE
+.PP
+Interpretation: -100 = Kissing 0 = Relaxed 100 = Frogface 
+.PP
+Definition at line 19 of file AU_LipStretched\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.ME_LipStretched\&.ME_LipStretched ()"
+
+.PP
+Definition at line 28 of file AU_LipStretched\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.ME_LipStretched\&.Work (Graphics g)\fC [virtual]\fP"
+Calculates the difference between the two lip corners 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 46 of file AU_LipStretched\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_gauge___module" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::Gauge_Module</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1a2519e24e65df9ebba83539b2387ce338" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int RealSense.Gauge_Module.numFaces</definition>
+        <argsstring></argsstring>
+        <name>numFaces</name>
+        <initializer>= 150</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="14" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1acbecc2dfef1429228692a33ef5e66fb7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Gauge_Module.guInit</definition>
+        <argsstring></argsstring>
+        <name>guInit</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="16" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1ad7948b8d26ed86ff3c42e95ddebc6dae" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint [][]</type>
+        <definition>PXCMFaceData.LandmarkPoint [][] RealSense.Gauge_Module.cFaces</definition>
+        <argsstring></argsstring>
+        <name>cFaces</name>
+        <initializer>= new PXCMFaceData.LandmarkPoint[numFaces][]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="17" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1a29a273892d7538243db648d74b1a4cb0" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.Gauge_Module.finalFace</definition>
+        <argsstring></argsstring>
+        <name>finalFace</name>
+        <initializer>= new PXCMFaceData.LandmarkPoint[80]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="18" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1aa2e25345948adaae005ff8f396b5f23e" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.PoseEulerAngles []</type>
+        <definition>PXCMFaceData.PoseEulerAngles [] RealSense.Gauge_Module.cAngles</definition>
+        <argsstring></argsstring>
+        <name>cAngles</name>
+        <initializer>= new PXCMFaceData.PoseEulerAngles[numFaces]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="19" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1ae6d9e538dd563a18ed8d7ea5219b57b7" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.PoseEulerAngles</type>
+        <definition>PXCMFaceData.PoseEulerAngles RealSense.Gauge_Module.finalAngle</definition>
+        <argsstring></argsstring>
+        <name>finalAngle</name>
+        <initializer>= new PXCMFaceData.PoseEulerAngles()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="20" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1ac304b36859cf85110d06541ec758cb94" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Gauge_Module.index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="21" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1ab69b081551528ed567b2c648fdc8e666" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button RealSense.Gauge_Module.calibrateButton</definition>
+        <argsstring></argsstring>
+        <name>calibrateButton</name>
+        <initializer>= new Button()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="22" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1a116882e1610b28a8ce6159b1ddbbf578" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Gauge_Module.calibrate</definition>
+        <argsstring></argsstring>
+        <name>calibrate</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="15" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_gauge___module_1ae9d8d183234958600957fdfd23c4d850" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Gauge_Module.frameUpdate</definition>
+        <argsstring></argsstring>
+        <name>frameUpdate</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="23" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_gauge___module_1a9371c3920a0a7c15b1f254a9ca6620b6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.Gauge_Module.guiInit</definition>
+        <argsstring>()</argsstring>
+        <name>guiInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inits the GUI </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="28" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="28" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_gauge___module_1aafaa08e37bd469f18a76c7262dd725b8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.Gauge_Module.printFace</definition>
+        <argsstring>(string v, PXCMFaceData.LandmarkPoint[] face)</argsstring>
+        <name>printFace</name>
+        <param>
+          <type>string</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>PXCMFaceData.LandmarkPoint []</type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="133" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="133" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_gauge___module_1a8926962f5dacf753daa21b81da50d176" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.Gauge_Module.update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>when a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg. After having numFaces faces, calculate... Runs outside the Camera Thread </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="53" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="53" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_gauge___module_1a587ea68ad539f2f56bcfbd7641a92a83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.Gauge_Module.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update every frame (do calculations, manipulate output Image) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/Gauge_Module.cs" line="121" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="121" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="77">
+        <label>RealSense.Gauge_Module</label>
+        <link refid="class_real_sense_1_1_gauge___module"/>
+        <childnode refid="78" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="79">
+        <label>RealSense.Gauge_Module</label>
+        <link refid="class_real_sense_1_1_gauge___module"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="81" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="81">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="Various/Gauge_Module.cs" line="13" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="12" bodyend="142"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_gauge___module_1a116882e1610b28a8ce6159b1ddbbf578" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>calibrate</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1ab69b081551528ed567b2c648fdc8e666" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>calibrateButton</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1aa2e25345948adaae005ff8f396b5f23e" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>cAngles</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1ad7948b8d26ed86ff3c42e95ddebc6dae" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>cFaces</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1ae6d9e538dd563a18ed8d7ea5219b57b7" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>finalAngle</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1a29a273892d7538243db648d74b1a4cb0" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>finalFace</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1ae9d8d183234958600957fdfd23c4d850" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>frameUpdate</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1a9371c3920a0a7c15b1f254a9ca6620b6" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>guiInit</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1acbecc2dfef1429228692a33ef5e66fb7" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>guInit</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1ac304b36859cf85110d06541ec758cb94" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>index</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::Gauge_Module</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1a2519e24e65df9ebba83539b2387ce338" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>numFaces</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1aafaa08e37bd469f18a76c7262dd725b8" prot="private" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>printFace</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1a8926962f5dacf753daa21b81da50d176" prot="public" virt="non-virtual"><scope>RealSense::Gauge_Module</scope><name>update</name></member>
+      <member refid="class_real_sense_1_1_gauge___module_1a587ea68ad539f2f56bcfbd7641a92a83" prot="public" virt="virtual"><scope>RealSense::Gauge_Module</scope><name>Work</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

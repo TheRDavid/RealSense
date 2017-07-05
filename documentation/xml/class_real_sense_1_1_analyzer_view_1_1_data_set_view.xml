@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_analyzer_view_1_1_data_set_view" kind="class" language="C#" prot="private">
+    <compoundname>RealSense::AnalyzerView::DataSetView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Panel</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a55566d0104305e940002f5a5fbb025af" prot="public" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_face_recording" kindref="compound">FaceRecording</ref></type>
+        <definition>FaceRecording RealSense.AnalyzerView.DataSetView.faceRecording</definition>
+        <argsstring></argsstring>
+        <name>faceRecording</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="154" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a921cf9de493df136f41acfe161287816" prot="public" static="no" mutable="no">
+        <type>Vlc.DotNet.Forms.VlcControl</type>
+        <definition>Vlc.DotNet.Forms.VlcControl RealSense.AnalyzerView.DataSetView.vlcControl</definition>
+        <argsstring></argsstring>
+        <name>vlcControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="155" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ade45fd3cd4cba183c51fcbb0dabba6d5" prot="public" static="no" mutable="no">
+        <type>PictureBox</type>
+        <definition>PictureBox RealSense.AnalyzerView.DataSetView.dataPictureBox</definition>
+        <argsstring></argsstring>
+        <name>dataPictureBox</name>
+        <initializer>= new PictureBox()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="156" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a638a1b40c52577a5b5bc06b5bf3035d4" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string RealSense.AnalyzerView.DataSetView.dataFile</definition>
+        <argsstring></argsstring>
+        <name>dataFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="157" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad6927f409d85361128a62d39ac9b9591" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string RealSense.AnalyzerView.DataSetView.videoFile</definition>
+        <argsstring></argsstring>
+        <name>videoFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="157" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a1d59c941270307e9aa348e42b9689338" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string RealSense.AnalyzerView.DataSetView.shortName</definition>
+        <argsstring></argsstring>
+        <name>shortName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="157" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a5c8d277f80af9d4fb1afc6247298fde1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.AnalyzerView.DataSetView.index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="158" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a4a3156c916ff70913168033651ce07ef" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
+        <definition>Model RealSense.AnalyzerView.DataSetView.model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="159" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a3766f1f8d7f4fff431d45af63e40e2bd" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.AnalyzerView.DataSetView.dataImage</definition>
+        <argsstring></argsstring>
+        <name>dataImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="160" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a036e47cfeeaa1b6a96eb799402002a7f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref> []</type>
+        <definition>RSModule [] RealSense.AnalyzerView.DataSetView.microExpressionModules</definition>
+        <argsstring></argsstring>
+        <name>microExpressionModules</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref>[11]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="162" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ade4a095b159d161a72e57d6c26271853" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref> []</type>
+        <definition>RSModule [] RealSense.AnalyzerView.DataSetView.emotionModules</definition>
+        <argsstring></argsstring>
+        <name>emotionModules</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref>[7]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="163" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a12c8cfa219a4544ec252f588fb6ff6b4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref> []</type>
+        <definition>FriggnAweseomeGraphix.MEMonitor [] RealSense.AnalyzerView.DataSetView.monitors</definition>
+        <argsstring></argsstring>
+        <name>monitors</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>[] {
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,0,0,25,5),    
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,0,55,25,5),   
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,0,110,25,5),  
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,0,165,25,5),  
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,55,25,25,5),  
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,55,80,25,5),  
+                new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;&quot;,&quot;&quot;,55,135,25,5)  
+            }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="166" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1aed78261ef63c34ac2fc582563f65176a" prot="private" static="no" mutable="no">
+        <type>MethodInvoker</type>
+        <definition>MethodInvoker RealSense.AnalyzerView.DataSetView.pictureUpdate</definition>
+        <argsstring></argsstring>
+        <name>pictureUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="176" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ae620e2bda27fed313a3f91adb394f30d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.AnalyzerView.DataSetView.DataSetView</definition>
+        <argsstring>(string fileBaseName, string type, int idx)</argsstring>
+        <name>DataSetView</name>
+        <param>
+          <type>string</type>
+          <declname>fileBaseName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="178" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="178" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a34e9a795f130465ca129f4cf00df57a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.DataSetView.udpateAndVisualizeData</definition>
+        <argsstring>()</argsstring>
+        <name>udpateAndVisualizeData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="248" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="248" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad6868f4b0f95c651242eaf0aa1ec4969" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.DataSetView.arrange</definition>
+        <argsstring>()</argsstring>
+        <name>arrange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="312" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="312" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad09264b38f892c0e01d07c44b8b5e65e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.DataSetView.OnVlcControlNeedLibDirectory</definition>
+        <argsstring>(object sender, VlcLibDirectoryNeededEventArgs e)</argsstring>
+        <name>OnVlcControlNeedLibDirectory</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>VlcLibDirectoryNeededEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="367" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="367" bodyend="370"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a6d77b28fe04a79d7e4993311cf729f3f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.AnalyzerView.DataSetView.initModules</definition>
+        <argsstring>()</argsstring>
+        <name>initModules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/AnalyzerView.cs" line="218" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="218" bodyend="246"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>RealSense.AnalyzerView.DataSetView</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Panel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>RealSense.FaceRecording</label>
+        <link refid="class_real_sense_1_1_face_recording"/>
+      </node>
+      <node id="10">
+        <label>RealSense.AnalyzerView.DataSetView</label>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>vlcControl</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>faceRecording</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Panel</label>
+      </node>
+      <node id="12">
+        <label>Forms</label>
+      </node>
+    </collaborationgraph>
+    <location file="Analyse/AnalyzerView.cs" line="152" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="151" bodyend="372"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad6868f4b0f95c651242eaf0aa1ec4969" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>arrange</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a638a1b40c52577a5b5bc06b5bf3035d4" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>dataFile</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a3766f1f8d7f4fff431d45af63e40e2bd" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>dataImage</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ade45fd3cd4cba183c51fcbb0dabba6d5" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>dataPictureBox</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ae620e2bda27fed313a3f91adb394f30d" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>DataSetView</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ade4a095b159d161a72e57d6c26271853" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>emotionModules</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a55566d0104305e940002f5a5fbb025af" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>faceRecording</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a5c8d277f80af9d4fb1afc6247298fde1" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>index</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a6d77b28fe04a79d7e4993311cf729f3f" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>initModules</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a036e47cfeeaa1b6a96eb799402002a7f" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>microExpressionModules</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a4a3156c916ff70913168033651ce07ef" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a12c8cfa219a4544ec252f588fb6ff6b4" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>monitors</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad09264b38f892c0e01d07c44b8b5e65e" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>OnVlcControlNeedLibDirectory</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1aed78261ef63c34ac2fc582563f65176a" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>pictureUpdate</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a1d59c941270307e9aa348e42b9689338" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>shortName</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a34e9a795f130465ca129f4cf00df57a9" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>udpateAndVisualizeData</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1ad6927f409d85361128a62d39ac9b9591" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>videoFile</name></member>
+      <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a921cf9de493df136f41acfe161287816" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView::DataSetView</scope><name>vlcControl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

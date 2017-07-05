@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_emotion_view" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::EmotionView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Form</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a849c50211cf2b19ccbc19a4dc591d496" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
+        <definition>Model RealSense.EmotionView.model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.cs" line="15" column="1" bodyfile="Framework/EmotionView.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a8032ee43fe560342f253ed5dad2374f9" prot="private" static="no" mutable="no">
+        <type>System.ComponentModel.IContainer</type>
+        <definition>System.ComponentModel.IContainer RealSense.EmotionView.components</definition>
+        <argsstring></argsstring>
+        <name>components</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Required designer variable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="11" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1ad556bc58c90369b68936e10eccabde3d" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.Timer</type>
+        <definition>System.Windows.Forms.Timer RealSense.EmotionView.update</definition>
+        <argsstring></argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="302" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a39f5507dc145f4ffcfa80483f4e83783" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TableLayoutPanel</type>
+        <definition>System.Windows.Forms.TableLayoutPanel RealSense.EmotionView.tableLayoutPanel1</definition>
+        <argsstring></argsstring>
+        <name>tableLayoutPanel1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="303" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a4e86e0d291398c1699a87e889df57d19" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TableLayoutPanel</type>
+        <definition>System.Windows.Forms.TableLayoutPanel RealSense.EmotionView.tableLayoutPanel2</definition>
+        <argsstring></argsstring>
+        <name>tableLayoutPanel2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="304" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a8aee5026e63d5e03f8c9bdfd40828088" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxSadness</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxSadness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="305" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a02f4106abcd404e3f405e0409e74d3a7" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxFear</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxFear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="306" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a9871fd2cd935328bb463c1794bc91999" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxContempt</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxContempt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="307" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a4a998d6bc46920164be72ce8a807d0c7" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxSurprise</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxSurprise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="308" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1adcf9b9d4adfc4e4804a4295f64dda4fd" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.TableLayoutPanel</type>
+        <definition>System.Windows.Forms.TableLayoutPanel RealSense.EmotionView.tableLayoutPanel3</definition>
+        <argsstring></argsstring>
+        <name>tableLayoutPanel3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="309" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1aa7b24163682f008b38d375a86878385f" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxJoy</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxJoy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="310" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="310" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1abdc07dafee751ace0b2ce558062ecf16" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxAnger</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxAnger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="311" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="311" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotion_view_1a72a5f7e6ae4c36cfff477ec48450b4b9" prot="private" static="no" mutable="no">
+        <type>System.Windows.Forms.PictureBox</type>
+        <definition>System.Windows.Forms.PictureBox RealSense.EmotionView.pictureBoxDisgust</definition>
+        <argsstring></argsstring>
+        <name>pictureBoxDisgust</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="312" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_view_1a6f0e3d2564b7ecfea7c153faf76b53a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.EmotionView.EmotionView</definition>
+        <argsstring>(Model model)</argsstring>
+        <name>EmotionView</name>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.cs" line="17" column="1" bodyfile="Framework/EmotionView.cs" bodystart="17" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_view_1addc0dc6c4abdce41f1801d913b2f56dd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.EmotionView.updateTime</definition>
+        <argsstring>(object sender, EventArgs e)</argsstring>
+        <name>updateTime</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>EventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.cs" line="32" column="1" bodyfile="Framework/EmotionView.cs" bodystart="32" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_view_1a9171eeba8bd6152affbe669af7361e78" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.EmotionView.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>Required method for Designer support - do not modify the contents of this method with the code editor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="32" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="32" bodyend="298"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotion_view_1a544db73a74ee3f66ec3c810121e45bc4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void RealSense.EmotionView.Dispose</definition>
+        <argsstring>(bool disposing)</argsstring>
+        <name>Dispose</name>
+        <param>
+          <type>bool</type>
+          <declname>disposing</declname>
+        </param>
+        <briefdescription>
+<para>Clean up any resources being used. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>disposing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if managed resources should be disposed; otherwise, false.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/EmotionView.Designer.cs" line="17" column="1" bodyfile="Framework/EmotionView.Designer.cs" bodystart="17" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="55">
+        <label>Form</label>
+      </node>
+      <node id="54">
+        <label>RealSense.EmotionView</label>
+        <link refid="class_real_sense_1_1_emotion_view"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="57">
+        <label>Form</label>
+      </node>
+      <node id="56">
+        <label>RealSense.EmotionView</label>
+        <link refid="class_real_sense_1_1_emotion_view"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Framework/EmotionView.cs" line="14" column="1" bodyfile="Framework/EmotionView.cs" bodystart="13" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_emotion_view_1a8032ee43fe560342f253ed5dad2374f9" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>components</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a544db73a74ee3f66ec3c810121e45bc4" prot="protected" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>Dispose</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a6f0e3d2564b7ecfea7c153faf76b53a6" prot="public" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>EmotionView</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a9171eeba8bd6152affbe669af7361e78" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>InitializeComponent</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a849c50211cf2b19ccbc19a4dc591d496" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1abdc07dafee751ace0b2ce558062ecf16" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxAnger</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a9871fd2cd935328bb463c1794bc91999" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxContempt</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a72a5f7e6ae4c36cfff477ec48450b4b9" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxDisgust</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a02f4106abcd404e3f405e0409e74d3a7" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxFear</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1aa7b24163682f008b38d375a86878385f" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxJoy</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a8aee5026e63d5e03f8c9bdfd40828088" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxSadness</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a4a998d6bc46920164be72ce8a807d0c7" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>pictureBoxSurprise</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a39f5507dc145f4ffcfa80483f4e83783" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>tableLayoutPanel1</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1a4e86e0d291398c1699a87e889df57d19" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>tableLayoutPanel2</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1adcf9b9d4adfc4e4804a4295f64dda4fd" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>tableLayoutPanel3</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1ad556bc58c90369b68936e10eccabde3d" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>update</name></member>
+      <member refid="class_real_sense_1_1_emotion_view_1addc0dc6c4abdce41f1801d913b2f56dd" prot="private" virt="non-virtual"><scope>RealSense::EmotionView</scope><name>updateTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

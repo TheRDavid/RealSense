@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_m_e___eyelid_tight" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::ME_EyelidTight</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1af6a5a44b1e5144d048006b8211af4d6c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.leftEye_leftDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>leftEye_leftDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="22" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1ad17c39778687ee5b982f8a53d35ee6b5" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.leftEye_middleDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>leftEye_middleDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="22" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a3b88e24b41d5e0790917810ae8c852a4" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.leftEye_rightDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>leftEye_rightDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="22" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a85c9fcc49c98674b3161829b2daab3b3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.rightEye_leftDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>rightEye_leftDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="23" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a4e49d2e9ae3af65fc02109411a1e7d8d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.rightEye_middleDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>rightEye_middleDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="23" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a1af54cae2ea1752eaa67dd2c28d0b81b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.rightEye_rightDistance_diff</definition>
+        <argsstring></argsstring>
+        <name>rightEye_rightDistance_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="23" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1afce39bb0794a9a00d0ccbcb025183d7e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.left_diff</definition>
+        <argsstring></argsstring>
+        <name>left_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="24" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1af06b3cb4069325ae3b2b284464e5c307" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.ME_EyelidTight.right_diff</definition>
+        <argsstring></argsstring>
+        <name>right_diff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="24" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a253e59fe5ed0aec333296d043bf32603" prot="private" static="no" mutable="no">
+        <type>double []</type>
+        <definition>double [] RealSense.ME_EyelidTight.leftDistances</definition>
+        <argsstring></argsstring>
+        <name>leftDistances</name>
+        <initializer>= new double[<ref refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" kindref="member">numFramesBeforeAccept</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="25" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_m_e___eyelid_tight_1a24612c9c3dc6f0dae76f288239035c6e" prot="private" static="no" mutable="no">
+        <type>double []</type>
+        <definition>double [] RealSense.ME_EyelidTight.rightDistances</definition>
+        <argsstring></argsstring>
+        <name>rightDistances</name>
+        <initializer>= new double[<ref refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" kindref="member">numFramesBeforeAccept</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="26" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_m_e___eyelid_tight_1a8322c626219035e9ec76747f6faae8aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.ME_EyelidTight.ME_EyelidTight</definition>
+        <argsstring>()</argsstring>
+        <name>ME_EyelidTight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="29" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="29" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_m_e___eyelid_tight_1a95f0c9f0a9339b9fbcd7035847971216" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.ME_EyelidTight.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates difference of lid-distance for each eye. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g for the view </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ActionUnits/AU_EyelidTight.cs" line="53" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="53" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Measures tightening of eyelids (each eye) <simplesect kind="author"><para>: David Rosenbusch  Hufflepuff</para></simplesect>
+Interpretation: -100 = Eyes squinted 100 = Eyes wide open </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="102">
+        <label>RealSense.ME_EyelidTight</label>
+        <link refid="class_real_sense_1_1_m_e___eyelid_tight"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="104">
+        <label>RealSense.ME_EyelidTight</label>
+        <link refid="class_real_sense_1_1_m_e___eyelid_tight"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="106" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="106">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="ActionUnits/AU_EyelidTight.cs" line="19" column="1" bodyfile="ActionUnits/AU_EyelidTight.cs" bodystart="18" bodyend="90"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::ME_EyelidTight</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1afce39bb0794a9a00d0ccbcb025183d7e" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>left_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a253e59fe5ed0aec333296d043bf32603" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>leftDistances</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1af6a5a44b1e5144d048006b8211af4d6c" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>leftEye_leftDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1ad17c39778687ee5b982f8a53d35ee6b5" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>leftEye_middleDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a3b88e24b41d5e0790917810ae8c852a4" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>leftEye_rightDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a8322c626219035e9ec76747f6faae8aa" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>ME_EyelidTight</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1af06b3cb4069325ae3b2b284464e5c307" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>right_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a24612c9c3dc6f0dae76f288239035c6e" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>rightDistances</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a85c9fcc49c98674b3161829b2daab3b3" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>rightEye_leftDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a4e49d2e9ae3af65fc02109411a1e7d8d" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>rightEye_middleDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a1af54cae2ea1752eaa67dd2c28d0b81b" prot="private" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>rightEye_rightDistance_diff</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::ME_EyelidTight</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a95f0c9f0a9339b9fbcd7035847971216" prot="public" virt="virtual"><scope>RealSense::ME_EyelidTight</scope><name>Work</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

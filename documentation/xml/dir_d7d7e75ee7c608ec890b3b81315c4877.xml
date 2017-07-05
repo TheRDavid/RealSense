@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d7d7e75ee7c608ec890b3b81315c4877" kind="dir">
+    <compoundname>Analyse</compoundname>
+    <innerfile refid="_analyzer_view_8cs">AnalyzerView.cs</innerfile>
+    <innerfile refid="_face_recorder_8cs">FaceRecorder.cs</innerfile>
+    <innerfile refid="_face_recording_8cs">FaceRecording.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Analyse/"/>
+  </compounddef>
+</doxygen>

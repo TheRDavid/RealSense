@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_multi_form_context" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::MultiFormContext</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationContext</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_multi_form_context_1abe34c2fe34a2d7bddac1e29b5b501db0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.MultiFormContext.openForms</definition>
+        <argsstring></argsstring>
+        <name>openForms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/MultiFormContext.cs" line="8" column="1" bodyfile="Various/MultiFormContext.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_multi_form_context_1a509b28300a328d9fad769c6036f8af33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.MultiFormContext.MultiFormContext</definition>
+        <argsstring>(params Form[] forms)</argsstring>
+        <name>MultiFormContext</name>
+        <param>
+          <type>params Form []</type>
+          <declname>forms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/MultiFormContext.cs" line="9" column="1" bodyfile="Various/MultiFormContext.cs" bodystart="9" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="157">
+        <label>ApplicationContext</label>
+      </node>
+      <node id="156">
+        <label>RealSense.MultiFormContext</label>
+        <link refid="class_real_sense_1_1_multi_form_context"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="159">
+        <label>ApplicationContext</label>
+      </node>
+      <node id="158">
+        <label>RealSense.MultiFormContext</label>
+        <link refid="class_real_sense_1_1_multi_form_context"/>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Various/MultiFormContext.cs" line="7" column="1" bodyfile="Various/MultiFormContext.cs" bodystart="6" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_multi_form_context_1a509b28300a328d9fad769c6036f8af33" prot="public" virt="non-virtual"><scope>RealSense::MultiFormContext</scope><name>MultiFormContext</name></member>
+      <member refid="class_real_sense_1_1_multi_form_context_1abe34c2fe34a2d7bddac1e29b5b501db0" prot="private" virt="non-virtual"><scope>RealSense::MultiFormContext</scope><name>openForms</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

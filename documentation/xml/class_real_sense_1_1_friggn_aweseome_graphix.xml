@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_friggn_aweseome_graphix" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::FriggnAweseomeGraphix</compoundname>
+    <innerclass refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" prot="public">RealSense::FriggnAweseomeGraphix::MEMonitor</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1a904db3c856d404f5f116a427a329d382" prot="private" static="yes" mutable="no">
+        <type>Pen</type>
+        <definition>Pen RealSense.FriggnAweseomeGraphix.ME_MonitorPen</definition>
+        <argsstring></argsstring>
+        <name>ME_MonitorPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><heading level="6"></heading>
+</para><para><heading level="1">UI</heading>
+</para><para><heading level="6"></heading>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="23" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1ad52c5770f2a3921fa333d0f9c9b22957" prot="private" static="yes" mutable="no">
+        <type>Brush</type>
+        <definition>Brush RealSense.FriggnAweseomeGraphix.MEMonitorBrush</definition>
+        <argsstring></argsstring>
+        <name>MEMonitorBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="24" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1a7ed050a71c010cc924d60104e93deaa3" prot="private" static="yes" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.FriggnAweseomeGraphix.percentageFont</definition>
+        <argsstring></argsstring>
+        <name>percentageFont</name>
+        <initializer>= new Font(&quot;Futura&quot;, 24, FontStyle.Bold)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="26" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1ab5775c9d3537a6a5a0b9702b56828b05" prot="private" static="yes" mutable="no">
+        <type>Color</type>
+        <definition>Color RealSense.FriggnAweseomeGraphix.bgColor</definition>
+        <argsstring></argsstring>
+        <name>bgColor</name>
+        <initializer>= Color.FromArgb(255, 200, 200, 200)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="30" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1ad34adf2179722fa8080e9f4032bc43ce" prot="public" static="yes" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.FriggnAweseomeGraphix.majorFont</definition>
+        <argsstring></argsstring>
+        <name>majorFont</name>
+        <initializer>= new Font(&quot;Futura&quot;, 36, FontStyle.Bold)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="27" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1a9d2afacf158345fcecf1b25b895806a2" prot="public" static="yes" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.FriggnAweseomeGraphix.minorFont</definition>
+        <argsstring></argsstring>
+        <name>minorFont</name>
+        <initializer>= new Font(&quot;Futura&quot;, 21, FontStyle.Regular)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="28" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1a167341ae00dc0a13928b8b26de77e277" prot="public" static="yes" mutable="no">
+        <type>Color</type>
+        <definition>Color RealSense.FriggnAweseomeGraphix.fgColor</definition>
+        <argsstring></argsstring>
+        <name>fgColor</name>
+        <initializer>= Color.FromArgb(55, 186, 68, 75)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="29" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_friggn_aweseome_graphix_1a80a40fcc2a193f1d3a2a7ba3d9d4eb2b" prot="public" static="yes" mutable="no">
+        <type>Color</type>
+        <definition>Color RealSense.FriggnAweseomeGraphix.fontColor</definition>
+        <argsstring></argsstring>
+        <name>fontColor</name>
+        <initializer>= Color.FromArgb(255, 103, 103, 104)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="31" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1a9c50e2b0d08aa7fc1f45ef717a6af85a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RealSense.FriggnAweseomeGraphix.drawMEMontior</definition>
+        <argsstring>(Graphics gfx, MEMonitor monitor)</argsstring>
+        <name>drawMEMontior</name>
+        <param>
+          <type>Graphics</type>
+          <declname>gfx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">MEMonitor</ref></type>
+          <declname>monitor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="61" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1a25acb9a9102fc1c49ec141ea947acbe8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RealSense.FriggnAweseomeGraphix.drawMEMontior</definition>
+        <argsstring>(Graphics gfx, MEMonitor monitor, bool drawText)</argsstring>
+        <name>drawMEMontior</name>
+        <param>
+          <type>Graphics</type>
+          <declname>gfx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">MEMonitor</ref></type>
+          <declname>monitor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>drawText</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="62" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="62" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1aaa75438fcc2f1f738744e6fda161e82b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsafe void</type>
+        <definition>static unsafe void RealSense.FriggnAweseomeGraphix.pretty_blur</definition>
+        <argsstring>(Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)</argsstring>
+        <name>pretty_blur</name>
+        <param>
+          <type>Bitmap</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>Bitmap</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>BitmapData</type>
+          <declname>sourceData</declname>
+        </param>
+        <param>
+          <type>BitmapData</type>
+          <declname>targetData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><heading level="6"></heading>
+</para><para><heading level="1">Graphics</heading>
+</para><para><heading level="6"></heading>
+</para><para>old and slow, but pretty version </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="102" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="102" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1a4ab59468a7284e0647b9814f6a0b2a57" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsafe void</type>
+        <definition>static unsafe void RealSense.FriggnAweseomeGraphix.sonic_blur</definition>
+        <argsstring>(Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, BitmapData sourceData, BitmapData targetData)</argsstring>
+        <name>sonic_blur</name>
+        <param>
+          <type>Bitmap</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>Bitmap</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>channels</declname>
+        </param>
+        <param>
+          <type>BitmapData</type>
+          <declname>sourceData</declname>
+        </param>
+        <param>
+          <type>BitmapData</type>
+          <declname>targetData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Revised version, a lot faster, but sacrifices prettyness (also uuuuugly code) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="169" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="169" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1a8aa4c7bc30a55548f69d9a6beeba102f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void RealSense.FriggnAweseomeGraphix.drawFadingLine</definition>
+        <argsstring>(Graphics gfx, float x0, float y0, float x1, float y1)</argsstring>
+        <name>drawFadingLine</name>
+        <param>
+          <type>Graphics</type>
+          <declname>gfx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="226" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="226" bodyend="238"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_real_sense_1_1_friggn_aweseome_graphix_1a10a5fbcd621c5d91e84c08598e3115a3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int RealSense.FriggnAweseomeGraphix.pixelIndex</definition>
+        <argsstring>(int x, int y, int widthTimesSize, int size)</argsstring>
+        <name>pixelIndex</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>widthTimesSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/FriggnAweseomeGraphix.cs" line="217" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="217" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Framework/FriggnAweseomeGraphix.cs" line="17" column="1" bodyfile="Framework/FriggnAweseomeGraphix.cs" bodystart="16" bodyend="240"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1ab5775c9d3537a6a5a0b9702b56828b05" prot="private" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>bgColor</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a8aa4c7bc30a55548f69d9a6beeba102f" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>drawFadingLine</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9c50e2b0d08aa7fc1f45ef717a6af85a" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>drawMEMontior</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a25acb9a9102fc1c49ec141ea947acbe8" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>drawMEMontior</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a167341ae00dc0a13928b8b26de77e277" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>fgColor</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a80a40fcc2a193f1d3a2a7ba3d9d4eb2b" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>fontColor</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1ad34adf2179722fa8080e9f4032bc43ce" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>majorFont</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a904db3c856d404f5f116a427a329d382" prot="private" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>ME_MonitorPen</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1ad52c5770f2a3921fa333d0f9c9b22957" prot="private" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>MEMonitorBrush</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9d2afacf158345fcecf1b25b895806a2" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>minorFont</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a7ed050a71c010cc924d60104e93deaa3" prot="private" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>percentageFont</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a10a5fbcd621c5d91e84c08598e3115a3" prot="private" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>pixelIndex</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1aaa75438fcc2f1f738744e6fda161e82b" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>pretty_blur</name></member>
+      <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a4ab59468a7284e0647b9814f6a0b2a57" prot="public" virt="non-virtual"><scope>RealSense::FriggnAweseomeGraphix</scope><name>sonic_blur</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

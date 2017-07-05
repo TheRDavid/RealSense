@@ -1,0 +1,164 @@
+.TH "RealSense.Utilities" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.Utilities
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBInit\fP (\fBModel\fP model)"
+.br
+.ti -1c
+.RI "static double \fBConvertValue\fP (double[] distances, double MAX, double MIN, double MAX_TOL, double MIN_TOL, double XTREME_MAX, double XTREME_MIN)"
+.br
+.ti -1c
+.RI "static double \fBDifferenceByAxis\fP (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "static double \fBNullFaceBetweenByAxis\fP (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "static double \fBBetweenByAxis\fP (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "static double \fBDifference\fP (int i01, int i02)"
+.br
+.ti -1c
+.RI "static double \fBDifferenceNullCurrent\fP (int i01, \fBModel\&.AXIS\fP axis)"
+.br
+.ti -1c
+.RI "static double \fBNullFaceBetween\fP (int i01, int i02)"
+.br
+.ti -1c
+.RI "static double \fBBetween\fP (int i01, int i02)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides all methods that will be used by the modules\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Tanja Witke 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file Utilities\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static double RealSense\&.Utilities\&.Between (int i01, int i02)\fC [static]\fP"
+calculates the difference between the two points of the current frame 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.BetweenByAxis (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)\fC [static]\fP"
+Calculates the axis-specific difference of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.ConvertValue (double [] distances, double MAX, double MIN, double MAX_TOL, double MIN_TOL, double XTREME_MAX, double XTREME_MIN)\fC [static]\fP"
+Calculates the percentage Value depending on the new Min/Max boundarys\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdistances\fP collected from several frames 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the percentage value 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.Difference (int i01, int i02)\fC [static]\fP"
+calculates the percentage of the difference of distance between two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double between 0 and 100 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.DifferenceByAxis (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)\fC [static]\fP"
+Returns the total difference of axis-specific distance between two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.DifferenceNullCurrent (int i01, \fBModel\&.AXIS\fP axis)\fC [static]\fP"
+David 
+.PP
+Definition at line 102 of file Utilities\&.cs\&.
+.SS "static void RealSense\&.Utilities\&.Init (\fBModel\fP model)\fC [static]\fP"
+
+.PP
+Definition at line 22 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.NullFaceBetween (int i01, int i02)\fC [static]\fP"
+calculates the differenc of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file Utilities\&.cs\&.
+.SS "static double RealSense\&.Utilities\&.NullFaceBetweenByAxis (int i01, int i02, \fBModel\&.AXIS\fP axis, bool absolute)\fC [static]\fP"
+Calculates the axis-specific difference of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file Utilities\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.
