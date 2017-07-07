@@ -8437,7 +8437,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="Test-UI [[Polished UI]] Modules Action-Unit-Modules Utility-Modules Analyzer [[Intel RealSense SR300 Depth-Camera]] Emotion-Modules [[Emotion Research]] Test-Subjects Contents" title="$:/StoryList">
+<div list="[[Application Structure]] Action-Unit-Modules" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8601,7 +8601,7 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105113275" modified="20170705150926682" tags="" title="Action-Unit-Modules">
+<div created="20170619105113275" modified="20170707145532215" tags="" title="Action-Unit-Modules">
 <pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, saved in the model, we set some min and max values to indicate the 100% and -100% boundary. 
 Since every face is different and some people are able to shift their brows higher or open their eyes wider than others, we decided to allow these boundary values to be dynamic to a certain degree.
 
@@ -8633,7 +8633,7 @@ There is one problem with the Analyzer: The vlc-Library only seems to run in 32-
 In 32-mode on the other hand the camera itself seems to have trouble processing the image data and our software can not launch the [[polished|Polished UI]]- or [[test-UI|Test-UI]]
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105029483" modified="20170705123838893" tags="" title="Application Structure">
+<div created="20170619105029483" modified="20170707145528703" tags="" title="Application Structure">
 <pre>This is how our program works:  
 First of all we need to initialize our model to start the camera. All the data is collected in our model. Afterwards every desired [[module|Modules]] can be initialized for the current build. There are three kinds of modules which are either responsible for[[ emotion|Emotion-Modules]], [[action units |Action-Unit-Modules]]or some [[utility functions|Utility-Modules]].
 
@@ -8642,8 +8642,8 @@ First of all we need to initialize our model to start the camera. All the data i
 To make our testing more efficient, we added an [[Analyzer|Analyzer]], which can record the landmark positions so we can change our algorithms and see their results in hindsight.
 
 &lt;br&gt;
-Hier gehört ein UML-Diagram rein. – Das kommt noch ! :)
-&lt;/p&gt;</pre>
+&lt;img src=&quot;img/applicationoverview.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
+</pre>
 </div>
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
