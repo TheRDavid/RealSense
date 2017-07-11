@@ -7,13 +7,15 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Drawing.Imaging;
-/**
-* You´re supposed to make some comments! Otherwise I´m going to kill you! :) 
-* 
-* @author: David Rosenbusch
-*/
 namespace RealSense
 {
+
+    /**
+     * Main-UI for testing- and presentation-purposes
+     * @author: David Rosenbusch
+     * @HogwartsHouse Hufflepuff
+     * 
+     */
     public class CameraView : Form
     {
         // all the things 
@@ -33,7 +35,8 @@ namespace RealSense
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
         private bool testMode, blur = true;
-        Bitmap uiBitmap, windowBitmap, smallWindowBitmap, warningBitmap;
+        private Bitmap uiBitmap, windowBitmap, smallWindowBitmap, warningBitmap;
+        private int subject = 0;
 
 
         static int xgap = (int)(75 * 5);
@@ -57,12 +60,12 @@ namespace RealSense
         private FriggnAweseomeGraphix.MEMonitor sadMonitor = new FriggnAweseomeGraphix.MEMonitor("Sadness", "Trauer", xP + xgap, yP + yRingGap + yV, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor disgustMonitor = new FriggnAweseomeGraphix.MEMonitor("Disgust", "Ekel", xP + xgap, yP + yRingGap + yV + ygap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor surpriseMonitor = new FriggnAweseomeGraphix.MEMonitor("Surprise", "Überraschung", xP + xgap, yP + yRingGap + yV + ygap * 2, radius, thickness);
-        int calibRadius = 300;
+        private int calibRadius = 300;
 
         private Pen linePen = new Pen(new SolidBrush(Color.Gray));
 
         /**
-         * Initialise View and start updater Thread
+         * Initialises View and starts updater Thread
          */
         public CameraView(Model model, bool test)
         {
@@ -133,6 +136,13 @@ namespace RealSense
             updaterThread.Start();
         }
 
+        /**
+         * Key-Listener to trigger modules
+         * 
+         * @param object sender, sending component
+         * @param KeyEventArgs e, Key-Event information
+         * 
+         */ 
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control)
@@ -189,9 +199,14 @@ namespace RealSense
             });
         }
 
+
         /**
-          * Exit Application
-        */
+         * Appropriately close down app 
+         * 
+         * @param object sender, sending component
+         * @param KeyEventArgs e, Key-Event information
+         * 
+         */
         private void Quit(object sender, FormClosedEventArgs e)
         {
             updaterThread.Abort();
@@ -200,6 +215,11 @@ namespace RealSense
             Application.Exit();
         }
 
+        /**
+         * Add a component to the UI (thread-safe)
+         * 
+         * @param Control c, control to be added
+         */ 
         public void AddComponent(Control c)
         {
             if (this.InvokeRequired)
@@ -214,9 +234,9 @@ namespace RealSense
                 this.Controls.Add(c);
             }
         }
-        int subject = 0;
+
         /**
-         * Update the View
+         * Update the View and modules
          */
         private void update()
         {
@@ -432,6 +452,7 @@ namespace RealSense
                 }
             }
         }
+
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -445,6 +466,9 @@ namespace RealSense
 
         }
 
+        /**
+         * Current y-coordinate of debug-messages
+         */ 
         public int Debug_Y
         {
             get { return debug_y; }
@@ -454,11 +478,6 @@ namespace RealSense
         public Boolean ResetModules
         {
             set { resetModules = value; }
-        }
-
-        private void CameraView_Load(object sender, EventArgs e)
-        {
-
         }
 
         public Bitmap ColorBitmap

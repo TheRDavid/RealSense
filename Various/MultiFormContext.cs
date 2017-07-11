@@ -3,9 +3,18 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
+    /*
+     * ApplicationContext for managing multiple contexts (windows)
+     * @author Tanja 
+     */
     public class MultiFormContext : ApplicationContext
     {
         private int openForms;
+
+        /**
+         * Initializes an ApplicationContext with a variety of WindowsForms and displays each of them
+         * @param Graphics g for the view
+         */
         public MultiFormContext(params Form[] forms)
         {
             openForms = forms.Length;

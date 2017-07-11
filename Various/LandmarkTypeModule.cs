@@ -10,6 +10,11 @@ using System.Windows.Forms;
  */
 namespace RealSense
 {
+    /*
+     * Module to display Landmark-Points by their types, as they are defined in the SDK
+     * @author: David Rosenbusch
+     * @HogwartsHouse Hufflepuff
+     */
     class LandmarkTypeModule : RSModule
     {
 
@@ -24,6 +29,9 @@ namespace RealSense
         private TrackBar selectionBar = new TrackBar();
         private int crossThreadValue = 0;
 
+        /**
+         * Initializes the UI Components to enable the user to select and display certain Landmark-Types
+         */ 
         private void guiInit()
         {
             guInit = true;
@@ -36,11 +44,20 @@ namespace RealSense
             model.View.AddComponent(selectionBar);
         }
 
+        /**
+         * Transfers the SelectionBar-Value to a different thread
+         * @param object sender, the sending UI component
+         * @param EventArgs e, event information
+         */
         private void UpdateValue(object sender, System.EventArgs e)
         {
             crossThreadValue = selectionBar.Value;
         }
 
+        /**
+         * Displays Landmarks by type, as they are defined in the SDK
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
             if (!guInit)

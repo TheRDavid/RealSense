@@ -17,7 +17,10 @@ namespace RealSense.Emotions
         private double[] distancesBrow = new double[numFramesBeforeAccept];
         private double[] distancesLip = new double[numFramesBeforeAccept];
 
-        // Default values
+        /**
+         * Initializes the EM, setting the debug-flag to true by default
+         * Also sets up a default boundary of max-, min, extreme- and tolerance-values
+         */
         public EM_Contempt()
         {
             debug = true;

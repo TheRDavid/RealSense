@@ -9,6 +9,11 @@ using System.Drawing;
  */
 namespace RealSense
 {
+    /**
+     * Displays the landmark-points of the current subject within the UI
+     * @author: David Rosenbusch
+     * @HogwartsHouse Hufflepuff
+     */ 
     class FaceTrackerModule : RSModule
     {
         // Pen which defines the appereance of the rect
@@ -17,11 +22,18 @@ namespace RealSense
         private SolidBrush stringBrush = new SolidBrush(Color.Red);
         private int[] idx = null;
 
+        /**
+         * Specifies which indexes to display
+         */ 
         public FaceTrackerModule(int[] idx)
         {
             this.idx = idx;
         }
 
+        /**
+         * Displays landmark-points (all if none were specified)
+         * @param Graphics g for drawing inside the containing UI
+         */ 
         public override void Work(Graphics g)
         {
             if (model.FaceCurrent != null)

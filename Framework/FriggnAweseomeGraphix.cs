@@ -12,7 +12,12 @@ namespace RealSense
     using System.Drawing.Imaging;
     using System.Linq;
     using System.Text;
-
+    
+    /**
+     * Includes some kickass graphics-stuff
+     * @author: David Rosenbusch
+     * @HogwartsHouse Hufflepuff
+     */
     public class FriggnAweseomeGraphix
     {
         /**
@@ -30,6 +35,9 @@ namespace RealSense
         static Color bgColor = Color.FromArgb(255, 200, 200, 200);
         public static Color fontColor = Color.FromArgb(255, 103, 103, 104);
 
+        /**
+         * Custom UI-Component to stylishly display percentage-values
+         */
         public class MEMonitor
         {
             public int x;
@@ -42,6 +50,9 @@ namespace RealSense
             public String minorText;
             public bool showPercent = true;
 
+            /**
+             * Init component
+             */
             public MEMonitor(String majText, String minText, int xP, int yP, int rad, int thick)
             {
                 x = xP;
@@ -52,13 +63,32 @@ namespace RealSense
                 minorText = minText;
             }
 
+            /**
+             * Interpolate to the target-value (for fluid transitions)
+             */
             public void step()
             {
                 currentValue += (targetValue - currentValue) / 10;
             }
         }
 
+        /**
+         * Draws a MEMontior ontop of the graphics-object.
+         * Displays text as per default.
+         * 
+         * @param Graphics gfx, graphics-object to draw Monitor on
+         * @param MEMonitor monitor, monitor to be drawn
+         */
         public static void drawMEMontior(Graphics gfx, MEMonitor monitor) { drawMEMontior(gfx, monitor, true); }
+
+        /**
+         * Draws a MEMontior ontop of the graphics-object.
+         * Displays text as per default.
+         * 
+         * @param Graphics gfx, graphics-object to draw Monitor on
+         * @param MEMonitor monitor, monitor to be drawn
+         * @param bool drawText, flag to display value as text (or not)
+         */
         public static void drawMEMontior(Graphics gfx, MEMonitor monitor, bool drawText)
         {
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -203,7 +233,7 @@ namespace RealSense
                             c0 += *(areaIndex + 2);
                         }
                     }
-                    c2 = (c2) / 9;                                                 //  cheating a lil 'bit' (kek) to prevent divisions
+                    c2 = (c2) / 9;                                                      //  cheating a lil 'bit' (kek) to prevent divisions
                     c0 = (c0) / 9;
                     c1 = (c1) / 9;
                     *(mainIndex) = (byte)(c2 > 255 ? 255 : c2);                         // 1 byte - keep it below 256!
@@ -213,16 +243,31 @@ namespace RealSense
             }
         }
 
-
+        /**
+         * Returns pixel-index inside a 1D-Array
+         * 
+         * @param int x, x-coordinate
+         * @param int y, y-coordinate
+         * @param int widthTimesSize, row length, multiplied with size
+         * @param int size, data length
+         */
         private static int pixelIndex(int x, int y, int widthTimesSize, int size)
         {
-
             int idxByRow = y * widthTimesSize;
             int idxByCol = x * size;
 
             return idxByRow + idxByCol;
         }
 
+        /**
+         * Draws a fading line (duh)
+         * 
+         * @param Graphics gfx, graphics-object to draw on
+         * @param float x0, start x-coordinate
+         * @param float y0, start y-coordinate
+         * @param float x1, end x-coordinate
+         * @param float y1, end y-coordinate
+         */
         public static void drawFadingLine(Graphics gfx, float x0, float y0, float x1, float y1)
         {
 

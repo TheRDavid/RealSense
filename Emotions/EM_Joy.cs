@@ -16,7 +16,9 @@ namespace RealSense.Emotions
         int percent = 100;
         double[] smallerArray;
 
-        // Default values
+        /**
+         * Initializes the EM, setting the debug-flag to true by default
+         */
         public EM_Joy()
         {
             debug = true;

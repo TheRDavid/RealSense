@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-
-
 namespace RealSense
 {
     /**

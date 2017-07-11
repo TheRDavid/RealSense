@@ -15,7 +15,9 @@ namespace RealSense.Emotions
         // Variables for logic
         int percent = 100;
 
-        // Default values
+        /**
+         * Initializes the EM, setting the debug-flag to true by default
+         */
         public EM_Sadness()
         {
             debug = true;
