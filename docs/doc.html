@@ -8437,7 +8437,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Application Structure]] Action-Unit-Modules" title="$:/StoryList">
+<div list="Action-Unit-Modules Analyzer" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8453,7 +8453,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8473,7 +8473,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/Oblitus/Source/Repos/RealSense2/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8601,19 +8601,19 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105113275" modified="20170707145532215" tags="" title="Action-Unit-Modules">
-<pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, saved in the model, we set some min and max values to indicate the 100% and -100% boundary. 
+<div created="20170619105113275" modified="20170719124649499" tags="" title="Action-Unit-Modules">
+<pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, which are saved in the model, we set some minimum and maximum values to indicate the 100% and -100% boundaries. 
 Since every face is different and some people are able to shift their brows higher or open their eyes wider than others, we decided to allow these boundary values to be dynamic to a certain degree.
 
 &lt;br&gt;
 &lt;img src=&quot;img/TanjaAU.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
-Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
+Unfortunately the Landmark-Points weren't reliable when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
 </pre>
 </div>
-<div created="20170619105234171" modified="20170629144402735" tags="" title="Analyzer">
-<pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
+<div created="20170619105234171" modified="20170719124436838" tags="" title="Analyzer">
+<pre>During the many test-phases of our project, we always needed a test-subject in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
 To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmarks positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
 In order to do so, we implemented a &lt;i&gt;Face-Recorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
 &lt;img src=&quot;img/Analyzer.png&quot;&gt;
