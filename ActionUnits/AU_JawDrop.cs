@@ -8,24 +8,24 @@ namespace RealSense
 {
 
     /*
-    *Measures if jaw is dropped
-    *@author René 
-    *@date 21.03.2017
-    *@HogwartsHouse Slytherin
+     * Measures if jaw is dropped and stores its' value inside the model.
+     * @author René 
+     * @HogwartsHouse Slytherin
      * 
      * Interpretation:      -100 = Doesn't usually happen
      *                         0 = Normal
-     *                       100 = Dropped like it's hot
+     *                       100 = Drop it like it's hot
     */
     class AU_JawDrop : RSModule
-    // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
-
     {
-
+        // Variables for logic
         double chin_dist;
         private double[] chinDistances = new double[numFramesBeforeAccept];
         private string debug_message = "JawDrop: ";
 
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
         public AU_JawDrop()
         {
             DEF_MIN = 0;
@@ -38,10 +38,15 @@ namespace RealSense
             XTREME_MIN = 0;
             model.AU_Values[typeof(AU_JawDrop).ToString()] = 0;
         }
+
+        /** 
+         * @Override 
+         * Calculates difference of lip-distance over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
+            //Get Values from AU's
             chin_dist = (model.Difference(61, 26)) - 100;
 
 
@@ -59,9 +64,9 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { distance });
 
-                /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
+                    //set Value
                     model.AU_Values[typeof(AU_JawDrop).ToString()] = diffs[0];
                 }
 

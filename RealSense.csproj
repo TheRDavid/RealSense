@@ -100,27 +100,27 @@
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
-    <Compile Include="Micro_Expressions\AU_LowerLipRaised.cs" />
-    <Compile Include="Micro_Expressions\AU_BrowShift.cs" />
+    <Compile Include="ActionUnits\AU_LowerLipRaised.cs" />
+    <Compile Include="ActionUnits\AU_BrowShift.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Various\FaceRect.cs" />
-    <Compile Include="Micro_Expressions\AU_JawDrop.cs" />
-    <Compile Include="Micro_Expressions\AU_LipLine.cs" />
-    <Compile Include="Micro_Expressions\AU_LipsTightened.cs" />
-    <Compile Include="Micro_Expressions\AU_LipStretched.cs" />
-    <Compile Include="Micro_Expressions\AU_LowerLipLowered.cs" />
-    <Compile Include="Micro_Expressions\AU_NoseWrinkled.cs" />
+    <Compile Include="ActionUnits\AU_JawDrop.cs" />
+    <Compile Include="ActionUnits\AU_LipLine.cs" />
+    <Compile Include="ActionUnits\AU_LipsTightened.cs" />
+    <Compile Include="ActionUnits\AU_LipStretched.cs" />
+    <Compile Include="ActionUnits\AU_LowerLipLowered.cs" />
+    <Compile Include="ActionUnits\AU_NoseWrinkled.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Model.cs" />
-    <Compile Include="Micro_Expressions\AU_EyelidTight.cs" />
-    <Compile Include="Micro_Expressions\AU_UpperLipRaised.cs" />
-    <Compile Include="Micro_Expressions\AU_LipCorner.cs" />
+    <Compile Include="ActionUnits\AU_EyelidTight.cs" />
+    <Compile Include="ActionUnits\AU_UpperLipRaised.cs" />
+    <Compile Include="ActionUnits\AU_LipCorner.cs" />
     <Compile Include="Various\FaceTrackerModule.cs" />
     <Compile Include="Various\Gauge_Module.cs" />
     <Compile Include="Various\LandmarkGroupModule.cs" />

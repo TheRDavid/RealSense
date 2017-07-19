@@ -6,19 +6,24 @@ using System.Text;
 
 namespace RealSense
 {
+    /**
+     * Measures how much the lower lip is raised and stores its' value inside the model.
+     * @author: He who must not be named...
+     * @HogwartsHouse Take a guess... 
+     * 
+     * Interpretation:         0 = Relaxed
+     *                      -100 = Wrinkled
+     */
     class AU_LowerLipRaised : RSModule
     {
-       
-
         // variables for logic
-
         private double[] upperLip_Distance = new double[2];
         private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
         private string debug_message = "LowerLipRaised: ";
 
         /**
-         * Sets default-values
+         * Initializes the AU by setting up the default value boundaries.
          */
         public AU_LowerLipRaised()
         {
@@ -34,16 +39,16 @@ namespace RealSense
         }
 
         /**
-         *@Override 
-         * Calculates the difference between the two lip corners
+         * @Override 
+         * Calculates the difference between the lower lip and the nose to measure whether or not there has been some movement over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
+                //Get Values from AU's
                 upperLip_Distance[0] = model.Difference(42, Model.NOSE_FIX);
                 upperLip_Distance[1] = model.Difference(51, Model.NOSE_FIX);
  

@@ -8,22 +8,24 @@ using System.Text;
 namespace RealSense
 {
     /**
-     * Measures whether the upper lip is raised
+     * Measures whether or not the upper lip is raised and stores its' value inside the model.
      * @author Tobias Schramm
-     * @HogwartsHouse Hufflepuff
+     * @HogwartsHouse Hufflepuff    
+     * 
+     * Interpretation:         0 = Relaxed
+     *                       100 = Lip up
      */
     class AU_UpperLipRaised : RSModule
     {
 
         // variables for logic
-
         private double[] upperLip_Distance = new double[5];
         private double[] distances = new double[numFramesBeforeAccept];
         private double distance;
         private string debug_message = "UpperLipRaised: ";
 
         /**
-         * Sets default-values
+         * Initializes the AU by setting up the default value boundaries.
          */
         public AU_UpperLipRaised()
         {
@@ -39,14 +41,13 @@ namespace RealSense
         }
 
         /**
-         *@Override 
-         * Calculates the difference between the two lip corners
+         * @Override 
+         * Calculates the average difference between the upper lip and the nose to measure in which direction (and how far) it was moved over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 upperLip_Distance[0] = model.Difference(34, Model.NOSE_FIX);

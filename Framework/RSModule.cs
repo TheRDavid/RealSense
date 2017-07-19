@@ -34,9 +34,12 @@ namespace RealSense
             model = m;
         }
 
+        /**
+         * Custom method when triggered
+         **/
         public virtual void keyTrigger(int key)
         {
-            // Custom method when triggered (can be overriden)
+            //can be overriden
         }
 
         /**
@@ -44,9 +47,11 @@ namespace RealSense
          *  @param Graphics g
          */
         public abstract void Work(Graphics g);
-        //protected abstract void dynamicMinMax();                                      T
-        //protected abstract double[] convertValues(double[] vars);                     T
 
+        /**
+         * Resets the Min and the Max value.
+         * 
+         * */
         protected double[] convertValues(double[] vars)
         {
             double[] ret = new double[vars.Length];
@@ -81,6 +86,10 @@ namespace RealSense
             return average;
         }
 
+        /**
+         * David
+         * 
+         * */
         protected void filterToleranceValues(double[] values)
         {
             for (int i = 0; i < values.Length; i++)
@@ -89,6 +98,10 @@ namespace RealSense
             }
         }
 
+        /**
+         * Puts a new Min/Max value if the dist is higher/lower than the old one.
+         * @param dist value to compare
+         * */
         protected void dynamicMinMax(double[] dist)
         {
             if (model.CurrentPoseDiff > model.PoseMax)
@@ -106,6 +119,10 @@ namespace RealSense
             MAX = DEF_MAX;
         }
 
+        /**
+         * Getter of the debug value
+         * 
+         * */
         public bool Debug
         {
             get { return debug; }

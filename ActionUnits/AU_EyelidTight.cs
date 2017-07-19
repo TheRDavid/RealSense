@@ -9,7 +9,7 @@ using System.Drawing;
 namespace RealSense
 {
     /**
-     * Measures tightening of eyelids (each eye)
+     * Measures tightening of eyelids (each eye) and stores its' value inside the model.
      * @author: David Rosenbusch
      * @HogwartsHouse Hufflepuff
      * 
@@ -20,18 +20,15 @@ namespace RealSense
     {
 
         // variables for logic
-
         private double leftEye_leftDistance_diff, leftEye_middleDistance_diff, leftEye_rightDistance_diff,
             rightEye_leftDistance_diff, rightEye_middleDistance_diff, rightEye_rightDistance_diff;
         private double left_diff, right_diff;
-
         private double[] leftDistances = new double[numFramesBeforeAccept];
         private double[] rightDistances = new double[numFramesBeforeAccept];
 
-        // variables for debugging
-        
-
-        // Default values
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
         public AU_EyelidTight()
         {
             //values correct
@@ -53,14 +50,12 @@ namespace RealSense
 
         /** 
          * @Override 
-         * Calculates difference of lid-distance for each eye.
-         * Result of calculation equal 100 -> no change, smaller 100 -> tightened, bigger 100 -> widened
-         * See Images/AU_EyelidTightModule.png
+         * Calculates difference of lid-distance for each eye over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-
-            /* calculations */
+            //Get Values from AU's
             leftEye_leftDistance_diff = model.Difference(13, 15);
             leftEye_middleDistance_diff = model.Difference(12, 16);
             leftEye_rightDistance_diff = model.Difference(11, 17);
@@ -72,7 +67,7 @@ namespace RealSense
             left_diff = ((leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3) - 100;
             right_diff = ((rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3) - 100;
 
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 leftDistances[framesGathered] = left_diff;
@@ -90,10 +85,9 @@ namespace RealSense
 
                 double[] diffs = convertValues(new double[] { leftDistance, rightDistance });
 
-                /* Update value in Model */
-
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
+                    //set Values
                     model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = diffs[0];
                     model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = diffs[1];
                 }

@@ -8,7 +8,9 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *@author Marlon
+     * Measures the height of the Lip-Corners and stores its' value inside the model.
+     * @author Marlon
+     * @HogwartsHouse Hufflepuff
      * 
      * Interpretation:      -100 = Corners down (not reliable, use LipLine) set to 0!
      *                       100 = Big stupid smile
@@ -17,15 +19,14 @@ namespace RealSense
     class AU_LipCorner : RSModule
     {
         // Variables for logic
-
         private double cornerLeft = 0, cornerRight = 0;
         private double[] cornersLeft = new double[numFramesBeforeAccept];
         private double[] cornersRight = new double[numFramesBeforeAccept];
         private string debug_message = "LipCorner: ";
 
-        // Variables for debugging
-
-        // Default values
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
         public AU_LipCorner()
         {
             DEF_MIN = -1;
@@ -40,17 +41,20 @@ namespace RealSense
             model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = 0;
         }
 
+        /** 
+         * @Override 
+         * Calculates the height of the Lipcorners over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-            /* Calculations */
-
-            // calculates difference between nose and LipCorner 
+            //Get Values from AU's
             cornerLeft = -((model.Difference(33, 36)) - 100);  //left LipCorner
             cornerRight = -((model.Difference(39, 36)) - 100);  //right LipCorner
 
-
             double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 cornersLeft[framesGathered] = cornerLeft;
@@ -74,6 +78,7 @@ namespace RealSense
                     model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
                     model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
                 }
+
                 /* print debug-values */
                 if (debug)
                 {

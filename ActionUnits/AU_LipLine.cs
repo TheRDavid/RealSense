@@ -8,19 +8,23 @@ using System.Text;
 namespace RealSense
 {
     /*
-     *@author David
-     * 
-     * 
-     * Interpretation:      -100 = Saaaaaad
-     *                         0 = Relaxed
-     *                       100 = Grinning
-     */
+    * Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model.
+    * @author David
+    * @HogwartsHouse Hufflepuff
+    *
+    * Interpretation:      -100 = Saaaaaad
+    *                         0 = Relaxed
+    *                       100 = Grinning
+    */
     class AU_LipLine : RSModule
     {
-
+        // Variables for logic
         private string debug_message = "LipLine: ";
         private double[] lines = new double[numFramesBeforeAccept];
-        // Default values
+
+        /**
+         * Initializes the AU by setting up the default value boundaries.
+         */
         public AU_LipLine()
         {
             debug = true;
@@ -34,10 +38,14 @@ namespace RealSense
             model.AU_Values[typeof(AU_LipLine).ToString()] = 0;
         }
 
+        /** 
+         * @Override 
+         * Calculates whether or not all LipPoints are placed on one line over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-            /* Calculations */
-
+            //Get Values from AU's
             double line = model.DifferenceByAxis(33, 44, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
             line += model.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
@@ -47,6 +55,7 @@ namespace RealSense
 
             line = line < MAX_TOL && line > MIN_TOL ? 0 : line;
 
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 lines[framesGathered++] = line;

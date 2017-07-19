@@ -8,7 +8,7 @@ using System.Text;
 namespace RealSense
 {
     /**
-     * Measures whether the lower lip is lower
+     * Measures whether the lower lip is lower and stores its' value inside the model
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
      * 
@@ -19,14 +19,13 @@ namespace RealSense
     {
 
         // variables for logic
-
         private double[] lowerLip_Distance = new double[5];
         private double distance;
         private double[] distances = new double[numFramesBeforeAccept];
         private string debug_message = "LowerLipLowered: ";
 
         /**
-         * Sets default-values
+         * Initializes the AU by setting up the default value boundaries.
          */
         public AU_LowerLipLowered()
         {
@@ -42,14 +41,13 @@ namespace RealSense
         }
 
         /**
-         *@Override 
-         * Calculates the difference between the two lip corners
+         * @Override 
+         * Calculates the average difference between the lower lip and the nose to see if the lower lip was moved over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
          */
         public override void Work(Graphics g)
         {
-            /* calculations */
-
-            // calculates the difference between the Nullface and the currentface -> to check if the whole LowerLip is lowered
+            //Get Values from AU's
             lowerLip_Distance[0] = model.Difference(44, Model.NOSE_FIX);
             lowerLip_Distance[1] = model.Difference(43, Model.NOSE_FIX);
             lowerLip_Distance[2] = model.Difference(42, Model.NOSE_FIX);
@@ -58,7 +56,7 @@ namespace RealSense
             distance = ((lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5);
             distance -= 100;
 
-
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 distances[framesGathered++] = distance;

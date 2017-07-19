@@ -8,21 +8,24 @@ namespace RealSense
 {
 
     /*
-   *Measures if lips are tightened 
-   *@author René 
-   *@date 21.03.2017
-   *@HogwartsHouse Slytherin 
+     * Measures if lips are tightened and stores its' value inside the model.
+     * @author René 
+     * @HogwartsHouse Slytherin 
      * 
      * Interpretation:      -100 = Tight af
      *                         0 = normal
      *                       100 = doesn't usually happen
-   */
+     */
     class AU_LipsTightened : RSModule
     {
+        // Variables for logic
         double[] topDownDistances = new double[numFramesBeforeAccept];
         double upperLip;
         double bottomLip;
 
+        /**
+        * Initializes the AU by setting up the default value boundaries.
+        */
         public AU_LipsTightened()
         {
             //values correct
@@ -37,13 +40,20 @@ namespace RealSense
             model.AU_Values[typeof(AU_LipsTightened).ToString()] = 0;
         }
 
+        /** 
+         * @Override 
+         * Calculates the average difference of the lip and the nose over a set number of frames and prints its' debug-message to the CameraView when debug is enabled.
+         * @param Graphics g for the view
+         */
         public override void Work(Graphics g)
         {
-
+            //Get Values from AU's
             upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
             bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
             double tdDist = (upperLip + bottomLip) / 2;
+
+            //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
                 topDownDistances[framesGathered++] = tdDist;
