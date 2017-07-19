@@ -9,6 +9,12 @@ using System.Drawing;
  */
 namespace RealSense
 {
+    /*
+  * Module to display Landmark-Points by their groups, as they are defined in the SDK
+  * @author: David Rosenbusch
+  * @author: Tobias Schramm
+  * @HogwartsHouse Hufflepuff
+  */
     class LandmarkGroupModule : RSModule
     {
 
@@ -29,7 +35,10 @@ namespace RealSense
         Rectangle errorRect = new Rectangle(150, 150, 200, 50);
 
 
-
+        /**
+        * Displays Landmarks by group, as they are defined in the SDK
+        * @param Graphics g for the view
+        */
         public override void Work(Graphics g)
         {
             if (model.FaceAktuell != null)

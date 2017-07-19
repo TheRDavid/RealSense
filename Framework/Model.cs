@@ -63,7 +63,6 @@ namespace RealSense
          * Constructor of the model 
          * It does all the important stuff to use our camera.  Its so FANCY ! 
          * Like enabling all important tracker(Hand, Face), the stream and builds up the configuration.
-         * blib blub
          */
         public Model(bool s)
         {
@@ -111,13 +110,12 @@ namespace RealSense
         }
 
         /**
-         * Guess what happens here...
-         */
-        public void CalculateEmotions()
-        {
-            //... some hogwarts stuff thats what dumbledore said (slytherin ftw) 
-        }
-
+         * Returns the value of the given emotion.
+         * 
+         * @param emotion given emotion
+         * @returns the emotion value or -1 if the key doesn't exist
+         * 
+         * */
         public double EmotionValue(Emotion emotion)
         {
             if (emotions.ContainsKey(emotion))
@@ -191,7 +189,11 @@ namespace RealSense
             return 100 / NullFaceBetween(i01, i02) * Between(i01, i02); // calculates the percent (rule of three)
         }
 
-
+        /**
+         * Returns the change in distance between the nose-fixpoint along a specified axis
+         * @param int i01 - landmark-number
+         * @param AXIS axis - axis to consider
+         */ 
         public double DifferenceNullCurrent(int i01, AXIS axis)
         {
             double result = 0;
@@ -219,6 +221,7 @@ namespace RealSense
             }
             throw new NullReferenceException();
         }
+
         /**
          * calculates the difference between the two points of the current frame
          * @param i01,i02  which are the current points to calculate the difference 
@@ -253,6 +256,9 @@ namespace RealSense
             get { return modules; }
         }
 
+        /**
+         *  getter and setter of the SenseManager
+         */
         public PXCMSenseManager SenseManager
         {
             get { return senseManager; }
@@ -305,7 +311,9 @@ namespace RealSense
             }
         }
 
-        //
+        /**
+         *  getter and setter of the CurrentFace
+         */
         public PXCMFaceData.LandmarkPoint[] CurrentFace
         {
             get { return currentFace; }
@@ -342,7 +350,6 @@ namespace RealSense
             set { faceAktuell = value; }
         }
 
-
         /**
          *  getter and setter of the View
          */
@@ -352,30 +359,45 @@ namespace RealSense
             set { view = value; }
         }
 
+        /**
+         *  getter and setter of the CurrentPoseDiff
+         */
         public double CurrentPoseDiff
         {
             get { return currentPoseDiff; }
             set { currentPoseDiff = value; }
         }
 
+        /**
+         *  getter and setter of the PoseMax
+         */
         public int PoseMax
         {
             get { return maxPose; }
             set { maxPose = value; }
         }
 
+        /**
+         *  getter and setter of the CurrentRollDiff
+         */
         public double CurrentRollDiff
         {
             get { return rollDiff; }
             set { rollDiff = value; }
         }
 
+        /**
+         *  getter and setter of the CurrentPitchDiff
+         */
         public double CurrentPitchDiff
         {
             get { return pitchDiff; }
             set { pitchDiff = value; }
         }
 
+        /**
+         *  getter and setter of the CurrentYawDiff
+         */
         public double CurrentYawDiff
         {
             get { return yawDiff; }
@@ -391,75 +413,114 @@ namespace RealSense
             set { emotions = value; }
         }
 
+        /**
+         *  getter and setter of the DefaultFont
+         */
         public Font DefaultFont
         {
             get { return defaultFont; }
             set { defaultFont = value; }
         }
 
+        /**
+         *  getter and setter of the DefaultStringBrush
+         */
         public SolidBrush DefaultStringBrush
         {
             get { return defaultStringBrush; }
             set { defaultStringBrush = value; }
         }
 
+        /**
+         *  getter and setter of the NullPose
+         */
         public PXCMFaceData.PoseEulerAngles NullPose
         {
             get { return nullPose; }
             set { nullPose = value; }
         }
 
+        /**
+         *  getter and setter of the CurrentPose
+         */
         public PXCMFaceData.PoseEulerAngles CurrentPose
         {
             get { return currentPose; }
             set { currentPose = value; }
         }
 
+        /**
+         *  getter and setter of the DefaultBGBrush
+         */
         public SolidBrush DefaultBGBrush
         {
             get { return bgStringBrush; }
         }
 
+        /**
+         *  getter and setter of the OpaqueBGBrush
+         */
         public SolidBrush OpaqueBGBrush
         {
             get { return opaqueStringBrush; }
         }
 
+        /**
+         *  getter and setter of the AU_Values
+         */
         public Dictionary<String, double> AU_Values
         {
             get { return au_Values; }
             set { au_Values = value; }
         }
 
+        /**
+         *  getter and setter of whether to test or not
+         */
         public bool Test
         {
             get { return test; }
             set { test = value; }
         }
 
+        /**
+         *  getter and setter of the ColorBitmap
+         */
         public Bitmap ColorBitmap
         {
             get { return view.ColorBitmap; }
         }
 
+        /**
+         *  getter and setter of the EmotionBitmaps
+         */
         public Dictionary<Emotion, Bitmap> EmotionBitmaps
         {
             get { return emotionBitmaps; }
             set { emotionBitmaps = value; }
         }
 
+        /**
+         *  getter and setter of the EmotionMax
+         */
         public Dictionary<Emotion, double> EmotionMax
         {
             get { return emotionMax; }
             set { emotionMax = value; }       
         }
 
+        /**
+         *  getter and setter of the ExcampleBitmaps
+         */
         public Dictionary<Emotion, Bitmap> ExcampleBitmaps
         {
             get { return exampleBitmaps; }
             set { exampleBitmaps = value; }
         }
 
+        /**
+         *  getter and setter of the EmotionPictureBoxes
+         */
         public Dictionary<Emotion, PictureBox> EmotionPictureBoxes
         {
             get { return emotionPictureBoxes; }

@@ -9,6 +9,14 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
+
+    /**
+ * 
+ * Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)
+ * 
+ * @author: David Rosenbusch
+ * @HogwartsHouse Hufflepuff
+ */
     public class Gauge_Module : RSModule
     {
         private const int numFaces = 150;
@@ -23,7 +31,7 @@ namespace RealSense
         public bool frameUpdate = true;
 
         /**
-         * Inits the GUI
+         * Inits the UI
          */
         private void guiInit()
         {
@@ -46,10 +54,11 @@ namespace RealSense
         }
 
         /**
-         * when a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg.
-         * After having numFaces faces, calculate...
-         * Runs outside the Camera Thread
-         */
+        * Gathers calibration-data.
+        * When a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg.
+        * After having numFaces faces, calculate...
+        * Runs outside the Camera Thread
+        */
         public void update()
         {
             while (!model.View.IsDisposed)
@@ -117,7 +126,10 @@ namespace RealSense
                 }
             }
         }
-        // Sets frameUpdate to true, since work is called for each frame
+        /*
+          * Initializes UI + simple output while calibrating
+          * @param Graphics g for the view
+          */
         public override void Work(Graphics g)
         {
             if (!guInit) guiInit();
@@ -129,7 +141,9 @@ namespace RealSense
             else if (!calibrate) output = "";
         }
 
-        // for debugging only
+        /*
+         * Prints Face-Values (for debugging only)
+         */
         private void printFace(string v, PXCMFaceData.LandmarkPoint[] face)
         {
             //  Console.WriteLine(v);

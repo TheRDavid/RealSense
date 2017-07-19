@@ -25,7 +25,7 @@ namespace RealSense
 
         /**
         * initialise the model
-        * @param m it is the model
+        * @param m - the model
         */
         public static void Init(Model m)
         {
@@ -36,8 +36,9 @@ namespace RealSense
 
         /**
          * Custom method when triggered
+         * @param int key - key to trigger this module
          **/
-        public virtual void keyTrigger(int key)
+        public virtual void KeyTrigger(int key)
         {
             //can be overriden
         }
@@ -50,7 +51,7 @@ namespace RealSense
 
         /**
          * Resets the Min and the Max value.
-         * 
+         * @param double[] vars - values to consider
          * */
         protected double[] convertValues(double[] vars)
         {
@@ -69,6 +70,7 @@ namespace RealSense
 
         /**
          * called in dynamicMinMax
+         * @param double[] vars - values to consider
          */
         protected double filteredAvg(double[] values)
         {
@@ -87,8 +89,8 @@ namespace RealSense
         }
 
         /**
-         * David
-         * 
+         * Removes values that fall within the tolerance-spectrum
+         * @param double[] vars - values to consider
          * */
         protected void filterToleranceValues(double[] values)
         {
@@ -113,6 +115,9 @@ namespace RealSense
             MAX = MAX < temp ? temp * 0.9 : MAX;
         }
 
+        /**
+         * Reset value boundaries
+         */ 
         public void reset()
         {
             MIN = DEF_MIN;

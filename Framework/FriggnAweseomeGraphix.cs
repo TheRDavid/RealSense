@@ -13,6 +13,11 @@ namespace RealSense
     using System.Linq;
     using System.Text;
 
+    /**
+     * Includes some kickass graphics-stuff
+     * @author: David Rosenbusch
+     * @HogwartsHouse Hufflepuff
+     */
     public class FriggnAweseomeGraphix
     {
         /**
@@ -30,6 +35,9 @@ namespace RealSense
         static Color bgColor = Color.FromArgb(255, 200, 200, 200);
         public static Color fontColor = Color.FromArgb(255, 103, 103, 104);
 
+        /**
+         * Custom UI-Component to stylishly display percentage-values
+         */
         public class MEMonitor
         {
             public int x;
@@ -42,6 +50,15 @@ namespace RealSense
             public String minorText;
             public bool showPercent = true;
 
+            /**
+             * Init component
+             * @param String majText - main text
+             * @param String minText - additional Text
+             * @param int xP - x-coordinate
+             * @param int yP - y-coordinate
+             * @param int rad - radius
+             * @param int thick - thickness
+             */
             public MEMonitor(String majText, String minText, int xP, int yP, int rad, int thick)
             {
                 x = xP;
@@ -52,13 +69,32 @@ namespace RealSense
                 minorText = minText;
             }
 
+            /**
+             * Interpolate to the target-value (for fluid transitions)
+             */
             public void step()
             {
                 currentValue += (targetValue - currentValue) / 10;
             }
         }
 
+        /**
+         * Draws a MEMontior ontop of the graphics-object.
+         * Displays text as per default.
+         * 
+         * @param Graphics gfx, graphics-object to draw Monitor on
+         * @param MEMonitor monitor, monitor to be drawn
+         */
         public static void drawMEMontior(Graphics gfx, MEMonitor monitor) { drawMEMontior(gfx, monitor, true); }
+        
+        /**
+         * Draws a MEMontior ontop of the graphics-object.
+         * Displays text as per default.
+         * 
+         * @param Graphics gfx, graphics-object to draw Monitor on
+         * @param MEMonitor monitor, monitor to be drawn
+         * @param bool drawText, flag to display value as text (or not)
+         */
         public static void drawMEMontior(Graphics gfx, MEMonitor monitor, bool drawText)
         {
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
@@ -97,9 +133,21 @@ namespace RealSense
          */
 
         /**
-         * old and slow, but pretty version
+         * Blurs an image and saves result in a new Bitmap
+         * Slow, but mathematically correct
+         * @param Bitmap source - original image, which is supposed to be blurred
+         * @param Bitmap target - will contain the new image
+         * @param int x0 - upper-left x-coordinate of area that is supposed to be blurred
+         * @param int y0 - upper-left y-coordinate of area that is supposed to be blurred
+         * @param int x1 - lower-right x-coordinate of area that is supposed to be blurred
+         * @param int y1 - lower-right y-coordinate of area that is supposed to be blurred
+         * @param factor - blurFactor
+         * @param BitmapData sourceData - data of original image
+         * @param BitmapData sourceData - data of target image
          */
-        public static unsafe void pretty_blur(Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)
+        public static unsafe void pretty_blur(  Bitmap source, Bitmap target,
+                                                int x0, int y0, int x1, int y1, int factor, 
+                                                BitmapData sourceData, BitmapData targetData)
         {
             int blurLength = 1 + 2 * factor;
             int blurLengthBit = blurLength * 4;
@@ -164,7 +212,18 @@ namespace RealSense
         }
 
         /**
-         * Revised version, a lot faster, but sacrifices prettyness (also uuuuugly code)
+         * Blurs an image and saves result in a new Bitmap
+         * Faster, but mathematically incorrect
+         * @param Bitmap source - original image, which is supposed to be blurred
+         * @param Bitmap target - will contain the new image
+         * @param int x0 - upper-left x-coordinate of area that is supposed to be blurred
+         * @param int y0 - upper-left y-coordinate of area that is supposed to be blurred
+         * @param int x1 - lower-right x-coordinate of area that is supposed to be blurred
+         * @param int y1 - lower-right y-coordinate of area that is supposed to be blurred
+         * @param factor - blurFactor
+         * @param channels - number of color-channels
+         * @param BitmapData sourceData - data of original image
+         * @param BitmapData sourceData - data of target image
          */
         public static unsafe void sonic_blur(Bitmap source, Bitmap target,
                                         int x0, int y0, int x1, int y1, int factor, int channels,
@@ -213,7 +272,14 @@ namespace RealSense
             }
         }
 
-
+        /**
+         * Returns pixel-index inside a 1D-Array
+         * 
+         * @param int x, x-coordinate
+         * @param int y, y-coordinate
+         * @param int widthTimesSize, row length, multiplied with size
+         * @param int size, data length
+         */
         private static int pixelIndex(int x, int y, int widthTimesSize, int size)
         {
 
@@ -223,6 +289,15 @@ namespace RealSense
             return idxByRow + idxByCol;
         }
 
+        /**
+         * Draws a fading line (duh)
+         * 
+         * @param Graphics gfx, graphics-object to draw on
+         * @param float x0, start x-coordinate
+         * @param float y0, start y-coordinate
+         * @param float x1, end x-coordinate
+         * @param float y1, end y-coordinate
+         */
         public static void drawFadingLine(Graphics gfx, float x0, float y0, float x1, float y1)
         {
 

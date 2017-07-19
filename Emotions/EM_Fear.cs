@@ -6,40 +6,25 @@ using System.Text;
 
 namespace RealSense.Emotions
 {
+
+    /*
+      *Measures the percentage value of fear. 
+      *@author Tanja 
+      */
     class EM_Fear : RSModule
     {
-        // Default values
+        /**
+          * Initializes the EM, setting the debug-flag to true by default
+          */
         public EM_Fear()
         {
             debug = true;
         }
 
-        /*
-         *  1 = inner brow raised -> BrowShift
-            2 = outer brow raised -> BrowShift
-            4 = brow lowered -> BrowShift
-            5 = upper lid raised -> EyelidTight
-            6 = cheeck raised -> CheeckRaised (not working)
-            7 = lid tightened -> EyelidTight
-            9 = nose wrinkled -> NoseWrinkled
-            12 = lip corner pulled (up) -> LipCorner
-            14 = grübchen -> none
-            15 = lip corner lowered -> LipLine
-            16 = lower lip lowered ->LowerLipLowered
-            20 = lip stretched -> LipStretched
-            23 = lip tightened -> LipsTightened
-            26 = jaw drop -> JawDrap
-
-            Verachtung (12 (R,L), 14(R,L)
-            Trauer (1,4,15,(20?)
-            Wut (4,5,6,23)
-            Ekel (9,15,16,4)
-            Überraschung (1,2,5B,26)
-            Freude (6,12, 7)
-            Angst (1,2,4,5,6,20,26)
-
-         * */
-
+        /**
+      * Computes the percentage Value of fear in the current Frame.
+      * @param Graphics g for the view
+      * */
         public override void Work(Graphics g)
         {
             //Fear --> BrowShift, EyelidTight, LipStreched, JawDrop
