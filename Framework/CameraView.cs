@@ -64,12 +64,10 @@ namespace RealSense
         /**
          * Initialise View and start updater Thread
          */
-        public CameraView(Model model, bool test)
+        public CameraView(Model model, Model.MODE m)
         {
             KeyPreview = true;
 
-            outputEnabled = test;
-            testMode = test;
             this.model = model;
             model.View = this;
             session = PXCMSession.CreateInstance();
@@ -88,7 +86,7 @@ namespace RealSense
             pb = new PictureBox();
             FormClosed += new FormClosedEventHandler(Quit);
 
-            if (testMode)
+            if ((m == Model.MODE.TEST))
             {
                 // Set size
                 pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
@@ -146,10 +144,6 @@ namespace RealSense
 
                             model.Modules.ForEach(delegate (RSModule md)
                             {
-                                if (md.GetType() == typeof(EmotionSaver))
-                                {
-                                    ((EmotionSaver)md).init();
-                                }
                             });
                             Console.WriteLine("Start calibration");
                             ((Gauge_Module)mod).calibrate = true;

@@ -12,7 +12,7 @@ namespace RealSense
      * @author Tobias Schramm
      * @HogwartsHouse Hufflepuff
      */
-    class ME_UpperLipRaised : RSModule
+    class AU_UpperLipRaised : RSModule
     {
 
         // variables for logic
@@ -25,7 +25,7 @@ namespace RealSense
         /**
          * Sets default-values
          */
-        public ME_UpperLipRaised()
+        public AU_UpperLipRaised()
         {
             DEF_MIN = -1;
             DEF_MAX = 8;
@@ -35,7 +35,7 @@ namespace RealSense
             XTREME_MAX = 25;
             XTREME_MIN = -1;
             debug = true;
-            model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = 0;
+            model.AU_Values[typeof(AU_UpperLipRaised).ToString()] = 0;
         }
 
         /**
@@ -73,12 +73,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_UpperLipRaised).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_UpperLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_UpperLipRaised).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_UpperLipRaised).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

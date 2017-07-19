@@ -15,13 +15,13 @@ namespace RealSense
      *                         0 = Relaxed
      *                       100 = Grinning
      */
-    class ME_LipLine : RSModule
+    class AU_LipLine : RSModule
     {
 
         private string debug_message = "LipLine: ";
         private double[] lines = new double[numFramesBeforeAccept];
         // Default values
-        public ME_LipLine()
+        public AU_LipLine()
         {
             debug = true;
             DEF_MIN = -5;
@@ -31,7 +31,7 @@ namespace RealSense
             MAX_TOL = 1;
             XTREME_MAX = 90;
             XTREME_MIN = -33;
-            model.AU_Values[typeof(ME_LipLine).ToString()] = 0;
+            model.AU_Values[typeof(AU_LipLine).ToString()] = 0;
         }
 
         public override void Work(Graphics g)
@@ -63,12 +63,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipLine).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipLine).ToString()] + ") (" + (int)MAX + ", " + (int)MIN + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipLine).ToString()] + ") (" + (int)MAX + ", " + (int)MIN + ")";
                 }
 
                 framesGathered = 0;

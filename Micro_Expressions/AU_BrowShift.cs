@@ -16,7 +16,7 @@ namespace RealSense
      * Interpretation:      -100 = Brows down (grumpy af)
      *                       100 = Brows up
      */
-    class ME_BrowShift : RSModule
+    class AU_BrowShift : RSModule
     {
         // Variables for logic
 
@@ -29,7 +29,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public ME_BrowShift()
+        public AU_BrowShift()
         {
             DEF_MIN = -7;
             DEF_MAX = 12;
@@ -41,8 +41,8 @@ namespace RealSense
             XTREME_MIN = -24;
 
 
-            model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = 0;
-            model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = 0;
+            model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] = 0;
         }
 
         public override void Work(Graphics g)
@@ -81,14 +81,14 @@ namespace RealSense
 
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"] = diffs[0];
-                    model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] = diffs[1];
+                    model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"] = diffs[0];
+                    model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] = diffs[1];
                 }
 
                 // print debug-values 
                 if (debug)
                 {
-                    output = "BrowShift: " + "(" + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"]  + ", " + (int)model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "BrowShift: " + "(" + (int)model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"]  + ", " + (int)model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

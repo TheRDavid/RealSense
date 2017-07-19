@@ -92,43 +92,35 @@
     </Compile>
     <Compile Include="Analyse\FaceRecorder.cs" />
     <Compile Include="Analyse\FaceRecording.cs" />
-    <Compile Include="Emotions\EM_Contempt02.cs" />
+    <Compile Include="Emotions\EM_Contempt.cs" />
     <Compile Include="Emotions\EM_Anger.cs" />
     <Compile Include="Emotions\EM_Disgust.cs" />
     <Compile Include="Emotions\EM_Fear.cs" />
     <Compile Include="Emotions\EM_Joy.cs" />
     <Compile Include="Emotions\EM_Sadness.cs" />
     <Compile Include="Emotions\EM_Surprise.cs" />
-    <Compile Include="Framework\EmotionView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Framework\EmotionView.Designer.cs">
-      <DependentUpon>EmotionView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
-    <Compile Include="Micro_Expressions\ME_LowerLipRaised.cs" />
-    <Compile Include="Micro_Expressions\ME_BrowShift.cs" />
-    <Compile Include="Various\EmotionSaver.cs" />
-    <Compile Include="Various\MultiFormContext.cs" />
+    <Compile Include="Micro_Expressions\AU_LowerLipRaised.cs" />
+    <Compile Include="Micro_Expressions\AU_BrowShift.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Various\FaceRect.cs" />
-    <Compile Include="Micro_Expressions\ME_JawDrop.cs" />
-    <Compile Include="Micro_Expressions\ME_LipLine.cs" />
-    <Compile Include="Micro_Expressions\ME_LipsTightened.cs" />
-    <Compile Include="Micro_Expressions\ME_LipStretched.cs" />
-    <Compile Include="Micro_Expressions\ME_LowerLipLowered.cs" />
-    <Compile Include="Micro_Expressions\ME_NoseWrinkled.cs" />
+    <Compile Include="Micro_Expressions\AU_JawDrop.cs" />
+    <Compile Include="Micro_Expressions\AU_LipLine.cs" />
+    <Compile Include="Micro_Expressions\AU_LipsTightened.cs" />
+    <Compile Include="Micro_Expressions\AU_LipStretched.cs" />
+    <Compile Include="Micro_Expressions\AU_LowerLipLowered.cs" />
+    <Compile Include="Micro_Expressions\AU_NoseWrinkled.cs" />
     <Compile Include="Framework\CameraView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Framework\Model.cs" />
-    <Compile Include="Micro_Expressions\ME_EyelidTight.cs" />
-    <Compile Include="Micro_Expressions\ME_UpperLipRaised.cs" />
-    <Compile Include="Micro_Expressions\ME_LipCorner.cs" />
+    <Compile Include="Micro_Expressions\AU_EyelidTight.cs" />
+    <Compile Include="Micro_Expressions\AU_UpperLipRaised.cs" />
+    <Compile Include="Micro_Expressions\AU_LipCorner.cs" />
     <Compile Include="Various\FaceTrackerModule.cs" />
     <Compile Include="Various\Gauge_Module.cs" />
     <Compile Include="Various\LandmarkGroupModule.cs" />
@@ -164,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Framework\CameraView.resx">
       <DependentUpon>CameraView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Framework\EmotionView.resx">
-      <DependentUpon>EmotionView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

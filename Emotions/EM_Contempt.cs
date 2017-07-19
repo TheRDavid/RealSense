@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RealSense.Emotions
 {
-    class EM_Contempt02 : RSModule
+    class EM_Contempt : RSModule
     {
 
         private double[] distancesBrow = new double[numFramesBeforeAccept];
@@ -15,7 +15,7 @@ namespace RealSense.Emotions
         //double[] diffs = new double[] { 0, 0 };
 
         // Default values
-        public EM_Contempt02()
+        public EM_Contempt()
         {
             debug = true;
             DEF_MIN = -1;

@@ -16,7 +16,8 @@ namespace RealSense
     public class Model
     {
         public enum AXIS { X, Y, Z };
-        public enum Emotion { ANGER, CONTEMPT, DISGUST, FEAR, JOY, SADNESS, SURPRISE }
+        public enum Emotion { ANGER, CONTEMPT, DISGUST, FEAR, JOY, SADNESS, SURPRISE };
+        public enum MODE { ANALYZE, RUN, TEST };
         public static int NOSE_FIX = 26;
         public static bool calibrated = false;
 
@@ -464,15 +465,5 @@ namespace RealSense
             get { return emotionPictureBoxes; }
             set { emotionPictureBoxes = value; }
         }
-        
-
-
-        // should be in here, but so far is not defined 
-        /* private void ResetEmotions()
-       {
-
-       }*/
-
-
-    }
+     }
 }

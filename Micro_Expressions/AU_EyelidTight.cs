@@ -16,7 +16,7 @@ namespace RealSense
      * Interpretation:      -100 = Eyes squinted
      *                       100 = Eyes wide open
      */
-    class ME_EyelidTight : RSModule
+    class AU_EyelidTight : RSModule
     {
 
         // variables for logic
@@ -32,7 +32,7 @@ namespace RealSense
         
 
         // Default values
-        public ME_EyelidTight()
+        public AU_EyelidTight()
         {
             //values correct
             DEF_MIN = -34;
@@ -46,8 +46,8 @@ namespace RealSense
 
             if (model.CurrentPoseDiff < 10)
             {
-                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = 0;
-                model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = 0;
+                model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = 0;
+                model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = 0;
             }
         }
 
@@ -94,14 +94,14 @@ namespace RealSense
 
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] = diffs[0];
-                    model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] = diffs[1];
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = diffs[0];
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = diffs[1];
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = "Eyelid_Tight: " + "(" + (int)model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "Eyelid_Tight: " + "(" + (int)model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
 
                 framesGathered = 0;

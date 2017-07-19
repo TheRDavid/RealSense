@@ -54,20 +54,20 @@ namespace RealSense.Emotions
             makeSmall();
 
             //lid Value 0 - -100 (Grenze bei lidMax)
-            double temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            double temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            double temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"];
             double lidValue = (temp_left + temp_right)  / 2;
             lidValue = lidValue * -1 * p_lid / percent;
 
             //lip Value 0 - 100
-            temp_left = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"]);
-            temp_right = Math.Abs(model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"]);
+            temp_left = Math.Abs(model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"]);
+            temp_right = Math.Abs(model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"]);
             double lipValue = temp_left > temp_right ? temp_right : temp_left;
             //lipValue = (temp_left + temp_right) / 2;
             lipValue = lipValue * p_lip / percent;
 
             //lipL Value 0 - -100
-            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            double lipLValue = model.AU_Values[typeof(AU_LipLine).ToString()];
             lipLValue = lipLValue * p_lip / percent;
 
             lipValue = lipValue > lipLValue ? lipValue : lipLValue;
@@ -89,25 +89,25 @@ namespace RealSense.Emotions
         private void makeSmall()
         {
             //Anger brows
-            double temp_left = model.AU_Values[typeof(ME_BrowShift).ToString() + "_left"];
-            double temp_right = model.AU_Values[typeof(ME_BrowShift).ToString() + "_right"];
+            double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
+            double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
             double browValue = (temp_left + temp_right) / 2;
             browValue = browValue * -1 - 30;
 
             //Disgust nose 
-            double noseValue = model.AU_Values[typeof(ME_NoseWrinkled).ToString()];
+            double noseValue = model.AU_Values[typeof(AU_NoseWrinkled).ToString()];
             noseValue = noseValue * -1;
 
             //Sadness Lipline
-            double lipLValue = model.AU_Values[typeof(ME_LipLine).ToString()];
+            double lipLValue = model.AU_Values[typeof(AU_LipLine).ToString()];
             lipLValue = lipLValue * -1;
 
             //Contempt
             //not possible yet (ME needed)
 
             //Surprise Lid
-            temp_left = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_left"];
-            temp_right = model.AU_Values[typeof(ME_EyelidTight).ToString() + "_right"];
+            temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"];
+            temp_right = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"];
             double eyeValue = (temp_left + temp_right) / 2;
 
             smallerArray = new double[] { browValue, lipLValue, eyeValue };

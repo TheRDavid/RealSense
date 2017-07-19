@@ -219,17 +219,17 @@ namespace RealSense
             {
                 model = new RealSense.Model(false);
                 RSModule.Init(model);
-                microExpressionModules[1] = new ME_BrowShift();
-                microExpressionModules[2] = new ME_EyelidTight();
-                microExpressionModules[3] = new ME_JawDrop();
-                microExpressionModules[4] = new ME_LipCorner();
-                microExpressionModules[5] = new ME_LipLine();
-                microExpressionModules[6] = new ME_LipsTightened();
-                microExpressionModules[7] = new ME_LipStretched();
-                microExpressionModules[8] = new ME_LowerLipLowered();
-                microExpressionModules[9] = new ME_LowerLipRaised();
-                microExpressionModules[10] = new ME_NoseWrinkled();
-                microExpressionModules[0] = new ME_UpperLipRaised();
+                microExpressionModules[1] = new AU_BrowShift();
+                microExpressionModules[2] = new AU_EyelidTight();
+                microExpressionModules[3] = new AU_JawDrop();
+                microExpressionModules[4] = new AU_LipCorner();
+                microExpressionModules[5] = new AU_LipLine();
+                microExpressionModules[6] = new AU_LipsTightened();
+                microExpressionModules[7] = new AU_LipStretched();
+                microExpressionModules[8] = new AU_LowerLipLowered();
+                microExpressionModules[9] = new AU_LowerLipRaised();
+                microExpressionModules[10] = new AU_NoseWrinkled();
+                microExpressionModules[0] = new AU_UpperLipRaised();
 
                 foreach (RSModule m in microExpressionModules)
                     m.Debug = false;

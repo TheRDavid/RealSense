@@ -16,7 +16,7 @@ namespace RealSense
      *                         0 = Relaxed
      *                       100 = Frogface
      */
-    class ME_LipStretched : RSModule
+    class AU_LipStretched : RSModule
     {
 
         // variables for logic
@@ -28,7 +28,7 @@ namespace RealSense
         /**
          * Sets default-valuesC:\Users\Tanja\Source\Repos\RealSense\Modules\AU_LipStretched.cs
          */
-        public ME_LipStretched()
+        public AU_LipStretched()
         {
 
             //correct values
@@ -40,7 +40,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 60;
             XTREME_MIN = -45;
-            model.AU_Values[typeof(ME_LipStretched).ToString()] = 0;
+            model.AU_Values[typeof(AU_LipStretched).ToString()] = 0;
         }
 
         /**
@@ -69,12 +69,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipStretched).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_LipStretched).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipStretched).ToString()] + ") ("+ (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipStretched).ToString()] + ") ("+ (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

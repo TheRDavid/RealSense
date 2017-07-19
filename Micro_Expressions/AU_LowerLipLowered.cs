@@ -15,7 +15,7 @@ namespace RealSense
      * Interpretation:         0 = Relaxed
      *                       100 = Lip down
      */
-    class ME_LowerLipLowered : RSModule
+    class AU_LowerLipLowered : RSModule
     {
 
         // variables for logic
@@ -28,7 +28,7 @@ namespace RealSense
         /**
          * Sets default-values
          */
-        public ME_LowerLipLowered()
+        public AU_LowerLipLowered()
         {
             DEF_MIN = -1;
             DEF_MAX = 4;
@@ -38,7 +38,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 8;
             XTREME_MIN = -6;
-            model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = 0;
+            model.AU_Values[typeof(AU_LowerLipLowered).ToString()] = 0;
         }
 
         /**
@@ -75,12 +75,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LowerLipLowered).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_LowerLipLowered).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LowerLipLowered).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LowerLipLowered).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

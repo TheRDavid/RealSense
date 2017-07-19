@@ -17,7 +17,7 @@ namespace RealSense
      *                         0 = Normal
      *                       100 = Dropped like it's hot
     */
-    class ME_JawDrop : RSModule
+    class AU_JawDrop : RSModule
     // our huffelpuff actually ravenclaw nerd wants a note : when changing face position values change as well due to a new angle difference should not be big enough to falsify 
 
     {
@@ -26,7 +26,7 @@ namespace RealSense
         private double[] chinDistances = new double[numFramesBeforeAccept];
         private string debug_message = "JawDrop: ";
 
-        public ME_JawDrop()
+        public AU_JawDrop()
         {
             DEF_MIN = 0;
             DEF_MAX = 20;
@@ -36,7 +36,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 62;
             XTREME_MIN = 0;
-            model.AU_Values[typeof(ME_JawDrop).ToString()] = 0;
+            model.AU_Values[typeof(AU_JawDrop).ToString()] = 0;
         }
         public override void Work(Graphics g)
         {
@@ -62,13 +62,13 @@ namespace RealSense
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_JawDrop).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_JawDrop).ToString()] = diffs[0];
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_JawDrop).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_JawDrop).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

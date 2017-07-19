@@ -17,13 +17,13 @@ namespace RealSense
      *                         0 = normal
      *                       100 = doesn't usually happen
    */
-    class ME_LipsTightened : RSModule
+    class AU_LipsTightened : RSModule
     {
         double[] topDownDistances = new double[numFramesBeforeAccept];
         double upperLip;
         double bottomLip;
 
-        public ME_LipsTightened()
+        public AU_LipsTightened()
         {
             //values correct
             DEF_MIN = -3;
@@ -34,7 +34,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 0;
             XTREME_MIN = -16.5;
-            model.AU_Values[typeof(ME_LipsTightened).ToString()] = 0;
+            model.AU_Values[typeof(AU_LipsTightened).ToString()] = 0;
         }
 
         public override void Work(Graphics g)
@@ -59,10 +59,10 @@ namespace RealSense
 
                 // Update value in Model 
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_LipsTightened).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {
-                    output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(ME_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";
+                    output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(AU_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

@@ -14,7 +14,7 @@ namespace RealSense
      *                       100 = Big stupid smile
      *                       
      */
-    class ME_LipCorner : RSModule
+    class AU_LipCorner : RSModule
     {
         // Variables for logic
 
@@ -26,7 +26,7 @@ namespace RealSense
         // Variables for debugging
 
         // Default values
-        public ME_LipCorner()
+        public AU_LipCorner()
         {
             DEF_MIN = -1;
             DEF_MAX = 5;
@@ -36,8 +36,8 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 45;
             XTREME_MIN = -36;
-            model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = 0;
-            model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = 0;
+            model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = 0;
+            model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = 0;
         }
 
         public override void Work(Graphics g)
@@ -71,13 +71,13 @@ namespace RealSense
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
-                    model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
+                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
+                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
                 }
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(ME_LipCorner).ToString() + "_right"] + ") (" + (int)MIN + ", " + (int)MAX + ") -> " + hDiff;
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] + ", " + (int)model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] + ") (" + (int)MIN + ", " + (int)MAX + ") -> " + hDiff;
                 }
 
                 framesGathered = 0;

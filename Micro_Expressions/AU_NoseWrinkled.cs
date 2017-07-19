@@ -15,7 +15,7 @@ namespace RealSense
      * Interpretation:         0 = Relaxed
      *                      -100 = Wrinkled
      */
-    class ME_NoseWrinkled : RSModule
+    class AU_NoseWrinkled : RSModule
     {
 
         // variables for logic
@@ -26,7 +26,7 @@ namespace RealSense
         private string debug_message = "NoseWrinkled: ";
 
         // Default values
-        public ME_NoseWrinkled()
+        public AU_NoseWrinkled()
         {
             DEF_MIN = -1;
             DEF_MAX = 8;
@@ -36,7 +36,7 @@ namespace RealSense
             debug = true;
             XTREME_MAX = 1;
             XTREME_MIN = -50; // god damnit rené
-            model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = 0;
+            model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = 0;
         }
 
         /** 
@@ -73,12 +73,12 @@ namespace RealSense
 
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(ME_NoseWrinkled).ToString()] = diffs[0];
+                    model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + " -> (" + (int)model.AU_Values[typeof(ME_NoseWrinkled).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + " -> (" + (int)model.AU_Values[typeof(AU_NoseWrinkled).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }
