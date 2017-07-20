@@ -8437,7 +8437,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Application Structure]] Action-Unit-Modules" title="$:/StoryList">
+<div list="[[Value Filtering]] Utility-Modules [[The Final Year Project]] Test-UI Test-Subjects [[Polished UI]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8453,7 +8453,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8473,7 +8473,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/Anton/Documents/GitHub/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/Users/geheim/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8481,7 +8481,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;null&quot;
         }
     }
 }</pre>
@@ -8601,19 +8601,19 @@ Error message and password prompt
 <div created="20170523183735178" modified="20170523183735178" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
 </div>
-<div created="20170619105113275" modified="20170707145532215" tags="" title="Action-Unit-Modules">
-<pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, saved in the model, we set some min and max values to indicate the 100% and -100% boundary. 
+<div created="20170619105113275" modified="20170719124649499" tags="" title="Action-Unit-Modules">
+<pre>The Action-Unit-Modules use the Landmark-Points from our camera to compare the current Face with the calibrated Null-Face. To have percentage values for each Action-Unit, which are saved in the model, we set some minimum and maximum values to indicate the 100% and -100% boundaries. 
 Since every face is different and some people are able to shift their brows higher or open their eyes wider than others, we decided to allow these boundary values to be dynamic to a certain degree.
 
 &lt;br&gt;
 &lt;img src=&quot;img/TanjaAU.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 &lt;br&gt;
 
-Unfortunately the Landmark-Points weren't reliable enough when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
+Unfortunately the Landmark-Points weren't reliable when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
 </pre>
 </div>
-<div created="20170619105234171" modified="20170629144402735" tags="" title="Analyzer">
-<pre>During the many test-phases of our project, we always needed a test-subject to hold their face in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
+<div created="20170619105234171" modified="20170719124436838" tags="" title="Analyzer">
+<pre>During the many test-phases of our project, we always needed a test-subject in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
 To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmarks positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
 In order to do so, we implemented a &lt;i&gt;Face-Recorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
 &lt;img src=&quot;img/Analyzer.png&quot;&gt;
@@ -8633,13 +8633,13 @@ There is one problem with the Analyzer: The vlc-Library only seems to run in 32-
 In 32-mode on the other hand the camera itself seems to have trouble processing the image data and our software can not launch the [[polished|Polished UI]]- or [[test-UI|Test-UI]]
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105029483" modified="20170707145528703" tags="" title="Application Structure">
+<div created="20170619105029483" modified="20170719130152934" tags="" title="Application Structure">
 <pre>This is how our program works:  
 First of all we need to initialize our model to start the camera. All the data is collected in our model. Afterwards every desired [[module|Modules]] can be initialized for the current build. There are three kinds of modules which are either responsible for[[ emotion|Emotion-Modules]], [[action units |Action-Unit-Modules]]or some [[utility functions|Utility-Modules]].
 
-  There are different types of user interfaces in our programm. The first one is a [[testing UI|Test-UI]] which can be used to check the behaviour of each action unit and emotion module. The other view is our [[final interface|Polished UI]], which is for the user to observe their emotions.  
+  There are different types of user interfaces in our programm.  [[Testing UI|Test-UI]] can be used to check the behaviour of each action unit and emotion module. The other view is the [[final interface|Polished UI]], which is for the user to observe their emotions.  
 
-To make our testing more efficient, we added an [[Analyzer|Analyzer]], which can record the landmark positions so we can change our algorithms and see their results in hindsight.
+To make testing more efficient, we added an [[Analyzer|Analyzer]], which can record the landmark positions so we can change our algorithms and see their results in hindsight.
 
 &lt;br&gt;
 &lt;img src=&quot;img/applicationoverview.png&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
@@ -8648,9 +8648,9 @@ To make our testing more efficient, we added an [[Analyzer|Analyzer]], which can
 <div created="20170523183801513" modified="20170523183900141" tags="$:/tags/SideBar" title="Contents">
 <pre>&lt;$list filter={{$:/core/Filters/AllTiddlers!!filter}} template=&quot;$:/core/ui/ListItemTemplate&quot;/&gt;</pre>
 </div>
-<div created="20170619104857903" modified="20170705123159627" tags="" title="Emotion Research">
-<pre>For our project we needed to do some research on how to read someone's emotions. As a source we used – &lt;i&gt;Gefühle lesen, Wie Sie Emotionen erkennen und richtig interpretieren&lt;/i&gt; by Paul Ekman. 
-We figured out which action units we needed for our program to succesfully read the seven basic emotions (sadness, disgust, fear, contempt, joy, anger, surprise). Sadness for example has a long list of action units which contains:  
+<div created="20170619104857903" modified="20170719125829559" tags="" title="Emotion Research">
+<pre>For our project we needed to do research on how to read a person's emotions. As a source we used – &lt;i&gt;&quot;Emotions Revealed: Recognizing Faces and Feelings to Improve Communication and Emotional Life&quot;&lt;/i&gt; by Paul Ekman. 
+We figured out which action units were needed for our program to succesfully read the seven basic emotions (sadness, disgust, fear, contempt, joy, anger, surprise). Sadness for example has a long list of action units which contains:  
 
 * inner brows raised
 * stretched lips
@@ -8659,21 +8659,21 @@ We figured out which action units we needed for our program to succesfully read 
 and a few others. 
 &lt;br&gt;
 
-Since we only had one year of development time, we decided to cut the action units down to a shorter list, which was also adjusted to the camera's capabilities. For this purpose we used the so called Facial Action Coding System (FACS). In the end we had a total of 13 action units to implement. &lt;br&gt;  
+Since there was only one year of development time, we decided to cut the action units down to a shorter list, which was also adjusted to the camera's capabilities. For this purpose we used the so called Facial Action Coding System (FACS). In the end a total of 13 action units to were implement. &lt;br&gt;  
 
 &lt;img src=&quot;img/ActionUnit_list.png&quot; width=&quot;300&quot; align=&quot;middle&quot;&gt;
 
 
 During our [[test-phase|Test-Subjects]] we figured out that there were some action units to adjust and bugs to fix. We also noticed that our true goal could not be to read real emotions, but faked ones, since we did not have any actors as test-subjects at our disposal. Also our software would be used for presentation purposes on an Open-door day. During this event, people would use our program and try to fake emotions to trigger a reaction. 
 &lt;br&gt;
-It was for that reason that we decided to focus our research on what a person would look like when they tried to fake the seven basic emotions.
+It was for that reason that we decided to focus our research on how a person would act when they try to fake the seven basic emotions.
 
 </pre>
 </div>
 <div created="20170619105146833" modified="20170628154656245" tags="" title="Emotion-Modules">
 <pre>The Emotion-Modules compute the percentage value of each emotion. In order to do that the modules use the results of each action unit module and define a proportion between 0 and 110, depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. Bigger numbers just make it easier to reach the maximum. Some emotions can also be reduced by other AU-Modules, e.g. anger and joy can't be high at the same time. In the end the Action-Unit-Values are multiplied with their proportion and are summed up.</pre>
 </div>
-<div created="20170523185311170" modified="20170629150202978" tags="" title="Intel RealSense SR300 Depth-Camera">
+<div created="20170523185311170" modified="20170719125951707" tags="" title="Intel RealSense SR300 Depth-Camera">
 <pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
 &lt;h3&gt;&lt;b&gt;About&lt;/b&gt;&lt;/h3&gt;
@@ -8683,7 +8683,7 @@ The SR300 Camera can, among other things (like hand-gesture-tracking and facial 
 This feature enables the developer to record changes in a person's mimic and (as in this project) interpret them as emotions.
 &lt;/p&gt;
 
-&lt;p&gt;Because the depth-perception of the SR300, even the head's rotation can be tracked, it should be noted however, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering]] for more information). A lot of the time during the project was spent working around the limitations of the camera.
+&lt;p&gt;Because the depth-perception of the SR300, even the head's rotation can be tracked. It should however be noted, that both due to the low resolution of the depth-map (640x480) and the inaccuracy of even the 2D-landmark coordinates, precise landmark-tracking turned out to be quite a challenge (read [[Value Filtering]] for more information). A lot of the time during the project was spent working around the limitations of the camera.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -8727,7 +8727,7 @@ Video-Streaming
 ... with the &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?pxcsensemanager.html&quot;&gt;PXCMSenseManager&lt;/a&gt; and its &lt;a href=&quot;https://software.intel.com/sites/landingpage/realsense/camera-sdk/v1.1/documentation/html/index.html?member_functions_pxcfaceconfiguration.html&quot;&gt;FaceConfiguration&lt;/a&gt;
 &lt;/p&gt;</pre>
 </div>
-<div created="20170619105054118" modified="20170705151917138" tags="" title="Modules">
+<div created="20170619105054118" modified="20170719130041615" tags="" title="Modules">
 <pre>The program structure was split into different modules separating the functionality into independent and interchangeable parts. Therefore it is possible to easily expand on our idea and implement new modules.
 
 All modules inherit from the &quot;RSModul.cs&quot; class. 
@@ -8844,7 +8844,7 @@ The work method is used for calculations and manipulation of the output string.&
 
 !! ''Emotion-Modules''
 
-The emotions are made out of several action units, which are combined for the following emotions:
+The emotions consist of several action units, which are combined for the following emotions:
 
 &lt;img src=&quot;img/Emotion.png&quot; width=&quot;500&quot; align=&quot;middle&quot;&gt;
 
@@ -8891,7 +8891,7 @@ The emotions are made out of several action units, which are combined for the fo
 
 Refer to [[Utility-Modules]]</pre>
 </div>
-<div created="20170619105344038" modified="20170705151627005" tags="" title="Polished UI">
+<div created="20170619105344038" modified="20170719130348005" tags="" title="Polished UI">
 <pre>For our prototype we needed a user interface which is easy to understand, since our users were expected to be guests on an open door day.  We decided to use circles as a progress-bar early on. The only thing that took a little longer was to figure out the position of the seven elements (one progress-bar for each emotion) around our camera view.&lt;br&gt;
 
 At first we position the circles around the user's head, which turned out to be too distracting.
@@ -8924,8 +8924,8 @@ During our own tests we realized that we also needed some sort of feedback for t
 
 After stepping in front of the camera the UI appears on the left hand side. The calibration process can be activated by pressing &quot;CMD + c&quot;. The calibration progress is visualized with a red circle that sorounds the subject's face. After the succesfull calibration the seven circles on the white panel adjust accordingly to the emotions values. Every circle indicates the intensity of the respective emotion. As long as a person remains in their initial pose all values are calculated simultaneously. Whenever the head's rotation exceeds a set limit the calculation pause until the subjects returns to their original pose. </pre>
 </div>
-<div created="20170619105306897" modified="20170628145315589" tags="" title="Test-Subjects" type="">
-<pre>&lt;p&gt;In order to test our software and its features we needed people who voluntarily stood in front of the camera and let us measure the landmarks' distances from each other. We tried to get a good mix of people and personalities to ensure that we'd have a diverse and representative pool of test subjects &lt;/p&gt;
+<div created="20170619105306897" modified="20170719130646347" tags="" title="Test-Subjects" type="">
+<pre>&lt;p&gt;In order to test the software and its features we needed people who voluntarily stood in front of the camera and let us measure the landmarks' distances from each other. We tried to get a good mix of people and personalities to ensure that we'd have a diverse and representative pool of test subjects &lt;/p&gt;
 
 &lt;h1&gt;Phase I - Action Units&lt;/h1&gt;
 
@@ -8938,7 +8938,7 @@ We also figured out that there were a few expressions the camera wasn't able to 
 
 &lt;h1&gt; Phase III - Emotions &lt;/h1&gt;
 
-&lt;p&gt;Testing the emotion detection was the next big step. We asked our test subjects to act out the seven basic emotions in front of the camera. We told them which parts of their face they had to move to match a certain emotion. We realized, that making the software recognize emotions of one person perfectly on the one hand, would make it unreliant for any other subject on the other.&lt;/p&gt;
+&lt;p&gt;Testing the emotion detection was the next big step. Our test subjects were asked to act out the seven basic emotions in front of the camera. We told them which parts of their face they had to move to match a certain emotion. We realized, that making the software recognize emotions of one person perfectly on the one hand, would make it unreliant for any other subject on the other.&lt;/p&gt;
 
 &lt;h1&gt; Phase IV - Analyzer&lt;/h1&gt;
 In the last phase we needed data for our [[analyzing tool|Analyzer]]. Like in the previous phase, we told the test subjects to act out one of the seven basic emotions. But this time they had to hold each facial expression for about ten seconds. Simultaneously, we recorded them on video, as well as with the Face Recorder, which captures the landmarks' positions. This way we collected enough data to run emotion tests without even having a person in front of the camera.
