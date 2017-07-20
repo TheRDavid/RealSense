@@ -42,7 +42,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -50,14 +50,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>RealSense.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libpxcclr.cs, Version=10.0.26.396, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=x86">
+    <Reference Include="libpxcclr.cs, Version=10.0.26.396, Culture=neutral, PublicKeyToken=ca106b2214526f83, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\Intel\RSSDK\bin\x64\libpxcclr.cs.dll</HintPath>
+      <HintPath>bin\Release\libpxcclr.cs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,20 +71,20 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Vlc.DotNet.Core, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
-      <HintPath>packages\Vlc.DotNet.Core.2.1.134\lib\net40\x86\Vlc.DotNet.Core.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Vlc.DotNet.Core.dll</HintPath>
     </Reference>
     <Reference Include="Vlc.DotNet.Core.Interops, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
-      <HintPath>packages\Vlc.DotNet.Core.Interops.2.1.134\lib\net40\x86\Vlc.DotNet.Core.Interops.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Vlc.DotNet.Core.Interops.dll</HintPath>
     </Reference>
     <Reference Include="Vlc.DotNet.Forms, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
-      <HintPath>packages\Vlc.DotNet.Forms.2.1.134\lib\net40\x86\Vlc.DotNet.Forms.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Vlc.DotNet.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Vlc.DotNet.Wpf, Version=2.1.134.0, Culture=neutral, PublicKeyToken=84529da31f4eb963, processorArchitecture=x86">
-      <HintPath>packages\Vlc.DotNet.Wpf.2.1.134\lib\net40\x86\Vlc.DotNet.Wpf.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Vlc.DotNet.Wpf.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,11 @@
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
     <Compile Include="ActionUnits\AU_LowerLipRaised.cs" />
     <Compile Include="ActionUnits\AU_BrowShift.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Various\FaceRect.cs" />
     <Compile Include="ActionUnits\AU_JawDrop.cs" />
     <Compile Include="ActionUnits\AU_LipLine.cs" />
@@ -154,6 +160,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -190,9 +197,21 @@
   <ItemGroup>
     <None Include="Images\warning.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RS-dll_64.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\libpxcclr.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="libpxcclr.cs.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(Platform)" == "x86" ( copy /y "$(RSSDK_DIR)\bin\win32\libpxccpp2c.dll" "$(TargetDir)" ) else ( copy /y "$(RSSDK_DIR)\bin\x64\libpxccpp2c.dll" "$(TargetDir)" )</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

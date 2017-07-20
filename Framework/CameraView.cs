@@ -76,6 +76,7 @@ namespace RealSense
 
             this.model = model;
             model.View = this;
+            testMode = m == Model.MODE.TEST;
             session = PXCMSession.CreateInstance();
 
             if (session == null) // Something went wrong, session could not be initialised
@@ -309,7 +310,10 @@ namespace RealSense
                                 contemptMonitor.Step();
                             }
 
-                            gr.DrawImage(windowBitmap, xP - 90, yP - 150);
+                            if (!testMode)
+                            {
+                                gr.DrawImage(windowBitmap, xP - 90, yP - 150);
+                            }
                             FriggnAweseomeGraphix.DrawMEMontior(gr, angerMonitor);
                             FriggnAweseomeGraphix.DrawMEMontior(gr, sadMonitor);
                             FriggnAweseomeGraphix.DrawMEMontior(gr, fearMonitor);

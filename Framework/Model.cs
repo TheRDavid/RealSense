@@ -71,17 +71,21 @@ namespace RealSense
             emotions[Emotion.SADNESS] = 0;
             emotions[Emotion.SURPRISE] = 0;
 
-            if (stream)
+            if (stream) 
             {
                 width = 1920;
                 height = 1080;
                 framerate = 30;
                 senseManager = PXCMSenseManager.CreateInstance();
-                senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
+               senseManager.EnableStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR, width, height, framerate);
                 // Enable Face detection
                 senseManager.EnableFace();
-                senseManager.Init();
-
+               bool couldInit = senseManager.Init().IsSuccessful();
+                if (!couldInit)
+                {
+                    MessageBox.Show("Could not connect to the hardware! Make sure you have the camera-drivers installed.", "Aww, dang");
+                    Environment.Exit(1);
+                }
                 face = senseManager.QueryFace();
                 faceConfig = face.CreateActiveConfiguration();
                 faceConfig.SetTrackingMode(PXCMFaceConfiguration.TrackingModeType.FACE_MODE_COLOR_PLUS_DEPTH);
@@ -89,9 +93,9 @@ namespace RealSense
                 faceConfig.pose.isEnabled = true;
                 faceConfig.ApplyChanges();
                 faceConfig.Update();
-
-
                 modules = new List<RSModule>();
+
+
             }
         }
 
