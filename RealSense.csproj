@@ -102,11 +102,6 @@
     <Compile Include="Framework\FriggnAweseomeGraphix.cs" />
     <Compile Include="ActionUnits\AU_LowerLipRaised.cs" />
     <Compile Include="ActionUnits\AU_BrowShift.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Various\FaceRect.cs" />
     <Compile Include="ActionUnits\AU_JawDrop.cs" />
     <Compile Include="ActionUnits\AU_LipLine.cs" />
@@ -159,7 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

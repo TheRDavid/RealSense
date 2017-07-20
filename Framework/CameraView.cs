@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
@@ -119,9 +120,9 @@ namespace RealSense
             }
             else
             {
-                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\window.png"));
-                smallWindowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\small_window.png"));
-                warningBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\warning.png"));
+                windowBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory() +"\\Images\\window.png"));
+                smallWindowBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory()+"\\Images\\small_window.png"));
+                warningBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory()+"\\Images\\warning.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;

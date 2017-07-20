@@ -34,10 +34,6 @@ namespace RealSense
         public PXCMFaceData.PoseEulerAngles currentPose = new PXCMFaceData.PoseEulerAngles();
         private Dictionary<String, double> au_Values = new Dictionary<String, double>();
         private Dictionary<Emotion, double> emotions = new Dictionary<Emotion, double>();
-        private Dictionary<Emotion, Bitmap> emotionBitmaps = new Dictionary<Emotion, Bitmap>();
-        private Dictionary<Emotion, PictureBox> emotionPictureBoxes;
-        private Dictionary<Emotion, Bitmap> exampleBitmaps = new Dictionary<Emotion, Bitmap>();
-        private String examplePath = "C:/Users/prouser/Pictures/reneEmotions";
         private Dictionary<Emotion, double> emotionMax = new Dictionary<Emotion, double>();
         private List<RSModule> modules;
         private int width;
@@ -74,16 +70,6 @@ namespace RealSense
             emotions[Emotion.JOY] = 0;
             emotions[Emotion.SADNESS] = 0;
             emotions[Emotion.SURPRISE] = 0;
-
-            exampleBitmaps[Emotion.ANGER] = new Bitmap(examplePath+"/anger.png");
-            exampleBitmaps[Emotion.CONTEMPT] = new Bitmap(examplePath + "/contempt.png");
-            exampleBitmaps[Emotion.DISGUST] = new Bitmap(examplePath + "/disgust.png");
-            exampleBitmaps[Emotion.FEAR] = new Bitmap(examplePath + "/fear.png");
-            exampleBitmaps[Emotion.JOY] = new Bitmap(examplePath + "/joy.png");
-            exampleBitmaps[Emotion.SADNESS] = new Bitmap(examplePath + "/sadness.png");
-            exampleBitmaps[Emotion.SURPRISE] = new Bitmap(examplePath + "/surprise.png");
-
-            emotionBitmaps = exampleBitmaps;
 
             if (stream)
             {
@@ -193,7 +179,7 @@ namespace RealSense
          * Returns the change in distance between the nose-fixpoint along a specified axis
          * @param int i01 - landmark-number
          * @param AXIS axis - axis to consider
-         */ 
+         */
         public double DifferenceNullCurrent(int i01, AXIS axis)
         {
             double result = 0;
@@ -492,39 +478,12 @@ namespace RealSense
         }
 
         /**
-         *  getter and setter of the EmotionBitmaps
-         */
-        public Dictionary<Emotion, Bitmap> EmotionBitmaps
-        {
-            get { return emotionBitmaps; }
-            set { emotionBitmaps = value; }
-        }
-
-        /**
          *  getter and setter of the EmotionMax
          */
         public Dictionary<Emotion, double> EmotionMax
         {
             get { return emotionMax; }
-            set { emotionMax = value; }       
+            set { emotionMax = value; }
         }
-
-        /**
-         *  getter and setter of the ExcampleBitmaps
-         */
-        public Dictionary<Emotion, Bitmap> ExcampleBitmaps
-        {
-            get { return exampleBitmaps; }
-            set { exampleBitmaps = value; }
-        }
-
-        /**
-         *  getter and setter of the EmotionPictureBoxes
-         */
-        public Dictionary<Emotion, PictureBox> EmotionPictureBoxes
-        {
-            get { return emotionPictureBoxes; }
-            set { emotionPictureBoxes = value; }
-        }
-     }
+    }
 }
