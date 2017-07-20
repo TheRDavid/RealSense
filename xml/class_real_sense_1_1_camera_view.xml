@@ -1,0 +1,961 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_camera_view" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::CameraView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Form</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aaf2c794781104e2e9c97f673eaa18c00" prot="private" static="no" mutable="no">
+        <type>PXCMSession</type>
+        <definition>PXCMSession RealSense.CameraView.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="22" column="1" bodyfile="Framework/CameraView.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a3be442424d8a3df0d5493b42e2a8b97f" prot="private" static="no" mutable="no">
+        <type>PXCMSession.ImplVersion</type>
+        <definition>PXCMSession.ImplVersion RealSense.CameraView.iv</definition>
+        <argsstring></argsstring>
+        <name>iv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="23" column="1" bodyfile="Framework/CameraView.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada135b5c2b42d1c887c6dfb89c960955" prot="private" static="no" mutable="no">
+        <type>PXCMImage.ImageData</type>
+        <definition>PXCMImage.ImageData RealSense.CameraView.colorData</definition>
+        <argsstring></argsstring>
+        <name>colorData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="25" column="1" bodyfile="Framework/CameraView.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ace96eec1068651a64a09dc7974534af2" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.colorBitmap</definition>
+        <argsstring></argsstring>
+        <name>colorBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="27" column="1" bodyfile="Framework/CameraView.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af57023a5ff21af59244db6ff09d02bba" prot="private" static="no" mutable="no">
+        <type>PictureBox</type>
+        <definition>PictureBox RealSense.CameraView.pb</definition>
+        <argsstring></argsstring>
+        <name>pb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="29" column="1" bodyfile="Framework/CameraView.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a96da0952fc128f54cc6e539f8117ddc2" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread RealSense.CameraView.updaterThread</definition>
+        <argsstring></argsstring>
+        <name>updaterThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="31" column="1" bodyfile="Framework/CameraView.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1acb699e0bcff7424fdfc520dbfe89ce53" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
+        <definition>Model RealSense.CameraView.model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="32" column="1" bodyfile="Framework/CameraView.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a78ec68053fa36d321ce259f1d23e1d51" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.save</definition>
+        <argsstring></argsstring>
+        <name>save</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="33" column="1" bodyfile="Framework/CameraView.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad32fd6f3c2a5e6e8b715ddf95b8da64b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.debug_y</definition>
+        <argsstring></argsstring>
+        <name>debug_y</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="33" column="1" bodyfile="Framework/CameraView.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad5b01bd4e0b334ee8bc686d0ca8cbaff" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button RealSense.CameraView.enableOutput</definition>
+        <argsstring></argsstring>
+        <name>enableOutput</name>
+        <initializer>= new Button()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="34" column="1" bodyfile="Framework/CameraView.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1abbf9fdf22141311d8e66c277bfbe50eb" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button RealSense.CameraView.enableImage</definition>
+        <argsstring></argsstring>
+        <name>enableImage</name>
+        <initializer>= new Button()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="35" column="1" bodyfile="Framework/CameraView.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a1bc4a7fd386f92af6d07976fae0b6511" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.outputEnabled</definition>
+        <argsstring></argsstring>
+        <name>outputEnabled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af2ba9c1b97382a8e8a55b64df6ec5ac5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.imageEnabled</definition>
+        <argsstring></argsstring>
+        <name>imageEnabled</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a5eeb21110ea9dbbc95c0c86c10c365da" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.resetModules</definition>
+        <argsstring></argsstring>
+        <name>resetModules</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a77b687e1c6472c87933b0319064cc854" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.testMode</definition>
+        <argsstring></argsstring>
+        <name>testMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aadc955823e70fa0c64e8d776f25d0a03" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.blur</definition>
+        <argsstring></argsstring>
+        <name>blur</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a8b71e73f4fcb310e607a2d4ef6e6e371" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.uiBitmap</definition>
+        <argsstring></argsstring>
+        <name>uiBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab953bc7162a2a3dc84fdd516f4206773" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.windowBitmap</definition>
+        <argsstring></argsstring>
+        <name>windowBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a26d71d80650cae002cb8f0a6bc1ec85b" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.smallWindowBitmap</definition>
+        <argsstring></argsstring>
+        <name>smallWindowBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aed103a9fde6a2ebc415d3656af13c536" prot="private" static="no" mutable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.warningBitmap</definition>
+        <argsstring></argsstring>
+        <name>warningBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9cd044a850d37b62fef15de97bf6e27e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.subject</definition>
+        <argsstring></argsstring>
+        <name>subject</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ac1f7dd41271a43de82a171b3f4cfdee3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.angerMonitor</definition>
+        <argsstring></argsstring>
+        <name>angerMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Anger&quot;, &quot;Wut&quot;, xP, yP + yRingGap, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="55" column="1" bodyfile="Framework/CameraView.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab19b1165590fda99ab1ea9f769b24746" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.joyMonitor</definition>
+        <argsstring></argsstring>
+        <name>joyMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Joy&quot;, &quot;Freude&quot;, xP, yP + yRingGap + ygap, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="56" column="1" bodyfile="Framework/CameraView.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a455375b018e18147608cd0596db3d5c9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.fearMonitor</definition>
+        <argsstring></argsstring>
+        <name>fearMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Fear&quot;, &quot;Furcht&quot;, xP, yP + yRingGap + ygap * 2, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="57" column="1" bodyfile="Framework/CameraView.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af221daceffa86f2b16d1d40b98b1a765" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.contemptMonitor</definition>
+        <argsstring></argsstring>
+        <name>contemptMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Contempt&quot;, &quot;Verachtung&quot;, xP, yP + yRingGap + ygap * 3, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="58" column="1" bodyfile="Framework/CameraView.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a8b4aa84868701edf93e06d0764d2ea0e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.sadMonitor</definition>
+        <argsstring></argsstring>
+        <name>sadMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Sadness&quot;, &quot;Trauer&quot;, xP + xgap, yP + yRingGap + yV, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="60" column="1" bodyfile="Framework/CameraView.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1adc1512565ea02ef65a2c1a4c566a8c2b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.disgustMonitor</definition>
+        <argsstring></argsstring>
+        <name>disgustMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Disgust&quot;, &quot;Ekel&quot;, xP + xgap, yP + yRingGap + yV + ygap, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="61" column="1" bodyfile="Framework/CameraView.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada42d82e52e6770fe0fcee806d5eebcb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
+        <definition>FriggnAweseomeGraphix.MEMonitor RealSense.CameraView.surpriseMonitor</definition>
+        <argsstring></argsstring>
+        <name>surpriseMonitor</name>
+        <initializer>= new <ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref>(&quot;Surprise&quot;, &quot;Überraschung&quot;, xP + xgap, yP + yRingGap + yV + ygap * 2, radius, thickness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="62" column="1" bodyfile="Framework/CameraView.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a55e318cc7f8d29fea0701591e9d3df32" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.calibRadius</definition>
+        <argsstring></argsstring>
+        <name>calibRadius</name>
+        <initializer>= 300</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="63" column="1" bodyfile="Framework/CameraView.cs" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a0c64df00e3d018e6c81b33bf69af744f" prot="private" static="no" mutable="no">
+        <type>Pen</type>
+        <definition>Pen RealSense.CameraView.linePen</definition>
+        <argsstring></argsstring>
+        <name>linePen</name>
+        <initializer>= new Pen(new SolidBrush(Color.Gray))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="65" column="1" bodyfile="Framework/CameraView.cs" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a5856eeaabcfb51dfbc01243d2e96ab5a" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.xgap</definition>
+        <argsstring></argsstring>
+        <name>xgap</name>
+        <initializer>= (int)(75 * 5)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="42" column="1" bodyfile="Framework/CameraView.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af07d9a5695e375bf0fa68ce8ac8e7eab" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.ygap</definition>
+        <argsstring></argsstring>
+        <name>ygap</name>
+        <initializer>= (int)(80 * 2.5 + 20)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="43" column="1" bodyfile="Framework/CameraView.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ae15352b11680c4f15052211aab8d20dc" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.yRingGap</definition>
+        <argsstring></argsstring>
+        <name>yRingGap</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="44" column="1" bodyfile="Framework/CameraView.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab358279cc88851afb669027397ca60ee" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.targetX</definition>
+        <argsstring></argsstring>
+        <name>targetX</name>
+        <initializer>= 120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="45" column="1" bodyfile="Framework/CameraView.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad98d9274e007cb47635f8321df90d24b" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.xP</definition>
+        <argsstring></argsstring>
+        <name>xP</name>
+        <initializer>= -900</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aedd0a0b6361432109eae3e38428ff125" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.yP</definition>
+        <argsstring></argsstring>
+        <name>yP</name>
+        <initializer>= 160</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9f31f7099b11a89271cf0a84f23dba93" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.yV</definition>
+        <argsstring></argsstring>
+        <name>yV</name>
+        <initializer>= 90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a912550e5a9617053401594768dad38ce" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.thickness</definition>
+        <argsstring></argsstring>
+        <name>thickness</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="47" column="1" bodyfile="Framework/CameraView.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9db58e60637732a7722d6eba53b86769" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.radius</definition>
+        <argsstring></argsstring>
+        <name>radius</name>
+        <initializer>= 70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="48" column="1" bodyfile="Framework/CameraView.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a252425c40f157c62d4d1f6bc65613e63" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningX</definition>
+        <argsstring></argsstring>
+        <name>warningX</name>
+        <initializer>= xP - 70</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="49" column="1" bodyfile="Framework/CameraView.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ac3e8d863519cfd52d151bdd7075a0240" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningY</definition>
+        <argsstring></argsstring>
+        <name>warningY</name>
+        <initializer>= yP - 130</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="49" column="1" bodyfile="Framework/CameraView.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a7e90012d97f723be9179e69b896af3c0" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningWidth</definition>
+        <argsstring></argsstring>
+        <name>warningWidth</name>
+        <initializer>= 900</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a0ecb8b9133db8faca04c9dd4daec1005" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningHeight</definition>
+        <argsstring></argsstring>
+        <name>warningHeight</name>
+        <initializer>= 1025</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada64ed2ef3f1981177e194e69b6d63ea" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningSymbolX</definition>
+        <argsstring></argsstring>
+        <name>warningSymbolX</name>
+        <initializer>= (warningX + warningWidth) / 2 - 728 / 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a602ef443218647a7f48029e4ecf3b248" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningSymbolY</definition>
+        <argsstring></argsstring>
+        <name>warningSymbolY</name>
+        <initializer>= (warningY + warningHeight) / 2 - 720 / 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ae605d44fbdf180863ec2289225698659" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningPopupX</definition>
+        <argsstring></argsstring>
+        <name>warningPopupX</name>
+        <initializer>= 2500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a24e64178d8ac0b1eb75166ee84ebe51a" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.warningPopupSlideX</definition>
+        <argsstring></argsstring>
+        <name>warningPopupSlideX</name>
+        <initializer>= 1420</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a81f0a50a61ea20ea35dae6a9afe608db" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.CameraView.uiSlide</definition>
+        <argsstring></argsstring>
+        <name>uiSlide</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="53" column="1" bodyfile="Framework/CameraView.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_real_sense_1_1_camera_view_1a5cc5cea08df7b36da52efba2a166e361" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int RealSense.CameraView.Debug_Y</definition>
+        <argsstring></argsstring>
+        <name>Debug_Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current y-coordinate of debug-messages </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="431" column="1" bodyfile="Framework/CameraView.cs" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_camera_view_1a342611e6157bb18b9c097186b3b9bee0" prot="public" static="no" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Boolean</type>
+        <definition>Boolean RealSense.CameraView.ResetModules</definition>
+        <argsstring></argsstring>
+        <name>ResetModules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="437" column="1" bodyfile="Framework/CameraView.cs" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_camera_view_1a487ce7be920e8f6742d704d97a6057dc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.CameraView.ColorBitmap</definition>
+        <argsstring></argsstring>
+        <name>ColorBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="442" column="1" bodyfile="Framework/CameraView.cs" bodystart="443" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1ac7f93adbed37d386412a051e6f93f978" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.CameraView.CameraView</definition>
+        <argsstring>(Model model, Model.MODE m)</argsstring>
+        <name>CameraView</name>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190" kindref="member">Model.MODE</ref></type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialises View and starts updater Thread <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- reference to data model </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Mode.Mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>m - mode the UI should run </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="72" column="1" bodyfile="Framework/CameraView.cs" bodystart="72" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a67c8ee2cdbf0caf43e48043d90c0d549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.CameraView.AddComponent</definition>
+        <argsstring>(Control c)</argsstring>
+        <name>AddComponent</name>
+        <param>
+          <type>Control</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add a component to the UI (thread-safe)</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Control</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>c, control to be added </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="213" column="1" bodyfile="Framework/CameraView.cs" bodystart="213" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a25bb3ae49e1b14531cbf04c280aeb177" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.CameraView.OnKeyDown</definition>
+        <argsstring>(object sender, KeyEventArgs e)</argsstring>
+        <name>OnKeyDown</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>KeyEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Key-Listener to trigger modules</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender, sending component </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>KeyEventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e, Key-Event information </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="146" column="1" bodyfile="Framework/CameraView.cs" bodystart="146" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a8bd56a8b9b1b2b20a4c82978f828d2fd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.CameraView.Quit</definition>
+        <argsstring>(object sender, FormClosedEventArgs e)</argsstring>
+        <name>Quit</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>FormClosedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Appropriately close down app</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender, sending component </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>KeyEventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e, Key-Event information </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="200" column="1" bodyfile="Framework/CameraView.cs" bodystart="200" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a4541905eb6cb7f744e3c4dc139abd00f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.CameraView.update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the View and modules </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="231" column="1" bodyfile="Framework/CameraView.cs" bodystart="231" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a1cb03f147eda8302d7e22360c004de60" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.CameraView.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/CameraView.cs" line="419" column="1" bodyfile="Framework/CameraView.cs" bodystart="419" bodyend="426"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Main-UI for testing- and presentation-purposes <simplesect kind="author"><para>: David Rosenbusch  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="60">
+        <label>Form</label>
+      </node>
+      <node id="59">
+        <label>RealSense.CameraView</label>
+        <link refid="class_real_sense_1_1_camera_view"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="62">
+        <label>Form</label>
+      </node>
+      <node id="61">
+        <label>RealSense.CameraView</label>
+        <link refid="class_real_sense_1_1_camera_view"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Framework/CameraView.cs" line="20" column="1" bodyfile="Framework/CameraView.cs" bodystart="19" bodyend="448"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_camera_view_1a67c8ee2cdbf0caf43e48043d90c0d549" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>AddComponent</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ac1f7dd41271a43de82a171b3f4cfdee3" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>angerMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1aadc955823e70fa0c64e8d776f25d0a03" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>blur</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a55e318cc7f8d29fea0701591e9d3df32" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>calibRadius</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ac7f93adbed37d386412a051e6f93f978" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>CameraView</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ace96eec1068651a64a09dc7974534af2" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>colorBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a487ce7be920e8f6742d704d97a6057dc" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>ColorBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ada135b5c2b42d1c887c6dfb89c960955" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>colorData</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1af221daceffa86f2b16d1d40b98b1a765" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>contemptMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ad32fd6f3c2a5e6e8b715ddf95b8da64b" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>debug_y</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a5cc5cea08df7b36da52efba2a166e361" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>Debug_Y</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1adc1512565ea02ef65a2c1a4c566a8c2b" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>disgustMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1abbf9fdf22141311d8e66c277bfbe50eb" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>enableImage</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ad5b01bd4e0b334ee8bc686d0ca8cbaff" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>enableOutput</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a455375b018e18147608cd0596db3d5c9" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>fearMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1af2ba9c1b97382a8e8a55b64df6ec5ac5" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>imageEnabled</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a1cb03f147eda8302d7e22360c004de60" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>InitializeComponent</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a3be442424d8a3df0d5493b42e2a8b97f" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>iv</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ab19b1165590fda99ab1ea9f769b24746" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>joyMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a0c64df00e3d018e6c81b33bf69af744f" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>linePen</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1acb699e0bcff7424fdfc520dbfe89ce53" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a25bb3ae49e1b14531cbf04c280aeb177" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>OnKeyDown</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a1bc4a7fd386f92af6d07976fae0b6511" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>outputEnabled</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1af57023a5ff21af59244db6ff09d02bba" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>pb</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a8bd56a8b9b1b2b20a4c82978f828d2fd" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>Quit</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a9db58e60637732a7722d6eba53b86769" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>radius</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a342611e6157bb18b9c097186b3b9bee0" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>ResetModules</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a5eeb21110ea9dbbc95c0c86c10c365da" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>resetModules</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a8b4aa84868701edf93e06d0764d2ea0e" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>sadMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a78ec68053fa36d321ce259f1d23e1d51" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>save</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1aaf2c794781104e2e9c97f673eaa18c00" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>session</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a26d71d80650cae002cb8f0a6bc1ec85b" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>smallWindowBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a9cd044a850d37b62fef15de97bf6e27e" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>subject</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ada42d82e52e6770fe0fcee806d5eebcb" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>surpriseMonitor</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ab358279cc88851afb669027397ca60ee" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>targetX</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a77b687e1c6472c87933b0319064cc854" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>testMode</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a912550e5a9617053401594768dad38ce" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>thickness</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a8b71e73f4fcb310e607a2d4ef6e6e371" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>uiBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a81f0a50a61ea20ea35dae6a9afe608db" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>uiSlide</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a4541905eb6cb7f744e3c4dc139abd00f" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>update</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a96da0952fc128f54cc6e539f8117ddc2" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>updaterThread</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1aed103a9fde6a2ebc415d3656af13c536" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a0ecb8b9133db8faca04c9dd4daec1005" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningHeight</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a24e64178d8ac0b1eb75166ee84ebe51a" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningPopupSlideX</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ae605d44fbdf180863ec2289225698659" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningPopupX</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ada64ed2ef3f1981177e194e69b6d63ea" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningSymbolX</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a602ef443218647a7f48029e4ecf3b248" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningSymbolY</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a7e90012d97f723be9179e69b896af3c0" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningWidth</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a252425c40f157c62d4d1f6bc65613e63" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningX</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ac3e8d863519cfd52d151bdd7075a0240" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>warningY</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ab953bc7162a2a3dc84fdd516f4206773" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>windowBitmap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a5856eeaabcfb51dfbc01243d2e96ab5a" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>xgap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ad98d9274e007cb47635f8321df90d24b" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>xP</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1af07d9a5695e375bf0fa68ce8ac8e7eab" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>ygap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1aedd0a0b6361432109eae3e38428ff125" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>yP</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1ae15352b11680c4f15052211aab8d20dc" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>yRingGap</name></member>
+      <member refid="class_real_sense_1_1_camera_view_1a9f31f7099b11a89271cf0a84f23dba93" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>yV</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

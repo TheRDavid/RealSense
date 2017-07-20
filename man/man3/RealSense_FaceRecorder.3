@@ -1,0 +1,85 @@
+.TH "RealSense.FaceRecorder" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.FaceRecorder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFaceRecorder\fP ()"
+.br
+.ti -1c
+.RI "override void \fBKeyTrigger\fP (int key)"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBRecording\fP\fC [get]\fP"
+.br
+.ti -1c
+.RI "int \fBRecordingIndex\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 17 of file FaceRecorder\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.FaceRecorder\&.FaceRecorder ()"
+Initializes the keyTriggers and an empty buffer for the landmark-data\&. 
+.PP
+Definition at line 30 of file FaceRecorder\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.FaceRecorder\&.KeyTrigger (int key)\fC [virtual]\fP"
+The current recording's type is determined by the key that is pressed to trigger the recording\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP - key that triggers the module 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 42 of file FaceRecorder\&.cs\&.
+.SS "override void RealSense\&.FaceRecorder\&.Work (Graphics g)\fC [virtual]\fP"
+Shows whether or not a recording is taking place and records the current landmark-data 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 66 of file FaceRecorder\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool RealSense\&.FaceRecorder\&.Recording\fC [get]\fP"
+Returns the current recording 
+.PP
+Definition at line 91 of file FaceRecorder\&.cs\&.
+.SS "int RealSense\&.FaceRecorder\&.RecordingIndex\fC [get]\fP, \fC [set]\fP"
+Sets or gets the current recording-index 
+.PP
+Definition at line 100 of file FaceRecorder\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

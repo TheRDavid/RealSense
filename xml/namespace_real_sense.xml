@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_real_sense" kind="namespace" language="C#">
+    <compoundname>RealSense</compoundname>
+    <innerclass refid="class_real_sense_1_1_analyzer_view" prot="public">RealSense::AnalyzerView</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___brow_shift" prot="public">RealSense::AU_BrowShift</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___eyelid_tight" prot="public">RealSense::AU_EyelidTight</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___jaw_drop" prot="public">RealSense::AU_JawDrop</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_corner" prot="public">RealSense::AU_LipCorner</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_line" prot="public">RealSense::AU_LipLine</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lips_tightened" prot="public">RealSense::AU_LipsTightened</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_stretched" prot="public">RealSense::AU_LipStretched</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lower_lip_lowered" prot="public">RealSense::AU_LowerLipLowered</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lower_lip_raised" prot="public">RealSense::AU_LowerLipRaised</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___nose_wrinkled" prot="public">RealSense::AU_NoseWrinkled</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___upper_lip_raised" prot="public">RealSense::AU_UpperLipRaised</innerclass>
+    <innerclass refid="class_real_sense_1_1_camera_view" prot="public">RealSense::CameraView</innerclass>
+    <innerclass refid="class_real_sense_1_1_e_m___anger" prot="public">RealSense::EM_Anger</innerclass>
+    <innerclass refid="class_real_sense_1_1_face_recorder" prot="public">RealSense::FaceRecorder</innerclass>
+    <innerclass refid="class_real_sense_1_1_face_recording" prot="public">RealSense::FaceRecording</innerclass>
+    <innerclass refid="class_real_sense_1_1_face_rect" prot="public">RealSense::FaceRect</innerclass>
+    <innerclass refid="class_real_sense_1_1_face_tracker_module" prot="public">RealSense::FaceTrackerModule</innerclass>
+    <innerclass refid="class_real_sense_1_1_friggn_aweseome_graphix" prot="public">RealSense::FriggnAweseomeGraphix</innerclass>
+    <innerclass refid="class_real_sense_1_1_gauge___module" prot="public">RealSense::Gauge_Module</innerclass>
+    <innerclass refid="class_real_sense_1_1_landmark_group_module" prot="public">RealSense::LandmarkGroupModule</innerclass>
+    <innerclass refid="class_real_sense_1_1_landmark_type_module" prot="public">RealSense::LandmarkTypeModule</innerclass>
+    <innerclass refid="class_real_sense_1_1_m_e___bear_teeth" prot="public">RealSense::ME_BearTeeth</innerclass>
+    <innerclass refid="class_real_sense_1_1_model" prot="public">RealSense::Model</innerclass>
+    <innerclass refid="class_real_sense_1_1_program" prot="public">RealSense::Program</innerclass>
+    <innerclass refid="class_real_sense_1_1_r_s_module" prot="public">RealSense::RSModule</innerclass>
+    <innernamespace refid="namespace_real_sense_1_1_emotions">RealSense::Emotions</innernamespace>
+    <innernamespace refid="namespace_real_sense_1_1_properties">RealSense::Properties</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>: Tobi </para></simplesect>
+<simplesect kind="author"><para>: </para></simplesect>
+</para>    </detaileddescription>
+    <location file="ActionUnits/AU_BrowShift.cs" line="9" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,116 @@
+.TH "RealSense.FaceRecording" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.FaceRecording
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFaceRecording\fP (String emotionName)"
+.br
+.ti -1c
+.RI "void \fBsetData\fP (PXCMFaceData\&.LandmarkPoint[][] d, PXCMFaceData\&.LandmarkPoint[] nd)"
+.br
+.ti -1c
+.RI "void \fBSave\fP ()"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.LandmarkPoint [] \fBgetFace\fP (int frame)"
+.br
+.ti -1c
+.RI "PXCMFaceData\&.LandmarkPoint [] \fBgetNullFace\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFaceRecording\fP \fBload\fP (String n)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file FaceRecording\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.FaceRecording\&.FaceRecording (String emotionName)"
+Initializes the Recording, giving it a name (timestamp) plus the emotion-type 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP emotionName 
+.RE
+.PP
+
+.PP
+Definition at line 29 of file FaceRecording\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.FaceRecording\&.getFace (int frame)"
+Returns the landmark-data of a certain frame\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP frame 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Landmark-Array 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file FaceRecording\&.cs\&.
+.SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.FaceRecording\&.getNullFace ()"
+
+.PP
+\fBReturns:\fP
+.RS 4
+the NullFace of this recording 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file FaceRecording\&.cs\&.
+.SS "static \fBFaceRecording\fP RealSense\&.FaceRecording\&.load (String n)\fC [static]\fP"
+Loads a recording from a file 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP n filename 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An instance of \fBFaceRecording\fP 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file FaceRecording\&.cs\&.
+.SS "void RealSense\&.FaceRecording\&.Save ()"
+Saves this recording to a file (timestamp + emotion-type)\&. 
+.PP
+Definition at line 48 of file FaceRecording\&.cs\&.
+.SS "void RealSense\&.FaceRecording\&.setData (PXCMFaceData\&.LandmarkPoint d[][], PXCMFaceData\&.LandmarkPoint [] nd)"
+Sets the landmark-data 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIPXCMFaceData\&.LandmarkPoint[][]\fP frameByFrameData array of frame-by-frame data 
+.br
+\fIPXCMFaceData\&.LandmarkPoint[]\fP nd data of the calibrated NullFace 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file FaceRecording\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

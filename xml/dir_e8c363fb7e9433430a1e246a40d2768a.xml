@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e8c363fb7e9433430a1e246a40d2768a" kind="dir">
+    <compoundname>Various</compoundname>
+    <innerfile refid="_face_rect_8cs">FaceRect.cs</innerfile>
+    <innerfile refid="_face_tracker_module_8cs">FaceTrackerModule.cs</innerfile>
+    <innerfile refid="_gauge___module_8cs">Gauge_Module.cs</innerfile>
+    <innerfile refid="_landmark_group_module_8cs">LandmarkGroupModule.cs</innerfile>
+    <innerfile refid="_landmark_type_module_8cs">LandmarkTypeModule.cs</innerfile>
+    <innerfile refid="_m_e___bear_teeth_8cs">ME_BearTeeth.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Various/"/>
+  </compounddef>
+</doxygen>

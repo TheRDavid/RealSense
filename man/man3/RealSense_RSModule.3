@@ -1,0 +1,235 @@
+.TH "RealSense.RSModule" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.RSModule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBRealSense\&.AU_BrowShift\fP, \fBRealSense\&.AU_EyelidTight\fP, \fBRealSense\&.AU_JawDrop\fP, \fBRealSense\&.AU_LipCorner\fP, \fBRealSense\&.AU_LipLine\fP, \fBRealSense\&.AU_LipsTightened\fP, \fBRealSense\&.AU_LipStretched\fP, \fBRealSense\&.AU_LowerLipLowered\fP, \fBRealSense\&.AU_LowerLipRaised\fP, \fBRealSense\&.AU_NoseWrinkled\fP, \fBRealSense\&.AU_UpperLipRaised\fP, \fBRealSense\&.EM_Anger\fP, \fBRealSense\&.Emotions\&.EM_Contempt\fP, \fBRealSense\&.Emotions\&.EM_Disgust\fP, \fBRealSense\&.Emotions\&.EM_Fear\fP, \fBRealSense\&.Emotions\&.EM_Joy\fP, \fBRealSense\&.Emotions\&.EM_Sadness\fP, \fBRealSense\&.Emotions\&.EM_Surprise\fP, \fBRealSense\&.FaceRecorder\fP, \fBRealSense\&.FaceRect\fP, \fBRealSense\&.FaceTrackerModule\fP, \fBRealSense\&.Gauge_Module\fP, \fBRealSense\&.LandmarkGroupModule\fP, \fBRealSense\&.LandmarkTypeModule\fP, and \fBRealSense\&.ME_BearTeeth\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBKeyTrigger\fP (int key)"
+.br
+.ti -1c
+.RI "abstract void \fBWork\fP (Graphics g)"
+.br
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBInit\fP (\fBModel\fP m)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "String \fBoutput\fP = ''"
+.br
+.ti -1c
+.RI "int [] \fBtriggers\fP = { }"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double [] \fBConvertValues\fP (double[] vars)"
+.br
+.ti -1c
+.RI "double \fBFilteredAvg\fP (double[] values)"
+.br
+.ti -1c
+.RI "void \fBFilterToleranceValues\fP (double[] values)"
+.br
+.ti -1c
+.RI "void \fBDynamicMinMax\fP (double[] dist)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBMIN\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBdebug\fP = false"
+.br
+.ti -1c
+.RI "int \fBframesGathered\fP = 0"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static double \fBDEF_MIN\fP"
+.br
+.ti -1c
+.RI "static \fBModel\fP \fBmodel\fP"
+.br
+.ti -1c
+.RI "static int \fBnumFramesBeforeAccept\fP = 20"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBDebug\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+abstract module to implment the Init method of the model and contains the work method
+.PP
+Tanja Witke 
+.PP
+Definition at line 15 of file RSModule\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double [] RealSense\&.RSModule\&.ConvertValues (double [] vars)\fC [protected]\fP"
+Resets the Min and the Max value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdouble[]\fP vars - values to consider 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ret converted values 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file RSModule\&.cs\&.
+.SS "void RealSense\&.RSModule\&.DynamicMinMax (double [] dist)\fC [protected]\fP"
+Puts a new Min/Max value if the dist is higher/lower than the old one\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdist\fP value to compare 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file RSModule\&.cs\&.
+.SS "double RealSense\&.RSModule\&.FilteredAvg (double [] values)\fC [protected]\fP"
+Called in DynamicMinMax 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdouble[]\fP vars - values to consider 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+average Average of filtered Values 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file RSModule\&.cs\&.
+.SS "void RealSense\&.RSModule\&.FilterToleranceValues (double [] values)\fC [protected]\fP"
+Removes values that fall within the tolerance-spectrum\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdouble[]\fP vars - values to consider 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file RSModule\&.cs\&.
+.SS "static void RealSense\&.RSModule\&.Init (\fBModel\fP m)\fC [static]\fP"
+initialise the model 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIm\fP - the model 
+.RE
+.PP
+
+.PP
+Definition at line 30 of file RSModule\&.cs\&.
+.SS "virtual void RealSense\&.RSModule\&.KeyTrigger (int key)\fC [virtual]\fP"
+Custom method when triggered 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP key - key to trigger this module 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBRealSense\&.FaceRecorder\fP\&.
+.PP
+Definition at line 41 of file RSModule\&.cs\&.
+.SS "void RealSense\&.RSModule\&.Reset ()"
+Reset value boundaries 
+.PP
+Definition at line 123 of file RSModule\&.cs\&.
+.SS "abstract void RealSense\&.RSModule\&.Work (Graphics g)\fC [pure virtual]\fP"
+Update every frame (do calculations, manipulate output Image) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g 
+.RE
+.PP
+
+.PP
+Implemented in \fBRealSense\&.Gauge_Module\fP, \fBRealSense\&.FaceRecorder\fP, \fBRealSense\&.LandmarkTypeModule\fP, \fBRealSense\&.AU_EyelidTight\fP, \fBRealSense\&.AU_NoseWrinkled\fP, \fBRealSense\&.AU_BrowShift\fP, \fBRealSense\&.AU_LipCorner\fP, \fBRealSense\&.AU_LipsTightened\fP, \fBRealSense\&.AU_LipStretched\fP, \fBRealSense\&.AU_LowerLipLowered\fP, \fBRealSense\&.AU_UpperLipRaised\fP, \fBRealSense\&.AU_JawDrop\fP, \fBRealSense\&.AU_LipLine\fP, \fBRealSense\&.AU_LowerLipRaised\fP, \fBRealSense\&.Emotions\&.EM_Contempt\fP, \fBRealSense\&.LandmarkGroupModule\fP, \fBRealSense\&.ME_BearTeeth\fP, \fBRealSense\&.FaceTrackerModule\fP, \fBRealSense\&.EM_Anger\fP, \fBRealSense\&.Emotions\&.EM_Joy\fP, \fBRealSense\&.Emotions\&.EM_Disgust\fP, \fBRealSense\&.Emotions\&.EM_Sadness\fP, \fBRealSense\&.Emotions\&.EM_Fear\fP, \fBRealSense\&.Emotions\&.EM_Surprise\fP, and \fBRealSense\&.FaceRect\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool RealSense\&.RSModule\&.debug = false\fC [protected]\fP"
+
+.PP
+Definition at line 21 of file RSModule\&.cs\&.
+.SS "double RealSense\&.RSModule\&.DEF_MIN\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 18 of file RSModule\&.cs\&.
+.SS "int RealSense\&.RSModule\&.framesGathered = 0\fC [protected]\fP"
+
+.PP
+Definition at line 23 of file RSModule\&.cs\&.
+.SS "double RealSense\&.RSModule\&.MIN = 0\fC [protected]\fP"
+
+.PP
+Definition at line 17 of file RSModule\&.cs\&.
+.SS "\fBModel\fP RealSense\&.RSModule\&.model\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 19 of file RSModule\&.cs\&.
+.SS "int RealSense\&.RSModule\&.numFramesBeforeAccept = 20\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 22 of file RSModule\&.cs\&.
+.SS "String RealSense\&.RSModule\&.output = ''"
+
+.PP
+Definition at line 20 of file RSModule\&.cs\&.
+.SS "int [] RealSense\&.RSModule\&.triggers = { }"
+
+.PP
+Definition at line 24 of file RSModule\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "bool RealSense\&.RSModule\&.Debug\fC [get]\fP, \fC [set]\fP"
+Getter of the debug value 
+.PP
+Definition at line 134 of file RSModule\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_real_sense_1_1_emotions" kind="namespace" language="C#">
+    <compoundname>RealSense::Emotions</compoundname>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___contempt" prot="public">RealSense::Emotions::EM_Contempt</innerclass>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___disgust" prot="public">RealSense::Emotions::EM_Disgust</innerclass>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___fear" prot="public">RealSense::Emotions::EM_Fear</innerclass>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___joy" prot="public">RealSense::Emotions::EM_Joy</innerclass>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___sadness" prot="public">RealSense::Emotions::EM_Sadness</innerclass>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___surprise" prot="public">RealSense::Emotions::EM_Surprise</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Emotions/EM_Contempt.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

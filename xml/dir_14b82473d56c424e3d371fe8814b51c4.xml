@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_14b82473d56c424e3d371fe8814b51c4" kind="dir">
+    <compoundname>ActionUnits</compoundname>
+    <innerfile refid="_a_u___brow_shift_8cs">AU_BrowShift.cs</innerfile>
+    <innerfile refid="_a_u___eyelid_tight_8cs">AU_EyelidTight.cs</innerfile>
+    <innerfile refid="_a_u___jaw_drop_8cs">AU_JawDrop.cs</innerfile>
+    <innerfile refid="_a_u___lip_corner_8cs">AU_LipCorner.cs</innerfile>
+    <innerfile refid="_a_u___lip_line_8cs">AU_LipLine.cs</innerfile>
+    <innerfile refid="_a_u___lips_tightened_8cs">AU_LipsTightened.cs</innerfile>
+    <innerfile refid="_a_u___lip_stretched_8cs">AU_LipStretched.cs</innerfile>
+    <innerfile refid="_a_u___lower_lip_lowered_8cs">AU_LowerLipLowered.cs</innerfile>
+    <innerfile refid="_a_u___lower_lip_raised_8cs">AU_LowerLipRaised.cs</innerfile>
+    <innerfile refid="_a_u___nose_wrinkled_8cs">AU_NoseWrinkled.cs</innerfile>
+    <innerfile refid="_a_u___upper_lip_raised_8cs">AU_UpperLipRaised.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ActionUnits/"/>
+  </compounddef>
+</doxygen>
