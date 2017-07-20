@@ -45,7 +45,7 @@ namespace RealSense
         /**
         * Saves this recording to a file (timestamp + emotion-type).
         */
-        public void save()
+        public void Save()
         {
             string serializationFile = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Recordings", name);
             Stream stream = File.Open(serializationFile, FileMode.Create);

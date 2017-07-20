@@ -124,7 +124,7 @@ namespace RealSense
         }
 
         /**
-         * adds a new modul to the List
+         * Adds a new modul to the List
          * @param RSModul m which is the new module
          */
         public void AddModule(RSModule m)
@@ -302,7 +302,7 @@ namespace RealSense
                 if (value != null)
                 {
                     lp = value;
-                    lp.QueryPoints(out currentFace); // update the current face for save landmarkpoint usage
+                    lp.QueryPoints(out currentFace); // Update the current face for Save landmarkpoint usage
                 }
                 else
                 {

@@ -54,7 +54,7 @@ namespace RealSense.Emotions
             //NoseWrinkled (0 - -100)
             double noseValue = model.AU_Values[typeof(AU_NoseWrinkled).ToString()];
             //noseValue = 100 * noseValue / noseMax;
-            noseValue = noseValue * -1 * p_nose / 100;                                                             //warum neg? Muss noch im ME korrigiert werden!!! Gruss Tanja
+            noseValue = noseValue * -1 * p_nose / 100;                                                           
 
             //lipLine Value 0 - -100
             double lipLineValue = model.AU_Values[typeof(AU_LipLine).ToString()];

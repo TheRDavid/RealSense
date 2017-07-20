@@ -52,8 +52,9 @@ namespace RealSense
         /**
          * Resets the Min and the Max value.
          * @param double[] vars - values to consider
+         * @return ret converted values
          * */
-        protected double[] convertValues(double[] vars)
+        protected double[] ConvertValues(double[] vars)
         {
             double[] ret = new double[vars.Length];
 
@@ -69,10 +70,11 @@ namespace RealSense
         }
 
         /**
-         * called in dynamicMinMax
+         * Called in DynamicMinMax
          * @param double[] vars - values to consider
+         * @return average Average of filtered Values
          */
-        protected double filteredAvg(double[] values)
+        protected double FilteredAvg(double[] values)
         {
             double average = 0, numAverages = 0;
             for (int i = 0; i < values.Length; i++)
@@ -89,10 +91,10 @@ namespace RealSense
         }
 
         /**
-         * Removes values that fall within the tolerance-spectrum
+         * Removes values that fall within the tolerance-spectrum.
          * @param double[] vars - values to consider
          * */
-        protected void filterToleranceValues(double[] values)
+        protected void FilterToleranceValues(double[] values)
         {
             for (int i = 0; i < values.Length; i++)
             {
@@ -104,7 +106,7 @@ namespace RealSense
          * Puts a new Min/Max value if the dist is higher/lower than the old one.
          * @param dist value to compare
          * */
-        protected void dynamicMinMax(double[] dist)
+        protected void DynamicMinMax(double[] dist)
         {
             if (model.CurrentPoseDiff > model.PoseMax)
             { output = ""; return; }
@@ -118,7 +120,7 @@ namespace RealSense
         /**
          * Reset value boundaries
          */ 
-        public void reset()
+        public void Reset()
         {
             MIN = DEF_MIN;
             MAX = DEF_MAX;

@@ -30,7 +30,7 @@ namespace RealSense.Emotions
             debug = true;
             DEF_MIN = -1;
             DEF_MAX = 5;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             XTREME_MAX = 30;
@@ -62,16 +62,16 @@ namespace RealSense.Emotions
             }
             else
             {
-                filterToleranceValues(distancesBrow);
-                filterToleranceValues(distancesLip);
+                FilterToleranceValues(distancesBrow);
+                FilterToleranceValues(distancesLip);
 
-                double distanceBrow = filteredAvg(distancesBrow);
-                double distanceLip = filteredAvg(distancesLip);
+                double distanceBrow = FilteredAvg(distancesBrow);
+                double distanceLip = FilteredAvg(distancesLip);
 
-                dynamicMinMax(new double[] { distanceBrow });
-                dynamicMinMax(new double[] { distanceLip });
+                DynamicMinMax(new double[] { distanceBrow });
+                DynamicMinMax(new double[] { distanceLip });
 
-                double[] diffs = convertValues(new double[] { distanceBrow, distanceLip });
+                double[] diffs = ConvertValues(new double[] { distanceBrow, distanceLip });
 
                 double brow_Value = diffs[0] * p_brow / 100;
                 double lip_Value = diffs[1] * p_lip / 100;

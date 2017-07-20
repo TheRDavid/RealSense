@@ -36,7 +36,7 @@ namespace RealSense.Emotions
             int p_lid = 20;
             int p_lip = 80;
 
-            makeSmall();
+            Reduce();
 
             //lid Value 0 - -100 (Grenze bei lidMax)
             double temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"];
@@ -76,7 +76,7 @@ namespace RealSense.Emotions
         * A reduced value doesn't reach the 100 anymore. This is happening if an AU_value is active that doesn't match with this emotion.
         *  
         * */
-        private void makeSmall()
+        private void Reduce()
         {
             //Anger brows
             double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];

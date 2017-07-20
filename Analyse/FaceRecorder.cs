@@ -55,7 +55,7 @@ namespace RealSense
             {
                 recording = false;
                 currentRecording.setData(data, model.NullFace);
-                currentRecording.save();
+                currentRecording.Save();
             }
         }
         /**

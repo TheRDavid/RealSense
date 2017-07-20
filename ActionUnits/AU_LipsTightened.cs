@@ -31,7 +31,7 @@ namespace RealSense
             //values correct
             DEF_MIN = -3;
             DEF_MAX = 1;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
@@ -60,12 +60,12 @@ namespace RealSense
             }
             else
             {
-                filterToleranceValues(topDownDistances);
+                FilterToleranceValues(topDownDistances);
 
-                double topDownDistance = filteredAvg(topDownDistances);
+                double topDownDistance = FilteredAvg(topDownDistances);
                 double[] diffs = new double[] { topDownDistance };
-                dynamicMinMax(diffs);
-                diffs = convertValues(diffs);
+                DynamicMinMax(diffs);
+                diffs = ConvertValues(diffs);
 
                 // Update value in Model 
                 if (model.CurrentPoseDiff < model.PoseMax)

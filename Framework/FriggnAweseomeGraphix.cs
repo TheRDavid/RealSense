@@ -72,7 +72,7 @@ namespace RealSense
             /**
              * Interpolate to the target-value (for fluid transitions)
              */
-            public void step()
+            public void Step()
             {
                 currentValue += (targetValue - currentValue) / 10;
             }
@@ -85,7 +85,7 @@ namespace RealSense
          * @param Graphics gfx, graphics-object to draw Monitor on
          * @param MEMonitor monitor, monitor to be drawn
          */
-        public static void drawMEMontior(Graphics gfx, MEMonitor monitor) { drawMEMontior(gfx, monitor, true); }
+        public static void DrawMEMontior(Graphics gfx, MEMonitor monitor) { DrawMEMontior(gfx, monitor, true); }
         
         /**
          * Draws a MEMontior ontop of the graphics-object.
@@ -95,7 +95,7 @@ namespace RealSense
          * @param MEMonitor monitor, monitor to be drawn
          * @param bool drawText, flag to display value as text (or not)
          */
-        public static void drawMEMontior(Graphics gfx, MEMonitor monitor, bool drawText)
+        public static void DrawMEMontior(Graphics gfx, MEMonitor monitor, bool drawText)
         {
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             if (monitor.currentValue < 0) monitor.currentValue = 0;
@@ -113,10 +113,6 @@ namespace RealSense
             if (monitor.showPercent && drawText) gfx.DrawString(text, percentageFont, MEMonitorBrush, (int)(monitor.x + monitor.radius - size.Width / 2), monitor.y + monitor.radius - size.Height / 2);
             ME_MonitorPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             ME_MonitorPen.Width = monitor.thickness / 4;
-            // if (monitor.currentValue >= 100)
-            //    ME_MonitorPen.Brush = new SolidBrush(fgColor);
-            // else ME_MonitorPen.Brush = new SolidBrush(bgColor);
-            //  gfx.DrawEllipse(ME_MonitorPen, new Rectangle(monitor.x + monitor.thickness, monitor.y + monitor.thickness, (monitor.radius - monitor.thickness) * 2, (monitor.radius - monitor.thickness) * 2));
             MEMonitorBrush = new SolidBrush(fontColor);
             if (drawText)
             {
@@ -145,7 +141,7 @@ namespace RealSense
          * @param BitmapData sourceData - data of original image
          * @param BitmapData sourceData - data of target image
          */
-        public static unsafe void pretty_blur(  Bitmap source, Bitmap target,
+        public static unsafe void Pretty_blur(  Bitmap source, Bitmap target,
                                                 int x0, int y0, int x1, int y1, int factor, 
                                                 BitmapData sourceData, BitmapData targetData)
         {
@@ -168,8 +164,8 @@ namespace RealSense
                 int idxByRow = yy * owidthTimesSize;
                 for (int xx = x0; xx < x1; xx++)
                 {
-                    int oindex = pixelIndex(xx, yy, owidthTimesSize, 4);
-                    int tindex = pixelIndex(xx - x0, yy - y0, twidthTimesSize, 3);
+                    int oindex = PixelIndex(xx, yy, owidthTimesSize, 4);
+                    int tindex = PixelIndex(xx - x0, yy - y0, twidthTimesSize, 3);
                     byte* mainIndex = targetPointer + tindex;
                     byte* originalIndex = sourcePointer + oindex;
 
@@ -181,7 +177,7 @@ namespace RealSense
                         for (int bx = 0; bx < blurLengthBit; bx += 4)
                         {
                             int yIdxpbx = yIdx + bx;
-                            byte* areaIndex = sourcePointer + pixelIndex(xx - blurLengthBitBy2 + bx, yy - blurLengthBy2 + by, owidthTimesSize, 4);
+                            byte* areaIndex = sourcePointer + PixelIndex(xx - blurLengthBitBy2 + bx, yy - blurLengthBy2 + by, owidthTimesSize, 4);
 
                             sorroundingPixels[yIdxpbx] = *(areaIndex);
                             sorroundingPixels[yIdxpbx + 1] = *(areaIndex + 1);
@@ -225,7 +221,7 @@ namespace RealSense
          * @param BitmapData sourceData - data of original image
          * @param BitmapData sourceData - data of target image
          */
-        public static unsafe void sonic_blur(Bitmap source, Bitmap target,
+        public static unsafe void Sonic_blur(Bitmap source, Bitmap target,
                                         int x0, int y0, int x1, int y1, int factor, int channels,
                                         BitmapData sourceData, BitmapData targetData)
         {
@@ -280,7 +276,7 @@ namespace RealSense
          * @param int widthTimesSize, row length, multiplied with size
          * @param int size, data length
          */
-        private static int pixelIndex(int x, int y, int widthTimesSize, int size)
+        private static int PixelIndex(int x, int y, int widthTimesSize, int size)
         {
 
             int idxByRow = y * widthTimesSize;
@@ -298,7 +294,7 @@ namespace RealSense
          * @param float x1, end x-coordinate
          * @param float y1, end y-coordinate
          */
-        public static void drawFadingLine(Graphics gfx, float x0, float y0, float x1, float y1)
+        public static void DrawFadingLine(Graphics gfx, float x0, float y0, float x1, float y1)
         {
 
             LinearGradientBrush brush = new LinearGradientBrush(

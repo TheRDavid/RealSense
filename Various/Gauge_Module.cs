@@ -33,7 +33,7 @@ namespace RealSense
         /**
          * Inits the UI
          */
-        private void guiInit()
+        private void GuiInit()
         {
             guInit = true;
             calibrateButton.Bounds = new Rectangle(20, 1140, 500, 30);
@@ -48,18 +48,18 @@ namespace RealSense
             for (int i = 0; i < finalFace.Length; i++)
                 finalFace[i] = new PXCMFaceData.LandmarkPoint();
 
-            Thread updaterThread = new Thread(this.update);
+            Thread updaterThread = new Thread(this.Update);
             updaterThread.Start();
             debug = true;
         }
 
         /**
         * Gathers calibration-data.
-        * When a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg.
+        * When a new frame is shot AND still calibrating (button was pressed), adds a new face to the FilteredAvg.
         * After having numFaces faces, calculate...
         * Runs outside the Camera Thread
         */
-        public void update()
+        public void Update()
         {
             while (!model.View.IsDisposed)
             {
@@ -132,7 +132,7 @@ namespace RealSense
           */
         public override void Work(Graphics g)
         {
-            if (!guInit) guiInit();
+            if (!guInit) GuiInit();
             frameUpdate = true;
             if (debug && calibrate)
             {

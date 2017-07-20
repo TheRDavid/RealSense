@@ -30,7 +30,7 @@ namespace RealSense
         /**
         * Initializes the UI Components to enable the user to select and display certain Landmark-Types
         */
-        private void guiInit()
+        private void GuiInit()
         {
             guInit = true;
             selectionBar.Bounds = new Rectangle(50, 490, 500, 30);
@@ -59,7 +59,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             if (!guInit)
-                guiInit();
+                GuiInit();
             if (model.FaceAktuell != null)
             {
 

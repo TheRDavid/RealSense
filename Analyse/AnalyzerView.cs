@@ -60,7 +60,7 @@ namespace RealSense
         private bool loading = false;
 
         /**
-         * Sets up the UI and starts the Updater-Thread, which will update the lables and progressbars displaying the ActionUnit- and Emotion-Values
+         * Sets up the UI and starts the Updater-Thread, which will Update the lables and progressbars displaying the ActionUnit- and Emotion-Values
          */
         public AnalyzerView()
         {
@@ -316,7 +316,7 @@ namespace RealSense
 
                 foreach (FriggnAweseomeGraphix.MEMonitor monitor in monitors)
                 {
-                    FriggnAweseomeGraphix.drawMEMontior(g, monitor, false);
+                    FriggnAweseomeGraphix.DrawMEMontior(g, monitor, false);
                 }
 
                 int yPos = (int)(gap * 1.5), yPos2 = yPos;
@@ -359,7 +359,7 @@ namespace RealSense
                 Bounds = new Rectangle(0, y, WINDOW_WIDTH, viewHeight);
                 dataPictureBox.Bounds = new Rectangle(0, 0, WINDOW_WIDTH - vlcControl.Width, viewHeight);
                 dataImage = new Bitmap(dataPictureBox.Width, dataPictureBox.Height);
-                // update Monitors
+                // Update Monitors
                 int thickness = viewHeight / 18;
                 if (viewHeight != VIEW_TINY)
                 {
