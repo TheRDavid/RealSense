@@ -6,32 +6,30 @@ using System.Text;
 
 namespace RealSense.Emotions
 {
+
     /*
-     *Measures the percentage value of anger. 
-     *@author Tanja 
-     */
+      *Measures the percentage value of fear. 
+      *@author Tanja 
+      */
     class EM_Fear : RSModule
     {
-        // Variables for logic
-        int percent = 100;
-
         /**
-         * Initializes the EM, setting the debug-flag to true by default
-         */
+          * Initializes the EM, setting the debug-flag to true by default
+          */
         public EM_Fear()
         {
             debug = true;
         }
 
         /**
-         * Computes the percentage Value of Fear in the current Frame.
-         * @param Graphics g for the view
-         * */
+      * Computes the percentage Value of fear in the current Frame.
+      * @param Graphics g for the view
+      * */
         public override void Work(Graphics g)
         {
             //Fear --> BrowShift, EyelidTight, LipStreched, JawDrop
 
-            //proportions Fear
+            //percentage Fear
             int p_brow = 30;
             int p_eye = 50;
             int p_lip = 10;
@@ -40,24 +38,25 @@ namespace RealSense.Emotions
             //brow Value 0-100
             double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
-            double browValue = (temp_left + temp_right) / 2;
-            browValue = browValue * p_brow / percent;
+            double browValue = temp_left < temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left + temp_right) / 2;
+            browValue = browValue * p_brow / 100;
 
             //eye Value 0-100
             temp_left = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"];
             temp_right = model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"];
-            double eyeValue = (temp_left + temp_right) / 2;
-            eyeValue = eyeValue * p_eye / percent;
+            double eyeValue = temp_left < temp_right ? temp_left : temp_right;
+            if (model.Test) eyeValue = (temp_left + temp_right) / 2;
+            eyeValue = eyeValue * p_eye / 100;
 
             //lipLine Value 0-100
             double lipValue = model.AU_Values[typeof(AU_LipStretched).ToString()];
-            lipValue = lipValue * p_lip / percent;
+            lipValue = lipValue * p_lip / 100;
 
             //jaw 0-100
             double jawValue = model.AU_Values[typeof(AU_JawDrop).ToString()];
-            jawValue = jawValue * p_jaw / percent;
+            jawValue = jawValue * p_jaw / 100;
 
-            //sum all and save
             double fear = browValue + eyeValue + lipValue + jawValue;
             fear = fear > 0 ? fear : 0;
             model.Emotions[Model.Emotion.FEAR] = fear;

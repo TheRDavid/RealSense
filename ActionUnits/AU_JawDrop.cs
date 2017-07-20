@@ -19,14 +19,8 @@ namespace RealSense
     class AU_JawDrop : RSModule
     {
         // Variables for logic
-        private double[] leftDistances = new double[numFramesBeforeAccept];
-        private double[] rightDistances = new double[numFramesBeforeAccept];
-
-        //chin vars
         double chin_dist;
         private double[] chinDistances = new double[numFramesBeforeAccept];
-
-        // variables for debugging
         private string debug_message = "JawDrop: ";
 
         /**
@@ -36,7 +30,7 @@ namespace RealSense
         {
             DEF_MIN = 0;
             DEF_MAX = 20;
-            reset();
+            Reset();
             MIN_TOL = -1.5;
             MAX_TOL = 1.5;
             debug = true;
@@ -53,25 +47,33 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            chin_dist = (Utilities.Difference(61, 26)) - 100;
+            chin_dist = (model.Difference(61, 26)) - 100;
 
-            //Gather Frames
+
             if (framesGathered < numFramesBeforeAccept)
             {
                 chinDistances[framesGathered++] = chin_dist;
             }
             else
             {
-                /* Update value in Model */
+                FilterToleranceValues(chinDistances);
+
+                double distance = FilteredAvg(chinDistances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(AU_JawDrop).ToString()] = Utilities.ConvertValue(chinDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    //set Value
+                    model.AU_Values[typeof(AU_JawDrop).ToString()] = diffs[0];
                 }
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_JawDrop).ToString()] + ") (" + (int)MIN + ", " + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_JawDrop).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

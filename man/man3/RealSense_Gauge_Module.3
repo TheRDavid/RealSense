@@ -1,0 +1,76 @@
+.TH "RealSense.Gauge_Module" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.Gauge_Module
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcalibrate\fP = false"
+.br
+.ti -1c
+.RI "bool \fBframeUpdate\fP = true"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Rosenbusch  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file Gauge_Module\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RealSense\&.Gauge_Module\&.Update ()"
+Gathers calibration-data\&. When a new frame is shot AND still calibrating (button was pressed), adds a new face to the FilteredAvg\&. After having numFaces faces, calculate\&.\&.\&. Runs outside the Camera Thread 
+.PP
+Definition at line 62 of file Gauge_Module\&.cs\&.
+.SS "override void RealSense\&.Gauge_Module\&.Work (Graphics g)\fC [virtual]\fP"
+Update every frame (do calculations, manipulate output Image) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 133 of file Gauge_Module\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool RealSense\&.Gauge_Module\&.calibrate = false"
+
+.PP
+Definition at line 23 of file Gauge_Module\&.cs\&.
+.SS "bool RealSense\&.Gauge_Module\&.frameUpdate = true"
+
+.PP
+Definition at line 31 of file Gauge_Module\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

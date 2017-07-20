@@ -18,6 +18,7 @@ namespace RealSense
      */
     class AU_NoseWrinkled : RSModule
     {
+
         // variables for logic
         private double left_diff, right_diff;
         private double[] distances = new double[numFramesBeforeAccept];
@@ -30,13 +31,13 @@ namespace RealSense
         public AU_NoseWrinkled()
         {
             DEF_MIN = -1;
-            DEF_MAX = 8;        
-            reset();
+            DEF_MAX = 8;
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
-            debug = false;
+            debug = true;
             XTREME_MAX = 1;
-            XTREME_MIN = -50; // god damnit rené
+            XTREME_MIN = -50; 
             model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = 0;
         }
 
@@ -52,10 +53,12 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            left_diff = Utilities.Difference(30, Model.NOSE_FIX) - 100;
-            right_diff = Utilities.Difference(32, Model.NOSE_FIX) - 100;
-            distance = (left_diff + right_diff) / 2;
+            left_diff = model.Difference(30, Model.NOSE_FIX) - 100;
+            right_diff = model.Difference(32, Model.NOSE_FIX) - 100;
+            //middle_diff = model.Difference(31, Model.NOSE_FIX) - 100;
 
+            distance = (left_diff + right_diff) / 2;
+            
             //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
@@ -63,9 +66,17 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(distances);
+
+                double distance = FilteredAvg(distances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_NoseWrinkled).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

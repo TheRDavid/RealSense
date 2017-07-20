@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
+
+
 namespace RealSense
 {
     /**
@@ -32,10 +34,10 @@ namespace RealSense
             //values correct
             DEF_MIN = -34;
             DEF_MAX = 9;
-            reset();
+            Reset();
             MIN_TOL = -12;
             MAX_TOL = 12;
-            debug = false;
+            debug = true;
             XTREME_MAX = 75;
             XTREME_MIN = -78;
 
@@ -54,13 +56,13 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            leftEye_leftDistance_diff = Utilities.Difference(13, 15);
-            leftEye_middleDistance_diff = Utilities.Difference(12, 16);
-            leftEye_rightDistance_diff = Utilities.Difference(11, 17);
+            leftEye_leftDistance_diff = model.Difference(13, 15);
+            leftEye_middleDistance_diff = model.Difference(12, 16);
+            leftEye_rightDistance_diff = model.Difference(11, 17);
 
-            rightEye_leftDistance_diff = Utilities.Difference(19, 25);
-            rightEye_middleDistance_diff = Utilities.Difference(20, 24);
-            rightEye_rightDistance_diff = Utilities.Difference(21, 23);
+            rightEye_leftDistance_diff = model.Difference(19, 25);
+            rightEye_middleDistance_diff = model.Difference(20, 24);
+            rightEye_rightDistance_diff = model.Difference(21, 23);
 
             left_diff = ((leftEye_leftDistance_diff + leftEye_middleDistance_diff + leftEye_rightDistance_diff) / 3) - 100;
             right_diff = ((rightEye_leftDistance_diff + rightEye_middleDistance_diff + rightEye_rightDistance_diff) / 3) - 100;
@@ -73,10 +75,21 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(rightDistances);
+                FilterToleranceValues(leftDistances);
+
+                double leftDistance = FilteredAvg(leftDistances);
+                double rightDistance = FilteredAvg(rightDistances);
+
+                DynamicMinMax(new double[] { leftDistance, rightDistance });
+
+                double[] diffs = ConvertValues(new double[] { leftDistance, rightDistance });
+
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = Utilities.ConvertValue(leftDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
-                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = Utilities.ConvertValue(rightDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    //set Values
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_left"] = diffs[0];
+                    model.AU_Values[typeof(AU_EyelidTight).ToString() + "_right"] = diffs[1];
                 }
 
                 /* print debug-values */

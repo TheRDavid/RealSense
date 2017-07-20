@@ -5,31 +5,34 @@ using System.Linq;
 using System.Text;
 
 namespace RealSense.Emotions
-{
-    /*
-     *Measures the percentage value of disgust. 
-     *@author Tanja 
-     */
+{     /*
+   *Measures the percentage value of disgust. 
+   *@author Tanja 
+   */
     class EM_Disgust : RSModule
     {
-        // Variables for logic
-        int percent = 100;
+   
 
         /**
-         * Initializes the EM, setting the debug-flag to true by default
-         */
+    * Initializes the EM, setting the debug-flag to true by default
+    * Also sets up a default boundary of max-, min, extreme- and tolerance-values
+    */
         public EM_Disgust()
         {
             debug = true;
         }
 
+
         /**
-         * Computes the percentage Value of Disgust in the current Frame.
-         * @param Graphics g for the view
-         * */
+             * Computes the percentage Value of disgust in the current Frame.
+             * @param Graphics g for the view
+             * */
         public override void Work(Graphics g)
         {
-            //proportions Disgust
+            //Disgust --> BrowShift, NoseWrinkled, LipLine, LowerLipLowered, UpperLipRaised
+            //neg lipStreched
+
+            //percentage Disgust
             int p_brow = 15;
             int p_nose = 40;
             int p_lipLine = 5;
@@ -37,67 +40,57 @@ namespace RealSense.Emotions
             int p_upperLip = 40;
             //int p_lipStr = 
 
-            //reduce();
+            //Grenzen
 
             //brow Value
             double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];
-            double browValue = (temp_left + temp_right) / 2;
-            browValue = browValue * -1 * p_brow / percent;
+            double browValue = temp_left > temp_right ? temp_left : temp_right;
+            if (model.Test) browValue = (temp_left + temp_right) / 2;
+            browValue = browValue * -1 * p_brow / 100;
 
             //NoseWrinkled (0 - -100)
             double noseValue = model.AU_Values[typeof(AU_NoseWrinkled).ToString()];
-            noseValue = noseValue * -1 * p_nose / 100;
+            //noseValue = 100 * noseValue / noseMax;
+            noseValue = noseValue * -1 * p_nose / 100;                                                           
 
             //lipLine Value 0 - -100
             double lipLineValue = model.AU_Values[typeof(AU_LipLine).ToString()];
-            lipLineValue = lipLineValue * -1 * p_lipLine / percent;
+            lipLineValue = lipLineValue * -1 * p_lipLine / 100;
 
             //LowerLip 0-100
             double lipLoweredValue = model.AU_Values[typeof(AU_LowerLipLowered).ToString()];
-            lipLoweredValue = lipLoweredValue * p_lipLowered / percent;
+            lipLoweredValue = lipLoweredValue * p_lipLowered / 100;
 
             //upperLip 0-100
             double upperLipValue = model.AU_Values[typeof(AU_UpperLipRaised).ToString()];
-            upperLipValue = upperLipValue * p_upperLip / percent;
+            upperLipValue = upperLipValue * p_upperLip / 100;
+
+            //lipS Value 0 - -100
+            double lipSValue = model.AU_Values[typeof(AU_LipStretched).ToString()];
+            lipSValue = lipSValue * -1;
+            lipSValue = lipSValue < 0 ? lipSValue : 0;
+
 
             // Falls Corners durch Disgust, auf 0 setzen
-            double hDiff = Utilities.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + Utilities.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
             if (hDiff > 0)
             {
                 lipLineValue = 0;
                 upperLipValue = 0;
             }
 
-            //sum all and save
-            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;
+            double disgust = browValue + noseValue + lipLoweredValue + lipLineValue + upperLipValue;// + lipSValue; 
             disgust = disgust > 0 ? disgust : 0;
             disgust = disgust < 100 ? disgust : 100;
+
             model.Emotions[Model.Emotion.DISGUST] = disgust;
 
             // print debug-values 
             if (debug)
             {
-                output = "Disgust: " + (int)disgust + " Brow: " + (int)browValue + " Nose: " + (int)noseValue + " LipUpper: " + (int)upperLipValue;
+                output = "Disgust: " + (int)disgust + " Brow: " + (int)browValue + " Nose: " + (int)noseValue + " LipUpper: " + (int)upperLipValue;// + " LipS: " + lipSValue;
             }
-
-        }
-
-        /**
-         * Reduces the value boundaries of the emotion value. 
-         * A reduced value doesn't reach the 100 anymore. This is happening if an AU_value is active that doesn't match with this emotion.
-         *  
-         * */
-        private void reduce()
-        {
-            //lipS Value 0 - -100
-            double lipSValue = model.AU_Values[typeof(AU_LipStretched).ToString()];
-            lipSValue = lipSValue * -1;
-            if (lipSValue < 60)
-            {
-                percent = (int)(100 + 1.5 * (60 - lipSValue));
-            }
-
 
         }
     }

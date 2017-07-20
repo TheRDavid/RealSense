@@ -31,7 +31,7 @@ namespace RealSense
         {
             DEF_MIN = -1;
             DEF_MAX = 4;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
@@ -48,11 +48,11 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            lowerLip_Distance[0] = Utilities.Difference(44, Model.NOSE_FIX);
-            lowerLip_Distance[1] = Utilities.Difference(43, Model.NOSE_FIX);
-            lowerLip_Distance[2] = Utilities.Difference(42, Model.NOSE_FIX);
-            lowerLip_Distance[3] = Utilities.Difference(41, Model.NOSE_FIX);
-            lowerLip_Distance[4] = Utilities.Difference(40, Model.NOSE_FIX);
+            lowerLip_Distance[0] = model.Difference(44, Model.NOSE_FIX);
+            lowerLip_Distance[1] = model.Difference(43, Model.NOSE_FIX);
+            lowerLip_Distance[2] = model.Difference(42, Model.NOSE_FIX);
+            lowerLip_Distance[3] = model.Difference(41, Model.NOSE_FIX);
+            lowerLip_Distance[4] = model.Difference(40, Model.NOSE_FIX);
             distance = ((lowerLip_Distance[0] + lowerLip_Distance[1] + lowerLip_Distance[2] + lowerLip_Distance[3] + lowerLip_Distance[4]) / 5);
             distance -= 100;
 
@@ -63,14 +63,22 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(distances);
+
+                double distance = FilteredAvg(distances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_LowerLipLowered).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LowerLipLowered).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LowerLipLowered).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LowerLipLowered).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

@@ -9,13 +9,14 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
+
     /**
-     * 
-     * Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)
-     * 
-     * @author: David Rosenbusch
-     * @HogwartsHouse Hufflepuff
-     */ 
+ * 
+ * Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)
+ * 
+ * @author: David Rosenbusch
+ * @HogwartsHouse Hufflepuff
+ */
     public class Gauge_Module : RSModule
     {
         private const int numFaces = 150;
@@ -32,7 +33,7 @@ namespace RealSense
         /**
          * Inits the UI
          */
-        private void guiInit()
+        private void GuiInit()
         {
             guInit = true;
             calibrateButton.Bounds = new Rectangle(20, 1140, 500, 30);
@@ -47,18 +48,18 @@ namespace RealSense
             for (int i = 0; i < finalFace.Length; i++)
                 finalFace[i] = new PXCMFaceData.LandmarkPoint();
 
-            Thread updaterThread = new Thread(this.update);
+            Thread updaterThread = new Thread(this.Update);
             updaterThread.Start();
             debug = true;
         }
 
         /**
-         * Gathers calibration-data.
-         * When a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg.
-         * After having numFaces faces, calculate...
-         * Runs outside the Camera Thread
-         */
-        public void update()
+        * Gathers calibration-data.
+        * When a new frame is shot AND still calibrating (button was pressed), adds a new face to the FilteredAvg.
+        * After having numFaces faces, calculate...
+        * Runs outside the Camera Thread
+        */
+        public void Update()
         {
             while (!model.View.IsDisposed)
             {
@@ -66,7 +67,7 @@ namespace RealSense
                 {
                     calibrate = index != numFaces;
                     if (frameUpdate)
-                        if (model.FaceCurrent != null)
+                        if (model.FaceAktuell != null)
                         {
                             frameUpdate = false;
                             // get the landmark data
@@ -74,8 +75,8 @@ namespace RealSense
                             cAngles[index] = model.CurrentPose;
                             if (model.Lp == null) return;
                             cFaces[index++] = model.CurrentFace;
-                            //   Console.WriteLine(numFaces + " / " + index + " * 100");
-                            model.calibrationProgress = (double)index / (double)numFaces * 100.0;
+                         //   Console.WriteLine(numFaces + " / " + index + " * 100");
+                            model.calibrationProgress = (double)index / (double)numFaces  * 100.0;
                         }
                     if (!calibrate)
                     {
@@ -98,7 +99,7 @@ namespace RealSense
                             finalFace[i].world.z /= numFaces - 1;
                         }
 
-                        foreach (PXCMFaceData.PoseEulerAngles a in cAngles)
+                        foreach(PXCMFaceData.PoseEulerAngles a in cAngles)
                         {
                             finalAngle.pitch += a.pitch;
                             finalAngle.roll += a.roll;
@@ -119,20 +120,19 @@ namespace RealSense
                         for (int i = 0; i < finalFace.Length; i++)
                             finalFace[i] = new PXCMFaceData.LandmarkPoint();
                         cFaces = new PXCMFaceData.LandmarkPoint[numFaces][];
-                        //   Console.WriteLine("DOne Calibrating");
+                     //   Console.WriteLine("DOne Calibrating");
 
                     }
                 }
             }
         }
-
         /*
-         * Initializes UI + simple output while calibrating
-         * @param Graphics g for the view
-         */
+          * Initializes UI + simple output while calibrating
+          * @param Graphics g for the view
+          */
         public override void Work(Graphics g)
         {
-            if (!guInit) guiInit();
+            if (!guInit) GuiInit();
             frameUpdate = true;
             if (debug && calibrate)
             {
@@ -143,14 +143,14 @@ namespace RealSense
 
         /*
          * Prints Face-Values (for debugging only)
-         */ 
+         */
         private void printFace(string v, PXCMFaceData.LandmarkPoint[] face)
         {
             //  Console.WriteLine(v);
             for (int i = 0; i < face.Length; i++)
             {
                 PXCMFaceData.LandmarkPoint p = face[i];
-                Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
+                //   Console.WriteLine(i + ": " + p.world.x + ", " + p.world.y + ", " + p.world.z);
             }
         }
     }

@@ -15,7 +15,7 @@ namespace RealSense
      * Interpretation:      -100 = Tight af
      *                         0 = normal
      *                       100 = doesn't usually happen
-   */
+     */
     class AU_LipsTightened : RSModule
     {
         // Variables for logic
@@ -28,10 +28,10 @@ namespace RealSense
         */
         public AU_LipsTightened()
         {
-
+            //values correct
             DEF_MIN = -3;
             DEF_MAX = 1;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             debug = true;
@@ -48,8 +48,8 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            upperLip = (Utilities.Difference(36, Model.NOSE_FIX) - 100);
-            bottomLip = (Utilities.Difference(50, Model.NOSE_FIX) - 100);
+            upperLip = (model.Difference(36, Model.NOSE_FIX) - 100);
+            bottomLip = (model.Difference(50, Model.NOSE_FIX) - 100);
 
             double tdDist = (upperLip + bottomLip) / 2;
 
@@ -60,9 +60,16 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(topDownDistances);
+
+                double topDownDistance = FilteredAvg(topDownDistances);
+                double[] diffs = new double[] { topDownDistance };
+                DynamicMinMax(diffs);
+                diffs = ConvertValues(diffs);
+
                 // Update value in Model 
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_LipsTightened).ToString()] = Utilities.ConvertValue(topDownDistances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LipsTightened).ToString()] = diffs[0];
                 if (debug)
                 {
                     output = "LipsTightened: " + "(" + (int)model.AU_Values[typeof(AU_LipsTightened).ToString()] + ")(" + (int)MIN + ", " + (int)MAX + ")";

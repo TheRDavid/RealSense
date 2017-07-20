@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_bcbb2cf9a3d3d83e5515c82071a07177" kind="dir">
+    <compoundname>Framework</compoundname>
+    <innerfile refid="_camera_view_8cs">CameraView.cs</innerfile>
+    <innerfile refid="_friggn_aweseome_graphix_8cs">FriggnAweseomeGraphix.cs</innerfile>
+    <innerfile refid="_model_8cs">Model.cs</innerfile>
+    <innerfile refid="_r_s_module_8cs">RSModule.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Framework/"/>
+  </compounddef>
+</doxygen>

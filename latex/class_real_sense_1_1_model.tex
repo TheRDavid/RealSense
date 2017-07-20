@@ -1,156 +1,130 @@
-\section{Real\+Sense.\+Model Class Reference}
+\hypertarget{class_real_sense_1_1_model}{}\section{Real\+Sense.\+Model Class Reference}
 \label{class_real_sense_1_1_model}\index{Real\+Sense.\+Model@{Real\+Sense.\+Model}}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}} 
-enum {\bfseries A\+X\+IS} \{ {\bfseries X}, 
-{\bfseries Y}, 
-{\bfseries Z}
+enum \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS} \{ \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba02129bb861061d1a052c592e2dc6b383}{A\+X\+I\+S.\+X}, 
+\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba57cec4137b614c87cb4e24a3d003a3e0}{A\+X\+I\+S.\+Y}, 
+\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba21c2e59531c8710156d34a3c30ac81d5}{A\+X\+I\+S.\+Z}
  \}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}} 
-enum {\bfseries Emotion} \{ \newline
-{\bfseries A\+N\+G\+ER}, 
-{\bfseries C\+O\+N\+T\+E\+M\+PT}, 
-{\bfseries D\+I\+S\+G\+U\+ST}, 
-{\bfseries F\+E\+AR}, 
+enum \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion} \{ \newline
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a1bd79dc2e415209351d2e8150e7ad3f8}{Emotion.\+A\+N\+G\+ER}, 
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a002b7c5ac7e005a9c0e9dd0a87137d8c}{Emotion.\+C\+O\+N\+T\+E\+M\+PT}, 
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a4839c271b7a45921062565663bb9f1e2}{Emotion.\+D\+I\+S\+G\+U\+ST}, 
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a33349897f173d6e18909905106fc38b6}{Emotion.\+F\+E\+AR}, 
 \newline
-{\bfseries J\+OY}, 
-{\bfseries S\+A\+D\+N\+E\+SS}, 
-{\bfseries S\+U\+R\+P\+R\+I\+SE}
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208acda0ca4b45c4b3c0c831f96241342fdb}{Emotion.\+J\+OY}, 
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a88c5374457f277ea4810aee2b1cec9ab}{Emotion.\+S\+A\+D\+N\+E\+SS}, 
+\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208aa2e811a62955273eb0c71afb208944d5}{Emotion.\+S\+U\+R\+P\+R\+I\+SE}
+ \}
+\item 
+enum \hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{M\+O\+DE} \{ \hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a7131c39e2eb7ed10c4c28f88be245b49}{M\+O\+D\+E.\+A\+N\+A\+L\+Y\+ZE}, 
+\hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a855520d2a5b0b1a64b939e7e30889e2a}{M\+O\+D\+E.\+R\+UN}, 
+\hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a033bd94b1168d7e4f0d644c3c95e35bf}{M\+O\+D\+E.\+T\+E\+ST}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Model} (bool s)
+\hyperlink{class_real_sense_1_1_model_a39349d1d9b1274a9fe28614e9ce215f3}{Model} (bool s)
 \item 
-void \textbf{ Calculate\+Emotions} ()
+double \hyperlink{class_real_sense_1_1_model_a078b1ddb43e777aa73c1b3898722e4bb}{Emotion\+Value} (\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion} emotion)
 \item 
-\mbox{\label{class_real_sense_1_1_model_a078b1ddb43e777aa73c1b3898722e4bb}} 
-double {\bfseries Emotion\+Value} (Emotion emotion)
+void \hyperlink{class_real_sense_1_1_model_a8b8bff51e69b2b33f5c8cfb007c424e5}{Add\+Module} (\hyperlink{class_real_sense_1_1_r_s_module}{R\+S\+Module} m)
 \item 
-void \textbf{ Add\+Module} (\textbf{ R\+S\+Module} m)
+double \hyperlink{class_real_sense_1_1_model_a7f212901958598b29fabcf087fc33bdb}{Difference\+By\+Axis} (int i01, int i02, \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS} axis, bool absolute)
 \item 
-double \textbf{ Difference\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+double \hyperlink{class_real_sense_1_1_model_aab86ce9f3027b3fca83d11a97353154c}{Null\+Face\+Between\+By\+Axis} (int i01, int i02, \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS} axis, bool absolute)
 \item 
-double \textbf{ Null\+Face\+Between\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+double \hyperlink{class_real_sense_1_1_model_abaaee5d06f75b1fb9a9d8946ebf53934}{Between\+By\+Axis} (int i01, int i02, \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS} axis, bool absolute)
 \item 
-double \textbf{ Between\+By\+Axis} (int i01, int i02, A\+X\+IS axis, bool absolute)
+double \hyperlink{class_real_sense_1_1_model_a1d827ed6fd7d689679af4a276362128b}{Difference} (int i01, int i02)
 \item 
-double \textbf{ Difference} (int i01, int i02)
+double \hyperlink{class_real_sense_1_1_model_a69d8b360ed9c9ddaa19a0619df408e2a}{Difference\+Null\+Current} (int i01, \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS} axis)
 \item 
-\mbox{\label{class_real_sense_1_1_model_a69d8b360ed9c9ddaa19a0619df408e2a}} 
-double {\bfseries Difference\+Null\+Current} (int i01, A\+X\+IS axis)
+double \hyperlink{class_real_sense_1_1_model_a03fd4fa56ceb5cbcebdbebb4b7a78158}{Null\+Face\+Between} (int i01, int i02)
 \item 
-double \textbf{ Null\+Face\+Between} (int i01, int i02)
-\item 
-double \textbf{ Between} (int i01, int i02)
+double \hyperlink{class_real_sense_1_1_model_a846e090817e3200e8c20af80094fdcc8}{Between} (int i01, int i02)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ad4e469e9cf474c5f813a757be1eaf55d}} 
-P\+X\+C\+M\+Face\+Data.\+Face {\bfseries face\+Aktuell}
+P\+X\+C\+M\+Face\+Data.\+Face \hyperlink{class_real_sense_1_1_model_ad4e469e9cf474c5f813a757be1eaf55d}{face\+Aktuell}
 \item 
-\mbox{\label{class_real_sense_1_1_model_aa6e241f22bac2dbdefdceef6e4cf0202}} 
-P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries current\+Pose} = new P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles()
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles \hyperlink{class_real_sense_1_1_model_aa6e241f22bac2dbdefdceef6e4cf0202}{current\+Pose} = new P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles()
 \item 
-\mbox{\label{class_real_sense_1_1_model_a8573a7d01db1fb8a29f5873a717373bc}} 
-double {\bfseries calibration\+Progress} = 0
+double \hyperlink{class_real_sense_1_1_model_a8573a7d01db1fb8a29f5873a717373bc}{calibration\+Progress} = 0
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a2f289c39689e5de8feeb82dcfb708170}} 
-static int {\bfseries N\+O\+S\+E\+\_\+\+F\+IX} = 26
+static int \hyperlink{class_real_sense_1_1_model_a2f289c39689e5de8feeb82dcfb708170}{N\+O\+S\+E\+\_\+\+F\+IX} = 26
 \item 
-\mbox{\label{class_real_sense_1_1_model_af0a605c0cc3c8739836a4e98ac06b864}} 
-static bool {\bfseries calibrated} = false
+static bool \hyperlink{class_real_sense_1_1_model_af0a605c0cc3c8739836a4e98ac06b864}{calibrated} = false
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-List$<$ \textbf{ R\+S\+Module} $>$ \textbf{ Modules}\hspace{0.3cm}{\ttfamily  [get]}
+List$<$ \hyperlink{class_real_sense_1_1_r_s_module}{R\+S\+Module} $>$ \hyperlink{class_real_sense_1_1_model_a9664e53331481e9cc45ad6d3540c218c}{Modules}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a396ec458576859184ac7e39d9be13465}} 
-P\+X\+C\+M\+Sense\+Manager {\bfseries Sense\+Manager}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Sense\+Manager \hyperlink{class_real_sense_1_1_model_a396ec458576859184ac7e39d9be13465}{Sense\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-int \textbf{ Width}\hspace{0.3cm}{\ttfamily  [get]}
+int \hyperlink{class_real_sense_1_1_model_a20e2b5bc79da762b436b75ddd28f63b7}{Width}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-int \textbf{ Height}\hspace{0.3cm}{\ttfamily  [get]}
+int \hyperlink{class_real_sense_1_1_model_abf6324c9f4acc3134909a239eff37a0a}{Height}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-P\+X\+C\+M\+Face\+Module \textbf{ Face}\hspace{0.3cm}{\ttfamily  [get]}
+P\+X\+C\+M\+Face\+Module \hyperlink{class_real_sense_1_1_model_abb8701f1030ca1e3bfd226a9ad352da5}{Face}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-P\+X\+C\+M\+Face\+Data.\+Landmarks\+Data \textbf{ Lp}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Landmarks\+Data \hyperlink{class_real_sense_1_1_model_a3e349d000d00015a340954ec3be977ea}{Lp}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ad90fab8a6125b55803734ebbdcf1f83d}} 
-P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] {\bfseries Current\+Face}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} \hyperlink{class_real_sense_1_1_model_ad90fab8a6125b55803734ebbdcf1f83d}{Current\+Face}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] \textbf{ Null\+Face}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} \hyperlink{class_real_sense_1_1_model_af626df64a18cb2fcf4cbc06ffbadfa17}{Null\+Face}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-P\+X\+C\+M\+Face\+Data \textbf{ Face\+Data}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data \hyperlink{class_real_sense_1_1_model_a0d16c2536a9f3c346cc3d51b3227989e}{Face\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-P\+X\+C\+M\+Face\+Data.\+Face \textbf{ Face\+Aktuell}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Face \hyperlink{class_real_sense_1_1_model_a3621c14d22c3709775971fed725c2781}{Face\+Aktuell}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\textbf{ Camera\+View} \textbf{ View}\hspace{0.3cm}{\ttfamily  [get, set]}
+\hyperlink{class_real_sense_1_1_camera_view}{Camera\+View} \hyperlink{class_real_sense_1_1_model_ad06548f5b1e3b3bfeaca2635d2b24fc6}{View}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a7a0873ddece63f5d3eb49f087771e9c6}} 
-double {\bfseries Current\+Pose\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+double \hyperlink{class_real_sense_1_1_model_a7a0873ddece63f5d3eb49f087771e9c6}{Current\+Pose\+Diff}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a556c083ee213249d05c2383ffc8e46f4}} 
-int {\bfseries Pose\+Max}\hspace{0.3cm}{\ttfamily  [get, set]}
+int \hyperlink{class_real_sense_1_1_model_a556c083ee213249d05c2383ffc8e46f4}{Pose\+Max}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a7ba288087bcec5d88a34064df08fbf20}} 
-double {\bfseries Current\+Roll\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+double \hyperlink{class_real_sense_1_1_model_a7ba288087bcec5d88a34064df08fbf20}{Current\+Roll\+Diff}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a9701d5e1b5c733f70349f94ec7fee978}} 
-double {\bfseries Current\+Pitch\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+double \hyperlink{class_real_sense_1_1_model_a9701d5e1b5c733f70349f94ec7fee978}{Current\+Pitch\+Diff}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ae5d9b51742c782f5f79c38761cfaee3c}} 
-double {\bfseries Current\+Yaw\+Diff}\hspace{0.3cm}{\ttfamily  [get, set]}
+double \hyperlink{class_real_sense_1_1_model_ae5d9b51742c782f5f79c38761cfaee3c}{Current\+Yaw\+Diff}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-Dictionary$<$ Emotion, double $>$ \textbf{ Emotions}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, double $>$ \hyperlink{class_real_sense_1_1_model_a30358a7ea8e1e59815e2f562a3fc6bad}{Emotions}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a1e12c6ceac3f412e6b452148b1a97bb1}} 
-Font {\bfseries Default\+Font}\hspace{0.3cm}{\ttfamily  [get, set]}
+Font \hyperlink{class_real_sense_1_1_model_a1e12c6ceac3f412e6b452148b1a97bb1}{Default\+Font}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_aaee076946f30b272e403d39afe033b4e}} 
-Solid\+Brush {\bfseries Default\+String\+Brush}\hspace{0.3cm}{\ttfamily  [get, set]}
+Solid\+Brush \hyperlink{class_real_sense_1_1_model_aaee076946f30b272e403d39afe033b4e}{Default\+String\+Brush}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_af6cb31aea9e1e0fd3ef87c9380e92193}} 
-P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries Null\+Pose}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles \hyperlink{class_real_sense_1_1_model_af6cb31aea9e1e0fd3ef87c9380e92193}{Null\+Pose}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a5d30cb7ac89ab7528623a695056096c4}} 
-P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles {\bfseries Current\+Pose}\hspace{0.3cm}{\ttfamily  [get, set]}
+P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles \hyperlink{class_real_sense_1_1_model_a5d30cb7ac89ab7528623a695056096c4}{Current\+Pose}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a05161bcafb94b553304268ab16861a84}} 
-Solid\+Brush {\bfseries Default\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  [get]}
+Solid\+Brush \hyperlink{class_real_sense_1_1_model_a05161bcafb94b553304268ab16861a84}{Default\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a14272eb96159aac12a818e2e15c36cb0}} 
-Solid\+Brush {\bfseries Opaque\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  [get]}
+Solid\+Brush \hyperlink{class_real_sense_1_1_model_a14272eb96159aac12a818e2e15c36cb0}{Opaque\+B\+G\+Brush}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a5a20efa42d5391f0a8156d45f676fc34}} 
-Dictionary$<$ String, double $>$ {\bfseries A\+U\+\_\+\+Values}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ String, double $>$ \hyperlink{class_real_sense_1_1_model_a5a20efa42d5391f0a8156d45f676fc34}{A\+U\+\_\+\+Values}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a89f4614b0f880fb6553ebcea3d2e6a6c}} 
-bool {\bfseries Test}\hspace{0.3cm}{\ttfamily  [get, set]}
+bool \hyperlink{class_real_sense_1_1_model_a89f4614b0f880fb6553ebcea3d2e6a6c}{Test}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a6b3603d17577660f65fc7bbb6b097182}} 
-Bitmap {\bfseries Color\+Bitmap}\hspace{0.3cm}{\ttfamily  [get]}
+Bitmap \hyperlink{class_real_sense_1_1_model_a6b3603d17577660f65fc7bbb6b097182}{Color\+Bitmap}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_a654d0ac6e4e49b884fd3e166039c7bc4}} 
-Dictionary$<$ Emotion, Bitmap $>$ {\bfseries Emotion\+Bitmaps}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Bitmap $>$ \hyperlink{class_real_sense_1_1_model_a654d0ac6e4e49b884fd3e166039c7bc4}{Emotion\+Bitmaps}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ac5454f63dfead405cd1d9c229cf6790f}} 
-Dictionary$<$ Emotion, double $>$ {\bfseries Emotion\+Max}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, double $>$ \hyperlink{class_real_sense_1_1_model_ac5454f63dfead405cd1d9c229cf6790f}{Emotion\+Max}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_afbdadf185ba37319705fd55d102c0cb4}} 
-Dictionary$<$ Emotion, Bitmap $>$ {\bfseries Excample\+Bitmaps}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Bitmap $>$ \hyperlink{class_real_sense_1_1_model_afbdadf185ba37319705fd55d102c0cb4}{Excample\+Bitmaps}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_model_ad2c87f308e42010ca032deec5cfa5e0b}} 
-Dictionary$<$ Emotion, Picture\+Box $>$ {\bfseries Emotion\+Picture\+Boxes}\hspace{0.3cm}{\ttfamily  [get, set]}
+Dictionary$<$ \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Picture\+Box $>$ \hyperlink{class_real_sense_1_1_model_ad2c87f308e42010ca032deec5cfa5e0b}{Emotion\+Picture\+Boxes}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 
 
@@ -162,31 +136,134 @@ Tanja Witke
 \end{DoxyAuthor}
 
 
+Definition at line 16 of file Model.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!A\+X\+IS@{A\+X\+IS}}
+\index{A\+X\+IS@{A\+X\+IS}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{A\+X\+IS}{AXIS}}
+{\footnotesize\ttfamily enum \hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{Real\+Sense.\+Model.\+A\+X\+IS}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X@{X}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!X@{X}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba02129bb861061d1a052c592e2dc6b383}\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba02129bb861061d1a052c592e2dc6b383}} 
+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y@{Y}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Y@{Y}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba57cec4137b614c87cb4e24a3d003a3e0}\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba57cec4137b614c87cb4e24a3d003a3e0}} 
+Y&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z@{Z}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Z@{Z}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba21c2e59531c8710156d34a3c30ac81d5}\label{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946ba21c2e59531c8710156d34a3c30ac81d5}} 
+Z&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 18 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotion@{Emotion}}
+\index{Emotion@{Emotion}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Emotion}{Emotion}}
+{\footnotesize\ttfamily enum \hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Real\+Sense.\+Model.\+Emotion}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+N\+G\+ER@{A\+N\+G\+ER}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!A\+N\+G\+ER@{A\+N\+G\+ER}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a1bd79dc2e415209351d2e8150e7ad3f8}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a1bd79dc2e415209351d2e8150e7ad3f8}} 
+A\+N\+G\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+T\+E\+M\+PT@{C\+O\+N\+T\+E\+M\+PT}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!C\+O\+N\+T\+E\+M\+PT@{C\+O\+N\+T\+E\+M\+PT}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a002b7c5ac7e005a9c0e9dd0a87137d8c}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a002b7c5ac7e005a9c0e9dd0a87137d8c}} 
+C\+O\+N\+T\+E\+M\+PT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+S\+G\+U\+ST@{D\+I\+S\+G\+U\+ST}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!D\+I\+S\+G\+U\+ST@{D\+I\+S\+G\+U\+ST}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a4839c271b7a45921062565663bb9f1e2}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a4839c271b7a45921062565663bb9f1e2}} 
+D\+I\+S\+G\+U\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+E\+AR@{F\+E\+AR}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!F\+E\+AR@{F\+E\+AR}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a33349897f173d6e18909905106fc38b6}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a33349897f173d6e18909905106fc38b6}} 
+F\+E\+AR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+OY@{J\+OY}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!J\+OY@{J\+OY}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208acda0ca4b45c4b3c0c831f96241342fdb}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208acda0ca4b45c4b3c0c831f96241342fdb}} 
+J\+OY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+A\+D\+N\+E\+SS@{S\+A\+D\+N\+E\+SS}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!S\+A\+D\+N\+E\+SS@{S\+A\+D\+N\+E\+SS}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a88c5374457f277ea4810aee2b1cec9ab}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208a88c5374457f277ea4810aee2b1cec9ab}} 
+S\+A\+D\+N\+E\+SS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+U\+R\+P\+R\+I\+SE@{S\+U\+R\+P\+R\+I\+SE}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!S\+U\+R\+P\+R\+I\+SE@{S\+U\+R\+P\+R\+I\+SE}}}\mbox{\Hypertarget{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208aa2e811a62955273eb0c71afb208944d5}\label{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208aa2e811a62955273eb0c71afb208944d5}} 
+S\+U\+R\+P\+R\+I\+SE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 19 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}\label{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!M\+O\+DE@{M\+O\+DE}}
+\index{M\+O\+DE@{M\+O\+DE}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{M\+O\+DE}{MODE}}
+{\footnotesize\ttfamily enum \hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{Real\+Sense.\+Model.\+M\+O\+DE}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+N\+A\+L\+Y\+ZE@{A\+N\+A\+L\+Y\+ZE}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!A\+N\+A\+L\+Y\+ZE@{A\+N\+A\+L\+Y\+ZE}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a7131c39e2eb7ed10c4c28f88be245b49}\label{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a7131c39e2eb7ed10c4c28f88be245b49}} 
+A\+N\+A\+L\+Y\+ZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+UN@{R\+UN}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!R\+UN@{R\+UN}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a855520d2a5b0b1a64b939e7e30889e2a}\label{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a855520d2a5b0b1a64b939e7e30889e2a}} 
+R\+UN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+E\+ST@{T\+E\+ST}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!T\+E\+ST@{T\+E\+ST}}}\mbox{\Hypertarget{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a033bd94b1168d7e4f0d644c3c95e35bf}\label{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190a033bd94b1168d7e4f0d644c3c95e35bf}} 
+T\+E\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 20 of file Model.\+cs.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_real_sense_1_1_model_a39349d1d9b1274a9fe28614e9ce215f3}} 
+\mbox{\Hypertarget{class_real_sense_1_1_model_a39349d1d9b1274a9fe28614e9ce215f3}\label{class_real_sense_1_1_model_a39349d1d9b1274a9fe28614e9ce215f3}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Model@{Model}}
 \index{Model@{Model}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Model()}
+\subsubsection{\texorpdfstring{Model()}{Model()}}
 {\footnotesize\ttfamily Real\+Sense.\+Model.\+Model (\begin{DoxyParamCaption}\item[{bool}]{s }\end{DoxyParamCaption})}
 
-Constructor of the model It does all the important stuff to use our camera. Its so F\+A\+N\+CY ! Like enabling all important tracker(\+Hand, Face), the stream and builds up the configuration. blib blub 
+Constructor of the model It does all the important stuff to use our camera. Its so F\+A\+N\+CY ! Like enabling all important tracker(\+Hand, Face), the stream and builds up the configuration. 
+
+Definition at line 67 of file Model.\+cs.
+
+
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_real_sense_1_1_model_a8b8bff51e69b2b33f5c8cfb007c424e5}} 
+\mbox{\Hypertarget{class_real_sense_1_1_model_a8b8bff51e69b2b33f5c8cfb007c424e5}\label{class_real_sense_1_1_model_a8b8bff51e69b2b33f5c8cfb007c424e5}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Add\+Module@{Add\+Module}}
 \index{Add\+Module@{Add\+Module}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Add\+Module()}
-{\footnotesize\ttfamily void Real\+Sense.\+Model.\+Add\+Module (\begin{DoxyParamCaption}\item[{\textbf{ R\+S\+Module}}]{m }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Add\+Module()}{AddModule()}}
+{\footnotesize\ttfamily void Real\+Sense.\+Model.\+Add\+Module (\begin{DoxyParamCaption}\item[{\hyperlink{class_real_sense_1_1_r_s_module}{R\+S\+Module}}]{m }\end{DoxyParamCaption})}
 
-adds a new modul to the List 
+Adds a new modul to the List 
 \begin{DoxyParams}{Parameters}
 {\em R\+S\+Modul} & m which is the new module \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_real_sense_1_1_model_a846e090817e3200e8c20af80094fdcc8}} 
+
+
+Definition at line 130 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a846e090817e3200e8c20af80094fdcc8}\label{class_real_sense_1_1_model_a846e090817e3200e8c20af80094fdcc8}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Between@{Between}}
 \index{Between@{Between}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Between()}
+\subsubsection{\texorpdfstring{Between()}{Between()}}
 {\footnotesize\ttfamily double Real\+Sense.\+Model.\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
 
 calculates the difference between the two points of the current frame 
@@ -194,11 +271,15 @@ calculates the difference between the two points of the current frame
 {\em i01,i02} & which are the current points to calculate the difference \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_real_sense_1_1_model_abaaee5d06f75b1fb9a9d8946ebf53934}} 
+
+
+Definition at line 229 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_abaaee5d06f75b1fb9a9d8946ebf53934}\label{class_real_sense_1_1_model_abaaee5d06f75b1fb9a9d8946ebf53934}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Between\+By\+Axis@{Between\+By\+Axis}}
 \index{Between\+By\+Axis@{Between\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Between\+By\+Axis()}
-{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Between\+By\+Axis()}{BetweenByAxis()}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
 
 Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
 \begin{DoxyParams}{Parameters}
@@ -209,16 +290,14 @@ Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+
 {\em absolute} & defines wether or not the absolute difference should be returned or not \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_real_sense_1_1_model_a2eee3649f76d519c09fe44804c950e9d}} 
-\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Calculate\+Emotions@{Calculate\+Emotions}}
-\index{Calculate\+Emotions@{Calculate\+Emotions}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Calculate\+Emotions()}
-{\footnotesize\ttfamily void Real\+Sense.\+Model.\+Calculate\+Emotions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Guess what happens here... \mbox{\label{class_real_sense_1_1_model_a1d827ed6fd7d689679af4a276362128b}} 
+
+Definition at line 170 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a1d827ed6fd7d689679af4a276362128b}\label{class_real_sense_1_1_model_a1d827ed6fd7d689679af4a276362128b}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Difference@{Difference}}
 \index{Difference@{Difference}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Difference()}
+\subsubsection{\texorpdfstring{Difference()}{Difference()}}
 {\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
 
 calculates the percentage of the difference of distance between two points 
@@ -229,11 +308,15 @@ calculates the percentage of the difference of distance between two points
 \begin{DoxyReturn}{Returns}
 double between 0 and 100 
 \end{DoxyReturn}
-\mbox{\label{class_real_sense_1_1_model_a7f212901958598b29fabcf087fc33bdb}} 
+
+
+Definition at line 187 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a7f212901958598b29fabcf087fc33bdb}\label{class_real_sense_1_1_model_a7f212901958598b29fabcf087fc33bdb}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Difference\+By\+Axis@{Difference\+By\+Axis}}
 \index{Difference\+By\+Axis@{Difference\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Difference\+By\+Axis()}
-{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Difference\+By\+Axis()}{DifferenceByAxis()}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
 
 Returns the total difference of axis-\/specific distance between two points 
 \begin{DoxyParams}{Parameters}
@@ -244,10 +327,51 @@ Returns the total difference of axis-\/specific distance between two points
 {\em absolute} & defines wether or not the absolute difference should be returned or not \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_real_sense_1_1_model_a03fd4fa56ceb5cbcebdbebb4b7a78158}} 
+
+
+Definition at line 141 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a69d8b360ed9c9ddaa19a0619df408e2a}\label{class_real_sense_1_1_model_a69d8b360ed9c9ddaa19a0619df408e2a}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Difference\+Null\+Current@{Difference\+Null\+Current}}
+\index{Difference\+Null\+Current@{Difference\+Null\+Current}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Difference\+Null\+Current()}{DifferenceNullCurrent()}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Difference\+Null\+Current (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS}}]{axis }\end{DoxyParamCaption})}
+
+Returns the change in distance between the nose-\/fixpoint along a specified axis 
+\begin{DoxyParams}{Parameters}
+{\em int} & i01 -\/ landmark-\/number \\
+\hline
+{\em A\+X\+IS} & axis -\/ axis to consider \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a078b1ddb43e777aa73c1b3898722e4bb}\label{class_real_sense_1_1_model_a078b1ddb43e777aa73c1b3898722e4bb}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotion\+Value@{Emotion\+Value}}
+\index{Emotion\+Value@{Emotion\+Value}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Emotion\+Value()}{EmotionValue()}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Emotion\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}}]{emotion }\end{DoxyParamCaption})}
+
+Returns the value of the given emotion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em emotion} & given emotion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the emotion value or -\/1 if the key doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a03fd4fa56ceb5cbcebdbebb4b7a78158}\label{class_real_sense_1_1_model_a03fd4fa56ceb5cbcebdbebb4b7a78158}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face\+Between@{Null\+Face\+Between}}
 \index{Null\+Face\+Between@{Null\+Face\+Between}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Null\+Face\+Between()}
+\subsubsection{\texorpdfstring{Null\+Face\+Between()}{NullFaceBetween()}}
 {\footnotesize\ttfamily double Real\+Sense.\+Model.\+Null\+Face\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})}
 
 calculates the differenc of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
@@ -255,11 +379,15 @@ calculates the differenc of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Fa
 {\em i01,i02} & which are the current points to calculate the difference \\
 \hline
 \end{DoxyParams}
-\mbox{\label{class_real_sense_1_1_model_aab86ce9f3027b3fca83d11a97353154c}} 
+
+
+Definition at line 213 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_aab86ce9f3027b3fca83d11a97353154c}\label{class_real_sense_1_1_model_aab86ce9f3027b3fca83d11a97353154c}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}}
 \index{Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Null\+Face\+Between\+By\+Axis()}
-{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Null\+Face\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{A\+X\+IS}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Null\+Face\+Between\+By\+Axis()}{NullFaceBetweenByAxis()}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Null\+Face\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\hyperlink{class_real_sense_1_1_model_ab1d8b9992dae2162c48b52f6694f946b}{A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})}
 
 Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
 \begin{DoxyParams}{Parameters}
@@ -272,73 +400,370 @@ Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+
 \end{DoxyParams}
 
 
+Definition at line 152 of file Model.\+cs.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_model_af0a605c0cc3c8739836a4e98ac06b864}\label{class_real_sense_1_1_model_af0a605c0cc3c8739836a4e98ac06b864}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!calibrated@{calibrated}}
+\index{calibrated@{calibrated}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{calibrated}{calibrated}}
+{\footnotesize\ttfamily bool Real\+Sense.\+Model.\+calibrated = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 22 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a8573a7d01db1fb8a29f5873a717373bc}\label{class_real_sense_1_1_model_a8573a7d01db1fb8a29f5873a717373bc}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!calibration\+Progress@{calibration\+Progress}}
+\index{calibration\+Progress@{calibration\+Progress}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{calibration\+Progress}{calibrationProgress}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+calibration\+Progress = 0}
+
+
+
+Definition at line 49 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_aa6e241f22bac2dbdefdceef6e4cf0202}\label{class_real_sense_1_1_model_aa6e241f22bac2dbdefdceef6e4cf0202}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!current\+Pose@{current\+Pose}}
+\index{current\+Pose@{current\+Pose}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{current\+Pose}{currentPose}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles Real\+Sense.\+Model.\+current\+Pose = new P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles()}
+
+
+
+Definition at line 34 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ad4e469e9cf474c5f813a757be1eaf55d}\label{class_real_sense_1_1_model_ad4e469e9cf474c5f813a757be1eaf55d}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!face\+Aktuell@{face\+Aktuell}}
+\index{face\+Aktuell@{face\+Aktuell}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{face\+Aktuell}{faceAktuell}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Face Real\+Sense.\+Model.\+face\+Aktuell}
+
+
+
+Definition at line 29 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a2f289c39689e5de8feeb82dcfb708170}\label{class_real_sense_1_1_model_a2f289c39689e5de8feeb82dcfb708170}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!N\+O\+S\+E\+\_\+\+F\+IX@{N\+O\+S\+E\+\_\+\+F\+IX}}
+\index{N\+O\+S\+E\+\_\+\+F\+IX@{N\+O\+S\+E\+\_\+\+F\+IX}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{N\+O\+S\+E\+\_\+\+F\+IX}{NOSE\_FIX}}
+{\footnotesize\ttfamily int Real\+Sense.\+Model.\+N\+O\+S\+E\+\_\+\+F\+IX = 26\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 21 of file Model.\+cs.
+
+
+
 \subsection{Property Documentation}
-\mbox{\label{class_real_sense_1_1_model_a30358a7ea8e1e59815e2f562a3fc6bad}} 
+\mbox{\Hypertarget{class_real_sense_1_1_model_a5a20efa42d5391f0a8156d45f676fc34}\label{class_real_sense_1_1_model_a5a20efa42d5391f0a8156d45f676fc34}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!A\+U\+\_\+\+Values@{A\+U\+\_\+\+Values}}
+\index{A\+U\+\_\+\+Values@{A\+U\+\_\+\+Values}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{A\+U\+\_\+\+Values}{AU\_Values}}
+{\footnotesize\ttfamily Dictionary$<$String, double$>$ Real\+Sense.\+Model.\+A\+U\+\_\+\+Values\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the A\+U\+\_\+\+Values 
+
+Definition at line 472 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a6b3603d17577660f65fc7bbb6b097182}\label{class_real_sense_1_1_model_a6b3603d17577660f65fc7bbb6b097182}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Color\+Bitmap@{Color\+Bitmap}}
+\index{Color\+Bitmap@{Color\+Bitmap}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Color\+Bitmap}{ColorBitmap}}
+{\footnotesize\ttfamily Bitmap Real\+Sense.\+Model.\+Color\+Bitmap\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the Color\+Bitmap 
+
+Definition at line 490 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ad90fab8a6125b55803734ebbdcf1f83d}\label{class_real_sense_1_1_model_ad90fab8a6125b55803734ebbdcf1f83d}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Face@{Current\+Face}}
+\index{Current\+Face@{Current\+Face}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Face}{CurrentFace}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} Real\+Sense.\+Model.\+Current\+Face\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Face 
+
+Definition at line 318 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a9701d5e1b5c733f70349f94ec7fee978}\label{class_real_sense_1_1_model_a9701d5e1b5c733f70349f94ec7fee978}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Pitch\+Diff@{Current\+Pitch\+Diff}}
+\index{Current\+Pitch\+Diff@{Current\+Pitch\+Diff}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Pitch\+Diff}{CurrentPitchDiff}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Current\+Pitch\+Diff\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Pitch\+Diff 
+
+Definition at line 393 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a5d30cb7ac89ab7528623a695056096c4}\label{class_real_sense_1_1_model_a5d30cb7ac89ab7528623a695056096c4}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Pose@{Current\+Pose}}
+\index{Current\+Pose@{Current\+Pose}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Pose}{CurrentPose}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles Real\+Sense.\+Model.\+Current\+Pose\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Pose 
+
+Definition at line 447 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a7a0873ddece63f5d3eb49f087771e9c6}\label{class_real_sense_1_1_model_a7a0873ddece63f5d3eb49f087771e9c6}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Pose\+Diff@{Current\+Pose\+Diff}}
+\index{Current\+Pose\+Diff@{Current\+Pose\+Diff}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Pose\+Diff}{CurrentPoseDiff}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Current\+Pose\+Diff\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Pose\+Diff 
+
+Definition at line 366 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a7ba288087bcec5d88a34064df08fbf20}\label{class_real_sense_1_1_model_a7ba288087bcec5d88a34064df08fbf20}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Roll\+Diff@{Current\+Roll\+Diff}}
+\index{Current\+Roll\+Diff@{Current\+Roll\+Diff}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Roll\+Diff}{CurrentRollDiff}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Current\+Roll\+Diff\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Roll\+Diff 
+
+Definition at line 384 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ae5d9b51742c782f5f79c38761cfaee3c}\label{class_real_sense_1_1_model_ae5d9b51742c782f5f79c38761cfaee3c}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Current\+Yaw\+Diff@{Current\+Yaw\+Diff}}
+\index{Current\+Yaw\+Diff@{Current\+Yaw\+Diff}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Current\+Yaw\+Diff}{CurrentYawDiff}}
+{\footnotesize\ttfamily double Real\+Sense.\+Model.\+Current\+Yaw\+Diff\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Current\+Yaw\+Diff 
+
+Definition at line 402 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a05161bcafb94b553304268ab16861a84}\label{class_real_sense_1_1_model_a05161bcafb94b553304268ab16861a84}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Default\+B\+G\+Brush@{Default\+B\+G\+Brush}}
+\index{Default\+B\+G\+Brush@{Default\+B\+G\+Brush}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Default\+B\+G\+Brush}{DefaultBGBrush}}
+{\footnotesize\ttfamily Solid\+Brush Real\+Sense.\+Model.\+Default\+B\+G\+Brush\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the Default\+B\+G\+Brush 
+
+Definition at line 456 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a1e12c6ceac3f412e6b452148b1a97bb1}\label{class_real_sense_1_1_model_a1e12c6ceac3f412e6b452148b1a97bb1}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Default\+Font@{Default\+Font}}
+\index{Default\+Font@{Default\+Font}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Default\+Font}{DefaultFont}}
+{\footnotesize\ttfamily Font Real\+Sense.\+Model.\+Default\+Font\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Default\+Font 
+
+Definition at line 420 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_aaee076946f30b272e403d39afe033b4e}\label{class_real_sense_1_1_model_aaee076946f30b272e403d39afe033b4e}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Default\+String\+Brush@{Default\+String\+Brush}}
+\index{Default\+String\+Brush@{Default\+String\+Brush}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Default\+String\+Brush}{DefaultStringBrush}}
+{\footnotesize\ttfamily Solid\+Brush Real\+Sense.\+Model.\+Default\+String\+Brush\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Default\+String\+Brush 
+
+Definition at line 429 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a654d0ac6e4e49b884fd3e166039c7bc4}\label{class_real_sense_1_1_model_a654d0ac6e4e49b884fd3e166039c7bc4}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotion\+Bitmaps@{Emotion\+Bitmaps}}
+\index{Emotion\+Bitmaps@{Emotion\+Bitmaps}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Emotion\+Bitmaps}{EmotionBitmaps}}
+{\footnotesize\ttfamily Dictionary$<$\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Bitmap$>$ Real\+Sense.\+Model.\+Emotion\+Bitmaps\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Emotion\+Bitmaps 
+
+Definition at line 498 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ac5454f63dfead405cd1d9c229cf6790f}\label{class_real_sense_1_1_model_ac5454f63dfead405cd1d9c229cf6790f}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotion\+Max@{Emotion\+Max}}
+\index{Emotion\+Max@{Emotion\+Max}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Emotion\+Max}{EmotionMax}}
+{\footnotesize\ttfamily Dictionary$<$\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, double$>$ Real\+Sense.\+Model.\+Emotion\+Max\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Emotion\+Max 
+
+Definition at line 507 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ad2c87f308e42010ca032deec5cfa5e0b}\label{class_real_sense_1_1_model_ad2c87f308e42010ca032deec5cfa5e0b}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotion\+Picture\+Boxes@{Emotion\+Picture\+Boxes}}
+\index{Emotion\+Picture\+Boxes@{Emotion\+Picture\+Boxes}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Emotion\+Picture\+Boxes}{EmotionPictureBoxes}}
+{\footnotesize\ttfamily Dictionary$<$\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Picture\+Box$>$ Real\+Sense.\+Model.\+Emotion\+Picture\+Boxes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Emotion\+Picture\+Boxes 
+
+Definition at line 525 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a30358a7ea8e1e59815e2f562a3fc6bad}\label{class_real_sense_1_1_model_a30358a7ea8e1e59815e2f562a3fc6bad}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Emotions@{Emotions}}
 \index{Emotions@{Emotions}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Emotions}
-{\footnotesize\ttfamily Dictionary$<$Emotion, double$>$ Real\+Sense.\+Model.\+Emotions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\subsubsection{\texorpdfstring{Emotions}{Emotions}}
+{\footnotesize\ttfamily Dictionary$<$\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, double$>$ Real\+Sense.\+Model.\+Emotions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
-getter and setter of the array from the emotions \mbox{\label{class_real_sense_1_1_model_abb8701f1030ca1e3bfd226a9ad352da5}} 
+getter and setter of the array from the emotions 
+
+Definition at line 411 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_afbdadf185ba37319705fd55d102c0cb4}\label{class_real_sense_1_1_model_afbdadf185ba37319705fd55d102c0cb4}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Excample\+Bitmaps@{Excample\+Bitmaps}}
+\index{Excample\+Bitmaps@{Excample\+Bitmaps}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Excample\+Bitmaps}{ExcampleBitmaps}}
+{\footnotesize\ttfamily Dictionary$<$\hyperlink{class_real_sense_1_1_model_a5bf3fde8f53519f7a740d8b4e0399208}{Emotion}, Bitmap$>$ Real\+Sense.\+Model.\+Excample\+Bitmaps\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Excample\+Bitmaps 
+
+Definition at line 516 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_abb8701f1030ca1e3bfd226a9ad352da5}\label{class_real_sense_1_1_model_abb8701f1030ca1e3bfd226a9ad352da5}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face@{Face}}
 \index{Face@{Face}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Face}
+\subsubsection{\texorpdfstring{Face}{Face}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Module Real\+Sense.\+Model.\+Face\hspace{0.3cm}{\ttfamily [get]}}
 
-getter and setter of the face \mbox{\label{class_real_sense_1_1_model_a3621c14d22c3709775971fed725c2781}} 
+getter and setter of the face 
+
+Definition at line 288 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a3621c14d22c3709775971fed725c2781}\label{class_real_sense_1_1_model_a3621c14d22c3709775971fed725c2781}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face\+Aktuell@{Face\+Aktuell}}
 \index{Face\+Aktuell@{Face\+Aktuell}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Face\+Aktuell}
+\subsubsection{\texorpdfstring{Face\+Aktuell}{FaceAktuell}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Face Real\+Sense.\+Model.\+Face\+Aktuell\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 getter and setter of the Face\+Current
 
-Face\+Aktuell should be changed to Face\+Current, where is it initialised \mbox{\label{class_real_sense_1_1_model_a0d16c2536a9f3c346cc3d51b3227989e}} 
+Face\+Aktuell should be changed to Face\+Current, where is it initialised 
+
+Definition at line 348 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a0d16c2536a9f3c346cc3d51b3227989e}\label{class_real_sense_1_1_model_a0d16c2536a9f3c346cc3d51b3227989e}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Face\+Data@{Face\+Data}}
 \index{Face\+Data@{Face\+Data}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Face\+Data}
+\subsubsection{\texorpdfstring{Face\+Data}{FaceData}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data Real\+Sense.\+Model.\+Face\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
-getter and setter of the face\+Data \mbox{\label{class_real_sense_1_1_model_abf6324c9f4acc3134909a239eff37a0a}} 
+getter and setter of the face\+Data 
+
+Definition at line 337 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_abf6324c9f4acc3134909a239eff37a0a}\label{class_real_sense_1_1_model_abf6324c9f4acc3134909a239eff37a0a}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Height@{Height}}
 \index{Height@{Height}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Height}
+\subsubsection{\texorpdfstring{Height}{Height}}
 {\footnotesize\ttfamily int Real\+Sense.\+Model.\+Height\hspace{0.3cm}{\ttfamily [get]}}
 
-getter and setter of the height \mbox{\label{class_real_sense_1_1_model_a3e349d000d00015a340954ec3be977ea}} 
+getter and setter of the height 
+
+Definition at line 279 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a3e349d000d00015a340954ec3be977ea}\label{class_real_sense_1_1_model_a3e349d000d00015a340954ec3be977ea}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Lp@{Lp}}
 \index{Lp@{Lp}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Lp}
+\subsubsection{\texorpdfstring{Lp}{Lp}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmarks\+Data Real\+Sense.\+Model.\+Lp\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 getter and setter of the landmarkpoints
 
-W\+A\+R\+N\+I\+NG do not touch outside the camera thread -\/$>$ so use current\+Face \mbox{\label{class_real_sense_1_1_model_a9664e53331481e9cc45ad6d3540c218c}} 
+W\+A\+R\+N\+I\+NG do not touch outside the camera thread -\/$>$ so use current\+Face 
+
+Definition at line 298 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a9664e53331481e9cc45ad6d3540c218c}\label{class_real_sense_1_1_model_a9664e53331481e9cc45ad6d3540c218c}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Modules@{Modules}}
 \index{Modules@{Modules}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Modules}
-{\footnotesize\ttfamily List$<$\textbf{ R\+S\+Module}$>$ Real\+Sense.\+Model.\+Modules\hspace{0.3cm}{\ttfamily [get]}}
+\subsubsection{\texorpdfstring{Modules}{Modules}}
+{\footnotesize\ttfamily List$<$\hyperlink{class_real_sense_1_1_r_s_module}{R\+S\+Module}$>$ Real\+Sense.\+Model.\+Modules\hspace{0.3cm}{\ttfamily [get]}}
 
-getter of the modules \mbox{\label{class_real_sense_1_1_model_af626df64a18cb2fcf4cbc06ffbadfa17}} 
+getter of the modules 
+
+Definition at line 255 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_af626df64a18cb2fcf4cbc06ffbadfa17}\label{class_real_sense_1_1_model_af626df64a18cb2fcf4cbc06ffbadfa17}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Face@{Null\+Face}}
 \index{Null\+Face@{Null\+Face}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Null\+Face}
-{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point [$\,$] Real\+Sense.\+Model.\+Null\+Face\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\subsubsection{\texorpdfstring{Null\+Face}{NullFace}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} Real\+Sense.\+Model.\+Null\+Face\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
-getter and setter of the A\+B\+S\+O\+L\+U\+TE Null\+Face \mbox{\label{class_real_sense_1_1_model_ad06548f5b1e3b3bfeaca2635d2b24fc6}} 
+getter and setter of the A\+B\+S\+O\+L\+U\+TE Null\+Face 
+
+Definition at line 327 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_af6cb31aea9e1e0fd3ef87c9380e92193}\label{class_real_sense_1_1_model_af6cb31aea9e1e0fd3ef87c9380e92193}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Null\+Pose@{Null\+Pose}}
+\index{Null\+Pose@{Null\+Pose}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Null\+Pose}{NullPose}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Pose\+Euler\+Angles Real\+Sense.\+Model.\+Null\+Pose\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Null\+Pose 
+
+Definition at line 438 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a14272eb96159aac12a818e2e15c36cb0}\label{class_real_sense_1_1_model_a14272eb96159aac12a818e2e15c36cb0}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Opaque\+B\+G\+Brush@{Opaque\+B\+G\+Brush}}
+\index{Opaque\+B\+G\+Brush@{Opaque\+B\+G\+Brush}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Opaque\+B\+G\+Brush}{OpaqueBGBrush}}
+{\footnotesize\ttfamily Solid\+Brush Real\+Sense.\+Model.\+Opaque\+B\+G\+Brush\hspace{0.3cm}{\ttfamily [get]}}
+
+getter and setter of the Opaque\+B\+G\+Brush 
+
+Definition at line 464 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a556c083ee213249d05c2383ffc8e46f4}\label{class_real_sense_1_1_model_a556c083ee213249d05c2383ffc8e46f4}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Pose\+Max@{Pose\+Max}}
+\index{Pose\+Max@{Pose\+Max}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Pose\+Max}{PoseMax}}
+{\footnotesize\ttfamily int Real\+Sense.\+Model.\+Pose\+Max\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Pose\+Max 
+
+Definition at line 375 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a396ec458576859184ac7e39d9be13465}\label{class_real_sense_1_1_model_a396ec458576859184ac7e39d9be13465}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Sense\+Manager@{Sense\+Manager}}
+\index{Sense\+Manager@{Sense\+Manager}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Sense\+Manager}{SenseManager}}
+{\footnotesize\ttfamily P\+X\+C\+M\+Sense\+Manager Real\+Sense.\+Model.\+Sense\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of the Sense\+Manager 
+
+Definition at line 263 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a89f4614b0f880fb6553ebcea3d2e6a6c}\label{class_real_sense_1_1_model_a89f4614b0f880fb6553ebcea3d2e6a6c}} 
+\index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Test@{Test}}
+\index{Test@{Test}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
+\subsubsection{\texorpdfstring{Test}{Test}}
+{\footnotesize\ttfamily bool Real\+Sense.\+Model.\+Test\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+getter and setter of whether to test or not 
+
+Definition at line 481 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_ad06548f5b1e3b3bfeaca2635d2b24fc6}\label{class_real_sense_1_1_model_ad06548f5b1e3b3bfeaca2635d2b24fc6}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!View@{View}}
 \index{View@{View}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{View}
-{\footnotesize\ttfamily \textbf{ Camera\+View} Real\+Sense.\+Model.\+View\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+\subsubsection{\texorpdfstring{View}{View}}
+{\footnotesize\ttfamily \hyperlink{class_real_sense_1_1_camera_view}{Camera\+View} Real\+Sense.\+Model.\+View\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
-getter and setter of the View \mbox{\label{class_real_sense_1_1_model_a20e2b5bc79da762b436b75ddd28f63b7}} 
+getter and setter of the View 
+
+Definition at line 357 of file Model.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_model_a20e2b5bc79da762b436b75ddd28f63b7}\label{class_real_sense_1_1_model_a20e2b5bc79da762b436b75ddd28f63b7}} 
 \index{Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}!Width@{Width}}
 \index{Width@{Width}!Real\+Sense\+::\+Model@{Real\+Sense\+::\+Model}}
-\subsubsection{Width}
+\subsubsection{\texorpdfstring{Width}{Width}}
 {\footnotesize\ttfamily int Real\+Sense.\+Model.\+Width\hspace{0.3cm}{\ttfamily [get]}}
 
 getter and setter of the width 
 
+Definition at line 271 of file Model.\+cs.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Framework/Model.\+cs\end{DoxyCompactItemize}
+Framework/\hyperlink{_model_8cs}{Model.\+cs}\end{DoxyCompactItemize}

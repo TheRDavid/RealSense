@@ -71,6 +71,16 @@ namespace RealSense.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] libpxcclr_cs {
+            get {
+                object obj = ResourceManager.GetObject("libpxcclr_cs", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap warning {

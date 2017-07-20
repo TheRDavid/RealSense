@@ -17,6 +17,7 @@ namespace RealSense
      */
     class AU_UpperLipRaised : RSModule
     {
+
         // variables for logic
         private double[] upperLip_Distance = new double[5];
         private double[] distances = new double[numFramesBeforeAccept];
@@ -25,12 +26,12 @@ namespace RealSense
 
         /**
          * Initializes the AU by setting up the default value boundaries.
-         */ 
+         */
         public AU_UpperLipRaised()
         {
             DEF_MIN = -1;
             DEF_MAX = 8;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 2;
             XTREME_MAX = 25;
@@ -49,12 +50,11 @@ namespace RealSense
             //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
             {
-                //Get Values from AU's
-                upperLip_Distance[0] = Utilities.Difference(34, Model.NOSE_FIX);
-                upperLip_Distance[1] = Utilities.Difference(35, Model.NOSE_FIX);
-                upperLip_Distance[2] = Utilities.Difference(36, Model.NOSE_FIX);
-                upperLip_Distance[3] = Utilities.Difference(37, Model.NOSE_FIX);
-                upperLip_Distance[4] = Utilities.Difference(38, Model.NOSE_FIX);
+                upperLip_Distance[0] = model.Difference(34, Model.NOSE_FIX);
+                upperLip_Distance[1] = model.Difference(35, Model.NOSE_FIX);
+                upperLip_Distance[2] = model.Difference(36, Model.NOSE_FIX);
+                upperLip_Distance[3] = model.Difference(37, Model.NOSE_FIX);
+                upperLip_Distance[4] = model.Difference(38, Model.NOSE_FIX);
 
                 distance = (upperLip_Distance[0] + upperLip_Distance[1] + upperLip_Distance[2] + upperLip_Distance[3] + upperLip_Distance[4]) / 5;
                 distance -= 100;
@@ -64,14 +64,22 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(distances);
+
+                double distance = FilteredAvg(distances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_UpperLipRaised).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_UpperLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_UpperLipRaised).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_UpperLipRaised).ToString()] + ") ("+ (int)MIN +", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

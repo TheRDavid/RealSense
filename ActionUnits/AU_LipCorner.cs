@@ -23,7 +23,7 @@ namespace RealSense
         private double[] cornersLeft = new double[numFramesBeforeAccept];
         private double[] cornersRight = new double[numFramesBeforeAccept];
         private string debug_message = "LipCorner: ";
-        
+
         /**
          * Initializes the AU by setting up the default value boundaries.
          */
@@ -31,10 +31,10 @@ namespace RealSense
         {
             DEF_MIN = -1;
             DEF_MAX = 5;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 0.5;
-            debug = false;
+            debug = true;
             XTREME_MAX = 45;
             XTREME_MIN = -36;
             model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = 0;
@@ -49,11 +49,10 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            cornerLeft = -((Utilities.Difference(33, 36)) - 100);  //left LipCorner
-            cornerRight = -((Utilities.Difference(39, 36)) - 100);  //right LipCorner
+            cornerLeft = -((model.Difference(33, 36)) - 100);  //left LipCorner
+            cornerRight = -((model.Difference(39, 36)) - 100);  //right LipCorner
 
-
-            double hDiff = Utilities.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + Utilities.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
+            double hDiff = model.DifferenceByAxis(33, 35, Model.AXIS.Y, false) + model.DifferenceByAxis(39, 37, Model.AXIS.Y, false);
 
             //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
@@ -63,12 +62,23 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(cornersRight);
+                FilterToleranceValues(cornersLeft);
+
+                double leftDistance = FilteredAvg(cornersLeft);
+                double rightDistance = FilteredAvg(cornersRight);
+
+                DynamicMinMax(new double[] { leftDistance, rightDistance });
+
+                double[] diffs = ConvertValues(new double[] { leftDistance, rightDistance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
                 {
-                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = Utilities.ConvertValue(cornersLeft, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN) * -1;
-                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = Utilities.ConvertValue(cornersRight, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN) * -1;
+                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_left"] = diffs[0] * -1; //war falschherum?
+                    model.AU_Values[typeof(AU_LipCorner).ToString() + "_right"] = diffs[1] * -1; //war falschherum?
                 }
+
                 /* print debug-values */
                 if (debug)
                 {

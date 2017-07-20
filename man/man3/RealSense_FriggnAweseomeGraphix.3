@@ -1,0 +1,197 @@
+.TH "RealSense.FriggnAweseomeGraphix" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.FriggnAweseomeGraphix
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMEMonitor\fP"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBDrawMEMontior\fP (Graphics gfx, \fBMEMonitor\fP monitor)"
+.br
+.ti -1c
+.RI "static void \fBDrawMEMontior\fP (Graphics gfx, \fBMEMonitor\fP monitor, bool drawText)"
+.br
+.ti -1c
+.RI "static unsafe void \fBPretty_blur\fP (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)"
+.br
+.ti -1c
+.RI "static unsafe void \fBSonic_blur\fP (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, BitmapData sourceData, BitmapData targetData)"
+.br
+.ti -1c
+.RI "static void \fBDrawFadingLine\fP (Graphics gfx, float x0, float y0, float x1, float y1)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Font \fBmajorFont\fP = new Font('Futura', 36, FontStyle\&.Bold)"
+.br
+.ti -1c
+.RI "static Font \fBminorFont\fP = new Font('Futura', 21, FontStyle\&.Regular)"
+.br
+.ti -1c
+.RI "static Color \fBfgColor\fP = Color\&.FromArgb(55, 186, 68, 75)"
+.br
+.ti -1c
+.RI "static Color \fBfontColor\fP = Color\&.FromArgb(255, 103, 103, 104)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Includes some kickass graphics-stuff 
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Rosenbusch  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.DrawFadingLine (Graphics gfx, float x0, float y0, float x1, float y1)\fC [static]\fP"
+Draws a fading line (duh)
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP gfx, graphics-object to draw on 
+.br
+\fIfloat\fP x0, start x-coordinate 
+.br
+\fIfloat\fP y0, start y-coordinate 
+.br
+\fIfloat\fP x1, end x-coordinate 
+.br
+\fIfloat\fP y1, end y-coordinate 
+.RE
+.PP
+
+.PP
+Definition at line 297 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.DrawMEMontior (Graphics gfx, \fBMEMonitor\fP monitor)\fC [static]\fP"
+Draws a MEMontior ontop of the graphics-object\&. Displays text as per default\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP gfx, graphics-object to draw Monitor on 
+.br
+\fI\fBMEMonitor\fP\fP monitor, monitor to be drawn 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static void RealSense\&.FriggnAweseomeGraphix\&.DrawMEMontior (Graphics gfx, \fBMEMonitor\fP monitor, bool drawText)\fC [static]\fP"
+Draws a MEMontior ontop of the graphics-object\&. Displays text as per default\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP gfx, graphics-object to draw Monitor on 
+.br
+\fI\fBMEMonitor\fP\fP monitor, monitor to be drawn 
+.br
+\fIbool\fP drawText, flag to display value as text (or not) 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static unsafe void RealSense\&.FriggnAweseomeGraphix\&.Pretty_blur (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, BitmapData sourceData, BitmapData targetData)\fC [static]\fP"
+
+.SS ""
+.PP
+.SH "Graphics"
+.PP
+.PP
+.SS ""
+.PP
+Blurs an image and saves result in a new Bitmap Slow, but mathematically correct 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIBitmap\fP source - original image, which is supposed to be blurred 
+.br
+\fIBitmap\fP target - will contain the new image 
+.br
+\fIint\fP x0 - upper-left x-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP y0 - upper-left y-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP x1 - lower-right x-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP y1 - lower-right y-coordinate of area that is supposed to be blurred 
+.br
+\fIfactor\fP - blurFactor 
+.br
+\fIBitmapData\fP sourceData - data of original image 
+.br
+\fIBitmapData\fP sourceData - data of target image 
+.RE
+.PP
+
+.PP
+Definition at line 144 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "static unsafe void RealSense\&.FriggnAweseomeGraphix\&.Sonic_blur (Bitmap source, Bitmap target, int x0, int y0, int x1, int y1, int factor, int channels, BitmapData sourceData, BitmapData targetData)\fC [static]\fP"
+Blurs an image and saves result in a new Bitmap Faster, but mathematically incorrect 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIBitmap\fP source - original image, which is supposed to be blurred 
+.br
+\fIBitmap\fP target - will contain the new image 
+.br
+\fIint\fP x0 - upper-left x-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP y0 - upper-left y-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP x1 - lower-right x-coordinate of area that is supposed to be blurred 
+.br
+\fIint\fP y1 - lower-right y-coordinate of area that is supposed to be blurred 
+.br
+\fIfactor\fP - blurFactor 
+.br
+\fIchannels\fP - number of color-channels 
+.br
+\fIBitmapData\fP sourceData - data of original image 
+.br
+\fIBitmapData\fP sourceData - data of target image 
+.RE
+.PP
+
+.PP
+Definition at line 224 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "Color RealSense\&.FriggnAweseomeGraphix\&.fgColor = Color\&.FromArgb(55, 186, 68, 75)\fC [static]\fP"
+
+.PP
+Definition at line 34 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Color RealSense\&.FriggnAweseomeGraphix\&.fontColor = Color\&.FromArgb(255, 103, 103, 104)\fC [static]\fP"
+
+.PP
+Definition at line 36 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Font RealSense\&.FriggnAweseomeGraphix\&.majorFont = new Font('Futura', 36, FontStyle\&.Bold)\fC [static]\fP"
+
+.PP
+Definition at line 32 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "Font RealSense\&.FriggnAweseomeGraphix\&.minorFont = new Font('Futura', 21, FontStyle\&.Regular)\fC [static]\fP"
+
+.PP
+Definition at line 33 of file FriggnAweseomeGraphix\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

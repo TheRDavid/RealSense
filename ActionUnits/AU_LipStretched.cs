@@ -31,7 +31,7 @@ namespace RealSense
         {
             DEF_MIN = -13;
             DEF_MAX = 13;
-            reset();
+            Reset();
             MIN_TOL = -2;
             MAX_TOL = 0.5;
             debug = true;
@@ -48,7 +48,7 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            lips_corner_distance = (Utilities.Difference(33, 39) - 100);
+            lips_corner_distance = (model.Difference(33, 39) - 100);
 
             //Gather Frames
             if (framesGathered < numFramesBeforeAccept)
@@ -57,14 +57,22 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(lips_corner_distances);
+
+                double distance = FilteredAvg(lips_corner_distances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_LipStretched).ToString()] = Utilities.ConvertValue(lips_corner_distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LipStretched).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
                 {
-                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipStretched).ToString()] + ") (" + (int)MIN + ", " + (int)MAX + ")";
+                    output = debug_message + "(" + (int)model.AU_Values[typeof(AU_LipStretched).ToString()] + ") ("+ (int)MIN + ", " + (int)MAX + ")";
                 }
                 framesGathered = 0;
             }

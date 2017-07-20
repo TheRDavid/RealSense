@@ -11,7 +11,7 @@ using RealSense.Emotions;
 
 namespace RealSense
 {
-    /*
+    /**
      * Sub-programm to revisit old landmark-recordings with updated algorithms to tweak the emotion-detection.
      * Once the UI is loaded, the user can select on of the seven emotions and load their recorded data (both video- and landmark-recordings).
      * All of the landmark-recordings (recoding by recording, frame by frame) can then be used to automatically recalculate both the ActionUnit-
@@ -60,8 +60,8 @@ namespace RealSense
         private bool loading = false;
 
         /**
-         * Sets up the UI and starts the Updater-Thread, which will update the lables and progressbars displaying the ActionUnit- and Emotion-Values
-         */ 
+         * Sets up the UI and starts the Updater-Thread, which will Update the lables and progressbars displaying the ActionUnit- and Emotion-Values
+         */
         public AnalyzerView()
         {
             MinimumSize = new Size(cellWidth, 300);
@@ -102,10 +102,10 @@ namespace RealSense
             updaterThread = new Thread(loadFrame);
             updaterThread.Start();
         }
-
+        
         /**
          * Update the whole UI according to the current frame's values.
-         */ 
+         */
         private void loadFrame()
         {
             while (true)
@@ -127,7 +127,8 @@ namespace RealSense
 
         /**
          * Load all files of an emotion-type and feed them into the ActionUnit and Emotion-detection algorithms.
-         */ 
+         * @param string type - emotion type
+         */
         private void loadFiles(string type)
         {
             loading = true;
@@ -156,7 +157,7 @@ namespace RealSense
 
         /**
          * Dynamically arranges the UI to make best use of it's size.
-         */ 
+         */
         private void arrange()
         {
             WINDOW_WIDTH = Width;
@@ -173,7 +174,7 @@ namespace RealSense
         /**
          * The DataSetViews are the core-components of the Analyzer.
          * Each DataSetView displays one recording (the video and all the landmark-data).
-         */ 
+         */
         private class DataSetView : Panel
         {
 
@@ -249,7 +250,7 @@ namespace RealSense
             /**
              * Initializes all the Emotion- and ActionUnit-Modules for the recording.
              * Every recording requieres it's own modules since they do not share the same data (model)
-             */ 
+             */
             private void initModules()
             {
                 model = new RealSense.Model(false);
@@ -282,7 +283,7 @@ namespace RealSense
 
             /**
              * Updates the modules and their respective data and refreshes the UI to display the current frame (the ActionUnit- and Emotion-Data).
-             */ 
+             */
             public void udpateAndVisualizeData()
             {
                 if (vlcControl.IsPlaying) vlcControl.Pause();
@@ -315,7 +316,7 @@ namespace RealSense
 
                 foreach (FriggnAweseomeGraphix.MEMonitor monitor in monitors)
                 {
-                    FriggnAweseomeGraphix.drawMEMontior(g, monitor, false);
+                    FriggnAweseomeGraphix.DrawMEMontior(g, monitor, false);
                 }
 
                 int yPos = (int)(gap * 1.5), yPos2 = yPos;
@@ -349,7 +350,7 @@ namespace RealSense
 
             /**
              * Arrange the View to make proper use of it's boundaries.
-             */ 
+             */
             public void arrange()
             {
                 int y = gap + index * viewHeight;
@@ -358,13 +359,12 @@ namespace RealSense
                 Bounds = new Rectangle(0, y, WINDOW_WIDTH, viewHeight);
                 dataPictureBox.Bounds = new Rectangle(0, 0, WINDOW_WIDTH - vlcControl.Width, viewHeight);
                 dataImage = new Bitmap(dataPictureBox.Width, dataPictureBox.Height);
-                // update Monitors
+                // Update Monitors
                 int thickness = viewHeight / 18;
                 if (viewHeight != VIEW_TINY)
                 {
                     int radius = (viewHeight - 5 * gap - 4 * thickness) / 4 / 2;
 
-                   // Console.WriteLine("Radius = (" + viewHeight + " - 5 * " + gap + " - 4 * " + monitors[0].thickness + ") / 4 / 2 = " + radius);
                     monitors[0].x = gap;
                     monitors[0].y = gap;
 
@@ -405,9 +405,6 @@ namespace RealSense
                 }
             }
 
-            /**
-             * Load VLC library if needed (absoulte path!)
-             */ 
             public void OnVlcControlNeedLibDirectory(object sender, VlcLibDirectoryNeededEventArgs e)
             {
                 e.VlcLibDirectory = new DirectoryInfo("C:\\Users\\prouser\\Documents\\Vlc.DotNet-master\\Vlc.DotNet-master\\lib\\x86\\");
@@ -417,7 +414,7 @@ namespace RealSense
 
         /**
          * Automatically generated - setting up the base UI
-         */ 
+         */
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -576,7 +573,7 @@ namespace RealSense
          * Load all anger-files
          * @param object sender
          * @param EventArgs e
-         */ 
+         */
         private void angARRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("anger");
@@ -611,7 +608,7 @@ namespace RealSense
         {
             loadFiles("surprise");
         }
-        
+
         /**
          * Load all joy-files
          * @param object sender
@@ -633,10 +630,10 @@ namespace RealSense
         }
 
         /**
-         * Load all disgust-files
-         * @param object sender
-         * @param EventArgs e
-         */
+        * Load all disgust-files
+        * @param object sender
+        * @param EventArgs e
+        */
         private void disgustToolStripMenuItem_Click(object sender, EventArgs e)
         {
             loadFiles("disgust");

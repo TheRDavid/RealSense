@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_landmark_group_module" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::LandmarkGroupModule</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_landmark_group_module_1ac4a65412583d04758e16b8ee6f053406" prot="private" static="no" mutable="no">
+        <type>Pen []</type>
+        <definition>Pen [] RealSense.LandmarkGroupModule.pens</definition>
+        <argsstring></argsstring>
+        <name>pens</name>
+        <initializer>= { new Pen(Color.Blue), new Pen(Color.Red), new Pen(Color.Yellow),
+        new Pen(Color.Green),new Pen(Color.Black),new Pen(Color.Pink),new Pen(Color.White)}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="22" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_landmark_group_module_1a6b39708252db331306d62e2263cef058" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarksGroupType []</type>
+        <definition>PXCMFaceData.LandmarksGroupType [] RealSense.LandmarkGroupModule.landmarkGroupTypes</definition>
+        <argsstring></argsstring>
+        <name>landmarkGroupTypes</name>
+        <initializer>=
+            {PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_JAW,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_LEFT_EYE,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_LEFT_EYEBROW,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_MOUTH,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_NOSE,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_RIGHT_EYE,
+        PXCMFaceData.LandmarksGroupType.LANDMARK_GROUP_RIGHT_EYEBROW}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="25" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_landmark_group_module_1a822ea832d6c0c2d2c53c67169e3373fa" prot="private" static="no" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.LandmarkGroupModule.errorFont</definition>
+        <argsstring></argsstring>
+        <name>errorFont</name>
+        <initializer>= new Font(&quot;Arial&quot;, 16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="33" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_landmark_group_module_1a215c095be4eb510a6a4137a07769e7bc" prot="private" static="no" mutable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.LandmarkGroupModule.errorBrush</definition>
+        <argsstring></argsstring>
+        <name>errorBrush</name>
+        <initializer>= new SolidBrush(Color.Black)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="34" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_landmark_group_module_1a4bf54b71db0dd49acdf4331526e53509" prot="private" static="no" mutable="no">
+        <type>Rectangle</type>
+        <definition>Rectangle RealSense.LandmarkGroupModule.errorRect</definition>
+        <argsstring></argsstring>
+        <name>errorRect</name>
+        <initializer>= new Rectangle(150, 150, 200, 50)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="35" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_landmark_group_module_1aae68525cdcf843719e02fa9b7317d3fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.LandmarkGroupModule.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Displays Landmarks by group, as they are defined in the SDK <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g for the view </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Various/LandmarkGroupModule.cs" line="42" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="42" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="128">
+        <label>RealSense.LandmarkGroupModule</label>
+        <link refid="class_real_sense_1_1_landmark_group_module"/>
+        <childnode refid="129" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="130">
+        <label>RealSense.LandmarkGroupModule</label>
+        <link refid="class_real_sense_1_1_landmark_group_module"/>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="132" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="132">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="Various/LandmarkGroupModule.cs" line="19" column="1" bodyfile="Various/LandmarkGroupModule.cs" bodystart="18" bodyend="71"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>ConvertValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>DynamicMinMax</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1a215c095be4eb510a6a4137a07769e7bc" prot="private" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>errorBrush</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1a822ea832d6c0c2d2c53c67169e3373fa" prot="private" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>errorFont</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1a4bf54b71db0dd49acdf4331526e53509" prot="private" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>errorRect</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>FilterToleranceValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::LandmarkGroupModule</scope><name>KeyTrigger</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1a6b39708252db331306d62e2263cef058" prot="private" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>landmarkGroupTypes</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1ac4a65412583d04758e16b8ee6f053406" prot="private" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>pens</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>Reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::LandmarkGroupModule</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_landmark_group_module_1aae68525cdcf843719e02fa9b7317d3fa" prot="public" virt="virtual"><scope>RealSense::LandmarkGroupModule</scope><name>Work</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

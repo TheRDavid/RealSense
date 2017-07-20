@@ -29,7 +29,7 @@ namespace RealSense
         {
             DEF_MIN = -1;
             DEF_MAX = 8;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 2;
             XTREME_MAX = 25;
@@ -49,8 +49,9 @@ namespace RealSense
             if (framesGathered < numFramesBeforeAccept)
             {
                 //Get Values from AU's
-                upperLip_Distance[0] = Utilities.Difference(42, Model.NOSE_FIX);
-                upperLip_Distance[1] = Utilities.Difference(51, Model.NOSE_FIX);
+                upperLip_Distance[0] = model.Difference(42, Model.NOSE_FIX);
+                upperLip_Distance[1] = model.Difference(51, Model.NOSE_FIX);
+ 
 
                 distance = (upperLip_Distance[0] + upperLip_Distance[1]) / 2;
                 distance -= 100;
@@ -60,9 +61,17 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(distances);
+
+                double distance = FilteredAvg(distances);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_LowerLipRaised).ToString()] = Utilities.ConvertValue(distances, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LowerLipRaised).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)
@@ -72,6 +81,6 @@ namespace RealSense
                 framesGathered = 0;
             }
         }
-
+    
     }
 }

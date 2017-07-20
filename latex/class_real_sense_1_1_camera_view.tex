@@ -1,4 +1,4 @@
-\section{Real\+Sense.\+Camera\+View Class Reference}
+\hypertarget{class_real_sense_1_1_camera_view}{}\section{Real\+Sense.\+Camera\+View Class Reference}
 \label{class_real_sense_1_1_camera_view}\index{Real\+Sense.\+Camera\+View@{Real\+Sense.\+Camera\+View}}
 Inheritance diagram for Real\+Sense.\+Camera\+View\+:\begin{figure}[H]
 \begin{center}
@@ -9,40 +9,104 @@ Inheritance diagram for Real\+Sense.\+Camera\+View\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Camera\+View} (\textbf{ Model} model, bool test)
+\hyperlink{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}{Camera\+View} (\hyperlink{class_real_sense_1_1_model}{Model} model, \hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{Model.\+M\+O\+DE} m)
 \item 
-\mbox{\label{class_real_sense_1_1_camera_view_a67c8ee2cdbf0caf43e48043d90c0d549}} 
-void {\bfseries Add\+Component} (Control c)
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\label{class_real_sense_1_1_camera_view_a78ec68053fa36d321ce259f1d23e1d51}} 
-int {\bfseries save} = 0
+void \hyperlink{class_real_sense_1_1_camera_view_a67c8ee2cdbf0caf43e48043d90c0d549}{Add\+Component} (Control c)
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}} 
-int {\bfseries Debug\+\_\+Y}\hspace{0.3cm}{\ttfamily  [get, set]}
+int \hyperlink{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}{Debug\+\_\+Y}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}} 
-Boolean {\bfseries Reset\+Modules}\hspace{0.3cm}{\ttfamily  [set]}
+Boolean \hyperlink{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}{Reset\+Modules}\hspace{0.3cm}{\ttfamily  \mbox{[}set\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_camera_view_a487ce7be920e8f6742d704d97a6057dc}} 
-Bitmap {\bfseries Color\+Bitmap}\hspace{0.3cm}{\ttfamily  [get]}
+Bitmap \hyperlink{class_real_sense_1_1_camera_view_a487ce7be920e8f6742d704d97a6057dc}{Color\+Bitmap}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Main-\/\+UI for testing-\/ and presentation-\/purposes \begin{DoxyAuthor}{Author}
+\+: David Rosenbusch  Hufflepuff 
+\end{DoxyAuthor}
+
+
+Definition at line 19 of file Camera\+View.\+cs.
+
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_real_sense_1_1_camera_view_ac30953a5ea5feba14c2243833e2e5908}} 
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}\label{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}} 
 \index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Camera\+View@{Camera\+View}}
 \index{Camera\+View@{Camera\+View}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
-\subsubsection{Camera\+View()}
-{\footnotesize\ttfamily Real\+Sense.\+Camera\+View.\+Camera\+View (\begin{DoxyParamCaption}\item[{\textbf{ Model}}]{model,  }\item[{bool}]{test }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Camera\+View()}{CameraView()}}
+{\footnotesize\ttfamily Real\+Sense.\+Camera\+View.\+Camera\+View (\begin{DoxyParamCaption}\item[{\hyperlink{class_real_sense_1_1_model}{Model}}]{model,  }\item[{\hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{Model.\+M\+O\+DE}}]{m }\end{DoxyParamCaption})}
 
-Initialise View and start updater Thread 
+Initialises View and starts updater Thread 
+\begin{DoxyParams}{Parameters}
+{\em model} & -\/ reference to data model \\
+\hline
+{\em Mode.\+Mode} & m -\/ mode the UI should run \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file Camera\+View.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_a67c8ee2cdbf0caf43e48043d90c0d549}\label{class_real_sense_1_1_camera_view_a67c8ee2cdbf0caf43e48043d90c0d549}} 
+\index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Add\+Component@{Add\+Component}}
+\index{Add\+Component@{Add\+Component}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
+\subsubsection{\texorpdfstring{Add\+Component()}{AddComponent()}}
+{\footnotesize\ttfamily void Real\+Sense.\+Camera\+View.\+Add\+Component (\begin{DoxyParamCaption}\item[{Control}]{c }\end{DoxyParamCaption})}
+
+Add a component to the UI (thread-\/safe)
+
+
+\begin{DoxyParams}{Parameters}
+{\em Control} & c, control to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file Camera\+View.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_a487ce7be920e8f6742d704d97a6057dc}\label{class_real_sense_1_1_camera_view_a487ce7be920e8f6742d704d97a6057dc}} 
+\index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Color\+Bitmap@{Color\+Bitmap}}
+\index{Color\+Bitmap@{Color\+Bitmap}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
+\subsubsection{\texorpdfstring{Color\+Bitmap}{ColorBitmap}}
+{\footnotesize\ttfamily Bitmap Real\+Sense.\+Camera\+View.\+Color\+Bitmap\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 443 of file Camera\+View.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}\label{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}} 
+\index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Debug\+\_\+Y@{Debug\+\_\+Y}}
+\index{Debug\+\_\+Y@{Debug\+\_\+Y}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
+\subsubsection{\texorpdfstring{Debug\+\_\+Y}{Debug\_Y}}
+{\footnotesize\ttfamily int Real\+Sense.\+Camera\+View.\+Debug\+\_\+Y\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+Current y-\/coordinate of debug-\/messages 
+
+Definition at line 432 of file Camera\+View.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}\label{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}} 
+\index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Reset\+Modules@{Reset\+Modules}}
+\index{Reset\+Modules@{Reset\+Modules}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
+\subsubsection{\texorpdfstring{Reset\+Modules}{ResetModules}}
+{\footnotesize\ttfamily Boolean Real\+Sense.\+Camera\+View.\+Reset\+Modules\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line 438 of file Camera\+View.\+cs.
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Framework/Camera\+View.\+cs\end{DoxyCompactItemize}
+Framework/\hyperlink{_camera_view_8cs}{Camera\+View.\+cs}\end{DoxyCompactItemize}

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
-/**
- * @author: Tobi
- * @author:
- */
+
 namespace RealSense
 {
     /*
-     * Module to display Landmark-Points by their types, as they are defined in the SDK
-     * @author: David Rosenbusch
-     * @HogwartsHouse Hufflepuff
-     */
+   * Module to display Landmark-Points by their types, as they are defined in the SDK
+   * @author: David Rosenbusch
+   * @author: Tobias Schramm
+   * @HogwartsHouse Hufflepuff
+   */
     class LandmarkTypeModule : RSModule
     {
 
@@ -30,9 +28,9 @@ namespace RealSense
         private int crossThreadValue = 0;
 
         /**
-         * Initializes the UI Components to enable the user to select and display certain Landmark-Types
-         */ 
-        private void guiInit()
+        * Initializes the UI Components to enable the user to select and display certain Landmark-Types
+        */
+        private void GuiInit()
         {
             guInit = true;
             selectionBar.Bounds = new Rectangle(50, 490, 500, 30);
@@ -61,11 +59,11 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             if (!guInit)
-                guiInit();
-            if (model.FaceCurrent != null)
+                GuiInit();
+            if (model.FaceAktuell != null)
             {
 
-                PXCMFaceData.LandmarksData lp = model.FaceCurrent.QueryLandmarks();
+                PXCMFaceData.LandmarksData lp = model.FaceAktuell.QueryLandmarks();
                 if (lp == null)
                 {
                     //Console.WriteLine("LandmarksData null, goddamnit!!");
@@ -87,8 +85,7 @@ namespace RealSense
 
                         g.DrawEllipse(pen, lPoint.image.x - 2, lPoint.image.y - 2, 4, 4);
                     }
-                }
-                else
+                }else
                 {
                     lp.QueryPoint(lp.QueryPointIndex((PXCMFaceData.LandmarkType)crossThreadValue), out lPoint);
 
@@ -99,7 +96,7 @@ namespace RealSense
 
                     g.DrawEllipse(pen, lPoint.image.x - 2, lPoint.image.y - 2, 4, 4);
                 }
-
+                
             }
             g.DrawString(((PXCMFaceData.LandmarkType)crossThreadValue).ToString(), font, stringBrush, stringRect);
         }

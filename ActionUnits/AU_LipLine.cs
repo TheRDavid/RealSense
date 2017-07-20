@@ -8,14 +8,14 @@ using System.Text;
 namespace RealSense
 {
     /*
-     * Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model.
-     * @author David
-     * @HogwartsHouse Hufflepuff
-     *
-     * Interpretation:      -100 = Saaaaaad
-     *                         0 = Relaxed
-     *                       100 = Grinning
-     */
+    * Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model.
+    * @author David
+    * @HogwartsHouse Hufflepuff
+    *
+    * Interpretation:      -100 = Saaaaaad
+    *                         0 = Relaxed
+    *                       100 = Grinning
+    */
     class AU_LipLine : RSModule
     {
         // Variables for logic
@@ -30,7 +30,7 @@ namespace RealSense
             debug = true;
             DEF_MIN = -5;
             DEF_MAX = 40;
-            reset();
+            Reset();
             MIN_TOL = -1;
             MAX_TOL = 1;
             XTREME_MAX = 90;
@@ -46,11 +46,11 @@ namespace RealSense
         public override void Work(Graphics g)
         {
             //Get Values from AU's
-            double line = Utilities.DifferenceByAxis(33, 44, Model.AXIS.Y, false);
-            line += Utilities.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
-            line += Utilities.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
-            line += Utilities.DifferenceByAxis(39, 40, Model.AXIS.Y, false);
-            line += Utilities.DifferenceByAxis(39, 42, Model.AXIS.Y, false);
+            double line = model.DifferenceByAxis(33, 44, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(33, 43, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 41, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 40, Model.AXIS.Y, false);
+            line += model.DifferenceByAxis(39, 42, Model.AXIS.Y, false);
             line *= 1000;
 
             line = line < MAX_TOL && line > MIN_TOL ? 0 : line;
@@ -62,9 +62,17 @@ namespace RealSense
             }
             else
             {
+                FilterToleranceValues(lines);
+
+                double distance = FilteredAvg(lines);
+
+                DynamicMinMax(new double[] { distance });
+
+                double[] diffs = ConvertValues(new double[] { distance });
+
                 /* Update value in Model */
                 if (model.CurrentPoseDiff < model.PoseMax)
-                    model.AU_Values[typeof(AU_LipLine).ToString()] = Utilities.ConvertValue(lines, MAX, MIN, MAX_TOL, MIN_TOL, XTREME_MAX, XTREME_MIN);
+                    model.AU_Values[typeof(AU_LipLine).ToString()] = diffs[0];
 
                 /* print debug-values */
                 if (debug)

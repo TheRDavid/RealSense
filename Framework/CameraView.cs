@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Drawing.Imaging;
+
 namespace RealSense
 {
-
     /**
      * Main-UI for testing- and presentation-purposes
      * @author: David Rosenbusch
@@ -27,16 +28,16 @@ namespace RealSense
         private Bitmap colorBitmap;
         // the PictureBox that we put into the window (this class)
         private PictureBox pb;
-        // running number to save all the images to the hard drive (careful with that ;) )
+        // running number to Save all the images to the hard drive (careful with that ;) )
         private Thread updaterThread;
         private Model model;
-        public int save = 0, debug_y = 0;
+        private   int save = 0, debug_y = 0;
         private Button enableOutput = new Button();
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
         private bool testMode, blur = true;
         private Bitmap uiBitmap, windowBitmap, smallWindowBitmap, warningBitmap;
-        private int subject = 0;
+        private  int subject = 0;
 
 
         static int xgap = (int)(75 * 5);
@@ -60,21 +61,22 @@ namespace RealSense
         private FriggnAweseomeGraphix.MEMonitor sadMonitor = new FriggnAweseomeGraphix.MEMonitor("Sadness", "Trauer", xP + xgap, yP + yRingGap + yV, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor disgustMonitor = new FriggnAweseomeGraphix.MEMonitor("Disgust", "Ekel", xP + xgap, yP + yRingGap + yV + ygap, radius, thickness);
         private FriggnAweseomeGraphix.MEMonitor surpriseMonitor = new FriggnAweseomeGraphix.MEMonitor("Surprise", "Überraschung", xP + xgap, yP + yRingGap + yV + ygap * 2, radius, thickness);
-        private int calibRadius = 300;
+        int calibRadius = 300;
 
         private Pen linePen = new Pen(new SolidBrush(Color.Gray));
 
         /**
          * Initialises View and starts updater Thread
+         * @param model - reference to data model
+         * @param Mode.Mode m - mode the UI should run
          */
-        public CameraView(Model model, bool test)
+        public CameraView(Model model, Model.MODE m)
         {
             KeyPreview = true;
 
-            outputEnabled = test;
-            testMode = test;
             this.model = model;
             model.View = this;
+            testMode = m == Model.MODE.TEST;
             session = PXCMSession.CreateInstance();
 
             if (session == null) // Something went wrong, session could not be initialised
@@ -91,7 +93,7 @@ namespace RealSense
             pb = new PictureBox();
             FormClosed += new FormClosedEventHandler(Quit);
 
-            if (testMode)
+            if ((m == Model.MODE.TEST))
             {
                 // Set size
                 pb.Bounds = new Rectangle(0, 0, model.Width, model.Height);
@@ -119,9 +121,9 @@ namespace RealSense
             }
             else
             {
-                windowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\window.png"));
-                smallWindowBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\small_window.png"));
-                warningBitmap = new Bitmap(Bitmap.FromFile("C:\\Users\\prouser\\Source\\Repos\\RealSense\\Images\\warning.png"));
+                windowBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory() +"\\Images\\window.png"));
+                smallWindowBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory()+"\\Images\\small_window.png"));
+                warningBitmap = new Bitmap(Bitmap.FromFile(Directory.GetCurrentDirectory()+"\\Images\\warning.png"));
                 this.Bounds = Screen.PrimaryScreen.Bounds;
                 FormBorderStyle = FormBorderStyle.None;
                 WindowState = FormWindowState.Maximized;
@@ -142,7 +144,7 @@ namespace RealSense
          * @param object sender, sending component
          * @param KeyEventArgs e, Key-Event information
          * 
-         */ 
+         */
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control)
@@ -156,10 +158,6 @@ namespace RealSense
 
                             model.Modules.ForEach(delegate (RSModule md)
                             {
-                                if (md.GetType() == typeof(EmotionSaver))
-                                {
-                                    ((EmotionSaver)md).init();
-                                }
                             });
                             Console.WriteLine("Start calibration");
                             ((Gauge_Module)mod).calibrate = true;
@@ -177,28 +175,22 @@ namespace RealSense
                 {
                     model.Modules.ForEach(delegate (RSModule mod)
                     {
-                        mod.reset();
+                        mod.Reset();
                     });
                 }
-                else if (e.KeyValue == (int)Keys.Escape)
-                {
-                    Application.Exit(); //doesn't work...
-                }
             }
-            // Console.WriteLine("KeyDown");
             model.Modules.ForEach(delegate (RSModule mod)
             {
                 foreach (int i in mod.triggers)
                 {
                     if (i == e.KeyValue)
                     {
-                        mod.keyTrigger(e.KeyValue);
+                        mod.KeyTrigger(e.KeyValue);
                         return;
                     }
                 }
             });
         }
-
 
         /**
          * Appropriately close down app 
@@ -219,7 +211,7 @@ namespace RealSense
          * Add a component to the UI (thread-safe)
          * 
          * @param Control c, control to be added
-         */ 
+         */
         public void AddComponent(Control c)
         {
             if (this.InvokeRequired)
@@ -280,7 +272,7 @@ namespace RealSense
                     {
                         model.Modules.ForEach(delegate (RSModule mod)
                         {
-                            mod.reset();
+                            mod.Reset();
                         });
                         resetModules = false;
                     }
@@ -297,20 +289,6 @@ namespace RealSense
                     }
                     else
                     {
-
-                        // uiBitmap = new Bitmap(blurWidth, blurHeight, PixelFormat.Format32bppArgb);
-
-                        //  using (Graphics gr = Graphics.FromImage(uiBitmap))
-                        // {
-                        //   gr.DrawImage(colorBitmap, 0, 0);
-                        //  }
-
-                        //   BitmapData sourceData = colorBitmap.LockBits(new Rectangle(xPos - 10, yPos - 10, blurWidth + 20, blurHeight + 20), ImageLockMode.ReadOnly, colorBitmap.PixelFormat);
-                        //BitmapData uiData = uiBitmap.LockBits(new Rectangle(0, 0, blurWidth, blurHeight), ImageLockMode.WriteOnly, uiBitmap.PixelFormat);
-                        //if (blur) FriggnAweseomeGraphix.sonic_blur(colorBitmap, uiBitmap, 0, 0, blurWidth, blurHeight, 1, 4, sourceData, uiData);
-                        //  uiBitmap.UnlockBits(uiData);
-                        //  colorBitmap.UnlockBits(sourceData);
-
                         using (Graphics gr = Graphics.FromImage(colorBitmap))
                         {
                             if (model.calibrationProgress == 100)
@@ -323,24 +301,26 @@ namespace RealSense
                                 sadMonitor.targetValue = (int)model.Emotions[Model.Emotion.SADNESS];
                                 contemptMonitor.targetValue = (int)model.Emotions[Model.Emotion.CONTEMPT];
 
-                                angerMonitor.step();
-                                fearMonitor.step();
-                                disgustMonitor.step();
-                                surpriseMonitor.step();
-                                joyMonitor.step();
-                                sadMonitor.step();
-                                contemptMonitor.step();
+                                angerMonitor.Step();
+                                fearMonitor.Step();
+                                disgustMonitor.Step();
+                                surpriseMonitor.Step();
+                                joyMonitor.Step();
+                                sadMonitor.Step();
+                                contemptMonitor.Step();
                             }
 
-                            // if (false) gr.DrawImage(uiBitmap, xPos, yPos);
-                            gr.DrawImage(windowBitmap, xP - 90, yP - 150);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, angerMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, sadMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, fearMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, surpriseMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, contemptMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, disgustMonitor);
-                            FriggnAweseomeGraphix.drawMEMontior(gr, joyMonitor);
+                            if (!testMode)
+                            {
+                                gr.DrawImage(windowBitmap, xP - 90, yP - 150);
+                            }
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, angerMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, sadMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, fearMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, surpriseMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, contemptMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, disgustMonitor);
+                            FriggnAweseomeGraphix.DrawMEMontior(gr, joyMonitor);
                             bitmapGraphics.DrawString("Subject #" + subject, FriggnAweseomeGraphix.majorFont, new SolidBrush(FriggnAweseomeGraphix.fontColor), xP, yP - 75);
                             bitmapGraphics.DrawLine(linePen, xP + 10, yP - 20, xP + 800, yP - 20);
                             bitmapGraphics.DrawString("Pose: " + (int)model.CurrentPoseDiff, FriggnAweseomeGraphix.minorFont, new SolidBrush(FriggnAweseomeGraphix.fontColor), xP + 550, yP - 55);
@@ -369,7 +349,6 @@ namespace RealSense
                                 PXCMFaceData.LandmarkPoint tPoint = model.CurrentFace[tMark];
 
 
-                                //FriggnAweseomeGraphix.drawFadingLine(gr, sPoint.image.x, sPoint.image.y, tPoint.image.x, tPoint.image.y);
                                 SolidBrush sb = new SolidBrush(FriggnAweseomeGraphix.fgColor);
                                 for (int i = 0; i < sMark - 1; i++)
                                 {
@@ -378,7 +357,7 @@ namespace RealSense
                                 }
 
                                 gr.FillEllipse(sb, new Rectangle((int)sPoint.image.x - rad, (int)sPoint.image.y - rad, rad * 4, rad * 4));
-                                FriggnAweseomeGraphix.drawMEMontior(gr, calibMonitor);
+                                FriggnAweseomeGraphix.DrawMEMontior(gr, calibMonitor);
                             }
                             else calibMonitor.currentValue = 0;
                             if (model.CurrentPoseDiff > model.PoseMax && model.calibrationProgress == 100)
@@ -418,17 +397,7 @@ namespace RealSense
                     model.CurrentPitchDiff = pitchDiff;
                     model.CurrentYawDiff = yawDiff;
 
-                    /* bitmapGraphics.DrawString("poll: " + pitchDiff + ", roll: " + rollDiff + ", yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                     Debug_Y += 25;
-                     bitmapGraphics.DrawString("all: " + (int)(pitchDiff + rollDiff + yawDiff), model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                     Debug_Y += 25;
-                     bitmapGraphics.DrawString("pitch: " + pitchDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                     Debug_Y += 25;
-                     bitmapGraphics.DrawString("yaw: " + yawDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);
-                     Debug_Y += 25;
-                     bitmapGraphics.DrawString("roll: " + rollDiff, model.DefaultFont, model.DefaultStringBrush, 10, Debug_Y);*/
-
-                    // update PictureBox
+                    // Update PictureBox
                     if (testMode) pb.Image = colorBitmap;
                     else pb.Image = colorBitmap;// uiBitmap.Clone(new Rectangle(0, 0, uiBitmap.Width, uiBitmap.Height), uiBitmap.PixelFormat);
                     if (PXCMCapture.Device.MirrorMode.MIRROR_MODE_HORIZONTAL != model.SenseManager.captureManager.device.QueryMirrorMode()) model.SenseManager.captureManager.device.SetMirrorMode(PXCMCapture.Device.MirrorMode.MIRROR_MODE_HORIZONTAL); //mirror
@@ -452,23 +421,18 @@ namespace RealSense
                 }
             }
         }
-
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
-            // CameraView
-            // 
             this.ClientSize = new System.Drawing.Size(282, 253);
             this.Name = "CameraView";
-            this.Load += new System.EventHandler(this.CameraView_Load);
             this.ResumeLayout(false);
 
         }
 
         /**
          * Current y-coordinate of debug-messages
-         */ 
+         */
         public int Debug_Y
         {
             get { return debug_y; }

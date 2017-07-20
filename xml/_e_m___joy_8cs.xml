@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_e_m___joy_8cs" kind="file" language="C#">
+    <compoundname>EM_Joy.cs</compoundname>
+    <innerclass refid="class_real_sense_1_1_emotions_1_1_e_m___joy" prot="public">RealSense::Emotions::EM_Joy</innerclass>
+    <innernamespace refid="namespace_real_sense_1_1_emotions">RealSense::Emotions</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Drawing;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Linq;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Text;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_real_sense" kindref="compound">RealSense</ref>.Emotions</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*Measures<sp/>the<sp/>percentage<sp/>value<sp/>of<sp/>joy.<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*@author<sp/>Tanja<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_real_sense_1_1_emotions_1_1_e_m___joy" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_real_sense_1_1_emotions_1_1_e_m___joy" kindref="compound">EM_Joy</ref><sp/>:<sp/><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>percent<sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">[]<sp/>smallerArray;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a1e37185e1aadd7a6e9c38414b5eb22fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a1e37185e1aadd7a6e9c38414b5eb22fe" kindref="member">EM_Joy</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>debug<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1acce5a4daa0acfd1a10d0aac92ef278c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1acce5a4daa0acfd1a10d0aac92ef278c8" kindref="member">Work</ref>(Graphics<sp/>g)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Joy<sp/>--&gt;<sp/>EyelidTight,<sp/>LipCorner</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//percentage<sp/>Joy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_lid<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_lip<sp/>=<sp/>80;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reduce();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//lid<sp/>Value<sp/>0<sp/>-<sp/>-100<sp/>(Grenze<sp/>bei<sp/>lidMax)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_left<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___eyelid_tight" kindref="compound">AU_EyelidTight</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_left&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_right<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___eyelid_tight" kindref="compound">AU_EyelidTight</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_right&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lidValue<sp/>=<sp/>(temp_left<sp/>+<sp/>temp_right)<sp/><sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lidValue<sp/>=<sp/>lidValue<sp/>*<sp/>-1<sp/>*<sp/>p_lid<sp/>/<sp/>percent;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//lip<sp/>Value<sp/>0<sp/>-<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_left<sp/>=<sp/>Math.Abs(model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___lip_corner" kindref="compound">AU_LipCorner</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_left&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_right<sp/>=<sp/>Math.Abs(model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___lip_corner" kindref="compound">AU_LipCorner</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_right&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lipValue<sp/>=<sp/>temp_left<sp/>&gt;<sp/>temp_right<sp/>?<sp/>temp_right<sp/>:<sp/>temp_left;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//lipValue<sp/>=<sp/>(temp_left<sp/>+<sp/>temp_right)<sp/>/<sp/>2;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lipValue<sp/>=<sp/>lipValue<sp/>*<sp/>p_lip<sp/>/<sp/>percent;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//lipL<sp/>Value<sp/>0<sp/>-<sp/>-100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lipLValue<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___lip_line" kindref="compound">AU_LipLine</ref>).ToString()];</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lipLValue<sp/>=<sp/>lipLValue<sp/>*<sp/>p_lip<sp/>/<sp/>percent;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lipValue<sp/>=<sp/>lipValue<sp/>&gt;<sp/>lipLValue<sp/>?<sp/>lipValue<sp/>:<sp/>lipLValue;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>joy<sp/>=<sp/>lidValue<sp/>+<sp/>lipValue;</highlight><highlight class="comment">//<sp/>+<sp/>browValue;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>joy<sp/>=<sp/>joy<sp/>&gt;<sp/>0<sp/>?<sp/>joy<sp/>:<sp/>0;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>model.Emotions[<ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref>.<ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>.JOY]<sp/>=<sp/>joy;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>print<sp/>debug-values<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(debug)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//output<sp/>=<sp/>&quot;Joy:<sp/>&quot;<sp/>+<sp/>(int)joy<sp/>+<sp/>&quot;<sp/>LipCorner:<sp/>&quot;<sp/>+<sp/>(int)lipValue<sp/>+<sp/>&quot;<sp/>LipLine:<sp/>&quot;<sp/>+<sp/>(int)lipLValue<sp/>+<sp/>&quot;<sp/>Eye:<sp/>&quot;<sp/>+<sp/>(int)lidValue;<sp/>//<sp/>+<sp/>&quot;<sp/>Brow:<sp/>&quot;<sp/>+<sp/>browValue;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Reduce()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Anger<sp/>brows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_left<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___brow_shift" kindref="compound">AU_BrowShift</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_left&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_right<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___brow_shift" kindref="compound">AU_BrowShift</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_right&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>browValue<sp/>=<sp/>(temp_left<sp/>+<sp/>temp_right)<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>browValue<sp/>=<sp/>browValue<sp/>*<sp/>-1<sp/>-<sp/>30;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Disgust<sp/>nose<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>noseValue<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___nose_wrinkled" kindref="compound">AU_NoseWrinkled</ref>).ToString()];</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>noseValue<sp/>=<sp/>noseValue<sp/>*<sp/>-1;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Sadness<sp/>Lipline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lipLValue<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___lip_line" kindref="compound">AU_LipLine</ref>).ToString()];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lipLValue<sp/>=<sp/>lipLValue<sp/>*<sp/>-1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Contempt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//not<sp/>possible<sp/>yet<sp/>(ME<sp/>needed)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Surprise<sp/>Lid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_left<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___eyelid_tight" kindref="compound">AU_EyelidTight</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_left&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_right<sp/>=<sp/>model.AU_Values[typeof(<ref refid="class_real_sense_1_1_a_u___eyelid_tight" kindref="compound">AU_EyelidTight</ref>).ToString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_right&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>eyeValue<sp/>=<sp/>(temp_left<sp/>+<sp/>temp_right)<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smallerArray<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">[]<sp/>{<sp/>browValue,<sp/>lipLValue,<sp/>eyeValue<sp/>};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>percent<sp/>=<sp/>100<sp/>+<sp/>(int)(2<sp/>*<sp/>smallerArray.Max());</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>percent<sp/>=<sp/>percent<sp/>&lt;<sp/>100<sp/>?<sp/>100<sp/>:<sp/>percent;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(debug)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//output<sp/>=<sp/>&quot;Joy:<sp/>&quot;<sp/>+<sp/>(int)joy<sp/>+<sp/>&quot;<sp/>LipCorner:<sp/>&quot;<sp/>+<sp/>(int)lipValue<sp/>+<sp/>&quot;<sp/>LipLine:<sp/>&quot;<sp/>+<sp/>(int)lipLValue<sp/>+<sp/>&quot;<sp/>Eye:<sp/>&quot;<sp/>+<sp/>(int)lidValue;<sp/>//<sp/>+<sp/>&quot;<sp/>Brow:<sp/>&quot;<sp/>+<sp/>browValue;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Smaller:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>percent<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>brow:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>(int)browValue<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Lip:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)lipLValue<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Lid:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>(int)eyeValue;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Emotions/EM_Joy.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_emotions_1_1_e_m___joy" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::Emotions::EM_Joy</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___joy_1abde6ae74821999d563f4d629af1c4d98" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Emotions.EM_Joy.percent</definition>
+        <argsstring></argsstring>
+        <name>percent</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Emotions/EM_Joy.cs" line="16" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___joy_1a4654281930243a8cc62ebd4e4521a87c" prot="private" static="no" mutable="no">
+        <type>double []</type>
+        <definition>double [] RealSense.Emotions.EM_Joy.smallerArray</definition>
+        <argsstring></argsstring>
+        <name>smallerArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Emotions/EM_Joy.cs" line="17" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___joy_1a1e37185e1aadd7a6e9c38414b5eb22fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.Emotions.EM_Joy.EM_Joy</definition>
+        <argsstring>()</argsstring>
+        <name>EM_Joy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the EM, setting the debug-flag to true by default </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Emotions/EM_Joy.cs" line="22" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___joy_1acce5a4daa0acfd1a10d0aac92ef278c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.Emotions.EM_Joy.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Computes the percentage Value of Joy in the current Frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g for the view </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Emotions/EM_Joy.cs" line="31" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="31" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___joy_1ae3401b2f27adf61c3ec6696ada3b244c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.Emotions.EM_Joy.Reduce</definition>
+        <argsstring>()</argsstring>
+        <name>Reduce</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reduces the value boundaries of the emotion value. A reduced value doesn&apos;t reach the 100 anymore. This is happening if an AU_value is active that doesn&apos;t match with this emotion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Emotions/EM_Joy.cs" line="79" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="79" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="89">
+        <label>RealSense.Emotions.EM_Joy</label>
+        <link refid="class_real_sense_1_1_emotions_1_1_e_m___joy"/>
+        <childnode refid="90" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="91">
+        <label>RealSense.Emotions.EM_Joy</label>
+        <link refid="class_real_sense_1_1_emotions_1_1_e_m___joy"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="93" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="93">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="Emotions/EM_Joy.cs" line="15" column="1" bodyfile="Emotions/EM_Joy.cs" bodystart="14" bodyend="114"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>ConvertValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>DynamicMinMax</name></member>
+      <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a1e37185e1aadd7a6e9c38414b5eb22fe" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>EM_Joy</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>FilterToleranceValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>KeyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1abde6ae74821999d563f4d629af1c4d98" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>percent</name></member>
+      <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1ae3401b2f27adf61c3ec6696ada3b244c" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>Reduce</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>Reset</name></member>
+      <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a4654281930243a8cc62ebd4e4521a87c" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>smallerArray</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1acce5a4daa0acfd1a10d0aac92ef278c8" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Joy</scope><name>Work</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

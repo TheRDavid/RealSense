@@ -7,11 +7,12 @@ using System.Windows.Forms;
 using System.Threading;
 using RealSense;
 using RealSense.Emotions;
+using System.Reflection;
 
 namespace RealSense
 {
     /**
-     * this ist the main class. It starts the model and adds all modules to our Model. 
+     * This ist the main class. It starts the model and adds all modules to our Model. 
      * 
      * @author Tanja Witke, David Rosenbusch
      * 
@@ -19,15 +20,14 @@ namespace RealSense
      */
     class Program
     {
+        
+
         [STAThread]
         static void Main(string[] args)
         {
-
-            //Application.Run(new AnalyzerView());
-
+            
             Model model = new Model(true);
             RSModule.Init(model);
-            Utilities.Init(model);
 
             // Add ActionUnits
             model.AddModule(new AU_BrowShift());
@@ -55,7 +55,7 @@ namespace RealSense
             model.AddModule(new FaceRecorder());
 
             //Start Application
-            Application.Run(new CameraView(model, Model.MODE.RUN));
+            Application.Run(new CameraView(model, Model.MODE.TEST));
         }
     }
 }

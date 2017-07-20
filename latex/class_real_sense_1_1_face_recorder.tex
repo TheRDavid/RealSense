@@ -1,4 +1,4 @@
-\section{Real\+Sense.\+Face\+Recorder Class Reference}
+\hypertarget{class_real_sense_1_1_face_recorder}{}\section{Real\+Sense.\+Face\+Recorder Class Reference}
 \label{class_real_sense_1_1_face_recorder}\index{Real\+Sense.\+Face\+Recorder@{Real\+Sense.\+Face\+Recorder}}
 Inheritance diagram for Real\+Sense.\+Face\+Recorder\+:\begin{figure}[H]
 \begin{center}
@@ -9,41 +9,106 @@ Inheritance diagram for Real\+Sense.\+Face\+Recorder\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_face_recorder_aedf8a394ed84e2e4c3d82d050e457542}} 
-override void {\bfseries key\+Trigger} (int key)
+\hyperlink{class_real_sense_1_1_face_recorder_a782589b2a536a93d548f1efab49c6bcd}{Face\+Recorder} ()
 \item 
-override void \textbf{ Work} (Graphics g)
+override void \hyperlink{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}{Key\+Trigger} (int key)
+\item 
+override void \hyperlink{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}{Work} (Graphics g)
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\label{class_real_sense_1_1_face_recorder_a3dd841901321c20b2bba9067fc67bddd}} 
-bool {\bfseries Recording}\hspace{0.3cm}{\ttfamily  [get]}
+bool \hyperlink{class_real_sense_1_1_face_recorder_a3dd841901321c20b2bba9067fc67bddd}{Recording}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \item 
-\mbox{\label{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}} 
-int {\bfseries Recording\+Index}\hspace{0.3cm}{\ttfamily  [get, set]}
+int \hyperlink{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}{Recording\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
-\subsection{Member Function Documentation}
-\mbox{\label{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}} 
-\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Work@{Work}}
-\index{Work@{Work}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
-\subsubsection{Work()}
-{\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+Work (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\subsection{Detailed Description}
 
-Update every frame (do calculations, manipulate output Image) 
+
+Definition at line 17 of file Face\+Recorder.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a782589b2a536a93d548f1efab49c6bcd}\label{class_real_sense_1_1_face_recorder_a782589b2a536a93d548f1efab49c6bcd}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Face\+Recorder@{Face\+Recorder}}
+\index{Face\+Recorder@{Face\+Recorder}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Face\+Recorder()}{FaceRecorder()}}
+{\footnotesize\ttfamily Real\+Sense.\+Face\+Recorder.\+Face\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes the key\+Triggers and an empty buffer for the landmark-\/data. 
+
+Definition at line 30 of file Face\+Recorder.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}\label{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Key\+Trigger@{Key\+Trigger}}
+\index{Key\+Trigger@{Key\+Trigger}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Key\+Trigger()}{KeyTrigger()}}
+{\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+Key\+Trigger (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The current recording\textquotesingle{}s type is determined by the key that is pressed to trigger the recording. 
 \begin{DoxyParams}{Parameters}
-{\em Graphics} & g \\
+{\em key} & -\/ key that triggers the module \\
 \hline
 \end{DoxyParams}
 
 
-Implements \textbf{ Real\+Sense.\+R\+S\+Module} \doxyref{}{p.}{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f81c73867}.
+Reimplemented from \hyperlink{class_real_sense_1_1_r_s_module_a8434d4aa8c289766b24e67cabb7e9471}{Real\+Sense.\+R\+S\+Module}.
+
+
+
+Definition at line 42 of file Face\+Recorder.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}\label{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Work@{Work}}
+\index{Work@{Work}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Work()}{Work()}}
+{\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+Work (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Shows whether or not a recording is taking place and records the current landmark-\/data 
+\begin{DoxyParams}{Parameters}
+{\em Graphics} & g for the view \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f81c73867}{Real\+Sense.\+R\+S\+Module}.
+
+
+
+Definition at line 66 of file Face\+Recorder.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a3dd841901321c20b2bba9067fc67bddd}\label{class_real_sense_1_1_face_recorder_a3dd841901321c20b2bba9067fc67bddd}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Recording@{Recording}}
+\index{Recording@{Recording}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Recording}{Recording}}
+{\footnotesize\ttfamily bool Real\+Sense.\+Face\+Recorder.\+Recording\hspace{0.3cm}{\ttfamily [get]}}
+
+Returns the current recording 
+
+Definition at line 91 of file Face\+Recorder.\+cs.
+
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}\label{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Recording\+Index@{Recording\+Index}}
+\index{Recording\+Index@{Recording\+Index}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Recording\+Index}{RecordingIndex}}
+{\footnotesize\ttfamily int Real\+Sense.\+Face\+Recorder.\+Recording\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+Sets or gets the current recording-\/index 
+
+Definition at line 100 of file Face\+Recorder.\+cs.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Analyse/Face\+Recorder.\+cs\end{DoxyCompactItemize}
+Analyse/\hyperlink{_face_recorder_8cs}{Face\+Recorder.\+cs}\end{DoxyCompactItemize}
