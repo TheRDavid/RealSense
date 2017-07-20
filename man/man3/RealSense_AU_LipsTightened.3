@@ -21,13 +21,18 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 19 of file AU_LipsTightened\&.cs\&.
+Measures if lips are tightened and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+René  Slytherin
+.RE
+.PP
+Interpretation: -100 = Tight af 0 = normal 100 = doesn't usually happen 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.AU_LipsTightened\&.AU_LipsTightened ()"
 Initializes the AU by setting up the default value boundaries\&. 
-.PP
-Definition at line 29 of file AU_LipsTightened\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.AU_LipsTightened\&.Work (Graphics g)\fC [virtual]\fP"
@@ -41,8 +46,6 @@ Calculates the average difference of the lip and the nose over a set number of f
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
-.PP
-Definition at line 48 of file AU_LipsTightened\&.cs\&.
 
 .SH "Author"
 .PP 

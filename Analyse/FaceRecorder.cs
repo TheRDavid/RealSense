@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
-    /*
+    /**
     * Upon being triggered by a key, this module records 300 frames of landmark-data and classifies it as a set emotion.
     * @author David 
     * @HogwartsHouse Hufflepuff  

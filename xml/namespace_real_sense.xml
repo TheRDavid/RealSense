@@ -28,6 +28,7 @@
     <innerclass refid="class_real_sense_1_1_model" prot="public">RealSense::Model</innerclass>
     <innerclass refid="class_real_sense_1_1_program" prot="public">RealSense::Program</innerclass>
     <innerclass refid="class_real_sense_1_1_r_s_module" prot="public">RealSense::RSModule</innerclass>
+    <innerclass refid="class_real_sense_1_1_utilities" prot="public">RealSense::Utilities</innerclass>
     <innernamespace refid="namespace_real_sense_1_1_emotions">RealSense::Emotions</innernamespace>
     <innernamespace refid="namespace_real_sense_1_1_properties">RealSense::Properties</innernamespace>
     <briefdescription>

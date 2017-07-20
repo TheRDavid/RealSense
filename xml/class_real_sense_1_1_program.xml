@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Program.cs" line="23" column="1" bodyfile="Program.cs" bodystart="23" bodyend="58"/>
+        <location file="Program.cs" line="26" column="1" bodyfile="Program.cs" bodystart="26" bodyend="59"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -26,7 +26,7 @@
     <detaileddescription>
 <para>This ist the main class. It starts the model and adds all modules to our <ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref>.</para><para><simplesect kind="author"><para>Tanja Witke, David Rosenbusch </para></simplesect>
 </para>    </detaileddescription>
-    <location file="Program.cs" line="21" column="1" bodyfile="Program.cs" bodystart="20" bodyend="59"/>
+    <location file="Program.cs" line="22" column="1" bodyfile="Program.cs" bodystart="21" bodyend="60"/>
     <listofallmembers>
       <member refid="class_real_sense_1_1_program_1a97e800ae984c31beba30191978af34c4" prot="private" virt="non-virtual"><scope>RealSense::Program</scope><name>Main</name></member>
     </listofallmembers>

@@ -47,7 +47,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of anger. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="70">
         <label>RSModule</label>

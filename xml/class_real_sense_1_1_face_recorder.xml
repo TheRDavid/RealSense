@@ -203,7 +203,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Upon being triggered by a key, this module records 300 frames of landmark-data and classifies it as a set emotion. <simplesect kind="author"><para>David  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="104">
         <label>RealSense.FaceRecorder</label>

@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Face Interpreter", "index.html", [
+    [ "RealSense", "md__r_e_a_d_m_e.html", null ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ]
     ] ],
@@ -24,8 +25,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_a_u___brow_shift_8cs.html",
-"dir_2ad50cd204f9bd70b0d428ef82c66388.html"
+"_a_u___brow_shift_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -12,5 +12,8 @@ var dir_bcbb2cf9a3d3d83e5515c82071a07177 =
     ] ],
     [ "RSModule.cs", "_r_s_module_8cs.html", [
       [ "RSModule", "class_real_sense_1_1_r_s_module.html", "class_real_sense_1_1_r_s_module" ]
+    ] ],
+    [ "Utilities.cs", "_utilities_8cs.html", [
+      [ "Utilities", "class_real_sense_1_1_utilities.html", null ]
     ] ]
 ];

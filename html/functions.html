@@ -32,7 +32,7 @@
    <div id="projectname">Face Interpreter
    &#160;<span id="projectnumber">0.7.8.21</span>
    </div>
-   <div id="projectbrief">Automated emotion recognition software using the Realsense SR300</div>
+   <div id="projectbrief">Automated emotion recognition software using the Realsense SR300 depth camera</div>
   </td>
  </tr>
  </tbody>
@@ -139,9 +139,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>Between()
 : <a class="el" href="class_real_sense_1_1_model.html#a846e090817e3200e8c20af80094fdcc8">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#ac8eceed552d66f2f614160cf84e605e2">RealSense.Utilities</a>
 </li>
 <li>BetweenByAxis()
 : <a class="el" href="class_real_sense_1_1_model.html#abaaee5d06f75b1fb9a9d8946ebf53934">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a4185e676947ed9d5da9a5ce28e922ff6">RealSense.Utilities</a>
 </li>
 </ul>
 
@@ -162,6 +164,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>ColorBitmap
 : <a class="el" href="class_real_sense_1_1_camera_view.html#a487ce7be920e8f6742d704d97a6057dc">RealSense.CameraView</a>
 , <a class="el" href="class_real_sense_1_1_model.html#a6b3603d17577660f65fc7bbb6b097182">RealSense.Model</a>
+</li>
+<li>ConvertValue()
+: <a class="el" href="class_real_sense_1_1_utilities.html#a1988c5d325a1d252d42ce6cb0638404e">RealSense.Utilities</a>
 </li>
 <li>ConvertValues()
 : <a class="el" href="class_real_sense_1_1_r_s_module.html#a53505c9cb3af67e42a0710fdfad65ae5">RealSense.RSModule</a>
@@ -217,12 +222,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>Difference()
 : <a class="el" href="class_real_sense_1_1_model.html#a1d827ed6fd7d689679af4a276362128b">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#afb6700357b260189d5309e5c15463ad8">RealSense.Utilities</a>
 </li>
 <li>DifferenceByAxis()
 : <a class="el" href="class_real_sense_1_1_model.html#a7f212901958598b29fabcf087fc33bdb">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a46ab13ced92a5c23b776d553eecb6a8a">RealSense.Utilities</a>
 </li>
 <li>DifferenceNullCurrent()
 : <a class="el" href="class_real_sense_1_1_model.html#a69d8b360ed9c9ddaa19a0619df408e2a">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a23b4df029d2788415f1983b90cde0c67">RealSense.Utilities</a>
 </li>
 <li>DrawFadingLine()
 : <a class="el" href="class_real_sense_1_1_friggn_aweseome_graphix.html#a213322f957a49429ac2a3017abdf49aa">RealSense.FriggnAweseomeGraphix</a>
@@ -261,23 +269,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>Emotion
 : <a class="el" href="class_real_sense_1_1_model.html#a5bf3fde8f53519f7a740d8b4e0399208">RealSense.Model</a>
 </li>
-<li>EmotionBitmaps
-: <a class="el" href="class_real_sense_1_1_model.html#a654d0ac6e4e49b884fd3e166039c7bc4">RealSense.Model</a>
-</li>
 <li>EmotionMax
 : <a class="el" href="class_real_sense_1_1_model.html#ac5454f63dfead405cd1d9c229cf6790f">RealSense.Model</a>
-</li>
-<li>EmotionPictureBoxes
-: <a class="el" href="class_real_sense_1_1_model.html#ad2c87f308e42010ca032deec5cfa5e0b">RealSense.Model</a>
 </li>
 <li>Emotions
 : <a class="el" href="class_real_sense_1_1_model.html#a30358a7ea8e1e59815e2f562a3fc6bad">RealSense.Model</a>
 </li>
 <li>EmotionValue()
 : <a class="el" href="class_real_sense_1_1_model.html#a078b1ddb43e777aa73c1b3898722e4bb">RealSense.Model</a>
-</li>
-<li>ExcampleBitmaps
-: <a class="el" href="class_real_sense_1_1_model.html#afbdadf185ba37319705fd55d102c0cb4">RealSense.Model</a>
 </li>
 </ul>
 
@@ -345,6 +344,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>Init()
 : <a class="el" href="class_real_sense_1_1_r_s_module.html#a4a96119975932690f75e86206e1fe63d">RealSense.RSModule</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a9c938b11059e630719239cac212fae36">RealSense.Utilities</a>
 </li>
 </ul>
 
@@ -413,9 +413,11 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>NullFaceBetween()
 : <a class="el" href="class_real_sense_1_1_model.html#a03fd4fa56ceb5cbcebdbebb4b7a78158">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a7a94b87d3f23a88d4bddeb6307073b0e">RealSense.Utilities</a>
 </li>
 <li>NullFaceBetweenByAxis()
 : <a class="el" href="class_real_sense_1_1_model.html#aab86ce9f3027b3fca83d11a97353154c">RealSense.Model</a>
+, <a class="el" href="class_real_sense_1_1_utilities.html#a4b9b7b1afb00bad3ced945c757aaf711">RealSense.Utilities</a>
 </li>
 <li>NullPose
 : <a class="el" href="class_real_sense_1_1_model.html#af6cb31aea9e1e0fd3ef87c9380e92193">RealSense.Model</a>

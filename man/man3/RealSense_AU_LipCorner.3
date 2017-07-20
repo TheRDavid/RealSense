@@ -21,13 +21,18 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 19 of file AU_LipCorner\&.cs\&.
+Measures the height of the Lip-Corners and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Marlon  Hufflepuff
+.RE
+.PP
+Interpretation: -100 = Corners down (not reliable, use LipLine) set to 0! 100 = Big stupid smile 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.AU_LipCorner\&.AU_LipCorner ()"
 Initializes the AU by setting up the default value boundaries\&. 
-.PP
-Definition at line 30 of file AU_LipCorner\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.AU_LipCorner\&.Work (Graphics g)\fC [virtual]\fP"
@@ -41,8 +46,6 @@ Calculates the height of the Lipcorners over a set number of frames and prints i
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
-.PP
-Definition at line 49 of file AU_LipCorner\&.cs\&.
 
 .SH "Author"
 .PP 

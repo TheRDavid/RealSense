@@ -15,10 +15,7 @@ var searchData=
   ['em_5fsurprise',['EM_Surprise',['../class_real_sense_1_1_emotions_1_1_e_m___surprise.html',1,'RealSense.Emotions.EM_Surprise'],['../class_real_sense_1_1_emotions_1_1_e_m___surprise.html#a95c89a129f31134f35b0d34a212e7d29',1,'RealSense.Emotions.EM_Surprise.EM_Surprise()']]],
   ['em_5fsurprise_2ecs',['EM_Surprise.cs',['../_e_m___surprise_8cs.html',1,'']]],
   ['emotion',['Emotion',['../class_real_sense_1_1_model.html#a5bf3fde8f53519f7a740d8b4e0399208',1,'RealSense::Model']]],
-  ['emotionbitmaps',['EmotionBitmaps',['../class_real_sense_1_1_model.html#a654d0ac6e4e49b884fd3e166039c7bc4',1,'RealSense::Model']]],
   ['emotionmax',['EmotionMax',['../class_real_sense_1_1_model.html#ac5454f63dfead405cd1d9c229cf6790f',1,'RealSense::Model']]],
-  ['emotionpictureboxes',['EmotionPictureBoxes',['../class_real_sense_1_1_model.html#ad2c87f308e42010ca032deec5cfa5e0b',1,'RealSense::Model']]],
   ['emotions',['Emotions',['../class_real_sense_1_1_model.html#a30358a7ea8e1e59815e2f562a3fc6bad',1,'RealSense::Model']]],
-  ['emotionvalue',['EmotionValue',['../class_real_sense_1_1_model.html#a078b1ddb43e777aa73c1b3898722e4bb',1,'RealSense::Model']]],
-  ['excamplebitmaps',['ExcampleBitmaps',['../class_real_sense_1_1_model.html#afbdadf185ba37319705fd55d102c0cb4',1,'RealSense::Model']]]
+  ['emotionvalue',['EmotionValue',['../class_real_sense_1_1_model.html#a078b1ddb43e777aa73c1b3898722e4bb',1,'RealSense::Model']]]
 ];

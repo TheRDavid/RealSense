@@ -114,7 +114,9 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Module to display Landmark-Points by their groups, as they are defined in the SDK <simplesect kind="author"><para>: David Rosenbusch </para></simplesect>
+<simplesect kind="author"><para>: Tobias Schramm  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="128">
         <label>RealSense.LandmarkGroupModule</label>

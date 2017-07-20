@@ -7,7 +7,7 @@ using System.Text;
 namespace RealSense
 {
 
-    /*
+    /**
      * Measures if jaw is dropped and stores its' value inside the model.
      * @author René 
      * @HogwartsHouse Slytherin

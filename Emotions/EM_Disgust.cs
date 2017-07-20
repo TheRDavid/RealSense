@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace RealSense.Emotions
-{     /*
+{     /**
    *Measures the percentage value of disgust. 
    *@author Tanja 
    */

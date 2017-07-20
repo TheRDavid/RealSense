@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RealSense
 {
-    /*
+    /**
      * Measures if complete brow is raised or lowered (each eye) and stores its' value inside the model.
      * @author Anton 
      * @HogwartsHouse Slytherin  

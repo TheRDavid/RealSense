@@ -47,7 +47,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of disgust. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="79">
         <label>RealSense.Emotions.EM_Disgust</label>

@@ -77,7 +77,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures how accurate the lip-landmark-points are on one line and stores its&apos; value inside the model. <simplesect kind="author"><para>David  Hufflepuff</para></simplesect>
+Interpretation: -100 = Saaaaaad 0 = Relaxed 100 = Grinning </para>    </detaileddescription>
     <inheritancegraph>
       <node id="24">
         <label>RealSense.AU_LipLine</label>

@@ -155,7 +155,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures if complete brow is raised or lowered (each eye) and stores its&apos; value inside the model. <simplesect kind="author"><para>Anton  Slytherin</para></simplesect>
+Interpretation: -100 = Brows down (grumpy af) 100 = Brows up </para>    </detaileddescription>
     <inheritancegraph>
       <node id="4">
         <label>RealSense.AU_BrowShift</label>

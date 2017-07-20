@@ -21,13 +21,18 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 19 of file AU_LipLine\&.cs\&.
+Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David  Hufflepuff
+.RE
+.PP
+Interpretation: -100 = Saaaaaad 0 = Relaxed 100 = Grinning 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.AU_LipLine\&.AU_LipLine ()"
 Initializes the AU by setting up the default value boundaries\&. 
-.PP
-Definition at line 28 of file AU_LipLine\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.AU_LipLine\&.Work (Graphics g)\fC [virtual]\fP"
@@ -41,8 +46,6 @@ Calculates whether or not all LipPoints are placed on one line over a set number
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
-.PP
-Definition at line 46 of file AU_LipLine\&.cs\&.
 
 .SH "Author"
 .PP 

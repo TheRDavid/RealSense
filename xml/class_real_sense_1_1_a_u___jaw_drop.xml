@@ -90,7 +90,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures if jaw is dropped and stores its&apos; value inside the model. <simplesect kind="author"><para>René  Slytherin</para></simplesect>
+Interpretation: -100 = Doesn&apos;t usually happen 0 = Normal 100 = Drop it like it&apos;s hot </para>    </detaileddescription>
     <inheritancegraph>
       <node id="14">
         <label>RealSense.AU_JawDrop</label>

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RealSense
 {
-    /*
+    /**
      *Measures the percentage value of anger. 
      *@author Tanja 
      */

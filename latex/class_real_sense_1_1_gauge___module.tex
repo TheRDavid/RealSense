@@ -1,4 +1,4 @@
-\hypertarget{class_real_sense_1_1_gauge___module}{}\section{Real\+Sense.\+Gauge\+\_\+\+Module Class Reference}
+\section{Real\+Sense.\+Gauge\+\_\+\+Module Class Reference}
 \label{class_real_sense_1_1_gauge___module}\index{Real\+Sense.\+Gauge\+\_\+\+Module@{Real\+Sense.\+Gauge\+\_\+\+Module}}
 Inheritance diagram for Real\+Sense.\+Gauge\+\_\+\+Module\+:\begin{figure}[H]
 \begin{center}
@@ -9,16 +9,16 @@ Inheritance diagram for Real\+Sense.\+Gauge\+\_\+\+Module\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_real_sense_1_1_gauge___module_a367111d614ea2a05af81e93a3b957cd4}{Update} ()
+void \textbf{ Update} ()
 \item 
-override void \hyperlink{class_real_sense_1_1_gauge___module_a587ea68ad539f2f56bcfbd7641a92a83}{Work} (Graphics g)
+override void \textbf{ Work} (Graphics g)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{class_real_sense_1_1_gauge___module_a116882e1610b28a8ce6159b1ddbbf578}{calibrate} = false
+bool \textbf{ calibrate} = false
 \item 
-bool \hyperlink{class_real_sense_1_1_gauge___module_ae9d8d183234958600957fdfd23c4d850}{frame\+Update} = true
+bool \textbf{ frame\+Update} = true
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -31,65 +31,45 @@ Module used to calibrate the user\textquotesingle{}s nullface by averaging over 
 \end{DoxyAuthor}
 
 
-Definition at line 20 of file Gauge\+\_\+\+Module.\+cs.
-
-
-
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_real_sense_1_1_gauge___module_a367111d614ea2a05af81e93a3b957cd4}\label{class_real_sense_1_1_gauge___module_a367111d614ea2a05af81e93a3b957cd4}} 
+\mbox{\label{class_real_sense_1_1_gauge___module_a367111d614ea2a05af81e93a3b957cd4}} 
 \index{Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}!Update@{Update}}
 \index{Update@{Update}!Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}}
-\subsubsection{\texorpdfstring{Update()}{Update()}}
+\subsubsection{Update()}
 {\footnotesize\ttfamily void Real\+Sense.\+Gauge\+\_\+\+Module.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Gathers calibration-\/data. When a new frame is shot A\+ND still calibrating (button was pressed), adds a new face to the Filtered\+Avg. After having num\+Faces faces, calculate... Runs outside the Camera Thread 
-
-Definition at line 62 of file Gauge\+\_\+\+Module.\+cs.
-
-\mbox{\Hypertarget{class_real_sense_1_1_gauge___module_a587ea68ad539f2f56bcfbd7641a92a83}\label{class_real_sense_1_1_gauge___module_a587ea68ad539f2f56bcfbd7641a92a83}} 
+Gathers calibration-\/data. When a new frame is shot A\+ND still calibrating (button was pressed), adds a new face to the Filtered\+Avg. After having num\+Faces faces, calculate... Runs outside the Camera Thread \mbox{\label{class_real_sense_1_1_gauge___module_a587ea68ad539f2f56bcfbd7641a92a83}} 
 \index{Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}!Work@{Work}}
 \index{Work@{Work}!Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}}
-\subsubsection{\texorpdfstring{Work()}{Work()}}
+\subsubsection{Work()}
 {\footnotesize\ttfamily override void Real\+Sense.\+Gauge\+\_\+\+Module.\+Work (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Update every frame (do calculations, manipulate output Image) 
+Initializes UI + simple output while calibrating 
 \begin{DoxyParams}{Parameters}
-{\em Graphics} & g \\
+{\em Graphics} & g for the view \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f81c73867}{Real\+Sense.\+R\+S\+Module}.
-
-
-
-Definition at line 133 of file Gauge\+\_\+\+Module.\+cs.
+Implements \textbf{ Real\+Sense.\+R\+S\+Module} \doxyref{}{p.}{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f81c73867}.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_real_sense_1_1_gauge___module_a116882e1610b28a8ce6159b1ddbbf578}\label{class_real_sense_1_1_gauge___module_a116882e1610b28a8ce6159b1ddbbf578}} 
+\mbox{\label{class_real_sense_1_1_gauge___module_a116882e1610b28a8ce6159b1ddbbf578}} 
 \index{Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}!calibrate@{calibrate}}
 \index{calibrate@{calibrate}!Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}}
-\subsubsection{\texorpdfstring{calibrate}{calibrate}}
+\subsubsection{calibrate}
 {\footnotesize\ttfamily bool Real\+Sense.\+Gauge\+\_\+\+Module.\+calibrate = false}
 
-
-
-Definition at line 23 of file Gauge\+\_\+\+Module.\+cs.
-
-\mbox{\Hypertarget{class_real_sense_1_1_gauge___module_ae9d8d183234958600957fdfd23c4d850}\label{class_real_sense_1_1_gauge___module_ae9d8d183234958600957fdfd23c4d850}} 
+\mbox{\label{class_real_sense_1_1_gauge___module_ae9d8d183234958600957fdfd23c4d850}} 
 \index{Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}!frame\+Update@{frame\+Update}}
 \index{frame\+Update@{frame\+Update}!Real\+Sense\+::\+Gauge\+\_\+\+Module@{Real\+Sense\+::\+Gauge\+\_\+\+Module}}
-\subsubsection{\texorpdfstring{frame\+Update}{frameUpdate}}
+\subsubsection{frame\+Update}
 {\footnotesize\ttfamily bool Real\+Sense.\+Gauge\+\_\+\+Module.\+frame\+Update = true}
-
-
-
-Definition at line 31 of file Gauge\+\_\+\+Module.\+cs.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Various/\hyperlink{_gauge___module_8cs}{Gauge\+\_\+\+Module.\+cs}\end{DoxyCompactItemize}
+Various/\textbf{ Gauge\+\_\+\+Module.\+cs}\end{DoxyCompactItemize}

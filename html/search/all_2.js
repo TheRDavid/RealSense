@@ -7,6 +7,7 @@ var searchData=
   ['cameraview_2ecs',['CameraView.cs',['../_camera_view_8cs.html',1,'']]],
   ['colorbitmap',['ColorBitmap',['../class_real_sense_1_1_camera_view.html#a487ce7be920e8f6742d704d97a6057dc',1,'RealSense.CameraView.ColorBitmap()'],['../class_real_sense_1_1_model.html#a6b3603d17577660f65fc7bbb6b097182',1,'RealSense.Model.ColorBitmap()']]],
   ['contempt',['CONTEMPT',['../class_real_sense_1_1_model.html#a5bf3fde8f53519f7a740d8b4e0399208a002b7c5ac7e005a9c0e9dd0a87137d8c',1,'RealSense::Model']]],
+  ['convertvalue',['ConvertValue',['../class_real_sense_1_1_utilities.html#a1988c5d325a1d252d42ce6cb0638404e',1,'RealSense::Utilities']]],
   ['convertvalues',['ConvertValues',['../class_real_sense_1_1_r_s_module.html#a53505c9cb3af67e42a0710fdfad65ae5',1,'RealSense::RSModule']]],
   ['currentface',['CurrentFace',['../class_real_sense_1_1_model.html#ad90fab8a6125b55803734ebbdcf1f83d',1,'RealSense::Model']]],
   ['currentpitchdiff',['CurrentPitchDiff',['../class_real_sense_1_1_model.html#a9701d5e1b5c733f70349f94ec7fee978',1,'RealSense::Model']]],

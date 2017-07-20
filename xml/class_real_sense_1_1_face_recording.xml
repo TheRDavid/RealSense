@@ -191,7 +191,10 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>All the data requiered to analyze a landmark-recording<itemizedlist>
+<listitem><para>Landmark-Coordinates frame by frame</para></listitem><listitem><para>NullFace Landmark-Coordinates as a means to calibrate <simplesect kind="author"><para>David  Hufflepuff </para></simplesect>
+</para></listitem></itemizedlist>
+</para>    </detaileddescription>
     <location file="Analyse/FaceRecording.cs" line="20" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="19" bodyend="84"/>
     <listofallmembers>
       <member refid="class_real_sense_1_1_face_recording_1a28f454b591d26af263981910b27ccc98" prot="private" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>data</name></member>

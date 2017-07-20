@@ -119,7 +119,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the height of the Lip-Corners and stores its&apos; value inside the model. <simplesect kind="author"><para>Marlon  Hufflepuff</para></simplesect>
+Interpretation: -100 = Corners down (not reliable, use LipLine) set to 0! 100 = Big stupid smile </para>    </detaileddescription>
     <inheritancegraph>
       <node id="19">
         <label>RealSense.AU_LipCorner</label>

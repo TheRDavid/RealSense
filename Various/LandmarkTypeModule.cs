@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace RealSense
 {
-    /*
+    /**
    * Module to display Landmark-Points by their types, as they are defined in the SDK
    * @author: David Rosenbusch
    * @author: Tobias Schramm

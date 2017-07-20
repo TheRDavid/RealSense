@@ -47,7 +47,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of fear. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="85">
         <label>RSModule</label>

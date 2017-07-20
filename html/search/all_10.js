@@ -1,8 +1,10 @@
 var searchData=
 [
   ['emotions',['Emotions',['../namespace_real_sense_1_1_emotions.html',1,'RealSense']]],
+  ['realsense',['RealSense',['../md__r_e_a_d_m_e.html',1,'']]],
   ['properties',['Properties',['../namespace_real_sense_1_1_properties.html',1,'RealSense']]],
   ['radius',['radius',['../class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#aac6a6a6847e001a75e2b2316386ee864',1,'RealSense::FriggnAweseomeGraphix::MEMonitor']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['realsense',['RealSense',['../namespace_real_sense.html',1,'']]],
   ['recording',['Recording',['../class_real_sense_1_1_face_recorder.html#a3dd841901321c20b2bba9067fc67bddd',1,'RealSense::FaceRecorder']]],
   ['recordingindex',['RecordingIndex',['../class_real_sense_1_1_face_recorder.html#a4f1a094d0321d299feb5aa0e3553b506',1,'RealSense::FaceRecorder']]],

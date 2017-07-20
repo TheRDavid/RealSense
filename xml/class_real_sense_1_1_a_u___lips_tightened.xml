@@ -89,7 +89,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures if lips are tightened and stores its&apos; value inside the model. <simplesect kind="author"><para>René  Slytherin</para></simplesect>
+Interpretation: -100 = Tight af 0 = normal 100 = doesn&apos;t usually happen </para>    </detaileddescription>
     <inheritancegraph>
       <node id="29">
         <label>RealSense.AU_LipsTightened</label>

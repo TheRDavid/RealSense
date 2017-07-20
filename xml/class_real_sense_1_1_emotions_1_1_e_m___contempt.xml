@@ -77,7 +77,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of contempt. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="74">
         <label>RealSense.Emotions.EM_Contempt</label>

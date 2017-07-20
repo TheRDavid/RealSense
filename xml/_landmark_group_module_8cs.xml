@@ -16,12 +16,6 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Drawing;</highlight></codeline>
 <codeline lineno="10"><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_real_sense" kindref="compound">RealSense</ref></highlight></codeline>
 <codeline lineno="11"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/><sp/>*<sp/>Module<sp/>to<sp/>display<sp/>Landmark-Points<sp/>by<sp/>their<sp/>groups,<sp/>as<sp/>they<sp/>are<sp/>defined<sp/>in<sp/>the<sp/>SDK</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/><sp/>*<sp/>@author:<sp/>David<sp/>Rosenbusch</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/><sp/>*<sp/>@author:<sp/>Tobias<sp/>Schramm</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/><sp/>*<sp/>@HogwartsHouse<sp/>Hufflepuff</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18" refid="class_real_sense_1_1_landmark_group_module" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_real_sense_1_1_landmark_group_module" kindref="compound">LandmarkGroupModule</ref><sp/>:<sp/><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
@@ -42,7 +36,7 @@
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rectangle<sp/>errorRect<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Rectangle(150,<sp/>150,<sp/>200,<sp/>50);</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42" refid="class_real_sense_1_1_landmark_group_module_1aae68525cdcf843719e02fa9b7317d3fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_landmark_group_module_1aae68525cdcf843719e02fa9b7317d3fa" kindref="member">Work</ref>(Graphics<sp/>g)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_landmark_group_module_1aae68525cdcf843719e02fa9b7317d3fa" kindref="member">Work</ref>(Graphics<sp/>g)</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" kindref="member">model</ref>.<ref refid="class_real_sense_1_1_model_1a3621c14d22c3709775971fed725c2781" kindref="member">FaceAktuell</ref><sp/>!=<sp/>null)</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>

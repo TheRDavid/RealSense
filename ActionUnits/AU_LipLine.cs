@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RealSense
 {
-    /*
+    /**
     * Measures how accurate the lip-landmark-points are on one line and stores its' value inside the model.
     * @author David
     * @HogwartsHouse Hufflepuff

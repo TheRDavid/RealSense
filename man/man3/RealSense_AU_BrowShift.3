@@ -21,13 +21,18 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 18 of file AU_BrowShift\&.cs\&.
+Measures if complete brow is raised or lowered (each eye) and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Anton  Slytherin
+.RE
+.PP
+Interpretation: -100 = Brows down (grumpy af) 100 = Brows up 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.AU_BrowShift\&.AU_BrowShift ()"
 Initializes the AU by setting up the default value boundaries\&. 
-.PP
-Definition at line 29 of file AU_BrowShift\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.AU_BrowShift\&.Work (Graphics g)\fC [virtual]\fP"
@@ -41,8 +46,6 @@ Computes the percentage Value of BrowShift in the current Frame over a set numbe
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
-.PP
-Definition at line 50 of file AU_BrowShift\&.cs\&.
 
 .SH "Author"
 .PP 

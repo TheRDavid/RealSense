@@ -32,7 +32,7 @@
    <div id="projectname">Face Interpreter
    &#160;<span id="projectnumber">0.7.8.21</span>
    </div>
-   <div id="projectbrief">Automated emotion recognition software using the Realsense SR300</div>
+   <div id="projectbrief">Automated emotion recognition software using the Realsense SR300 depth camera</div>
   </td>
  </tr>
  </tbody>
@@ -159,8 +159,6 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)</p>
 <dl class="section author"><dt>Author</dt><dd>: David Rosenbusch  Hufflepuff </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_gauge___module_8cs_source.html#l00020">20</a> of file <a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a367111d614ea2a05af81e93a3b957cd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a367111d614ea2a05af81e93a3b957cd4">&#9670;&nbsp;</a></span>Update()</h2>
@@ -177,8 +175,6 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Gathers calibration-data. When a new frame is shot AND still calibrating (button was pressed), adds a new face to the FilteredAvg. After having numFaces faces, calculate... Runs outside the Camera Thread </p>
-
-<p class="definition">Definition at line <a class="el" href="_gauge___module_8cs_source.html#l00062">62</a> of file <a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a>.</p>
 
 </div>
 </div>
@@ -205,16 +201,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Update every frame (do calculations, manipulate output Image) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Initializes UI + simple output while calibrating </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Graphics</td><td>g </td></tr>
+    <tr><td class="paramname">Graphics</td><td>g for the view </td></tr>
   </table>
   </dd>
 </dl>
 
 <p>Implements <a class="el" href="class_real_sense_1_1_r_s_module.html#a2ec830b7932ee7c0077d473f81c73867">RealSense.RSModule</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_gauge___module_8cs_source.html#l00133">133</a> of file <a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a>.</p>
 
 </div>
 </div>
@@ -231,8 +225,6 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gauge___module_8cs_source.html#l00023">23</a> of file <a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a>.</p>
-
 </div>
 </div>
 <a id="ae9d8d183234958600957fdfd23c4d850"></a>
@@ -247,12 +239,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_gauge___module_8cs_source.html#l00031">31</a> of file <a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Various/<a class="el" href="_gauge___module_8cs_source.html">Gauge_Module.cs</a></li>
+<li>Various/<a class="el" href="_gauge___module_8cs.html">Gauge_Module.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

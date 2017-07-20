@@ -16,21 +16,18 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespace_system" kindref="compound">System</ref>.Text;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_real_sense" kindref="compound">RealSense</ref>.Emotions</highlight></codeline>
-<codeline lineno="8"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/>*Measures<sp/>the<sp/>percentage<sp/>value<sp/>of<sp/>disgust.<sp/></highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/>*@author<sp/>Tanja<sp/></highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="12" refid="class_real_sense_1_1_emotions_1_1_e_m___disgust" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_real_sense_1_1_emotions_1_1_e_m___disgust" kindref="compound">EM_Disgust</ref><sp/>:<sp/><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1aba892f265a554ffe99c81482b48fbed0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1aba892f265a554ffe99c81482b48fbed0" kindref="member">EM_Disgust</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_emotions_1_1_e_m___disgust" kindref="compound">EM_Disgust</ref>()</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>debug<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1a22cbe3025c32821d53edcb325140ccb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1a22cbe3025c32821d53edcb325140ccb1" kindref="member">Work</ref>(Graphics<sp/>g)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Work(Graphics<sp/>g)</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Disgust<sp/>--&gt;<sp/>BrowShift,<sp/>NoseWrinkled,<sp/>LipLine,<sp/>LowerLipLowered,<sp/>UpperLipRaised</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//neg<sp/>lipStreched</highlight><highlight class="normal"></highlight></codeline>

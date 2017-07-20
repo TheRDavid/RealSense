@@ -26,5 +26,6 @@ var namespace_real_sense =
     [ "ME_BearTeeth", "class_real_sense_1_1_m_e___bear_teeth.html", "class_real_sense_1_1_m_e___bear_teeth" ],
     [ "Model", "class_real_sense_1_1_model.html", "class_real_sense_1_1_model" ],
     [ "Program", "class_real_sense_1_1_program.html", null ],
-    [ "RSModule", "class_real_sense_1_1_r_s_module.html", "class_real_sense_1_1_r_s_module" ]
+    [ "RSModule", "class_real_sense_1_1_r_s_module.html", "class_real_sense_1_1_r_s_module" ],
+    [ "Utilities", "class_real_sense_1_1_utilities.html", null ]
 ];

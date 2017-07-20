@@ -185,7 +185,9 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Module to display Landmark-Points by their types, as they are defined in the SDK <simplesect kind="author"><para>: David Rosenbusch </para></simplesect>
+<simplesect kind="author"><para>: Tobias Schramm  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="133">
         <label>RealSense.LandmarkTypeModule</label>

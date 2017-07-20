@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="22" column="1" bodyfile="Framework/CameraView.cs" bodystart="22" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="23" column="1" bodyfile="Framework/CameraView.cs" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a3be442424d8a3df0d5493b42e2a8b97f" prot="private" static="no" mutable="no">
         <type>PXCMSession.ImplVersion</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="23" column="1" bodyfile="Framework/CameraView.cs" bodystart="23" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="24" column="1" bodyfile="Framework/CameraView.cs" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada135b5c2b42d1c887c6dfb89c960955" prot="private" static="no" mutable="no">
         <type>PXCMImage.ImageData</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="25" column="1" bodyfile="Framework/CameraView.cs" bodystart="25" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="26" column="1" bodyfile="Framework/CameraView.cs" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ace96eec1068651a64a09dc7974534af2" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="27" column="1" bodyfile="Framework/CameraView.cs" bodystart="27" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="28" column="1" bodyfile="Framework/CameraView.cs" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af57023a5ff21af59244db6ff09d02bba" prot="private" static="no" mutable="no">
         <type>PictureBox</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="29" column="1" bodyfile="Framework/CameraView.cs" bodystart="29" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="30" column="1" bodyfile="Framework/CameraView.cs" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a96da0952fc128f54cc6e539f8117ddc2" prot="private" static="no" mutable="no">
         <type>Thread</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="31" column="1" bodyfile="Framework/CameraView.cs" bodystart="31" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="32" column="1" bodyfile="Framework/CameraView.cs" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1acb699e0bcff7424fdfc520dbfe89ce53" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_model" kindref="compound">Model</ref></type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="32" column="1" bodyfile="Framework/CameraView.cs" bodystart="32" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="33" column="1" bodyfile="Framework/CameraView.cs" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a78ec68053fa36d321ce259f1d23e1d51" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="33" column="1" bodyfile="Framework/CameraView.cs" bodystart="33" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="34" column="1" bodyfile="Framework/CameraView.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad32fd6f3c2a5e6e8b715ddf95b8da64b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="33" column="1" bodyfile="Framework/CameraView.cs" bodystart="33" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="34" column="1" bodyfile="Framework/CameraView.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad5b01bd4e0b334ee8bc686d0ca8cbaff" prot="private" static="no" mutable="no">
         <type>Button</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="34" column="1" bodyfile="Framework/CameraView.cs" bodystart="34" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="35" column="1" bodyfile="Framework/CameraView.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1abbf9fdf22141311d8e66c277bfbe50eb" prot="private" static="no" mutable="no">
         <type>Button</type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="35" column="1" bodyfile="Framework/CameraView.cs" bodystart="35" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a1bc4a7fd386f92af6d07976fae0b6511" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -162,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af2ba9c1b97382a8e8a55b64df6ec5ac5" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a5eeb21110ea9dbbc95c0c86c10c365da" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="36" column="1" bodyfile="Framework/CameraView.cs" bodystart="36" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a77b687e1c6472c87933b0319064cc854" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -203,7 +203,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aadc955823e70fa0c64e8d776f25d0a03" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="37" column="1" bodyfile="Framework/CameraView.cs" bodystart="37" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a8b71e73f4fcb310e607a2d4ef6e6e371" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab953bc7162a2a3dc84fdd516f4206773" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
@@ -243,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a26d71d80650cae002cb8f0a6bc1ec85b" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
@@ -256,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aed103a9fde6a2ebc415d3656af13c536" prot="private" static="no" mutable="no">
         <type>Bitmap</type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="38" column="1" bodyfile="Framework/CameraView.cs" bodystart="38" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9cd044a850d37b62fef15de97bf6e27e" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -283,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="39" column="1" bodyfile="Framework/CameraView.cs" bodystart="39" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="40" column="1" bodyfile="Framework/CameraView.cs" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ac1f7dd41271a43de82a171b3f4cfdee3" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -297,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="55" column="1" bodyfile="Framework/CameraView.cs" bodystart="55" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="56" column="1" bodyfile="Framework/CameraView.cs" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab19b1165590fda99ab1ea9f769b24746" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -311,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="56" column="1" bodyfile="Framework/CameraView.cs" bodystart="56" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="57" column="1" bodyfile="Framework/CameraView.cs" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a455375b018e18147608cd0596db3d5c9" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -325,7 +325,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="57" column="1" bodyfile="Framework/CameraView.cs" bodystart="57" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="58" column="1" bodyfile="Framework/CameraView.cs" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af221daceffa86f2b16d1d40b98b1a765" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -339,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="58" column="1" bodyfile="Framework/CameraView.cs" bodystart="58" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="59" column="1" bodyfile="Framework/CameraView.cs" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a8b4aa84868701edf93e06d0764d2ea0e" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="60" column="1" bodyfile="Framework/CameraView.cs" bodystart="60" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="61" column="1" bodyfile="Framework/CameraView.cs" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1adc1512565ea02ef65a2c1a4c566a8c2b" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="61" column="1" bodyfile="Framework/CameraView.cs" bodystart="61" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="62" column="1" bodyfile="Framework/CameraView.cs" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada42d82e52e6770fe0fcee806d5eebcb" prot="private" static="no" mutable="no">
         <type><ref refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kindref="compound">FriggnAweseomeGraphix.MEMonitor</ref></type>
@@ -381,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="62" column="1" bodyfile="Framework/CameraView.cs" bodystart="62" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="63" column="1" bodyfile="Framework/CameraView.cs" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a55e318cc7f8d29fea0701591e9d3df32" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -395,7 +395,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="63" column="1" bodyfile="Framework/CameraView.cs" bodystart="63" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="64" column="1" bodyfile="Framework/CameraView.cs" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a0c64df00e3d018e6c81b33bf69af744f" prot="private" static="no" mutable="no">
         <type>Pen</type>
@@ -409,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="65" column="1" bodyfile="Framework/CameraView.cs" bodystart="65" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="66" column="1" bodyfile="Framework/CameraView.cs" bodystart="66" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -425,7 +425,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="42" column="1" bodyfile="Framework/CameraView.cs" bodystart="42" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="43" column="1" bodyfile="Framework/CameraView.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1af07d9a5695e375bf0fa68ce8ac8e7eab" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -439,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="43" column="1" bodyfile="Framework/CameraView.cs" bodystart="43" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="44" column="1" bodyfile="Framework/CameraView.cs" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ae15352b11680c4f15052211aab8d20dc" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -453,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="44" column="1" bodyfile="Framework/CameraView.cs" bodystart="44" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="45" column="1" bodyfile="Framework/CameraView.cs" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ab358279cc88851afb669027397ca60ee" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -467,7 +467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="45" column="1" bodyfile="Framework/CameraView.cs" bodystart="45" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ad98d9274e007cb47635f8321df90d24b" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -481,7 +481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="47" column="1" bodyfile="Framework/CameraView.cs" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1aedd0a0b6361432109eae3e38428ff125" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -495,7 +495,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="47" column="1" bodyfile="Framework/CameraView.cs" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9f31f7099b11a89271cf0a84f23dba93" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -509,7 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="46" column="1" bodyfile="Framework/CameraView.cs" bodystart="46" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="47" column="1" bodyfile="Framework/CameraView.cs" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a912550e5a9617053401594768dad38ce" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -523,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="47" column="1" bodyfile="Framework/CameraView.cs" bodystart="47" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="48" column="1" bodyfile="Framework/CameraView.cs" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a9db58e60637732a7722d6eba53b86769" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -537,7 +537,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="48" column="1" bodyfile="Framework/CameraView.cs" bodystart="48" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="49" column="1" bodyfile="Framework/CameraView.cs" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a252425c40f157c62d4d1f6bc65613e63" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -551,7 +551,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="49" column="1" bodyfile="Framework/CameraView.cs" bodystart="49" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ac3e8d863519cfd52d151bdd7075a0240" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -565,7 +565,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="49" column="1" bodyfile="Framework/CameraView.cs" bodystart="49" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a7e90012d97f723be9179e69b896af3c0" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -579,7 +579,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a0ecb8b9133db8faca04c9dd4daec1005" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -593,7 +593,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="50" column="1" bodyfile="Framework/CameraView.cs" bodystart="50" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ada64ed2ef3f1981177e194e69b6d63ea" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -607,7 +607,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a602ef443218647a7f48029e4ecf3b248" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -621,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="51" column="1" bodyfile="Framework/CameraView.cs" bodystart="51" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1ae605d44fbdf180863ec2289225698659" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -635,7 +635,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="53" column="1" bodyfile="Framework/CameraView.cs" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a24e64178d8ac0b1eb75166ee84ebe51a" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -649,7 +649,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="52" column="1" bodyfile="Framework/CameraView.cs" bodystart="52" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="53" column="1" bodyfile="Framework/CameraView.cs" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_camera_view_1a81f0a50a61ea20ea35dae6a9afe608db" prot="private" static="yes" mutable="no">
         <type>bool</type>
@@ -663,7 +663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="53" column="1" bodyfile="Framework/CameraView.cs" bodystart="53" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="54" column="1" bodyfile="Framework/CameraView.cs" bodystart="54" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -678,7 +678,7 @@
 <para>Current y-coordinate of debug-messages </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="431" column="1" bodyfile="Framework/CameraView.cs" bodystart="432" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="436" column="1" bodyfile="Framework/CameraView.cs" bodystart="437" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_real_sense_1_1_camera_view_1a342611e6157bb18b9c097186b3b9bee0" prot="public" static="no" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>Boolean</type>
@@ -691,7 +691,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="437" column="1" bodyfile="Framework/CameraView.cs" bodystart="438" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="442" column="1" bodyfile="Framework/CameraView.cs" bodystart="443" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_real_sense_1_1_camera_view_1a487ce7be920e8f6742d704d97a6057dc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>Bitmap</type>
@@ -704,7 +704,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="442" column="1" bodyfile="Framework/CameraView.cs" bodystart="443" bodyend="-1"/>
+        <location file="Framework/CameraView.cs" line="447" column="1" bodyfile="Framework/CameraView.cs" bodystart="448" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -742,7 +742,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="72" column="1" bodyfile="Framework/CameraView.cs" bodystart="72" bodyend="137"/>
+        <location file="Framework/CameraView.cs" line="73" column="1" bodyfile="Framework/CameraView.cs" bodystart="73" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a67c8ee2cdbf0caf43e48043d90c0d549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -767,7 +767,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="213" column="1" bodyfile="Framework/CameraView.cs" bodystart="213" bodyend="226"/>
+        <location file="Framework/CameraView.cs" line="215" column="1" bodyfile="Framework/CameraView.cs" bodystart="215" bodyend="228"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -805,7 +805,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="146" column="1" bodyfile="Framework/CameraView.cs" bodystart="146" bodyend="191"/>
+        <location file="Framework/CameraView.cs" line="148" column="1" bodyfile="Framework/CameraView.cs" bodystart="148" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a8bd56a8b9b1b2b20a4c82978f828d2fd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -841,7 +841,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="200" column="1" bodyfile="Framework/CameraView.cs" bodystart="200" bodyend="206"/>
+        <location file="Framework/CameraView.cs" line="202" column="1" bodyfile="Framework/CameraView.cs" bodystart="202" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a4541905eb6cb7f744e3c4dc139abd00f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -854,7 +854,7 @@
 <para>Update the View and modules </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="231" column="1" bodyfile="Framework/CameraView.cs" bodystart="231" bodyend="418"/>
+        <location file="Framework/CameraView.cs" line="233" column="1" bodyfile="Framework/CameraView.cs" bodystart="233" bodyend="423"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_camera_view_1a1cb03f147eda8302d7e22360c004de60" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -867,7 +867,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Framework/CameraView.cs" line="419" column="1" bodyfile="Framework/CameraView.cs" bodystart="419" bodyend="426"/>
+        <location file="Framework/CameraView.cs" line="424" column="1" bodyfile="Framework/CameraView.cs" bodystart="424" bodyend="431"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -897,7 +897,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Framework/CameraView.cs" line="20" column="1" bodyfile="Framework/CameraView.cs" bodystart="19" bodyend="448"/>
+    <location file="Framework/CameraView.cs" line="21" column="1" bodyfile="Framework/CameraView.cs" bodystart="20" bodyend="453"/>
     <listofallmembers>
       <member refid="class_real_sense_1_1_camera_view_1a67c8ee2cdbf0caf43e48043d90c0d549" prot="public" virt="non-virtual"><scope>RealSense::CameraView</scope><name>AddComponent</name></member>
       <member refid="class_real_sense_1_1_camera_view_1ac1f7dd41271a43de82a171b3f4cfdee3" prot="private" virt="non-virtual"><scope>RealSense::CameraView</scope><name>angerMonitor</name></member>

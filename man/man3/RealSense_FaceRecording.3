@@ -34,7 +34,20 @@ RealSense.FaceRecording
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 19 of file FaceRecording\&.cs\&.
+All the data requiered to analyze a landmark-recording
+.IP "\(bu" 2
+Landmark-Coordinates frame by frame
+.IP "\(bu" 2
+NullFace Landmark-Coordinates as a means to calibrate 
+.PP
+\fBAuthor:\fP
+.RS 4
+David  Hufflepuff 
+.RE
+.PP
+
+.PP
+
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.FaceRecording\&.FaceRecording (String emotionName)"
@@ -46,8 +59,6 @@ Initializes the Recording, giving it a name (timestamp) plus the emotion-type
 .RE
 .PP
 
-.PP
-Definition at line 29 of file FaceRecording\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.FaceRecording\&.getFace (int frame)"
@@ -64,8 +75,6 @@ Landmark-Array
 .RE
 .PP
 
-.PP
-Definition at line 71 of file FaceRecording\&.cs\&.
 .SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.FaceRecording\&.getNullFace ()"
 
 .PP
@@ -75,8 +84,6 @@ the NullFace of this recording
 .RE
 .PP
 
-.PP
-Definition at line 79 of file FaceRecording\&.cs\&.
 .SS "static \fBFaceRecording\fP RealSense\&.FaceRecording\&.load (String n)\fC [static]\fP"
 Loads a recording from a file 
 .PP
@@ -91,12 +98,8 @@ An instance of \fBFaceRecording\fP
 .RE
 .PP
 
-.PP
-Definition at line 61 of file FaceRecording\&.cs\&.
 .SS "void RealSense\&.FaceRecording\&.Save ()"
 Saves this recording to a file (timestamp + emotion-type)\&. 
-.PP
-Definition at line 48 of file FaceRecording\&.cs\&.
 .SS "void RealSense\&.FaceRecording\&.setData (PXCMFaceData\&.LandmarkPoint d[][], PXCMFaceData\&.LandmarkPoint [] nd)"
 Sets the landmark-data 
 .PP
@@ -108,8 +111,6 @@ Sets the landmark-data
 .RE
 .PP
 
-.PP
-Definition at line 39 of file FaceRecording\&.cs\&.
 
 .SH "Author"
 .PP 

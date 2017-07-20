@@ -91,7 +91,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of joy. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="89">
         <label>RealSense.Emotions.EM_Joy</label>

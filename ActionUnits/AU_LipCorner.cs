@@ -7,7 +7,7 @@ using System.Text;
 
 namespace RealSense
 {
-    /*
+    /**
      * Measures the height of the Lip-Corners and stores its' value inside the model.
      * @author Marlon
      * @HogwartsHouse Hufflepuff

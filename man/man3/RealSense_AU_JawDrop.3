@@ -21,13 +21,18 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 19 of file AU_JawDrop\&.cs\&.
+Measures if jaw is dropped and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+René  Slytherin
+.RE
+.PP
+Interpretation: -100 = Doesn't usually happen 0 = Normal 100 = Drop it like it's hot 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.AU_JawDrop\&.AU_JawDrop ()"
 Initializes the AU by setting up the default value boundaries\&. 
-.PP
-Definition at line 29 of file AU_JawDrop\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.AU_JawDrop\&.Work (Graphics g)\fC [virtual]\fP"
@@ -41,8 +46,6 @@ Calculates difference of lip-distance over a set number of frames and prints its
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
-.PP
-Definition at line 47 of file AU_JawDrop\&.cs\&.
 
 .SH "Author"
 .PP 

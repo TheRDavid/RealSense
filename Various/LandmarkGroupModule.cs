@@ -9,7 +9,7 @@ using System.Drawing;
  */
 namespace RealSense
 {
-    /*
+    /**
   * Module to display Landmark-Points by their groups, as they are defined in the SDK
   * @author: David Rosenbusch
   * @author: Tobias Schramm

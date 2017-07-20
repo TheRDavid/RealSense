@@ -177,7 +177,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Prints Face-Values (for debugging only) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="Various/Gauge_Module.cs" line="147" column="1" bodyfile="Various/Gauge_Module.cs" bodystart="147" bodyend="155"/>
@@ -210,12 +210,12 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Update every frame (do calculations, manipulate output Image) <parameterlist kind="param"><parameteritem>
+<para>Initializes UI + simple output while calibrating <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>Graphics</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>g </para></parameterdescription>
+<para>g for the view </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>

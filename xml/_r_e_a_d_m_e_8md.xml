@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>RealSense</highlight></codeline>
+<codeline><highlight class="normal">Recognize<sp/>emotions<sp/>with<sp/>the<sp/>intel<sp/>realsense<sp/>sr300</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here<sp/>is<sp/>a<sp/>link<sp/>to<sp/>our<sp/>&lt;a<sp/>href=&quot;https://cdn.rawgit.com/TheRDavid/RealSense/a2fed1bd/docs/doc.html&quot;&gt;detailed<sp/>Documentation&lt;/a&gt;.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

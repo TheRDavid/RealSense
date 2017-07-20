@@ -126,7 +126,7 @@ namespace RealSense
                 }
             }
         }
-        /*
+        /**
           * Initializes UI + simple output while calibrating
           * @param Graphics g for the view
           */
@@ -141,7 +141,7 @@ namespace RealSense
             else if (!calibrate) output = "";
         }
 
-        /*
+        /**
          * Prints Face-Values (for debugging only)
          */
         private void printFace(string v, PXCMFaceData.LandmarkPoint[] face)

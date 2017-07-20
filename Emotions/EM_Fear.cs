@@ -7,7 +7,7 @@ using System.Text;
 namespace RealSense.Emotions
 {
 
-    /*
+    /**
       *Measures the percentage value of fear. 
       *@author Tanja 
       */

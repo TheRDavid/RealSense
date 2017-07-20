@@ -396,10 +396,6 @@
     <member refid="class_real_sense_1_1_model_1af27e4f9f2ac5b12f687c45fb34e491cc" kind="variable"><name>nullPose</name></member>
     <member refid="class_real_sense_1_1_model_1a0b0643ee041eb081723ba4d587ad2ad8" kind="variable"><name>au_Values</name></member>
     <member refid="class_real_sense_1_1_model_1ad54332aa30d7d3187a65e5fe88d24983" kind="variable"><name>emotions</name></member>
-    <member refid="class_real_sense_1_1_model_1a465c7ca1144e46b5cec73c9c5e68ee59" kind="variable"><name>emotionBitmaps</name></member>
-    <member refid="class_real_sense_1_1_model_1aa909813938854d436c111e86e1f901ab" kind="variable"><name>emotionPictureBoxes</name></member>
-    <member refid="class_real_sense_1_1_model_1a50f1da8dfe3b6a1504940638ed8003a8" kind="variable"><name>exampleBitmaps</name></member>
-    <member refid="class_real_sense_1_1_model_1a99913751f7c9877aab933b037caeb656" kind="variable"><name>examplePath</name></member>
     <member refid="class_real_sense_1_1_model_1ab01af1a472d4e6bb98ef7a658bc3d286" kind="variable"><name>emotionMax</name></member>
     <member refid="class_real_sense_1_1_model_1a919161e337a9bd56b37a8502d75dc33c" kind="variable"><name>modules</name></member>
     <member refid="class_real_sense_1_1_model_1aa0b9a7682c44c23c2b1be2b780c11e32" kind="variable"><name>width</name></member>
@@ -446,10 +442,7 @@
     <member refid="class_real_sense_1_1_model_1a5a20efa42d5391f0a8156d45f676fc34" kind="property"><name>AU_Values</name></member>
     <member refid="class_real_sense_1_1_model_1a89f4614b0f880fb6553ebcea3d2e6a6c" kind="property"><name>Test</name></member>
     <member refid="class_real_sense_1_1_model_1a6b3603d17577660f65fc7bbb6b097182" kind="property"><name>ColorBitmap</name></member>
-    <member refid="class_real_sense_1_1_model_1a654d0ac6e4e49b884fd3e166039c7bc4" kind="property"><name>EmotionBitmaps</name></member>
     <member refid="class_real_sense_1_1_model_1ac5454f63dfead405cd1d9c229cf6790f" kind="property"><name>EmotionMax</name></member>
-    <member refid="class_real_sense_1_1_model_1afbdadf185ba37319705fd55d102c0cb4" kind="property"><name>ExcampleBitmaps</name></member>
-    <member refid="class_real_sense_1_1_model_1ad2c87f308e42010ca032deec5cfa5e0b" kind="property"><name>EmotionPictureBoxes</name></member>
     <member refid="class_real_sense_1_1_model_1a39349d1d9b1274a9fe28614e9ce215f3" kind="function"><name>Model</name></member>
     <member refid="class_real_sense_1_1_model_1a078b1ddb43e777aa73c1b3898722e4bb" kind="function"><name>EmotionValue</name></member>
     <member refid="class_real_sense_1_1_model_1a8b8bff51e69b2b33f5c8cfb007c424e5" kind="function"><name>AddModule</name></member>
@@ -470,6 +463,7 @@
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a7341906dec6633a21dedcfe1f81a4db1" kind="property"><name>ResourceManager</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1af47bf79a6e23a9903de83b4aa2822433" kind="property"><name>Culture</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a2d32e110c118d3947a249da1c81ad9a7" kind="property"><name>face_landmarks_78points_zoom43</name></member>
+    <member refid="class_real_sense_1_1_properties_1_1_resources_1aff3e2d39cc031e4ec385ad29c5618e72" kind="property"><name>libpxcclr_cs</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a322730c68036a527e3b8d5d0475e975c" kind="property"><name>warning</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a2675fbe25617db3f75978a3649d5194a" kind="function"><name>Resources</name></member>
   </compound>
@@ -497,6 +491,21 @@
     <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" kind="function"><name>FilteredAvg</name></member>
     <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" kind="function"><name>FilterToleranceValues</name></member>
     <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" kind="function"><name>DynamicMinMax</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_utilities" kind="class"><name>RealSense::Utilities</name>
+    <member refid="class_real_sense_1_1_utilities_1affa458ee146a5e1e54f7b006e6937d98" kind="variable"><name>model</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a9c938b11059e630719239cac212fae36" kind="function"><name>Init</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a1988c5d325a1d252d42ce6cb0638404e" kind="function"><name>ConvertValue</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a46ab13ced92a5c23b776d553eecb6a8a" kind="function"><name>DifferenceByAxis</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a4b9b7b1afb00bad3ced945c757aaf711" kind="function"><name>NullFaceBetweenByAxis</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a4185e676947ed9d5da9a5ce28e922ff6" kind="function"><name>BetweenByAxis</name></member>
+    <member refid="class_real_sense_1_1_utilities_1afb6700357b260189d5309e5c15463ad8" kind="function"><name>Difference</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a23b4df029d2788415f1983b90cde0c67" kind="function"><name>DifferenceNullCurrent</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a7a94b87d3f23a88d4bddeb6307073b0e" kind="function"><name>NullFaceBetween</name></member>
+    <member refid="class_real_sense_1_1_utilities_1ac8eceed552d66f2f614160cf84e605e2" kind="function"><name>Between</name></member>
+    <member refid="class_real_sense_1_1_utilities_1a9dd1e0f1c70f994f8f911aab4fe895b4" kind="function"><name>FilteredAvg</name></member>
+    <member refid="class_real_sense_1_1_utilities_1ab6fd2d5e59361e81e4b8186995a7ab39" kind="function"><name>FilterToleranceValues</name></member>
+    <member refid="class_real_sense_1_1_utilities_1aa4d6db473da7b7f69e92b1f194015754" kind="function"><name>DynamicMinMax</name></member>
   </compound>
   <compound refid="namespace_real_sense" kind="namespace"><name>RealSense</name>
   </compound>
@@ -588,9 +597,13 @@
   </compound>
   <compound refid="_r_s_module_8cs" kind="file"><name>RSModule.cs</name>
   </compound>
+  <compound refid="_utilities_8cs" kind="file"><name>Utilities.cs</name>
+  </compound>
   <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
   </compound>
   <compound refid="_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
   <compound refid="_face_rect_8cs" kind="file"><name>FaceRect.cs</name>
   </compound>
@@ -603,6 +616,8 @@
   <compound refid="_landmark_type_module_8cs" kind="file"><name>LandmarkTypeModule.cs</name>
   </compound>
   <compound refid="_m_e___bear_teeth_8cs" kind="file"><name>ME_BearTeeth.cs</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
   </compound>
   <compound refid="dir_14b82473d56c424e3d371fe8814b51c4" kind="dir"><name>ActionUnits</name>
   </compound>

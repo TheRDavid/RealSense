@@ -7,7 +7,7 @@ using System.Text;
 namespace RealSense
 {
 
-    /*
+    /**
      * Measures if lips are tightened and stores its' value inside the model.
      * @author René 
      * @HogwartsHouse Slytherin 

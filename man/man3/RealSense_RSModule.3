@@ -92,8 +92,6 @@ Inherited by \fBRealSense\&.AU_BrowShift\fP, \fBRealSense\&.AU_EyelidTight\fP, \
 abstract module to implment the Init method of the model and contains the work method
 .PP
 Tanja Witke 
-.PP
-Definition at line 15 of file RSModule\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "double [] RealSense\&.RSModule\&.ConvertValues (double [] vars)\fC [protected]\fP"
@@ -110,8 +108,6 @@ ret converted values
 .RE
 .PP
 
-.PP
-Definition at line 57 of file RSModule\&.cs\&.
 .SS "void RealSense\&.RSModule\&.DynamicMinMax (double [] dist)\fC [protected]\fP"
 Puts a new Min/Max value if the dist is higher/lower than the old one\&. 
 .PP
@@ -121,8 +117,6 @@ Puts a new Min/Max value if the dist is higher/lower than the old one\&.
 .RE
 .PP
 
-.PP
-Definition at line 109 of file RSModule\&.cs\&.
 .SS "double RealSense\&.RSModule\&.FilteredAvg (double [] values)\fC [protected]\fP"
 Called in DynamicMinMax 
 .PP
@@ -137,8 +131,6 @@ average Average of filtered Values
 .RE
 .PP
 
-.PP
-Definition at line 77 of file RSModule\&.cs\&.
 .SS "void RealSense\&.RSModule\&.FilterToleranceValues (double [] values)\fC [protected]\fP"
 Removes values that fall within the tolerance-spectrum\&. 
 .PP
@@ -148,8 +140,6 @@ Removes values that fall within the tolerance-spectrum\&.
 .RE
 .PP
 
-.PP
-Definition at line 97 of file RSModule\&.cs\&.
 .SS "static void RealSense\&.RSModule\&.Init (\fBModel\fP m)\fC [static]\fP"
 initialise the model 
 .PP
@@ -159,8 +149,6 @@ initialise the model
 .RE
 .PP
 
-.PP
-Definition at line 30 of file RSModule\&.cs\&.
 .SS "virtual void RealSense\&.RSModule\&.KeyTrigger (int key)\fC [virtual]\fP"
 Custom method when triggered 
 .PP
@@ -172,12 +160,8 @@ Custom method when triggered
 
 .PP
 Reimplemented in \fBRealSense\&.FaceRecorder\fP\&.
-.PP
-Definition at line 41 of file RSModule\&.cs\&.
 .SS "void RealSense\&.RSModule\&.Reset ()"
 Reset value boundaries 
-.PP
-Definition at line 123 of file RSModule\&.cs\&.
 .SS "abstract void RealSense\&.RSModule\&.Work (Graphics g)\fC [pure virtual]\fP"
 Update every frame (do calculations, manipulate output Image) 
 .PP
@@ -193,42 +177,24 @@ Implemented in \fBRealSense\&.Gauge_Module\fP, \fBRealSense\&.FaceRecorder\fP, \
 .PP 
 .SS "bool RealSense\&.RSModule\&.debug = false\fC [protected]\fP"
 
-.PP
-Definition at line 21 of file RSModule\&.cs\&.
 .SS "double RealSense\&.RSModule\&.DEF_MIN\fC [static]\fP, \fC [protected]\fP"
 
-.PP
-Definition at line 18 of file RSModule\&.cs\&.
 .SS "int RealSense\&.RSModule\&.framesGathered = 0\fC [protected]\fP"
 
-.PP
-Definition at line 23 of file RSModule\&.cs\&.
 .SS "double RealSense\&.RSModule\&.MIN = 0\fC [protected]\fP"
 
-.PP
-Definition at line 17 of file RSModule\&.cs\&.
 .SS "\fBModel\fP RealSense\&.RSModule\&.model\fC [static]\fP, \fC [protected]\fP"
 
-.PP
-Definition at line 19 of file RSModule\&.cs\&.
 .SS "int RealSense\&.RSModule\&.numFramesBeforeAccept = 20\fC [static]\fP, \fC [protected]\fP"
 
-.PP
-Definition at line 22 of file RSModule\&.cs\&.
 .SS "String RealSense\&.RSModule\&.output = ''"
 
-.PP
-Definition at line 20 of file RSModule\&.cs\&.
 .SS "int [] RealSense\&.RSModule\&.triggers = { }"
 
-.PP
-Definition at line 24 of file RSModule\&.cs\&.
 .SH "Property Documentation"
 .PP 
 .SS "bool RealSense\&.RSModule\&.Debug\fC [get]\fP, \fC [set]\fP"
 Getter of the debug value 
-.PP
-Definition at line 134 of file RSModule\&.cs\&.
 
 .SH "Author"
 .PP 

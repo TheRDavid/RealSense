@@ -35,5 +35,6 @@ var hierarchy =
       [ "RealSense.LandmarkGroupModule", "class_real_sense_1_1_landmark_group_module.html", null ],
       [ "RealSense.LandmarkTypeModule", "class_real_sense_1_1_landmark_type_module.html", null ],
       [ "RealSense.ME_BearTeeth", "class_real_sense_1_1_m_e___bear_teeth.html", null ]
-    ] ]
+    ] ],
+    [ "RealSense.Utilities", "class_real_sense_1_1_utilities.html", null ]
 ];

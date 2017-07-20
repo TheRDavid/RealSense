@@ -1,0 +1,146 @@
+\section{Real\+Sense.\+Utilities Class Reference}
+\label{class_real_sense_1_1_utilities}\index{Real\+Sense.\+Utilities@{Real\+Sense.\+Utilities}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ Init} (\textbf{ Model} model)
+\item 
+static double \textbf{ Convert\+Value} (double[$\,$] distances, double M\+AX, double M\+IN, double M\+A\+X\+\_\+\+T\+OL, double M\+I\+N\+\_\+\+T\+OL, double X\+T\+R\+E\+M\+E\+\_\+\+M\+AX, double X\+T\+R\+E\+M\+E\+\_\+\+M\+IN)
+\item 
+static double \textbf{ Difference\+By\+Axis} (int i01, int i02, \textbf{ Model.\+A\+X\+IS} axis, bool absolute)
+\item 
+static double \textbf{ Null\+Face\+Between\+By\+Axis} (int i01, int i02, \textbf{ Model.\+A\+X\+IS} axis, bool absolute)
+\item 
+static double \textbf{ Between\+By\+Axis} (int i01, int i02, \textbf{ Model.\+A\+X\+IS} axis, bool absolute)
+\item 
+static double \textbf{ Difference} (int i01, int i02)
+\item 
+static double \textbf{ Difference\+Null\+Current} (int i01, \textbf{ Model.\+A\+X\+IS} axis)
+\item 
+static double \textbf{ Null\+Face\+Between} (int i01, int i02)
+\item 
+static double \textbf{ Between} (int i01, int i02)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides all methods that will be used by the modules.
+
+\begin{DoxyAuthor}{Author}
+Tanja Witke 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_real_sense_1_1_utilities_ac8eceed552d66f2f614160cf84e605e2}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Between@{Between}}
+\index{Between@{Between}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Between()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calculates the difference between the two points of the current frame 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_utilities_a4185e676947ed9d5da9a5ce28e922ff6}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Between\+By\+Axis@{Between\+By\+Axis}}
+\index{Between\+By\+Axis@{Between\+By\+Axis}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Between\+By\+Axis()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\textbf{ Model.\+A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_utilities_a1988c5d325a1d252d42ce6cb0638404e}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Convert\+Value@{Convert\+Value}}
+\index{Convert\+Value@{Convert\+Value}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Convert\+Value()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Convert\+Value (\begin{DoxyParamCaption}\item[{double [$\,$]}]{distances,  }\item[{double}]{M\+AX,  }\item[{double}]{M\+IN,  }\item[{double}]{M\+A\+X\+\_\+\+T\+OL,  }\item[{double}]{M\+I\+N\+\_\+\+T\+OL,  }\item[{double}]{X\+T\+R\+E\+M\+E\+\_\+\+M\+AX,  }\item[{double}]{X\+T\+R\+E\+M\+E\+\_\+\+M\+IN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Calculates the percentage Value depending on the new Min/\+Max boundarys. 
+\begin{DoxyParams}{Parameters}
+{\em distances} & collected from several frames \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the percentage value 
+\end{DoxyReturn}
+\mbox{\label{class_real_sense_1_1_utilities_afb6700357b260189d5309e5c15463ad8}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Difference@{Difference}}
+\index{Difference@{Difference}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Difference()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Difference (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calculates the percentage of the difference of distance between two points 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double between 0 and 100 
+\end{DoxyReturn}
+\mbox{\label{class_real_sense_1_1_utilities_a46ab13ced92a5c23b776d553eecb6a8a}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Difference\+By\+Axis@{Difference\+By\+Axis}}
+\index{Difference\+By\+Axis@{Difference\+By\+Axis}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Difference\+By\+Axis()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Difference\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\textbf{ Model.\+A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the total difference of axis-\/specific distance between two points 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_utilities_a23b4df029d2788415f1983b90cde0c67}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Difference\+Null\+Current@{Difference\+Null\+Current}}
+\index{Difference\+Null\+Current@{Difference\+Null\+Current}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Difference\+Null\+Current()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Difference\+Null\+Current (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{\textbf{ Model.\+A\+X\+IS}}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+David \mbox{\label{class_real_sense_1_1_utilities_a9c938b11059e630719239cac212fae36}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Init@{Init}}
+\index{Init@{Init}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Init()}
+{\footnotesize\ttfamily static void Real\+Sense.\+Utilities.\+Init (\begin{DoxyParamCaption}\item[{\textbf{ Model}}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{class_real_sense_1_1_utilities_a7a94b87d3f23a88d4bddeb6307073b0e}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Null\+Face\+Between@{Null\+Face\+Between}}
+\index{Null\+Face\+Between@{Null\+Face\+Between}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Null\+Face\+Between()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Null\+Face\+Between (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calculates the differenc of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_real_sense_1_1_utilities_a4b9b7b1afb00bad3ced945c757aaf711}} 
+\index{Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}!Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}}
+\index{Null\+Face\+Between\+By\+Axis@{Null\+Face\+Between\+By\+Axis}!Real\+Sense\+::\+Utilities@{Real\+Sense\+::\+Utilities}}
+\subsubsection{Null\+Face\+Between\+By\+Axis()}
+{\footnotesize\ttfamily static double Real\+Sense.\+Utilities.\+Null\+Face\+Between\+By\+Axis (\begin{DoxyParamCaption}\item[{int}]{i01,  }\item[{int}]{i02,  }\item[{\textbf{ Model.\+A\+X\+IS}}]{axis,  }\item[{bool}]{absolute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Calculates the axis-\/specific difference of the points from the A\+B\+S\+O\+L\+U\+T\+E\+Null\+Face 
+\begin{DoxyParams}{Parameters}
+{\em i01,i02} & which are the current points to calculate the difference \\
+\hline
+{\em axis} & which is the specific axis to work with \\
+\hline
+{\em absolute} & defines wether or not the absolute difference should be returned or not \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Framework/\textbf{ Utilities.\+cs}\end{DoxyCompactItemize}
