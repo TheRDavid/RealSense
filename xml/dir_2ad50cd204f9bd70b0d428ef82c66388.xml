@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_2ad50cd204f9bd70b0d428ef82c66388" kind="dir">
+    <compoundname>Emotions</compoundname>
+    <innerfile refid="_assembly_info_8cs">AssemblyInfo.cs</innerfile>
+    <innerfile refid="_e_m___anger_8cs">EM_Anger.cs</innerfile>
+    <innerfile refid="_e_m___contempt_8cs">EM_Contempt.cs</innerfile>
+    <innerfile refid="_e_m___disgust_8cs">EM_Disgust.cs</innerfile>
+    <innerfile refid="_e_m___fear_8cs">EM_Fear.cs</innerfile>
+    <innerfile refid="_e_m___joy_8cs">EM_Joy.cs</innerfile>
+    <innerfile refid="_e_m___sadness_8cs">EM_Sadness.cs</innerfile>
+    <innerfile refid="_e_m___surprise_8cs">EM_Surprise.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Emotions/"/>
+  </compounddef>
+</doxygen>

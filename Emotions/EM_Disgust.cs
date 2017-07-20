@@ -42,8 +42,6 @@ namespace RealSense.Emotions
 
             //Grenzen
 
-            int noseMax = 50;
-
             //brow Value
             double temp_left = model.AU_Values[typeof(AU_BrowShift).ToString() + "_left"];
             double temp_right = model.AU_Values[typeof(AU_BrowShift).ToString() + "_right"];

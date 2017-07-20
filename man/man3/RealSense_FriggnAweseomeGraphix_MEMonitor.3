@@ -1,0 +1,125 @@
+.TH "RealSense.FriggnAweseomeGraphix.MEMonitor" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.FriggnAweseomeGraphix.MEMonitor
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMEMonitor\fP (String majText, String minText, int xP, int yP, int rad, int thick)"
+.br
+.ti -1c
+.RI "void \fBStep\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBx\fP"
+.br
+.ti -1c
+.RI "int \fBy\fP"
+.br
+.ti -1c
+.RI "int \fBradius\fP"
+.br
+.ti -1c
+.RI "int \fBthickness\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentValue\fP = 0"
+.br
+.ti -1c
+.RI "int \fBtargetValue\fP = 0"
+.br
+.ti -1c
+.RI "String \fBmajorText\fP"
+.br
+.ti -1c
+.RI "String \fBminorText\fP"
+.br
+.ti -1c
+.RI "bool \fBshowPercent\fP = true"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Custom UI-Component to stylishly display percentage-values 
+.PP
+Definition at line 41 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.MEMonitor (String majText, String minText, int xP, int yP, int rad, int thick)"
+Init component 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIString\fP majText - main text 
+.br
+\fIString\fP minText - additional Text 
+.br
+\fIint\fP xP - x-coordinate 
+.br
+\fIint\fP yP - y-coordinate 
+.br
+\fIint\fP rad - radius 
+.br
+\fIint\fP thick - thickness 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.Step ()"
+Interpolate to the target-value (for fluid transitions) 
+.PP
+Definition at line 75 of file FriggnAweseomeGraphix\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.currentValue = 0"
+
+.PP
+Definition at line 47 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "String RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.majorText"
+
+.PP
+Definition at line 49 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "String RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.minorText"
+
+.PP
+Definition at line 50 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.radius"
+
+.PP
+Definition at line 45 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "bool RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.showPercent = true"
+
+.PP
+Definition at line 51 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.targetValue = 0"
+
+.PP
+Definition at line 48 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.thickness"
+
+.PP
+Definition at line 46 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.x"
+
+.PP
+Definition at line 43 of file FriggnAweseomeGraphix\&.cs\&.
+.SS "int RealSense\&.FriggnAweseomeGraphix\&.MEMonitor\&.y"
+
+.PP
+Definition at line 44 of file FriggnAweseomeGraphix\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

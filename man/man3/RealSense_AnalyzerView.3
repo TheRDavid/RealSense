@@ -1,0 +1,39 @@
+.TH "RealSense.AnalyzerView" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.AnalyzerView
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnalyzerView\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Sub-programm to revisit old landmark-recordings with updated algorithms to tweak the emotion-detection\&. Once the UI is loaded, the user can select on of the seven emotions and load their recorded data (both video- and landmark-recordings)\&. All of the landmark-recordings (recoding by recording, frame by frame) can then be used to automatically recalculate both the ActionUnit- and Emotiondata\&. This way, multiple subjects can be analyzed simultaneously and the reliability of the algorithms can be improved much faster\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file AnalyzerView\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.AnalyzerView\&.AnalyzerView ()"
+Sets up the UI and starts the Updater-Thread, which will Update the lables and progressbars displaying the ActionUnit- and Emotion-Values 
+.PP
+Definition at line 65 of file AnalyzerView\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

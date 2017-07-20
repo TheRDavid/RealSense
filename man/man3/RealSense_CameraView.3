@@ -1,0 +1,91 @@
+.TH "RealSense.CameraView" 3 "Thu Jul 20 2017" "Version 0.7.8.21" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.CameraView
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Form\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraView\fP (\fBModel\fP model, \fBModel\&.MODE\fP m)"
+.br
+.ti -1c
+.RI "void \fBAddComponent\fP (Control c)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBDebug_Y\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "Boolean \fBResetModules\fP\fC [set]\fP"
+.br
+.ti -1c
+.RI "Bitmap \fBColorBitmap\fP\fC [get]\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main-UI for testing- and presentation-purposes 
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Rosenbusch  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file CameraView\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.CameraView\&.CameraView (\fBModel\fP model, \fBModel\&.MODE\fP m)"
+Initialises View and starts updater Thread 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImodel\fP - reference to data model 
+.br
+\fIMode\&.Mode\fP m - mode the UI should run 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file CameraView\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void RealSense\&.CameraView\&.AddComponent (Control c)"
+Add a component to the UI (thread-safe)
+.PP
+\fBParameters:\fP
+.RS 4
+\fIControl\fP c, control to be added 
+.RE
+.PP
+
+.PP
+Definition at line 213 of file CameraView\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "Bitmap RealSense\&.CameraView\&.ColorBitmap\fC [get]\fP"
+
+.PP
+Definition at line 443 of file CameraView\&.cs\&.
+.SS "int RealSense\&.CameraView\&.Debug_Y\fC [get]\fP, \fC [set]\fP"
+Current y-coordinate of debug-messages 
+.PP
+Definition at line 432 of file CameraView\&.cs\&.
+.SS "Boolean RealSense\&.CameraView\&.ResetModules\fC [set]\fP"
+
+.PP
+Definition at line 438 of file CameraView\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

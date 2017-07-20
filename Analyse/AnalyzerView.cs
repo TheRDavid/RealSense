@@ -11,7 +11,7 @@ using RealSense.Emotions;
 
 namespace RealSense
 {
-    /*
+    /**
      * Sub-programm to revisit old landmark-recordings with updated algorithms to tweak the emotion-detection.
      * Once the UI is loaded, the user can select on of the seven emotions and load their recorded data (both video- and landmark-recordings).
      * All of the landmark-recordings (recoding by recording, frame by frame) can then be used to automatically recalculate both the ActionUnit-

@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_face_recording" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::FaceRecording</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_face_recording_1a5bfcd3e23949c1a0410eb7352839bb07" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String RealSense.FaceRecording.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="21" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_face_recording_1a28f454b591d26af263981910b27ccc98" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint [][]</type>
+        <definition>PXCMFaceData.LandmarkPoint [][] RealSense.FaceRecording.data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="22" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_face_recording_1a457bf9b0368b6eaf89447d4818b1a045" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.FaceRecording.nullData</definition>
+        <argsstring></argsstring>
+        <name>nullData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="23" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1a06fe1ad41d77cd359dd583c70d1f6e35" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.FaceRecording.FaceRecording</definition>
+        <argsstring>(String emotionName)</argsstring>
+        <name>FaceRecording</name>
+        <param>
+          <type>String</type>
+          <declname>emotionName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the Recording, giving it a name (timestamp) plus the emotion-type <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>String</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>emotionName </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="29" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1a94e9208ed4f1fe15264ab3b2293f3ce4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.FaceRecording.setData</definition>
+        <argsstring>(PXCMFaceData.LandmarkPoint[][] d, PXCMFaceData.LandmarkPoint[] nd)</argsstring>
+        <name>setData</name>
+        <param>
+          <type>PXCMFaceData.LandmarkPoint</type>
+          <declname>d</declname>
+          <array>[][]</array>
+        </param>
+        <param>
+          <type>PXCMFaceData.LandmarkPoint []</type>
+          <declname>nd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the landmark-data <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>PXCMFaceData.LandmarkPoint[][]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>frameByFrameData array of frame-by-frame data </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PXCMFaceData.LandmarkPoint[]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>nd data of the calibrated NullFace </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="39" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1a856729fd53a364765b202b3a9fb6f5dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.FaceRecording.Save</definition>
+        <argsstring>()</argsstring>
+        <name>Save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Saves this recording to a file (timestamp + emotion-type). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="48" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1a8a5e0b5187f8f71e490c612289df757f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.FaceRecording.getFace</definition>
+        <argsstring>(int frame)</argsstring>
+        <name>getFace</name>
+        <param>
+          <type>int</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the landmark-data of a certain frame. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>frame </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Landmark-Array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="71" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1adb306111dec190d5852088978ea2459e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.FaceRecording.getNullFace</definition>
+        <argsstring>()</argsstring>
+        <name>getNullFace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the NullFace of this recording </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="79" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_real_sense_1_1_face_recording_1a61d844c987701d6a21c0ce83333bdf14" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_real_sense_1_1_face_recording" kindref="compound">FaceRecording</ref></type>
+        <definition>static FaceRecording RealSense.FaceRecording.load</definition>
+        <argsstring>(String n)</argsstring>
+        <name>load</name>
+        <param>
+          <type>String</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a recording from a file <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>String</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>n filename </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An instance of <ref refid="class_real_sense_1_1_face_recording" kindref="compound">FaceRecording</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Analyse/FaceRecording.cs" line="61" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="61" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Analyse/FaceRecording.cs" line="20" column="1" bodyfile="Analyse/FaceRecording.cs" bodystart="19" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_face_recording_1a28f454b591d26af263981910b27ccc98" prot="private" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>data</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a06fe1ad41d77cd359dd583c70d1f6e35" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>FaceRecording</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a8a5e0b5187f8f71e490c612289df757f" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>getFace</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1adb306111dec190d5852088978ea2459e" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>getNullFace</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a61d844c987701d6a21c0ce83333bdf14" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>load</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a5bfcd3e23949c1a0410eb7352839bb07" prot="private" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>name</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a457bf9b0368b6eaf89447d4818b1a045" prot="private" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>nullData</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a856729fd53a364765b202b3a9fb6f5dd" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>Save</name></member>
+      <member refid="class_real_sense_1_1_face_recording_1a94e9208ed4f1fe15264ab3b2293f3ce4" prot="public" virt="non-virtual"><scope>RealSense::FaceRecording</scope><name>setData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1457 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_model" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::Model</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" prot="public" static="no">
+        <name>AXIS</name>
+        <enumvalue id="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946ba02129bb861061d1a052c592e2dc6b383" prot="public">
+          <name>X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946ba57cec4137b614c87cb4e24a3d003a3e0" prot="public">
+          <name>Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946ba21c2e59531c8710156d34a3c30ac81d5" prot="public">
+          <name>Z</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="18" column="1" bodyfile="Framework/Model.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" prot="public" static="no">
+        <name>Emotion</name>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208a1bd79dc2e415209351d2e8150e7ad3f8" prot="public">
+          <name>ANGER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208a002b7c5ac7e005a9c0e9dd0a87137d8c" prot="public">
+          <name>CONTEMPT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208a4839c271b7a45921062565663bb9f1e2" prot="public">
+          <name>DISGUST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208a33349897f173d6e18909905106fc38b6" prot="public">
+          <name>FEAR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208acda0ca4b45c4b3c0c831f96241342fdb" prot="public">
+          <name>JOY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208a88c5374457f277ea4810aee2b1cec9ab" prot="public">
+          <name>SADNESS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208aa2e811a62955273eb0c71afb208944d5" prot="public">
+          <name>SURPRISE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="19" column="1" bodyfile="Framework/Model.cs" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190" prot="public" static="no">
+        <name>MODE</name>
+        <enumvalue id="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190a7131c39e2eb7ed10c4c28f88be245b49" prot="public">
+          <name>ANALYZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190a855520d2a5b0b1a64b939e7e30889e2a" prot="public">
+          <name>RUN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190a033bd94b1168d7e4f0d644c3c95e35bf" prot="public">
+          <name>TEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="20" column="1" bodyfile="Framework/Model.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a2f289c39689e5de8feeb82dcfb708170" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.NOSE_FIX</definition>
+        <argsstring></argsstring>
+        <name>NOSE_FIX</name>
+        <initializer>= 26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="21" column="1" bodyfile="Framework/Model.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1af0a605c0cc3c8739836a4e98ac06b864" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Model.calibrated</definition>
+        <argsstring></argsstring>
+        <name>calibrated</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="22" column="1" bodyfile="Framework/Model.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a616fff0eeb4bb5f46e9015b60c039ba6" prot="private" static="no" mutable="no">
+        <type>PXCMSenseManager</type>
+        <definition>PXCMSenseManager RealSense.Model.senseManager</definition>
+        <argsstring></argsstring>
+        <name>senseManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="25" column="1" bodyfile="Framework/Model.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a135b1ca9b17eee13af9f03b7591f3b7f" prot="private" static="no" mutable="no">
+        <type>PXCMFaceModule</type>
+        <definition>PXCMFaceModule RealSense.Model.face</definition>
+        <argsstring></argsstring>
+        <name>face</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="26" column="1" bodyfile="Framework/Model.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a62c42decc93e834b0e8207d80af1ef38" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData</type>
+        <definition>PXCMFaceData RealSense.Model.faceData</definition>
+        <argsstring></argsstring>
+        <name>faceData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="27" column="1" bodyfile="Framework/Model.cs" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ab42b4dc5ffab158ed54fa89f900a5d6b" prot="private" static="no" mutable="no">
+        <type>PXCMFaceConfiguration</type>
+        <definition>PXCMFaceConfiguration RealSense.Model.faceConfig</definition>
+        <argsstring></argsstring>
+        <name>faceConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="28" column="1" bodyfile="Framework/Model.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a7e695d318bbdfda60374dede2e79f900" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarksData</type>
+        <definition>PXCMFaceData.LandmarksData RealSense.Model.lp</definition>
+        <argsstring></argsstring>
+        <name>lp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="30" column="1" bodyfile="Framework/Model.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a6236ed2363e2dbf8782e9dee6f7a6886" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.Model.nullFace</definition>
+        <argsstring></argsstring>
+        <name>nullFace</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="31" column="1" bodyfile="Framework/Model.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a279fde3e95eee9a8695973ecd92754ac" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.Model.currentFace</definition>
+        <argsstring></argsstring>
+        <name>currentFace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="32" column="1" bodyfile="Framework/Model.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1af27e4f9f2ac5b12f687c45fb34e491cc" prot="private" static="no" mutable="no">
+        <type>PXCMFaceData.PoseEulerAngles</type>
+        <definition>PXCMFaceData.PoseEulerAngles RealSense.Model.nullPose</definition>
+        <argsstring></argsstring>
+        <name>nullPose</name>
+        <initializer>= new PXCMFaceData.PoseEulerAngles()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="33" column="1" bodyfile="Framework/Model.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a0b0643ee041eb081723ba4d587ad2ad8" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; String, double &gt;</type>
+        <definition>Dictionary&lt;String, double&gt; RealSense.Model.au_Values</definition>
+        <argsstring></argsstring>
+        <name>au_Values</name>
+        <initializer>= new Dictionary&lt;String, double&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="35" column="1" bodyfile="Framework/Model.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ad54332aa30d7d3187a65e5fe88d24983" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double &gt;</type>
+        <definition>Dictionary&lt;Emotion, double&gt; RealSense.Model.emotions</definition>
+        <argsstring></argsstring>
+        <name>emotions</name>
+        <initializer>= new Dictionary&lt;<ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="36" column="1" bodyfile="Framework/Model.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a465c7ca1144e46b5cec73c9c5e68ee59" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap &gt;</type>
+        <definition>Dictionary&lt;Emotion, Bitmap&gt; RealSense.Model.emotionBitmaps</definition>
+        <argsstring></argsstring>
+        <name>emotionBitmaps</name>
+        <initializer>= new Dictionary&lt;<ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="37" column="1" bodyfile="Framework/Model.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1aa909813938854d436c111e86e1f901ab" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, PictureBox &gt;</type>
+        <definition>Dictionary&lt;Emotion, PictureBox&gt; RealSense.Model.emotionPictureBoxes</definition>
+        <argsstring></argsstring>
+        <name>emotionPictureBoxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="38" column="1" bodyfile="Framework/Model.cs" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a50f1da8dfe3b6a1504940638ed8003a8" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap &gt;</type>
+        <definition>Dictionary&lt;Emotion, Bitmap&gt; RealSense.Model.exampleBitmaps</definition>
+        <argsstring></argsstring>
+        <name>exampleBitmaps</name>
+        <initializer>= new Dictionary&lt;<ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="39" column="1" bodyfile="Framework/Model.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a99913751f7c9877aab933b037caeb656" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String RealSense.Model.examplePath</definition>
+        <argsstring></argsstring>
+        <name>examplePath</name>
+        <initializer>= &quot;C:/Users/prouser/Pictures/reneEmotions&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="40" column="1" bodyfile="Framework/Model.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ab01af1a472d4e6bb98ef7a658bc3d286" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double &gt;</type>
+        <definition>Dictionary&lt;Emotion, double&gt; RealSense.Model.emotionMax</definition>
+        <argsstring></argsstring>
+        <name>emotionMax</name>
+        <initializer>= new Dictionary&lt;<ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="41" column="1" bodyfile="Framework/Model.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a919161e337a9bd56b37a8502d75dc33c" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref> &gt;</type>
+        <definition>List&lt;RSModule&gt; RealSense.Model.modules</definition>
+        <argsstring></argsstring>
+        <name>modules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="42" column="1" bodyfile="Framework/Model.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1aa0b9a7682c44c23c2b1be2b780c11e32" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="43" column="1" bodyfile="Framework/Model.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a2c87f6604d9a2949b79ae50455abef59" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="44" column="1" bodyfile="Framework/Model.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1aef191af7bf2ee739a3266a2b0d13c089" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.framerate</definition>
+        <argsstring></argsstring>
+        <name>framerate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="45" column="1" bodyfile="Framework/Model.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a84d04add58ac14c4695237ac76a9855d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.currentPoseDiff</definition>
+        <argsstring></argsstring>
+        <name>currentPoseDiff</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="46" column="1" bodyfile="Framework/Model.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ad242dc013145eb3088ea0dc1989edde7" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.yawDiff</definition>
+        <argsstring></argsstring>
+        <name>yawDiff</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="46" column="1" bodyfile="Framework/Model.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a073b49d8a77ac3cd17ce3777ea3583f3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.rollDiff</definition>
+        <argsstring></argsstring>
+        <name>rollDiff</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="46" column="1" bodyfile="Framework/Model.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a5c274a2ebb54aa9f21dc1adf3cc64e9a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.pitchDiff</definition>
+        <argsstring></argsstring>
+        <name>pitchDiff</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="46" column="1" bodyfile="Framework/Model.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ac4aa99709fb05eeb181354ffa9a2503c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Model.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="47" column="1" bodyfile="Framework/Model.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a7f7209e25a1236ed259328d9a0bacaa6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_real_sense_1_1_camera_view" kindref="compound">CameraView</ref></type>
+        <definition>CameraView RealSense.Model.view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="51" column="1" bodyfile="Framework/Model.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1af12f266026f38a534b17783108067c14" prot="private" static="no" mutable="no">
+        <type>Font</type>
+        <definition>Font RealSense.Model.defaultFont</definition>
+        <argsstring></argsstring>
+        <name>defaultFont</name>
+        <initializer>= new Font(&quot;Arial&quot;, 18)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="53" column="1" bodyfile="Framework/Model.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a81edea3a043f5aa6e02de9cfb667db8e" prot="private" static="no" mutable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.defaultStringBrush</definition>
+        <argsstring></argsstring>
+        <name>defaultStringBrush</name>
+        <initializer>= new SolidBrush(Color.White)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="54" column="1" bodyfile="Framework/Model.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a4ac27448599743b86ed5a26a3acc1c0c" prot="private" static="no" mutable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.bgStringBrush</definition>
+        <argsstring></argsstring>
+        <name>bgStringBrush</name>
+        <initializer>= new SolidBrush(Color.FromArgb(200, 0, 0, 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="55" column="1" bodyfile="Framework/Model.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a0b69df1818f10df0c6a421c744772e93" prot="private" static="no" mutable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.opaqueStringBrush</definition>
+        <argsstring></argsstring>
+        <name>opaqueStringBrush</name>
+        <initializer>= new SolidBrush(Color.FromArgb(255, 0, 0, 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="56" column="1" bodyfile="Framework/Model.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ad47343ba4a7eeab5ff109690cab7dd29" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.maxPose</definition>
+        <argsstring></argsstring>
+        <name>maxPose</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="58" column="1" bodyfile="Framework/Model.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1aa28a54c7e70fa364f43433a9a17ea1c3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Model.stream</definition>
+        <argsstring></argsstring>
+        <name>stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="59" column="1" bodyfile="Framework/Model.cs" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1ad4e469e9cf474c5f813a757be1eaf55d" prot="public" static="no" mutable="no">
+        <type>PXCMFaceData.Face</type>
+        <definition>PXCMFaceData.Face RealSense.Model.faceAktuell</definition>
+        <argsstring></argsstring>
+        <name>faceAktuell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="29" column="1" bodyfile="Framework/Model.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1aa6e241f22bac2dbdefdceef6e4cf0202" prot="public" static="no" mutable="no">
+        <type>PXCMFaceData.PoseEulerAngles</type>
+        <definition>PXCMFaceData.PoseEulerAngles RealSense.Model.currentPose</definition>
+        <argsstring></argsstring>
+        <name>currentPose</name>
+        <initializer>= new PXCMFaceData.PoseEulerAngles()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="34" column="1" bodyfile="Framework/Model.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_model_1a8573a7d01db1fb8a29f5873a717373bc" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.calibrationProgress</definition>
+        <argsstring></argsstring>
+        <name>calibrationProgress</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="49" column="1" bodyfile="Framework/Model.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a9664e53331481e9cc45ad6d3540c218c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>List&lt; <ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref> &gt;</type>
+        <definition>List&lt;RSModule&gt; RealSense.Model.Modules</definition>
+        <argsstring></argsstring>
+        <name>Modules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter of the modules </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="254" column="1" bodyfile="Framework/Model.cs" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a396ec458576859184ac7e39d9be13465" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMSenseManager</type>
+        <definition>PXCMSenseManager RealSense.Model.SenseManager</definition>
+        <argsstring></argsstring>
+        <name>SenseManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the SenseManager </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="262" column="1" bodyfile="Framework/Model.cs" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a20e2b5bc79da762b436b75ddd28f63b7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the width </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="270" column="1" bodyfile="Framework/Model.cs" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1abf6324c9f4acc3134909a239eff37a0a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the height </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="278" column="1" bodyfile="Framework/Model.cs" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1abb8701f1030ca1e3bfd226a9ad352da5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceModule</type>
+        <definition>PXCMFaceModule RealSense.Model.Face</definition>
+        <argsstring></argsstring>
+        <name>Face</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the face </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="287" column="1" bodyfile="Framework/Model.cs" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a3e349d000d00015a340954ec3be977ea" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.LandmarksData</type>
+        <definition>PXCMFaceData.LandmarksData RealSense.Model.Lp</definition>
+        <argsstring></argsstring>
+        <name>Lp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the landmarkpoints</para><para>WARNING do not touch outside the camera thread -&gt; so use currentFace </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="297" column="1" bodyfile="Framework/Model.cs" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1ad90fab8a6125b55803734ebbdcf1f83d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.Model.CurrentFace</definition>
+        <argsstring></argsstring>
+        <name>CurrentFace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentFace </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="317" column="1" bodyfile="Framework/Model.cs" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1af626df64a18cb2fcf4cbc06ffbadfa17" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.LandmarkPoint []</type>
+        <definition>PXCMFaceData.LandmarkPoint [] RealSense.Model.NullFace</definition>
+        <argsstring></argsstring>
+        <name>NullFace</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the ABSOLUTE NullFace </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="326" column="1" bodyfile="Framework/Model.cs" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a0d16c2536a9f3c346cc3d51b3227989e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData</type>
+        <definition>PXCMFaceData RealSense.Model.FaceData</definition>
+        <argsstring></argsstring>
+        <name>FaceData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the faceData </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="336" column="1" bodyfile="Framework/Model.cs" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a3621c14d22c3709775971fed725c2781" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.Face</type>
+        <definition>PXCMFaceData.Face RealSense.Model.FaceAktuell</definition>
+        <argsstring></argsstring>
+        <name>FaceAktuell</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the FaceCurrent</para><para>FaceAktuell should be changed to FaceCurrent, where is it initialised </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="347" column="1" bodyfile="Framework/Model.cs" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1ad06548f5b1e3b3bfeaca2635d2b24fc6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_real_sense_1_1_camera_view" kindref="compound">CameraView</ref></type>
+        <definition>CameraView RealSense.Model.View</definition>
+        <argsstring></argsstring>
+        <name>View</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the View </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="356" column="1" bodyfile="Framework/Model.cs" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a7a0873ddece63f5d3eb49f087771e9c6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.CurrentPoseDiff</definition>
+        <argsstring></argsstring>
+        <name>CurrentPoseDiff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentPoseDiff </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="365" column="1" bodyfile="Framework/Model.cs" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a556c083ee213249d05c2383ffc8e46f4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int RealSense.Model.PoseMax</definition>
+        <argsstring></argsstring>
+        <name>PoseMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the PoseMax </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="374" column="1" bodyfile="Framework/Model.cs" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a7ba288087bcec5d88a34064df08fbf20" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.CurrentRollDiff</definition>
+        <argsstring></argsstring>
+        <name>CurrentRollDiff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentRollDiff </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="383" column="1" bodyfile="Framework/Model.cs" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a9701d5e1b5c733f70349f94ec7fee978" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.CurrentPitchDiff</definition>
+        <argsstring></argsstring>
+        <name>CurrentPitchDiff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentPitchDiff </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="392" column="1" bodyfile="Framework/Model.cs" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1ae5d9b51742c782f5f79c38761cfaee3c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double RealSense.Model.CurrentYawDiff</definition>
+        <argsstring></argsstring>
+        <name>CurrentYawDiff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentYawDiff </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="401" column="1" bodyfile="Framework/Model.cs" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a30358a7ea8e1e59815e2f562a3fc6bad" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double &gt;</type>
+        <definition>Dictionary&lt;Emotion, double&gt; RealSense.Model.Emotions</definition>
+        <argsstring></argsstring>
+        <name>Emotions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the array from the emotions </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="410" column="1" bodyfile="Framework/Model.cs" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a1e12c6ceac3f412e6b452148b1a97bb1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Font</type>
+        <definition>Font RealSense.Model.DefaultFont</definition>
+        <argsstring></argsstring>
+        <name>DefaultFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the DefaultFont </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="419" column="1" bodyfile="Framework/Model.cs" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1aaee076946f30b272e403d39afe033b4e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.DefaultStringBrush</definition>
+        <argsstring></argsstring>
+        <name>DefaultStringBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the DefaultStringBrush </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="428" column="1" bodyfile="Framework/Model.cs" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1af6cb31aea9e1e0fd3ef87c9380e92193" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.PoseEulerAngles</type>
+        <definition>PXCMFaceData.PoseEulerAngles RealSense.Model.NullPose</definition>
+        <argsstring></argsstring>
+        <name>NullPose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the NullPose </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="437" column="1" bodyfile="Framework/Model.cs" bodystart="438" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a5d30cb7ac89ab7528623a695056096c4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PXCMFaceData.PoseEulerAngles</type>
+        <definition>PXCMFaceData.PoseEulerAngles RealSense.Model.CurrentPose</definition>
+        <argsstring></argsstring>
+        <name>CurrentPose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the CurrentPose </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="446" column="1" bodyfile="Framework/Model.cs" bodystart="447" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a05161bcafb94b553304268ab16861a84" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.DefaultBGBrush</definition>
+        <argsstring></argsstring>
+        <name>DefaultBGBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the DefaultBGBrush </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="455" column="1" bodyfile="Framework/Model.cs" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a14272eb96159aac12a818e2e15c36cb0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>SolidBrush</type>
+        <definition>SolidBrush RealSense.Model.OpaqueBGBrush</definition>
+        <argsstring></argsstring>
+        <name>OpaqueBGBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the OpaqueBGBrush </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="463" column="1" bodyfile="Framework/Model.cs" bodystart="464" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a5a20efa42d5391f0a8156d45f676fc34" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; String, double &gt;</type>
+        <definition>Dictionary&lt;String, double&gt; RealSense.Model.AU_Values</definition>
+        <argsstring></argsstring>
+        <name>AU_Values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the AU_Values </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="471" column="1" bodyfile="Framework/Model.cs" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a89f4614b0f880fb6553ebcea3d2e6a6c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool RealSense.Model.Test</definition>
+        <argsstring></argsstring>
+        <name>Test</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of whether to test or not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="480" column="1" bodyfile="Framework/Model.cs" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a6b3603d17577660f65fc7bbb6b097182" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>Bitmap</type>
+        <definition>Bitmap RealSense.Model.ColorBitmap</definition>
+        <argsstring></argsstring>
+        <name>ColorBitmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the ColorBitmap </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="489" column="1" bodyfile="Framework/Model.cs" bodystart="490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1a654d0ac6e4e49b884fd3e166039c7bc4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap &gt;</type>
+        <definition>Dictionary&lt;Emotion, Bitmap&gt; RealSense.Model.EmotionBitmaps</definition>
+        <argsstring></argsstring>
+        <name>EmotionBitmaps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the EmotionBitmaps </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="497" column="1" bodyfile="Framework/Model.cs" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1ac5454f63dfead405cd1d9c229cf6790f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, double &gt;</type>
+        <definition>Dictionary&lt;Emotion, double&gt; RealSense.Model.EmotionMax</definition>
+        <argsstring></argsstring>
+        <name>EmotionMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the EmotionMax </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="506" column="1" bodyfile="Framework/Model.cs" bodystart="507" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1afbdadf185ba37319705fd55d102c0cb4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, Bitmap &gt;</type>
+        <definition>Dictionary&lt;Emotion, Bitmap&gt; RealSense.Model.ExcampleBitmaps</definition>
+        <argsstring></argsstring>
+        <name>ExcampleBitmaps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the ExcampleBitmaps </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="515" column="1" bodyfile="Framework/Model.cs" bodystart="516" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_real_sense_1_1_model_1ad2c87f308e42010ca032deec5cfa5e0b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; <ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref>, PictureBox &gt;</type>
+        <definition>Dictionary&lt;Emotion, PictureBox&gt; RealSense.Model.EmotionPictureBoxes</definition>
+        <argsstring></argsstring>
+        <name>EmotionPictureBoxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>getter and setter of the EmotionPictureBoxes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="524" column="1" bodyfile="Framework/Model.cs" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a39349d1d9b1274a9fe28614e9ce215f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.Model.Model</definition>
+        <argsstring>(bool s)</argsstring>
+        <name>Model</name>
+        <param>
+          <type>bool</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor of the model It does all the important stuff to use our camera. Its so FANCY ! Like enabling all important tracker(Hand, Face), the stream and builds up the configuration. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="67" column="1" bodyfile="Framework/Model.cs" bodystart="67" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a078b1ddb43e777aa73c1b3898722e4bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.EmotionValue</definition>
+        <argsstring>(Emotion emotion)</argsstring>
+        <name>EmotionValue</name>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" kindref="member">Emotion</ref></type>
+          <declname>emotion</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the value of the given emotion.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>emotion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>given emotion </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the emotion value or -1 if the key doesn&apos;t exist </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="119" column="1" bodyfile="Framework/Model.cs" bodystart="119" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a8b8bff51e69b2b33f5c8cfb007c424e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealSense.Model.AddModule</definition>
+        <argsstring>(RSModule m)</argsstring>
+        <name>AddModule</name>
+        <param>
+          <type><ref refid="class_real_sense_1_1_r_s_module" kindref="compound">RSModule</ref></type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a new modul to the List <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RSModul</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>m which is the new module </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="130" column="1" bodyfile="Framework/Model.cs" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a7f212901958598b29fabcf087fc33bdb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.DifferenceByAxis</definition>
+        <argsstring>(int i01, int i02, AXIS axis, bool absolute)</argsstring>
+        <name>DifferenceByAxis</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" kindref="member">AXIS</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>absolute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the total difference of axis-specific distance between two points <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which is the specific axis to work with </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>absolute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>defines wether or not the absolute difference should be returned or not </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="141" column="1" bodyfile="Framework/Model.cs" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1aab86ce9f3027b3fca83d11a97353154c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.NullFaceBetweenByAxis</definition>
+        <argsstring>(int i01, int i02, AXIS axis, bool absolute)</argsstring>
+        <name>NullFaceBetweenByAxis</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" kindref="member">AXIS</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>absolute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the axis-specific difference of the points from the ABSOLUTENullFace <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which is the specific axis to work with </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>absolute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>defines wether or not the absolute difference should be returned or not </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="152" column="1" bodyfile="Framework/Model.cs" bodystart="152" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1abaaee5d06f75b1fb9a9d8946ebf53934" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.BetweenByAxis</definition>
+        <argsstring>(int i01, int i02, AXIS axis, bool absolute)</argsstring>
+        <name>BetweenByAxis</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" kindref="member">AXIS</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>absolute</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the axis-specific difference of the points from the ABSOLUTENullFace <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which is the specific axis to work with </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>absolute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>defines wether or not the absolute difference should be returned or not </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="170" column="1" bodyfile="Framework/Model.cs" bodystart="170" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a1d827ed6fd7d689679af4a276362128b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.Difference</definition>
+        <argsstring>(int i01, int i02)</argsstring>
+        <name>Difference</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>calculates the percentage of the difference of distance between two points <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double between 0 and 100 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="187" column="1" bodyfile="Framework/Model.cs" bodystart="187" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a69d8b360ed9c9ddaa19a0619df408e2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.DifferenceNullCurrent</definition>
+        <argsstring>(int i01, AXIS axis)</argsstring>
+        <name>DifferenceNullCurrent</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type><ref refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" kindref="member">AXIS</ref></type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the change in distance between the nose-fixpoint along a specified axis <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>i01 - landmark-number </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>AXIS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>axis - axis to consider </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="197" column="1" bodyfile="Framework/Model.cs" bodystart="197" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a03fd4fa56ceb5cbcebdbebb4b7a78158" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.NullFaceBetween</definition>
+        <argsstring>(int i01, int i02)</argsstring>
+        <name>NullFaceBetween</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>calculates the differenc of the points from the ABSOLUTENullFace <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="213" column="1" bodyfile="Framework/Model.cs" bodystart="213" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_model_1a846e090817e3200e8c20af80094fdcc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double RealSense.Model.Between</definition>
+        <argsstring>(int i01, int i02)</argsstring>
+        <name>Between</name>
+        <param>
+          <type>int</type>
+          <declname>i01</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i02</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>calculates the difference between the two points of the current frame <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i01</parametername>
+<parametername>i02</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which are the current points to calculate the difference </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Framework/Model.cs" line="229" column="1" bodyfile="Framework/Model.cs" bodystart="229" bodyend="249"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Stores all of our data. It is based at the MVC Pattern</para><para><simplesect kind="author"><para>Tanja Witke </para></simplesect>
+</para>    </detaileddescription>
+    <location file="Framework/Model.cs" line="17" column="1" bodyfile="Framework/Model.cs" bodystart="16" bodyend="529"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_model_1a8b8bff51e69b2b33f5c8cfb007c424e5" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>AddModule</name></member>
+      <member refid="class_real_sense_1_1_model_1a0b0643ee041eb081723ba4d587ad2ad8" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>au_Values</name></member>
+      <member refid="class_real_sense_1_1_model_1a5a20efa42d5391f0a8156d45f676fc34" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>AU_Values</name></member>
+      <member refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>AXIS</name></member>
+      <member refid="class_real_sense_1_1_model_1a846e090817e3200e8c20af80094fdcc8" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Between</name></member>
+      <member refid="class_real_sense_1_1_model_1abaaee5d06f75b1fb9a9d8946ebf53934" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>BetweenByAxis</name></member>
+      <member refid="class_real_sense_1_1_model_1a4ac27448599743b86ed5a26a3acc1c0c" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>bgStringBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1af0a605c0cc3c8739836a4e98ac06b864" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>calibrated</name></member>
+      <member refid="class_real_sense_1_1_model_1a8573a7d01db1fb8a29f5873a717373bc" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>calibrationProgress</name></member>
+      <member refid="class_real_sense_1_1_model_1a6b3603d17577660f65fc7bbb6b097182" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>ColorBitmap</name></member>
+      <member refid="class_real_sense_1_1_model_1ad90fab8a6125b55803734ebbdcf1f83d" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentFace</name></member>
+      <member refid="class_real_sense_1_1_model_1a279fde3e95eee9a8695973ecd92754ac" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>currentFace</name></member>
+      <member refid="class_real_sense_1_1_model_1a9701d5e1b5c733f70349f94ec7fee978" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentPitchDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1aa6e241f22bac2dbdefdceef6e4cf0202" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>currentPose</name></member>
+      <member refid="class_real_sense_1_1_model_1a5d30cb7ac89ab7528623a695056096c4" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentPose</name></member>
+      <member refid="class_real_sense_1_1_model_1a7a0873ddece63f5d3eb49f087771e9c6" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentPoseDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1a84d04add58ac14c4695237ac76a9855d" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>currentPoseDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1a7ba288087bcec5d88a34064df08fbf20" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentRollDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1ae5d9b51742c782f5f79c38761cfaee3c" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>CurrentYawDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1a05161bcafb94b553304268ab16861a84" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>DefaultBGBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1af12f266026f38a534b17783108067c14" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>defaultFont</name></member>
+      <member refid="class_real_sense_1_1_model_1a1e12c6ceac3f412e6b452148b1a97bb1" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>DefaultFont</name></member>
+      <member refid="class_real_sense_1_1_model_1a81edea3a043f5aa6e02de9cfb667db8e" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>defaultStringBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1aaee076946f30b272e403d39afe033b4e" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>DefaultStringBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1a1d827ed6fd7d689679af4a276362128b" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Difference</name></member>
+      <member refid="class_real_sense_1_1_model_1a7f212901958598b29fabcf087fc33bdb" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>DifferenceByAxis</name></member>
+      <member refid="class_real_sense_1_1_model_1a69d8b360ed9c9ddaa19a0619df408e2a" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>DifferenceNullCurrent</name></member>
+      <member refid="class_real_sense_1_1_model_1a5bf3fde8f53519f7a740d8b4e0399208" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Emotion</name></member>
+      <member refid="class_real_sense_1_1_model_1a654d0ac6e4e49b884fd3e166039c7bc4" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>EmotionBitmaps</name></member>
+      <member refid="class_real_sense_1_1_model_1a465c7ca1144e46b5cec73c9c5e68ee59" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>emotionBitmaps</name></member>
+      <member refid="class_real_sense_1_1_model_1ac5454f63dfead405cd1d9c229cf6790f" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>EmotionMax</name></member>
+      <member refid="class_real_sense_1_1_model_1ab01af1a472d4e6bb98ef7a658bc3d286" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>emotionMax</name></member>
+      <member refid="class_real_sense_1_1_model_1ad2c87f308e42010ca032deec5cfa5e0b" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>EmotionPictureBoxes</name></member>
+      <member refid="class_real_sense_1_1_model_1aa909813938854d436c111e86e1f901ab" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>emotionPictureBoxes</name></member>
+      <member refid="class_real_sense_1_1_model_1ad54332aa30d7d3187a65e5fe88d24983" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>emotions</name></member>
+      <member refid="class_real_sense_1_1_model_1a30358a7ea8e1e59815e2f562a3fc6bad" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Emotions</name></member>
+      <member refid="class_real_sense_1_1_model_1a078b1ddb43e777aa73c1b3898722e4bb" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>EmotionValue</name></member>
+      <member refid="class_real_sense_1_1_model_1a50f1da8dfe3b6a1504940638ed8003a8" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>exampleBitmaps</name></member>
+      <member refid="class_real_sense_1_1_model_1a99913751f7c9877aab933b037caeb656" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>examplePath</name></member>
+      <member refid="class_real_sense_1_1_model_1afbdadf185ba37319705fd55d102c0cb4" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>ExcampleBitmaps</name></member>
+      <member refid="class_real_sense_1_1_model_1abb8701f1030ca1e3bfd226a9ad352da5" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Face</name></member>
+      <member refid="class_real_sense_1_1_model_1a135b1ca9b17eee13af9f03b7591f3b7f" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>face</name></member>
+      <member refid="class_real_sense_1_1_model_1ad4e469e9cf474c5f813a757be1eaf55d" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>faceAktuell</name></member>
+      <member refid="class_real_sense_1_1_model_1a3621c14d22c3709775971fed725c2781" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>FaceAktuell</name></member>
+      <member refid="class_real_sense_1_1_model_1ab42b4dc5ffab158ed54fa89f900a5d6b" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>faceConfig</name></member>
+      <member refid="class_real_sense_1_1_model_1a0d16c2536a9f3c346cc3d51b3227989e" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>FaceData</name></member>
+      <member refid="class_real_sense_1_1_model_1a62c42decc93e834b0e8207d80af1ef38" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>faceData</name></member>
+      <member refid="class_real_sense_1_1_model_1aef191af7bf2ee739a3266a2b0d13c089" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>framerate</name></member>
+      <member refid="class_real_sense_1_1_model_1a2c87f6604d9a2949b79ae50455abef59" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>height</name></member>
+      <member refid="class_real_sense_1_1_model_1abf6324c9f4acc3134909a239eff37a0a" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Height</name></member>
+      <member refid="class_real_sense_1_1_model_1a7e695d318bbdfda60374dede2e79f900" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>lp</name></member>
+      <member refid="class_real_sense_1_1_model_1a3e349d000d00015a340954ec3be977ea" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Lp</name></member>
+      <member refid="class_real_sense_1_1_model_1ad47343ba4a7eeab5ff109690cab7dd29" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>maxPose</name></member>
+      <member refid="class_real_sense_1_1_model_1ace9541c050b75cb23582ce01ac892190" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>MODE</name></member>
+      <member refid="class_real_sense_1_1_model_1a39349d1d9b1274a9fe28614e9ce215f3" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Model</name></member>
+      <member refid="class_real_sense_1_1_model_1a919161e337a9bd56b37a8502d75dc33c" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>modules</name></member>
+      <member refid="class_real_sense_1_1_model_1a9664e53331481e9cc45ad6d3540c218c" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Modules</name></member>
+      <member refid="class_real_sense_1_1_model_1a2f289c39689e5de8feeb82dcfb708170" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>NOSE_FIX</name></member>
+      <member refid="class_real_sense_1_1_model_1af626df64a18cb2fcf4cbc06ffbadfa17" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>NullFace</name></member>
+      <member refid="class_real_sense_1_1_model_1a6236ed2363e2dbf8782e9dee6f7a6886" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>nullFace</name></member>
+      <member refid="class_real_sense_1_1_model_1a03fd4fa56ceb5cbcebdbebb4b7a78158" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>NullFaceBetween</name></member>
+      <member refid="class_real_sense_1_1_model_1aab86ce9f3027b3fca83d11a97353154c" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>NullFaceBetweenByAxis</name></member>
+      <member refid="class_real_sense_1_1_model_1af6cb31aea9e1e0fd3ef87c9380e92193" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>NullPose</name></member>
+      <member refid="class_real_sense_1_1_model_1af27e4f9f2ac5b12f687c45fb34e491cc" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>nullPose</name></member>
+      <member refid="class_real_sense_1_1_model_1a14272eb96159aac12a818e2e15c36cb0" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>OpaqueBGBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1a0b69df1818f10df0c6a421c744772e93" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>opaqueStringBrush</name></member>
+      <member refid="class_real_sense_1_1_model_1a5c274a2ebb54aa9f21dc1adf3cc64e9a" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>pitchDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1a556c083ee213249d05c2383ffc8e46f4" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>PoseMax</name></member>
+      <member refid="class_real_sense_1_1_model_1a073b49d8a77ac3cd17ce3777ea3583f3" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>rollDiff</name></member>
+      <member refid="class_real_sense_1_1_model_1a616fff0eeb4bb5f46e9015b60c039ba6" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>senseManager</name></member>
+      <member refid="class_real_sense_1_1_model_1a396ec458576859184ac7e39d9be13465" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>SenseManager</name></member>
+      <member refid="class_real_sense_1_1_model_1aa28a54c7e70fa364f43433a9a17ea1c3" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>stream</name></member>
+      <member refid="class_real_sense_1_1_model_1a89f4614b0f880fb6553ebcea3d2e6a6c" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Test</name></member>
+      <member refid="class_real_sense_1_1_model_1ac4aa99709fb05eeb181354ffa9a2503c" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>test</name></member>
+      <member refid="class_real_sense_1_1_model_1ad06548f5b1e3b3bfeaca2635d2b24fc6" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>View</name></member>
+      <member refid="class_real_sense_1_1_model_1a7f7209e25a1236ed259328d9a0bacaa6" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>view</name></member>
+      <member refid="class_real_sense_1_1_model_1a20e2b5bc79da762b436b75ddd28f63b7" prot="public" virt="non-virtual"><scope>RealSense::Model</scope><name>Width</name></member>
+      <member refid="class_real_sense_1_1_model_1aa0b9a7682c44c23c2b1be2b780c11e32" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>width</name></member>
+      <member refid="class_real_sense_1_1_model_1ad242dc013145eb3088ea0dc1989edde7" prot="private" virt="non-virtual"><scope>RealSense::Model</scope><name>yawDiff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

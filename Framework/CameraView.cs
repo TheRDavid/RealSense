@@ -30,7 +30,7 @@ namespace RealSense
         // running number to Save all the images to the hard drive (careful with that ;) )
         private Thread updaterThread;
         private Model model;
-        public int save = 0, debug_y = 0;
+        private   int save = 0, debug_y = 0;
         private Button enableOutput = new Button();
         private Button enableImage = new Button();
         private bool outputEnabled, imageEnabled = true, resetModules = false;
