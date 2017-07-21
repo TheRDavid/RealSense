@@ -9,14 +9,9 @@ Inheritance diagram for Real\+Sense.\+Camera\+View\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_real_sense_1_1_camera_view_ac30953a5ea5feba14c2243833e2e5908}{Camera\+View} (\hyperlink{class_real_sense_1_1_model}{Model} model, bool test)
+\hyperlink{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}{Camera\+View} (\hyperlink{class_real_sense_1_1_model}{Model} model, \hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{Model.\+M\+O\+DE} m)
 \item 
 void \hyperlink{class_real_sense_1_1_camera_view_a67c8ee2cdbf0caf43e48043d90c0d549}{Add\+Component} (Control c)
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{class_real_sense_1_1_camera_view_a78ec68053fa36d321ce259f1d23e1d51}{save} = 0
 \end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -30,22 +25,32 @@ Bitmap \hyperlink{class_real_sense_1_1_camera_view_a487ce7be920e8f6742d704d97a60
 
 
 \subsection{Detailed Description}
+Main-\/\+UI for testing-\/ and presentation-\/purposes \begin{DoxyAuthor}{Author}
+\+: David Rosenbusch  Hufflepuff 
+\end{DoxyAuthor}
 
 
-Definition at line 17 of file Camera\+View.\+cs.
+Definition at line 20 of file Camera\+View.\+cs.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_real_sense_1_1_camera_view_ac30953a5ea5feba14c2243833e2e5908}\label{class_real_sense_1_1_camera_view_ac30953a5ea5feba14c2243833e2e5908}} 
+\mbox{\Hypertarget{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}\label{class_real_sense_1_1_camera_view_ac7f93adbed37d386412a051e6f93f978}} 
 \index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Camera\+View@{Camera\+View}}
 \index{Camera\+View@{Camera\+View}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
 \subsubsection{\texorpdfstring{Camera\+View()}{CameraView()}}
-{\footnotesize\ttfamily Real\+Sense.\+Camera\+View.\+Camera\+View (\begin{DoxyParamCaption}\item[{\hyperlink{class_real_sense_1_1_model}{Model}}]{model,  }\item[{bool}]{test }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Real\+Sense.\+Camera\+View.\+Camera\+View (\begin{DoxyParamCaption}\item[{\hyperlink{class_real_sense_1_1_model}{Model}}]{model,  }\item[{\hyperlink{class_real_sense_1_1_model_ace9541c050b75cb23582ce01ac892190}{Model.\+M\+O\+DE}}]{m }\end{DoxyParamCaption})}
 
-Initialise View and start updater Thread 
+Initialises View and starts updater Thread 
+\begin{DoxyParams}{Parameters}
+{\em model} & -\/ reference to data model \\
+\hline
+{\em Mode.\+Mode} & m -\/ mode the UI should run \\
+\hline
+\end{DoxyParams}
 
-Definition at line 67 of file Camera\+View.\+cs.
+
+Definition at line 73 of file Camera\+View.\+cs.
 
 
 
@@ -56,22 +61,16 @@ Definition at line 67 of file Camera\+View.\+cs.
 \subsubsection{\texorpdfstring{Add\+Component()}{AddComponent()}}
 {\footnotesize\ttfamily void Real\+Sense.\+Camera\+View.\+Add\+Component (\begin{DoxyParamCaption}\item[{Control}]{c }\end{DoxyParamCaption})}
 
+Add a component to the UI (thread-\/safe)
 
 
-Definition at line 203 of file Camera\+View.\+cs.
+\begin{DoxyParams}{Parameters}
+{\em Control} & c, control to be added \\
+\hline
+\end{DoxyParams}
 
 
-
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_real_sense_1_1_camera_view_a78ec68053fa36d321ce259f1d23e1d51}\label{class_real_sense_1_1_camera_view_a78ec68053fa36d321ce259f1d23e1d51}} 
-\index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!save@{save}}
-\index{save@{save}!Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}}
-\subsubsection{\texorpdfstring{save}{save}}
-{\footnotesize\ttfamily int Real\+Sense.\+Camera\+View.\+save = 0}
-
-
-
-Definition at line 31 of file Camera\+View.\+cs.
+Definition at line 215 of file Camera\+View.\+cs.
 
 
 
@@ -84,7 +83,7 @@ Definition at line 31 of file Camera\+View.\+cs.
 
 
 
-Definition at line 465 of file Camera\+View.\+cs.
+Definition at line 448 of file Camera\+View.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}\label{class_real_sense_1_1_camera_view_a5cc5cea08df7b36da52efba2a166e361}} 
 \index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Debug\+\_\+Y@{Debug\+\_\+Y}}
@@ -92,9 +91,9 @@ Definition at line 465 of file Camera\+View.\+cs.
 \subsubsection{\texorpdfstring{Debug\+\_\+Y}{Debug\_Y}}
 {\footnotesize\ttfamily int Real\+Sense.\+Camera\+View.\+Debug\+\_\+Y\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+Current y-\/coordinate of debug-\/messages 
 
-
-Definition at line 449 of file Camera\+View.\+cs.
+Definition at line 437 of file Camera\+View.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}\label{class_real_sense_1_1_camera_view_a342611e6157bb18b9c097186b3b9bee0}} 
 \index{Real\+Sense\+::\+Camera\+View@{Real\+Sense\+::\+Camera\+View}!Reset\+Modules@{Reset\+Modules}}
@@ -104,10 +103,10 @@ Definition at line 449 of file Camera\+View.\+cs.
 
 
 
-Definition at line 455 of file Camera\+View.\+cs.
+Definition at line 443 of file Camera\+View.\+cs.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Framework/\hyperlink{_camera_view_8cs}{Camera\+View.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/nutzer/\+Documents/\+Git\+Hub/\+Real\+Sense/\+Framework/\hyperlink{_camera_view_8cs}{Camera\+View.\+cs}\end{DoxyCompactItemize}

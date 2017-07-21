@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md__c_1__users_nutzer__documents__git_hub__real_sense__r_e_a_d_m_e" kind="page">
+    <compoundname>md_C:_Users_nutzer_Documents_GitHub_RealSense_README</compoundname>
+    <title>RealSense</title>
+    <detaileddescription>
+<para>Recognize emotions with the intel realsense sr300</para><para>Here is a link to our <ulink url="https://cdn.rawgit.com/TheRDavid/RealSense/a2fed1bd/docs/doc.html">detailed Documentation</ulink>. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

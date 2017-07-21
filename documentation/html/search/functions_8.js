@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keytrigger',['keyTrigger',['../class_real_sense_1_1_face_recorder.html#aedf8a394ed84e2e4c3d82d050e457542',1,'RealSense.FaceRecorder.keyTrigger()'],['../class_real_sense_1_1_r_s_module.html#a72f31ae62486b23d17e1a04c902a21c5',1,'RealSense.RSModule.keyTrigger()']]]
+  ['keytrigger',['KeyTrigger',['../class_real_sense_1_1_face_recorder.html#a315985241eb6c21f6393d8104a967eb6',1,'RealSense.FaceRecorder.KeyTrigger()'],['../class_real_sense_1_1_r_s_module.html#a8434d4aa8c289766b24e67cabb7e9471',1,'RealSense.RSModule.KeyTrigger()']]]
 ];

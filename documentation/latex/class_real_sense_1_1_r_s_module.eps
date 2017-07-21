@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 1250.000000
+%%BoundingBox: 0 0 500 1203.703704
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.400000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.415385 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 27 def
+/rows 26 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -174,6 +174,17 @@
 boxfont setfont
 1 boundaspect scale
 (RealSense.RSModule) cw
+(RealSense.AU_BrowShift) cw
+(RealSense.AU_EyelidTight) cw
+(RealSense.AU_JawDrop) cw
+(RealSense.AU_LipCorner) cw
+(RealSense.AU_LipLine) cw
+(RealSense.AU_LipsTightened) cw
+(RealSense.AU_LipStretched) cw
+(RealSense.AU_LowerLipLowered) cw
+(RealSense.AU_LowerLipRaised) cw
+(RealSense.AU_NoseWrinkled) cw
+(RealSense.AU_UpperLipRaised) cw
 (RealSense.EM_Anger) cw
 (RealSense.Emotions.EM_Contempt) cw
 (RealSense.Emotions.EM_Disgust) cw
@@ -181,7 +192,6 @@ boxfont setfont
 (RealSense.Emotions.EM_Joy) cw
 (RealSense.Emotions.EM_Sadness) cw
 (RealSense.Emotions.EM_Surprise) cw
-(RealSense.EmotionSaver) cw
 (RealSense.FaceRecorder) cw
 (RealSense.FaceRect) cw
 (RealSense.FaceTrackerModule) cw
@@ -189,17 +199,6 @@ boxfont setfont
 (RealSense.LandmarkGroupModule) cw
 (RealSense.LandmarkTypeModule) cw
 (RealSense.ME_BearTeeth) cw
-(RealSense.ME_BrowShift) cw
-(RealSense.ME_EyelidTight) cw
-(RealSense.ME_JawDrop) cw
-(RealSense.ME_LipCorner) cw
-(RealSense.ME_LipLine) cw
-(RealSense.ME_LipsTightened) cw
-(RealSense.ME_LipStretched) cw
-(RealSense.ME_LowerLipLowered) cw
-(RealSense.ME_LowerLipRaised) cw
-(RealSense.ME_NoseWrinkled) cw
-(RealSense.ME_UpperLipRaised) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -211,40 +210,37 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (RealSense.RSModule) 0.000000 26.000000 box
- (RealSense.EM_Anger) 1.000000 25.000000 box
- (RealSense.Emotions.EM_Contempt) 1.000000 24.000000 box
- (RealSense.Emotions.EM_Disgust) 1.000000 23.000000 box
- (RealSense.Emotions.EM_Fear) 1.000000 22.000000 box
- (RealSense.Emotions.EM_Joy) 1.000000 21.000000 box
- (RealSense.Emotions.EM_Sadness) 1.000000 20.000000 box
- (RealSense.Emotions.EM_Surprise) 1.000000 19.000000 box
- (RealSense.EmotionSaver) 1.000000 18.000000 box
- (RealSense.FaceRecorder) 1.000000 17.000000 box
- (RealSense.FaceRect) 1.000000 16.000000 box
- (RealSense.FaceTrackerModule) 1.000000 15.000000 box
- (RealSense.Gauge_Module) 1.000000 14.000000 box
- (RealSense.LandmarkGroupModule) 1.000000 13.000000 box
- (RealSense.LandmarkTypeModule) 1.000000 12.000000 box
- (RealSense.ME_BearTeeth) 1.000000 11.000000 box
- (RealSense.ME_BrowShift) 1.000000 10.000000 box
- (RealSense.ME_EyelidTight) 1.000000 9.000000 box
- (RealSense.ME_JawDrop) 1.000000 8.000000 box
- (RealSense.ME_LipCorner) 1.000000 7.000000 box
- (RealSense.ME_LipLine) 1.000000 6.000000 box
- (RealSense.ME_LipsTightened) 1.000000 5.000000 box
- (RealSense.ME_LipStretched) 1.000000 4.000000 box
- (RealSense.ME_LowerLipLowered) 1.000000 3.000000 box
- (RealSense.ME_LowerLipRaised) 1.000000 2.000000 box
- (RealSense.ME_NoseWrinkled) 1.000000 1.000000 box
- (RealSense.ME_UpperLipRaised) 1.000000 0.000000 box
+ (RealSense.RSModule) 0.000000 25.000000 box
+ (RealSense.AU_BrowShift) 1.000000 24.000000 box
+ (RealSense.AU_EyelidTight) 1.000000 23.000000 box
+ (RealSense.AU_JawDrop) 1.000000 22.000000 box
+ (RealSense.AU_LipCorner) 1.000000 21.000000 box
+ (RealSense.AU_LipLine) 1.000000 20.000000 box
+ (RealSense.AU_LipsTightened) 1.000000 19.000000 box
+ (RealSense.AU_LipStretched) 1.000000 18.000000 box
+ (RealSense.AU_LowerLipLowered) 1.000000 17.000000 box
+ (RealSense.AU_LowerLipRaised) 1.000000 16.000000 box
+ (RealSense.AU_NoseWrinkled) 1.000000 15.000000 box
+ (RealSense.AU_UpperLipRaised) 1.000000 14.000000 box
+ (RealSense.EM_Anger) 1.000000 13.000000 box
+ (RealSense.Emotions.EM_Contempt) 1.000000 12.000000 box
+ (RealSense.Emotions.EM_Disgust) 1.000000 11.000000 box
+ (RealSense.Emotions.EM_Fear) 1.000000 10.000000 box
+ (RealSense.Emotions.EM_Joy) 1.000000 9.000000 box
+ (RealSense.Emotions.EM_Sadness) 1.000000 8.000000 box
+ (RealSense.Emotions.EM_Surprise) 1.000000 7.000000 box
+ (RealSense.FaceRecorder) 1.000000 6.000000 box
+ (RealSense.FaceRect) 1.000000 5.000000 box
+ (RealSense.FaceTrackerModule) 1.000000 4.000000 box
+ (RealSense.Gauge_Module) 1.000000 3.000000 box
+ (RealSense.LandmarkGroupModule) 1.000000 2.000000 box
+ (RealSense.LandmarkTypeModule) 1.000000 1.000000 box
+ (RealSense.ME_BearTeeth) 1.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-1 0.000000 25.250000 out
-solid
-0 0.000000 25.500000 hedge
+1 0.000000 24.250000 out
 solid
 0 0.000000 24.500000 hedge
 solid
@@ -296,4 +292,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 26.000000 0.500000 vedge
+0.000000 25.000000 0.500000 vedge

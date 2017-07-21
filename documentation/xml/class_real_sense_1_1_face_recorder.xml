@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="15" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="20" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_recorder_1a2449a655fd2121ab98d06ee7e329bd9d" prot="private" static="no" mutable="no">
         <type>PXCMFaceData.LandmarkPoint [][]</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="17" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="22" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_recorder_1a3ec62f7d48bd5376db4dc9708d952cef" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="18" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="23" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_recorder_1a856831bae8e35fe50c8696a0a9e82f0a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="19" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="24" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_recorder_1a8f13bbe03bdf6d58d89fc2c422ccd43c" prot="private" static="no" mutable="no">
         <type>string []</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="20" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="20" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="25" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="25" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="16" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="21" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_recorder_1a0547b01f1825c593b64c7f3f5d19c73e" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="16" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="21" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="21" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -114,10 +114,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Returns the current recording </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="71" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="72" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="90" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="property" id="class_real_sense_1_1_face_recorder_1a4f1a094d0321d299feb5aa0e3553b506" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>int</type>
@@ -127,10 +127,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Sets or gets the current recording-index </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="76" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="77" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="99" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="100" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -142,17 +142,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Initializes the keyTriggers and an empty buffer for the landmark-data. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="22" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="22" bodyend="28"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="30" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="30" bodyend="36"/>
       </memberdef>
-      <memberdef kind="function" id="class_real_sense_1_1_face_recorder_1aedf8a394ed84e2e4c3d82d050e457542" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="class_real_sense_1_1_face_recorder_1a315985241eb6c21f6393d8104a967eb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
-        <definition>override void RealSense.FaceRecorder.keyTrigger</definition>
+        <definition>override void RealSense.FaceRecorder.KeyTrigger</definition>
         <argsstring>(int key)</argsstring>
-        <name>keyTrigger</name>
-        <reimplements refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5">keyTrigger</reimplements>
+        <name>KeyTrigger</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471">KeyTrigger</reimplements>
         <param>
           <type>int</type>
           <declname>key</declname>
@@ -160,10 +160,18 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Custom method when triggered </para>        </detaileddescription>
+<para>The current recording&apos;s type is determined by the key that is pressed to trigger the recording. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- key that triggers the module </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="30" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="30" bodyend="48"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="42" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="42" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_face_recorder_1a2adae8c9db76fe9617e99795b4fa5e0e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -178,68 +186,73 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Update every frame (do calculations, manipulate output Image) <parameterlist kind="param"><parameteritem>
+<para>Shows whether or not a recording is taking place and records the current landmark-data <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>Graphics</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>g </para></parameterdescription>
+<para>g for the view </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/FaceRecorder.cs" line="50" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="50" bodyend="69"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="66" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="66" bodyend="85"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Upon being triggered by a key, this module records 300 frames of landmark-data and classifies it as a set emotion. <simplesect kind="author"><para>David  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
-      <node id="58">
+      <node id="104">
         <label>RealSense.FaceRecorder</label>
         <link refid="class_real_sense_1_1_face_recorder"/>
-        <childnode refid="59" relation="public-inheritance">
+        <childnode refid="105" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="59">
+      <node id="105">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="60">
+      <node id="106">
         <label>RealSense.FaceRecorder</label>
         <link refid="class_real_sense_1_1_face_recorder"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="61">
+      <node id="107">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
-        <childnode refid="62" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="62">
+      <node id="108">
         <label>RealSense.Model</label>
         <link refid="class_real_sense_1_1_model"/>
       </node>
     </collaborationgraph>
-    <location file="Analyse/FaceRecorder.cs" line="13" column="1" bodyfile="Analyse/FaceRecorder.cs" bodystart="12" bodyend="83"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" line="18" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/FaceRecorder.cs" bodystart="17" bodyend="106"/>
     <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>ConvertValues</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1ac49e8df678fa8faa93e95b44c8ef652e" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>currentRecording</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a2449a655fd2121ab98d06ee7e329bd9d" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>data</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>Debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>DynamicMinMax</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a782589b2a536a93d548f1efab49c6bcd" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>FaceRecorder</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>FilterToleranceValues</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a856831bae8e35fe50c8696a0a9e82f0a" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>frameIndex</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>framesGathered</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a0547b01f1825c593b64c7f3f5d19c73e" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>framesStored</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>Init</name></member>
-      <member refid="class_real_sense_1_1_face_recorder_1aedf8a394ed84e2e4c3d82d050e457542" prot="public" virt="virtual"><scope>RealSense::FaceRecorder</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_face_recorder_1a315985241eb6c21f6393d8104a967eb6" prot="public" virt="virtual"><scope>RealSense::FaceRecorder</scope><name>KeyTrigger</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>MIN</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>model</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>numFramesBeforeAccept</name></member>
@@ -248,7 +261,7 @@
       <member refid="class_real_sense_1_1_face_recorder_1a3dd841901321c20b2bba9067fc67bddd" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>Recording</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a3ec62f7d48bd5376db4dc9708d952cef" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>recording</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a4f1a094d0321d299feb5aa0e3553b506" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>RecordingIndex</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>Reset</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>triggers</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a8f13bbe03bdf6d58d89fc2c422ccd43c" prot="private" virt="non-virtual"><scope>RealSense::FaceRecorder</scope><name>typeNames</name></member>
       <member refid="class_real_sense_1_1_face_recorder_1a2adae8c9db76fe9617e99795b4fa5e0e" prot="public" virt="virtual"><scope>RealSense::FaceRecorder</scope><name>Work</name></member>

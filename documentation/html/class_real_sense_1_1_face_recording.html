@@ -96,8 +96,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a06fe1ad41d77cd359dd583c70d1f6e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e9208ed4f1fe15264ab3b2293f3ce4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_sense_1_1_face_recording.html#a94e9208ed4f1fe15264ab3b2293f3ce4">setData</a> (PXCMFaceData.LandmarkPoint[][] d, PXCMFaceData.LandmarkPoint[] nd)</td></tr>
 <tr class="separator:a94e9208ed4f1fe15264ab3b2293f3ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab0ad08e511ae94dbabe32a483a395ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_sense_1_1_face_recording.html#aab0ad08e511ae94dbabe32a483a395ca">save</a> ()</td></tr>
-<tr class="separator:aab0ad08e511ae94dbabe32a483a395ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856729fd53a364765b202b3a9fb6f5dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_sense_1_1_face_recording.html#a856729fd53a364765b202b3a9fb6f5dd">Save</a> ()</td></tr>
+<tr class="separator:a856729fd53a364765b202b3a9fb6f5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a5e0b5187f8f71e490c612289df757f"><td class="memItemLeft" align="right" valign="top">PXCMFaceData.LandmarkPoint []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_sense_1_1_face_recording.html#a8a5e0b5187f8f71e490c612289df757f">getFace</a> (int frame)</td></tr>
 <tr class="separator:a8a5e0b5187f8f71e490c612289df757f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb306111dec190d5852088978ea2459e"><td class="memItemLeft" align="right" valign="top">PXCMFaceData.LandmarkPoint []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_real_sense_1_1_face_recording.html#adb306111dec190d5852088978ea2459e">getNullFace</a> ()</td></tr>
@@ -109,8 +109,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a61d844c987701d6a21c0ce83333bdf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00011">11</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<div class="textblock"><p>All the data requiered to analyze a landmark-recording</p><ul>
+<li>Landmark-Coordinates frame by frame</li>
+<li>NullFace Landmark-Coordinates as a means to calibrate <dl class="section author"><dt>Author</dt><dd>David  Hufflepuff </dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00019">19</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a06fe1ad41d77cd359dd583c70d1f6e35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06fe1ad41d77cd359dd583c70d1f6e35">&#9670;&nbsp;</a></span>FaceRecording()</h2>
@@ -127,8 +132,14 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the Recording, giving it a name (timestamp) plus the emotion-type </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>emotionName </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00017">17</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00029">29</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
@@ -148,8 +159,15 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the landmark-data of a certain frame. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Landmark-Array </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00041">41</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00071">71</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
@@ -167,8 +185,9 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>the NullFace of this recording </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00046">46</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00079">79</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
@@ -195,27 +214,35 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Loads a recording from a file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">String</td><td>n filename </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An instance of <a class="el" href="class_real_sense_1_1_face_recording.html">FaceRecording</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00035">35</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00061">61</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
-<a id="aab0ad08e511ae94dbabe32a483a395ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0ad08e511ae94dbabe32a483a395ca">&#9670;&nbsp;</a></span>save()</h2>
+<a id="a856729fd53a364765b202b3a9fb6f5dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856729fd53a364765b202b3a9fb6f5dd">&#9670;&nbsp;</a></span>Save()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void RealSense.FaceRecording.save </td>
+          <td class="memname">void RealSense.FaceRecording.Save </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Saves this recording to a file (timestamp + emotion-type). </p>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00028">28</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00048">48</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
@@ -244,13 +271,20 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the landmark-data </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PXCMFaceData.LandmarkPoint[][]</td><td>frameByFrameData array of frame-by-frame data </td></tr>
+    <tr><td class="paramname">PXCMFaceData.LandmarkPoint[]</td><td>nd data of the calibrated NullFace </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00022">22</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_face_recording_8cs_source.html#l00039">39</a> of file <a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Analyse/<a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a></li>
+<li>C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/<a class="el" href="_face_recording_8cs_source.html">FaceRecording.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

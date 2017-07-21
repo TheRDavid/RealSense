@@ -3,22 +3,6 @@
   <compounddef id="class_real_sense_1_1_emotions_1_1_e_m___fear" kind="class" language="C#" prot="public">
     <compoundname>RealSense::Emotions::EM_Fear</compoundname>
     <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___fear_1aa7cf80793345208c808cc51530554e1f" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int RealSense.Emotions.EM_Fear.percent</definition>
-        <argsstring></argsstring>
-        <name>percent</name>
-        <initializer>= 100</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Emotions/EM_Fear.cs" line="16" column="1" bodyfile="Emotions/EM_Fear.cs" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___fear_1af5fb3d9f1043968e5b673c5cfc478f97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -28,10 +12,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Initializes the EM, setting the debug-flag to true by default </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Fear.cs" line="19" column="1" bodyfile="Emotions/EM_Fear.cs" bodystart="19" bodyend="22"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" line="19" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" bodystart="19" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___fear_1a5b417a4a8403f101585dc8c239288c54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -46,7 +30,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Computes the percentage Value of Fear in the current Frame. <parameterlist kind="param"><parameteritem>
+<para>Computes the percentage Value of fear in the current Frame. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>Graphics</parametername>
 </parameternamelist>
@@ -57,59 +41,63 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Fear.cs" line="28" column="1" bodyfile="Emotions/EM_Fear.cs" bodystart="28" bodyend="69"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" line="28" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" bodystart="28" bodyend="70"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of fear. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
-      <node id="30">
+      <node id="85">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
       </node>
-      <node id="29">
+      <node id="84">
         <label>RealSense.Emotions.EM_Fear</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___fear"/>
-        <childnode refid="30" relation="public-inheritance">
+        <childnode refid="85" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="32">
+      <node id="87">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
-        <childnode refid="33" relation="usage">
+        <childnode refid="88" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="31">
+      <node id="86">
         <label>RealSense.Emotions.EM_Fear</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___fear"/>
-        <childnode refid="32" relation="public-inheritance">
+        <childnode refid="87" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="33">
+      <node id="88">
         <label>RealSense.Model</label>
         <link refid="class_real_sense_1_1_model"/>
       </node>
     </collaborationgraph>
-    <location file="Emotions/EM_Fear.cs" line="14" column="1" bodyfile="Emotions/EM_Fear.cs" bodystart="13" bodyend="70"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" line="15" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Fear.cs" bodystart="14" bodyend="71"/>
     <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>ConvertValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>Debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>DynamicMinMax</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1af5fb3d9f1043968e5b673c5cfc478f97" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>EM_Fear</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>FilterToleranceValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>framesGathered</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>Init</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>KeyTrigger</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>MIN</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>model</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>numFramesBeforeAccept</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>output</name></member>
-      <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1aa7cf80793345208c808cc51530554e1f" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>percent</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>Reset</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>triggers</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1a5b417a4a8403f101585dc8c239288c54" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Fear</scope><name>Work</name></member>
     </listofallmembers>

@@ -1,4 +1,4 @@
-.TH "RealSense.FaceTrackerModule" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.TH "RealSense.FaceTrackerModule" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,28 +21,37 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 12 of file FaceTrackerModule\&.cs\&.
+Displays the landmark-points of the current subject within the UI 
+.PP
+\fBAuthor:\fP
+.RS 4
+: Tobias Schramm  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 13 of file FaceTrackerModule\&.cs\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.FaceTrackerModule\&.FaceTrackerModule (int [] idx)"
-
+Specifies which indexes to display 
 .PP
-Definition at line 20 of file FaceTrackerModule\&.cs\&.
+Definition at line 24 of file FaceTrackerModule\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "override void RealSense\&.FaceTrackerModule\&.Work (Graphics g)\fC [virtual]\fP"
-Update every frame (do calculations, manipulate output Image) 
+Displays landmark-points (all if none were specified) 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIGraphics\fP g 
+\fIGraphics\fP g for drawing inside the containing UI 
 .RE
 .PP
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
 .PP
-Definition at line 25 of file FaceTrackerModule\&.cs\&.
+Definition at line 33 of file FaceTrackerModule\&.cs\&.
 
 .SH "Author"
 .PP 

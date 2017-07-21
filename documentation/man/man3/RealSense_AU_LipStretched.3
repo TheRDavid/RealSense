@@ -1,0 +1,58 @@
+.TH "RealSense.AU_LipStretched" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.AU_LipStretched
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAU_LipStretched\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Measures whether the lips are stretched and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Tobias Schramm  Hufflepuff
+.RE
+.PP
+Interpretation: -100 = Kissing 0 = Relaxed 100 = Frogface 
+.PP
+Definition at line 19 of file AU_LipStretched\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.AU_LipStretched\&.AU_LipStretched ()"
+Initializes the AU by setting up the default value boundaries\&. 
+.PP
+Definition at line 30 of file AU_LipStretched\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.AU_LipStretched\&.Work (Graphics g)\fC [virtual]\fP"
+Calculates the average difference between the two lip corners over a set number of frames and prints its' debug-message to the \fBCameraView\fP when debug is enabled\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 48 of file AU_LipStretched\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

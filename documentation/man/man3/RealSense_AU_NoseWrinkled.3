@@ -1,0 +1,58 @@
+.TH "RealSense.AU_NoseWrinkled" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.AU_NoseWrinkled
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAU_NoseWrinkled\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Measures wrinkling of the nose and stores its' value inside the model 
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Rosenbusch  Hufflepuff
+.RE
+.PP
+Interpretation: 0 = Relaxed -100 = Wrinkled 
+.PP
+Definition at line 19 of file AU_NoseWrinkled\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.AU_NoseWrinkled\&.AU_NoseWrinkled ()"
+Initializes the AU by setting up the default value boundaries\&. 
+.PP
+Definition at line 31 of file AU_NoseWrinkled\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.AU_NoseWrinkled\&.Work (Graphics g)\fC [virtual]\fP"
+Have a look at Images/AU_NoseWrinkledModule\&.png to see the calculations visualized Result of calculation constantly changing between positive and negative -> relaxed Result of calculation constantly positive -> wrinkled (tiny values) Result of calculation constantly negative -> \&.\&.\&. go see a doctor m8 Calculates the wrinkling-value over a set number of frames and prints its' debug-message ti tge \fBCameraView\fP when debug is enabled\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 53 of file AU_NoseWrinkled\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

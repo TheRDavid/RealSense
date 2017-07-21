@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="dir_d051c76eebdc544d9c3d734575641c72" kind="dir">
-    <compoundname>Properties</compoundname>
+    <compoundname>C:/Users/nutzer/Documents/GitHub/RealSense/Properties</compoundname>
     <innerfile refid="_resources_8_designer_8cs">Resources.Designer.cs</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Properties/"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Properties/"/>
   </compounddef>
 </doxygen>

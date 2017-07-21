@@ -1,4 +1,4 @@
-.TH "RealSense.Model" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.TH "RealSense.Model" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,10 +31,34 @@ RealSense.Model
 .ti -1c
 .RI "void \fBAddModule\fP (\fBRSModule\fP m)"
 .br
+.ti -1c
+.RI "double \fBDifferenceByAxis\fP (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "double \fBNullFaceBetweenByAxis\fP (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "double \fBBetweenByAxis\fP (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+.br
+.ti -1c
+.RI "double \fBDifference\fP (int i01, int i02)"
+.br
+.ti -1c
+.RI "double \fBDifferenceNullCurrent\fP (int i01, \fBAXIS\fP axis)"
+.br
+.ti -1c
+.RI "double \fBNullFaceBetween\fP (int i01, int i02)"
+.br
+.ti -1c
+.RI "double \fBBetween\fP (int i01, int i02)"
+.br
 .in -1c
 .SS "Public Attributes"
 
 .in +1c
+.ti -1c
+.RI "PXCMFaceData\&.Face \fBfaceAktuell\fP"
+.br
 .ti -1c
 .RI "PXCMFaceData\&.PoseEulerAngles \fBcurrentPose\fP = new PXCMFaceData\&.PoseEulerAngles()"
 .br
@@ -74,9 +98,6 @@ RealSense.Model
 .RI "PXCMFaceData\&.LandmarksData \fBLp\fP\fC [get, set]\fP"
 .br
 .ti -1c
-.RI "bool \fBStream\fP\fC [get]\fP"
-.br
-.ti -1c
 .RI "PXCMFaceData\&.LandmarkPoint [] \fBCurrentFace\fP\fC [get, set]\fP"
 .br
 .ti -1c
@@ -86,7 +107,7 @@ RealSense.Model
 .RI "PXCMFaceData \fBFaceData\fP\fC [get, set]\fP"
 .br
 .ti -1c
-.RI "PXCMFaceData\&.Face \fBFaceCurrent\fP\fC [get, set]\fP"
+.RI "PXCMFaceData\&.Face \fBFaceAktuell\fP\fC [get, set]\fP"
 .br
 .ti -1c
 .RI "\fBCameraView\fP \fBView\fP\fC [get, set]\fP"
@@ -129,6 +150,9 @@ RealSense.Model
 .br
 .ti -1c
 .RI "Dictionary< String, double > \fBAU_Values\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "bool \fBTest\fP\fC [get, set]\fP"
 .br
 .ti -1c
 .RI "Bitmap \fBColorBitmap\fP\fC [get]\fP"
@@ -201,13 +225,13 @@ Definition at line 20 of file Model\&.cs\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.Model\&.Model (bool s)"
-Constructor of the model It does all the important stuff to use our camera\&. Its so FANCY ! 
+Constructor of the model It does all the important stuff to use our camera\&. Its so FANCY ! Like enabling all important tracker(Hand, Face), the stream and builds up the configuration\&. 
 .PP
-Definition at line 61 of file Model\&.cs\&.
+Definition at line 63 of file Model\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void RealSense\&.Model\&.AddModule (\fBRSModule\fP m)"
-adds a new modul to the List 
+Adds a new modul to the List 
 .PP
 \fBParameters:\fP
 .RS 4
@@ -216,7 +240,77 @@ adds a new modul to the List
 .PP
 
 .PP
-Definition at line 114 of file Model\&.cs\&.
+Definition at line 120 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.Between (int i01, int i02)"
+calculates the difference between the two points of the current frame 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.BetweenByAxis (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+Calculates the axis-specific difference of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 160 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.Difference (int i01, int i02)"
+calculates the percentage of the difference of distance between two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double between 0 and 100 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.DifferenceByAxis (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+Returns the total difference of axis-specific distance between two points 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.DifferenceNullCurrent (int i01, \fBAXIS\fP axis)"
+Returns the change in distance between the nose-fixpoint along a specified axis 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP i01 - landmark-number 
+.br
+\fIAXIS\fP axis - axis to consider 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.EmotionValue (\fBEmotion\fP emotion)"
 Returns the value of the given emotion\&.
 .PP
@@ -232,7 +326,33 @@ the emotion value or -1 if the key doesn't exist
 .PP
 
 .PP
-Definition at line 103 of file Model\&.cs\&.
+Definition at line 109 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.NullFaceBetween (int i01, int i02)"
+calculates the differenc of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.RE
+.PP
+
+.PP
+Definition at line 203 of file Model\&.cs\&.
+.SS "double RealSense\&.Model\&.NullFaceBetweenByAxis (int i01, int i02, \fBAXIS\fP axis, bool absolute)"
+Calculates the axis-specific difference of the points from the ABSOLUTENullFace 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi01,i02\fP which are the current points to calculate the difference 
+.br
+\fIaxis\fP which is the specific axis to work with 
+.br
+\fIabsolute\fP defines wether or not the absolute difference should be returned or not 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file Model\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "bool RealSense\&.Model\&.calibrated = false\fC [static]\fP"
@@ -242,11 +362,15 @@ Definition at line 22 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.calibrationProgress = 0"
 
 .PP
-Definition at line 43 of file Model\&.cs\&.
+Definition at line 45 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.currentPose = new PXCMFaceData\&.PoseEulerAngles()"
 
 .PP
-Definition at line 33 of file Model\&.cs\&.
+Definition at line 34 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.Face RealSense\&.Model\&.faceAktuell"
+
+.PP
+Definition at line 29 of file Model\&.cs\&.
 .SS "int RealSense\&.Model\&.NOSE_FIX = 26\fC [static]\fP"
 
 .PP
@@ -254,117 +378,117 @@ Definition at line 21 of file Model\&.cs\&.
 .SH "Property Documentation"
 .PP 
 .SS "Dictionary<String, double> RealSense\&.Model\&.AU_Values\fC [get]\fP, \fC [set]\fP"
-getter and setter of the au_Values 
+getter and setter of the AU_Values 
 .PP
-Definition at line 352 of file Model\&.cs\&.
+Definition at line 462 of file Model\&.cs\&.
 .SS "Bitmap RealSense\&.Model\&.ColorBitmap\fC [get]\fP"
-getter of the ColorBitmap 
+getter and setter of the ColorBitmap 
 .PP
-Definition at line 361 of file Model\&.cs\&.
+Definition at line 480 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.Model\&.CurrentFace\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentFace 
+getter and setter of the CurrentFace 
 .PP
-Definition at line 196 of file Model\&.cs\&.
+Definition at line 308 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.CurrentPitchDiff\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentPitchDiff 
+getter and setter of the CurrentPitchDiff 
 .PP
-Definition at line 273 of file Model\&.cs\&.
+Definition at line 383 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.CurrentPose\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentPose 
+getter and setter of the CurrentPose 
 .PP
-Definition at line 327 of file Model\&.cs\&.
+Definition at line 437 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.CurrentPoseDiff\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentPoseDiff 
+getter and setter of the CurrentPoseDiff 
 .PP
-Definition at line 246 of file Model\&.cs\&.
+Definition at line 356 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.CurrentRollDiff\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentRollDiff 
+getter and setter of the CurrentRollDiff 
 .PP
-Definition at line 264 of file Model\&.cs\&.
+Definition at line 374 of file Model\&.cs\&.
 .SS "double RealSense\&.Model\&.CurrentYawDiff\fC [get]\fP, \fC [set]\fP"
-getter and setter of the currentYawDiff 
+getter and setter of the CurrentYawDiff 
 .PP
-Definition at line 282 of file Model\&.cs\&.
+Definition at line 392 of file Model\&.cs\&.
 .SS "SolidBrush RealSense\&.Model\&.DefaultBGBrush\fC [get]\fP"
-getter of the defaultBGBrush 
+getter and setter of the DefaultBGBrush 
 .PP
-Definition at line 336 of file Model\&.cs\&.
+Definition at line 446 of file Model\&.cs\&.
 .SS "Font RealSense\&.Model\&.DefaultFont\fC [get]\fP, \fC [set]\fP"
-getter and setter of the defaultFont 
+getter and setter of the DefaultFont 
 .PP
-Definition at line 300 of file Model\&.cs\&.
+Definition at line 410 of file Model\&.cs\&.
 .SS "SolidBrush RealSense\&.Model\&.DefaultStringBrush\fC [get]\fP, \fC [set]\fP"
-getter and setter of the defaultStringBrush 
+getter and setter of the DefaultStringBrush 
 .PP
-Definition at line 309 of file Model\&.cs\&.
+Definition at line 419 of file Model\&.cs\&.
 .SS "Dictionary<\fBEmotion\fP, double> RealSense\&.Model\&.EmotionMax\fC [get]\fP, \fC [set]\fP"
-getter and setter of the emotionMax 
+getter and setter of the EmotionMax 
 .PP
-Definition at line 369 of file Model\&.cs\&.
+Definition at line 488 of file Model\&.cs\&.
 .SS "Dictionary<\fBEmotion\fP, double> RealSense\&.Model\&.Emotions\fC [get]\fP, \fC [set]\fP"
 getter and setter of the array from the emotions 
 .PP
-Definition at line 291 of file Model\&.cs\&.
+Definition at line 401 of file Model\&.cs\&.
 .SS "PXCMFaceModule RealSense\&.Model\&.Face\fC [get]\fP"
-getter of the face 
+getter and setter of the face 
 .PP
-Definition at line 157 of file Model\&.cs\&.
-.SS "PXCMFaceData\&.Face RealSense\&.Model\&.FaceCurrent\fC [get]\fP, \fC [set]\fP"
+Definition at line 278 of file Model\&.cs\&.
+.SS "PXCMFaceData\&.Face RealSense\&.Model\&.FaceAktuell\fC [get]\fP, \fC [set]\fP"
 getter and setter of the FaceCurrent
 .PP
 FaceAktuell should be changed to FaceCurrent, where is it initialised 
 .PP
-Definition at line 226 of file Model\&.cs\&.
+Definition at line 338 of file Model\&.cs\&.
 .SS "PXCMFaceData RealSense\&.Model\&.FaceData\fC [get]\fP, \fC [set]\fP"
 getter and setter of the faceData 
 .PP
-Definition at line 215 of file Model\&.cs\&.
+Definition at line 327 of file Model\&.cs\&.
 .SS "int RealSense\&.Model\&.Height\fC [get]\fP"
-getter of the height 
+getter and setter of the height 
 .PP
-Definition at line 148 of file Model\&.cs\&.
+Definition at line 269 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.LandmarksData RealSense\&.Model\&.Lp\fC [get]\fP, \fC [set]\fP"
 getter and setter of the landmarkpoints
 .PP
 WARNING do not touch outside the camera thread -> so use currentFace 
 .PP
-Definition at line 167 of file Model\&.cs\&.
+Definition at line 288 of file Model\&.cs\&.
 .SS "List<\fBRSModule\fP> RealSense\&.Model\&.Modules\fC [get]\fP"
 getter of the modules 
 .PP
-Definition at line 123 of file Model\&.cs\&.
+Definition at line 245 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.LandmarkPoint [] RealSense\&.Model\&.NullFace\fC [get]\fP, \fC [set]\fP"
 getter and setter of the ABSOLUTE NullFace 
 .PP
-Definition at line 205 of file Model\&.cs\&.
+Definition at line 317 of file Model\&.cs\&.
 .SS "PXCMFaceData\&.PoseEulerAngles RealSense\&.Model\&.NullPose\fC [get]\fP, \fC [set]\fP"
-getter and setter of the nullPose 
+getter and setter of the NullPose 
 .PP
-Definition at line 318 of file Model\&.cs\&.
+Definition at line 428 of file Model\&.cs\&.
 .SS "SolidBrush RealSense\&.Model\&.OpaqueBGBrush\fC [get]\fP"
-getter of the opaqueStringBrush 
+getter and setter of the OpaqueBGBrush 
 .PP
-Definition at line 344 of file Model\&.cs\&.
+Definition at line 454 of file Model\&.cs\&.
 .SS "int RealSense\&.Model\&.PoseMax\fC [get]\fP, \fC [set]\fP"
-getter and setter of the poseMax 
+getter and setter of the PoseMax 
 .PP
-Definition at line 255 of file Model\&.cs\&.
+Definition at line 365 of file Model\&.cs\&.
 .SS "PXCMSenseManager RealSense\&.Model\&.SenseManager\fC [get]\fP, \fC [set]\fP"
-getter and setter of the senseManager 
+getter and setter of the SenseManager 
 .PP
-Definition at line 131 of file Model\&.cs\&.
-.SS "bool RealSense\&.Model\&.Stream\fC [get]\fP"
-getter of the stream 
+Definition at line 253 of file Model\&.cs\&.
+.SS "bool RealSense\&.Model\&.Test\fC [get]\fP, \fC [set]\fP"
+getter and setter of whether to test or not 
 .PP
-Definition at line 188 of file Model\&.cs\&.
+Definition at line 471 of file Model\&.cs\&.
 .SS "\fBCameraView\fP RealSense\&.Model\&.View\fC [get]\fP, \fC [set]\fP"
 getter and setter of the View 
 .PP
-Definition at line 237 of file Model\&.cs\&.
+Definition at line 347 of file Model\&.cs\&.
 .SS "int RealSense\&.Model\&.Width\fC [get]\fP"
-getter of the width 
+getter and setter of the width 
 .PP
-Definition at line 140 of file Model\&.cs\&.
+Definition at line 261 of file Model\&.cs\&.
 
 .SH "Author"
 .PP 

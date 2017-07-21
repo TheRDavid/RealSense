@@ -4,20 +4,6 @@
     <compoundname>RealSense::Emotions::EM_Contempt</compoundname>
     <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___contempt_1ace3cfb76423cb289bcbe4efa6ee55584" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int RealSense.Emotions.EM_Contempt.percent</definition>
-        <argsstring></argsstring>
-        <name>percent</name>
-        <initializer>= 100</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Emotions/EM_Contempt02.cs" line="16" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="16" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a432994ede9107471ecd3d3e5b80a3e20" prot="private" static="no" mutable="no">
         <type>double []</type>
         <definition>double [] RealSense.Emotions.EM_Contempt.distancesBrow</definition>
@@ -30,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Contempt02.cs" line="17" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" line="17" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a5853da6b31541e0cc75f00485891f343" prot="private" static="no" mutable="no">
         <type>double []</type>
@@ -44,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Contempt02.cs" line="18" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" line="18" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,10 +42,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Initializes the EM, setting the debug-flag to true by default Also sets up a default boundary of max-, min, extreme- and tolerance-values </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Contempt02.cs" line="21" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="21" bodyend="31"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" line="28" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" bodystart="28" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a7ea208f926c1888f028cbe6d6fe14e2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -74,7 +60,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Computes the percentage Value of Anger in the current Frame. <parameterlist kind="param"><parameteritem>
+<para>Computes the percentage Value of contempt in the current Frame. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>Graphics</parametername>
 </parameternamelist>
@@ -85,61 +71,65 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Contempt02.cs" line="37" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="37" bodyend="77"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" line="44" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" bodystart="44" bodyend="99"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of contempt. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
-      <node id="19">
+      <node id="74">
         <label>RealSense.Emotions.EM_Contempt</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___contempt"/>
-        <childnode refid="20" relation="public-inheritance">
+        <childnode refid="75" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="20">
+      <node id="75">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="21">
+      <node id="76">
         <label>RealSense.Emotions.EM_Contempt</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___contempt"/>
-        <childnode refid="22" relation="public-inheritance">
+        <childnode refid="77" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="22">
+      <node id="77">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
-        <childnode refid="23" relation="usage">
+        <childnode refid="78" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="23">
+      <node id="78">
         <label>RealSense.Model</label>
         <link refid="class_real_sense_1_1_model"/>
       </node>
     </collaborationgraph>
-    <location file="Emotions/EM_Contempt02.cs" line="14" column="1" bodyfile="Emotions/EM_Contempt02.cs" bodystart="13" bodyend="78"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" line="15" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Contempt.cs" bodystart="14" bodyend="100"/>
     <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>ConvertValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>Debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>DEF_MIN</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a432994ede9107471ecd3d3e5b80a3e20" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>distancesBrow</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a5853da6b31541e0cc75f00485891f343" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>distancesLip</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>DynamicMinMax</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1af2203e6c540c756cd6b8d0190d04c46f" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>EM_Contempt</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>FilterToleranceValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>framesGathered</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>Init</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>KeyTrigger</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>MIN</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>model</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>numFramesBeforeAccept</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>output</name></member>
-      <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1ace3cfb76423cb289bcbe4efa6ee55584" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>percent</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>Reset</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>triggers</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a7ea208f926c1888f028cbe6d6fe14e2f" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Contempt</scope><name>Work</name></member>
     </listofallmembers>

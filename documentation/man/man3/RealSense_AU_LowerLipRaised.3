@@ -1,0 +1,58 @@
+.TH "RealSense.AU_LowerLipRaised" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.AU_LowerLipRaised
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAU_LowerLipRaised\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Measures how much the lower lip is raised and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+: He who must not be named\&.\&.\&.  Take a guess\&.\&.\&.
+.RE
+.PP
+Interpretation: 0 = Relaxed -100 = Wrinkled 
+.PP
+Definition at line 17 of file AU_LowerLipRaised\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.AU_LowerLipRaised\&.AU_LowerLipRaised ()"
+Initializes the AU by setting up the default value boundaries\&. 
+.PP
+Definition at line 28 of file AU_LowerLipRaised\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.AU_LowerLipRaised\&.Work (Graphics g)\fC [virtual]\fP"
+Calculates the difference between the lower lip and the nose to measure whether or not there has been some movement over a set number of frames and prints its' debug-message to the \fBCameraView\fP when debug is enabled\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 46 of file AU_LowerLipRaised\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

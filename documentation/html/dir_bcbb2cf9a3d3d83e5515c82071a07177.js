@@ -3,12 +3,6 @@ var dir_bcbb2cf9a3d3d83e5515c82071a07177 =
     [ "CameraView.cs", "_camera_view_8cs.html", [
       [ "CameraView", "class_real_sense_1_1_camera_view.html", "class_real_sense_1_1_camera_view" ]
     ] ],
-    [ "EmotionView.cs", "_emotion_view_8cs.html", [
-      [ "EmotionView", "class_real_sense_1_1_emotion_view.html", "class_real_sense_1_1_emotion_view" ]
-    ] ],
-    [ "EmotionView.Designer.cs", "_emotion_view_8_designer_8cs.html", [
-      [ "EmotionView", "class_real_sense_1_1_emotion_view.html", "class_real_sense_1_1_emotion_view" ]
-    ] ],
     [ "FriggnAweseomeGraphix.cs", "_friggn_aweseome_graphix_8cs.html", [
       [ "FriggnAweseomeGraphix", "class_real_sense_1_1_friggn_aweseome_graphix.html", "class_real_sense_1_1_friggn_aweseome_graphix" ],
       [ "MEMonitor", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" ]

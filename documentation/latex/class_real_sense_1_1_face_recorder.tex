@@ -11,7 +11,7 @@ Inheritance diagram for Real\+Sense.\+Face\+Recorder\+:\begin{figure}[H]
 \item 
 \hyperlink{class_real_sense_1_1_face_recorder_a782589b2a536a93d548f1efab49c6bcd}{Face\+Recorder} ()
 \item 
-override void \hyperlink{class_real_sense_1_1_face_recorder_aedf8a394ed84e2e4c3d82d050e457542}{key\+Trigger} (int key)
+override void \hyperlink{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}{Key\+Trigger} (int key)
 \item 
 override void \hyperlink{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}{Work} (Graphics g)
 \end{DoxyCompactItemize}
@@ -26,9 +26,12 @@ int \hyperlink{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b
 
 
 \subsection{Detailed Description}
+Upon being triggered by a key, this module records 300 frames of landmark-\/data and classifies it as a set emotion. \begin{DoxyAuthor}{Author}
+David  Hufflepuff 
+\end{DoxyAuthor}
 
 
-Definition at line 12 of file Face\+Recorder.\+cs.
+Definition at line 17 of file Face\+Recorder.\+cs.
 
 
 
@@ -39,26 +42,31 @@ Definition at line 12 of file Face\+Recorder.\+cs.
 \subsubsection{\texorpdfstring{Face\+Recorder()}{FaceRecorder()}}
 {\footnotesize\ttfamily Real\+Sense.\+Face\+Recorder.\+Face\+Recorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Initializes the key\+Triggers and an empty buffer for the landmark-\/data. 
 
-
-Definition at line 22 of file Face\+Recorder.\+cs.
+Definition at line 30 of file Face\+Recorder.\+cs.
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_aedf8a394ed84e2e4c3d82d050e457542}\label{class_real_sense_1_1_face_recorder_aedf8a394ed84e2e4c3d82d050e457542}} 
-\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!key\+Trigger@{key\+Trigger}}
-\index{key\+Trigger@{key\+Trigger}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
-\subsubsection{\texorpdfstring{key\+Trigger()}{keyTrigger()}}
-{\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+key\+Trigger (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}\label{class_real_sense_1_1_face_recorder_a315985241eb6c21f6393d8104a967eb6}} 
+\index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Key\+Trigger@{Key\+Trigger}}
+\index{Key\+Trigger@{Key\+Trigger}!Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}}
+\subsubsection{\texorpdfstring{Key\+Trigger()}{KeyTrigger()}}
+{\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+Key\+Trigger (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Custom method when triggered 
+The current recording\textquotesingle{}s type is determined by the key that is pressed to trigger the recording. 
+\begin{DoxyParams}{Parameters}
+{\em key} & -\/ key that triggers the module \\
+\hline
+\end{DoxyParams}
 
-Reimplemented from \hyperlink{class_real_sense_1_1_r_s_module_a72f31ae62486b23d17e1a04c902a21c5}{Real\+Sense.\+R\+S\+Module}.
+
+Reimplemented from \hyperlink{class_real_sense_1_1_r_s_module_a8434d4aa8c289766b24e67cabb7e9471}{Real\+Sense.\+R\+S\+Module}.
 
 
 
-Definition at line 30 of file Face\+Recorder.\+cs.
+Definition at line 42 of file Face\+Recorder.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}\label{class_real_sense_1_1_face_recorder_a2adae8c9db76fe9617e99795b4fa5e0e}} 
 \index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Work@{Work}}
@@ -66,9 +74,9 @@ Definition at line 30 of file Face\+Recorder.\+cs.
 \subsubsection{\texorpdfstring{Work()}{Work()}}
 {\footnotesize\ttfamily override void Real\+Sense.\+Face\+Recorder.\+Work (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Update every frame (do calculations, manipulate output Image) 
+Shows whether or not a recording is taking place and records the current landmark-\/data 
 \begin{DoxyParams}{Parameters}
-{\em Graphics} & g \\
+{\em Graphics} & g for the view \\
 \hline
 \end{DoxyParams}
 
@@ -77,7 +85,7 @@ Implements \hyperlink{class_real_sense_1_1_r_s_module_a2ec830b7932ee7c0077d473f8
 
 
 
-Definition at line 50 of file Face\+Recorder.\+cs.
+Definition at line 66 of file Face\+Recorder.\+cs.
 
 
 
@@ -88,9 +96,9 @@ Definition at line 50 of file Face\+Recorder.\+cs.
 \subsubsection{\texorpdfstring{Recording}{Recording}}
 {\footnotesize\ttfamily bool Real\+Sense.\+Face\+Recorder.\+Recording\hspace{0.3cm}{\ttfamily [get]}}
 
+Returns the current recording 
 
-
-Definition at line 72 of file Face\+Recorder.\+cs.
+Definition at line 91 of file Face\+Recorder.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}\label{class_real_sense_1_1_face_recorder_a4f1a094d0321d299feb5aa0e3553b506}} 
 \index{Real\+Sense\+::\+Face\+Recorder@{Real\+Sense\+::\+Face\+Recorder}!Recording\+Index@{Recording\+Index}}
@@ -98,12 +106,12 @@ Definition at line 72 of file Face\+Recorder.\+cs.
 \subsubsection{\texorpdfstring{Recording\+Index}{RecordingIndex}}
 {\footnotesize\ttfamily int Real\+Sense.\+Face\+Recorder.\+Recording\+Index\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
+Sets or gets the current recording-\/index 
 
-
-Definition at line 77 of file Face\+Recorder.\+cs.
+Definition at line 100 of file Face\+Recorder.\+cs.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Analyse/\hyperlink{_face_recorder_8cs}{Face\+Recorder.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/nutzer/\+Documents/\+Git\+Hub/\+Real\+Sense/\+Analyse/\hyperlink{_face_recorder_8cs}{Face\+Recorder.\+cs}\end{DoxyCompactItemize}

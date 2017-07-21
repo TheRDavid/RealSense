@@ -52,6 +52,101 @@
     <member refid="class_real_sense_1_1_analyzer_view_1a100981fc6b852825645fde9b6cfa0903" kind="function"><name>deafultToolStripMenuItem_Click</name></member>
     <member refid="class_real_sense_1_1_analyzer_view_1a2a7200dfd81773019b4f9c98e451f606" kind="function"><name>largeToolStripMenuItem_Click</name></member>
   </compound>
+  <compound refid="class_real_sense_1_1_a_u___brow_shift" kind="class"><name>RealSense::AU_BrowShift</name>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a64f838569460c59c54993e4b3881e5b2" kind="variable"><name>leftDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1ae8fe635ada930f25f9953d50eccb1189" kind="variable"><name>rightDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a18a1c8c8f83749213bf424515404fc44" kind="variable"><name>leftEyeBrow_r</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a4a7c64b26e85d93812432c52edcd034c" kind="variable"><name>leftEyeBrow_m</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1abcef7fec853678523804234dac67dfb1" kind="variable"><name>leftEyeBrow_l</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a6f7ea34103e4c29bdf35ade877c4ce5d" kind="variable"><name>rightEyeBrow_r</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1ae5161bc2c6f6275d5b81684cd54f9c08" kind="variable"><name>rightEyeBrow_m</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a7d76236b9c9e17f4d5cfe342da4debd5" kind="variable"><name>rightEyeBrow_l</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a65b13018204e75f590f8422b0436e944" kind="function"><name>AU_BrowShift</name></member>
+    <member refid="class_real_sense_1_1_a_u___brow_shift_1a81ed7b844c217d3092412e0f53378dd5" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___eyelid_tight" kind="class"><name>RealSense::AU_EyelidTight</name>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a4ab91562d60fa36b96823bd28ac561f8" kind="variable"><name>leftEye_leftDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a4a4f7da0e3e2464b597388c127a8b960" kind="variable"><name>leftEye_middleDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a412f8c7cec4d373894951eecf56eae74" kind="variable"><name>leftEye_rightDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1ab5d41147e877f8e8da294d2ed361e634" kind="variable"><name>rightEye_leftDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1aa289ed3c3fcb029163c28d5808647d8c" kind="variable"><name>rightEye_middleDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a61b5a3606d0416163f94845fd12355e6" kind="variable"><name>rightEye_rightDistance_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1ae0becf7a8851f21d1d57a4cb525a8edd" kind="variable"><name>left_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1aca5de9fb37051b17622d48464c6a495d" kind="variable"><name>right_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a5ae4aa5490518562d818eaaa4e62d0c8" kind="variable"><name>leftDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a649f621b695a554393bef02d2bbc8e87" kind="variable"><name>rightDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a43f0e6e9a4e0862ae2044be31855df0b" kind="function"><name>AU_EyelidTight</name></member>
+    <member refid="class_real_sense_1_1_a_u___eyelid_tight_1a778e09bf84946d959dcf3375a3c8d662" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___jaw_drop" kind="class"><name>RealSense::AU_JawDrop</name>
+    <member refid="class_real_sense_1_1_a_u___jaw_drop_1a6d80aea1ac5284aae89a4166e83f8c33" kind="variable"><name>chin_dist</name></member>
+    <member refid="class_real_sense_1_1_a_u___jaw_drop_1af1a65e5b00aca4043b235024095c9cfe" kind="variable"><name>chinDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___jaw_drop_1abcc43a9a86bd30171400ee2922ef2095" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___jaw_drop_1a28f51c63dfbf79d8315c689b6ae2b65b" kind="function"><name>AU_JawDrop</name></member>
+    <member refid="class_real_sense_1_1_a_u___jaw_drop_1aed90ca88a1c563016c6af39fd65f81e4" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lip_corner" kind="class"><name>RealSense::AU_LipCorner</name>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a370fdbc4231709a345a8415a5620eb33" kind="variable"><name>cornerLeft</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a9e449dc81c6c06de6d59a13b4abbf61b" kind="variable"><name>cornerRight</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a36cdc7a0dfc7540c00a3dfc6ff3d2fc7" kind="variable"><name>cornersLeft</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a1e7d12f5f9c5693a7d1547e9421d678b" kind="variable"><name>cornersRight</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a63864fff9f1f5a5d71da4abeb4e1e056" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1ae3bb4bd3aad86a0c83d5bc57b9bb0855" kind="function"><name>AU_LipCorner</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_corner_1a4a506c5dc50e7bcd8dcfa80cecbd7f56" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lip_line" kind="class"><name>RealSense::AU_LipLine</name>
+    <member refid="class_real_sense_1_1_a_u___lip_line_1aca5f127e178fa5792789da6db0f33e33" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_line_1aff8c584d205157dfbcd0c164a5ef11e8" kind="variable"><name>lines</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_line_1a3059aba79e0a4aee393f31503675355f" kind="function"><name>AU_LipLine</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_line_1ac511da241ef7448f552111e3c5365de1" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lips_tightened" kind="class"><name>RealSense::AU_LipsTightened</name>
+    <member refid="class_real_sense_1_1_a_u___lips_tightened_1a8dadd029387ac0d7b6a6c782bab99ca3" kind="variable"><name>topDownDistances</name></member>
+    <member refid="class_real_sense_1_1_a_u___lips_tightened_1acf50138a681943a4500927f0177a9395" kind="variable"><name>upperLip</name></member>
+    <member refid="class_real_sense_1_1_a_u___lips_tightened_1affb0782b887dd3b3655b10b0d4263422" kind="variable"><name>bottomLip</name></member>
+    <member refid="class_real_sense_1_1_a_u___lips_tightened_1abcb4ab60b321ea1e7edf7f1521aa30de" kind="function"><name>AU_LipsTightened</name></member>
+    <member refid="class_real_sense_1_1_a_u___lips_tightened_1a409b75e75c7b72c628ea6479a50ed75f" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lip_stretched" kind="class"><name>RealSense::AU_LipStretched</name>
+    <member refid="class_real_sense_1_1_a_u___lip_stretched_1a4ad62d76ccba307a3cb6d9cec233f240" kind="variable"><name>lips_corner_distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_stretched_1ab820c65547ea6f1c25ea251292b7682f" kind="variable"><name>lips_corner_distances</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_stretched_1a90e3947258e782c7527cf60e5826afcc" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_stretched_1aca5f1fcfb7f81dccdc700dfc025b4b39" kind="function"><name>AU_LipStretched</name></member>
+    <member refid="class_real_sense_1_1_a_u___lip_stretched_1a2ec4542e5c8fa5585e66ee6ee44ab151" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lower_lip_lowered" kind="class"><name>RealSense::AU_LowerLipLowered</name>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a0f818482fff1112cfa5a73172bb61354" kind="variable"><name>lowerLip_Distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a9be629f3f6dc4398ffd87a52ad78c216" kind="variable"><name>distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a05be561e911b309c667320ac5a061c74" kind="variable"><name>distances</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a1b3452f24197ec3e4ef4f12b69e1c58d" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a510ce477e2525d7859299aaf92c3c88b" kind="function"><name>AU_LowerLipLowered</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1ad94e215984e23238a6231d6a9723a522" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___lower_lip_raised" kind="class"><name>RealSense::AU_LowerLipRaised</name>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1afff0433411e70fe45a7a36965e5de7f4" kind="variable"><name>upperLip_Distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1aff5045debfaa0ae132fff09a5858e94c" kind="variable"><name>distances</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1a1375ae48a1582523237ed6beef3124cc" kind="variable"><name>distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1ad98e17559d49d04038142a2fe617a249" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1aae4c2bb8b4a75fcfc59867f1950f823a" kind="function"><name>AU_LowerLipRaised</name></member>
+    <member refid="class_real_sense_1_1_a_u___lower_lip_raised_1aa3949d4b7a3adf5d38cb5ad5acd5c8f2" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___nose_wrinkled" kind="class"><name>RealSense::AU_NoseWrinkled</name>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1aee11d8f2d8b3311cc15fbb3668cb248b" kind="variable"><name>left_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1a0df43e27ac85621ba9b44c30c0dc4a17" kind="variable"><name>right_diff</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1ae0b3d3408fca273c0fbcc2e7b24a9dbb" kind="variable"><name>distances</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1ac542e6cc10a0acf4cd7fa1e6a05b27c8" kind="variable"><name>distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1ad4cc17d0698b23151ae043881d0c3958" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1a1dfdf22628e88a848b5359e623294044" kind="function"><name>AU_NoseWrinkled</name></member>
+    <member refid="class_real_sense_1_1_a_u___nose_wrinkled_1afa5099e1c15f8f0f3d9633a42ed69817" kind="function"><name>Work</name></member>
+  </compound>
+  <compound refid="class_real_sense_1_1_a_u___upper_lip_raised" kind="class"><name>RealSense::AU_UpperLipRaised</name>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1af83f62600535e409007e076d7de9e57e" kind="variable"><name>upperLip_Distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1ad4d0e1d3f11c25dd00e4c49ae8704cdc" kind="variable"><name>distances</name></member>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1a59dd7458f43de5795ec2b2889fb1d146" kind="variable"><name>distance</name></member>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1af7ae71e41db343e9406b6e013b9dc0bf" kind="variable"><name>debug_message</name></member>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1a5434d7543bd2427609ca554f85173d5a" kind="function"><name>AU_UpperLipRaised</name></member>
+    <member refid="class_real_sense_1_1_a_u___upper_lip_raised_1a22ea7b3343701718bb2aea731850d81a" kind="function"><name>Work</name></member>
+  </compound>
   <compound refid="class_real_sense_1_1_camera_view" kind="class"><name>RealSense::CameraView</name>
     <member refid="class_real_sense_1_1_camera_view_1aaf2c794781104e2e9c97f673eaa18c00" kind="variable"><name>session</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a3be442424d8a3df0d5493b42e2a8b97f" kind="variable"><name>iv</name></member>
@@ -60,6 +155,7 @@
     <member refid="class_real_sense_1_1_camera_view_1af57023a5ff21af59244db6ff09d02bba" kind="variable"><name>pb</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a96da0952fc128f54cc6e539f8117ddc2" kind="variable"><name>updaterThread</name></member>
     <member refid="class_real_sense_1_1_camera_view_1acb699e0bcff7424fdfc520dbfe89ce53" kind="variable"><name>model</name></member>
+    <member refid="class_real_sense_1_1_camera_view_1a78ec68053fa36d321ce259f1d23e1d51" kind="variable"><name>save</name></member>
     <member refid="class_real_sense_1_1_camera_view_1ad32fd6f3c2a5e6e8b715ddf95b8da64b" kind="variable"><name>debug_y</name></member>
     <member refid="class_real_sense_1_1_camera_view_1ad5b01bd4e0b334ee8bc686d0ca8cbaff" kind="variable"><name>enableOutput</name></member>
     <member refid="class_real_sense_1_1_camera_view_1abbf9fdf22141311d8e66c277bfbe50eb" kind="variable"><name>enableImage</name></member>
@@ -72,6 +168,7 @@
     <member refid="class_real_sense_1_1_camera_view_1ab953bc7162a2a3dc84fdd516f4206773" kind="variable"><name>windowBitmap</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a26d71d80650cae002cb8f0a6bc1ec85b" kind="variable"><name>smallWindowBitmap</name></member>
     <member refid="class_real_sense_1_1_camera_view_1aed103a9fde6a2ebc415d3656af13c536" kind="variable"><name>warningBitmap</name></member>
+    <member refid="class_real_sense_1_1_camera_view_1a9cd044a850d37b62fef15de97bf6e27e" kind="variable"><name>subject</name></member>
     <member refid="class_real_sense_1_1_camera_view_1ac1f7dd41271a43de82a171b3f4cfdee3" kind="variable"><name>angerMonitor</name></member>
     <member refid="class_real_sense_1_1_camera_view_1ab19b1165590fda99ab1ea9f769b24746" kind="variable"><name>joyMonitor</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a455375b018e18147608cd0596db3d5c9" kind="variable"><name>fearMonitor</name></member>
@@ -81,8 +178,6 @@
     <member refid="class_real_sense_1_1_camera_view_1ada42d82e52e6770fe0fcee806d5eebcb" kind="variable"><name>surpriseMonitor</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a55e318cc7f8d29fea0701591e9d3df32" kind="variable"><name>calibRadius</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a0c64df00e3d018e6c81b33bf69af744f" kind="variable"><name>linePen</name></member>
-    <member refid="class_real_sense_1_1_camera_view_1a9cd044a850d37b62fef15de97bf6e27e" kind="variable"><name>subject</name></member>
-    <member refid="class_real_sense_1_1_camera_view_1a78ec68053fa36d321ce259f1d23e1d51" kind="variable"><name>save</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a5856eeaabcfb51dfbc01243d2e96ab5a" kind="variable"><name>xgap</name></member>
     <member refid="class_real_sense_1_1_camera_view_1af07d9a5695e375bf0fa68ce8ac8e7eab" kind="variable"><name>ygap</name></member>
     <member refid="class_real_sense_1_1_camera_view_1ae15352b11680c4f15052211aab8d20dc" kind="variable"><name>yRingGap</name></member>
@@ -104,13 +199,12 @@
     <member refid="class_real_sense_1_1_camera_view_1a5cc5cea08df7b36da52efba2a166e361" kind="property"><name>Debug_Y</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a342611e6157bb18b9c097186b3b9bee0" kind="property"><name>ResetModules</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a487ce7be920e8f6742d704d97a6057dc" kind="property"><name>ColorBitmap</name></member>
-    <member refid="class_real_sense_1_1_camera_view_1ac30953a5ea5feba14c2243833e2e5908" kind="function"><name>CameraView</name></member>
+    <member refid="class_real_sense_1_1_camera_view_1ac7f93adbed37d386412a051e6f93f978" kind="function"><name>CameraView</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a67c8ee2cdbf0caf43e48043d90c0d549" kind="function"><name>AddComponent</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a25bb3ae49e1b14531cbf04c280aeb177" kind="function"><name>OnKeyDown</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a8bd56a8b9b1b2b20a4c82978f828d2fd" kind="function"><name>Quit</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a4541905eb6cb7f744e3c4dc139abd00f" kind="function"><name>update</name></member>
     <member refid="class_real_sense_1_1_camera_view_1a1cb03f147eda8302d7e22360c004de60" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_real_sense_1_1_camera_view_1a06be9b837fc50ea59f47cf9ed1a6fafc" kind="function"><name>CameraView_Load</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view" kind="class"><name>RealSense::AnalyzerView::DataSetView</name>
     <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a55566d0104305e940002f5a5fbb025af" kind="variable"><name>faceRecording</name></member>
@@ -133,26 +227,20 @@
     <member refid="class_real_sense_1_1_analyzer_view_1_1_data_set_view_1a6d77b28fe04a79d7e4993311cf729f3f" kind="function"><name>initModules</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_e_m___anger" kind="class"><name>RealSense::EM_Anger</name>
-    <member refid="class_real_sense_1_1_e_m___anger_1adc2c102027b0248d7b74fb33a4b29664" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_e_m___anger_1a843c377f0f47a7e016968dbccdcbc819" kind="function"><name>EM_Anger</name></member>
     <member refid="class_real_sense_1_1_e_m___anger_1a5c1f3b6b7e84ee926869828a3cfe532a" kind="function"><name>Work</name></member>
-    <member refid="class_real_sense_1_1_e_m___anger_1a12e87faa4a6abc8b2835fdf04a241932" kind="function"><name>reduce</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_emotions_1_1_e_m___contempt" kind="class"><name>RealSense::Emotions::EM_Contempt</name>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1ace3cfb76423cb289bcbe4efa6ee55584" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a432994ede9107471ecd3d3e5b80a3e20" kind="variable"><name>distancesBrow</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a5853da6b31541e0cc75f00485891f343" kind="variable"><name>distancesLip</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1af2203e6c540c756cd6b8d0190d04c46f" kind="function"><name>EM_Contempt</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___contempt_1a7ea208f926c1888f028cbe6d6fe14e2f" kind="function"><name>Work</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_emotions_1_1_e_m___disgust" kind="class"><name>RealSense::Emotions::EM_Disgust</name>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1a674838169a725248198018a9dd335c64" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1aba892f265a554ffe99c81482b48fbed0" kind="function"><name>EM_Disgust</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1a22cbe3025c32821d53edcb325140ccb1" kind="function"><name>Work</name></member>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___disgust_1a41f29509d8cc1d7334f63d99da29ffdd" kind="function"><name>reduce</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_emotions_1_1_e_m___fear" kind="class"><name>RealSense::Emotions::EM_Fear</name>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1aa7cf80793345208c808cc51530554e1f" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1af5fb3d9f1043968e5b673c5cfc478f97" kind="function"><name>EM_Fear</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___fear_1a5b417a4a8403f101585dc8c239288c54" kind="function"><name>Work</name></member>
   </compound>
@@ -161,49 +249,15 @@
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a4654281930243a8cc62ebd4e4521a87c" kind="variable"><name>smallerArray</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1a1e37185e1aadd7a6e9c38414b5eb22fe" kind="function"><name>EM_Joy</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1acce5a4daa0acfd1a10d0aac92ef278c8" kind="function"><name>Work</name></member>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1ae1ecd827d3843b72fa20fab440bd7cbc" kind="function"><name>reduce</name></member>
+    <member refid="class_real_sense_1_1_emotions_1_1_e_m___joy_1ae3401b2f27adf61c3ec6696ada3b244c" kind="function"><name>Reduce</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_emotions_1_1_e_m___sadness" kind="class"><name>RealSense::Emotions::EM_Sadness</name>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___sadness_1a0fc2cc98323cd0618f6378869f888cef" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___sadness_1ad0a149a2f1b6aefd5fedd870a1cefb00" kind="function"><name>EM_Sadness</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___sadness_1a45cf23f5c3382bc9769abf1ef401ade1" kind="function"><name>Work</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_emotions_1_1_e_m___surprise" kind="class"><name>RealSense::Emotions::EM_Surprise</name>
-    <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1ab2daefa23d6042a7fbdfc3573eba141f" kind="variable"><name>percent</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a95c89a129f31134f35b0d34a212e7d29" kind="function"><name>EM_Surprise</name></member>
     <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a08040934bb081596a4b02b483dc3a662" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_emotion_saver" kind="class"><name>RealSense::EmotionSaver</name>
-    <member refid="class_real_sense_1_1_emotion_saver_1a3469514a707e4182ab6454b96f78c352" kind="variable"><name>x</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a784cacd9415f079d30ea522ec12b6d37" kind="variable"><name>y</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a3191d9fdd3b2bec9ff90d67cb3b6eee2" kind="variable"><name>width</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a80c9d1ad61cc2f95798fc4d93a60d659" kind="variable"><name>height</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a0adf66d83f3abe971e3e2af26a8d1f0a" kind="variable"><name>counter</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1aa52b1ba4b52ca477cecfa70a678ca807" kind="variable"><name>counter2</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a73c282bc0ee685aebc103c5d99d3719a" kind="variable"><name>saverInit</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1abeb125df21500e5ba4fd7999886ce6e1" kind="variable"><name>source</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1ac4659a416f608b810413bd0e6923a3c6" kind="variable"><name>croppedImage</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a82c46b76df032f49665606979b1170a4" kind="function"><name>init</name></member>
-    <member refid="class_real_sense_1_1_emotion_saver_1a168f0ff9ee4ba98187c88a2d33f537e8" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_emotion_view" kind="class"><name>RealSense::EmotionView</name>
-    <member refid="class_real_sense_1_1_emotion_view_1a849c50211cf2b19ccbc19a4dc591d496" kind="variable"><name>model</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a8032ee43fe560342f253ed5dad2374f9" kind="variable"><name>components</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1ad556bc58c90369b68936e10eccabde3d" kind="variable"><name>update</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a39f5507dc145f4ffcfa80483f4e83783" kind="variable"><name>tableLayoutPanel1</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a4e86e0d291398c1699a87e889df57d19" kind="variable"><name>tableLayoutPanel2</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a8aee5026e63d5e03f8c9bdfd40828088" kind="variable"><name>pictureBoxSadness</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a02f4106abcd404e3f405e0409e74d3a7" kind="variable"><name>pictureBoxFear</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a9871fd2cd935328bb463c1794bc91999" kind="variable"><name>pictureBoxContempt</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a4a998d6bc46920164be72ce8a807d0c7" kind="variable"><name>pictureBoxSurprise</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1adcf9b9d4adfc4e4804a4295f64dda4fd" kind="variable"><name>tableLayoutPanel3</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1aa7b24163682f008b38d375a86878385f" kind="variable"><name>pictureBoxJoy</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1abdc07dafee751ace0b2ce558062ecf16" kind="variable"><name>pictureBoxAnger</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a72a5f7e6ae4c36cfff477ec48450b4b9" kind="variable"><name>pictureBoxDisgust</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a6f0e3d2564b7ecfea7c153faf76b53a6" kind="function"><name>EmotionView</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1addc0dc6c4abdce41f1801d913b2f56dd" kind="function"><name>updateTime</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a9171eeba8bd6152affbe669af7361e78" kind="function"><name>InitializeComponent</name></member>
-    <member refid="class_real_sense_1_1_emotion_view_1a544db73a74ee3f66ec3c810121e45bc4" kind="function"><name>Dispose</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_face_recorder" kind="class"><name>RealSense::FaceRecorder</name>
     <member refid="class_real_sense_1_1_face_recorder_1ac49e8df678fa8faa93e95b44c8ef652e" kind="variable"><name>currentRecording</name></member>
@@ -216,7 +270,7 @@
     <member refid="class_real_sense_1_1_face_recorder_1a3dd841901321c20b2bba9067fc67bddd" kind="property"><name>Recording</name></member>
     <member refid="class_real_sense_1_1_face_recorder_1a4f1a094d0321d299feb5aa0e3553b506" kind="property"><name>RecordingIndex</name></member>
     <member refid="class_real_sense_1_1_face_recorder_1a782589b2a536a93d548f1efab49c6bcd" kind="function"><name>FaceRecorder</name></member>
-    <member refid="class_real_sense_1_1_face_recorder_1aedf8a394ed84e2e4c3d82d050e457542" kind="function"><name>keyTrigger</name></member>
+    <member refid="class_real_sense_1_1_face_recorder_1a315985241eb6c21f6393d8104a967eb6" kind="function"><name>KeyTrigger</name></member>
     <member refid="class_real_sense_1_1_face_recorder_1a2adae8c9db76fe9617e99795b4fa5e0e" kind="function"><name>Work</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_face_recording" kind="class"><name>RealSense::FaceRecording</name>
@@ -225,7 +279,7 @@
     <member refid="class_real_sense_1_1_face_recording_1a457bf9b0368b6eaf89447d4818b1a045" kind="variable"><name>nullData</name></member>
     <member refid="class_real_sense_1_1_face_recording_1a06fe1ad41d77cd359dd583c70d1f6e35" kind="function"><name>FaceRecording</name></member>
     <member refid="class_real_sense_1_1_face_recording_1a94e9208ed4f1fe15264ab3b2293f3ce4" kind="function"><name>setData</name></member>
-    <member refid="class_real_sense_1_1_face_recording_1aab0ad08e511ae94dbabe32a483a395ca" kind="function"><name>save</name></member>
+    <member refid="class_real_sense_1_1_face_recording_1a856729fd53a364765b202b3a9fb6f5dd" kind="function"><name>Save</name></member>
     <member refid="class_real_sense_1_1_face_recording_1a8a5e0b5187f8f71e490c612289df757f" kind="function"><name>getFace</name></member>
     <member refid="class_real_sense_1_1_face_recording_1adb306111dec190d5852088978ea2459e" kind="function"><name>getNullFace</name></member>
     <member refid="class_real_sense_1_1_face_recording_1a61d844c987701d6a21c0ce83333bdf14" kind="function"><name>load</name></member>
@@ -250,12 +304,12 @@
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9d2afacf158345fcecf1b25b895806a2" kind="variable"><name>minorFont</name></member>
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a167341ae00dc0a13928b8b26de77e277" kind="variable"><name>fgColor</name></member>
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a80a40fcc2a193f1d3a2a7ba3d9d4eb2b" kind="variable"><name>fontColor</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9c50e2b0d08aa7fc1f45ef717a6af85a" kind="function"><name>drawMEMontior</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a25acb9a9102fc1c49ec141ea947acbe8" kind="function"><name>drawMEMontior</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1aaa75438fcc2f1f738744e6fda161e82b" kind="function"><name>pretty_blur</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a4ab59468a7284e0647b9814f6a0b2a57" kind="function"><name>sonic_blur</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a8aa4c7bc30a55548f69d9a6beeba102f" kind="function"><name>drawFadingLine</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a10a5fbcd621c5d91e84c08598e3115a3" kind="function"><name>pixelIndex</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9ebb178f63594b6b6dd9d650703de4d9" kind="function"><name>DrawMEMontior</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a79beae7f9b0458501156b023e3917d49" kind="function"><name>DrawMEMontior</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a9e0391199c5b77e3153684deb2e30c5c" kind="function"><name>Pretty_blur</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1aa9bd286dcff99c200fabc8368c9d41ff" kind="function"><name>Sonic_blur</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1a213322f957a49429ac2a3017abdf49aa" kind="function"><name>DrawFadingLine</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1ac98a42b1fd0acf7c1feeff1ace43132f" kind="function"><name>PixelIndex</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_gauge___module" kind="class"><name>RealSense::Gauge_Module</name>
     <member refid="class_real_sense_1_1_gauge___module_1a2519e24e65df9ebba83539b2387ce338" kind="variable"><name>numFaces</name></member>
@@ -268,9 +322,9 @@
     <member refid="class_real_sense_1_1_gauge___module_1ab69b081551528ed567b2c648fdc8e666" kind="variable"><name>calibrateButton</name></member>
     <member refid="class_real_sense_1_1_gauge___module_1a116882e1610b28a8ce6159b1ddbbf578" kind="variable"><name>calibrate</name></member>
     <member refid="class_real_sense_1_1_gauge___module_1ae9d8d183234958600957fdfd23c4d850" kind="variable"><name>frameUpdate</name></member>
-    <member refid="class_real_sense_1_1_gauge___module_1a9371c3920a0a7c15b1f254a9ca6620b6" kind="function"><name>guiInit</name></member>
+    <member refid="class_real_sense_1_1_gauge___module_1a394bff5f2e742a1e4560686b9615e5a5" kind="function"><name>GuiInit</name></member>
     <member refid="class_real_sense_1_1_gauge___module_1aafaa08e37bd469f18a76c7262dd725b8" kind="function"><name>printFace</name></member>
-    <member refid="class_real_sense_1_1_gauge___module_1a8926962f5dacf753daa21b81da50d176" kind="function"><name>update</name></member>
+    <member refid="class_real_sense_1_1_gauge___module_1a367111d614ea2a05af81e93a3b957cd4" kind="function"><name>Update</name></member>
     <member refid="class_real_sense_1_1_gauge___module_1a587ea68ad539f2f56bcfbd7641a92a83" kind="function"><name>Work</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_landmark_group_module" kind="class"><name>RealSense::LandmarkGroupModule</name>
@@ -289,7 +343,7 @@
     <member refid="class_real_sense_1_1_landmark_type_module_1ae75c5fd9f07fa4dec9078b67d4815811" kind="variable"><name>guInit</name></member>
     <member refid="class_real_sense_1_1_landmark_type_module_1a134d081979ea0a5eab874786d5523c73" kind="variable"><name>selectionBar</name></member>
     <member refid="class_real_sense_1_1_landmark_type_module_1a9159671b5d647a5048863248ae1d6836" kind="variable"><name>crossThreadValue</name></member>
-    <member refid="class_real_sense_1_1_landmark_type_module_1a22f950683af843e4fd3c20b5c51c0f15" kind="function"><name>guiInit</name></member>
+    <member refid="class_real_sense_1_1_landmark_type_module_1a9ecf4aa3fc610edfb280ac2d6c2dd2dc" kind="function"><name>GuiInit</name></member>
     <member refid="class_real_sense_1_1_landmark_type_module_1afc8340a2c3df8eb1cba2e90d9e6d4d7b" kind="function"><name>UpdateValue</name></member>
     <member refid="class_real_sense_1_1_landmark_type_module_1ad110598b840e5496c1539862c4c53bc7" kind="function"><name>Work</name></member>
   </compound>
@@ -299,103 +353,6 @@
     <member refid="class_real_sense_1_1_m_e___bear_teeth_1acb491c36da2fb52afb88033ed4895128" kind="variable"><name>debug_message</name></member>
     <member refid="class_real_sense_1_1_m_e___bear_teeth_1a3500b0821cc64ae9909c1f273c1121f0" kind="function"><name>ME_BearTeeth</name></member>
     <member refid="class_real_sense_1_1_m_e___bear_teeth_1a2e4cc340fec3499318fa7514ee7f1822" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___brow_shift" kind="class"><name>RealSense::ME_BrowShift</name>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1a34ddfcab61b8e75b63ba842080280f5f" kind="variable"><name>leftEyeBrow_r</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1aa6dc836ffd914b583a642fd62733cfb3" kind="variable"><name>leftEyeBrow_m</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1ad3937eb583a9304272364c19d90a0721" kind="variable"><name>leftEyeBrow_l</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1a849f3992ec1a0f1dda5f1cf6591d10eb" kind="variable"><name>rightEyeBrow_r</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1a628a1a0f3e76beec8bb85bf39177c639" kind="variable"><name>rightEyeBrow_m</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1af55b5f4a5bfb3f50b76adcfe4701fac3" kind="variable"><name>rightEyeBrow_l</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1a3468c69a48b40b385992640e9989ff5f" kind="variable"><name>leftDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1ae1d3b551558fbb695f1763f72b1ec671" kind="variable"><name>rightDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1a05f9b49a7fca992b931aa57930f1d5ee" kind="function"><name>ME_BrowShift</name></member>
-    <member refid="class_real_sense_1_1_m_e___brow_shift_1af80f8b9c8d33de95a782a33b15d80e52" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___eyelid_tight" kind="class"><name>RealSense::ME_EyelidTight</name>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1af6a5a44b1e5144d048006b8211af4d6c" kind="variable"><name>leftEye_leftDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1ad17c39778687ee5b982f8a53d35ee6b5" kind="variable"><name>leftEye_middleDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a3b88e24b41d5e0790917810ae8c852a4" kind="variable"><name>leftEye_rightDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a85c9fcc49c98674b3161829b2daab3b3" kind="variable"><name>rightEye_leftDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a4e49d2e9ae3af65fc02109411a1e7d8d" kind="variable"><name>rightEye_middleDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a1af54cae2ea1752eaa67dd2c28d0b81b" kind="variable"><name>rightEye_rightDistance_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1afce39bb0794a9a00d0ccbcb025183d7e" kind="variable"><name>left_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1af06b3cb4069325ae3b2b284464e5c307" kind="variable"><name>right_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a253e59fe5ed0aec333296d043bf32603" kind="variable"><name>leftDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a24612c9c3dc6f0dae76f288239035c6e" kind="variable"><name>rightDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a8322c626219035e9ec76747f6faae8aa" kind="function"><name>ME_EyelidTight</name></member>
-    <member refid="class_real_sense_1_1_m_e___eyelid_tight_1a95f0c9f0a9339b9fbcd7035847971216" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___jaw_drop" kind="class"><name>RealSense::ME_JawDrop</name>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1a60c0c1d2163f1ac4f7b5d3968afa811a" kind="variable"><name>leftDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1a82b207e0f802ce9fe09d784fed276008" kind="variable"><name>rightDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1acf19369063eaeb13dd3e9b1259d8fa29" kind="variable"><name>chin_dist</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1ac2375ab226e2c3475574d364858fd7da" kind="variable"><name>chinDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1a585d605bb3e5004b0aeff65de8945790" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1a87dd1f182b70dd517508c5fa1d02af2b" kind="function"><name>ME_JawDrop</name></member>
-    <member refid="class_real_sense_1_1_m_e___jaw_drop_1aa73bb6bb3559f0132f1a920b814e46a3" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lip_corner" kind="class"><name>RealSense::ME_LipCorner</name>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a642806016856819d8addcad0c3863a60" kind="variable"><name>cornerLeft</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a1b93ce7382703c08b4e4443da8066d0e" kind="variable"><name>cornerRight</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a95f2081ace6adeea9b39e2212a13aa42" kind="variable"><name>cornersLeft</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a86ab06d0460a829d3ff2b2d1a4139268" kind="variable"><name>cornersRight</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1af5c99f9b72cbb00e0aa4fd375829293f" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a52ab3e662adc0b1103a60ab3a73e5bf2" kind="function"><name>ME_LipCorner</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_corner_1a06291f1d061a61b66211d3165f3a44b7" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lip_line" kind="class"><name>RealSense::ME_LipLine</name>
-    <member refid="class_real_sense_1_1_m_e___lip_line_1ac9cf0cafc5864a50884c71f4c2d00463" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_line_1ad212db5cf0fadff7e43408bd18325605" kind="variable"><name>lines</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_line_1aeeb789bbecb2dd779344d92548c08220" kind="function"><name>ME_LipLine</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_line_1a1de9ddec603c8a501e392377cc3b2ffa" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lips_tightened" kind="class"><name>RealSense::ME_LipsTightened</name>
-    <member refid="class_real_sense_1_1_m_e___lips_tightened_1ae94b497dff7621a5161976cf647953b0" kind="variable"><name>topDownDistances</name></member>
-    <member refid="class_real_sense_1_1_m_e___lips_tightened_1a746941fa445671b72b00082376ade2b1" kind="variable"><name>upperLip</name></member>
-    <member refid="class_real_sense_1_1_m_e___lips_tightened_1ae20c1b050ce8ab87297d6feb75bc2a93" kind="variable"><name>bottomLip</name></member>
-    <member refid="class_real_sense_1_1_m_e___lips_tightened_1a265d553cd92a6032246565121cdddc54" kind="function"><name>ME_LipsTightened</name></member>
-    <member refid="class_real_sense_1_1_m_e___lips_tightened_1a9c27cc28f4a2d576196b370e9f9eedf9" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lip_stretched" kind="class"><name>RealSense::ME_LipStretched</name>
-    <member refid="class_real_sense_1_1_m_e___lip_stretched_1ad9e084e72cbf5a89dabcbc7c96460c62" kind="variable"><name>lips_corner_distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_stretched_1aa88848f9733b373d58ae800583921e34" kind="variable"><name>lips_corner_distances</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_stretched_1a323a4c3af6a104ab824e5b4b60727d72" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_stretched_1ad17e9d1c541c7a3f4ea1968106f7c233" kind="function"><name>ME_LipStretched</name></member>
-    <member refid="class_real_sense_1_1_m_e___lip_stretched_1aac12b1dc2d342d24879e9566d8696083" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lower_lip_lowered" kind="class"><name>RealSense::ME_LowerLipLowered</name>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a49433ed72d64130a38057dd9d39470cc" kind="variable"><name>lowerLip_Distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a96d834cfc1573ce9475b80b786c61937" kind="variable"><name>distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a5b599ddb8cecc8f62973df3ed4953644" kind="variable"><name>distances</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a47e5cd6c567452846246bd2376811b2b" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a22e97475320ef8a737cc1ce83dc0f93f" kind="function"><name>ME_LowerLipLowered</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_lowered_1a9b88f1f4e25e5330a561edbaf307889b" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___lower_lip_raised" kind="class"><name>RealSense::ME_LowerLipRaised</name>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1acd161e467040381c091d9e0e91444c1f" kind="variable"><name>upperLip_Distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1a48e732d5a08051be34eaf3110c72b683" kind="variable"><name>distances</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1a69fad2ac2a0c409fd36df4ea2a14325a" kind="variable"><name>distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1a032cf8cf9000082b602b641919df028f" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1a6e6ca541dd6368c79545a661e2888e41" kind="function"><name>ME_LowerLipRaised</name></member>
-    <member refid="class_real_sense_1_1_m_e___lower_lip_raised_1a3900212ac8127e35ebc819c34cbd1873" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___nose_wrinkled" kind="class"><name>RealSense::ME_NoseWrinkled</name>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1a55f815868c1f710a0c6f39a8bd305eb2" kind="variable"><name>left_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1a58d82985bd12c9227caa1e2a6447b754" kind="variable"><name>right_diff</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1a37994c410e4beb0f4fc456f56935d7b4" kind="variable"><name>distances</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1ad6294056a6694efc8f978cd8909d3ed9" kind="variable"><name>distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1a9513dd57c6406297519a8cf0beec570f" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1ad459ab1a49349e81dac1f7c4f9a71f38" kind="function"><name>ME_NoseWrinkled</name></member>
-    <member refid="class_real_sense_1_1_m_e___nose_wrinkled_1a070e88a82095220239ab08848fc5a46b" kind="function"><name>Work</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_m_e___upper_lip_raised" kind="class"><name>RealSense::ME_UpperLipRaised</name>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1afde54a679eef56811521dfe157271b44" kind="variable"><name>upperLip_Distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1adc4a507b0bd604943a1b609ceee146ee" kind="variable"><name>distances</name></member>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1a9a0dad3fbe096b221b6056860949e1a3" kind="variable"><name>distance</name></member>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1a2f472bbd9f9bb56c99a4e4f3839a5fe7" kind="variable"><name>debug_message</name></member>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1a73b1c6a7fbdb6d13ba2a7a37aa66d2b6" kind="function"><name>ME_UpperLipRaised</name></member>
-    <member refid="class_real_sense_1_1_m_e___upper_lip_raised_1a6976e114c500d0adbbd68a52ae5eae63" kind="function"><name>Work</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor" kind="class"><name>RealSense::FriggnAweseomeGraphix::MEMonitor</name>
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1aae94a9af9eba40d10677cffeee537737" kind="variable"><name>x</name></member>
@@ -408,7 +365,7 @@
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1a6bbf9a1ee06067597b933da3e34e3ee5" kind="variable"><name>minorText</name></member>
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1a4a07682a2e90f7433ae6fdb9df8f9b97" kind="variable"><name>showPercent</name></member>
     <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1a8df7ffb411949e73cc37344326d325a3" kind="function"><name>MEMonitor</name></member>
-    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1a59efc180805be50c7ed2a7b37e0aa0ef" kind="function"><name>step</name></member>
+    <member refid="class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor_1aa55989a875d2fd83969adb5388c691f1" kind="function"><name>Step</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_model" kind="class"><name>RealSense::Model</name>
     <member refid="class_real_sense_1_1_model_1ab1d8b9992dae2162c48b52f6694f946b" kind="enum"><name>AXIS</name></member>
@@ -433,7 +390,6 @@
     <member refid="class_real_sense_1_1_model_1a135b1ca9b17eee13af9f03b7591f3b7f" kind="variable"><name>face</name></member>
     <member refid="class_real_sense_1_1_model_1a62c42decc93e834b0e8207d80af1ef38" kind="variable"><name>faceData</name></member>
     <member refid="class_real_sense_1_1_model_1ab42b4dc5ffab158ed54fa89f900a5d6b" kind="variable"><name>faceConfig</name></member>
-    <member refid="class_real_sense_1_1_model_1a1ae8706a15375f44685361c17079f70a" kind="variable"><name>faceCurrent</name></member>
     <member refid="class_real_sense_1_1_model_1a7e695d318bbdfda60374dede2e79f900" kind="variable"><name>lp</name></member>
     <member refid="class_real_sense_1_1_model_1a6236ed2363e2dbf8782e9dee6f7a6886" kind="variable"><name>nullFace</name></member>
     <member refid="class_real_sense_1_1_model_1a279fde3e95eee9a8695973ecd92754ac" kind="variable"><name>currentFace</name></member>
@@ -449,6 +405,7 @@
     <member refid="class_real_sense_1_1_model_1ad242dc013145eb3088ea0dc1989edde7" kind="variable"><name>yawDiff</name></member>
     <member refid="class_real_sense_1_1_model_1a073b49d8a77ac3cd17ce3777ea3583f3" kind="variable"><name>rollDiff</name></member>
     <member refid="class_real_sense_1_1_model_1a5c274a2ebb54aa9f21dc1adf3cc64e9a" kind="variable"><name>pitchDiff</name></member>
+    <member refid="class_real_sense_1_1_model_1ac4aa99709fb05eeb181354ffa9a2503c" kind="variable"><name>test</name></member>
     <member refid="class_real_sense_1_1_model_1a7f7209e25a1236ed259328d9a0bacaa6" kind="variable"><name>view</name></member>
     <member refid="class_real_sense_1_1_model_1af12f266026f38a534b17783108067c14" kind="variable"><name>defaultFont</name></member>
     <member refid="class_real_sense_1_1_model_1a81edea3a043f5aa6e02de9cfb667db8e" kind="variable"><name>defaultStringBrush</name></member>
@@ -456,6 +413,7 @@
     <member refid="class_real_sense_1_1_model_1a0b69df1818f10df0c6a421c744772e93" kind="variable"><name>opaqueStringBrush</name></member>
     <member refid="class_real_sense_1_1_model_1ad47343ba4a7eeab5ff109690cab7dd29" kind="variable"><name>maxPose</name></member>
     <member refid="class_real_sense_1_1_model_1aa28a54c7e70fa364f43433a9a17ea1c3" kind="variable"><name>stream</name></member>
+    <member refid="class_real_sense_1_1_model_1ad4e469e9cf474c5f813a757be1eaf55d" kind="variable"><name>faceAktuell</name></member>
     <member refid="class_real_sense_1_1_model_1aa6e241f22bac2dbdefdceef6e4cf0202" kind="variable"><name>currentPose</name></member>
     <member refid="class_real_sense_1_1_model_1a8573a7d01db1fb8a29f5873a717373bc" kind="variable"><name>calibrationProgress</name></member>
     <member refid="class_real_sense_1_1_model_1a9664e53331481e9cc45ad6d3540c218c" kind="property"><name>Modules</name></member>
@@ -464,11 +422,10 @@
     <member refid="class_real_sense_1_1_model_1abf6324c9f4acc3134909a239eff37a0a" kind="property"><name>Height</name></member>
     <member refid="class_real_sense_1_1_model_1abb8701f1030ca1e3bfd226a9ad352da5" kind="property"><name>Face</name></member>
     <member refid="class_real_sense_1_1_model_1a3e349d000d00015a340954ec3be977ea" kind="property"><name>Lp</name></member>
-    <member refid="class_real_sense_1_1_model_1a77ed4a52eb836db3c890cb0844014ac1" kind="property"><name>Stream</name></member>
     <member refid="class_real_sense_1_1_model_1ad90fab8a6125b55803734ebbdcf1f83d" kind="property"><name>CurrentFace</name></member>
     <member refid="class_real_sense_1_1_model_1af626df64a18cb2fcf4cbc06ffbadfa17" kind="property"><name>NullFace</name></member>
     <member refid="class_real_sense_1_1_model_1a0d16c2536a9f3c346cc3d51b3227989e" kind="property"><name>FaceData</name></member>
-    <member refid="class_real_sense_1_1_model_1ad94686a4be9a84dd3ccd2522624644f6" kind="property"><name>FaceCurrent</name></member>
+    <member refid="class_real_sense_1_1_model_1a3621c14d22c3709775971fed725c2781" kind="property"><name>FaceAktuell</name></member>
     <member refid="class_real_sense_1_1_model_1ad06548f5b1e3b3bfeaca2635d2b24fc6" kind="property"><name>View</name></member>
     <member refid="class_real_sense_1_1_model_1a7a0873ddece63f5d3eb49f087771e9c6" kind="property"><name>CurrentPoseDiff</name></member>
     <member refid="class_real_sense_1_1_model_1a556c083ee213249d05c2383ffc8e46f4" kind="property"><name>PoseMax</name></member>
@@ -483,15 +440,19 @@
     <member refid="class_real_sense_1_1_model_1a05161bcafb94b553304268ab16861a84" kind="property"><name>DefaultBGBrush</name></member>
     <member refid="class_real_sense_1_1_model_1a14272eb96159aac12a818e2e15c36cb0" kind="property"><name>OpaqueBGBrush</name></member>
     <member refid="class_real_sense_1_1_model_1a5a20efa42d5391f0a8156d45f676fc34" kind="property"><name>AU_Values</name></member>
+    <member refid="class_real_sense_1_1_model_1a89f4614b0f880fb6553ebcea3d2e6a6c" kind="property"><name>Test</name></member>
     <member refid="class_real_sense_1_1_model_1a6b3603d17577660f65fc7bbb6b097182" kind="property"><name>ColorBitmap</name></member>
     <member refid="class_real_sense_1_1_model_1ac5454f63dfead405cd1d9c229cf6790f" kind="property"><name>EmotionMax</name></member>
     <member refid="class_real_sense_1_1_model_1a39349d1d9b1274a9fe28614e9ce215f3" kind="function"><name>Model</name></member>
     <member refid="class_real_sense_1_1_model_1a078b1ddb43e777aa73c1b3898722e4bb" kind="function"><name>EmotionValue</name></member>
     <member refid="class_real_sense_1_1_model_1a8b8bff51e69b2b33f5c8cfb007c424e5" kind="function"><name>AddModule</name></member>
-  </compound>
-  <compound refid="class_real_sense_1_1_multi_form_context" kind="class"><name>RealSense::MultiFormContext</name>
-    <member refid="class_real_sense_1_1_multi_form_context_1abe34c2fe34a2d7bddac1e29b5b501db0" kind="variable"><name>openForms</name></member>
-    <member refid="class_real_sense_1_1_multi_form_context_1a509b28300a328d9fad769c6036f8af33" kind="function"><name>MultiFormContext</name></member>
+    <member refid="class_real_sense_1_1_model_1a7f212901958598b29fabcf087fc33bdb" kind="function"><name>DifferenceByAxis</name></member>
+    <member refid="class_real_sense_1_1_model_1aab86ce9f3027b3fca83d11a97353154c" kind="function"><name>NullFaceBetweenByAxis</name></member>
+    <member refid="class_real_sense_1_1_model_1abaaee5d06f75b1fb9a9d8946ebf53934" kind="function"><name>BetweenByAxis</name></member>
+    <member refid="class_real_sense_1_1_model_1a1d827ed6fd7d689679af4a276362128b" kind="function"><name>Difference</name></member>
+    <member refid="class_real_sense_1_1_model_1a69d8b360ed9c9ddaa19a0619df408e2a" kind="function"><name>DifferenceNullCurrent</name></member>
+    <member refid="class_real_sense_1_1_model_1a03fd4fa56ceb5cbcebdbebb4b7a78158" kind="function"><name>NullFaceBetween</name></member>
+    <member refid="class_real_sense_1_1_model_1a846e090817e3200e8c20af80094fdcc8" kind="function"><name>Between</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_program" kind="class"><name>RealSense::Program</name>
     <member refid="class_real_sense_1_1_program_1a97e800ae984c31beba30191978af34c4" kind="function"><name>Main</name></member>
@@ -502,6 +463,7 @@
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a7341906dec6633a21dedcfe1f81a4db1" kind="property"><name>ResourceManager</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1af47bf79a6e23a9903de83b4aa2822433" kind="property"><name>Culture</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a2d32e110c118d3947a249da1c81ad9a7" kind="property"><name>face_landmarks_78points_zoom43</name></member>
+    <member refid="class_real_sense_1_1_properties_1_1_resources_1aff3e2d39cc031e4ec385ad29c5618e72" kind="property"><name>libpxcclr_cs</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a322730c68036a527e3b8d5d0475e975c" kind="property"><name>warning</name></member>
     <member refid="class_real_sense_1_1_properties_1_1_resources_1a2675fbe25617db3f75978a3649d5194a" kind="function"><name>Resources</name></member>
   </compound>
@@ -522,9 +484,13 @@
     <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" kind="variable"><name>triggers</name></member>
     <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" kind="property"><name>Debug</name></member>
     <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" kind="function"><name>Init</name></member>
-    <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" kind="function"><name>keyTrigger</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" kind="function"><name>KeyTrigger</name></member>
     <member refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867" kind="function"><name>Work</name></member>
-    <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" kind="function"><name>reset</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" kind="function"><name>Reset</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" kind="function"><name>ConvertValues</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" kind="function"><name>FilteredAvg</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" kind="function"><name>FilterToleranceValues</name></member>
+    <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" kind="function"><name>DynamicMinMax</name></member>
   </compound>
   <compound refid="class_real_sense_1_1_utilities" kind="class"><name>RealSense::Utilities</name>
     <member refid="class_real_sense_1_1_utilities_1affa458ee146a5e1e54f7b006e6937d98" kind="variable"><name>model</name></member>
@@ -550,10 +516,6 @@
   <compound refid="namespace_system" kind="namespace"><name>System</name>
   </compound>
   <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
-  </compound>
-  <compound refid="namespace_system_1_1_component_model" kind="namespace"><name>System::ComponentModel</name>
-  </compound>
-  <compound refid="namespace_system_1_1_data" kind="namespace"><name>System::Data</name>
   </compound>
   <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
   </compound>
@@ -615,7 +577,7 @@
   </compound>
   <compound refid="_e_m___anger_8cs" kind="file"><name>EM_Anger.cs</name>
   </compound>
-  <compound refid="_e_m___contempt02_8cs" kind="file"><name>EM_Contempt02.cs</name>
+  <compound refid="_e_m___contempt_8cs" kind="file"><name>EM_Contempt.cs</name>
   </compound>
   <compound refid="_e_m___disgust_8cs" kind="file"><name>EM_Disgust.cs</name>
   </compound>
@@ -628,10 +590,6 @@
   <compound refid="_e_m___surprise_8cs" kind="file"><name>EM_Surprise.cs</name>
   </compound>
   <compound refid="_camera_view_8cs" kind="file"><name>CameraView.cs</name>
-  </compound>
-  <compound refid="_emotion_view_8cs" kind="file"><name>EmotionView.cs</name>
-  </compound>
-  <compound refid="_emotion_view_8_designer_8cs" kind="file"><name>EmotionView.Designer.cs</name>
   </compound>
   <compound refid="_friggn_aweseome_graphix_8cs" kind="file"><name>FriggnAweseomeGraphix.cs</name>
   </compound>
@@ -647,8 +605,6 @@
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
-  <compound refid="_emotion_saver_8cs" kind="file"><name>EmotionSaver.cs</name>
-  </compound>
   <compound refid="_face_rect_8cs" kind="file"><name>FaceRect.cs</name>
   </compound>
   <compound refid="_face_tracker_module_8cs" kind="file"><name>FaceTrackerModule.cs</name>
@@ -661,20 +617,18 @@
   </compound>
   <compound refid="_m_e___bear_teeth_8cs" kind="file"><name>ME_BearTeeth.cs</name>
   </compound>
-  <compound refid="_multi_form_context_8cs" kind="file"><name>MultiFormContext.cs</name>
+  <compound refid="md__c_1__users_nutzer__documents__git_hub__real_sense__r_e_a_d_m_e" kind="page"><name>md_C:_Users_nutzer_Documents_GitHub_RealSense_README</name>
   </compound>
-  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md_README</name>
+  <compound refid="dir_14b82473d56c424e3d371fe8814b51c4" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits</name>
   </compound>
-  <compound refid="dir_14b82473d56c424e3d371fe8814b51c4" kind="dir"><name>ActionUnits</name>
+  <compound refid="dir_d7d7e75ee7c608ec890b3b81315c4877" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/Analyse</name>
   </compound>
-  <compound refid="dir_d7d7e75ee7c608ec890b3b81315c4877" kind="dir"><name>Analyse</name>
+  <compound refid="dir_2ad50cd204f9bd70b0d428ef82c66388" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/Emotions</name>
   </compound>
-  <compound refid="dir_2ad50cd204f9bd70b0d428ef82c66388" kind="dir"><name>Emotions</name>
+  <compound refid="dir_bcbb2cf9a3d3d83e5515c82071a07177" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/Framework</name>
   </compound>
-  <compound refid="dir_bcbb2cf9a3d3d83e5515c82071a07177" kind="dir"><name>Framework</name>
+  <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/Properties</name>
   </compound>
-  <compound refid="dir_d051c76eebdc544d9c3d734575641c72" kind="dir"><name>Properties</name>
-  </compound>
-  <compound refid="dir_e8c363fb7e9433430a1e246a40d2768a" kind="dir"><name>Various</name>
+  <compound refid="dir_e8c363fb7e9433430a1e246a40d2768a" kind="dir"><name>C:/Users/nutzer/Documents/GitHub/RealSense/Various</name>
   </compound>
 </doxygenindex>

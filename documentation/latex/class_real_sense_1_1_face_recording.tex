@@ -7,7 +7,7 @@
 \item 
 void \hyperlink{class_real_sense_1_1_face_recording_a94e9208ed4f1fe15264ab3b2293f3ce4}{set\+Data} (P\+X\+C\+M\+Face\+Data.\+Landmark\+Point\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} d, P\+X\+C\+M\+Face\+Data.\+Landmark\+Point\mbox{[}$\,$\mbox{]} nd)
 \item 
-void \hyperlink{class_real_sense_1_1_face_recording_aab0ad08e511ae94dbabe32a483a395ca}{save} ()
+void \hyperlink{class_real_sense_1_1_face_recording_a856729fd53a364765b202b3a9fb6f5dd}{Save} ()
 \item 
 P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} \hyperlink{class_real_sense_1_1_face_recording_a8a5e0b5187f8f71e490c612289df757f}{get\+Face} (int frame)
 \item 
@@ -21,9 +21,16 @@ static \hyperlink{class_real_sense_1_1_face_recording}{Face\+Recording} \hyperli
 
 
 \subsection{Detailed Description}
+All the data requiered to analyze a landmark-\/recording
+\begin{DoxyItemize}
+\item Landmark-\/\+Coordinates frame by frame
+\item Null\+Face Landmark-\/\+Coordinates as a means to calibrate \begin{DoxyAuthor}{Author}
+David  Hufflepuff 
+\end{DoxyAuthor}
 
+\end{DoxyItemize}
 
-Definition at line 11 of file Face\+Recording.\+cs.
+Definition at line 19 of file Face\+Recording.\+cs.
 
 
 
@@ -34,9 +41,14 @@ Definition at line 11 of file Face\+Recording.\+cs.
 \subsubsection{\texorpdfstring{Face\+Recording()}{FaceRecording()}}
 {\footnotesize\ttfamily Real\+Sense.\+Face\+Recording.\+Face\+Recording (\begin{DoxyParamCaption}\item[{String}]{emotion\+Name }\end{DoxyParamCaption})}
 
+Initializes the Recording, giving it a name (timestamp) plus the emotion-\/type 
+\begin{DoxyParams}{Parameters}
+{\em String} & emotion\+Name \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 17 of file Face\+Recording.\+cs.
+Definition at line 29 of file Face\+Recording.\+cs.
 
 
 
@@ -47,9 +59,17 @@ Definition at line 17 of file Face\+Recording.\+cs.
 \subsubsection{\texorpdfstring{get\+Face()}{getFace()}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} Real\+Sense.\+Face\+Recording.\+get\+Face (\begin{DoxyParamCaption}\item[{int}]{frame }\end{DoxyParamCaption})}
 
+Returns the landmark-\/data of a certain frame. 
+\begin{DoxyParams}{Parameters}
+{\em int} & frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Landmark-\/\+Array 
+\end{DoxyReturn}
 
 
-Definition at line 41 of file Face\+Recording.\+cs.
+Definition at line 71 of file Face\+Recording.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_face_recording_adb306111dec190d5852088978ea2459e}\label{class_real_sense_1_1_face_recording_adb306111dec190d5852088978ea2459e}} 
 \index{Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}!get\+Null\+Face@{get\+Null\+Face}}
@@ -57,9 +77,12 @@ Definition at line 41 of file Face\+Recording.\+cs.
 \subsubsection{\texorpdfstring{get\+Null\+Face()}{getNullFace()}}
 {\footnotesize\ttfamily P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]} Real\+Sense.\+Face\+Recording.\+get\+Null\+Face (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+the Null\+Face of this recording 
+\end{DoxyReturn}
 
 
-Definition at line 46 of file Face\+Recording.\+cs.
+Definition at line 79 of file Face\+Recording.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_face_recording_a61d844c987701d6a21c0ce83333bdf14}\label{class_real_sense_1_1_face_recording_a61d844c987701d6a21c0ce83333bdf14}} 
 \index{Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}!load@{load}}
@@ -67,19 +90,27 @@ Definition at line 46 of file Face\+Recording.\+cs.
 \subsubsection{\texorpdfstring{load()}{load()}}
 {\footnotesize\ttfamily static \hyperlink{class_real_sense_1_1_face_recording}{Face\+Recording} Real\+Sense.\+Face\+Recording.\+load (\begin{DoxyParamCaption}\item[{String}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Loads a recording from a file 
+\begin{DoxyParams}{Parameters}
+{\em String} & n filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of \hyperlink{class_real_sense_1_1_face_recording}{Face\+Recording} 
+\end{DoxyReturn}
 
 
-Definition at line 35 of file Face\+Recording.\+cs.
+Definition at line 61 of file Face\+Recording.\+cs.
 
-\mbox{\Hypertarget{class_real_sense_1_1_face_recording_aab0ad08e511ae94dbabe32a483a395ca}\label{class_real_sense_1_1_face_recording_aab0ad08e511ae94dbabe32a483a395ca}} 
-\index{Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}!save@{save}}
-\index{save@{save}!Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}}
-\subsubsection{\texorpdfstring{save()}{save()}}
-{\footnotesize\ttfamily void Real\+Sense.\+Face\+Recording.\+save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_real_sense_1_1_face_recording_a856729fd53a364765b202b3a9fb6f5dd}\label{class_real_sense_1_1_face_recording_a856729fd53a364765b202b3a9fb6f5dd}} 
+\index{Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}!Save@{Save}}
+\index{Save@{Save}!Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily void Real\+Sense.\+Face\+Recording.\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Saves this recording to a file (timestamp + emotion-\/type). 
 
-
-Definition at line 28 of file Face\+Recording.\+cs.
+Definition at line 48 of file Face\+Recording.\+cs.
 
 \mbox{\Hypertarget{class_real_sense_1_1_face_recording_a94e9208ed4f1fe15264ab3b2293f3ce4}\label{class_real_sense_1_1_face_recording_a94e9208ed4f1fe15264ab3b2293f3ce4}} 
 \index{Real\+Sense\+::\+Face\+Recording@{Real\+Sense\+::\+Face\+Recording}!set\+Data@{set\+Data}}
@@ -87,12 +118,19 @@ Definition at line 28 of file Face\+Recording.\+cs.
 \subsubsection{\texorpdfstring{set\+Data()}{setData()}}
 {\footnotesize\ttfamily void Real\+Sense.\+Face\+Recording.\+set\+Data (\begin{DoxyParamCaption}\item[{P\+X\+C\+M\+Face\+Data.\+Landmark\+Point}]{d\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]},  }\item[{P\+X\+C\+M\+Face\+Data.\+Landmark\+Point \mbox{[}$\,$\mbox{]}}]{nd }\end{DoxyParamCaption})}
 
+Sets the landmark-\/data 
+\begin{DoxyParams}{Parameters}
+{\em P\+X\+C\+M\+Face\+Data.\+Landmark\+Point\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]}} & frame\+By\+Frame\+Data array of frame-\/by-\/frame data \\
+\hline
+{\em P\+X\+C\+M\+Face\+Data.\+Landmark\+Point\mbox{[}$\,$\mbox{]}} & nd data of the calibrated Null\+Face \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 22 of file Face\+Recording.\+cs.
+Definition at line 39 of file Face\+Recording.\+cs.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Analyse/\hyperlink{_face_recording_8cs}{Face\+Recording.\+cs}\end{DoxyCompactItemize}
+C\+:/\+Users/nutzer/\+Documents/\+Git\+Hub/\+Real\+Sense/\+Analyse/\hyperlink{_face_recording_8cs}{Face\+Recording.\+cs}\end{DoxyCompactItemize}

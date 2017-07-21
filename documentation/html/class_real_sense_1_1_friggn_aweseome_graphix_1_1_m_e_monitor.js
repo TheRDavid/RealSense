@@ -1,7 +1,7 @@
 var class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor =
 [
     [ "MEMonitor", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#a8df7ffb411949e73cc37344326d325a3", null ],
-    [ "step", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#a59efc180805be50c7ed2a7b37e0aa0ef", null ],
+    [ "Step", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#aa55989a875d2fd83969adb5388c691f1", null ],
     [ "currentValue", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#adc8792c41789b6f038d7dc5d5c6e7496", null ],
     [ "majorText", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#a4cdd7aad6b3e84b9429518891618b195", null ],
     [ "minorText", "class_real_sense_1_1_friggn_aweseome_graphix_1_1_m_e_monitor.html#a6bbf9a1ee06067597b933da3e34e3ee5", null ],

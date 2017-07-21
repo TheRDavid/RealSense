@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="17" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="27" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad03c7ad4b8e149a340d8f0a3ab1bb5d7" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="18" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="28" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1abf763a19eb07be2130c70424e1b83f48" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="19" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="19" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a4d7e7407fe64529582263d5f9649af15" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="20" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="20" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="30" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0260501ba4ccb2256327db71cd7a97c6" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="21" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="21" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="31" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6a6075b1ade6390be09f3ee10e076f66" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="22" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="22" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="32" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0070b0b90ca31e385e5680033456838f" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="23" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="23" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="33" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a541363bd0c194f63003bbbc87f2d24fe" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="24" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="24" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="34" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a67ddb213ad4f397d3505eea7f37e74e7" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="25" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="25" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="35" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a3580a17d55b32ac385a2b125deb082f6" prot="private" static="no" mutable="no">
         <type>FlowLayoutPanel</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="26" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="26" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="36" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ab94d78aacb382a1949e7a0aab0a4ee1d" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -147,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="30" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="40" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a424aed5253ee32838866e3426d2c600a" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="31" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="31" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="41" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a79643bcce9b65a9f20294379b418f339" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="32" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="32" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="42" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ae8cb574747ea93775fcda738f1ee9d2e" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -186,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="33" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="43" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad4e11f9309e54e47b1b36cdeff1a9c51" prot="private" static="no" mutable="no">
         <type>ToolStripMenuItem</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="34" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="44" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a446586e7de29ffd9fab1e8cc45071847" prot="private" static="no" mutable="no">
         <type>ContextMenuStrip</type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="35" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="45" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad4c2d8c715c53d7b5f46da97c4ff4ec6" prot="private" static="no" mutable="no">
         <type>System.ComponentModel.IContainer</type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="36" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="36" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="46" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6989f432e059fdd97abe6c81e5bb7ece" prot="private" static="no" mutable="no">
         <type>Thread</type>
@@ -238,7 +238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="40" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="50" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a7a0a8055a8edf573061672fce01da27a" prot="private" static="no" mutable="no">
         <type>TrackBar</type>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="43" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="53" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0dcbd37814e0623bc2e4af47b3dceddd" prot="private" static="no" mutable="no">
         <type>Panel</type>
@@ -266,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="44" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="54" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0651a1db810e102a51b89a1ea93b34c9" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -280,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="50" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="60" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="60" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="28" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="38" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a0d3e7975d11f165e88d72dcbb949f7d1" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a46839023cfadd0811d5d9f142fb56b28" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -324,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1af31f8ef20e27027cd1c8696abba79803" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -338,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ad7b3cb7601b763a0d4fd005d46779394" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -352,7 +352,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="29" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a6ae36ea77be7ce6c8fa71f9385ebf51b" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="37" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="47" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1adc05bc8753f4786232e34ea7d7471c9b" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="38" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="48" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1aeb8a25980943ff42ad27b128c38b81aa" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="39" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="49" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1ac5f7b97b8d7fc5bdb4c8ff5aa7b19472" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -407,7 +407,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="41" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="51" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a211973ab749a887b4aba9f9a97039477" prot="private" static="yes" mutable="no">
         <type>Brush</type>
@@ -421,7 +421,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="46" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="56" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a5de119b4544fee7b6c230a9f272bbe2d" prot="private" static="yes" mutable="no">
         <type>Font</type>
@@ -435,7 +435,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="47" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="57" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_analyzer_view_1a972621f6c17ef1d81babc7d8bbaf96e4" prot="private" static="yes" mutable="no">
         <type>int</type>
@@ -449,7 +449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="49" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="59" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="59" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -461,10 +461,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Sets up the UI and starts the Updater-Thread, which will Update the lables and progressbars displaying the ActionUnit- and Emotion-Values </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="52" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="52" bodyend="91"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="65" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="65" bodyend="104"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -476,10 +476,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Update the whole UI according to the current frame&apos;s values. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="93" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="93" bodyend="110"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="109" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="109" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a5f0e886a3f83693e7c0cf1dc3b5cb94a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -493,10 +493,18 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all files of an emotion-type and feed them into the ActionUnit and Emotion-detection algorithms. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type - emotion type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="112" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="112" bodyend="136"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="132" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="132" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1af21fa8056a43d4277c1ec009a13f0414" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -506,10 +514,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Dynamically arranges the UI to make best use of it&apos;s size. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="138" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="138" bodyend="149"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="161" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="161" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1afa50cf1544d0361b7a2643efaae00cbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -519,10 +527,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Automatically generated - setting up the base UI </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="374" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="374" bodyend="526"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="418" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="418" bodyend="570"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a2f2d307a192b9beb3dc89c9a9758481c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -540,10 +548,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all anger-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="529" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="529" bodyend="532"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="577" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="577" bodyend="580"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a7a8bee40fcf373a497e12a5e76f0df56" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -561,10 +584,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all fear-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="534" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="534" bodyend="537"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="587" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="587" bodyend="590"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a348dbdd38522a2d8b66be0cc9689823c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -582,10 +620,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all contempt-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="539" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="539" bodyend="542"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="597" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="597" bodyend="600"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a3073403887ca4670ef5285316171c8be" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -603,10 +656,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all surprise-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="544" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="544" bodyend="547"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="607" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="607" bodyend="610"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a92e1e4591b92af2a8e68546bdbeb0e26" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -624,10 +692,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all joy-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="549" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="549" bodyend="552"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="617" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="617" bodyend="620"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1ab738a61c23a11939ccb46022ad463f46" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -645,10 +728,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all sadness-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="554" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="554" bodyend="557"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="627" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="627" bodyend="630"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1aba07ed6c699159720dd21fe59a99c05c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -666,10 +764,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Load all disgust-files <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="559" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="559" bodyend="562"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="637" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="637" bodyend="640"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a5456a8670c497926a38cccbd9b6c488c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -687,10 +800,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Change the size of the DataSetViews to tiny <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="564" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="564" bodyend="568"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="647" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="647" bodyend="651"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a0cc2b90fa374dbac4218d191d244e89e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -708,10 +836,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Change the size of the DataSetViews to ´small <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="570" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="570" bodyend="574"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="658" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="658" bodyend="662"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a01779faac9b4b8d3ddd217df7bd13979" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -729,10 +872,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Rearrange UI after the window has been resized <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="576" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="576" bodyend="579"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="669" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="669" bodyend="672"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a100981fc6b852825645fde9b6cfa0903" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -750,10 +908,25 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Change the size of the DataSetViews to the default size <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="581" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="581" bodyend="585"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="679" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="679" bodyend="683"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_analyzer_view_1a2a7200dfd81773019b4f9c98e451f606" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -771,16 +944,32 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Change the size of the DataSetViews to large <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sender </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>EventArgs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>e </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Analyse/AnalyzerView.cs" line="587" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="587" bodyend="591"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="690" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="690" bodyend="694"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Sub-programm to revisit old landmark-recordings with updated algorithms to tweak the emotion-detection. Once the UI is loaded, the user can select on of the seven emotions and load their recorded data (both video- and landmark-recordings). All of the landmark-recordings (recoding by recording, frame by frame) can then be used to automatically recalculate both the ActionUnit- and Emotiondata. This way, multiple subjects can be analyzed simultaneously and the reliability of the algorithms can be improved much faster. <simplesect kind="author"><para>David  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="1">
         <label>Form</label>
@@ -803,7 +992,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="Analyse/AnalyzerView.cs" line="16" column="1" bodyfile="Analyse/AnalyzerView.cs" bodystart="15" bodyend="592"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" line="25" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Analyse/AnalyzerView.cs" bodystart="24" bodyend="695"/>
     <listofallmembers>
       <member refid="class_real_sense_1_1_analyzer_view_1ae982969308d52738e20d686cd24b88e8" prot="public" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>AnalyzerView</name></member>
       <member refid="class_real_sense_1_1_analyzer_view_1a01779faac9b4b8d3ddd217df7bd13979" prot="private" virt="non-virtual"><scope>RealSense::AnalyzerView</scope><name>AnalyzerView_ResizeEnd</name></member>

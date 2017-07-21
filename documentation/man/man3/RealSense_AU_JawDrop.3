@@ -1,0 +1,58 @@
+.TH "RealSense.AU_JawDrop" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RealSense.AU_JawDrop
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBRealSense\&.RSModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAU_JawDrop\fP ()"
+.br
+.ti -1c
+.RI "override void \fBWork\fP (Graphics g)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Measures if jaw is dropped and stores its' value inside the model\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+René  Slytherin
+.RE
+.PP
+Interpretation: -100 = Doesn't usually happen 0 = Normal 100 = Drop it like it's hot 
+.PP
+Definition at line 19 of file AU_JawDrop\&.cs\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RealSense\&.AU_JawDrop\&.AU_JawDrop ()"
+Initializes the AU by setting up the default value boundaries\&. 
+.PP
+Definition at line 29 of file AU_JawDrop\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.AU_JawDrop\&.Work (Graphics g)\fC [virtual]\fP"
+Calculates difference of lip-distance over a set number of frames and prints its' debug-message to the \fBCameraView\fP when debug is enabled\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
+.RE
+.PP
+
+.PP
+Implements \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 47 of file AU_JawDrop\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Face Interpreter from the source code\&.

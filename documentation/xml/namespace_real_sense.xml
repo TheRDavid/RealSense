@@ -3,10 +3,19 @@
   <compounddef id="namespace_real_sense" kind="namespace" language="C#">
     <compoundname>RealSense</compoundname>
     <innerclass refid="class_real_sense_1_1_analyzer_view" prot="public">RealSense::AnalyzerView</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___brow_shift" prot="public">RealSense::AU_BrowShift</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___eyelid_tight" prot="public">RealSense::AU_EyelidTight</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___jaw_drop" prot="public">RealSense::AU_JawDrop</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_corner" prot="public">RealSense::AU_LipCorner</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_line" prot="public">RealSense::AU_LipLine</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lips_tightened" prot="public">RealSense::AU_LipsTightened</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lip_stretched" prot="public">RealSense::AU_LipStretched</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lower_lip_lowered" prot="public">RealSense::AU_LowerLipLowered</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___lower_lip_raised" prot="public">RealSense::AU_LowerLipRaised</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___nose_wrinkled" prot="public">RealSense::AU_NoseWrinkled</innerclass>
+    <innerclass refid="class_real_sense_1_1_a_u___upper_lip_raised" prot="public">RealSense::AU_UpperLipRaised</innerclass>
     <innerclass refid="class_real_sense_1_1_camera_view" prot="public">RealSense::CameraView</innerclass>
     <innerclass refid="class_real_sense_1_1_e_m___anger" prot="public">RealSense::EM_Anger</innerclass>
-    <innerclass refid="class_real_sense_1_1_emotion_saver" prot="public">RealSense::EmotionSaver</innerclass>
-    <innerclass refid="class_real_sense_1_1_emotion_view" prot="public">RealSense::EmotionView</innerclass>
     <innerclass refid="class_real_sense_1_1_face_recorder" prot="public">RealSense::FaceRecorder</innerclass>
     <innerclass refid="class_real_sense_1_1_face_recording" prot="public">RealSense::FaceRecording</innerclass>
     <innerclass refid="class_real_sense_1_1_face_rect" prot="public">RealSense::FaceRect</innerclass>
@@ -16,19 +25,7 @@
     <innerclass refid="class_real_sense_1_1_landmark_group_module" prot="public">RealSense::LandmarkGroupModule</innerclass>
     <innerclass refid="class_real_sense_1_1_landmark_type_module" prot="public">RealSense::LandmarkTypeModule</innerclass>
     <innerclass refid="class_real_sense_1_1_m_e___bear_teeth" prot="public">RealSense::ME_BearTeeth</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___brow_shift" prot="public">RealSense::ME_BrowShift</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___eyelid_tight" prot="public">RealSense::ME_EyelidTight</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___jaw_drop" prot="public">RealSense::ME_JawDrop</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lip_corner" prot="public">RealSense::ME_LipCorner</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lip_line" prot="public">RealSense::ME_LipLine</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lips_tightened" prot="public">RealSense::ME_LipsTightened</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lip_stretched" prot="public">RealSense::ME_LipStretched</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lower_lip_lowered" prot="public">RealSense::ME_LowerLipLowered</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___lower_lip_raised" prot="public">RealSense::ME_LowerLipRaised</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___nose_wrinkled" prot="public">RealSense::ME_NoseWrinkled</innerclass>
-    <innerclass refid="class_real_sense_1_1_m_e___upper_lip_raised" prot="public">RealSense::ME_UpperLipRaised</innerclass>
     <innerclass refid="class_real_sense_1_1_model" prot="public">RealSense::Model</innerclass>
-    <innerclass refid="class_real_sense_1_1_multi_form_context" prot="public">RealSense::MultiFormContext</innerclass>
     <innerclass refid="class_real_sense_1_1_program" prot="public">RealSense::Program</innerclass>
     <innerclass refid="class_real_sense_1_1_r_s_module" prot="public">RealSense::RSModule</innerclass>
     <innerclass refid="class_real_sense_1_1_utilities" prot="public">RealSense::Utilities</innerclass>
@@ -37,10 +34,9 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>You´re supposed to make some comments! Otherwise I´m going to kill you! :)</para><para><simplesect kind="author"><para>: David Rosenbusch</para></simplesect>
-<simplesect kind="author"><para>: Tobi </para></simplesect>
+<para><simplesect kind="author"><para>: Tobi </para></simplesect>
 <simplesect kind="author"><para>: </para></simplesect>
 </para>    </detaileddescription>
-    <location file="ActionUnits/AU_BrowShift.cs" line="9" column="1"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_BrowShift.cs" line="9" column="1"/>
   </compounddef>
 </doxygen>

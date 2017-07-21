@@ -101,7 +101,7 @@
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PXCMFaceData.LandmarkPoint<sp/>point01<sp/>=<sp/>null;</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PXCMFaceData.LandmarkPoint<sp/>point02<sp/>=<sp/>null;</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(model.<ref refid="class_real_sense_1_1_model_1a3e349d000d00015a340954ec3be977ea" kindref="member">Lp</ref><sp/>!=<sp/>null<sp/>||<sp/>!model.<ref refid="class_real_sense_1_1_model_1a77ed4a52eb836db3c890cb0844014ac1" kindref="member">Stream</ref>)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(model.<ref refid="class_real_sense_1_1_model_1a3e349d000d00015a340954ec3be977ea" kindref="member">Lp</ref><sp/>!=<sp/>null<sp/>||<sp/>!model.Stream)</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point01<sp/>=<sp/>model.<ref refid="class_real_sense_1_1_model_1ad90fab8a6125b55803734ebbdcf1f83d" kindref="member">CurrentFace</ref>[i01];</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point02<sp/>=<sp/>model.<ref refid="class_real_sense_1_1_model_1ad90fab8a6125b55803734ebbdcf1f83d" kindref="member">CurrentFace</ref>[i02];</highlight></codeline>
@@ -149,6 +149,6 @@
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="197"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="Framework/Utilities.cs"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Framework/Utilities.cs"/>
   </compounddef>
 </doxygen>

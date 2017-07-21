@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reset',['reset',['../class_real_sense_1_1_r_s_module.html#a8102b36be1a741846ed45f8ec277c577',1,'RealSense::RSModule']]]
+  ['reset',['Reset',['../class_real_sense_1_1_r_s_module.html#a5dc0fb567c84392f2469f5ed6445b10b',1,'RealSense::RSModule']]]
 ];

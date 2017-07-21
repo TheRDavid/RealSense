@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_1_1_a_u___lower_lip_lowered" kind="class" language="C#" prot="public">
+    <compoundname>RealSense::AU_LowerLipLowered</compoundname>
+    <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_1_1_a_u___lower_lip_lowered_1a0f818482fff1112cfa5a73172bb61354" prot="private" static="no" mutable="no">
+        <type>double []</type>
+        <definition>double [] RealSense.AU_LowerLipLowered.lowerLip_Distance</definition>
+        <argsstring></argsstring>
+        <name>lowerLip_Distance</name>
+        <initializer>= new double[5]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="22" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_a_u___lower_lip_lowered_1a9be629f3f6dc4398ffd87a52ad78c216" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RealSense.AU_LowerLipLowered.distance</definition>
+        <argsstring></argsstring>
+        <name>distance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="23" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_a_u___lower_lip_lowered_1a05be561e911b309c667320ac5a061c74" prot="private" static="no" mutable="no">
+        <type>double []</type>
+        <definition>double [] RealSense.AU_LowerLipLowered.distances</definition>
+        <argsstring></argsstring>
+        <name>distances</name>
+        <initializer>= new double[<ref refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" kindref="member">numFramesBeforeAccept</ref>]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="24" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_1_1_a_u___lower_lip_lowered_1a1b3452f24197ec3e4ef4f12b69e1c58d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string RealSense.AU_LowerLipLowered.debug_message</definition>
+        <argsstring></argsstring>
+        <name>debug_message</name>
+        <initializer>= &quot;LowerLipLowered: &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="25" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_1_1_a_u___lower_lip_lowered_1a510ce477e2525d7859299aaf92c3c88b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RealSense.AU_LowerLipLowered.AU_LowerLipLowered</definition>
+        <argsstring>()</argsstring>
+        <name>AU_LowerLipLowered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the AU by setting up the default value boundaries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="30" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="30" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_1_1_a_u___lower_lip_lowered_1ad94e215984e23238a6231d6a9723a522" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void RealSense.AU_LowerLipLowered.Work</definition>
+        <argsstring>(Graphics g)</argsstring>
+        <name>Work</name>
+        <reimplements refid="class_real_sense_1_1_r_s_module_1a2ec830b7932ee7c0077d473f81c73867">Work</reimplements>
+        <param>
+          <type>Graphics</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the average difference between the lower lip and the nose to see if the lower lip was moved over a set number of frames and prints its&apos; debug-message to the <ref refid="class_real_sense_1_1_camera_view" kindref="compound">CameraView</ref> when debug is enabled. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Graphics</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>g for the view </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="48" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="48" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Measures whether the lower lip is lower and stores its&apos; value inside the model <simplesect kind="author"><para>Tobias Schramm  Hufflepuff</para></simplesect>
+Interpretation: 0 = Relaxed 100 = Lip down </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="39">
+        <label>RealSense.AU_LowerLipLowered</label>
+        <link refid="class_real_sense_1_1_a_u___lower_lip_lowered"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>RealSense.AU_LowerLipLowered</label>
+        <link refid="class_real_sense_1_1_a_u___lower_lip_lowered"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>RSModule</label>
+        <link refid="class_real_sense_1_1_r_s_module"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>RealSense.Model</label>
+        <link refid="class_real_sense_1_1_model"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" line="19" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/ActionUnits/AU_LowerLipLowered.cs" bodystart="18" bodyend="86"/>
+    <listofallmembers>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a510ce477e2525d7859299aaf92c3c88b" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>AU_LowerLipLowered</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>ConvertValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a1b3452f24197ec3e4ef4f12b69e1c58d" prot="private" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>debug_message</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a9be629f3f6dc4398ffd87a52ad78c216" prot="private" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>distance</name></member>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a05be561e911b309c667320ac5a061c74" prot="private" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>distances</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>DynamicMinMax</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>FilterToleranceValues</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>framesGathered</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>Init</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>KeyTrigger</name></member>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1a0f818482fff1112cfa5a73172bb61354" prot="private" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>lowerLip_Distance</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>model</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>numFramesBeforeAccept</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>output</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>Reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>triggers</name></member>
+      <member refid="class_real_sense_1_1_a_u___lower_lip_lowered_1ad94e215984e23238a6231d6a9723a522" prot="public" virt="virtual"><scope>RealSense::AU_LowerLipLowered</scope><name>Work</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

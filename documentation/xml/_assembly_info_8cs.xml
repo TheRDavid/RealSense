@@ -46,6 +46,6 @@
 <codeline lineno="35"><highlight class="normal">[assembly:<sp/>AssemblyVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">[assembly:<sp/>AssemblyFileVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
     </programlisting>
-    <location file="Emotions/AssemblyInfo.cs"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/AssemblyInfo.cs"/>
   </compounddef>
 </doxygen>

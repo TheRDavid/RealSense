@@ -1,4 +1,4 @@
-.TH "RealSense.Gauge_Module" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.TH "RealSense.Gauge_Module" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 
 .in +1c
 .ti -1c
-.RI "void \fBupdate\fP ()"
+.RI "void \fBUpdate\fP ()"
 .br
 .ti -1c
 .RI "override void \fBWork\fP (Graphics g)"
@@ -31,36 +31,45 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 12 of file Gauge_Module\&.cs\&.
+Module used to calibrate the user's nullface by averaging over a set amount of frames (numFaces)
+.PP
+\fBAuthor:\fP
+.RS 4
+: David Rosenbusch  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file Gauge_Module\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "void RealSense\&.Gauge_Module\&.update ()"
-when a new frame is shot AND still calibrating (button was pressed), adds a new face to the filteredAvg\&. After having numFaces faces, calculate\&.\&.\&. Runs outside the Camera Thread 
+.SS "void RealSense\&.Gauge_Module\&.Update ()"
+Gathers calibration-data\&. When a new frame is shot AND still calibrating (button was pressed), adds a new face to the FilteredAvg\&. After having numFaces faces, calculate\&.\&.\&. Runs outside the Camera Thread 
 .PP
-Definition at line 53 of file Gauge_Module\&.cs\&.
+Definition at line 62 of file Gauge_Module\&.cs\&.
 .SS "override void RealSense\&.Gauge_Module\&.Work (Graphics g)\fC [virtual]\fP"
-Update every frame (do calculations, manipulate output Image) 
+Initializes UI + simple output while calibrating 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIGraphics\fP g 
+\fIGraphics\fP g for the view 
 .RE
 .PP
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
 .PP
-Definition at line 121 of file Gauge_Module\&.cs\&.
+Definition at line 133 of file Gauge_Module\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "bool RealSense\&.Gauge_Module\&.calibrate = false"
 
 .PP
-Definition at line 15 of file Gauge_Module\&.cs\&.
+Definition at line 23 of file Gauge_Module\&.cs\&.
 .SS "bool RealSense\&.Gauge_Module\&.frameUpdate = true"
 
 .PP
-Definition at line 23 of file Gauge_Module\&.cs\&.
+Definition at line 31 of file Gauge_Module\&.cs\&.
 
 .SH "Author"
 .PP 

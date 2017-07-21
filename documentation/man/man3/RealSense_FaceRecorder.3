@@ -1,4 +1,4 @@
-.TH "RealSense.FaceRecorder" 3 "Wed Jul 5 2017" "Face Interpreter" \" -*- nroff -*-
+.TH "RealSense.FaceRecorder" 3 "Fri Jul 21 2017" "Face Interpreter" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .RI "\fBFaceRecorder\fP ()"
 .br
 .ti -1c
-.RI "override void \fBkeyTrigger\fP (int key)"
+.RI "override void \fBKeyTrigger\fP (int key)"
 .br
 .ti -1c
 .RI "override void \fBWork\fP (Graphics g)"
@@ -34,44 +34,60 @@ Inherits \fBRealSense\&.RSModule\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 12 of file FaceRecorder\&.cs\&.
+Upon being triggered by a key, this module records 300 frames of landmark-data and classifies it as a set emotion\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David  Hufflepuff 
+.RE
+.PP
+
+.PP
+Definition at line 17 of file FaceRecorder\&.cs\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "RealSense\&.FaceRecorder\&.FaceRecorder ()"
-
-.PP
-Definition at line 22 of file FaceRecorder\&.cs\&.
-.SH "Member Function Documentation"
-.PP 
-.SS "override void RealSense\&.FaceRecorder\&.keyTrigger (int key)\fC [virtual]\fP"
-Custom method when triggered 
-.PP
-Reimplemented from \fBRealSense\&.RSModule\fP\&.
+Initializes the keyTriggers and an empty buffer for the landmark-data\&. 
 .PP
 Definition at line 30 of file FaceRecorder\&.cs\&.
-.SS "override void RealSense\&.FaceRecorder\&.Work (Graphics g)\fC [virtual]\fP"
-Update every frame (do calculations, manipulate output Image) 
+.SH "Member Function Documentation"
+.PP 
+.SS "override void RealSense\&.FaceRecorder\&.KeyTrigger (int key)\fC [virtual]\fP"
+The current recording's type is determined by the key that is pressed to trigger the recording\&. 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIGraphics\fP g 
+\fIkey\fP - key that triggers the module 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBRealSense\&.RSModule\fP\&.
+.PP
+Definition at line 42 of file FaceRecorder\&.cs\&.
+.SS "override void RealSense\&.FaceRecorder\&.Work (Graphics g)\fC [virtual]\fP"
+Shows whether or not a recording is taking place and records the current landmark-data 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIGraphics\fP g for the view 
 .RE
 .PP
 
 .PP
 Implements \fBRealSense\&.RSModule\fP\&.
 .PP
-Definition at line 50 of file FaceRecorder\&.cs\&.
+Definition at line 66 of file FaceRecorder\&.cs\&.
 .SH "Property Documentation"
 .PP 
 .SS "bool RealSense\&.FaceRecorder\&.Recording\fC [get]\fP"
-
+Returns the current recording 
 .PP
-Definition at line 72 of file FaceRecorder\&.cs\&.
+Definition at line 91 of file FaceRecorder\&.cs\&.
 .SS "int RealSense\&.FaceRecorder\&.RecordingIndex\fC [get]\fP, \fC [set]\fP"
-
+Sets or gets the current recording-index 
 .PP
-Definition at line 77 of file FaceRecorder\&.cs\&.
+Definition at line 100 of file FaceRecorder\&.cs\&.
 
 .SH "Author"
 .PP 

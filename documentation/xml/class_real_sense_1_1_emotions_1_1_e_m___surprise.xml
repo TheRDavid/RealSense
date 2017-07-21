@@ -3,22 +3,6 @@
   <compounddef id="class_real_sense_1_1_emotions_1_1_e_m___surprise" kind="class" language="C#" prot="public">
     <compoundname>RealSense::Emotions::EM_Surprise</compoundname>
     <basecompoundref refid="class_real_sense_1_1_r_s_module" prot="public" virt="non-virtual">RealSense.RSModule</basecompoundref>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_real_sense_1_1_emotions_1_1_e_m___surprise_1ab2daefa23d6042a7fbdfc3573eba141f" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int RealSense.Emotions.EM_Surprise.percent</definition>
-        <argsstring></argsstring>
-        <name>percent</name>
-        <initializer>= 100</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Emotions/EM_Surprise.cs" line="16" column="1" bodyfile="Emotions/EM_Surprise.cs" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a95c89a129f31134f35b0d34a212e7d29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -31,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Surprise.cs" line="19" column="1" bodyfile="Emotions/EM_Surprise.cs" bodystart="19" bodyend="22"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" line="17" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" bodystart="17" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a08040934bb081596a4b02b483dc3a662" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -46,70 +30,74 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Computes the percentage Value of Surprise in the current Frame. <parameterlist kind="param"><parameteritem>
+<para>Initializes the EM, setting the debug-flag to true by default <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>Graphics</parametername>
+<parametername>g</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>g for the view </para></parameterdescription>
+<para>Graphics g for the view </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Emotions/EM_Surprise.cs" line="28" column="1" bodyfile="Emotions/EM_Surprise.cs" bodystart="28" bodyend="61"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" line="27" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" bodystart="27" bodyend="62"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Measures the percentage value of surprise. <simplesect kind="author"><para>Tanja </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
-      <node id="44">
+      <node id="99">
         <label>RealSense.Emotions.EM_Surprise</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___surprise"/>
-        <childnode refid="45" relation="public-inheritance">
+        <childnode refid="100" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="45">
+      <node id="100">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="46">
+      <node id="101">
         <label>RealSense.Emotions.EM_Surprise</label>
         <link refid="class_real_sense_1_1_emotions_1_1_e_m___surprise"/>
-        <childnode refid="47" relation="public-inheritance">
+        <childnode refid="102" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="47">
+      <node id="102">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
-        <childnode refid="48" relation="usage">
+        <childnode refid="103" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="48">
+      <node id="103">
         <label>RealSense.Model</label>
         <link refid="class_real_sense_1_1_model"/>
       </node>
     </collaborationgraph>
-    <location file="Emotions/EM_Surprise.cs" line="14" column="1" bodyfile="Emotions/EM_Surprise.cs" bodystart="13" bodyend="62"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" line="15" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Emotions/EM_Surprise.cs" bodystart="14" bodyend="63"/>
     <listofallmembers>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>ConvertValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>Debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>DynamicMinMax</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a95c89a129f31134f35b0d34a212e7d29" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>EM_Surprise</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>FilterToleranceValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>framesGathered</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>Init</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>KeyTrigger</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>MIN</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>model</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>numFramesBeforeAccept</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>output</name></member>
-      <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1ab2daefa23d6042a7fbdfc3573eba141f" prot="private" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>percent</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>Reset</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>triggers</name></member>
       <member refid="class_real_sense_1_1_emotions_1_1_e_m___surprise_1a08040934bb081596a4b02b483dc3a662" prot="public" virt="virtual"><scope>RealSense::Emotions::EM_Surprise</scope><name>Work</name></member>
     </listofallmembers>

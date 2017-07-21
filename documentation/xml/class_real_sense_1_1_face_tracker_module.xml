@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="15" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="16" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_tracker_module_1adbd3b1e7d522dcce4793ba319c3b96ea" prot="private" static="no" mutable="no">
         <type>Font</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="16" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="17" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_tracker_module_1abb0cd09f0f7ea1e87e698d39c6985eda" prot="private" static="no" mutable="no">
         <type>SolidBrush</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="17" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="18" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_real_sense_1_1_face_tracker_module_1a9388ec4a964bdfb42019c81711115389" prot="private" static="no" mutable="no">
         <type>int []</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="18" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="19" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="19" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -74,10 +74,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Specifies which indexes to display </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="20" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="20" bodyend="23"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="24" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="24" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="class_real_sense_1_1_face_tracker_module_1a38b7097ab671999aae5f1a645fc623f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>override void</type>
@@ -92,72 +92,77 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Update every frame (do calculations, manipulate output Image) <parameterlist kind="param"><parameteritem>
+<para>Displays landmark-points (all if none were specified) <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>Graphics</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>g </para></parameterdescription>
+<para>g for drawing inside the containing UI </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Various/FaceTrackerModule.cs" line="25" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="25" bodyend="63"/>
+        <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="33" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="33" bodyend="71"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Displays the landmark-points of the current subject within the UI <simplesect kind="author"><para>: Tobias Schramm  Hufflepuff </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
-      <node id="70">
+      <node id="116">
         <label>RealSense.FaceTrackerModule</label>
         <link refid="class_real_sense_1_1_face_tracker_module"/>
-        <childnode refid="71" relation="public-inheritance">
+        <childnode refid="117" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="71">
+      <node id="117">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="72">
+      <node id="118">
         <label>RealSense.FaceTrackerModule</label>
         <link refid="class_real_sense_1_1_face_tracker_module"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="119" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="73">
+      <node id="119">
         <label>RSModule</label>
         <link refid="class_real_sense_1_1_r_s_module"/>
-        <childnode refid="74" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="74">
+      <node id="120">
         <label>RealSense.Model</label>
         <link refid="class_real_sense_1_1_model"/>
       </node>
     </collaborationgraph>
-    <location file="Various/FaceTrackerModule.cs" line="13" column="1" bodyfile="Various/FaceTrackerModule.cs" bodystart="12" bodyend="64"/>
+    <location file="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" line="14" column="1" bodyfile="C:/Users/nutzer/Documents/GitHub/RealSense/Various/FaceTrackerModule.cs" bodystart="13" bodyend="72"/>
     <listofallmembers>
-      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a53505c9cb3af67e42a0710fdfad65ae5" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>ConvertValues</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a89c9c568ab387b183a63ed2755a82203" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>Debug</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5f460d4bb4cb4b000426f9d316deae03" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>debug</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a157703aadbac7416f5fc0eb339546002" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>DEF_MIN</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a654263c518b548bad34f5e6ce9c6d2c5" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>DynamicMinMax</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1ac34dc667e54a0a222f750f27f71734c4" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>FaceTrackerModule</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a60d15c600059346aae1effda4a1f9a82" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>FilteredAvg</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a4294c740efc99c4f5c4034e812f1bdaa" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>FilterToleranceValues</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1adbd3b1e7d522dcce4793ba319c3b96ea" prot="private" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>font</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aa3ca8a7dcab6b7c9be3021c6d14702cf" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>framesGathered</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1a9388ec4a964bdfb42019c81711115389" prot="private" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>idx</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a4a96119975932690f75e86206e1fe63d" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>Init</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a72f31ae62486b23d17e1a04c902a21c5" prot="public" virt="virtual"><scope>RealSense::FaceTrackerModule</scope><name>keyTrigger</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a8434d4aa8c289766b24e67cabb7e9471" prot="public" virt="virtual"><scope>RealSense::FaceTrackerModule</scope><name>KeyTrigger</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1aac57c31e50cebecbcb46a0526d7a6ac0" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>MIN</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a29ce0491f4813a62b998effa782423d1" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>model</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a9a8c8d17ca9321b558c50f2458a90f3c" prot="protected" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>numFramesBeforeAccept</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a5f0ea0ffd2361fd2b792ed808a67f911" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>output</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1ae5fa1bd756310c62e78e67fe8fd39131" prot="private" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>pen</name></member>
-      <member refid="class_real_sense_1_1_r_s_module_1a8102b36be1a741846ed45f8ec277c577" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>reset</name></member>
+      <member refid="class_real_sense_1_1_r_s_module_1a5dc0fb567c84392f2469f5ed6445b10b" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>Reset</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1abb0cd09f0f7ea1e87e698d39c6985eda" prot="private" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>stringBrush</name></member>
       <member refid="class_real_sense_1_1_r_s_module_1a100988a1b957067db074dad8b4b9a078" prot="public" virt="non-virtual"><scope>RealSense::FaceTrackerModule</scope><name>triggers</name></member>
       <member refid="class_real_sense_1_1_face_tracker_module_1a38b7097ab671999aae5f1a645fc623f8" prot="public" virt="virtual"><scope>RealSense::FaceTrackerModule</scope><name>Work</name></member>

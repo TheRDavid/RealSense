@@ -3,7 +3,7 @@ var searchData=
   ['em_5fanger',['EM_Anger',['../class_real_sense_1_1_e_m___anger.html',1,'RealSense.EM_Anger'],['../class_real_sense_1_1_e_m___anger.html#a843c377f0f47a7e016968dbccdcbc819',1,'RealSense.EM_Anger.EM_Anger()']]],
   ['em_5fanger_2ecs',['EM_Anger.cs',['../_e_m___anger_8cs.html',1,'']]],
   ['em_5fcontempt',['EM_Contempt',['../class_real_sense_1_1_emotions_1_1_e_m___contempt.html',1,'RealSense.Emotions.EM_Contempt'],['../class_real_sense_1_1_emotions_1_1_e_m___contempt.html#af2203e6c540c756cd6b8d0190d04c46f',1,'RealSense.Emotions.EM_Contempt.EM_Contempt()']]],
-  ['em_5fcontempt02_2ecs',['EM_Contempt02.cs',['../_e_m___contempt02_8cs.html',1,'']]],
+  ['em_5fcontempt_2ecs',['EM_Contempt.cs',['../_e_m___contempt_8cs.html',1,'']]],
   ['em_5fdisgust',['EM_Disgust',['../class_real_sense_1_1_emotions_1_1_e_m___disgust.html',1,'RealSense.Emotions.EM_Disgust'],['../class_real_sense_1_1_emotions_1_1_e_m___disgust.html#aba892f265a554ffe99c81482b48fbed0',1,'RealSense.Emotions.EM_Disgust.EM_Disgust()']]],
   ['em_5fdisgust_2ecs',['EM_Disgust.cs',['../_e_m___disgust_8cs.html',1,'']]],
   ['em_5ffear',['EM_Fear',['../class_real_sense_1_1_emotions_1_1_e_m___fear.html',1,'RealSense.Emotions.EM_Fear'],['../class_real_sense_1_1_emotions_1_1_e_m___fear.html#af5fb3d9f1043968e5b673c5cfc478f97',1,'RealSense.Emotions.EM_Fear.EM_Fear()']]],
@@ -17,10 +17,5 @@ var searchData=
   ['emotion',['Emotion',['../class_real_sense_1_1_model.html#a5bf3fde8f53519f7a740d8b4e0399208',1,'RealSense::Model']]],
   ['emotionmax',['EmotionMax',['../class_real_sense_1_1_model.html#ac5454f63dfead405cd1d9c229cf6790f',1,'RealSense::Model']]],
   ['emotions',['Emotions',['../class_real_sense_1_1_model.html#a30358a7ea8e1e59815e2f562a3fc6bad',1,'RealSense::Model']]],
-  ['emotionsaver',['EmotionSaver',['../class_real_sense_1_1_emotion_saver.html',1,'RealSense']]],
-  ['emotionsaver_2ecs',['EmotionSaver.cs',['../_emotion_saver_8cs.html',1,'']]],
-  ['emotionvalue',['EmotionValue',['../class_real_sense_1_1_model.html#a078b1ddb43e777aa73c1b3898722e4bb',1,'RealSense::Model']]],
-  ['emotionview',['EmotionView',['../class_real_sense_1_1_emotion_view.html',1,'RealSense.EmotionView'],['../class_real_sense_1_1_emotion_view.html#a6f0e3d2564b7ecfea7c153faf76b53a6',1,'RealSense.EmotionView.EmotionView()']]],
-  ['emotionview_2ecs',['EmotionView.cs',['../_emotion_view_8cs.html',1,'']]],
-  ['emotionview_2edesigner_2ecs',['EmotionView.Designer.cs',['../_emotion_view_8_designer_8cs.html',1,'']]]
+  ['emotionvalue',['EmotionValue',['../class_real_sense_1_1_model.html#a078b1ddb43e777aa73c1b3898722e4bb',1,'RealSense::Model']]]
 ];
