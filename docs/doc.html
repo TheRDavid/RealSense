@@ -8439,7 +8439,7 @@ Error message and password prompt
 <div created="20170523183642120" modified="20170523184612155" title="$:/state/tab/sidebar--1835078512">
 <pre>Contents</pre>
 </div>
-<div list="[[Code Documentation]]" title="$:/StoryList">
+<div list="[[The Final Year Project]] [[Intel RealSense SR300 Depth-Camera]] [[Value Filtering]] [[Emotion Research]] Test-Subjects Contents [[Code Documentation]] [[Application Structure]] Utility-Modules Emotion-Modules Modules Analyzer Test-UI [[Polished UI]] Action-Unit-Modules" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8455,7 +8455,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///C:/Users/prouser/Desktop/REALSENSE_FINAL/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;file:///C:/Users/nutzer/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8475,7 +8475,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/C:/Users/prouser/Desktop/REALSENSE_FINAL/RealSense/docs/doc.html&quot;
+            &quot;text&quot;: &quot;/C:/Users/nutzer/Documents/GitHub/RealSense/docs/doc.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8614,13 +8614,13 @@ Since every face is different and some people are able to shift their brows high
 Unfortunately the Landmark-Points weren't reliable when the user was tilting and turning their head so we decided to implement [[value-filtering|Value Filtering]] to solve that.
 </pre>
 </div>
-<div created="20170619105234171" modified="20170719124436838" tags="" title="Analyzer">
+<div created="20170619105234171" modified="20170721140043922" tags="" title="Analyzer">
 <pre>During the many test-phases of our project, we always needed a test-subject in front of the lense, which was not only tiresome, time-consuming and kept the subject from working themself, but also turned out to result in the detection-algorithms for action units and overall emotions to be adjusted to that single person. This always became blatantly obvious when switching test-subjects. Despite dynamically adjusting expression-recognition algorithms (as dicussed in [[Value-Filtering|Value Filtering]]), the reliability of the emotion-detection plummeted after switching to a new test-subject.&lt;br&gt;
-To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmarks positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
+To make testing more efficient and less dependent on a single test-subject, we decided to record multiple subjects (both video-footage and the landmark positions whilst expressing emotions) and test our algorithms on them simultaneously.&lt;br&gt;
 In order to do so, we implemented a &lt;i&gt;Face-Recorder-Module&lt;/i&gt; and an &lt;i&gt;Analyzer-View&lt;/i&gt;, as shown below.
 &lt;img src=&quot;img/Analyzer.png&quot;&gt;
 &lt;br&gt;
-The Recorder-Module records a persons landmarks for 300 frames (10 seconds) and them along with the calibrated Null-Face in a file.&lt;br&gt;
+The Recorder-Module records a persons landmarks for 300 frames (10 seconds) and stores them along with the calibrated Null-Face in a file.&lt;br&gt;
 That file can then be loaded inside the Analyzer-View.&lt;br&gt;
 
 The Analyzer-View can be used to load all files of a certain emotion inside a directory and display the video (using a &lt;a href=&quot;https://github.com/ZeBobo5/Vlc.DotNet&quot;&gt;.net-Interface to the VLC-API&lt;/a&gt;), along with all the emotion- and action units values. With a timeline at the bottom of the UI, the user can jump to any point in time (from frame 0 to 300).
@@ -8678,7 +8678,7 @@ It was for that reason that we decided to focus our research on how a person wou
 <div created="20170619105146833" modified="20170628154656245" tags="" title="Emotion-Modules">
 <pre>The Emotion-Modules compute the percentage value of each emotion. In order to do that the modules use the results of each action unit module and define a proportion between 0 and 110, depending on their importance. The UI won’t show values higher than 100% for the emotions so we don't have to worry about that. Bigger numbers just make it easier to reach the maximum. Some emotions can also be reduced by other AU-Modules, e.g. anger and joy can't be high at the same time. In the end the Action-Unit-Values are multiplied with their proportion and are summed up.</pre>
 </div>
-<div created="20170523185311170" modified="20170719125951707" tags="" title="Intel RealSense SR300 Depth-Camera">
+<div created="20170523185311170" modified="20170721140444012" tags="" title="Intel RealSense SR300 Depth-Camera">
 <pre>&lt;img src=&quot;img/cam.jpg&quot; width=&quot;960&quot; align=&quot;middle&quot;&gt;
 
 &lt;h3&gt;&lt;b&gt;About&lt;/b&gt;&lt;/h3&gt;
@@ -8692,7 +8692,7 @@ This feature enables the developer to record changes in a person's mimic and (as
 &lt;/p&gt;
 
 &lt;p&gt;
-To make use of the SR300, the RealSense SDK is required, as is a Windows 10-PC with a USB 3.0 Port. We also advise to handle the camera with utmost care, as it turned out to be very fragile and quickly to break down in performance after a few hours of use (likely due to overheating).
+To make use of the SR300, the Realsense SDK is required, as is a Windows 10-PC with a USB 3.0 Port. We also advise to handle the camera with utmost care, as it turned out to be very fragile and quickly to break down in performance after a few hours of use (likely due to overheating).
 &lt;/p&gt;
 
 &lt;h3&gt;&lt;b&gt;Setup&lt;/b&gt;&lt;/h3&gt;
@@ -9010,30 +9010,14 @@ Negative&lt;br&gt;
 
 </pre>
 </div>
-<div created="20170523184731393" modified="20170629214355977" tags="" title="The Final Year Project">
+<div created="20170523184731393" modified="20170721140651594" tags="" title="The Final Year Project">
 <pre>&lt;iframe src=&quot;https://drive.google.com/file/d/0BxcQaFNyn9uHS3hucThjVjVjVVk/preview&quot; width=&quot;960&quot; height=&quot;540&quot;&gt;&lt;/iframe&gt;
 
 This wiki of the Final Year Project of //Anton Blumenstein, David Rosenbusch, René Knierim, Tobi, Tanja Witke and Marlon Russ//.
 
 It documents the teamwork, goals, technical difficulties and solutions of the creation of a software to determine a humans emotions by evaluating facial micro-expressions, captured with the [[Intel RealSense SR300 Depth-Camera|Intel RealSense SR300 Depth-Camera]].
 
-We targeted open door day as a fixed date to present our emotion recognition software &quot;FI&quot;. In order to achieve this, we had to face many  time consuming issues.
-Our very first problem were the PCs, that were made available to us, since they were unable to detect the camera. Because of that we needed a new computer that could handle our hardware correctly.
-Shortly after a new issue appeared. The SR300 wouldn’t work on any of our configurations. We figured out, that neither our PCs, nor the software, but a broken USB cable, was the cause for that.
-Another problem was the project organization strategy “Kanban”, since it was part of our task. After a few months we stopped using “Kanban”. In retroperspective we can ensure, that it is no help and might even hinder projects like ours.
-We managed to communicate properly via WhatsApp. Like that everyone always knew which tasks were already in progress. Due to most new tasks arose spontaneously, a fast and permanent information exchange was of the essence.
-
-
-_____________________________________________________________
-
-Unser Ziel war es unsere Software am Tag der offenen Tür unserer Hochschule vorstellen zu können. 
-Auf dem Weg dahin traten einige Probleme auf die viel Zeit in Anspruch nahmen, teilweise auch Hardware bedingte Probleme.
-So hatten wir direkt am Anfang unseres Projektes ein Problem das unsere Rechner nicht die Kamera erkannten. Deshalb mussten wir extra einen neuen PC kaufen der die Anforderungen der Kamera erfüllten. Kurz darauf trat das Problem auf, das die Kamera auf keinem System mehr lief. Nach dem austauschen des UBS Kabels war auch dieser Hardware Fehler behoben und sie lief endlich ohne weitere größere Probleme. 
-Ein anderes Problem war die Projektorganisation Strategie Kanban. 
-Ein Teil unserer Aufgabe war es Kanban in unserem Projekt zu testen. Nach ein paar Monaten ,ca. der hälfte der Zeit die uns für das gesamte Projekt zur Verfügung stand, benutzen wir Kanban nicht mehr. Im nachhinein können wir sagen das Kanban für ein Projekt, so wie unseres, ungeeignet ist und eher hinderlich als förderlich. 
-Da unsere Kommunikation in unserer Gruppe, vor allem durch WhatsApp, einwandfrei lief, wusste nahezu immer und jeder wer an welchem Bereich gerade arbeitete. Die Aufgaben ergaben sich zum Ende des Projektes meist recht spontan und daher war eine konstante und schnelle Kommunikation untereinander notwendig.
-
-</pre>
+We targeted open door day as a fixed date to present our emotion recognition software &quot;FI&quot;. </pre>
 </div>
 <div created="20170619105203221" modified="20170629144100290" tags="" title="Utility-Modules">
 <pre>Since our applications largely consist of independent modules, there are some of those, who do neither detect action units, nor emotions, but provide utility-features:
