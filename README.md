@@ -5,9 +5,9 @@ Here is a link to our <a href="https://cdn.rawgit.com/TheRDavid/RealSense/17acd8
 
 Created by
 
-<a href="https://github.com/AntonBlumenstein">Anton Blumenstein</a>
-<a href="https://github.com/tanjaU29798">Tanja Witke</a>
-<a href="https://github.com/TheRDavid">David Rosenbusch</a>
-<a href="https://github.com/Oblitus">René Knierim</a>
-<a href="https://github.com/Street3">Tobi</a>
-Marlon Russ
+<p><a href="https://github.com/AntonBlumenstein">Anton Blumenstein</a></p>
+<p><a href="https://github.com/tanjaU29798">Tanja Witke</a></p>
+<p><a href="https://github.com/TheRDavid">David Rosenbusch</a></p>
+<p><a href="https://github.com/Oblitus">René Knierim</a></p>
+<p><a href="https://github.com/Street3">Tobi</a></p>
+<p>Marlon Russ</p>
